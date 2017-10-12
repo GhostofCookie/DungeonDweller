@@ -1,24 +1,25 @@
-// Created 05/10/2017
-/// \author "Tomas Rigaux"
-///
-/// This is the interface for the Menu class. This class defines a Menu object for the 
-///
-///
-
 #ifndef MENU_H
 #define MENU_H
 
 #include <iostream>
+#include <map>
+#include <vector>
 
 class Menu {
 private:
+	std::map<int, std::string> IndexMap;
 	int MenuHeight;
 	int MenuWidth;
 	char** Menu_Array;
+	void BuildMenu();
+
 public:
 	Menu(int height = 10, int width = 100);
-	virtual ~Menu();
-
+	~Menu();
+	void set(int x, int y, char ch);
+	virtual void SetOptions(std::map<int, std::string> OptionsList, std::string type = "generic");
+	virtual void HandleOptionInput(std::istream& is);
+	virtual void OutputMenu();
 };
 
 #endif
