@@ -6,7 +6,8 @@
 #include <vector>
 using namespace std;
 
-class Menu {
+class Menu 
+{
 private:
 	map<int, string> IndexMap;
 	int MenuHeight;

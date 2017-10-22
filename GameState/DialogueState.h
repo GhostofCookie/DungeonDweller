@@ -4,7 +4,8 @@
 #ifndef DIALOGUESTATE_H
 #define DIALOGUESTATE_H
 
-class DialogueState : public GameState {
+class DialogueState : public GameState
+{
 public:
 	DialogueState();
 	Set();

@@ -4,7 +4,8 @@
 #ifndef TRADESTATE_H
 #define TRADESTATE_H
 
-class TradeState : public GameState {
+class TradeState : public GameState
+{
 public:
 	TradeState();
 	Set();

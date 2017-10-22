@@ -7,7 +7,8 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-class GameState {
+class GameState
+{
 public:
 	GameState();
 	Set() = 0;

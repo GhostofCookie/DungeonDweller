@@ -4,7 +4,8 @@
 #ifndef FIGHTSTATE_H
 #define FIGHTSTATE_H
 
-class FightState : public GameState {
+class FightState : public GameState
+{
 public:
 	FightState();
 	Set();

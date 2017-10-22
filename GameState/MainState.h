@@ -4,7 +4,8 @@
 #ifndef MAINSTATE_H
 #define MAINSTATE_H
 
-class MainState : public GameState {
+class MainState : public GameState
+{
 public:
 	MainState();
 	Set();
