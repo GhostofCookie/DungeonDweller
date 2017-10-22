@@ -17,7 +17,7 @@ Menu::~Menu()
 
 }
 
-void Menu::HandleOptionInput(std::istream& is)
+void Menu::HandleOptionInput(istream& is)
 {
 
 	int option;
@@ -27,18 +27,16 @@ void Menu::HandleOptionInput(std::istream& is)
 		if (option != it->first)
 			++it;
 		else
-			std::cout << "You have selected" << it->second;
+			cout << "You have selected" << it->second;
 	}
 
 }
 
-void Menu::SetOptions(std::map<int, std::string> OptionsList, std::string type)
+void Menu::SetOptions(map<int, string> OptionsList, string type)
 {
-
 	auto it = OptionsList.begin();
 	int row = 3;
 	int col = 3;
-	//type= "dialogue";
 	if (type == "generic")
 	{
 		while (it != OptionsList.end())
@@ -77,8 +75,8 @@ void Menu::OutputMenu()
 	for (int i = 0; i < MenuHeight; i++)
 	{
 		for (int j = 0; j < MenuWidth; j++)
-			std::cout << Menu_Array[i][j];
-		std::cout << '\n';
+			cout << Menu_Array[i][j];
+		cout << '\n';
 	}
 }
 
