@@ -21,6 +21,5 @@ public:
 	/// Outputs the set layout.
 	void Get();
 };
-};
 
 #endif

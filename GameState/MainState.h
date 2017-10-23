@@ -5,7 +5,6 @@
 ///
 
 #include "GameState.h"
-#include "Menu.h"
 
 #ifndef MAINSTATE_H
 #define MAINSTATE_H
@@ -21,7 +20,6 @@ public:
 	void Set();
 	/// Outputs the set layout.
 	void Get();
-};
 };
 
 #endif
