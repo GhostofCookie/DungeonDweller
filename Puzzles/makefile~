@@ -1,9 +1,0 @@
-all:  hanoi.o puzzleMain.o
-	g++ -g -std=c++11 -fmax-errors=5 -o puzzleMain puzzleMain.cpp
-puzzleMain.o: puzzleMain.cpp
-	g++ -g -std=c++11 -fmax-errors=5 -c -Wall puzzleMain.cpp
-hanoi.o: hanoi.cpp hanoi.h
-	g++ -g -std=c++11 -fmax-errors=5 -c -Wall hanoi.cpp
-.PHONY clean:
-clean:
-	-@rm -f puzzleMain *.o
