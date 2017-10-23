@@ -5,7 +5,6 @@
 ///
 
 #include "GameState.h"
-#include "Menu.h"
 
 #ifndef PUZZLESTATE_H
 #define PUZZLESTATE_H

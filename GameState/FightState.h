@@ -5,7 +5,6 @@
 ///
 
 #include "GameState.h"
-#include "Menu.h"
 
 #ifndef FIGHTSTATE_H
 #define FIGHTSTATE_H
