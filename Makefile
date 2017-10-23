@@ -1,10 +1,10 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g
-OBJS = main.o Menu.o Screen.o 
+OBJS = puzzleMain.o Menu.o Screen.o hanoi.o puzzle.o code_cracker.o tic_tac_toe.o memory_match.o connect_four.o 
 
 ## targets and prerequisites
 .PHONY : all
-all : main
+all : puzzleMain
 
 main : $(OBJS)
 	$(CC) $^ -o $@
