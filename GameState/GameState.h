@@ -4,11 +4,11 @@
 /// This class defines the current state of the game, based on the current location and actions of the player character.
 ///
 
-#include "/Menu/Menu.h"
-#include "/Screen/Screen.h"
-#include "/Menu/MainMenu.h"
-#include "/Menu/FightMenu.h"
-#include "/Menu/ExploreMenu"
+#include "../Menu/Menu.h"
+#include "../Screen/Screen.h"
+#include "../Menu/MainMenu.h"
+#include "../Menu/FightMenu.h"
+#include "../Menu/ExploreMenu"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
