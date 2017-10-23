@@ -1,0 +1,3 @@
+puzzleMain.o: puzzleMain.cpp hanoi.h puzzle.h Menu.h
+Menu.o: Menu.cpp Menu.h
+hanoi.o: hanoi.cpp hanoi.h puzzle.h Menu.h
