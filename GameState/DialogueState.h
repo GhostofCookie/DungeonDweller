@@ -8,7 +8,7 @@ class DialogueState : public GameState
 {
 public:
 	DialogueState();
-	Set();
+	void Set();
 };
 
 #endif

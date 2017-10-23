@@ -1,20 +1,18 @@
 /// /date 21/10/2017
 /// /author Tomas Rigaux
 ///
-///
-///
 
 #include "GameState.h"
 #include "Menu.h"
 
-#ifndef FIGHTSTATE_H
-#define FIGHTSTATE_H
+#ifndef MAINSTATE_H
+#define MAINSTATE_H
 
-class FightState : public GameState
+class MainState : public GameState
 {
 public:
-	FightState();
-	Set();
+	MainState();
+	void Set();
 };
 
 #endif
