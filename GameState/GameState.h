@@ -22,7 +22,7 @@ public:
 	virtual void Set() = 0;
 	/// Outputs the set layout.
 	virtual void Get() = 0;
-};
+
 protected:
 	Menu *menu; ///< pointer to the menu.
 };
