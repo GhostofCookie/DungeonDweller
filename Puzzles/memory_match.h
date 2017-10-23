@@ -15,18 +15,18 @@ class MemoryMatch: virtual Puzzle
    MemoryMatch(const MemoryMatch &copy);
    void RunGame();
   private:
-   void PromptUser(&Screen);
-   char UserInput(&Menu);
+   //void PromptUser(Screen &GameScreen);
+   char UserInput(Menu &MemGameMenu);
    bool ValidMove(char Input);
    bool ValidCommand(char Input);
-   void OutputGame(&Screen);
-   char UserInput(&Menu); //Might need to be a menu on its own.
+   //void OutputGame(Screen &GameScreen);
+   //char UserInput(Menu &MemGameMenu); //Handled by Menu and called from rungame();
    void ChangeState();
    void MatchCheck();
    
    /*The vector which holds each towers' contents. Contents are stored as
      integers.*/
    std::vector<vector<char>>CharTable;
-   std::vector<vector<IntTable;
-}
+   std::vector<vector<int>> IntTable;
+};
 #endif

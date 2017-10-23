@@ -6,20 +6,19 @@
 #ifndef  CONNECT_FOUR_H
 #define CONNECT_FOUR_H
 #include "puzzle.h"
-class ConnectFour: virtual puzzle
+class ConnectFour: virtual Puzzle
 {
    ConnectFour();
    ~ConnectFour();
-   ConnectFour(const ConnectFour &copy);
    void RunGame();
   private:
-   void PromptUser(&screen);
-   char UserInput(&menu);
+   //void PromptUser(&screen);
+   //char UserInput(&menu);
    bool ValidMove(char input);
    bool ValidCommand(char input);
-   void OutputGame(&screen);
+   //void OutputGame(Screen &CfScreen);//Waiting on reid's screen class
    std::vector<vector<char>>Grid;   
-}
+};
 #endif
  
 

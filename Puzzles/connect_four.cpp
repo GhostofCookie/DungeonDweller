@@ -2,8 +2,11 @@
 ///connect_four.cpp
 ///\author Tyler Siwy
 ///CPSC 2720-Howard Cheng-Assignment 2
-////////////////////////////////////////////////////////////////////////////////  
-ConnectFour::ConnectFour(){
+////////////////////////////////////////////////////////////////////////////////
+#include "connect_four.h"
+
+ConnectFour::ConnectFour()
+{
 
 }
 
@@ -12,37 +15,32 @@ ConnectFour::~ConnectFour()
 
 }
 
-ConnectFour::ConnectFour(const Connect_Four &copy)
+void ConnectFour::RunGame()
 {
 
 }
 
-ConnectFour::void RunGame()
-{
+// ConnectFour::void PromptUser(&screen)
+// {
 
+// }
+
+// ConnectFour::char UserInput(&menu)
+// {
+
+// }
+
+bool ConnectFour:: ValidMove(char input)
+{
+   return true;
 }
 
-ConnectFour::void PromptUser(&screen)
+bool ConnectFour:: ValidCommand(char input)
 {
-
+   return true;
 }
+//WAITING ON SCREEN FROM REID
+// ConnectFour::void OutputGame(&screen)
+// {
 
-ConnectFour::char UserInput(&menu)
-{
-
-}
-
-ConnectFour::bool ValidMove(char input)
-{
-
-}
-
-ConnectFour::bool ValidCommand(char input)
-{
-
-}
-
-ConnectFour::void OutputGame(&screen)
-{
-
-}
+// }

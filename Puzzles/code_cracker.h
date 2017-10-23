@@ -15,14 +15,14 @@ class CodeCracker: virtual Puzzle
    CodeCracker(const CodeCracker &copy);
    void RunGame();
   private:
-   void PromptUser(&screen);
-   char UserInput(&menu);
+   void PromptUser(Screen &CcScreen);
+   char UserInput(Menu &CcMenu);
    bool ValidMove(char input);
    bool ValidCommand(char input);
    bool ValidAnswer(const string);
    void WinCheck();
    void DeathCheck();//Will need to take some kind of character variable/object
-   void OutputGame(&screen);
+   void OutputGame(Screen &CcScreen);
    void ImportRiddles();//Takes riddles out of a text file and stores them
    /*The vector which holds each towers' contents. Contents are stored as
      integers.*/
