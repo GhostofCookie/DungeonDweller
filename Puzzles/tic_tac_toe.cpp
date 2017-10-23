@@ -26,18 +26,18 @@ void TicTacToe::RunGame(){
 
 char TicTacToe::UserInput(Menu &menu)
 {
-
+   return 'c';
 }
 
 bool TicTacToe::ValidMove(char input)
 {
-
+   return true;
 }
 
 
 bool TicTacToe::ValidCommand(char input)
 {
-
+   return true;
 }
 
 // void TicTacToe::OutputGame(&screen)
