@@ -8,13 +8,16 @@
 #include "../Screen/Screen.h"
 #include "../Menu/MainMenu.h"
 #include "../Menu/FightMenu.h"
-#include "../Menu/ExploreMenu"
+#include "../Menu/ExploreMenu.h"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
 class GameState
 {
+	/// \class GameState GameState.h
+	/// \brief An abstract class, this class defines the state of the current 'state' of the game based on the current situation 
+	/// of the player character.
 public:
 	/// Default constructor
 	GameState();
