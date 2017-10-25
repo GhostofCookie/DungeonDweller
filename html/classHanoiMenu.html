@@ -93,6 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the menu class for the <a class="el" href="classHanoi.html" title="This class contains the mini-game/Puzzle Towers of Hanoi. ">Hanoi</a> minigame.  
  <a href="classHanoiMenu.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="HanoiMenu_8h_source.html">HanoiMenu.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for HanoiMenu:</div>
 <div class="dyncontent">
@@ -115,8 +117,8 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoiMenu.html#a80744afb9fe2111305ed0876ea371cd0">~HanoiMenu</a> ()</td></tr>
 <tr class="memdesc:a80744afb9fe2111305ed0876ea371cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the virtual destructor. <br/></td></tr>
 <tr class="separator:a80744afb9fe2111305ed0876ea371cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6275a079452173e058c14f3b822271"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoiMenu.html#a1b6275a079452173e058c14f3b822271">SetOptions</a> (map&lt; string &gt; OptionsList, string type)</td></tr>
-<tr class="separator:a1b6275a079452173e058c14f3b822271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ad3788638502865cb8d52040dcc27f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoiMenu.html#a1ad3788638502865cb8d52040dcc27f8">SetOptions</a> (map&lt; string &gt; optionsList, string type)</td></tr>
+<tr class="separator:a1ad3788638502865cb8d52040dcc27f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d287d810bc4cf49775503470830e48f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoiMenu.html#a8d287d810bc4cf49775503470830e48f">HandleInput</a> (istream &amp;is)</td></tr>
 <tr class="separator:a8d287d810bc4cf49775503470830e48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMinigameMenu"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMinigameMenu')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMinigameMenu.html">MinigameMenu</a></td></tr>
@@ -144,9 +146,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a> ()</td></tr>
 <tr class="memdesc:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the destructor for the class. It is virtual. <br/></td></tr>
 <tr class="separator:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8451a530cd2b53f456658f8741ae45bb inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8451a530cd2b53f456658f8741ae45bb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetOptions</b> (map&lt; int, string &gt; OptionsList, string type=&quot;generic&quot;)</td></tr>
-<tr class="separator:a8451a530cd2b53f456658f8741ae45bb inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89c9ed81c1bc8bf68cec3b0c9ab877a1"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetOptions</b> (map&lt; int, string &gt; optionsList, string type=&quot;generic&quot;)</td></tr>
+<tr class="separator:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a81bb84f921911944e4060d1c5a1b2507">HandleOptionInput</a> (istream &amp;is)</td></tr>
 <tr class="separator:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4665a914fe24a8b11d8d6c95792184b3 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4665a914fe24a8b11d8d6c95792184b3"></a>
@@ -196,7 +198,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1b6275a079452173e058c14f3b822271"></a>
+<a class="anchor" id="a1ad3788638502865cb8d52040dcc27f8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,7 +209,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">virtual void HanoiMenu::SetOptions </td>
           <td>(</td>
           <td class="paramtype">map&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>OptionsList</em>, </td>
+          <td class="paramname"><em>optionsList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,7 +238,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classMinigameMenu.html#a29820b5b338dec978b585f7a0df7b81e">MinigameMenu</a>.</p>
+<p>Implements <a class="el" href="classMinigameMenu.html#abf3dcda8c256be03ebe3661b8dde2ea2">MinigameMenu</a>.</p>
 
 </div>
 </div>

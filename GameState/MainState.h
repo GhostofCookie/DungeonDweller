@@ -9,17 +9,18 @@
 #ifndef MAINSTATE_H
 #define MAINSTATE_H
 
+/// \class MainState MainState.h
+/// \brief This is the state of the game when the game is either not yet started or the game has ended.
+/// Derived from GameState.
 class MainState : public GameState
 {
-	/// \class MainState MainState.h
-	/// \brief This is the state of the game when the game is either not yet started or the game has ended.
-public:
-	/// Default constructor
-	MainState();
-	/// Sets the layout of the game.
-	void Set();
-	/// Outputs the set layout.
-	void Get();
+  public:
+   /// Default constructor
+   MainState();
+   /// Sets the layout of the game.
+   void Set();
+   /// Outputs the set layout.
+   void Get();
 };
 
 #endif

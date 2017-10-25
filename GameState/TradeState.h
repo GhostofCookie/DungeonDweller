@@ -11,15 +11,16 @@
 
 class TradeState : public GameState
 {
-	/// \class TradeState TradeState.h
-	/// \brief Sets the state of the game when a player is 'trading' with an NPC
-public:
-	/// Default constructor
-	TradeState();
-	/// Sets the layout of the game.
-	void Set();
-	/// Outputs the set layout.
-	void Get();
+   /// \class TradeState TradeState.h
+   /// \brief Sets the state of the game when a player is 'trading' with an NPC.
+   /// Derived from GameState.
+  public:
+   /// Default constructor
+   TradeState();
+   /// Sets the layout of the game.
+   void Set();
+   /// Outputs the set layout.
+   void Get();
 };
 
 #endif
