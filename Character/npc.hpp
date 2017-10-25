@@ -24,9 +24,6 @@ private:
     ///The Npc's attack power
     int AttackPower;
     
-    ///What the Npc has for items
-    vector<string> Inventory;
-    
 public:
     ///Npc constructor
     /// \param[in] H, the health of the created Npc
@@ -40,10 +37,6 @@ public:
     /// \param[in&] H, the current health of the Npc
     /// \param[in] Hmod, how the current health will be modified
     void ChangeHealth(int& H, int HMod);
-    
-    ///Sets what the Npc has for inventory
-    ///
-    void SetInventory(vector<string> I);
     
     ///Attack function for the Npc
     int Attack();

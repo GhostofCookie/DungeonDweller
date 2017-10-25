@@ -32,9 +32,6 @@ private:
     ///Players attack power
     int AttackPower;
     
-    ///Players inventory
-    vector<string> Inventory;
-    
 public:
     ///Player constructor
     /// \param[in] H, players health
@@ -54,7 +51,7 @@ public:
     
     ///Changes players stamina
     /// \param[in&] S, players current stamina
-    /// \param[in] Smod, how the curent stamina will be modified
+    /// \param[in] SMod, how the curent stamina will be modified
     void ChangeStamina(int& S, int SMod);
     
     ///Changes the players attack power
@@ -62,9 +59,6 @@ public:
     /// \param[in] APMod, how the current attack power will be modified
     void ChangeAttackPower(int& AP, int APMod);
     
-    ///Updates the players inventory with new items
-    ///
-    void UpdateInventory(vector<string>);
     
     ///Function to allow the player to attack
     int Attack();
