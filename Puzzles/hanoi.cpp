@@ -24,6 +24,72 @@ Hanoi::~Hanoi()
    
 }
 
+bool Hanoi:: ValidMove(char Input)
+{
+
+}
+
+void Hanoi::SetOptionsInMenu()
+{
+
+}
+
+void Hanoi::WinCheck()
+{
+   bool win=false;
+   //Check if the game has been won
+   if(win==true)
+      PuzzleEnd=true;
+}
+
+void Hanoi::SetOptionsInMenu()
+{
+
+
+}
+
+void Hanoi::MovePiece(int userSelection)
+{
+   switch(userSelection)
+   {
+      case 1:
+	 cout << "Move left, right" << endl;
+	 
+	 break;
+      case 2:
+	 cout << "Move centre left" << endl;
+	 break;
+      case 3:
+	 cout << "Move centre right" << endl;
+	 break;
+      case 4:
+	 cout << "<Move right, left" << endl;
+	 break;
+      default:
+	 cout << "Invalid input, please try again." << endl;
+	 break;
+   } 
+}
+
+void Hanoi:: RunGame()
+{
+   map <int, string> MAPPP;
+   MAPPP.insert(pair<int,string>(1,"Blaaaaaaah"));
+   Menu Menu;
+   menu.SetOptions(MAPPP);
+   menu.OutputMenu();
+   // //PromptUser();
+   // while(GameEnd==false)
+   // {
+   //    // OutputGame(&screen);
+   //    //int userSelection=UserInput(&menu);
+   //    //MovePiece(userSelection);
+   //    WinCheck();
+   // }
+   cout << "A noise creaks behind the wall and the door slides open." << endl;
+}
+
+
 // void Hanoi::PromptUser()
 // {
 //    cout << "The door is locked, there is three pressure plates in front of you"
@@ -51,37 +117,6 @@ Hanoi::~Hanoi()
 
 // }
 
-void Hanoi::WinCheck()
-{
-   bool win=false;
-   //Check if the game has been won
-   if(win==true)
-      GameEnd=true;
-}
-
-void Hanoi::MovePiece(int userSelection)
-{
-   switch(userSelection)
-   {
-      case 1:
-	 cout << "Move left, right" << endl;
-	 
-	 break;
-      case 2:
-	 cout << "Move centre left" << endl;
-	 break;
-      case 3:
-	 cout << "Move centre right" << endl;
-	 break;
-      case 4:
-	 cout << "<Move right, left" << endl;
-	 break;
-      default:
-	 cout << "Invalid input, please try again." << endl;
-	 break;
-   } 
-}
-
 // void Hanoi::OutputGameBoard(&screen)
 // {
 //    for(int i=0; i<column; i++)
@@ -91,21 +126,3 @@ void Hanoi::MovePiece(int userSelection)
 //    }
 //    cout << endl;
 // }
-
-void Hanoi:: RunGame()
-{
-   map <int, string> MAPPP;
-   MAPPP.insert(pair<int,string>(1,"Blaaaaaaah"));
-   Menu menu;
-   menu.SetOptions(MAPPP);
-   menu.OutputMenu();
-   // //PromptUser();
-   // while(GameEnd==false)
-   // {
-   //    // OutputGame(&screen);
-   //    //int userSelection=UserInput(&menu);
-   //    //MovePiece(userSelection);
-   //    WinCheck();
-   // }
-   cout << "A noise creaks behind the wall and the door slides open." << endl;
-}

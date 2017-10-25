@@ -1,5 +1,5 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11 -g
+CCFLAGS = -Wall -std=c++11 -g  
 OBJS = main.o Menu/Menu.o  Puzzles/hanoi.o Puzzles/tic_tac_toe.o Puzzles/memory_match.o Puzzles/connect_four.o 
 
 ## targets and prerequisites
@@ -7,7 +7,7 @@ OBJS = main.o Menu/Menu.o  Puzzles/hanoi.o Puzzles/tic_tac_toe.o Puzzles/memory_
 all : main
 
 main : $(OBJS)
-	$(CC) $^ -o $@
+	$(CC) $^ -o $(CCFLAGS) $<
 
 # default rule for compiling .cc to .o
 %.o : %.cpp
