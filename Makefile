@@ -1,7 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g  
-OBJS = main.o Menu.o Hanoi.o TicTacToe.o MemoryMatch.o ConnectFour.o 
-SRC := $(shell find $(SOURCEDIR) -name '*.cpp')
+OBJS = main.o Menu/Menu.o  Puzzles/hanoi.o Puzzles/tic_tac_toe.o Puzzles/memory_match.o Puzzles/connect_four.o 
 
 ## targets and prerequisites
 .PHONY : all
@@ -11,15 +10,15 @@ main : $(OBJS)
 	$(CC) $^ -o $(CCFLAGS) $<
 
 # default rule for compiling .cc to .o
-$%.o : $(SRC)
+%.o : %.cpp
 	$(CC) -c $(CCFLAGS) $<
 
-# generate the prerequisites and append to the desired file
+## generate the prerequisites and append to the desired file
 .prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq
 	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
 
-# include the generated prerequisite file
+## include the generated prerequisite file
 include .prereq
 
 .PHONY : clean
