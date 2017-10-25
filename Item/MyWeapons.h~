@@ -1,0 +1,22 @@
+
+#ifndef MYWEAPONS_H
+#define MYWEAPONS_H
+#include "Weapon.h"
+
+class Sword : public Weapon
+{
+   void use(Character *target);
+};
+
+
+class Bow : public Weapon
+{
+   void use(Character *target);
+};
+
+
+class Spell : public Weapon
+{
+   void use(Character *target)
+};
+#endif
