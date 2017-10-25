@@ -1,29 +1,50 @@
-////////////////////////////////////////////////////////////////////////////////
-///tic_tac_toe.h
-///\author Tyler Siwy
-///CPSC 2720-Howard Cheng-Dungeon Dweller
-////////////////////////////////////////////////////////////////////////////////
+//
+// tic_tac_toe.h
+//
+/// \author Tyler Siwy
+/// \date Oct 20, 2017
+//
+
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 #include "puzzle.h"
 
+///This class contains the mini-game/puzzle Tic Tac Toe
 class TicTacToe: public virtual Puzzle
 {
   public:
+   ///Default constructor for TicTacToe, sets height to 3 and width to 3
    TicTacToe();
+   ///Deconstructor
    virtual ~TicTacToe();
+   ///Method to run the game, serves as a 'main' for the mini-game, calling
+   ///functions from private until the player has won.   
    virtual void RunGame();
+   
   private:
-   //virtual void PromptUser(&screen);
-   virtual char UserInput(Menu &menu);
-   virtual bool ValidMove(char input);
-   virtual bool ValidCommand(char input);
-//void OutputGame(&screen);//Outputs the contents of the board
-   void ChangeState(char input); //Switches a square from blank to an x or o
-   void WinCheck(); //Checks the board for a win
-   void AiMove(); //Moves for the npc
-   //bool puzzleState;
-   //Menu puzzleMenu;
+   ///ALL HANDLED BY THE MENU OBJECT?
+   //void PromptUser(&screen);//Prompts user for input
+   //char UserInput(&menu);//Gets user input
+   //bool ValidCommand(char input);//Checks formatting
+
+   ///Checks the semantics of the user choice to make sure they aren't doing
+   ///something that would break the game with their input.
+   /// \param[in] InputX, the X-coordinate of the selection.
+   /// \param[in] InputY, the Y-coordinate of the selection. 
+   bool ValidMove(int InputX, int InputY);
+   /// Displays the screen containing the gameboard
+   /// \param[in] CfScreen, the screen object used for displaying the mini-game 
+   void OutputGame(Screen &TttScreen);
+   /// Displays the screen containing the gameboard
+   /// \param[in] InputX, the X-coordinate of the selection.
+   /// \param[in] InputY, the Y-coordinate of the selection.
+   void MovePiece(int InputX, int InputY);
+   ///Checks the board to see if there are any 3 of a kind for either player
+   void WinCheck();
+   ///Performs the selection for the npc opponent.
+   void AiMove();
+   
+   ///Vector to store the contents of the gameboard
    std::vector<vector<char> > GameBoard;
 };
 #endif

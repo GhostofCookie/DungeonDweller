@@ -32,13 +32,14 @@ void ConnectFour::RunGame()
 
 bool ConnectFour:: ValidMove(char input)
 {
-   return true;
+  return true;
 }
 
-bool ConnectFour:: ValidCommand(char input)
-{
-   return true;
-}
+//bool ConnectFour:: ValidCommand(char input)
+//{
+//   return true;
+//}
+
 //WAITING ON SCREEN FROM REID
 // ConnectFour::void OutputGame(&screen)
 // {

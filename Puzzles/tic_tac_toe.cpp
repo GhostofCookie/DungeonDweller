@@ -24,28 +24,28 @@ void TicTacToe::RunGame(){
 
 // }
 
-char TicTacToe::UserInput(Menu &menu)
-{
-   return 'c';
-}
+//char TicTacToe::UserInput(Menu &menu)
+//{
+//  return 'c';
+//}
 
-bool TicTacToe::ValidMove(char input)
-{
-   return true;
-}
+//bool TicTacToe::ValidMove(char input)
+//{
+//   return true;
+//}
 
 
-bool TicTacToe::ValidCommand(char input)
-{
-   return true;
-}
+//bool TicTacToe::ValidCommand(char input)
+//{
+//   return true;
+//}
 
 // void TicTacToe::OutputGame(&screen)
 // {
 
 // }
 
-void TicTacToe::ChangeState(char input)
+void TicTacToe::MovePiece(int InputX, int InputY)
 {
 
 }

@@ -56,7 +56,7 @@ void Hanoi::WinCheck()
    bool win=false;
    //Check if the game has been won
    if(win==true)
-      GameEnd=true;
+      PuzzleEnd=true;
 }
 
 void Hanoi::MovePiece(int userSelection)
