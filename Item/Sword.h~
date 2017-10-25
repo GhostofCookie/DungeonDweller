@@ -1,0 +1,6 @@
+#ifnedef SWORD_H
+#define SWORD_H
+
+class Sword : public Weapon
+{};
+#endif

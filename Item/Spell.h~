@@ -1,0 +1,6 @@
+#ifnedef SPELL_H
+#define SPELL_H
+
+class Spell : public Weapon
+{};
+#endif
