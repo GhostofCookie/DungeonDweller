@@ -1,7 +1,7 @@
 /// \date 24/10/2017
 /// \author Tomas Rigaux
 ///
-/// This is the menu class for the Hanoi minigame. It is a subclass of
+/// This is the menu class for the Tic Tac Toe minigame. It is a subclass of
 /// MinigameMenu.
 ///
 
@@ -9,18 +9,18 @@
 #include <map>
 using namespace std;
 
-#ifndef HANOIMENU_H
-#define HANOIMENU_H
+#ifndef TICTACTOEMENU_H
+#define TICTACTOEMENU_H
 
-/// \class HanoiMenu HanoiMenu.h
-/// \brief This is the menu class for the Hanoi minigame.
-class HanoiMenu : public virtual MinigameMenu
+/// \class TicTacToeMenu TicTacToeMenu.h
+/// \brief This is the menu class for the Tic Tac Toe minigame.
+class TicTacToeMenu : public virtual MinigameMenu
 {
   public:
    /// This is the default constructor.
-   HanoiMenu();
+   TicTacToeMenu();
    /// This is the virtual destructor.
-   virtual ~HanoiMenu();
+   virtual ~TicTacToeMenu();
    /// This function sets the specific options for the Menu type.
    /// \param[in] OptionsList A map of all the options for the current
    /// menu. Each option has a unique key to make input easier.

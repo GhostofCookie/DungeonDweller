@@ -1,7 +1,7 @@
 /// \date 24/10/2017
 /// \author Tomas Rigaux
 ///
-/// This is the menu class for the Hanoi minigame. It is a subclass of
+/// This is the menu class for the Connect Four minigame. It is a subclass of
 /// MinigameMenu.
 ///
 
@@ -9,18 +9,18 @@
 #include <map>
 using namespace std;
 
-#ifndef HANOIMENU_H
-#define HANOIMENU_H
+#ifndef CONNECTFOURMENU_H
+#define CONNECTFOURMENU_H
 
-/// \class HanoiMenu HanoiMenu.h
-/// \brief This is the menu class for the Hanoi minigame.
-class HanoiMenu : public virtual MinigameMenu
+/// \class ConnectFourMenu ConnectFourMenu.h
+/// \brief This is the menu class for the Connect Four minigame.
+class ConnectFourMenu : public virtual MinigameMenu
 {
   public:
    /// This is the default constructor.
-   HanoiMenu();
+   ConnectFourMenu();
    /// This is the virtual destructor.
-   virtual ~HanoiMenu();
+   virtual ~ConnectFourMenu();
    /// This function sets the specific options for the Menu type.
    /// \param[in] OptionsList A map of all the options for the current
    /// menu. Each option has a unique key to make input easier.

@@ -1,7 +1,7 @@
 /// \date 24/10/2017
 /// \author Tomas Rigaux
 ///
-/// This is the menu class for the Hanoi minigame. It is a subclass of
+/// This is the menu class for the Memory Match minigame. It is a subclass of
 /// MinigameMenu.
 ///
 
@@ -9,18 +9,18 @@
 #include <map>
 using namespace std;
 
-#ifndef HANOIMENU_H
-#define HANOIMENU_H
+#ifndef MEMORYMENU_H
+#define MEMORYMENU_H
 
-/// \class HanoiMenu HanoiMenu.h
-/// \brief This is the menu class for the Hanoi minigame.
-class HanoiMenu : public virtual MinigameMenu
+/// \class MemoryMenu MemoryMenu.h
+/// \brief This is the menu class for the Memory match minigame.
+class MemoryMenu : public virtual MinigameMenu
 {
   public:
    /// This is the default constructor.
-   HanoiMenu();
+   MemoryMenu();
    /// This is the virtual destructor.
-   virtual ~HanoiMenu();
+   virtual ~MemoryMenu();
    /// This function sets the specific options for the Menu type.
    /// \param[in] OptionsList A map of all the options for the current
    /// menu. Each option has a unique key to make input easier.
