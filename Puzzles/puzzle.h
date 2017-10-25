@@ -45,6 +45,8 @@ class Puzzle
    /// Displays the screen containing the gameboard
    /// \param[in] screen, the screen object used for displaying the game. 
    virtual void OutputGame(Screen &screen);
+   ///Sends the menu class the options for the player to select.
+   virtual void SetOptionsInMenu();
    
    ///Used to output prompts, take in user input, and handle formatting errors
    //PuzzleMenu *Menu;

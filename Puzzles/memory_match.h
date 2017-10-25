@@ -1,5 +1,5 @@
 //
-// memoery_match.h
+// memory_match.h
 //
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
@@ -15,8 +15,10 @@ class MemoryMatch: virtual Puzzle
   public:
    ///Default constructor for MemoryMatch, sets height to: and width to:
    MemoryMatch();
+
    ///Deconstructor
    ~MemoryMatch();
+
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
    void RunGame();
@@ -28,7 +30,7 @@ class MemoryMatch: virtual Puzzle
    //bool ValidCommand(char Input);//Checks input formatting
    
    ///Sends the menu class the options for the player to select.
-   void setOptionsInMenu();
+   void SetOptionsInMenu();
 
    ///Checks the semantics of the players selection
    bool ValidMove(char Input);  
@@ -57,6 +59,7 @@ class MemoryMatch: virtual Puzzle
    
    ///The vector which holds the char values of the table to be matched
    std::vector<vector<char>>CharTable;
+
    ///The vector which holds the integer value for the table, 1 being matched,
    /// 0 being unmatched.
    std::vector<vector<int>> IntTable;

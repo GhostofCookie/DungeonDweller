@@ -15,8 +15,10 @@ class TicTacToe: public virtual Puzzle
   public:
    ///Default constructor for TicTacToe, sets height to 3 and width to 3
    TicTacToe();
+
    ///Deconstructor
    virtual ~TicTacToe();
+
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.   
    virtual void RunGame();
@@ -32,15 +34,22 @@ class TicTacToe: public virtual Puzzle
    /// \param[in] InputX, the X-coordinate of the selection.
    /// \param[in] InputY, the Y-coordinate of the selection. 
    bool ValidMove(int InputX, int InputY);
+
+   ///Sends the menu class the options for the player to select.
+   void SetOptionsInMenu();
+
    /// Displays the screen containing the gameboard
    /// \param[in] CfScreen, the screen object used for displaying the mini-game 
    void OutputGame(Screen &TttScreen);
+
    /// Displays the screen containing the gameboard
    /// \param[in] InputX, the X-coordinate of the selection.
    /// \param[in] InputY, the Y-coordinate of the selection.
    void MovePiece(int InputX, int InputY);
+
    ///Checks the board to see if there are any 3 of a kind for either player
    void WinCheck();
+
    ///Performs the selection for the npc opponent.
    void AiMove();
    

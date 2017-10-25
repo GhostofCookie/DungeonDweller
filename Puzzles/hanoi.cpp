@@ -24,34 +24,15 @@ Hanoi::~Hanoi()
    
 }
 
-// void Hanoi::PromptUser()
-// {
-//    cout << "The door is locked, there is three pressure plates in front of you"
-// 	<< "with rods pertruding from them. Fixed on the far left is 4 disks,"
-// 	<< "all different sizes. In order to open the door you must move them"
-// 	<< " one at a time to the right side. They must be in order on the "
-// 	<< "third rod." << endl;
-// }
+bool Hanoi:: ValidMove(char Input)
+{
 
-// int Hanoi::UserInput(Menu &menu)
-// {
-//    int input;
-//    cin >> input;
-//    getline(cin, garbage);///<Used to clear the buffer.
-//    if(cin.fail())
-//    {
-//       cin.clear();
-//       cout << "Throw exception, invalid selection" << endl;
-//    }
-//    return input;	 
-// }
+}
 
-// bool Hanoi::ValidMove(char input)
-// {
+void Hanoi::SetOptionsInMenu()
+{
 
-// }
-
-
+}
 
 void Hanoi::WinCheck()
 {
@@ -61,7 +42,7 @@ void Hanoi::WinCheck()
       PuzzleEnd=true;
 }
 
-void Hanoi::setOptionsInMenu()
+void Hanoi::SetOptionsInMenu()
 {
 
 
@@ -90,21 +71,11 @@ void Hanoi::MovePiece(int userSelection)
    } 
 }
 
-// void Hanoi::OutputGameBoard(&screen)
-// {
-//    for(int i=0; i<column; i++)
-//    {
-//       for(int j=0; j<x; j++)
-// 	 cout << Tower.at(i).at(j);
-//    }
-//    cout << endl;
-// }
-
 void Hanoi:: RunGame()
 {
    map <int, string> MAPPP;
    MAPPP.insert(pair<int,string>(1,"Blaaaaaaah"));
-   Menu menu;
+   Menu Menu;
    menu.SetOptions(MAPPP);
    menu.OutputMenu();
    // //PromptUser();
@@ -117,3 +88,41 @@ void Hanoi:: RunGame()
    // }
    cout << "A noise creaks behind the wall and the door slides open." << endl;
 }
+
+
+// void Hanoi::PromptUser()
+// {
+//    cout << "The door is locked, there is three pressure plates in front of you"
+// 	<< "with rods pertruding from them. Fixed on the far left is 4 disks,"
+// 	<< "all different sizes. In order to open the door you must move them"
+// 	<< " one at a time to the right side. They must be in order on the "
+// 	<< "third rod." << endl;
+// }
+
+// int Hanoi::UserInput(Menu &menu)
+// {
+//    int input;
+//    cin >> input;
+//    getline(cin, garbage);///<Used to clear the buffer.
+//    if(cin.fail())
+//    {
+//       cin.clear();
+//       cout << "Throw exception, invalid selection" << endl;
+//    }
+//    return input;	 
+// }
+
+// bool Hanoi::ValidMove(char input)
+// {
+
+// }
+
+// void Hanoi::OutputGameBoard(&screen)
+// {
+//    for(int i=0; i<column; i++)
+//    {
+//       for(int j=0; j<x; j++)
+// 	 cout << Tower.at(i).at(j);
+//    }
+//    cout << endl;
+// }
