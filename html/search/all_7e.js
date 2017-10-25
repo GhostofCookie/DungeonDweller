@@ -1,8 +1,11 @@
 var searchData=
 [
+  ['_7echaractermenu',['~CharacterMenu',['../classCharacterMenu.html#a6e7e278406e10cd6eb0f3d5aea5fb4b2',1,'CharacterMenu']]],
   ['_7ecodecracker',['~CodeCracker',['../classCodeCracker.html#ae7dc389e166286ca2271625154dde39c',1,'CodeCracker']]],
   ['_7econnectfour',['~ConnectFour',['../classConnectFour.html#ae7d414d7f7f694fd427bfeaef80bd1f9',1,'ConnectFour']]],
   ['_7edefaultimg',['~DefaultImg',['../classDefaultImg.html#ad3b823ee6222b08a4999802a0dc5ceec',1,'DefaultImg']]],
+  ['_7edialoguemenu',['~DialogueMenu',['../classDialogueMenu.html#a4d024e323001647260b1ba5fed12689a',1,'DialogueMenu']]],
+  ['_7eexploremenu',['~ExploreMenu',['../classExploreMenu.html#ab729e66a74a835cac6d0c1397ee9fca4',1,'ExploreMenu']]],
   ['_7egamemenu',['~GameMenu',['../classGameMenu.html#a8901f02e327b01a79b6e10a580154c44',1,'GameMenu']]],
   ['_7ehanoi',['~Hanoi',['../classHanoi.html#a59760291bfeda65330ff53c429a4e55b',1,'Hanoi']]],
   ['_7ehanoimenu',['~HanoiMenu',['../classHanoiMenu.html#a80744afb9fe2111305ed0876ea371cd0',1,'HanoiMenu']]],
@@ -18,5 +21,6 @@ var searchData=
   ['_7eroom',['~Room',['../classRoom.html#a67d5da09983cc53097807fd43ba5481a',1,'Room']]],
   ['_7escreen',['~Screen',['../classScreen.html#a0bc1a2ceaee4a245e0d31822ea0643bd',1,'Screen']]],
   ['_7eslotscreen',['~SlotScreen',['../classSlotScreen.html#a1978a574c2835aeafd746ff3813c7253',1,'SlotScreen']]],
-  ['_7etictactoe',['~TicTacToe',['../classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5',1,'TicTacToe']]]
+  ['_7etictactoe',['~TicTacToe',['../classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5',1,'TicTacToe']]],
+  ['_7etrademenu',['~TradeMenu',['../classTradeMenu.html#a4cac984a95c426346594646b2408f3b0',1,'TradeMenu']]]
 ];

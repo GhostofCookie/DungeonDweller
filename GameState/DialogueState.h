@@ -9,15 +9,18 @@
 #ifndef DIALOGUESTATE_H
 #define DIALOGUESTATE_H
 
+/// \class DialogueState DialogueState.h
+/// \brief This is the state of the game when the player character is engaged in
+/// dialogue with an NPC. Derived from GameState.
 class DialogueState : public GameState
 {
-	/// \class DialogueState DialogueState.h
-	/// \brief This is the state of the game when the player character is engaged in dialogue with an NPC.
-public:
-	/// This is the default constructor.
-	DialogueState();
-	/// Sets the layout of the game.
-	void Set();
+  public:
+   /// This is the default constructor.
+   DialogueState();
+   /// Sets the layout of the game.
+   void Set();
+   /// Gets the payout of the game.
+   void Get();
 };
 
 #endif

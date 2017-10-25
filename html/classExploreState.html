@@ -91,6 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This is defines the state of the game when the player character is exploring rooms. Derived from <a class="el" href="classGameState.html" title="An abstract class, this class defines the state of the current &#39;state&#39; of the game based on the curre...">GameState</a>.  
+ <a href="classExploreState.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ExploreState_8h_source.html">ExploreState.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ExploreState:</div>
@@ -104,19 +107,23 @@ Inheritance diagram for ExploreState:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ac10ad3cee219e8233a2c279392b70d52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac10ad3cee219e8233a2c279392b70d52"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#ac10ad3cee219e8233a2c279392b70d52">ExploreState</a> ()</td></tr>
+<tr class="memdesc:ac10ad3cee219e8233a2c279392b70d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the the default constructor. <br/></td></tr>
+<tr class="separator:ac10ad3cee219e8233a2c279392b70d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb38f9fca513b87d914d077a0f2652b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8fb38f9fca513b87d914d077a0f2652b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a8fb38f9fca513b87d914d077a0f2652b">Set</a> ()</td></tr>
-<tr class="memdesc:a8fb38f9fca513b87d914d077a0f2652b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout of the game. <br/></td></tr>
+<tr class="memdesc:a8fb38f9fca513b87d914d077a0f2652b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout for the game menu and screen. <br/></td></tr>
 <tr class="separator:a8fb38f9fca513b87d914d077a0f2652b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace76d7a24bcb85f6f0a0fe0d0e763e21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace76d7a24bcb85f6f0a0fe0d0e763e21"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#ace76d7a24bcb85f6f0a0fe0d0e763e21">Get</a> ()</td></tr>
+<tr class="memdesc:ace76d7a24bcb85f6f0a0fe0d0e763e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the layout for the game menu and screen. <br/></td></tr>
+<tr class="separator:ace76d7a24bcb85f6f0a0fe0d0e763e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGameState"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGameState')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGameState.html">GameState</a></td></tr>
 <tr class="memitem:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fa0a2bf50315c4a35a3890a0adcee5c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c">GameState</a> ()</td></tr>
 <tr class="memdesc:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
 <tr class="separator:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4283cb3aa5637d4815d64272843a0625 inherit pub_methods_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4283cb3aa5637d4815d64272843a0625"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4283cb3aa5637d4815d64272843a0625">Get</a> ()=0</td></tr>
-<tr class="memdesc:a4283cb3aa5637d4815d64272843a0625 inherit pub_methods_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the set layout. <br/></td></tr>
-<tr class="separator:a4283cb3aa5637d4815d64272843a0625 inherit pub_methods_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -127,7 +134,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aebc12d6e90edfbe51a571858f6288f93 inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>/date 21/10/2017 /author Tomas Rigaux</p>
+<div class="textblock"><p>This is defines the state of the game when the player character is exploring rooms. Derived from <a class="el" href="classGameState.html" title="An abstract class, this class defines the state of the current &#39;state&#39; of the game based on the curre...">GameState</a>. </p>
+<p>/date 21/10/2017 /author Tomas Rigaux</p>
 <p>This is the state of the game when a player is exploring. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>GameState/<a class="el" href="ExploreState_8h_source.html">ExploreState.h</a></li>

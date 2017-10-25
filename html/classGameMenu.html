@@ -93,15 +93,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>An abstract class, this is the base class for the all the in-game menu classes. It requires less member functions than <a class="el" href="classMenu.html" title="This is the base class for all menus for the main game. ">Menu</a>.  
  <a href="classGameMenu.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="GameMenu_8h_source.html">GameMenu.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GameMenu:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classGameMenu.png" usemap="#GameMenu_map" alt=""/>
   <map id="GameMenu_map" name="GameMenu_map">
-<area href="classMenu.html" title="This is the base class for all menus for the main game. " alt="Menu" shape="rect" coords="0,0,98,24"/>
-<area href="classMinigameMenu.html" title="An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes..." alt="MinigameMenu" shape="rect" coords="0,112,98,136"/>
-<area href="classHanoiMenu.html" title="This is the menu class for the Hanoi minigame. " alt="HanoiMenu" shape="rect" coords="0,168,98,192"/>
+<area href="classMenu.html" title="This is the base class for all menus for the main game. " alt="Menu" shape="rect" coords="222,0,323,24"/>
+<area href="classCharacterMenu.html" alt="CharacterMenu" shape="rect" coords="0,112,101,136"/>
+<area href="classDialogueMenu.html" alt="DialogueMenu" shape="rect" coords="111,112,212,136"/>
+<area href="classExploreMenu.html" title="This is the menu displayed when the player character is being chosen before the game begins..." alt="ExploreMenu" shape="rect" coords="222,112,323,136"/>
+<area href="classMinigameMenu.html" title="An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes..." alt="MinigameMenu" shape="rect" coords="333,112,434,136"/>
+<area href="classTradeMenu.html" title="This is the menu displayed when the player character is trading. " alt="TradeMenu" shape="rect" coords="444,112,545,136"/>
+<area href="classHanoiMenu.html" title="This is the menu class for the Hanoi minigame. " alt="HanoiMenu" shape="rect" coords="333,168,434,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -126,9 +132,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a> ()</td></tr>
 <tr class="memdesc:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the destructor for the class. It is virtual. <br/></td></tr>
 <tr class="separator:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8451a530cd2b53f456658f8741ae45bb inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8451a530cd2b53f456658f8741ae45bb"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetOptions</b> (map&lt; int, string &gt; OptionsList, string type=&quot;generic&quot;)</td></tr>
-<tr class="separator:a8451a530cd2b53f456658f8741ae45bb inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89c9ed81c1bc8bf68cec3b0c9ab877a1"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetOptions</b> (map&lt; int, string &gt; optionsList, string type=&quot;generic&quot;)</td></tr>
+<tr class="separator:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a81bb84f921911944e4060d1c5a1b2507">HandleOptionInput</a> (istream &amp;is)</td></tr>
 <tr class="separator:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4665a914fe24a8b11d8d6c95792184b3 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4665a914fe24a8b11d8d6c95792184b3"></a>
@@ -174,7 +180,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classHanoiMenu.html#a8d287d810bc4cf49775503470830e48f">HanoiMenu</a>, and <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>.</p>
+<p>Implemented in <a class="el" href="classCharacterMenu.html#a7a9163eec7ac69aeb5431869a0675646">CharacterMenu</a>, <a class="el" href="classDialogueMenu.html#a2fa399f6e56c5421f161c0e90e17ac13">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a6f057968d2aece06eef01b9da9b42c2d">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a8d287d810bc4cf49775503470830e48f">HanoiMenu</a>, <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>, and <a class="el" href="classTradeMenu.html#a743dd5b1984d2640865ecd71d6e73d5e">TradeMenu</a>.</p>
 
 </div>
 </div>
@@ -218,7 +224,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classHanoiMenu.html#a1b6275a079452173e058c14f3b822271">HanoiMenu</a>, and <a class="el" href="classMinigameMenu.html#a29820b5b338dec978b585f7a0df7b81e">MinigameMenu</a>.</p>
+<p>Implemented in <a class="el" href="classCharacterMenu.html#a374493bc5b1e04b13647482c98df5fd6">CharacterMenu</a>, <a class="el" href="classDialogueMenu.html#ad9ce118b0515147fd59188e986cfbfee">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a916408504bfc970370d199745f17b252">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a1ad3788638502865cb8d52040dcc27f8">HanoiMenu</a>, <a class="el" href="classMinigameMenu.html#abf3dcda8c256be03ebe3661b8dde2ea2">MinigameMenu</a>, and <a class="el" href="classTradeMenu.html#a60cbb4e35a30cceab30448e19d13a882">TradeMenu</a>.</p>
 
 </div>
 </div>
