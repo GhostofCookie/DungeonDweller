@@ -47,16 +47,16 @@ class Hanoi: public virtual Puzzle
 
    /// Displays the screen containing the gameboard
    /// \param[in] HanoiScreen, the screen object used for the hanoi game.
-   void OutputGame(Screen &hanoiScreen);
+   void OutputGame(Screen &hScreen);
 
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.
    std::vector<vector<int>>tower;
-
+   
    ///X-coordinate size in the tower vector
-   int x;
+   int xSize;
 
    /// Y-Coordinate size in the tower vector
-   int y;
+   int ySize;
 };
 #endif

@@ -8,14 +8,14 @@
 
 Hanoi::Hanoi()
 {
-   y=3;
-   x=4;
-   Tower.resize(y);
-   for(int i=0; i<y; i++)
+   ySize=3;
+   xSize=4;
+   tower.resize(ySize);
+   for(int i=0; i<ySize; i++)
    {
-      Tower.at(i).resize(x);
-      for(int j=0; j<x; j++)
-	 Tower.at(i).at(j)='*';
+      tower.at(i).resize(xSize);
+      for(int j=0; j<xSize; j++)
+	 tower.at(i).at(j)=0;
    }
 }
 
@@ -24,7 +24,7 @@ Hanoi::~Hanoi()
    
 }
 
-bool Hanoi:: ValidMove(char Input)
+bool Hanoi:: ValidMove(char input)
 {
    return true;
 }
@@ -36,10 +36,29 @@ void Hanoi::SetOptionsInMenu()
 
 void Hanoi::WinCheck()
 {
+   
    bool win=false;
    //Check if the game has been won
    if(win==true)
       PuzzleEnd=true;
+
+   //Check the vector, columns at a time to see if the play has won.
+   int successfulStackCount=0;
+   int index=1;
+   for(int j=0; j<ySize; j++)
+   {
+      //If the first element in the fourth row is 1, it is the smallest object.
+      //Continue checking the column, checking if every succeeding element is
+      //smaller, if they are in order, the player has won.
+      if(tower.at(xSize).at(j)>=index)
+      {
+	 index=tower.at(xSize).at(j);
+	 successfulStackCount++;
+      }
+   }
+   //If the final stack is full, and in order, set GameEnd to true
+   if(successfulStackCount==4)
+      GameEnd=true;
 }
 
 
@@ -48,9 +67,30 @@ void Hanoi::MovePiece(int userSelection)
    switch(userSelection)
    {
       case 1:
+	 int index;
+	 int zeroCount;
 	 cout << "Move left, right" << endl;
-	 
+	 for(int i=0; i<ySize; i++)
+	 {
+	    if(tower.at(1).at(i)!=0)
+	       index=tower.at(1).at(i);
+	    tower.at(1).at(i)=0;
+	    else
+	       zeroCount++;
+	    if(zeroCount==4)
+	    {
+	       cout << "That stack is empty, please try again!" << endl;
+	       break;
+	    }
+	    for(int i=0; i<ySize; i++)
+	    {
+	       //Once we find a spot thats already filled or the bottom of the stack
+	       if(tower.at(1).at(i)!=0 || i==3)
+	       tower.at(2).at(i-1)=index;
+	    }
+	 }
 	 break;
+	 
       case 2:
 	 cout << "Move centre left" << endl;
 	 break;
@@ -66,21 +106,38 @@ void Hanoi::MovePiece(int userSelection)
    } 
 }
 
+
+void Hanoi::OutputGame(Screen &hScreen)
+{
+   //These for loops to be replaced by a screen function call
+   for(int i=0; i<column; i++)
+   {
+      for(int j=0; j<x; j++)
+      {
+	 cout << tower.at(i).at(j);
+      }
+      cout << endl;
+   }
+   
+}
+
 void Hanoi:: RunGame()
 {
-   map <int, string> MAPPP;
-   MAPPP.insert(pair<int,string>(1,"Blaaaaaaah"));
-   Menu Menu;
-   Menu.SetOptions(MAPPP);
-   Menu.OutputMenu();
-   // //PromptUser();
-   // while(GameEnd==false)
-   // {
-   //    // OutputGame(&screen);
-   //    //int userSelection=UserInput(&menu);
-   //    //MovePiece(userSelection);
-   //    WinCheck();
-   // }
+   
+   
+   Menu hMenu;
+   Screen hScreen;
+   hMenu.SetOptions();
+   hMenu.OutputMenu();
+   hMenu.PromptUser();
+   while(GameEnd==false)
+   {
+      OutputGame(hScreen);
+      hMenu.OutputMenu();
+      int userSelection=hMenu.PromptUser();
+      MovePiece(userSelection);
+      WinCheck();
+   }
    cout << "A noise creaks behind the wall and the door slides open." << endl;
 }
 
@@ -107,17 +164,4 @@ void Hanoi:: RunGame()
 //    return input;	 
 // }
 
-// bool Hanoi::ValidMove(char input)
-// {
 
-// }
-
-// void Hanoi::OutputGameBoard(&screen)
-// {
-//    for(int i=0; i<column; i++)
-//    {
-//       for(int j=0; j<x; j++)
-// 	 cout << Tower.at(i).at(j);
-//    }
-//    cout << endl;
-// }
