@@ -31,21 +31,21 @@ class TicTacToe: public virtual Puzzle
 
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input.
-   /// \param[in] InputX, the X-coordinate of the selection.
-   /// \param[in] InputY, the Y-coordinate of the selection. 
-   bool ValidMove(int InputX, int InputY);
+   /// \param[in] inputX, the X-coordinate of the selection.
+   /// \param[in] inputY, the Y-coordinate of the selection. 
+   bool ValidMove(int inputX, int inputY);
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
    /// Displays the screen containing the gameboard
-   /// \param[in] CfScreen, the screen object used for displaying the mini-game 
-   void OutputGame(Screen &TttScreen);
+   /// \param[in] tttScreen,the screen object used for displaying the mini-game 
+   void OutputGame(Screen &tttScreen);
 
    /// Displays the screen containing the gameboard
-   /// \param[in] InputX, the X-coordinate of the selection.
-   /// \param[in] InputY, the Y-coordinate of the selection.
-   void MovePiece(int InputX, int InputY);
+   /// \param[in] inputX, the X-coordinate of the selection.
+   /// \param[in] inputY, the Y-coordinate of the selection.
+   void MovePiece(int inputX, int inputY);
 
    ///Checks the board to see if there are any 3 of a kind for either player
    void WinCheck();
@@ -54,6 +54,6 @@ class TicTacToe: public virtual Puzzle
    void AiMove();
    
    ///Vector to store the contents of the gameboard
-   std::vector<vector<char> > GameBoard;
+   std::vector<vector<char>>gameBoard;
 };
 #endif

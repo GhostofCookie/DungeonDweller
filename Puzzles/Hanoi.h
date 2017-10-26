@@ -32,7 +32,7 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(char Input);
+   bool ValidMove(char input);
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -47,11 +47,11 @@ class Hanoi: public virtual Puzzle
 
    /// Displays the screen containing the gameboard
    /// \param[in] HanoiScreen, the screen object used for the hanoi game.
-   void OutputGame(Screen &HanoiScreen);
+   void OutputGame(Screen &hanoiScreen);
 
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.
-   std::vector<vector<int>>Tower;
+   std::vector<vector<int>>tower;
 
    ///X-coordinate size in the tower vector
    int x;

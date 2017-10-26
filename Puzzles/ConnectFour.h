@@ -32,7 +32,7 @@ class ConnectFour: virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(char Input);
+   bool ValidMove(char input);
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -40,17 +40,17 @@ class ConnectFour: virtual Puzzle
    ///Assign the player selection to the board.
    ///\param[in] UserPiece, whichever token the player is using for the game
    ///\param[in] x, the X-coordinate (column) to drop the token in
-   void MovePiece(char UserPiece, int x);
+   void MovePiece(char userPiece, int x);
 
    /// Displays the screen containing the gameboard
    /// \param[in] CfScreen, the screen object used for displaying the mini-game 
-   void OutputGame(Screen &CfScreen);
+   void OutputGame(Screen &cfScreen);
 
    ///Checks to see if there have been any 4 tokens in a row in the grid vector.
    bool WinCheck();
 
    /// The vector which stores the gameboards chars.
-   std::vector<vector<char>>Grid;   
+   std::vector<vector<char>>grid;   
 
 };
 #endif

@@ -33,35 +33,36 @@ class MemoryMatch: virtual Puzzle
    void SetOptionsInMenu();
 
    ///Checks the semantics of the players selection
-   bool ValidMove(char Input);  
+   /// \param[in] The input that the user has selected to try to perform.
+   bool ValidMove(char input);  
    /// Displays the screen containing the gameboard
-   /// \param[in] MemScreen, the screen object used for the MemoryMatch game.
-   void OutputGame(Screen &MemScreen);
+   /// \param[in] memScreen, the screen object used for the MemoryMatch game.
+   void OutputGame(Screen &memScreen);
 
    ///Flips two cards and shows them to the user for a certain time, if they are
    /// a match, it leaves them face-up, otherwise flip them back down.
-   ///\param[in] InputX1, The X-Coordinate of the first card to flip
-   ///\param[in] InputY1, The Y-Coordinate of the first card to flip
-   ///\param[in] InputX2, The X-Coordinate of the second card to flip
-   ///\param[in] InputY2, The Y-Coordinate of the second card to flip
-   void MovePiece(int InputX1, int InputY1, int InputX2, int InputY2);
+   ///\param[in] inputX1, The X-Coordinate of the first card to flip
+   ///\param[in] inputY1, The Y-Coordinate of the first card to flip
+   ///\param[in] inputX2, The X-Coordinate of the second card to flip
+   ///\param[in] inputY2, The Y-Coordinate of the second card to flip
+   void MovePiece(int inputX1, int inputY1, int inputX2, int inputY2);
 
    ///Checks if the two cards selected are a match, returns true if yes.
-   ///\param[in] InputX1, The X-Coordinate of the first card to flip
-   ///\param[in] InputY1, The Y-Coordinate of the first card to flip
-   ///\param[in] InputX2, The X-Coordinate of the second card to flip
-   ///\param[in] InputY2, The Y-Coordinate of the second card to flip 
-   bool MatchCheck(int InputX1, int InputY1, int InputX2, int InputY2);
+   ///\param[in] inputX1, The X-Coordinate of the first card to flip
+   ///\param[in] inputY1, The Y-Coordinate of the first card to flip
+   ///\param[in] inputX2, The X-Coordinate of the second card to flip
+   ///\param[in] inputY2, The Y-Coordinate of the second card to flip 
+   bool MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2);
 
    ///Checks the state of the int table to see if the player has won the game,
    ///returns true when they have completed the puzzle.
    void WinCheck();
    
    ///The vector which holds the char values of the table to be matched
-   std::vector<vector<char>>CharTable;
+   std::vector<vector<char>>charTable;
 
    ///The vector which holds the integer value for the table, 1 being matched,
    /// 0 being unmatched.
-   std::vector<vector<int>> IntTable;
+   std::vector<vector<int>>intTable;
 };
 #endif

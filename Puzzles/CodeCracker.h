@@ -31,11 +31,11 @@ class CodeCracker: virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input.
    ///\param[in]input, has been checked for syntax by input method  
-   bool ValidMove(char Input);
+   bool ValidMove(char input);
 
    ///Checks to see if the user input is one of the accepted answers.
    ///\param[in] Input, an answer to the riddle in the form of the char.
-   bool ValidAnswer(const char Input);
+   bool ValidAnswer(const char input);
    
    ///Checks if the player has successfully answered 3 riddles.
    void WinCheck();
@@ -54,7 +54,7 @@ class CodeCracker: virtual Puzzle
    std::vector<string>>question(3);
 
    ///Vector to store the questions answers read in from the file, in order
-   std::vector<int>>Answer(3);
+   std::vector<int>>answer(3);
 
    ///Vector to store the descriptions on how to answer each question, in order.
    std::vector<string>>format(3);//Descriptions of how to answer questions
