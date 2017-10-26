@@ -1,7 +1,8 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
+/// \date 21/10/2017
+/// \author Tomas Rigaux
 ///
-/// This class defines the current state of the game, based on the current location and actions of the player character.
+/// This class defines the current state of the game, based on the current
+/// location and actions of the player character.
 ///
 
 #include "../Menu/Menu.h"

@@ -1,6 +1,6 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
-///
+/// \author Tomas Rigaux
+/// \date 21/10/2017
+//
 /// This is the Menu class. It handles the complicated inner workings of all
 /// menus.
 ///

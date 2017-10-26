@@ -1,5 +1,5 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
+/// \date 21/10/2017
+/// \author Tomas Rigaux
 ///
 /// This is the state of the game when a player is exploring.
 ///

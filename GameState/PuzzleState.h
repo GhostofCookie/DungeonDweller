@@ -1,7 +1,8 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
+/// \date 21/10/2017
+/// \author Tomas Rigaux
 ///
-/// This is the state of the player when they are trying to solve a puzzle/minigame.
+/// This is the state of the player when they are trying to solve a puzzle
+/// / minigame.
 ///
 
 #include "GameState.h"

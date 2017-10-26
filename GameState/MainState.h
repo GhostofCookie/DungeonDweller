@@ -1,7 +1,8 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
+/// \date 21/10/2017
+/// \author Tomas Rigaux
 ///
-/// This class is derived from the GameState abstract class. It sets the state of the game.
+/// This class is derived from the GameState abstract class. It sets the state
+/// of the game.
 ///
 
 #include "GameState.h"

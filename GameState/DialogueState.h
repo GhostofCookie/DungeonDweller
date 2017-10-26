@@ -1,7 +1,8 @@
-/// /date 21/10/2017
-/// /author Tomas Rigaux
+/// \date 21/10/2017
+/// \author Tomas Rigaux
 ///
-/// This class defines thestate of the game qwhen the player character is interacting with an NPC in dialogue.
+/// This class defines thestate of the game qwhen the player character is
+/// interacting with an NPC in dialogue.
 ///
 
 #include "GameState.h"
