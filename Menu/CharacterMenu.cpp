@@ -8,7 +8,7 @@ CharacterMenu::~CharacterMenu()
 {
 }
 
-void CharacterMenu::SetOptions(map<string> optionsList, string type)
+void CharacterMenu::SetOptions(map<int,string> optionsList, string type)
 {
 }
 

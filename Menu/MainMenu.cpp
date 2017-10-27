@@ -2,13 +2,14 @@
 
 MainMenu::MainMenu()
 {
+
 }
 
 MainMenu::~MainMenu()
 {
 }
 
-void MainMenu::SetOptions(map<string> OptionsList, string type)
+void MainMenu::SetOptions(map<int,string> OptionsList, string type)
 {
 }
 

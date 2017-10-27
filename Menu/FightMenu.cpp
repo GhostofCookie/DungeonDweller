@@ -8,7 +8,7 @@ FightMenu::~FightMenu()
 {
 }
 
-void FightMenu::SetOptions(map<string> OptionsList, string type)
+void FightMenu::SetOptions(map<int,string> OptionsList, string type)
 {
 }
 

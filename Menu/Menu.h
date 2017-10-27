@@ -46,7 +46,7 @@ public:
 	/// to dimensions height*width.
 	/// \param[in] height This is the height of the menu.
 	/// \param[in] width This is the width of the menu.
-	Menu(int height = 10, int width = 100);
+	Menu(int height = 10, int width = 101);
 	/// This is the destructor for the class. It is virtual.
 	virtual ~Menu();
 	virtual void SetOptions(map<int, string> optionsList, string type = "generic");

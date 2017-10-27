@@ -8,7 +8,7 @@ HanoiMenu::~HanoiMenu()
 {
 }
 
-void HanoiMenu::SetOptions(map<string> optionsList, string type)
+void HanoiMenu::SetOptions(map<int,string> optionsList, string type)
 {
 }
 

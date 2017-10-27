@@ -8,7 +8,7 @@ ExploreMenu::~ExploreMenu()
 {
 }
 
-void ExploreMenu::SetOptions(map<string> optionsList, string type)
+void ExploreMenu::SetOptions(map<int,string> optionsList, string type)
 {
 }
 

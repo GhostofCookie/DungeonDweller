@@ -8,7 +8,7 @@ TradeMenu::~TradeMenu()
 {
 }
 
-void TradeMenu::SetOptions(map<string> optionsList, string type)
+void TradeMenu::SetOptions(map<int,string> optionsList, string type)
 {
 }
 
