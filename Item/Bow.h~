@@ -1,6 +1,0 @@
-#ifnedef BOW_H
-#define BOW_H
-
-class Bow : public Weapon
-{};
-#endif
