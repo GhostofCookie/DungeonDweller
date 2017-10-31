@@ -1,0 +1,11 @@
+Class interface:                 57/60
+  - remember to add "const" to accessor functions.  This is sometimes forgotten.
+
+
+Reference manual:                37/40
+
+  - For some reason RoomTree is not included in the doxygen manual?
+  - check how the Doxygen documentation comes out.  
+    e.g. Player class: the parameters are not documented quite right.
+
+Total                            94/100
