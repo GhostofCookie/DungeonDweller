@@ -8,7 +8,7 @@ MemoryMenu::~MemoryMenu()
 {
 }
 
-void MemoryMenu::SetOptions(map<int, string> optionsList, string type)
+void MemoryMenu::SetOptions(map<int, string> optionsList, int row, int col)
 {
 }
 

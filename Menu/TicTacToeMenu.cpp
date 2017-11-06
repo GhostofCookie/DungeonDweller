@@ -8,7 +8,7 @@ TicTacToeMenu::~TicTacToeMenu()
 {
 }
 
-void TicTacToeMenu::SetOptions(map<int,string> optionsList, string type)
+void TicTacToeMenu::SetOptions(map<int,string> optionsList, int row, int col)
 {
 }
 

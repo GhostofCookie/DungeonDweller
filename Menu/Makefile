@@ -1,14 +1,13 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11 -g  
-OBJS = main.o Menu.o GameMenu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o MinigameMenu.o HanoiMenu.o 
-OBJS += MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o
+CCFLAGS = -Wall -std=c++11
+OBJS = menuTest.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o
 
 ## targets and prerequisites
 .PHONY : all
-all : main
+all : menuTest
 
-main : $(OBJS)
-	$(CC) $^ -o $(CCFLAGS) $<
+menuTest : $(OBJS)
+	$(CC) $^ -o $@
 
 # default rule for compiling .cc to .o
 %.o : %.cpp

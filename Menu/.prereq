@@ -1,1 +1,20 @@
- 
+menuTest.o: menuTest.cpp MainMenu.h GameMenu.h Menu.h ExploreMenu.h \
+ FightMenu.h TradeMenu.h DialogueMenu.h RiddleMenu.h MinigameMenu.h \
+ TicTacToeMenu.h HanoiMenu.h CharacterMenu.h MemoryMenu.h \
+ ConnectFourMenu.h
+Menu.o: Menu.cpp Menu.h
+MainMenu.o: MainMenu.cpp MainMenu.h GameMenu.h Menu.h
+ExploreMenu.o: ExploreMenu.cpp ExploreMenu.h GameMenu.h Menu.h
+FightMenu.o: FightMenu.cpp FightMenu.h GameMenu.h Menu.h
+TradeMenu.o: TradeMenu.cpp TradeMenu.h GameMenu.h Menu.h
+DialogueMenu.o: DialogueMenu.cpp DialogueMenu.h GameMenu.h Menu.h
+CharacterMenu.o: CharacterMenu.cpp CharacterMenu.h GameMenu.h Menu.h
+HanoiMenu.o: HanoiMenu.cpp HanoiMenu.h MinigameMenu.h GameMenu.h Menu.h
+MemoryMenu.o: MemoryMenu.cpp MemoryMenu.h MinigameMenu.h GameMenu.h \
+ Menu.h
+RiddleMenu.o: RiddleMenu.cpp RiddleMenu.h MinigameMenu.h GameMenu.h \
+ Menu.h
+TicTacToeMenu.o: TicTacToeMenu.cpp TicTacToeMenu.h MinigameMenu.h \
+ GameMenu.h Menu.h
+ConnectFourMenu.o: ConnectFourMenu.cpp ConnectFourMenu.h MinigameMenu.h \
+ GameMenu.h Menu.h

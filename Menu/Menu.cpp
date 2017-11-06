@@ -26,18 +26,34 @@ void Menu::HandleOptionInput(istream& is)
   is >> option;
   auto it = indexMap.begin();
   while (it != indexMap.end()) {
+    is >> option;
     if (option != it->first)
       ++it;
     else
-      std::cout << "You have selected" << it->second;
+      cout << "You have selected" << it->second;
   }
 }
 
-void Menu::SetOptions(map<int, string> optionsList, string type)
+void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 {
   auto it = optionsList.begin();
-  int row = 3;
-  int col = 3;
+
+  while (it != optionsList.end())
+    {
+      for (unsigned int j = 0; j < it->second.length(); j++)
+	set(row, col - it->second.length()/2+ j, it->second[j]);
+
+      row += 2;
+      if (row >= menuHeight - 1)
+	{
+	  col += it->second.length() + 10;
+	  row = 3;
+	}
+      ++it;
+    }
+  it = optionsList.begin();
+
+  /**********************************************************
   if (type == "generic")
     {
       while (it != optionsList.end())
@@ -66,6 +82,26 @@ void Menu::SetOptions(map<int, string> optionsList, string type)
 	}
       it = optionsList.begin();
     }
+
+  else if (type == "main")
+    {
+
+      while (it != optionsList.end())
+	{
+	  for (unsigned int j = 0; j < it->second.length(); j++)
+	    set(row, (menuWidth-1)/2 - it->second.length()/2 + j, it->second[j]);
+
+	  row += 2;
+	  if (row >= menuHeight - 1)
+	    {
+	      col += it->second.length() + 10;
+	      row = 3;
+	    }
+	  ++it;
+	}
+      it = optionsList.begin();
+    }
+  ******************************/
 }
 
 void Menu::OutputMenu()
