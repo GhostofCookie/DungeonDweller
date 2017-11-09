@@ -9,32 +9,33 @@
 /// Sets up the test variables for testing.
 void MenuTest::setUp()
 {
-	menu = new Menu();
-	menu2 = new Menu(100, 100);
-	options.insert(pair<int, string>(1, "I'm the first option!"));
-	options.insert(pair<int, string>(2, "I'm the second!"));
+   menu = new Menu();
+   menu2 = new Menu(100, 100);
+   options.insert(pair<int, string>(1, "I'm the first option!"));
+   options.insert(pair<int, string>(2, "I'm the second!"));
 }
 /// Deletes any pointers to prevent memory leak.
 void MenuTest::tearDown()
 {
-	//   delete menu;
+   delete menu;
 }
 /// Tests that the constructor is wokring in several varieties of construction.
 void MenuTest::testConstructors()
 {
-
+   menu = new Menu();
+   menu2 = new Menu(100,100);
 }
 /// Tests the setting of options.
 void MenuTest::testSetting()
 {
-	menu->SetOptions(options);
-	menu2->SetOptions(options, 5, 10);
+   menu->SetOptions(options);
+   menu2->SetOptions(options, 5, 10);
 }
 /// Tests that menu builds correctly.
 void MenuTest::testBuilding()
 {
-	menu->SetOptions(options);
-	menu->OutputMenu();
-	menu2->SetOptions(options, 10, 20);
-	menu2->OutputMenu();
+   menu->SetOptions(options);
+   menu->OutputMenu();
+   menu2->SetOptions(options, 10, 20);
+   menu2->OutputMenu();
 }

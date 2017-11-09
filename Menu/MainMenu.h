@@ -17,8 +17,7 @@ class MainMenu : public GameMenu
 public:
   /// This is the default constructor.
   MainMenu();
-  /// This is the virtual destructor.
-  virtual ~MainMenu();
+
   /// This function sets the specific options for the Menu type.
   /// \param[in] OptionsList A map of all the options for the current
   /// menu. Each option has a unique key to make input easier.
