@@ -19,22 +19,22 @@ class MenuTest : public CppUnit::TestFixture
 {
    //CPP UNIT TESTS
    CPPUNIT_TEST_SUITE(MenuTest);
-   CPPUNIT_TEST(testConstructors);
-   CPPUNIT_TEST(testSetting);
-   CPPUNIT_TEST(testBuilding);
+   CPPUNIT_TEST(TestConstructors);
+   CPPUNIT_TEST(TestSetting);
+   CPPUNIT_TEST(TestBuilding);
    CPPUNIT_TEST_SUITE_END();
 
   public:
    /// Sets up the test variables for testing.
-   void setUp();
+   void SetUp();
    /// Deletes any pointers to prevent memory leak.
-   void tearDown();
+   void TearDown();
    /// Tests that the constructor is wokring in several varieties of construction.
-   void testConstructors();
+   void TestConstructors();
    /// Tests the setting of options.
-   void testSetting();
+   void TestSetting();
    /// Tests that menu builds correctly.
-   void testBuilding();
+   void TestBuilding();
 
   private:
    Menu *menu = nullptr;
