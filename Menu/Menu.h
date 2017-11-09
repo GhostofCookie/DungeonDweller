@@ -18,7 +18,7 @@ using namespace std;
 class Menu 
 {
  private:
-  map<int, string> indexMap;
+  map<char, void (*f)(int)> indexMap;
  protected:
   int menuHeight;
   int menuWidth;
@@ -51,6 +51,14 @@ class Menu
   Menu(int height = 10, int width = 101);
   /// This is the destructor for the class. It is virtual.
   virtual ~Menu();
+  /// Adds an option with a character for the user to call, a name to 
+  /// display, and function to run.
+  /// \param[in] command The character for the user to input.
+  /// \param[in] optionName The name to display for the user.
+  /// \param[in] f(int) The is the function which adds functionality to
+  /// the option and command.
+  virtual void AddOption(char command, string optionName, void(*f)(int));
+  /// A function to set the added options to the character array.
   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3);
   /// Handles the user input, and runs an option from the menu.
   /// \param[in,out] is The in-stream operator to read the input.
