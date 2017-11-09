@@ -25,7 +25,7 @@ void Menu::HandleInput(istream& is)
   int option;
   is >> option;
   //  if(indexMap.find(option) != indexMap.end())
-    cout << "You have selected\n"<<indexMap.find(2)->second;
+    cout << "You have selected\n"<<indexMap[1];
   
 }
 
@@ -46,7 +46,8 @@ void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 	}
       ++it;
     }
-  it = optionsList.begin();
+   it = optionsList.begin();
+   indexMap = optionsList;
 
   /*********************************************************
   if (type == "generic")

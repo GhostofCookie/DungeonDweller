@@ -1,31 +1,35 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11
+CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
 OBJS = menuTest.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o
+OBJS2 = runTest.o Menu.o MenuTest.o
 
 ## targets and prerequisites
 .PHONY : all
-all : menuTest
+all : menuTest runTest
 
 menuTest : $(OBJS)
-	$(CC) $^ -o $@
+	$(CC) $(CCFLAGS) $^ -o $@
+
+runTest : $(OBJS2)
+	$(CC) $(CCFLAGS) $^ -o $@
 
 # default rule for compiling .cc to .o
 %.o : %.cpp
 	$(CC) -c $(CCFLAGS) $<
 
 ## generate the prerequisites and append to the desired file
-.prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
+.prereq : $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq
-	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) >> ./.prereq
 
 ## include the generated prerequisite file
 include .prereq
 
 .PHONY : clean
 clean:
-	rm -f *.o
+	rm -f *.o *.gcda *.gcno 
 	rm -f *~ *# .#*
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f main
+	rm -f menuTest runTest
