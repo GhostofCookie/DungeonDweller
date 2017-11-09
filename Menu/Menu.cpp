@@ -24,92 +24,46 @@ void Menu::HandleInput(istream& is)
 {
   int option;
   is >> option;
-  //  if(indexMap.find(option) != indexMap.end())
-    cout << "You have selected\n"<<indexMap[1];
+  if(indexMap.find(option) != indexMap.end())
+	cout << "You have selected\n"<<indexMap[option];
+	
   
+}
+
+void Menu::AddOption(char command, string optionName, void (*f)(int))
+{
+	indexMap[static_cast<int>(command)] = optionName;
 }
 
 void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 {
-  auto it = optionsList.begin();
-
-   while (it != optionsList.end())
-    {
-      for (unsigned int j = 0; j < it->second.length(); j++)
-	set(row, col + j, it->second[j]);
-
-      row += 2;
-      if (row >= menuHeight - 1)
+	auto it = optionsList.begin();
+	indexMap = optionsList;
+	while (it != optionsList.end())
 	{
-	  col += it->second.length() + 10;
-	  row = 3;
+		for (unsigned int j = 0; j < it->second.length(); j++)
+			set(row, col + j, it->second[j]);
+		row += 2;
+		if (row >= menuHeight - 1)
+		{
+			col += it->second.length() + 10;
+			row = 3;
+		}
+		++it;
 	}
-      ++it;
-    }
-   it = optionsList.begin();
-   indexMap = optionsList;
-
-  /*********************************************************
-  if (type == "generic")
-    {
-      while (it != optionsList.end())
-	{
-	  for (unsigned int j = 0; j < it->second.length(); j++)
-	    set(row, col + j, it->second[j]);
-
-	  row += 2;
-	  if (row >= menuHeight - 1)
-	    {
-	      col += it->second.length() + 10;
-	      row = 3;
-	    }
-	  ++it;
-	}
-      it = optionsList.begin();
-    }
-  else if (type == "dialogue")
-    {
-      while (it != optionsList.end())
-	{
-	  for (unsigned int i = 0; i < it->second.length(); i++)
-	    set(row, col + i, it->second[i]);
-	  ++it;
-	  row += 1;
-	}
-      it = optionsList.begin();
-    }
-
-  else if (type == "main")
-    {
-
-      while (it != optionsList.end())
-	{
-	  for (unsigned int j = 0; j < it->second.length(); j++)
-	    set(row, (menuWidth-1)/2 - it->second.length()/2 + j, it->second[j]);
-
-	  row += 2;
-	  if (row >= menuHeight - 1)
-	    {
-	      col += it->second.length() + 10;
-	      row = 3;
-	    }
-	  ++it;
-	}
-      it = optionsList.begin();
-    }
-  ******************************/
+	it = optionsList.begin();
 }
 
 void Menu::OutputMenu()
 {
-  BuildMenu();
+	BuildMenu();
 
-  for (int i = 0; i < menuHeight; i++)
-    {
-      for (int j = 0; j < menuWidth; j++)
+	for (int i = 0; i < menuHeight; i++)
+	{
+		for (int j = 0; j < menuWidth; j++)
 	cout << menu_Array[i][j];
-      cout << '\n';
-    }
+		cout << '\n';
+	}
 }
 
 // Helper Functions

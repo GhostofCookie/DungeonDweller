@@ -12,7 +12,7 @@
 using namespace std;
 
 /// Class to represent the layout of rooms in a doubly linked tree-like format
-class Room {
+class RoomTree {
    //Nested Class****************************************************************
    /// Class to represent nodes on the tree
    class Node {
@@ -48,11 +48,12 @@ class Room {
 
    /// Inserts a new room at child (throws exeption if already occupied)
    /// \param[in] dir Direction of the new child (left(l) right(r) or center(c))
-   void newRoom(char dir);
+   void newRoom(char dir, Room* roomptr);
 
    /// Moves through the tree
    /// \param[in] dir Direction to move(left(l) right(r) center(c) or parent(p))
-   void move(char dir);
+   /// \return True if move was successfull, false otherwise
+   bool move(char dir);
 
    /// Gives a pointer to the room currently at
    /// \return Pointer to current room
