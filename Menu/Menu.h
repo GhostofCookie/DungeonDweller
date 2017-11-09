@@ -8,6 +8,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <stdexcept>
 using namespace std;
 
 #ifndef MENU_H

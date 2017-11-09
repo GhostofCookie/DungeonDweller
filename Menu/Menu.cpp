@@ -15,20 +15,21 @@ Menu::Menu(int height, int width)
 
 Menu::~Menu()
 {
-   for (int i = 0; i < menuWidth; i++)
+   for (int i = 0; i < menuHeight; i++)
       delete[] menu_Array[i];
-   delete menu_Array;
+   delete[] menu_Array;
 }
 
 void Menu::HandleInput(istream& is)
 {
    char option;
+   int item =1;
+   cout<<"-> ";
    is >> option;
-   if(indexMap.find(option) != indexMap.end())
-      optionMap.find(option)->second;
-//      cout << "You have selected "<<indexMap[static_cast<int>(option)]<<endl;
-	
-  
+   if(optionMap.find(option) != optionMap.end())
+      optionMap.find(option)->second(item);
+   if(is.fail())
+      throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
 
 void Menu::AddOption(char command, string optionName, void (*f)(int))
@@ -40,16 +41,16 @@ void Menu::AddOption(char command, string optionName, void (*f)(int))
 void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 {
    auto it = optionsList.begin();
-   indexMap = optionsList;
    string tempName;
    while (it != optionsList.end())
    {
-      tempName+= '[';
-      tempName+= it->first;
+      tempName+='[';
+      tempName+=it->first;
       tempName+=']';
-      tempName+=it->second+' ';
+      tempName+=' ';
+      tempName += it->second;
       for (unsigned int j = 0; j < tempName.length(); j++)
-	 set(row, col + j, tempName[j]);
+	 set(row,col+j,tempName[j]);
       row += 2;
       if (row >= menuHeight - 1)
       {
@@ -57,6 +58,7 @@ void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 	 row = 3;
       }
       ++it;
+      tempName="";
    }
    it = optionsList.begin();
 }
