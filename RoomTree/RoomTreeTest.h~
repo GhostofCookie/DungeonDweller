@@ -1,9 +1,0 @@
-#ifndef ROOMTREE_TEST_H
-#define ROOMTREE_TEST_H
-
-#include <cppunit/TestFixture.h>
-#include <cppunit/extensions/HelperMacros.h>
-#include "RoomTree.h"
-#include <stdexcept>
-
-/// Class that tests functionality of RoomTree Class
