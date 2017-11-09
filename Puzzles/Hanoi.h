@@ -53,14 +53,13 @@ class Hanoi: public virtual Puzzle
 
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.
-   std::vector<vector<int>>tower;
-   
+   std::vector<stack<int>>tower;
+
+   /// Number of stacks in the game
    ///X-coordinate size in the tower vector
-   int xSize;
-
-   /// Y-Coordinate size in the tower vector
-   int ySize;
-
+   int numberOfStacks;
+/// Maintains the height of the stacks in the game
+   int maxStackHeight;
    /// Used for the loop to see if the game has ended yet
    bool GameEnd;
 };
