@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FNAME=$(date +%y%m%d) 
-TO="/home/rigt2720/Kodika"
+TO="/home/rigt2720/Kodika/Menu"
 cd "$TO"
 
 ulimit -t 10
