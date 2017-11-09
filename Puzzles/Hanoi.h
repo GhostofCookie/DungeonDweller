@@ -8,6 +8,8 @@
 #ifndef HANOI_H
 #define HANOI_H
 #include "Puzzle.h"
+#include <iostream>
+using namespace std;
 
 ///This class contains the mini-game/Puzzle Towers of Hanoi
 class Hanoi: public virtual Puzzle
@@ -17,7 +19,7 @@ class Hanoi: public virtual Puzzle
    Hanoi();
 
    ///Deconstructor
-   ~Hanoi();
+   virtual ~Hanoi();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
@@ -32,7 +34,7 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(char input);
+   bool ValidMove(int input);
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -58,5 +60,8 @@ class Hanoi: public virtual Puzzle
 
    /// Y-Coordinate size in the tower vector
    int ySize;
+
+   /// Used for the loop to see if the game has ended yet
+   bool GameEnd;
 };
 #endif

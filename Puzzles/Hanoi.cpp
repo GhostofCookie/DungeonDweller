@@ -24,7 +24,7 @@ Hanoi::~Hanoi()
    
 }
 
-bool Hanoi:: ValidMove(char input)
+bool Hanoi:: ValidMove(int input)
 {
    return true;
 }
@@ -73,9 +73,10 @@ void Hanoi::MovePiece(int userSelection)
 	 for(int i=0; i<ySize; i++)
 	 {
 	    if(tower.at(1).at(i)!=0)
+	    {
 	       index=tower.at(1).at(i);
-	    tower.at(1).at(i)=0;
-	    else
+	       tower.at(1).at(i)=0;
+	    }else
 	       zeroCount++;
 	    if(zeroCount==4)
 	    {
@@ -110,9 +111,9 @@ void Hanoi::MovePiece(int userSelection)
 void Hanoi::OutputGame(Screen &hScreen)
 {
    //These for loops to be replaced by a screen function call
-   for(int i=0; i<column; i++)
+   for(int i=0; i<ySize; i++)
    {
-      for(int j=0; j<x; j++)
+      for(int j=0; j<xSize; j++)
       {
 	 cout << tower.at(i).at(j);
       }
@@ -127,15 +128,15 @@ void Hanoi:: RunGame()
    
    Menu hMenu;
    Screen hScreen;
-   hMenu.SetOptions();
-   hMenu.OutputMenu();
-   hMenu.PromptUser();
+   //hMenu.SetOptions();
+   //hMenu.OutputMenu();
+   //hMenu.PromptUser();
    while(GameEnd==false)
    {
       OutputGame(hScreen);
       hMenu.OutputMenu();
-      int userSelection=hMenu.PromptUser();
-      MovePiece(userSelection);
+      //int userSelection=hMenu.PromptUser();
+      //MovePiece(userSelection);
       WinCheck();
    }
    cout << "A noise creaks behind the wall and the door slides open." << endl;

@@ -12,18 +12,14 @@
 #include "../Screen/Screen.hh"
 
 #include <vector>
-#include <iostream>
-using namespace std;
 
 ///This class represents an abstract base class for each mini-game/puzzle to
 ///derive from.
 class Puzzle
 {
   public:
-///
-   Puzzle();
    ///Virtual Destructor
-   virtual ~Puzzle();
+   virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
    virtual void RunGame();
@@ -38,15 +34,15 @@ class Puzzle
 
    ///Checks whether the move that is to be attempted is valid.  
    /// \param[in] input, Checks the input for semantic logic, otherwise error
-   virtual bool ValidMove(char input);
+   virtual bool ValidMove(char input)=0;
    ///Does the appropriate action to the space selected by the user depending on
    ///which puzzle derived class it is being used in.
-   virtual void MovePiece();
+   virtual void MovePiece()=0;
    /// Displays the screen containing the gameboard
    /// \param[in] screen, the screen object used for displaying the game. 
-   virtual void OutputGame(Screen &screen);
+   virtual void OutputGame(Screen &screen)=0;
    ///Sends the menu class the options for the player to select.
-   virtual void SetOptionsInMenu();
+   virtual void SetOptionsInMenu()=0;
    
    ///Used to output prompts, take in user input, and handle formatting errors
    //PuzzleMenu *Menu;
