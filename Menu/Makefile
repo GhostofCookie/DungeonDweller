@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = menuTest.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o
+OBJS = testMenu.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o
 OBJS2 = runTest.o Menu.o MenuTest.o
 
 ## targets and prerequisites

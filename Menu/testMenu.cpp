@@ -28,7 +28,7 @@ int main()
 	menu = new MainMenu();
 	menu->SetOptions(options);
 	menu->OutputMenu();
-	menu->HandleOptionInput(cin);
+	menu->HandleInput(cin);
 	menu = new ExploreMenu();
 	menu->HandleInput(cin);
 	/*  menu = new ExploreMenu();

@@ -1,4 +1,4 @@
-menuTest.o: menuTest.cpp MainMenu.h GameMenu.h Menu.h ExploreMenu.h \
+testMenu.o: testMenu.cpp MainMenu.h GameMenu.h Menu.h ExploreMenu.h \
  FightMenu.h TradeMenu.h DialogueMenu.h RiddleMenu.h MinigameMenu.h \
  TicTacToeMenu.h HanoiMenu.h CharacterMenu.h MemoryMenu.h \
  ConnectFourMenu.h

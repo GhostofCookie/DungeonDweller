@@ -18,7 +18,7 @@ using namespace std;
 class Menu 
 {
  private:
-  map<char, void (*f)(int)> indexMap;
+  map<char, void (*)(int)> indexMap;
  protected:
   int menuHeight;
   int menuWidth;
