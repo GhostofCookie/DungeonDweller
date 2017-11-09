@@ -1,40 +1,44 @@
-/// \author Tomas Rigaux
-/// \date 8/11/2017
-///
-/// This is the testing class for Menu.
-///
+#include <iostream>
+#include "MainMenu.h"
+#include "ExploreMenu.h"
+#include "FightMenu.h"
+#include "TradeMenu.h"
+#include "DialogueMenu.h"
+#include "RiddleMenu.h"
+#include "TicTacToeMenu.h"
+#include "HanoiMenu.h"
+#include "CharacterMenu.h"
+#include "MemoryMenu.h"
+#include "ConnectFourMenu.h"
+using namespace std;
 
-#include "MenuTest.h"
+int main()
+{
+	Menu *menu = new Menu(10, 101);
+	map<int, string> options;
+	options.insert(pair<int, string>(1, "Option 1"));
+	options.insert(pair<int, string>(2, "Option 2"));
+	options.insert(pair<int, string>(3, "Option 3"));
+	options.insert(pair<int, string>(4, "Option 4"));
+	// Testing all menu outputs //
 
-/// Sets up the test variables for testing.
-void MenuTest::setUp()
-{
-	menu = new Menu();
-	menu2 = new Menu(100, 100);
-	options.insert(pair<int, string>(1, "I'm the first option!"));
-	options.insert(pair<int, string>(2, "I'm the second!"));
-}
-/// Deletes any pointers to prevent memory leak.
-void MenuTest::tearDown()
-{
-	//   delete menu;
-}
-/// Tests that the constructor is wokring in several varieties of construction.
-void MenuTest::testConstructors()
-{
-
-}
-/// Tests the setting of options.
-void MenuTest::testSetting()
-{
-	menu->SetOptions(options);
-	menu2->SetOptions(options, 5, 10);
-}
-/// Tests that menu builds correctly.
-void MenuTest::testBuilding()
-{
 	menu->SetOptions(options);
 	menu->OutputMenu();
-	menu2->SetOptions(options, 10, 20);
-	menu2->OutputMenu();
+	menu = new Menu(33);
+	menu = new MainMenu();
+	menu->SetOptions(options);
+	menu->OutputMenu();
+	menu->HandleOptionInput(cin);
+	menu = new ExploreMenu();
+	menu->HandleInput(cin);
+	/*  menu = new ExploreMenu();
+	menu->SetOptions(options);
+	menu->OutputMenu();
+	menu = new FightMenu();
+	menu= new HanoiMenu();
+	menu->SetOptions(options);
+	menu->OutputMenu();
+
+	*/
+	return 0;
 }
