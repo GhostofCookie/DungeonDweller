@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g  
-OBJS = main.o Menu/Menu.o  Puzzles/hanoi.o Puzzles/tic_tac_toe.o Puzzles/memory_match.o Puzzles/connect_four.o  
+OBJS = main.o Menu/Menu.o  Puzzles/Hanoi.o Puzzles/TicTacToe.o Puzzles/MemoryMatch.o Puzzles/ConnectFour.o  
 
 ## targets and prerequisites
 .PHONY : all
