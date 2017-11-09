@@ -1,0 +1,44 @@
+g++ -c -Wall -std=c++11 -g   main.cpp
+g++ -c -Wall -std=c++11 -g   Menu/Menu.cpp
+g++ -c -Wall -std=c++11 -g   Puzzles/hanoi.cpp
+Puzzles/hanoi.cpp: In member function ‘void Hanoi::WinCheck()’:
+Puzzles/hanoi.cpp:61:7: error: ‘GameEnd’ was not declared in this scope
+       GameEnd=true;
+       ^
+Puzzles/hanoi.cpp: In member function ‘void Hanoi::MovePiece(int)’:
+Puzzles/hanoi.cpp:78:6: error: ‘else’ without a previous ‘if’
+      else
+      ^
+Puzzles/hanoi.cpp: In member function ‘virtual void Hanoi::OutputGame(Screen&)’:
+Puzzles/hanoi.cpp:113:19: error: ‘column’ was not declared in this scope
+    for(int i=0; i<column; i++)
+                   ^
+Puzzles/hanoi.cpp:115:22: error: ‘x’ was not declared in this scope
+       for(int j=0; j<x; j++)
+                      ^
+Puzzles/hanoi.cpp: In member function ‘virtual void Hanoi::RunGame()’:
+Puzzles/hanoi.cpp:130:21: error: no matching function for call to ‘Menu::SetOptions()’
+    hMenu.SetOptions();
+                     ^
+Puzzles/hanoi.cpp:130:21: note: candidate is:
+In file included from Puzzles/Puzzle.h:11:0,
+                 from Puzzles/Hanoi.h:10,
+                 from Puzzles/hanoi.cpp:7:
+Puzzles/../Menu/Menu.h:54:16: note: virtual void Menu::SetOptions(std::map<int, std::basic_string<char> >, int, int)
+   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3);
+                ^
+Puzzles/../Menu/Menu.h:54:16: note:   candidate expects 3 arguments, 0 provided
+Puzzles/hanoi.cpp:132:10: error: ‘class Menu’ has no member named ‘PromptUser’
+    hMenu.PromptUser();
+          ^
+Puzzles/hanoi.cpp:133:10: error: ‘GameEnd’ was not declared in this scope
+    while(GameEnd==false)
+          ^
+Puzzles/hanoi.cpp:137:31: error: ‘class Menu’ has no member named ‘PromptUser’
+       int userSelection=hMenu.PromptUser();
+                               ^
+make: *** [Puzzles/hanoi.o] Error 1
+g++ -c -Wall -std=c++11 -g   Puzzles/tic_tac_toe.cpp
+g++ -c -Wall -std=c++11 -g   Puzzles/memory_match.cpp
+g++ -c -Wall -std=c++11 -g   Puzzles/connect_four.cpp
+make: Target `all' not remade because of errors.

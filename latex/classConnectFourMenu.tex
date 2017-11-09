@@ -1,0 +1,101 @@
+\hypertarget{classConnectFourMenu}{\section{Connect\-Four\-Menu Class Reference}
+\label{classConnectFourMenu}\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}}
+}
+
+
+This is the menu class for the Connect Four minigame.  
+
+
+
+
+{\ttfamily \#include $<$Connect\-Four\-Menu.\-h$>$}
+
+Inheritance diagram for Connect\-Four\-Menu\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classConnectFourMenu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}{Connect\-Four\-Menu} ()
+\begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classConnectFourMenu_a48ee1e8fee0de22d72afb57571b0ac88}{$\sim$\-Connect\-Four\-Menu} ()
+\begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classConnectFourMenu_ae347bebdfd041aef13ba9bebca041037}{Set\-Options} (map$<$ string $>$ options\-List, string type)
+\item 
+virtual void \hyperlink{classConnectFourMenu_af99e9997dd1d477442181448cd6925ee}{Handle\-Input} (istream \&is)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the menu class for the Connect Four minigame. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Connect\-Four\-Menu@{Connect\-Four\-Menu}}
+\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Connect\-Four\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Connect\-Four\-Menu\-::\-Connect\-Four\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}
+
+
+This is the default constructor. 
+
+\hypertarget{classConnectFourMenu_a48ee1e8fee0de22d72afb57571b0ac88}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!$\sim$\-Connect\-Four\-Menu@{$\sim$\-Connect\-Four\-Menu}}
+\index{$\sim$\-Connect\-Four\-Menu@{$\sim$\-Connect\-Four\-Menu}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{$\sim$\-Connect\-Four\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual Connect\-Four\-Menu\-::$\sim$\-Connect\-Four\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_a48ee1e8fee0de22d72afb57571b0ac88}
+
+
+This is the virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classConnectFourMenu_af99e9997dd1d477442181448cd6925ee}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Handle\-Input@{Handle\-Input}}
+\index{Handle\-Input@{Handle\-Input}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Connect\-Four\-Menu\-::\-Handle\-Input (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_af99e9997dd1d477442181448cd6925ee}
+This function handles the input for the menu options. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em is} & The in-\/stream operator to read the input. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}.
+
+\hypertarget{classConnectFourMenu_ae347bebdfd041aef13ba9bebca041037}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Set\-Options@{Set\-Options}}
+\index{Set\-Options@{Set\-Options}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Connect\-Four\-Menu\-::\-Set\-Options (
+\begin{DoxyParamCaption}
+\item[{map$<$ string $>$}]{options\-List, }
+\item[{string}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_ae347bebdfd041aef13ba9bebca041037}
+This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\hline
+\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classMinigameMenu_abf3dcda8c256be03ebe3661b8dde2ea2}{Minigame\-Menu}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Menu/\hyperlink{ConnectFourMenu_8h}{Connect\-Four\-Menu.\-h}\end{DoxyCompactItemize}
