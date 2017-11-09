@@ -54,7 +54,7 @@ class Menu
   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3);
   /// Handles the user input, and runs an option from the menu.
   /// \param[in,out] is The in-stream operator to read the input.
-  virtual void HandleOptionInput(istream& is);
+  virtual void HandleInput(istream& is);
   /// Display the multi-dimensional array.
   virtual void OutputMenu();
 };

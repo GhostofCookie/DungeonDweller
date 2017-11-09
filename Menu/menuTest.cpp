@@ -21,15 +21,13 @@ int main()
   options.insert(pair<int,string>(3,"Option 3"));
   options.insert(pair<int,string>(4,"Option 4"));
   // Testing all menu outputs //
-
   menu->SetOptions(options);
   menu->OutputMenu();
-  menu = new Menu(33);
   menu = new MainMenu();
   menu->SetOptions(options);
   menu->OutputMenu();
-  menu->HandleOptionInput(cin);
-  menu = new ExploreMenu();
+  menu->HandleInput(cin);
+  /*  menu = new ExploreMenu();
   menu->SetOptions(options);
   menu->OutputMenu();
   menu = new FightMenu();
@@ -53,6 +51,6 @@ int main()
   menu= new HanoiMenu();
   menu->SetOptions(options);
   menu->OutputMenu();
-
+  */
   return 0;
 }

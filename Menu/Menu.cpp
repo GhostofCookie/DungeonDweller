@@ -20,28 +20,23 @@ Menu::~Menu()
   delete menu_Array;
 }
 
-void Menu::HandleOptionInput(istream& is)
+void Menu::HandleInput(istream& is)
 {
   int option;
   is >> option;
-  auto it = indexMap.begin();
-  while (it != indexMap.end()) {
-    is >> option;
-    if (option != it->first)
-      ++it;
-    else
-      cout << "You have selected" << it->second;
-  }
+  //  if(indexMap.find(option) != indexMap.end())
+    cout << "You have selected\n"<<indexMap[1];
+  
 }
 
 void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 {
   auto it = optionsList.begin();
 
-  while (it != optionsList.end())
+   while (it != optionsList.end())
     {
       for (unsigned int j = 0; j < it->second.length(); j++)
-	set(row, col - it->second.length()/2+ j, it->second[j]);
+	set(row, col + j, it->second[j]);
 
       row += 2;
       if (row >= menuHeight - 1)
@@ -51,9 +46,10 @@ void Menu::SetOptions(map<int, string> optionsList, int row, int col)
 	}
       ++it;
     }
-  it = optionsList.begin();
+   it = optionsList.begin();
+   indexMap = optionsList;
 
-  /**********************************************************
+  /*********************************************************
   if (type == "generic")
     {
       while (it != optionsList.end())
