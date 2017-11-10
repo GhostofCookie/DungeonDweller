@@ -8,10 +8,10 @@ using namespace CppUnit;
 //************************************************************************
 int main()
 {
-	TextTestRunner runner;
-	runner.addTest(ScreenTest::suite());
-	runner.run();
+   TextTestRunner runner;
+   runner.addTest(ScreenTest::suite());
+   runner.run();
 	
-	return 0;
+   return 0;
 }
 

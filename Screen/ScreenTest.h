@@ -20,42 +20,62 @@
 //************************************************************************
 class ScreenTest: public CppUnit::TestFixture
 {
-	CPPUNIT_TEST_SUITE(ScreenTest);
+   CPPUNIT_TEST_SUITE(ScreenTest);
+   
+   CPPUNIT_TEST(testCreated);
+   CPPUNIT_TEST(testIsEven);
+   CPPUNIT_TEST(testFill);
+   CPPUNIT_TEST(testSetTooLarge);
+   CPPUNIT_TEST(testSetNegative);
+   CPPUNIT_TEST(testOutline);
+   CPPUNIT_TEST(testResize);
+   CPPUNIT_TEST(testTearDown);
 	
-	/// Tests searching for a large value
-	CPPUNIT_TEST(testTooSmall);
-	/// Tests searching for a small value
-	CPPUNIT_TEST(testTooLarge);
-	/// Tests searching for a negative
-	CPPUNIT_TEST(testNegative);
-	/// Tests to see if the screen is created
-	CPPUNIT_TEST(testCreated);
-	
-	CPPUNIT_TEST_SUITE_END();
+   CPPUNIT_TEST_SUITE_END();
 	
 	
 	
-public:
-	/// function to set up the variables
-	void setUp();
-	/// tests finding a large number
-	void testTooLarge();
-	/// tests finding a small number
-	void testTooSmall();
-	/// tests negative number
-	void testNegative();
-	/// tests if the screen exists
-	void testCreated();
+  public:
+   /// function to set up the variables
+   void setUp();
+   /// tests finding a large number
+   void testSetTooLarge();
+   /// tests negative number
+   void testSetNegative();
+   /// tests if the screen exists
+   void testCreated();
+   /// tests if the outline is on
+   void testOutline();
+   /// tests if a value is even correctly
+   void testIsEven();
+   /// tests if the fill works
+   void testFill();
+   /// tests if the screen can erase the contents
+   void testErase();
+   /// tests if the screen can print
+   void testOstream();
+   /// tests the resize function
+   void testResize();
+   /// Delete the screens
+   void testTearDown();
 	
-private:
-	/// A screen
-	Screen *screen = new Screen();
-	int heightMin;
-	int widthMin;
-	int heightMax;
-	int widthMax;
-	int heightNegative;
-	int widthNegative;
+  private:
+   /// Screens
+   Screen *screen;
+   Screen *screen2;
+   
+   /// smallest height bound
+   int heightMin;
+   /// smallest width bound
+   int widthMin;
+   /// a positive height bound
+   int heightMax;
+   /// a positive width bound
+   int widthMax;
+   /// a negative height bound
+   int heightNegative;
+   /// a negative width bound
+   int widthNegative;
 };
 
 #endif
