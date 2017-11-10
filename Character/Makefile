@@ -1,0 +1,29 @@
+CC=g++
+CCFLAGS=-Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
+OBJS= Player.o
+OBJS2= mainTest.o PlayerTest.o Player.o 
+
+.PHONY : all
+all: mainTest
+
+#main : $(OBJS)
+#	$(CC) $(CCFLAGS) $^ -o $@ 
+
+mainTest : $(OBJS2)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+
+%.o : %.cpp
+	$(CC) -c $(CCFLAGS) $<
+
+.prereq : $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) $(wildcard *.h) Makefile
+	rm -f .prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) >> ./.prereq
+
+include .prereq
+
+.PHONY : clean
+clean:
+	rm -rf *~ *.o
+
+clean-all: clean
+	rm -rf mainTest
