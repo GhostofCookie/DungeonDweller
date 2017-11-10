@@ -8,15 +8,17 @@
 
 Hanoi::Hanoi()
 {
-   ySize=3;
-   xSize=4;
-   tower.resize(ySize);
-   for(int i=0; i<ySize; i++)
+   //Re-write using a stack instead of a double vector.
+   numberOfStacks=4;
+   tower.resize(numberOfStacks);
+   for(int i=0; i<numberOfStacks; i++)
    {
-      tower.at(i).resize(xSize);
-      for(int j=0; j<xSize; j++)
-	 tower.at(i).at(j)=0;
+      while(tower.at(i).size()=<maxStackHeight)
+      {
+	 tower.at(i).push(0);
+      }
    }
+   
 }
 
 Hanoi::~Hanoi()

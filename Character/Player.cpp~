@@ -1,0 +1,30 @@
+#include "Player.h"
+
+using namespace std;
+
+Player:: Player(int s, int k, string n, string r)
+   : stamina{s}, keys{k}, name{n}, race{r} {}
+
+Player:: ~Player()
+{
+
+}
+
+void Player:: ChangeStamina(int& s, int sMod)
+{
+   s += sMod;
+}
+
+int Player:: ChangeKeys(int& keys, int keyMod)
+{
+   keys += keyMod;
+}
+
+bool Player:: UseKey(int& keys)
+{
+   if(keys >= 1)
+      keys--;
+   else
+      return 0;
+   return keys;
+}

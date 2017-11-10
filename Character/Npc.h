@@ -20,8 +20,7 @@ class Npc : public Character
 public:
     ///Npc constructor
     /// \param[in] h, the health of the created Npc
-    /// \param[in] ap, the attack power of the created Npc
-    Npc(int h, int ap);
+    Npc(int h);
     
     ///Deconstructor
     ~Npc();

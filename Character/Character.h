@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "Item.h"
+//#include "/home/kemg2720/Kodika/Item/Item.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ class Character
 {
 protected:
    ///Vector of items the character has
-   vector<*Item> inventory;
+   // vector<*Item> inventory;
 
    ///Amount of gold player has
    int gold;
@@ -30,7 +30,7 @@ protected:
 public:
     ///Reads information in for the character
     /// \param[in] is the input stream
-    virtual iostream Read(istream &is);
+    virtual istream Read(istream &is);
     
     ///Writes the character object to the screen
     /// \param[out] os the output stream for printing on the screen
@@ -38,11 +38,11 @@ public:
 
    ///Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual Item GetInventoryItems(Item  *inventory);
+    // virtual Item GetInventoryItems(Item  *inventory);
 
    ///Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual Item UseItem(Item *inventory);
+   //virtual Item UseItem(Item *inventory);
 
    ///Change the amount of gold a character has
    /// \param[in&] Gold, current amount of gold the character has
