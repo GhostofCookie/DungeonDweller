@@ -8,9 +8,10 @@ DialogueMenu::~DialogueMenu()
 {
 }
 
-void DialogueMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void DialogueMenu::SetOptions(int row, int col)
 {
-  Menu::SetOptions(optionsList);
+   map<int,string> optionsList;
+   Menu::SetOptions();
 }
 
 void DialogueMenu::HandleInput(istream & is)

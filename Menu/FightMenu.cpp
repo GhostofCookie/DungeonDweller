@@ -8,8 +8,9 @@ FightMenu::~FightMenu()
 {
 }
 
-void FightMenu::SetOptions(map<int,string> OptionsList, int row, int col)
+void FightMenu::SetOptions(int row, int col)
 {
+   map<int,string> optionsList;
 }
 
 void FightMenu::HandleInput(istream & is)

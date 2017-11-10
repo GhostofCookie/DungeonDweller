@@ -42,7 +42,7 @@ class Menu
    /// array. (A[x,y])
    /// \param[in] ch This is the character to be set at the coordinates
    /// (x,y) in the multi-dimensional array.
-   void set(int x, int y, char ch);
+   void Set(int x, int y, char ch);
    /// Sets the various options for the menu, mapping them to unique keys
    /// to make handling easier.
    /// \param[in] OptionsList A map of all the options for the current
@@ -64,7 +64,7 @@ class Menu
    /// the option and command.
    virtual void AddOption(char command, string optionName, void(*f)(int));
    /// A function to set the added options to the character array.
-   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3,
+   virtual void SetOptions(int row=3, int col=3,
       int space=2);
    /// Handles the user input, and runs an option from the menu.
    /// \param[in,out] is The in-stream operator to read the input.
