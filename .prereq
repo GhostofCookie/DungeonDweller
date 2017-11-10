@@ -1,10 +1,2 @@
 main.o: main.cpp
 Menu.o: Menu/Menu.cpp Menu/Menu.h
-Hanoi.o: Puzzles/Hanoi.cpp Puzzles/Hanoi.h Puzzles/Puzzle.h \
- Puzzles/../Menu/Menu.h Puzzles/../Screen/Screen.hh
-TicTacToe.o: Puzzles/TicTacToe.cpp Puzzles/TicTacToe.h Puzzles/Puzzle.h \
- Puzzles/../Menu/Menu.h Puzzles/../Screen/Screen.hh
-MemoryMatch.o: Puzzles/MemoryMatch.cpp Puzzles/MemoryMatch.h \
- Puzzles/Puzzle.h Puzzles/../Menu/Menu.h Puzzles/../Screen/Screen.hh
-ConnectFour.o: Puzzles/ConnectFour.cpp Puzzles/ConnectFour.h \
- Puzzles/Puzzle.h Puzzles/../Menu/Menu.h Puzzles/../Screen/Screen.hh

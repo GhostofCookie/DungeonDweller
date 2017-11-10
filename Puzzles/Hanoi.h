@@ -8,6 +8,7 @@
 #ifndef HANOI_H
 #define HANOI_H
 #include "Puzzle.h"
+#include "../Menu/HanoiMenu"
 #include <iostream>
 using namespace std;
 
@@ -26,7 +27,7 @@ class Hanoi: public virtual Puzzle
    void RunGame();
 
   private:
-   //ALL HANDLDED BY THE MENU OBJECT
+   //ALL HANDLED BY THE MENU OBJECT
    //void PromptUser(&screen);//Prompts user for input
    //char UserInput(Menu &menu);//Gets user input
    //bool ValidCommand(char input);//Checks Formatting
@@ -34,7 +35,7 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(int input);
+  bool ValidMove(const int currentStack,const int newStack) const;
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -58,9 +59,13 @@ class Hanoi: public virtual Puzzle
    /// Number of stacks in the game
    ///X-coordinate size in the tower vector
    int numberOfStacks;
-/// Maintains the height of the stacks in the game
+   /// Maintains the height of the stacks in the game
    int maxStackHeight;
    /// Used for the loop to see if the game has ended yet
    bool GameEnd;
+   /// GameMenu is used for handling input
+   HanoiMenu MiniGameMenu;
+   /// MenuOption strings are used for outputting options to the user
+   string menuOption1, menuOption2, menuOption3, menuOption4;
 };
 #endif

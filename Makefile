@@ -1,17 +1,16 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g  
-OBJS = main.o Menu/Menu.o  Puzzles/Hanoi.o Puzzles/TicTacToe.o Puzzles/MemoryMatch.o Puzzles/ConnectFour.o  
-
+OBJS = main.o Menu/Menu.o
 ## targets and prerequisites
 .PHONY : all
 all : main
 
 main : $(OBJS)
-	$(CC) $^ -o $(CCFLAGS) $<
+	$(CC) -o $@ $(CCFLAGS) $^
 
 # default rule for compiling .cc to .o
 %.o : %.cpp
-	$(CC) -c $(CCFLAGS) $<
+	$(CC) -c -o $@ $(CCFLAGS) $<
 
 ## generate the prerequisites and append to the desired file
 .prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
