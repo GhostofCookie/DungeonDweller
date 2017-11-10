@@ -15,3 +15,4 @@ void MainMenu::HandleInput(istream & is)
 {
   Menu::HandleInput(is);
 }
+

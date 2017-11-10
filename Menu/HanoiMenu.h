@@ -25,7 +25,8 @@ class HanoiMenu : public virtual MinigameMenu
    /// \param[in] OptionsList A map of all the options for the current
    /// menu. Each option has a unique key to make input easier.
    /// \param[in] type This denotes the type of menu to display.
-   virtual void SetOptions(map<int,string> optionsList, int row, int col);
+   virtual void SetOptions(map<int,string> optionsList, int row=5, int col=30,
+			   int space=5);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);

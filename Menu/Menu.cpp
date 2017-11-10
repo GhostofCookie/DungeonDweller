@@ -11,6 +11,8 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 set(i, j, ' ');
    }
+   indexMap['q'] = "Quit";
+   optionMap['q']=exit;//.insert(pair<char,void (*)(int)>('q',QuitGame));
 }
 
 Menu::~Menu()
@@ -38,23 +40,27 @@ void Menu::AddOption(char command, string optionName, void (*f)(int))
    optionMap[command] = f;
 }
 
-void Menu::SetOptions(map<int, string> optionsList, int row, int col)
+void Menu::SetOptions(map<int, string> optionsList,int row,int col,int space)
 {
    auto it = optionsList.begin();
    string tempName;
+
+  
    while (it != optionsList.end())
    {
       tempName+='[';
       tempName+=it->first;
       tempName+=']';
-      tempName+=' ';
       tempName += it->second;
       for (unsigned int j = 0; j < tempName.length(); j++)
-	 set(row,col+j,tempName[j]);
-      row += 2;
+      {
+	 if(it->first!=113) set(row,col+j,tempName[j]);
+	 else set(8, menuWidth/2 +j- tempName.length()/2,tempName[j]);
+      }
+      if(it->first != 113) row += space;
       if (row >= menuHeight - 1)
       {
-	 col += it->second.length() + 10;
+	 col += it->second.length() + menuWidth/4+1;
 	 row = 3;
       }
       ++it;
@@ -98,4 +104,13 @@ void Menu::BuildMenu()
    set(menuHeight - 1, menuWidth - 1, '+');
    set(0, menuWidth - 1, '+');
    set(menuHeight - 1, 0, '+');
+}
+
+void Menu::QuitGame(int value)
+{
+   char ch;
+   cout<<"Are you sure you want to quit(y/n)? ";
+   cin>>ch;
+   if(ch=='y') exit(value);
+   else return;
 }

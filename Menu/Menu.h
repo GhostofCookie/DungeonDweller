@@ -29,7 +29,10 @@ class Menu
    /// Builds the menu based on the options and outline to the dimensions
    /// specified by the constructor.
    void BuildMenu();
-
+   /// Helper function to quit the game.
+   /// \param[in] value This parameter serves to pass the function to the
+   /// options map.
+   void QuitGame(int value);
   protected:
    /// Sets the character of a specific location in the array to a give
    /// character.
@@ -61,7 +64,8 @@ class Menu
    /// the option and command.
    virtual void AddOption(char command, string optionName, void(*f)(int));
    /// A function to set the added options to the character array.
-   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3);
+   virtual void SetOptions(map<int, string> optionsList, int row=3, int col=3,
+      int space=2);
    /// Handles the user input, and runs an option from the menu.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream& is);

@@ -19,32 +19,16 @@ int main()
 {
    Menu *menu = nullptr;
    map<int, string> options;
-   menu = new MainMenu();
+   menu = new HanoiMenu();
    menu->AddOption('p', "Pickup",testFunction);
    menu->AddOption('t', "Speak",testFunction);
    menu->AddOption('w', "Move",testFunction);
-   menu->SetOptions(options,2,2);
+   menu->SetOptions(options,5,30);
    menu->OutputMenu();
    while(true)
       menu->HandleInput(cin);
    delete menu;
-/*   menu = new MainMenu();
-   menu->AddOption('i', "Inventory", testFunction);
-   menu->SetOptions(options,2,2);
-   menu->OutputMenu();
-   menu->HandleInput(cin);
-   delete menu;
-*/  /*
-     menu = new ExploreMenu();
-     menu->HandleInput(cin);
-     menu = new ExploreMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-     menu = new FightMenu();
-     menu= new HanoiMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-   */
+
    return 0;
 }
 
