@@ -8,8 +8,14 @@
 
 Hanoi::Hanoi()
 {
+   menuOption1="Move disc on peg 1 right.";
+   menuOption2="Move disc on peg 2 left.";
+   menuOption3="Move disc on peg 2 right.";
+   menuOption4="Move disc on peg 3 left.";
+   PuzzleEnd=false;
+   maxStackHeight=4;
    //Re-write using a stack instead of a double vector.
-   numberOfStacks=4;
+   numberOfStacks=3;
    tower.resize(numberOfStacks);
    for(int i=0; i<numberOfStacks; i++)
    {
@@ -26,9 +32,14 @@ Hanoi::~Hanoi()
    
 }
 
-bool Hanoi:: ValidMove(int input)
+bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 {
-   return true;
+   ///If the disc on the current stack is smaller than the disc on the new stack
+   ///it is considered a valid move, so return true, otherwise return false.
+   if(currentStack<newStack)
+      return true;
+   else
+      return false;
 }
 
 void Hanoi::SetOptionsInMenu()
@@ -38,29 +49,8 @@ void Hanoi::SetOptionsInMenu()
 
 void Hanoi::WinCheck()
 {
-   
-   bool win=false;
-   //Check if the game has been won
-   if(win==true)
+   if(tower.at(2).size()==4)
       PuzzleEnd=true;
-
-   //Check the vector, columns at a time to see if the play has won.
-   int successfulStackCount=0;
-   int index=1;
-   for(int j=0; j<ySize; j++)
-   {
-      //If the first element in the fourth row is 1, it is the smallest object.
-      //Continue checking the column, checking if every succeeding element is
-      //smaller, if they are in order, the player has won.
-      if(tower.at(xSize).at(j)>=index)
-      {
-	 index=tower.at(xSize).at(j);
-	 successfulStackCount++;
-      }
-   }
-   //If the final stack is full, and in order, set GameEnd to true
-   if(successfulStackCount==4)
-      GameEnd=true;
 }
 
 
@@ -69,40 +59,100 @@ void Hanoi::MovePiece(int userSelection)
    switch(userSelection)
    {
       case 1:
-	 int index;
-	 int zeroCount;
-	 cout << "Move left, right" << endl;
-	 for(int i=0; i<ySize; i++)
+	 if(tower.at(0).empty())
 	 {
-	    if(tower.at(1).at(i)!=0)
+	    cout << "That peg is empty, please try another" << endl;
+	 }
+	 else
+	 {
+	    cout << "Move left, right" << endl;
+	    int topOfStack=tower.at(0).top();
+	    int newStackTop;
+	    
+	    if(tower.at(1).empty())
+	       newStackTop=0;
+	    else
+	       newStackTop=tower.at(1).top();
+	    
+	    if(validMove(topOfStack, newStackTop))
 	    {
-	       index=tower.at(1).at(i);
-	       tower.at(1).at(i)=0;
-	    }else
-	       zeroCount++;
-	    if(zeroCount==4)
-	    {
-	       cout << "That stack is empty, please try again!" << endl;
-	       break;
-	    }
-	    for(int i=0; i<ySize; i++)
-	    {
-	       //Once we find a spot thats already filled or the bottom of the stack
-	       if(tower.at(1).at(i)!=0 || i==3)
-	       tower.at(2).at(i-1)=index;
+	       tower.at(0).pop();
+	       tower.at(1).push(topOfStack);
 	    }
 	 }
 	 break;
 	 
       case 2:
-	 cout << "Move centre left" << endl;
+	 if(tower.at(1).empty())
+	 {
+	    cout << "That peg is empty, please try another" << endl;
+	 }
+	 else
+	 {
+	    cout << "Move centre left" << endl;
+	    int topOfStack=tower.at(1).top();
+	    int newStackTop;
+	    
+	    if(tower.at(0).empty())
+	       newStackTop=0;
+	    else
+	       newStackTop=tower.at(0).top();
+	    
+	    if(validMove(topOfStack, newStackTop))
+	    {
+	       tower.at(1).pop();
+	       tower.at(0).push(topOfStack);
+	    }
+	 }
 	 break;
+
+	 	 
       case 3:
-	 cout << "Move centre right" << endl;
+	 if(tower.at(1).empty())
+	 {
+	    cout << "That peg is empty, please try another" << endl;
+      	 }
+	 else
+	 {
+	    cout << "Move centre right" << endl;
+	    int topOfStack=tower.at(1).top();
+	    int newStackTop;
+	    
+	    if(tower.at(2).empty())
+	       newStackTop=0;
+	    else
+	       newStackTop=tower.at(2).top();
+	    
+	    if(validMove(topOfStack, newStackTop))
+	    {
+	       tower.at(1).pop();
+	       tower.at(2).push(topOfStack);
+	    }
+	 }
 	 break;
+	 
       case 4:
-	 cout << "<Move right, left" << endl;
+	 if(tower.at(2).empty())
+	 {
+	    cout << "That peg is empty, please try another" << endl;
+	 }
+      	 else
+	 {
+	    cout << "Move right, left" << endl;
+	    int topOfStack=tower.at(2).top();
+	    int newStackTop;
+	    if(tower.at(1).empty())
+	       newStackTop=0;
+	    else
+	       newStackTop=tower.at(1).top(); 
+	    if(validMove(topOfStack, newStackTop))
+	    {
+	       tower.at(2).pop();
+	       tower.at(1).push(topOfStack);
+	    }
+	 }
 	 break;
+
       default:
 	 cout << "Invalid input, please try again." << endl;
 	 break;
