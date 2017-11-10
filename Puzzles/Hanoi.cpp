@@ -14,7 +14,6 @@ Hanoi::Hanoi()
    menuOption4="Move disc on peg 3 left.";
    PuzzleEnd=false;
    maxStackHeight=4;
-   //Re-write using a stack instead of a double vector.
    numberOfStacks=3;
    tower.resize(numberOfStacks);
    for(int i=0; i<numberOfStacks; i++)
@@ -44,7 +43,10 @@ bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 
 void Hanoi::SetOptionsInMenu()
 {
-
+   HanoiGameMenu.AddOption('1', menuOption1, MovePiece(int));
+   HanoiGameMenu.AddOption('2', menuOption2, MovePiece(int));
+   HanoiGameMenu.AddOption('3', menuOption3, MovePiece(int));
+   HanoiGameMenu.AddOption('4', menuOption4, MovePiece(int));
 }
 
 void Hanoi::WinCheck()
@@ -163,32 +165,39 @@ void Hanoi::MovePiece(int userSelection)
 void Hanoi::OutputGame(Screen &hScreen)
 {
    //These for loops to be replaced by a screen function call
-   for(int i=0; i<ySize; i++)
+   std::vector<stack<int>>temp(3);
+   for(int i=0; i<3; i++)
    {
-      for(int j=0; j<xSize; j++)
+      while(!(tower.at(i).empty()))
       {
-	 cout << tower.at(i).at(j);
+	 temp.at(i).push(tower.at(i).top());
+	 tower.at(i).pop();
+      }
+   }
+   for(int i=0; i<3; i++)
+   {
+      while(!(temp.at(i).empty()))
+      {
+	 
+	 tower.at(i).push(temp.at(i).top());
+	 cout << tower.at(i).top() << " ";
+	 temp.at(i).pop();
       }
       cout << endl;
    }
-   
 }
 
 void Hanoi:: RunGame()
 {
-   
-   
-   Menu hMenu;
    Screen hScreen;
-   //hMenu.SetOptions();
-   //hMenu.OutputMenu();
+   SetOptionsInMenu();
+   HanoiGameMenu.OutputMenu();
    //hMenu.PromptUser();
    while(GameEnd==false)
    {
-      OutputGame(hScreen);
-      hMenu.OutputMenu();
-      //int userSelection=hMenu.PromptUser();
-      //MovePiece(userSelection);
+      // OutputGame(hScreen);
+      HanoiGameMenu.OutputMenu();
+      HanoiGameMenu.HandleInput(cin);
       WinCheck();
    }
    cout << "A noise creaks behind the wall and the door slides open." << endl;

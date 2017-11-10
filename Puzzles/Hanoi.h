@@ -64,7 +64,7 @@ class Hanoi: public virtual Puzzle
    /// Used for the loop to see if the game has ended yet
    bool GameEnd;
    /// GameMenu is used for handling input
-   HanoiMenu MiniGameMenu;
+   HanoiMenu HanoiGameMenu;
    /// MenuOption strings are used for outputting options to the user
    string menuOption1, menuOption2, menuOption3, menuOption4;
 };
