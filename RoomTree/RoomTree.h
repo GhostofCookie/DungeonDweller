@@ -5,7 +5,7 @@
 /// \date Oct 25, 2017
 ///
 
-#ifnedef ROOMTREE_H
+#ifndef ROOMTREE_H
 #define ROOMTREE_H
 #include <iostream>
 #include "../Room/Room.h"
@@ -13,13 +13,13 @@ using namespace std;
 
 /// Class to represent the layout of rooms in a doubly linked tree-like format
 class RoomTree {
-   //Nested Class****************************************************************
+   //Nested Class**************************************************************
    /// Class to represent nodes on the tree
    class Node {
      public:
 
       /// Node Constructor
-      node();
+      Node();
 
       /// Pointer to left child node
       Node* left;
@@ -36,18 +36,19 @@ class RoomTree {
       /// Pointer to the room
       Room* room;
    };
-   //****************************************************************************
+   //**************************************************************************
 
-  public:
+public:
 
    /// RoomTree Constructor
-   RoomTree();
+   RoomTree(Room* roomptr);
 
    /// RoomTree Destructor
    ~RoomTree();
 
    /// Inserts a new room at child (throws exeption if already occupied)
    /// \param[in] dir Direction of the new child (left(l) right(r) or center(c))
+   /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
    void newRoom(char dir, Room* roomptr);
 
    /// Moves through the tree
@@ -55,11 +56,18 @@ class RoomTree {
    /// \return True if move was successfull, false otherwise
    bool move(char dir);
 
-   /// Gives a pointer to the room currently at
+   /// Gives a const pointer to the room currently at for accessing
+   /// \return A const pointer to current room
+   const Room* at() const;
+
+   /// Gives a pointer to current room
    /// \return Pointer to current room
    Room* at();
 
-  private:
+private:
+	/// Helper function to assist in deleting the tree
+	/// \param[in] tempRoot The root of the tree to be deleted
+	void deleteTree(Node* tempRoot);
 
    /// Root or starting room of the dungeon
    Node* root;
