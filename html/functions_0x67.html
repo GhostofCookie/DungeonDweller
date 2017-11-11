@@ -24,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insert a brief game description here.</div>
+   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
   </td>
  </tr>
  </tbody>
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -114,24 +114,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>GameMenu()
 : <a class="el" href="classGameMenu.html#ae31c50148abf655297a2a3eab53c15a3">GameMenu</a>
-, <a class="el" href="classMinigameMenu.html#ae43222d43cab574372707a21bd22a2b5">MinigameMenu</a>
 </li>
 <li>GameState()
 : <a class="el" href="classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c">GameState</a>
 </li>
 <li>Get()
-: <a class="el" href="classDialogueState.html#ab2f436b23d15e13cda1d756b8d47a982">DialogueState</a>
-, <a class="el" href="classMainState.html#a23233e859905d025cfc031a12977a844">MainState</a>
+: <a class="el" href="classExploreState.html#ace76d7a24bcb85f6f0a0fe0d0e763e21">ExploreState</a>
 , <a class="el" href="classPuzzleState.html#ac9f6dd77d6471165d9eb2c18bd051dd1">PuzzleState</a>
-, <a class="el" href="classExploreState.html#ace76d7a24bcb85f6f0a0fe0d0e763e21">ExploreState</a>
 , <a class="el" href="classTradeState.html#a6479e704b1063281721200a0beac6bc1">TradeState</a>
 , <a class="el" href="classFightState.html#afeff88d0e0c0fa25049e2152190429ed">FightState</a>
+, <a class="el" href="classDialogueState.html#ab2f436b23d15e13cda1d756b8d47a982">DialogueState</a>
 , <a class="el" href="classGameState.html#a4283cb3aa5637d4815d64272843a0625">GameState</a>
+, <a class="el" href="classMainState.html#a23233e859905d025cfc031a12977a844">MainState</a>
 </li>
 <li>GetAllFilePaths()
 : <a class="el" href="classImageImporter.html#a923f081a44c874c972f0da3870f7e1a1">ImageImporter</a>
@@ -140,11 +139,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classScreen.html#a95daa612c5ec6a8018b89cfc2d785e27">Screen</a>
 </li>
 <li>GetCols()
-: <a class="el" href="classScreen.html#a223cd8821b2b8006c61545ff41aa0091">Screen</a>
-, <a class="el" href="classImage.html#a5377ce45ff29db084776e675b413f165">Image</a>
-</li>
-<li>GetInventoryItems()
-: <a class="el" href="classCharacter.html#abb0fa9634aa2f72a5736d4895e803ecf">Character</a>
+: <a class="el" href="classImage.html#a5377ce45ff29db084776e675b413f165">Image</a>
+, <a class="el" href="classScreen.html#a223cd8821b2b8006c61545ff41aa0091">Screen</a>
 </li>
 <li>getItem()
 : <a class="el" href="classItem.html#ae2398e06c05c81df420d4ce92cd69a80">Item</a>
@@ -153,8 +149,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classRoom.html#a267a11891afd9d608fd47f69c812f0e6">Room</a>
 </li>
 <li>GetRows()
-: <a class="el" href="classScreen.html#aa12cc4ea36f5d2ac98b3c7334616acbc">Screen</a>
-, <a class="el" href="classImage.html#a91b5bb5c3fef2795ec9838763536ed78">Image</a>
+: <a class="el" href="classImage.html#a91b5bb5c3fef2795ec9838763536ed78">Image</a>
+, <a class="el" href="classScreen.html#aa12cc4ea36f5d2ac98b3c7334616acbc">Screen</a>
 </li>
 <li>gold
 : <a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">Character</a>

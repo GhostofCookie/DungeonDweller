@@ -24,7 +24,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insert a brief game description here.</div>
+   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,20 +88,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ConnectFourMenu.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ConnectFourMenu_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MinigameMenu_8h.html">MinigameMenu.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;MinigameMenu.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef CONNECTFOURMENU_H</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="ConnectFourMenu_8h.html#a0a3e11f9d5cebc361c8c93ec1956d273">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONNECTFOURMENU_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONNECTFOURMENU_H</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classConnectFourMenu.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConnectFourMenu.html">ConnectFourMenu</a> : <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classMinigameMenu.html">MinigameMenu</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <a class="code" href="classConnectFourMenu.html">ConnectFourMenu</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classConnectFourMenu.html">ConnectFourMenu</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOptions(map&lt;string&gt; optionsList, <span class="keywordtype">string</span> type);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOptions(map&lt;int,string&gt; optionsList, <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleInput(istream &amp;is);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
@@ -110,7 +109,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classMinigameMenu_html"><div class="ttname"><a href="classMinigameMenu.html">MinigameMenu</a></div><div class="ttdoc">An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes...</div><div class="ttdef"><b>Definition:</b> MinigameMenu.h:16</div></div>
 <div class="ttc" id="classConnectFourMenu_html"><div class="ttname"><a href="classConnectFourMenu.html">ConnectFourMenu</a></div><div class="ttdoc">This is the menu class for the Connect Four minigame. </div><div class="ttdef"><b>Definition:</b> ConnectFourMenu.h:17</div></div>
-<div class="ttc" id="MinigameMenu_8h_html"><div class="ttname"><a href="MinigameMenu_8h.html">MinigameMenu.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

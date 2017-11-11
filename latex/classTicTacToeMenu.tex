@@ -19,13 +19,15 @@ Inheritance diagram for Tic\-Tac\-Toe\-Menu\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}{Tic\-Tac\-Toe\-Menu} ()
+\hypertarget{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}{\hyperlink{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}{Tic\-Tac\-Toe\-Menu} ()}\label{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}
+
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classTicTacToeMenu_a5891833049463c13ca5115206b4e1340}{$\sim$\-Tic\-Tac\-Toe\-Menu} ()
+\hypertarget{classTicTacToeMenu_a429d4d036694b8d96b08896f50d5f19b}{virtual \hyperlink{classTicTacToeMenu_a429d4d036694b8d96b08896f50d5f19b}{$\sim$\-Tic\-Tac\-Toe\-Menu} ()}\label{classTicTacToeMenu_a429d4d036694b8d96b08896f50d5f19b}
+
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classTicTacToeMenu_abca85aca55ec72762b89be641b38ea5f}{Set\-Options} (map$<$ string $>$ options\-List, string type)
+virtual void \hyperlink{classTicTacToeMenu_a15f91b593ac1b58fc8b1b5267c9141d3}{Set\-Options} (map$<$ int, string $>$ options\-List, int row, int col)
 \item 
-virtual void \hyperlink{classTicTacToeMenu_a086c624e37acf777dd89a63575c07236}{Handle\-Input} (istream \&is)
+virtual void \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -33,39 +35,14 @@ virtual void \hyperlink{classTicTacToeMenu_a086c624e37acf777dd89a63575c07236}{Ha
 \subsection{Detailed Description}
 This is the menu class for the Tic Tac Toe minigame. 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}}
-\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!TicTacToeMenu@{Tic\-Tac\-Toe\-Menu}}
-\subsubsection[{Tic\-Tac\-Toe\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Tic\-Tac\-Toe\-Menu\-::\-Tic\-Tac\-Toe\-Menu (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classTicTacToeMenu_a15e92bc5e44266bbc23bbce421186dad}
-
-
-This is the default constructor. 
-
-\hypertarget{classTicTacToeMenu_a5891833049463c13ca5115206b4e1340}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!$\sim$\-Tic\-Tac\-Toe\-Menu@{$\sim$\-Tic\-Tac\-Toe\-Menu}}
-\index{$\sim$\-Tic\-Tac\-Toe\-Menu@{$\sim$\-Tic\-Tac\-Toe\-Menu}!TicTacToeMenu@{Tic\-Tac\-Toe\-Menu}}
-\subsubsection[{$\sim$\-Tic\-Tac\-Toe\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tic\-Tac\-Toe\-Menu\-::$\sim$\-Tic\-Tac\-Toe\-Menu (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToeMenu_a5891833049463c13ca5115206b4e1340}
-
-
-This is the virtual destructor. 
-
-
-
 \subsection{Member Function Documentation}
-\hypertarget{classTicTacToeMenu_a086c624e37acf777dd89a63575c07236}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!Handle\-Input@{Handle\-Input}}
+\hypertarget{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!Handle\-Input@{Handle\-Input}}
 \index{Handle\-Input@{Handle\-Input}!TicTacToeMenu@{Tic\-Tac\-Toe\-Menu}}
-\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tic\-Tac\-Toe\-Menu\-::\-Handle\-Input (
+\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-Menu\-::\-Handle\-Input (
 \begin{DoxyParamCaption}
 \item[{istream \&}]{is}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToeMenu_a086c624e37acf777dd89a63575c07236}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}
 This function handles the input for the menu options. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in,out}  & {\em is} & The in-\/stream operator to read the input. \\
@@ -75,14 +52,15 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}.
 
-\hypertarget{classTicTacToeMenu_abca85aca55ec72762b89be641b38ea5f}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classTicTacToeMenu_a15f91b593ac1b58fc8b1b5267c9141d3}{\index{Tic\-Tac\-Toe\-Menu@{Tic\-Tac\-Toe\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!TicTacToeMenu@{Tic\-Tac\-Toe\-Menu}}
-\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tic\-Tac\-Toe\-Menu\-::\-Set\-Options (
+\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{map$<$ string $>$}]{options\-List, }
-\item[{string}]{type}
+\item[{map$<$ int, string $>$}]{options\-List, }
+\item[{int}]{row, }
+\item[{int}]{col}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToeMenu_abca85aca55ec72762b89be641b38ea5f}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToeMenu_a15f91b593ac1b58fc8b1b5267c9141d3}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
@@ -92,10 +70,7 @@ This function sets the specific options for the \hyperlink{classMenu}{Menu} type
 \end{DoxyParams}
 
 
-Implements \hyperlink{classMinigameMenu_abf3dcda8c256be03ebe3661b8dde2ea2}{Minigame\-Menu}.
-
-
-
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Menu/\hyperlink{TicTacToeMenu_8h}{Tic\-Tac\-Toe\-Menu.\-h}\end{DoxyCompactItemize}
+Menu/Tic\-Tac\-Toe\-Menu.\-h\item 
+Menu/Tic\-Tac\-Toe\-Menu.\-cpp\end{DoxyCompactItemize}

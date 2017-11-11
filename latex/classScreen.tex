@@ -1,0 +1,376 @@
+\hypertarget{classScreen}{\section{Screen Class Reference}
+\label{classScreen}\index{Screen@{Screen}}
+}
+
+
+{\ttfamily \#include $<$Screen.\-h$>$}
+
+Inheritance diagram for Screen\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classScreen}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScreen_a932b81c3d221d644cc40ffe9003515a5}{Screen} (int h=33, int w=101, char ch= '-\/')
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classScreen_a4243bc17596af96415b09ac48205676d}{$\sim$\-Screen} ()
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{Initialize} (int h, int w)
+\item 
+void \hyperlink{classScreen_a11f9842c836301989f7c3d84eb043700}{Resize} (int h, int w)
+\item 
+\hypertarget{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{int \hyperlink{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{Get\-Rows} () const }\label{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}
+
+\begin{DoxyCompactList}\small\item\em Returns the height of the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a223cd8821b2b8006c61545ff41aa0091}{int \hyperlink{classScreen_a223cd8821b2b8006c61545ff41aa0091}{Get\-Cols} () const }\label{classScreen_a223cd8821b2b8006c61545ff41aa0091}
+
+\begin{DoxyCompactList}\small\item\em Returns the width of the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{int \hyperlink{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{Get\-Center\-Pnt} () const }\label{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}
+
+\begin{DoxyCompactList}\small\item\em Returns the center of the screen. \end{DoxyCompactList}\item 
+bool \hyperlink{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{Is\-Even} (const int \&num) const 
+\item 
+void \hyperlink{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{New\-Outline\-Ch} (char ch)
+\item 
+void \hyperlink{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{Create\-Border} (char ch)
+\item 
+\hypertarget{classScreen_a146a94183c6c610ae8a619521fc9d102}{void \hyperlink{classScreen_a146a94183c6c610ae8a619521fc9d102}{Draw\-Border} ()}\label{classScreen_a146a94183c6c610ae8a619521fc9d102}
+
+\begin{DoxyCompactList}\small\item\em Helper function to draw the border on the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}{void \hyperlink{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}{Fill} ()}\label{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}
+
+\begin{DoxyCompactList}\small\item\em Fill the screen with the default character. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{void \hyperlink{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{Fill} (char ch)}\label{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}
+
+\begin{DoxyCompactList}\small\item\em Fill the screen with a given character. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_ab035671163a5cabee7611c7c456b1c56}{Set} (int y, int x, char ch)
+\begin{DoxyCompactList}\small\item\em Sets the characters at the given location to the given character. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{void \hyperlink{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{Erase} ()}\label{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}
+
+\begin{DoxyCompactList}\small\item\em This function erases the contents of the screen and resets. \end{DoxyCompactList}\item 
+\hyperlink{classScreen_a932b81c3d221d644cc40ffe9003515a5}{Screen} (int h=33, int w=101, char ch= '-\/')
+\item 
+\hypertarget{classScreen_a0bc1a2ceaee4a245e0d31822ea0643bd}{virtual \hyperlink{classScreen_a0bc1a2ceaee4a245e0d31822ea0643bd}{$\sim$\-Screen} ()}\label{classScreen_a0bc1a2ceaee4a245e0d31822ea0643bd}
+
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{Initialize} (int h, int w)
+\item 
+void \hyperlink{classScreen_a11f9842c836301989f7c3d84eb043700}{Resize} (int h, int w)
+\item 
+\hypertarget{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{int \hyperlink{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{Get\-Rows} () const }\label{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}
+
+\begin{DoxyCompactList}\small\item\em Returns the height of the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a223cd8821b2b8006c61545ff41aa0091}{int \hyperlink{classScreen_a223cd8821b2b8006c61545ff41aa0091}{Get\-Cols} () const }\label{classScreen_a223cd8821b2b8006c61545ff41aa0091}
+
+\begin{DoxyCompactList}\small\item\em Returns the width of the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{int \hyperlink{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{Get\-Center\-Pnt} () const }\label{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}
+
+\begin{DoxyCompactList}\small\item\em Returns the center of the screen. \end{DoxyCompactList}\item 
+bool \hyperlink{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{Is\-Even} (const int \&num) const 
+\item 
+void \hyperlink{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{New\-Outline\-Ch} (char ch)
+\item 
+void \hyperlink{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{Create\-Border} (char ch)
+\item 
+\hypertarget{classScreen_a146a94183c6c610ae8a619521fc9d102}{void \hyperlink{classScreen_a146a94183c6c610ae8a619521fc9d102}{Draw\-Border} ()}\label{classScreen_a146a94183c6c610ae8a619521fc9d102}
+
+\begin{DoxyCompactList}\small\item\em Helper function to draw the border on the screen. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}{void \hyperlink{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}{Fill} ()}\label{classScreen_a8cf89892a333f7d6e7227ffdf77b3351}
+
+\begin{DoxyCompactList}\small\item\em Fill the screen with the default character. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{void \hyperlink{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{Fill} (char ch)}\label{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}
+
+\begin{DoxyCompactList}\small\item\em Fill the screen with a given character. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_ab035671163a5cabee7611c7c456b1c56}{Set} (int y, int x, char ch)
+\begin{DoxyCompactList}\small\item\em Sets the characters at the given location to the given character. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{void \hyperlink{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{Erase} ()}\label{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}
+
+\begin{DoxyCompactList}\small\item\em This function erases the contents of the screen and resets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classScreen_a6f906b745f406576d9f7aeaec330c9d6}{bool \hyperlink{classScreen_a6f906b745f406576d9f7aeaec330c9d6}{outline\-On} = true}\label{classScreen_a6f906b745f406576d9f7aeaec330c9d6}
+
+\begin{DoxyCompactList}\small\item\em Controls whether or not a screen will have an outline. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a0b59df2bfafff7a121286a5ea40503b6}{char \hyperlink{classScreen_a0b59df2bfafff7a121286a5ea40503b6}{outline\-Ch}}\label{classScreen_a0b59df2bfafff7a121286a5ea40503b6}
+
+\begin{DoxyCompactList}\small\item\em the character used to draw the screen border \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classScreen_a55405920693276db8fbdbf3a903b8d2f}{int \hyperlink{classScreen_a55405920693276db8fbdbf3a903b8d2f}{height} = 0}\label{classScreen_a55405920693276db8fbdbf3a903b8d2f}
+
+\begin{DoxyCompactList}\small\item\em The height of the image, default to 0. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a49be8f8ccf7ed7a3151a761495c0ce21}{int \hyperlink{classScreen_a49be8f8ccf7ed7a3151a761495c0ce21}{width} = 0}\label{classScreen_a49be8f8ccf7ed7a3151a761495c0ce21}
+
+\begin{DoxyCompactList}\small\item\em The width of the image, default to 0. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_aa91047854045bd18158557ea4b0c596f}{vector$<$ vector$<$ char $>$ $>$ \hyperlink{classScreen_aa91047854045bd18158557ea4b0c596f}{Window}}\label{classScreen_aa91047854045bd18158557ea4b0c596f}
+
+\begin{DoxyCompactList}\small\item\em 2\-D vector representing the screen object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}{ostream \& \hyperlink{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}{operator$<$$<$} (ostream \&os, const \hyperlink{classScreen}{Screen} $\ast$s)}\label{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}
+
+\begin{DoxyCompactList}\small\item\em Overloaded ostream operator. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_adb701ccee14124fb66506086b5a34199}{ostream \& \hyperlink{classScreen_adb701ccee14124fb66506086b5a34199}{operator$<$$<$} (ostream \&os, const \hyperlink{classScreen}{Screen} \&s)}\label{classScreen_adb701ccee14124fb66506086b5a34199}
+
+\begin{DoxyCompactList}\small\item\em Overloaded ostream operator. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}{ostream \& \hyperlink{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}{operator$<$$<$} (ostream \&os, const \hyperlink{classScreen}{Screen} $\ast$s)}\label{classScreen_a9d1583ec176b804e06d7c6d2a8bf3bcd}
+
+\begin{DoxyCompactList}\small\item\em Overloaded ostream operator. \end{DoxyCompactList}\item 
+\hypertarget{classScreen_adb701ccee14124fb66506086b5a34199}{ostream \& \hyperlink{classScreen_adb701ccee14124fb66506086b5a34199}{operator$<$$<$} (ostream \&os, const \hyperlink{classScreen}{Screen} \&s)}\label{classScreen_adb701ccee14124fb66506086b5a34199}
+
+\begin{DoxyCompactList}\small\item\em Overloaded ostream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents an abstract base class in which different screens can be created from the default 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classScreen_a932b81c3d221d644cc40ffe9003515a5}{\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\subsubsection[{Screen}]{\setlength{\rightskip}{0pt plus 5cm}Screen\-::\-Screen (
+\begin{DoxyParamCaption}
+\item[{int}]{h = {\ttfamily 33}, }
+\item[{int}]{w = {\ttfamily 101}, }
+\item[{char}]{ch = {\ttfamily '-\/'}}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a932b81c3d221d644cc40ffe9003515a5}
+
+
+Default Constructor. 
+
+Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the image, default to 33 \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the image, default to 101 \\
+\hline
+\mbox{\tt in}  & {\em ch} & the default character to draw the border with \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a4243bc17596af96415b09ac48205676d}{\index{Screen@{Screen}!$\sim$\-Screen@{$\sim$\-Screen}}
+\index{$\sim$\-Screen@{$\sim$\-Screen}!Screen@{Screen}}
+\subsubsection[{$\sim$\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}Screen\-::$\sim$\-Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classScreen_a4243bc17596af96415b09ac48205676d}
+
+
+Virtual Destructor. 
+
+Destructor. \hypertarget{classScreen_a932b81c3d221d644cc40ffe9003515a5}{\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\subsubsection[{Screen}]{\setlength{\rightskip}{0pt plus 5cm}Screen\-::\-Screen (
+\begin{DoxyParamCaption}
+\item[{int}]{h = {\ttfamily 33}, }
+\item[{int}]{w = {\ttfamily 101}, }
+\item[{char}]{ch = {\ttfamily '-\/'}}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a932b81c3d221d644cc40ffe9003515a5}
+Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the image, default to 33 \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the image, default to 101 \\
+\hline
+\mbox{\tt in}  & {\em ch} & the default character to draw the border with \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{\index{Screen@{Screen}!Create\-Border@{Create\-Border}}
+\index{Create\-Border@{Create\-Border}!Screen@{Screen}}
+\subsubsection[{Create\-Border}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Create\-Border (
+\begin{DoxyParamCaption}
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}
+Helper function to switch the border character 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to draw the border \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{\index{Screen@{Screen}!Create\-Border@{Create\-Border}}
+\index{Create\-Border@{Create\-Border}!Screen@{Screen}}
+\subsubsection[{Create\-Border}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Create\-Border (
+\begin{DoxyParamCaption}
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}
+Helper function to switch the border character 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to draw the border \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{\index{Screen@{Screen}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Screen@{Screen}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Initialize (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{w}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}
+Helper function to build the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{\index{Screen@{Screen}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Screen@{Screen}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Initialize (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{w}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}
+Helper function to build the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{\index{Screen@{Screen}!Is\-Even@{Is\-Even}}
+\index{Is\-Even@{Is\-Even}!Screen@{Screen}}
+\subsubsection[{Is\-Even}]{\setlength{\rightskip}{0pt plus 5cm}bool Screen\-::\-Is\-Even (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{num}
+\end{DoxyParamCaption}
+) const}}\label{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}
+Returns true if the number is even 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the number to check \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{\index{Screen@{Screen}!Is\-Even@{Is\-Even}}
+\index{Is\-Even@{Is\-Even}!Screen@{Screen}}
+\subsubsection[{Is\-Even}]{\setlength{\rightskip}{0pt plus 5cm}bool Screen\-::\-Is\-Even (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{num}
+\end{DoxyParamCaption}
+) const}}\label{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}
+Returns true if the number is even 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the number to check \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{\index{Screen@{Screen}!New\-Outline\-Ch@{New\-Outline\-Ch}}
+\index{New\-Outline\-Ch@{New\-Outline\-Ch}!Screen@{Screen}}
+\subsubsection[{New\-Outline\-Ch}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-New\-Outline\-Ch (
+\begin{DoxyParamCaption}
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}
+Helper function to swap out the character used to draw the border 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to create the outline \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{\index{Screen@{Screen}!New\-Outline\-Ch@{New\-Outline\-Ch}}
+\index{New\-Outline\-Ch@{New\-Outline\-Ch}!Screen@{Screen}}
+\subsubsection[{New\-Outline\-Ch}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-New\-Outline\-Ch (
+\begin{DoxyParamCaption}
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}
+Helper function to swap out the character used to draw the border 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to create the outline \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a11f9842c836301989f7c3d84eb043700}{\index{Screen@{Screen}!Resize@{Resize}}
+\index{Resize@{Resize}!Screen@{Screen}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Resize (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{w}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a11f9842c836301989f7c3d84eb043700}
+Helper function to resize the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_a11f9842c836301989f7c3d84eb043700}{\index{Screen@{Screen}!Resize@{Resize}}
+\index{Resize@{Resize}!Screen@{Screen}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Resize (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{w}
+\end{DoxyParamCaption}
+)}}\label{classScreen_a11f9842c836301989f7c3d84eb043700}
+Helper function to resize the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_ab035671163a5cabee7611c7c456b1c56}{\index{Screen@{Screen}!Set@{Set}}
+\index{Set@{Set}!Screen@{Screen}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Set (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{w, }
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_ab035671163a5cabee7611c7c456b1c56}
+
+
+Sets the characters at the given location to the given character. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate \\
+\hline
+\mbox{\tt in}  & {\em ch} & the character used to draw on that location\\
+\hline
+\mbox{\tt in}  & {\em int} & row \\
+\hline
+\mbox{\tt in}  & {\em int} & col \\
+\hline
+\mbox{\tt in}  & {\em char} & ch \\
+\hline
+\end{DoxyParams}
+\hypertarget{classScreen_ab035671163a5cabee7611c7c456b1c56}{\index{Screen@{Screen}!Set@{Set}}
+\index{Set@{Set}!Screen@{Screen}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Set (
+\begin{DoxyParamCaption}
+\item[{int}]{y, }
+\item[{int}]{x, }
+\item[{char}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classScreen_ab035671163a5cabee7611c7c456b1c56}
+
+
+Sets the characters at the given location to the given character. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate \\
+\hline
+\mbox{\tt in}  & {\em ch} & the character used to draw on that location \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Screen/Screen.\-h\item 
+Screen/Screen.\-hh\item 
+Screen/Screen.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\hypertarget{classDefaultImg}{\section{Default\-Img Class Reference}
+\label{classDefaultImg}\index{Default\-Img@{Default\-Img}}
+}
+
+
+The \hyperlink{classDefaultImg}{Default\-Img} class represents a basic square image made of characters.  
+
+
+
+
+{\ttfamily \#include $<$Default\-Img.\-hh$>$}
+
+Inheritance diagram for Default\-Img\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDefaultImg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}{Default\-Img} (int h=3, int w=6)
+\item 
+\hyperlink{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}{Default\-Img} (const \hyperlink{classDefaultImg}{Default\-Img} \&img)
+\item 
+\hyperlink{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}{Default\-Img} (\hyperlink{classDefaultImg}{Default\-Img} \&img)
+\item 
+\hypertarget{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{\hyperlink{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{$\sim$\-Default\-Img} ()}\label{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{Draw} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)
+\item 
+\hypertarget{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{void \hyperlink{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{Create} ()}\label{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}
+
+\begin{DoxyCompactList}\small\item\em Function to create the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classDefaultImg}{Default\-Img} class represents a basic square image made of characters. 
+
+\begin{DoxyAuthor}{Author}
+Reid Paulhus 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Oct 20, 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
+\index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
+\subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
+\begin{DoxyParamCaption}
+\item[{int}]{h = {\ttfamily 3}, }
+\item[{int}]{w = {\ttfamily 6}}
+\end{DoxyParamCaption}
+)}}\label{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}
+Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the image, default to 3 \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the image, default to 6 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
+\index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
+\subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
+\begin{DoxyParamCaption}
+\item[{const {\bf Default\-Img} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}
+Copy constructor duplicates a given picture 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
+\index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
+\subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
+\begin{DoxyParamCaption}
+\item[{{\bf Default\-Img} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}
+Copy constructor duplicates a given picture 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{\index{Default\-Img@{Default\-Img}!Draw@{Draw}}
+\index{Draw@{Draw}!DefaultImg@{Default\-Img}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Default\-Img\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{scr, }
+\item[{int}]{y, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}
+Function to draw the image to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scr} & the screen being drawn on \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classImage_a72d145544910c3a28cbc326c009d67c1}{Image}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Image/Default\-Img.\-hh\end{DoxyCompactItemize}

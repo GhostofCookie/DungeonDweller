@@ -1,0 +1,90 @@
+\hypertarget{classItem}{\section{Item Class Reference}
+\label{classItem}\index{Item@{Item}}
+}
+
+
+This class is an abstract base class to represent items in game.  
+
+
+
+
+{\ttfamily \#include $<$Item.\-h$>$}
+
+Inheritance diagram for Item\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.772277cm]{classItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{virtual \hyperlink{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{$\sim$\-Item} ()}\label{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}
+
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\hyperlink{classItem}{Item} $\ast$ \hyperlink{classItem_ae2398e06c05c81df420d4ce92cd69a80}{get\-Item} (string item\-Type)
+\item 
+virtual void \hyperlink{classItem_a6905855bea19d5f5ccc098cf39dc147f}{use} (Charater $\ast$target)=0
+\item 
+string \& \hyperlink{classItem_aeae73c8d4d4364d62a4984c85d1d2a3b}{name} ()
+\item 
+string \hyperlink{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{name} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is an abstract base class to represent items in game. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classItem_ae2398e06c05c81df420d4ce92cd69a80}{\index{Item@{Item}!get\-Item@{get\-Item}}
+\index{get\-Item@{get\-Item}!Item@{Item}}
+\subsubsection[{get\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item}$\ast$ Item\-::get\-Item (
+\begin{DoxyParamCaption}
+\item[{string}]{item\-Type}
+\end{DoxyParamCaption}
+)}}\label{classItem_ae2398e06c05c81df420d4ce92cd69a80}
+Uses factory design pattern to create items 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em item\-Type} & The type of item to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to created item 
+\end{DoxyReturn}
+\hypertarget{classItem_aeae73c8d4d4364d62a4984c85d1d2a3b}{\index{Item@{Item}!name@{name}}
+\index{name@{name}!Item@{Item}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string\& Item\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classItem_aeae73c8d4d4364d62a4984c85d1d2a3b}
+Allows access to the items name \begin{DoxyReturn}{Returns}
+Reference to the name of the item 
+\end{DoxyReturn}
+\hypertarget{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{\index{Item@{Item}!name@{name}}
+\index{name@{name}!Item@{Item}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}
+Gives the name of the item without allowing chages \begin{DoxyReturn}{Returns}
+Name of the item 
+\end{DoxyReturn}
+\hypertarget{classItem_a6905855bea19d5f5ccc098cf39dc147f}{\index{Item@{Item}!use@{use}}
+\index{use@{use}!Item@{Item}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Item\-::use (
+\begin{DoxyParamCaption}
+\item[{Charater $\ast$}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classItem_a6905855bea19d5f5ccc098cf39dc147f}
+Pure Virtual funtion that forces all subclasses to define how to use themselves 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em target} & The \hyperlink{classCharacter}{Character} the item is being used on \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Item/Item.\-h\end{DoxyCompactItemize}

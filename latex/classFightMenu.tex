@@ -1,0 +1,75 @@
+\hypertarget{classFightMenu}{\section{Fight\-Menu Class Reference}
+\label{classFightMenu}\index{Fight\-Menu@{Fight\-Menu}}
+}
+
+
+This is the menu for the player to use when they are engaged in combat.  
+
+
+
+
+{\ttfamily \#include $<$Fight\-Menu.\-h$>$}
+
+Inheritance diagram for Fight\-Menu\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFightMenu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFightMenu_a9f030d9a49e5b81dbaea8eab936cdf80}{\hyperlink{classFightMenu_a9f030d9a49e5b81dbaea8eab936cdf80}{Fight\-Menu} ()}\label{classFightMenu_a9f030d9a49e5b81dbaea8eab936cdf80}
+
+\begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
+\hypertarget{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}{virtual \hyperlink{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}{$\sim$\-Fight\-Menu} ()}\label{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}
+
+\begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classFightMenu_a46b68aa18df4892d615573fee50e9bc8}{Set\-Options} (int row, int col)
+\item 
+virtual void \hyperlink{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}{Handle\-Input} (istream \&is)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the menu for the player to use when they are engaged in combat. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}{\index{Fight\-Menu@{Fight\-Menu}!Handle\-Input@{Handle\-Input}}
+\index{Handle\-Input@{Handle\-Input}!FightMenu@{Fight\-Menu}}
+\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Fight\-Menu\-::\-Handle\-Input (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}
+This function handles the input for the menu options. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em is} & The in-\/stream operator to read the input. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
+
+\hypertarget{classFightMenu_a46b68aa18df4892d615573fee50e9bc8}{\index{Fight\-Menu@{Fight\-Menu}!Set\-Options@{Set\-Options}}
+\index{Set\-Options@{Set\-Options}!FightMenu@{Fight\-Menu}}
+\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Fight\-Menu\-::\-Set\-Options (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFightMenu_a46b68aa18df4892d615573fee50e9bc8}
+This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\hline
+\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Menu/Fight\-Menu.\-h\item 
+Menu/Fight\-Menu.\-cpp\end{DoxyCompactItemize}
