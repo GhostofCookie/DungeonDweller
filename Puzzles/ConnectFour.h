@@ -40,7 +40,7 @@ class ConnectFour: virtual Puzzle
    ///Assign the player selection to the board.
    ///\param[in] UserPiece, whichever token the player is using for the game
    ///\param[in] x, the X-coordinate (column) to drop the token in
-   void MovePiece(char userPiece, int x);
+   void MovePiece(char userPiece, int column);
 
    /// Displays the screen containing the gameboard
    /// \param[in] CfScreen, the screen object used for displaying the mini-game 
@@ -49,8 +49,33 @@ class ConnectFour: virtual Puzzle
    ///Checks to see if there have been any 4 tokens in a row in the grid vector.
    bool WinCheck();
 
+   ///Checks the entire grid to see if there is 4 of a kind in the horizontal
+   ///position, returns true if it finds 4 of a kind, false otherwise.   
+   bool HorizontalCheck();
+
+   ///Checks the entire grid to see if there is 4 of a kind in the vertical
+   ///position, returns true if it finds 4 of a kind, false otherwise.
+   bool VerticalCheck();
+
+   ///Checks the entire grid to see if there is 4 of a kind in the right diagonal
+   ///position, returns true if it finds 4 of a kind, false otherwise.   
+   bool RightDiagonalCheck();
+
+   ///Checks the entire grid to see if there is 4 of a kind in the left diagonal
+   ///position, returns true if it finds 4 of a kind, false otherwise.  
+   bool LeftDiagonalCheck();
+   
+   void PlayAI();
+
+   ///Function which checks if a column is full   
+   bool IsColumnFull(int x);
+
+   ///Returns true if every space in the board has been filled with a character 
+   bool IsBoardFull(); 
+   
    /// The vector which stores the gameboards chars.
-   std::vector<vector<char>>grid;   
+   std::vector<vector<char>>grid;
+   int xSize, ySize;
 
 };
 #endif
