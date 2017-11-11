@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,33 +89,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Consumable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Consumable_8h_source.html">Consumable.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Consumable:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classConsumable.png" usemap="#Consumable_map" alt=""/>
   <map id="Consumable_map" name="Consumable_map">
-<area href="classItem.html" alt="Item" shape="rect" coords="0,0,81,24"/>
+<area href="classItem.html" title="This class is an abstract base class to represent items in game. " alt="Item" shape="rect" coords="103,0,196,24"/>
+<area href="classFood.html" title="Subclass of Consumable to represent in game food. " alt="Food" shape="rect" coords="0,112,93,136"/>
+<area href="classHealthPotion.html" title="Subclass of Consumable to represent an in game health potion. " alt="HealthPotion" shape="rect" coords="103,112,196,136"/>
+<area href="classInvisiblePotion.html" title="Subclass of Consumable to represent an in game invisibility potion. " alt="InvisiblePotion" shape="rect" coords="206,112,299,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classItem"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classItem')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classItem.html">Item</a></td></tr>
-<tr class="memitem:ae2398e06c05c81df420d4ce92cd69a80 inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2398e06c05c81df420d4ce92cd69a80"></a>
-<a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getItem</b> (string itemType)</td></tr>
+<tr class="memitem:a33cc9c0bc556b5a33a9d0d58d37c602b inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33cc9c0bc556b5a33a9d0d58d37c602b"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a33cc9c0bc556b5a33a9d0d58d37c602b">~Item</a> ()</td></tr>
+<tr class="memdesc:a33cc9c0bc556b5a33a9d0d58d37c602b inherit pub_methods_classItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br/></td></tr>
+<tr class="separator:a33cc9c0bc556b5a33a9d0d58d37c602b inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2398e06c05c81df420d4ce92cd69a80 inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#ae2398e06c05c81df420d4ce92cd69a80">getItem</a> (string itemType)</td></tr>
 <tr class="separator:ae2398e06c05c81df420d4ce92cd69a80 inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a288f11fb8e6a7689e76d9b35baff47a6 inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a288f11fb8e6a7689e76d9b35baff47a6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>use</b> (Charater *target)</td></tr>
-<tr class="separator:a288f11fb8e6a7689e76d9b35baff47a6 inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec2f225f58b466627cb268d8f67b6c2f inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec2f225f58b466627cb268d8f67b6c2f"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> ()</td></tr>
-<tr class="separator:aec2f225f58b466627cb268d8f67b6c2f inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefdaa767e00c0fcfe2801a5e3e4e951d inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefdaa767e00c0fcfe2801a5e3e4e951d"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> () const </td></tr>
+<tr class="memitem:a6905855bea19d5f5ccc098cf39dc147f inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a6905855bea19d5f5ccc098cf39dc147f">use</a> (Charater *target)=0</td></tr>
+<tr class="separator:a6905855bea19d5f5ccc098cf39dc147f inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae73c8d4d4364d62a4984c85d1d2a3b inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#aeae73c8d4d4364d62a4984c85d1d2a3b">name</a> ()</td></tr>
+<tr class="separator:aeae73c8d4d4364d62a4984c85d1d2a3b inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdaa767e00c0fcfe2801a5e3e4e951d inherit pub_methods_classItem"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#aefdaa767e00c0fcfe2801a5e3e4e951d">name</a> () const </td></tr>
 <tr class="separator:aefdaa767e00c0fcfe2801a5e3e4e951d inherit pub_methods_classItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class is an abstaract base class derived from <a class="el" href="classItem.html" title="This class is an abstract base class to represent items in game. ">Item</a> to represent in game consumables </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>Item/<a class="el" href="Consumable_8h_source.html">Consumable.h</a></li>
 </ul>
 </div><!-- contents -->

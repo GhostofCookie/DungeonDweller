@@ -8,128 +8,97 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 
 
 
-{\ttfamily \#include $<$player.\-hpp$>$}
+{\ttfamily \#include $<$Player.\-h$>$}
 
-Inheritance diagram for Player\-:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classPlayer}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPlayer_a187eb03426482ee7f3936f5f4a952a06}{Player} (int H, int S, int A\-P, string N, string R)
+\hyperlink{classPlayer_a3f78353312cc3cf41905fdc3accafb6c}{Player} (int s=0, int k=0, string n=\char`\"{} \char`\"{}, string r=\char`\"{} \char`\"{})
 \item 
 \hypertarget{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{\hyperlink{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\-Player} ()}\label{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classPlayer}{Player} deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classPlayer_af9950c6d591faee9183aad8a37f33dad}{Change\-Health} (int \&H, int H\-Mod)
+void \hyperlink{classPlayer_a5bca1aa08cadb57984c488498a2e0e38}{Change\-Stamina} (int \&s, int s\-Mod)
 \item 
-void \hyperlink{classPlayer_a4ac9534d49779d6f46e0a8646bb9ed5f}{Change\-Stamina} (int \&S, int S\-Mod)
+void \hyperlink{classPlayer_a325d080bde1038593f942b17a5dd6ae2}{Change\-Keys} (int \&keys, int key\-Mod)
 \item 
-void \hyperlink{classPlayer_a6c98497cbb003bdcb85b6e5d58649609}{Change\-Attack\-Power} (int \&A\-P, int A\-P\-Mod)
-\item 
-void \hyperlink{classPlayer_a8ee385d70cb8ee3f2fd9070ec94e2f28}{Update\-Inventory} (vector$<$ string $>$)
-\item 
-\hypertarget{classPlayer_a1908922bb3f8cb3bd5b07a7321d52862}{int \hyperlink{classPlayer_a1908922bb3f8cb3bd5b07a7321d52862}{Attack} ()}\label{classPlayer_a1908922bb3f8cb3bd5b07a7321d52862}
-
-\begin{DoxyCompactList}\small\item\em Function to allow the player to attack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{classPlayer_af839bdc1524d571568ea31a34f44f3ab}{Use\-Key} (int \&keys)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Derived class from \hyperlink{classCharacter}{Character} which provides \hyperlink{classPlayer}{Player} attributes. 
 
-\begin{DoxyAuthor}{Author}
-Gates Kempenaar 
-\end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-Oct 25, 2017 
-\end{DoxyDate}
-
-
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPlayer_a187eb03426482ee7f3936f5f4a952a06}{\index{Player@{Player}!Player@{Player}}
+\hypertarget{classPlayer_a3f78353312cc3cf41905fdc3accafb6c}{\index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
 \begin{DoxyParamCaption}
-\item[{int}]{H, }
-\item[{int}]{S, }
-\item[{int}]{A\-P, }
-\item[{string}]{N, }
-\item[{string}]{R}
+\item[{int}]{s = {\ttfamily 0}, }
+\item[{int}]{k = {\ttfamily 0}, }
+\item[{string}]{n = {\ttfamily \char`\"{}~\char`\"{}}, }
+\item[{string}]{r = {\ttfamily \char`\"{}~\char`\"{}}}
 \end{DoxyParamCaption}
-)}}\label{classPlayer_a187eb03426482ee7f3936f5f4a952a06}
+)}}\label{classPlayer_a3f78353312cc3cf41905fdc3accafb6c}
 \hyperlink{classPlayer}{Player} constructor 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em H,players} & health \\
+\mbox{\tt in}  & {\em s,players} & stamina \\
 \hline
-\mbox{\tt in}  & {\em S,players} & stamina \\
+\mbox{\tt in}  & {\em k,players} & keys \\
 \hline
-\mbox{\tt in}  & {\em A\-P,players} & attack power \\
+\mbox{\tt in}  & {\em n,players} & name \\
 \hline
-\mbox{\tt in}  & {\em N,players} & name \\
-\hline
-\mbox{\tt in}  & {\em R,players} & race \\
+\mbox{\tt in}  & {\em r,players} & race \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPlayer_a6c98497cbb003bdcb85b6e5d58649609}{\index{Player@{Player}!Change\-Attack\-Power@{Change\-Attack\-Power}}
-\index{Change\-Attack\-Power@{Change\-Attack\-Power}!Player@{Player}}
-\subsubsection[{Change\-Attack\-Power}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Change\-Attack\-Power (
+\hypertarget{classPlayer_a325d080bde1038593f942b17a5dd6ae2}{\index{Player@{Player}!Change\-Keys@{Change\-Keys}}
+\index{Change\-Keys@{Change\-Keys}!Player@{Player}}
+\subsubsection[{Change\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Change\-Keys (
 \begin{DoxyParamCaption}
-\item[{int \&}]{A\-P, }
-\item[{int}]{A\-P\-Mod}
+\item[{int \&}]{keys, }
+\item[{int}]{key\-Mod}
 \end{DoxyParamCaption}
-)}}\label{classPlayer_a6c98497cbb003bdcb85b6e5d58649609}
-Changes the players attack power 
+)}}\label{classPlayer_a325d080bde1038593f942b17a5dd6ae2}
+Amount of keys the player has 
 \begin{DoxyParams}[1]{Parameters}
- & {\em in\&\mbox{]}} & A\-P, players current attack power \\
+ & {\em in\&\mbox{]}} & keys, current amount of keys the player has \\
 \hline
-\mbox{\tt in}  & {\em A\-P\-Mod,how} & the current attack power will be modified \\
+\mbox{\tt in}  & {\em key\-Mod,how} & the current amount of keys will be modified \\
 \hline
 \end{DoxyParams}
-\hypertarget{classPlayer_af9950c6d591faee9183aad8a37f33dad}{\index{Player@{Player}!Change\-Health@{Change\-Health}}
-\index{Change\-Health@{Change\-Health}!Player@{Player}}
-\subsubsection[{Change\-Health}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Change\-Health (
-\begin{DoxyParamCaption}
-\item[{int \&}]{H, }
-\item[{int}]{H\-Mod}
-\end{DoxyParamCaption}
-)}}\label{classPlayer_af9950c6d591faee9183aad8a37f33dad}
-Changes the players health 
-\begin{DoxyParams}[1]{Parameters}
- & {\em in\&\mbox{]}} & H, players current health \\
-\hline
-\mbox{\tt in}  & {\em H\-Mod,how} & the current health will be modified \\
-\hline
-\end{DoxyParams}
-\hypertarget{classPlayer_a4ac9534d49779d6f46e0a8646bb9ed5f}{\index{Player@{Player}!Change\-Stamina@{Change\-Stamina}}
+\hypertarget{classPlayer_a5bca1aa08cadb57984c488498a2e0e38}{\index{Player@{Player}!Change\-Stamina@{Change\-Stamina}}
 \index{Change\-Stamina@{Change\-Stamina}!Player@{Player}}
 \subsubsection[{Change\-Stamina}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Change\-Stamina (
 \begin{DoxyParamCaption}
-\item[{int \&}]{S, }
-\item[{int}]{S\-Mod}
+\item[{int \&}]{s, }
+\item[{int}]{s\-Mod}
 \end{DoxyParamCaption}
-)}}\label{classPlayer_a4ac9534d49779d6f46e0a8646bb9ed5f}
+)}}\label{classPlayer_a5bca1aa08cadb57984c488498a2e0e38}
 Changes players stamina 
 \begin{DoxyParams}[1]{Parameters}
- & {\em in\&\mbox{]}} & S, players current stamina \\
+ & {\em in\&\mbox{]}} & s, players current stamina \\
 \hline
-\mbox{\tt in}  & {\em Smod,how} & the curent stamina will be modified \\
+\mbox{\tt in}  & {\em s\-Mod,how} & the curent stamina will be modified \\
 \hline
 \end{DoxyParams}
-\hypertarget{classPlayer_a8ee385d70cb8ee3f2fd9070ec94e2f28}{\index{Player@{Player}!Update\-Inventory@{Update\-Inventory}}
-\index{Update\-Inventory@{Update\-Inventory}!Player@{Player}}
-\subsubsection[{Update\-Inventory}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Update\-Inventory (
+\hypertarget{classPlayer_af839bdc1524d571568ea31a34f44f3ab}{\index{Player@{Player}!Use\-Key@{Use\-Key}}
+\index{Use\-Key@{Use\-Key}!Player@{Player}}
+\subsubsection[{Use\-Key}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Use\-Key (
 \begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{}
+\item[{int \&}]{keys}
 \end{DoxyParamCaption}
-)}}\label{classPlayer_a8ee385d70cb8ee3f2fd9070ec94e2f28}
-Updates the players inventory with new items 
+)}}\label{classPlayer_af839bdc1524d571568ea31a34f44f3ab}
+Function to use a key 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em keys,uses} & a key if availible \\
+\hline
+\end{DoxyParams}
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Character/player.\-hpp\end{DoxyCompactItemize}
+Character/Player.\-h\item 
+Character/Player.\-cpp\end{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updateinventory',['UpdateInventory',['../classPlayer.html#a8ee385d70cb8ee3f2fd9070ec94e2f28',1,'Player']]]
+  ['use',['use',['../classItem.html#a6905855bea19d5f5ccc098cf39dc147f',1,'Item::use()'],['../classHealthPotion.html#a7e5875271f122606edb7e10f1a8a53d1',1,'HealthPotion::use()'],['../classFood.html#aeb50d8749f9fa2c9bfbc18c642607c41',1,'Food::use()'],['../classInvisiblePotion.html#a183ecf0905d5d6da6f9a59d26fb44d10',1,'InvisiblePotion::use()'],['../classSword.html#a21231a94ed57dc5fac7cae1c84002e5c',1,'Sword::use()'],['../classBow.html#acdca55097e449415445fdcbda11037c8',1,'Bow::use()']]],
+  ['usekey',['UseKey',['../classPlayer.html#af839bdc1524d571568ea31a34f44f3ab',1,'Player']]]
 ];

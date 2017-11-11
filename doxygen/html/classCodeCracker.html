@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,11 +102,22 @@ Inheritance diagram for CodeCracker:</div>
   <img src="classCodeCracker.png" usemap="#CodeCracker_map" alt=""/>
   <map id="CodeCracker_map" name="CodeCracker_map">
 <area href="classPuzzle.html" alt="Puzzle" shape="rect" coords="0,0,88,24"/>
+<area href="classPuzzle.html" alt="Puzzle" shape="rect" coords="98,0,186,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a46b5ec438efd38104b9a406b45c8cd68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46b5ec438efd38104b9a406b45c8cd68"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a46b5ec438efd38104b9a406b45c8cd68">CodeCracker</a> ()</td></tr>
+<tr class="memdesc:a46b5ec438efd38104b9a406b45c8cd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for hanoi, reads in riddles from .txt files. <br/></td></tr>
+<tr class="separator:a46b5ec438efd38104b9a406b45c8cd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7dc389e166286ca2271625154dde39c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7dc389e166286ca2271625154dde39c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#ae7dc389e166286ca2271625154dde39c">~CodeCracker</a> ()</td></tr>
+<tr class="memdesc:ae7dc389e166286ca2271625154dde39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor. <br/></td></tr>
+<tr class="separator:ae7dc389e166286ca2271625154dde39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2aaaf60b31cf33cc0d70622665be45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">RunGame</a> ()</td></tr>
+<tr class="separator:a4f2aaaf60b31cf33cc0d70622665be45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46b5ec438efd38104b9a406b45c8cd68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46b5ec438efd38104b9a406b45c8cd68"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a46b5ec438efd38104b9a406b45c8cd68">CodeCracker</a> ()</td></tr>
 <tr class="memdesc:a46b5ec438efd38104b9a406b45c8cd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for hanoi, reads in riddles from .txt files. <br/></td></tr>
@@ -149,8 +160,35 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a4f2aaaf60b31cf33cc0d70622665be45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeCracker::RunGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
+
+<p>Reimplemented from <a class="el" href="classPuzzle.html#a0962210916279dc1368b695b399c8ea6">Puzzle</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Puzzles/<a class="el" href="code__cracker_8h_source.html">code_cracker.h</a></li>
+<li>Puzzles/<a class="el" href="CodeCracker_8h_source.html">CodeCracker.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

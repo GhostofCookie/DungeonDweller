@@ -1,22 +1,51 @@
 \hypertarget{classWeapon}{\section{Weapon Class Reference}
 \label{classWeapon}\index{Weapon@{Weapon}}
 }
+
+
+This class is a abstract base class derived from \hyperlink{classItem}{Item} to represent weapons in game.  
+
+
+
+
+{\ttfamily \#include $<$Weapon.\-h$>$}
+
 Inheritance diagram for Weapon\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classWeapon}
+\includegraphics[height=3.000000cm]{classWeapon}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classWeapon_ab66a42df24e121bf9499f473a42ca325}{durability} ()
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWeapon_a507937307f9f92fc29b4b6827d85585a}{int {\bfseries base\-Damage}}\label{classWeapon_a507937307f9f92fc29b4b6827d85585a}
+\hypertarget{classWeapon_a507937307f9f92fc29b4b6827d85585a}{int \hyperlink{classWeapon_a507937307f9f92fc29b4b6827d85585a}{base\-Damage}}\label{classWeapon_a507937307f9f92fc29b4b6827d85585a}
 
-\item 
-\hypertarget{classWeapon_abbc826be5477aa791910f871d76a1da2}{int {\bfseries remaining\-Uses}}\label{classWeapon_abbc826be5477aa791910f871d76a1da2}
+\begin{DoxyCompactList}\small\item\em The Base damage of the weapon. \end{DoxyCompactList}\item 
+\hypertarget{classWeapon_abbc826be5477aa791910f871d76a1da2}{int \hyperlink{classWeapon_abbc826be5477aa791910f871d76a1da2}{remaining\-Uses}}\label{classWeapon_abbc826be5477aa791910f871d76a1da2}
 
-\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\begin{DoxyCompactList}\small\item\em How many more times the wepon can be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a abstract base class derived from \hyperlink{classItem}{Item} to represent weapons in game. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classWeapon_ab66a42df24e121bf9499f473a42ca325}{\index{Weapon@{Weapon}!durability@{durability}}
+\index{durability@{durability}!Weapon@{Weapon}}
+\subsubsection[{durability}]{\setlength{\rightskip}{0pt plus 5cm}int Weapon\-::durability (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWeapon_ab66a42df24e121bf9499f473a42ca325}
+The number of time the weapon can be used \begin{DoxyReturn}{Returns}
+number of remaining\-Uses 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,22 +88,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classPuzzle-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Puzzle Class Reference</div>  </div>
+<div class="title">Puzzle Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="puzzle_8h_source.html">puzzle.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Puzzle_8h_source.html">Puzzle.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Puzzle:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classPuzzle.png" usemap="#Puzzle_map" alt=""/>
   <map id="Puzzle_map" name="Puzzle_map">
-<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="0,56,93,80"/>
-<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,56,196,80"/>
-<area href="classHanoi.html" title="This class contains the mini-game/Puzzle Towers of Hanoi. " alt="Hanoi" shape="rect" coords="206,56,299,80"/>
-<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="309,56,402,80"/>
-<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="412,56,505,80"/>
+<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="103,56,196,80"/>
+<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="103,112,196,136"/>
+<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,168,196,192"/>
+<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,224,196,248"/>
+<area href="classHanoi.html" title="This class contains the mini-game/Puzzle Towers of Hanoi. " alt="Hanoi" shape="rect" coords="103,280,196,304"/>
+<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="103,336,196,360"/>
+<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="103,392,196,416"/>
+<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="103,448,196,472"/>
+<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="103,504,196,528"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -124,7 +128,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class represents an abstract base class for each mini-game/puzzle to derive from. </p>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Oct 20, 2017This class represents an abstract base class for each mini-game/puzzle to derive from. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a0962210916279dc1368b695b399c8ea6"></a>
 <div class="memitem">
@@ -148,12 +153,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
 
-<p>Reimplemented in <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, and <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>.</p>
+<p>Reimplemented in <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>, and <a class="el" href="classTicTacToe.html#a233703b78605561c39e680609a7a46e7">TicTacToe</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Puzzles/<a class="el" href="puzzle_8h_source.html">puzzle.h</a></li>
+<li>Puzzles/<a class="el" href="Puzzle_8h_source.html">Puzzle.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

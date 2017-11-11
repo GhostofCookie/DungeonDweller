@@ -22,12 +22,12 @@ Inheritance diagram for Explore\-Menu\-:\begin{figure}[H]
 \hypertarget{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{\hyperlink{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{Explore\-Menu} ()}\label{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}
 
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classExploreMenu_ab729e66a74a835cac6d0c1397ee9fca4}{virtual \hyperlink{classExploreMenu_ab729e66a74a835cac6d0c1397ee9fca4}{$\sim$\-Explore\-Menu} ()}\label{classExploreMenu_ab729e66a74a835cac6d0c1397ee9fca4}
+\hypertarget{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{virtual \hyperlink{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{$\sim$\-Explore\-Menu} ()}\label{classExploreMenu_ade9d89c5b19679f01b73120120022e68}
 
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classExploreMenu_a916408504bfc970370d199745f17b252}{Set\-Options} (map$<$ string $>$ options\-List, string type)
+virtual void \hyperlink{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}{Set\-Options} (int row, int col)
 \item 
-virtual void \hyperlink{classExploreMenu_a6f057968d2aece06eef01b9da9b42c2d}{Handle\-Input} (istream \&is)
+virtual void \hyperlink{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -35,18 +35,16 @@ virtual void \hyperlink{classExploreMenu_a6f057968d2aece06eef01b9da9b42c2d}{Hand
 \subsection{Detailed Description}
 This is the menu displayed when the player character is being chosen before the game begins. 
 
-This is the menu displayed when the player character is exploring rooms.
-
-This is the menu displayed when the player character is engaging in dialogue with an N\-P\-C. 
+This is the menu displayed when the player character is exploring rooms. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classExploreMenu_a6f057968d2aece06eef01b9da9b42c2d}{\index{Explore\-Menu@{Explore\-Menu}!Handle\-Input@{Handle\-Input}}
+\hypertarget{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{\index{Explore\-Menu@{Explore\-Menu}!Handle\-Input@{Handle\-Input}}
 \index{Handle\-Input@{Handle\-Input}!ExploreMenu@{Explore\-Menu}}
-\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Explore\-Menu\-::\-Handle\-Input (
+\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Explore\-Menu\-::\-Handle\-Input (
 \begin{DoxyParamCaption}
 \item[{istream \&}]{is}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_a6f057968d2aece06eef01b9da9b42c2d}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}
 This function handles the input for the menu options. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in,out}  & {\em is} & The in-\/stream operator to read the input. \\
@@ -56,14 +54,14 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
 
-\hypertarget{classExploreMenu_a916408504bfc970370d199745f17b252}{\index{Explore\-Menu@{Explore\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}{\index{Explore\-Menu@{Explore\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!ExploreMenu@{Explore\-Menu}}
-\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Explore\-Menu\-::\-Set\-Options (
+\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Explore\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{map$<$ string $>$}]{options\-List, }
-\item[{string}]{type}
+\item[{int}]{row, }
+\item[{int}]{col}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_a916408504bfc970370d199745f17b252}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu.\\
@@ -73,10 +71,7 @@ This function sets the specific options for the \hyperlink{classMenu}{Menu} type
 \end{DoxyParams}
 
 
-Implements \hyperlink{classGameMenu_a25172d8d311df4f7b79074d60f74642e}{Game\-Menu}.
-
-
-
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Explore\-Menu.\-h\end{DoxyCompactItemize}
+Menu/Explore\-Menu.\-h\item 
+Menu/Explore\-Menu.\-cpp\end{DoxyCompactItemize}
