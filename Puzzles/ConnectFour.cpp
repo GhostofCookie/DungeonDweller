@@ -27,7 +27,41 @@ ConnectFour::~ConnectFour()
 
 void ConnectFour::RunGame()
 {
-
+   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int CurrentPlayer=1;
+//Screen connectFourGameScreen;
+   //ConnectFourMenu connectFourGameMenu;
+   //connectFourGameMenu.OutputMenu();
+   while(GameEnd==false)
+   {
+      //connectFourGameScreen.OutputGame(cfScreen);
+      //connectFourMenu.OutputMenu();
+      //connectFourMenu.HandleInput(cin);
+      if(WinCheck())
+      {
+	 ///If currentPlayer is even, the AI has won, -1 player health, reset
+	 ///the game for another round until the player has won.
+	 if(currentPlayer%2==0)
+	 {
+	    cout << "The connect four champion has defeated you! Lose 1 health"
+		 << " point." << endl;
+	    //-1 Health
+	    ResetGame();
+	    cout << "Get ready to duel her again!" << endl;
+	 }
+	 else
+	 {
+	    cout << "Congratulations adventurer! You have defeated the champion"
+		 << "! You are free to proceed into the next area!" << endl;
+	    GameEnd==true;
+	 }
+      }
+      
+	 
+      
+      currentPlayer++;
+   }
 }
 
 // ConnectFour::void PromptUser(&screen)
@@ -40,34 +74,40 @@ void ConnectFour::RunGame()
 
 // }
 
-bool ConnectFour:: ValidMove(char input)
+bool ConnectFour:: ValidMove(int input)
 {
-  return true;
+   if(IsColumnFull(input))
+      return false;
+   else
+      return true;
 }
 
 void ConnectFour::MovePiece(char userPiece, int column)
 {
-   char currentSpot=' ';
-   int height=ySize-1;
-   while(currentSpot=' ')
+   if(!IsColumnFull(column))
    {
-      ///If we have reached the bottom of the column and not found a piece, set
-      ///the piece at the bottom of the column and break.
-      if(height==0)
+      char currentSpot=' ';
+      int height=ySize-1;
+      while(currentSpot=' ')
       {
-	 grid.at(column).at(height)=userPiece;
-	 break;
-      }
-      ///If there are no pieces here, keep moving down through the column
-      if(grid.at(column).at(height)==' ')
-      {
-	 height--;
-      }
-      ///Else we have found a characters piece, place on top of it and break
-      else
-      {
-	 grid.at(column).at(height+1)=userPiece;
-	 break;
+	 ///If we have reached the bottom of the column and not found a piece, set
+	 ///the piece at the bottom of the column and break.
+	 if(height==0)
+	 {
+	    grid.at(column).at(height)=userPiece;
+	    break;
+	 }
+	 ///If there are no pieces here, keep moving down through the column
+	 if(grid.at(column).at(height)==' ')
+	 {
+	    height--;
+	 }
+	 ///Else we have found a characters piece, place on top of it and break
+	 else
+	 {
+	    grid.at(column).at(height+1)=userPiece;
+	    break;
+	 }
       }
    }
 }
@@ -296,6 +336,21 @@ bool ConnectFour::IsBoardFull(){
    if(charCount==xSize*ySize)
       return true;
    return false;   
+}
+
+void ConnectFour::ResetGame()
+{
+   for(int i=0; i<xSize; i++)
+   {
+      ///Empty the board of all pieces and fill it with empty spaces.
+      grid.at(i).clear();
+      grid.at(i).resize(ySize);
+      for(int j=0; j<ySize; j++)
+      {
+	 grid.at(i).at(j)=' ';
+      }
+   }
+   
 }
 
 //bool ConnectFour:: ValidCommand(char input)

@@ -210,7 +210,8 @@ void Hanoi::OutputGame(Screen &hScreen)
 
 void Hanoi:: RunGame()
 {
-   
+   ///currentPlayer, if odd, it is the user, if even, it is the AI. 
+   int currentPlayer=1;
    Screen hScreen;
    SetOptionsInMenu();
    HanoiGameMenu.OutputMenu();
@@ -219,9 +220,10 @@ void Hanoi:: RunGame()
    {
       // OutputGame(hScreen);
       HanoiGameMenu.OutputMenu();
-      HanoiGameMenu.HandleInput(cin);
+      HanoiGameMenu.HandleInput(cin);//Will need to check if the column is full first.
       if(WinCheck())
-	 GameEnd=True;
+ 
+      currentPlayer++
    }
    cout << "A noise creaks behind the wall and the door slides open." << endl;
 }

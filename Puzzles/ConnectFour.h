@@ -32,7 +32,7 @@ class ConnectFour: virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(char input);
+   bool ValidMove(int input);
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -67,16 +67,21 @@ class ConnectFour: virtual Puzzle
    
    void PlayAI();
 
-   ///Function which checks if a column is full   
-   bool IsColumnFull(int x);
+   ///Function which checks if a column is full, returns true if its full
+   ///\param[in]input, the column selected by the user to be checked for status
+   bool IsColumnFull(int input);
 
    ///Returns true if every space in the board has been filled with a character 
    bool IsBoardFull(); 
+
+   ///Resets the game for another round in the event that the AI wins.
+   void ResetGame();
    
    /// The vector which stores the gameboards chars.
    std::vector<vector<char>>grid;
    int xSize, ySize;
 
+   
 };
 #endif
  
