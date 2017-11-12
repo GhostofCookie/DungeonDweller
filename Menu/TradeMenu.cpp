@@ -8,8 +8,9 @@ TradeMenu::~TradeMenu()
 {
 }
 
-void TradeMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void TradeMenu::SetOptions(int row, int col)
 {
+   map<int,string> optionsList;
 }
 
 void TradeMenu::HandleInput(istream & is)

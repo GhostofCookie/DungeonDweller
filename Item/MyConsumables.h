@@ -32,14 +32,3 @@ class Food : public Consumable
    void use(Character *taget);
 };
 
-
-/// Subclass of Consumable to represent an in game invisibility potion
-class InvisiblePotion : public Consumable
-{
-  public:
-
-   /// Defines what happens when the invisibility potion is used
-   /// param[in] target The Character that the invisibility potion is used on
-   void use(Character *taget);
-};
-#endif

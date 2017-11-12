@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,13 +101,19 @@ Inheritance diagram for GameMenu:</div>
  <div class="center">
   <img src="classGameMenu.png" usemap="#GameMenu_map" alt=""/>
   <map id="GameMenu_map" name="GameMenu_map">
-<area href="classMenu.html" title="This is the base class for all menus for the main game. " alt="Menu" shape="rect" coords="222,0,323,24"/>
-<area href="classCharacterMenu.html" alt="CharacterMenu" shape="rect" coords="0,112,101,136"/>
-<area href="classDialogueMenu.html" alt="DialogueMenu" shape="rect" coords="111,112,212,136"/>
-<area href="classExploreMenu.html" title="This is the menu displayed when the player character is being chosen before the game begins..." alt="ExploreMenu" shape="rect" coords="222,112,323,136"/>
-<area href="classMinigameMenu.html" title="An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes..." alt="MinigameMenu" shape="rect" coords="333,112,434,136"/>
-<area href="classTradeMenu.html" title="This is the menu displayed when the player character is trading. " alt="TradeMenu" shape="rect" coords="444,112,545,136"/>
-<area href="classHanoiMenu.html" title="This is the menu class for the Hanoi minigame. " alt="HanoiMenu" shape="rect" coords="333,168,434,192"/>
+<area href="classMenu.html" title="This is the base class for all menus for the main game. " alt="Menu" shape="rect" coords="384,0,502,24"/>
+<area href="classCharacterMenu.html" alt="CharacterMenu" shape="rect" coords="0,112,118,136"/>
+<area href="classDialogueMenu.html" title="This is the menu displayed when the player character is engaging in dialogue with an NPC..." alt="DialogueMenu" shape="rect" coords="128,112,246,136"/>
+<area href="classExploreMenu.html" title="This is the menu displayed when the player character is being chosen before the game begins..." alt="ExploreMenu" shape="rect" coords="256,112,374,136"/>
+<area href="classFightMenu.html" title="This is the menu for the player to use when they are engaged in combat. " alt="FightMenu" shape="rect" coords="384,112,502,136"/>
+<area href="classMainMenu.html" title="This is the menu for the player to use when they are either not in the game or have died and need to ..." alt="MainMenu" shape="rect" coords="512,112,630,136"/>
+<area href="classMinigameMenu.html" title="An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes..." alt="MinigameMenu" shape="rect" coords="640,112,758,136"/>
+<area href="classTradeMenu.html" title="This is the menu displayed when the player character is trading. " alt="TradeMenu" shape="rect" coords="768,112,886,136"/>
+<area href="classConnectFourMenu.html" title="This is the menu class for the Connect Four minigame. " alt="ConnectFourMenu" shape="rect" coords="384,168,502,192"/>
+<area href="classHanoiMenu.html" title="This is the menu class for the Hanoi minigame. " alt="HanoiMenu" shape="rect" coords="512,168,630,192"/>
+<area href="classMemoryMenu.html" title="This is the menu class for the Memory match minigame. " alt="MemoryMenu" shape="rect" coords="640,168,758,192"/>
+<area href="classRiddleMenu.html" title="This is the menu class for the Riddle minigame. " alt="RiddleMenu" shape="rect" coords="768,168,886,192"/>
+<area href="classTicTacToeMenu.html" title="This is the menu class for the Tic Tac Toe minigame. " alt="TicTacToeMenu" shape="rect" coords="896,168,1014,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -117,26 +123,19 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMenu.html#ae31c50148abf655297a2a3eab53c15a3">GameMenu</a> ()</td></tr>
 <tr class="memdesc:ae31c50148abf655297a2a3eab53c15a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the default constructor. <br/></td></tr>
 <tr class="separator:ae31c50148abf655297a2a3eab53c15a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8901f02e327b01a79b6e10a580154c44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8901f02e327b01a79b6e10a580154c44"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMenu.html#a8901f02e327b01a79b6e10a580154c44">~GameMenu</a> ()</td></tr>
-<tr class="memdesc:a8901f02e327b01a79b6e10a580154c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the virtual destructor. <br/></td></tr>
-<tr class="separator:a8901f02e327b01a79b6e10a580154c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25172d8d311df4f7b79074d60f74642e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMenu.html#a25172d8d311df4f7b79074d60f74642e">SetOptions</a> (map&lt; string &gt; OptionsList, string type)=0</td></tr>
-<tr class="separator:a25172d8d311df4f7b79074d60f74642e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32ff465c5a4f30979e8851fa21cb230"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMenu.html#ac32ff465c5a4f30979e8851fa21cb230">SetOptions</a> (int row, int col, int space)=0</td></tr>
+<tr class="separator:ac32ff465c5a4f30979e8851fa21cb230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02ba09feedece5773f44ba865ccffb42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameMenu.html#a02ba09feedece5773f44ba865ccffb42">HandleInput</a> (istream &amp;is)=0</td></tr>
 <tr class="separator:a02ba09feedece5773f44ba865ccffb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMenu"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMenu')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMenu.html">Menu</a></td></tr>
-<tr class="memitem:a5a60e837b160444bee4525c06fd4c51e inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a5a60e837b160444bee4525c06fd4c51e">Menu</a> (int height=10, int width=100)</td></tr>
-<tr class="separator:a5a60e837b160444bee4525c06fd4c51e inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ea9cee39d242905df93e6baa1544ea inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a28ea9cee39d242905df93e6baa1544ea">Menu</a> (int height=10, int width=101)</td></tr>
+<tr class="separator:a28ea9cee39d242905df93e6baa1544ea inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a831387f51358cfb88cd018e1777bc980"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a> ()</td></tr>
 <tr class="memdesc:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the destructor for the class. It is virtual. <br/></td></tr>
 <tr class="separator:a831387f51358cfb88cd018e1777bc980 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89c9ed81c1bc8bf68cec3b0c9ab877a1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetOptions</b> (map&lt; int, string &gt; optionsList, string type=&quot;generic&quot;)</td></tr>
-<tr class="separator:a89c9ed81c1bc8bf68cec3b0c9ab877a1 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a81bb84f921911944e4060d1c5a1b2507">HandleOptionInput</a> (istream &amp;is)</td></tr>
-<tr class="separator:a81bb84f921911944e4060d1c5a1b2507 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8df478bd7cf4d6d4ad842f3b0f74b9 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#acf8df478bd7cf4d6d4ad842f3b0f74b9">AddOption</a> (char command, string optionName, void(*f)(int))</td></tr>
+<tr class="separator:acf8df478bd7cf4d6d4ad842f3b0f74b9 inherit pub_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4665a914fe24a8b11d8d6c95792184b3 inherit pub_methods_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4665a914fe24a8b11d8d6c95792184b3"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a4665a914fe24a8b11d8d6c95792184b3">OutputMenu</a> ()</td></tr>
 <tr class="memdesc:a4665a914fe24a8b11d8d6c95792184b3 inherit pub_methods_classMenu"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the multi-dimensional array. <br/></td></tr>
@@ -145,8 +144,18 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classMenu"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classMenu')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classMenu.html">Menu</a></td></tr>
-<tr class="memitem:a09adbf38cefb171f8f06536c881d3944 inherit pro_methods_classMenu"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a09adbf38cefb171f8f06536c881d3944">set</a> (int x, int y, char ch)</td></tr>
-<tr class="separator:a09adbf38cefb171f8f06536c881d3944 inherit pro_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13913062e78fbd036ca698e0c0c5038 inherit pro_methods_classMenu"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#aa13913062e78fbd036ca698e0c0c5038">Set</a> (int x, int y, char ch)</td></tr>
+<tr class="separator:aa13913062e78fbd036ca698e0c0c5038 inherit pro_methods_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classMenu"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMenu')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMenu.html">Menu</a></td></tr>
+<tr class="memitem:ad9364e391e91acd266444a2604cb838e inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9364e391e91acd266444a2604cb838e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>menuHeight</b></td></tr>
+<tr class="separator:ad9364e391e91acd266444a2604cb838e inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c90eda61cd9071dcafda04569dfdd67 inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c90eda61cd9071dcafda04569dfdd67"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>menuWidth</b></td></tr>
+<tr class="separator:a5c90eda61cd9071dcafda04569dfdd67 inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fdd29d716c7fb985f038ddde93794a0 inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fdd29d716c7fb985f038ddde93794a0"></a>
+char **&#160;</td><td class="memItemRight" valign="bottom"><b>menu_Array</b></td></tr>
+<tr class="separator:a6fdd29d716c7fb985f038ddde93794a0 inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract class, this is the base class for the all the in-game menu classes. It requires less member functions than <a class="el" href="classMenu.html" title="This is the base class for all menus for the main game. ">Menu</a>. </p>
@@ -180,11 +189,13 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classCharacterMenu.html#a7a9163eec7ac69aeb5431869a0675646">CharacterMenu</a>, <a class="el" href="classDialogueMenu.html#a2fa399f6e56c5421f161c0e90e17ac13">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a6f057968d2aece06eef01b9da9b42c2d">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a8d287d810bc4cf49775503470830e48f">HanoiMenu</a>, <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>, and <a class="el" href="classTradeMenu.html#a743dd5b1984d2640865ecd71d6e73d5e">TradeMenu</a>.</p>
+<p>Reimplemented from <a class="el" href="classMenu.html#aebc8f6c5b80202603b45da16dc978706">Menu</a>.</p>
+
+<p>Implemented in <a class="el" href="classCharacterMenu.html#a9530ef35d34be27d09f740563dbe59ea">CharacterMenu</a>, <a class="el" href="classConnectFourMenu.html#a2af0c62dd776dd0e3d8c212f71eb3219">ConnectFourMenu</a>, <a class="el" href="classDialogueMenu.html#af682f751ddb1f30c679a19dcf6703856">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#aa75a9fcba679d683855d3188f1fc3505">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a8f85bae3166bf122c5800aab41c87d54">HanoiMenu</a>, <a class="el" href="classMemoryMenu.html#afbe9762ac2e61c6eba82df18aa9aea73">MemoryMenu</a>, <a class="el" href="classRiddleMenu.html#aef67f984c1aad0b8240e03b43ccbe615">RiddleMenu</a>, <a class="el" href="classTicTacToeMenu.html#a11191814019309260bb4270c03891e5e">TicTacToeMenu</a>, <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>, <a class="el" href="classTradeMenu.html#a367004a0b1ceccd4517de8dea1e1d210">TradeMenu</a>, <a class="el" href="classFightMenu.html#a6d69cf9a19e7bae304d5a116285c1a51">FightMenu</a>, and <a class="el" href="classMainMenu.html#a85703c73c1bcc9be2144b1cbe413328e">MainMenu</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a25172d8d311df4f7b79074d60f74642e"></a>
+<a class="anchor" id="ac32ff465c5a4f30979e8851fa21cb230"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -194,14 +205,20 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">virtual void GameMenu::SetOptions </td>
           <td>(</td>
-          <td class="paramtype">map&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>OptionsList</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,7 +241,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classCharacterMenu.html#a374493bc5b1e04b13647482c98df5fd6">CharacterMenu</a>, <a class="el" href="classDialogueMenu.html#ad9ce118b0515147fd59188e986cfbfee">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a916408504bfc970370d199745f17b252">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a1ad3788638502865cb8d52040dcc27f8">HanoiMenu</a>, <a class="el" href="classMinigameMenu.html#abf3dcda8c256be03ebe3661b8dde2ea2">MinigameMenu</a>, and <a class="el" href="classTradeMenu.html#a60cbb4e35a30cceab30448e19d13a882">TradeMenu</a>.</p>
+<p>Reimplemented from <a class="el" href="classMenu.html#acc31e14c9ed4dd2fb5dc4319738bafba">Menu</a>.</p>
+
+<p>Implemented in <a class="el" href="classHanoiMenu.html#a0280d0e443642407fda5903346be1a39">HanoiMenu</a>, and <a class="el" href="classMinigameMenu.html#abde3ae319bf1660a8626c6f765e054a8">MinigameMenu</a>.</p>
 
 </div>
 </div>

@@ -9,8 +9,8 @@
 #include "Item.h"
 using namespace std;
 
-/// This class is an abstaract base class
-/// derived from Item to represent in game consumables
+/// This class is an abstaract base class derived from Item to represent in game consumables
 class Consumable : public Item
-{};
+{
+};
 #endif

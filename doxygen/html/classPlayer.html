@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,44 +94,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. ">Character</a> which provides <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a> attributes.  
  <a href="classPlayer.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="player_8hpp_source.html">player.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Player:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classPlayer.png" usemap="#Player_map" alt=""/>
-  <map id="Player_map" name="Player_map">
-<area href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. " alt="Character" shape="rect" coords="0,0,69,24"/>
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="Player_8h_source.html">Player.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a187eb03426482ee7f3936f5f4a952a06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a187eb03426482ee7f3936f5f4a952a06">Player</a> (int H, int S, int AP, string N, string R)</td></tr>
-<tr class="separator:a187eb03426482ee7f3936f5f4a952a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f78353312cc3cf41905fdc3accafb6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a3f78353312cc3cf41905fdc3accafb6c">Player</a> (int s=0, int k=0, string n=&quot; &quot;, string r=&quot; &quot;)</td></tr>
+<tr class="separator:a3f78353312cc3cf41905fdc3accafb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
 <tr class="memdesc:a749d2c00e1fe0f5c2746f7505a58c062"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a> deconstructor. <br/></td></tr>
 <tr class="separator:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9950c6d591faee9183aad8a37f33dad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#af9950c6d591faee9183aad8a37f33dad">ChangeHealth</a> (int &amp;H, int HMod)</td></tr>
-<tr class="separator:af9950c6d591faee9183aad8a37f33dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ac9534d49779d6f46e0a8646bb9ed5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a4ac9534d49779d6f46e0a8646bb9ed5f">ChangeStamina</a> (int &amp;S, int SMod)</td></tr>
-<tr class="separator:a4ac9534d49779d6f46e0a8646bb9ed5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c98497cbb003bdcb85b6e5d58649609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a6c98497cbb003bdcb85b6e5d58649609">ChangeAttackPower</a> (int &amp;AP, int APMod)</td></tr>
-<tr class="separator:a6c98497cbb003bdcb85b6e5d58649609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ee385d70cb8ee3f2fd9070ec94e2f28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a8ee385d70cb8ee3f2fd9070ec94e2f28">UpdateInventory</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:a8ee385d70cb8ee3f2fd9070ec94e2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1908922bb3f8cb3bd5b07a7321d52862"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1908922bb3f8cb3bd5b07a7321d52862"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a1908922bb3f8cb3bd5b07a7321d52862">Attack</a> ()</td></tr>
-<tr class="memdesc:a1908922bb3f8cb3bd5b07a7321d52862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to allow the player to attack. <br/></td></tr>
-<tr class="separator:a1908922bb3f8cb3bd5b07a7321d52862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bca1aa08cadb57984c488498a2e0e38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a5bca1aa08cadb57984c488498a2e0e38">ChangeStamina</a> (int &amp;s, int sMod)</td></tr>
+<tr class="separator:a5bca1aa08cadb57984c488498a2e0e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a325d080bde1038593f942b17a5dd6ae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a325d080bde1038593f942b17a5dd6ae2">ChangeKeys</a> (int &amp;keys, int keyMod)</td></tr>
+<tr class="separator:a325d080bde1038593f942b17a5dd6ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af839bdc1524d571568ea31a34f44f3ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#af839bdc1524d571568ea31a34f44f3ab">UseKey</a> (int &amp;keys)</td></tr>
+<tr class="separator:af839bdc1524d571568ea31a34f44f3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. ">Character</a> which provides <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a> attributes. </p>
-<dl class="section author"><dt>Author</dt><dd>Gates Kempenaar </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Oct 25, 2017 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a187eb03426482ee7f3936f5f4a952a06"></a>
+<a class="anchor" id="a3f78353312cc3cf41905fdc3accafb6c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -139,31 +122,25 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">Player::Player </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>H</em>, </td>
+          <td class="paramname"><em>s</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>S</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>AP</em>, </td>
+          <td class="paramname"><em>k</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
+          <td class="paramname"><em>n</em> = <code>&quot;&#160;&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>R</em>&#160;</td>
+          <td class="paramname"><em>r</em> = <code>&quot;&#160;&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,11 +152,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p><a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a> constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">H,players</td><td>health </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">S,players</td><td>stamina </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">AP,players</td><td>attack power </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">N,players</td><td>name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">R,players</td><td>race </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s,players</td><td>stamina </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k,players</td><td>keys </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n,players</td><td>name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r,players</td><td>race </td></tr>
   </table>
   </dd>
 </dl>
@@ -187,21 +163,21 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6c98497cbb003bdcb85b6e5d58649609"></a>
+<a class="anchor" id="a325d080bde1038593f942b17a5dd6ae2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::ChangeAttackPower </td>
+          <td class="memname">void Player::ChangeKeys </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>AP</em>, </td>
+          <td class="paramname"><em>keys</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>APMod</em>&#160;</td>
+          <td class="paramname"><em>keyMod</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -210,52 +186,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Changes the players attack power </p>
+<p>Amount of keys the player has </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>AP, players current attack power </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">APMod,how</td><td>the current attack power will be modified </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>keys, current amount of keys the player has </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keyMod,how</td><td>the current amount of keys will be modified </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="af9950c6d591faee9183aad8a37f33dad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Player::ChangeHealth </td>
-          <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>H</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>HMod</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Changes the players health </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>H, players current health </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">HMod,how</td><td>the current health will be modified </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a4ac9534d49779d6f46e0a8646bb9ed5f"></a>
+<a class="anchor" id="a5bca1aa08cadb57984c488498a2e0e38"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -263,13 +205,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Player::ChangeStamina </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>S</em>, </td>
+          <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>SMod</em>&#160;</td>
+          <td class="paramname"><em>sMod</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -281,33 +223,40 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Changes players stamina </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>S, players current stamina </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Smod,how</td><td>the curent stamina will be modified </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>s, players current stamina </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sMod,how</td><td>the curent stamina will be modified </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a8ee385d70cb8ee3f2fd9070ec94e2f28"></a>
+<a class="anchor" id="af839bdc1524d571568ea31a34f44f3ab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Player::UpdateInventory </td>
+          <td class="memname">bool Player::UseKey </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>keys</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Updates the players inventory with new items </p>
+<p>Function to use a key </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">keys,uses</td><td>a key if availible </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>Character/<a class="el" href="player_8hpp_source.html">player.hpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Character/<a class="el" href="Player_8h_source.html">Player.h</a></li>
+<li>Character/Player.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

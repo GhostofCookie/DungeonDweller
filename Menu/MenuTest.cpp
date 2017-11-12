@@ -28,14 +28,14 @@ void MenuTest::TestConstructors()
 /// Tests the setting of options.
 void MenuTest::TestSetting()
 {
-   menu->SetOptions(options);
-   menu2->SetOptions(options, 5, 10);
+   menu->SetOptions();
+   menu2->SetOptions(5, 10);
 }
 /// Tests that menu builds correctly.
 void MenuTest::TestBuilding()
 {
-   menu->SetOptions(options);
+   menu->SetOptions();
    menu->OutputMenu();
-   menu2->SetOptions(options, 10, 20);
+   menu2->SetOptions(10, 20);
    menu2->OutputMenu();
 }

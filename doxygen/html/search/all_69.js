@@ -5,7 +5,8 @@ var searchData=
   ['img',['Img',['../classImage.html#ac3bad7d8544990b7be9e9c5ee0fb26b8',1,'Image']]],
   ['import',['Import',['../classImportImg.html#a20bf0509a73e9c08e89518a2ea9a868a',1,'ImportImg']]],
   ['importimg',['ImportImg',['../classImportImg.html',1,'ImportImg'],['../classImportImg.html#a888292aaf716935b9e6baddea62af5d8',1,'ImportImg::ImportImg(string file=&quot;&quot;)'],['../classImportImg.html#adfc26e250764e4388d9aee048a22a673',1,'ImportImg::ImportImg(const ImportImg &amp;img)'],['../classImportImg.html#a42a6d3113dfaa5c94fb43360d1641b6f',1,'ImportImg::ImportImg(ImportImg &amp;img)']]],
-  ['initialize',['Initialize',['../classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909',1,'Screen']]],
-  ['iseven',['IsEven',['../classImage.html#aa723637c3d64e1290dbfc67238321413',1,'Image::IsEven()'],['../classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b',1,'Screen::IsEven()']]],
+  ['initialize',['Initialize',['../classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909',1,'Screen::Initialize(int h, int w)'],['../classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909',1,'Screen::Initialize(int h, int w)']]],
+  ['invisiblepotion',['InvisiblePotion',['../classInvisiblePotion.html',1,'']]],
+  ['iseven',['IsEven',['../classImage.html#aa723637c3d64e1290dbfc67238321413',1,'Image::IsEven()'],['../classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b',1,'Screen::IsEven(const int &amp;num) const '],['../classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b',1,'Screen::IsEven(const int &amp;num) const ']]],
   ['item',['Item',['../classItem.html',1,'']]]
 ];

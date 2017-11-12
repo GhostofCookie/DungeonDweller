@@ -8,7 +8,7 @@ Abstract base class to provide input and output of \hyperlink{classNpc}{Npc}'s a
 
 
 
-{\ttfamily \#include $<$character.\-hpp$>$}
+{\ttfamily \#include $<$Character.\-h$>$}
 
 Inheritance diagram for Character\-:\begin{figure}[H]
 \begin{center}
@@ -16,11 +16,104 @@ Inheritance diagram for Character\-:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classCharacter}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual istream \hyperlink{classCharacter_a21de96f408a3db5e0734012c27587c8c}{Read} (istream \&is)
+\item 
+virtual ostream \hyperlink{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}{Write} (ostream \&os)
+\item 
+virtual int \hyperlink{classCharacter_a250678a82a39b73cc3c622b9e88a7877}{Change\-Gold} (int \&\hyperlink{classCharacter_ab8dd866071dba429a35555e0c372e162}{gold}, int gold\-Mod)
+\item 
+void \hyperlink{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}{Change\-Health} (int \&h, int h\-Mod)
+\item 
+\hypertarget{classCharacter_afaa737ad669c882598bb65f5f6c57376}{int \hyperlink{classCharacter_afaa737ad669c882598bb65f5f6c57376}{Attack} ()}\label{classCharacter_afaa737ad669c882598bb65f5f6c57376}
+
+\begin{DoxyCompactList}\small\item\em Attack function for the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classCharacter_ab8dd866071dba429a35555e0c372e162}{gold}
+\begin{DoxyCompactList}\small\item\em Vector of items the character has. \end{DoxyCompactList}\item 
+\hypertarget{classCharacter_a69c649b8febd22729e6edafb27e69aeb}{int \hyperlink{classCharacter_a69c649b8febd22729e6edafb27e69aeb}{health}}\label{classCharacter_a69c649b8febd22729e6edafb27e69aeb}
+
+\begin{DoxyCompactList}\small\item\em Characters health. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Abstract base class to provide input and output of \hyperlink{classNpc}{Npc}'s and \hyperlink{classPlayer}{Player}. 
 
+\subsection{Member Function Documentation}
+\hypertarget{classCharacter_a250678a82a39b73cc3c622b9e88a7877}{\index{Character@{Character}!Change\-Gold@{Change\-Gold}}
+\index{Change\-Gold@{Change\-Gold}!Character@{Character}}
+\subsubsection[{Change\-Gold}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Character\-::\-Change\-Gold (
+\begin{DoxyParamCaption}
+\item[{int \&}]{gold, }
+\item[{int}]{gold\-Mod}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a250678a82a39b73cc3c622b9e88a7877}
+Shows a list of inventory items 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items Chooses the item to be used \\
+\hline
+\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items Change the amount of gold a character has \\
+\hline
+ & {\em in\&\mbox{]}} & Gold, current amount of gold the character has \\
+\hline
+\mbox{\tt in}  & {\em Gold\-Mod,how} & much the current gold will be changed by \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}{\index{Character@{Character}!Change\-Health@{Change\-Health}}
+\index{Change\-Health@{Change\-Health}!Character@{Character}}
+\subsubsection[{Change\-Health}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Change\-Health (
+\begin{DoxyParamCaption}
+\item[{int \&}]{h, }
+\item[{int}]{h\-Mod}
+\end{DoxyParamCaption}
+)}}\label{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}
+Changes the characters health 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em in\&\mbox{]}} & H, characters current health \\
+\hline
+\mbox{\tt in}  & {\em H\-Mod,how} & the current health will be modified \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCharacter_a21de96f408a3db5e0734012c27587c8c}{\index{Character@{Character}!Read@{Read}}
+\index{Read@{Read}!Character@{Character}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}virtual istream Character\-::\-Read (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a21de96f408a3db5e0734012c27587c8c}
+Reads information in for the character 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is} & the input stream \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}{\index{Character@{Character}!Write@{Write}}
+\index{Write@{Write}!Character@{Character}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ostream Character\-::\-Write (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}
+Writes the character object to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em os} & the output stream for printing on the screen \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCharacter_ab8dd866071dba429a35555e0c372e162}{\index{Character@{Character}!gold@{gold}}
+\index{gold@{gold}!Character@{Character}}
+\subsubsection[{gold}]{\setlength{\rightskip}{0pt plus 5cm}int Character\-::gold\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_ab8dd866071dba429a35555e0c372e162}
+
+
+Vector of items the character has. 
+
+Amount of gold player has 
+
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-Character/character.\-hpp\end{DoxyCompactItemize}
+Character/Character.\-h\end{DoxyCompactItemize}

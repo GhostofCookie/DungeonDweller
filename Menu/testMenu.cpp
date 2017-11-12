@@ -1,5 +1,5 @@
 #include <iostream>
-//#include "../Screen/Screen.h"
+#include "../Screen/Screen.h"
 #include "MainMenu.h"
 #include "ExploreMenu.h"
 #include "FightMenu.h"
@@ -18,38 +18,30 @@ void testFunction(int);
 int main()
 {
    Menu *menu = nullptr;
+   Screen *screen = nullptr;
    map<int, string> options;
-   menu = new MainMenu();
+   menu = new Menu();
+   screen = new Screen();
+
    menu->AddOption('p', "Pickup",testFunction);
    menu->AddOption('t', "Speak",testFunction);
-   menu->AddOption('w', "Move",testFunction);
-   menu->SetOptions(options,2,2);
-   menu->OutputMenu();
+   menu->AddOption('a', "Move",testFunction);
+   menu->AddOption('w', "Move Up",testFunction);
+   menu->SetOptions();
    while(true)
+   {
+      cout<<screen;
+      menu->OutputMenu();
       menu->HandleInput(cin);
+   }
    delete menu;
-/*   menu = new MainMenu();
-   menu->AddOption('i', "Inventory", testFunction);
-   menu->SetOptions(options,2,2);
-   menu->OutputMenu();
-   menu->HandleInput(cin);
-   delete menu;
-*/  /*
-     menu = new ExploreMenu();
-     menu->HandleInput(cin);
-     menu = new ExploreMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-     menu = new FightMenu();
-     menu= new HanoiMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-   */
+
    return 0;
 }
 
 void testFunction(int x)
 {
+   system("clear");
    cout<<"You added and used an option properly!"<<endl;
    
 }
