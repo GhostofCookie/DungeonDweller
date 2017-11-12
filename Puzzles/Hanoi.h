@@ -10,6 +10,7 @@
 #include "Puzzle.h"
 #include "../Menu/HanoiMenu.h"
 #include "../Screen/Screen.h"
+#include "../Image/Default.h"
 #include <iostream>
 using namespace std;
 
@@ -55,15 +56,14 @@ class Hanoi: public virtual Puzzle
    ///Fills the appropriate space on the screen depending on the disc size and
    ///coordinates passed to the function.
    /// \param[in] discSize, the size of the disc to be printed on screen
-   /// \param[in] xCoordinate, the x coordinate of the center of the disc
-   /// \param[in] yCoordinate, the y coordinate of the disc.
-   void SetScreen(int discSize, int xCoordinate, int yCoordinate);
+   /// \param[in] peg, which peg is the disc being moved to.
+   void SetScreenSpaces(int discSize, int targetPeg);
    ///Clears the appropriate space on the screen depending on the disc size
    ///and the coordinates passed to the function.
    /// \param[in] discSize, the size of the disc to be cleared off of the screen.
    /// \param[in] xCoordinate, the x coordinate of the center of the disc
    /// \param[in] yCoordinate, the y coordinate of the disc. 
-   void ClearScreenSpace(int discSize, int xCoordinate, int yCoordinate);
+   void ClearScreenSpaces(int discSize, int xCoordinate, int yCoordinate);
 
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.
@@ -81,7 +81,7 @@ class Hanoi: public virtual Puzzle
    /// GameMenu is used for handling input
    HanoiMenu HanoiGameMenu;
    ///A vector to store the size of all the discs in the game
-  std:vector<int>discsVector(4);
+   std::vector<DefaultImage>discsVector;
    /// MenuOption strings are used for outputting options to the user
    string menuOption1, menuOption2, menuOption3, menuOption4;
 };

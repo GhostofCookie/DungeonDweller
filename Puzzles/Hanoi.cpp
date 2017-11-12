@@ -6,18 +6,21 @@
 //
 #include "Hanoi.h"
 
-
+//      ███       (3)
+//    ███████     (7)
+//  ███████████   (11)
+//███████████████ (15)
 //screen is 101x33
 
 Hanoi::Hanoi()
 {
    maxStackHeight=4;
-   discsVector.at(0)=3;
-   for(int i=1; i<maxStackHeight; i++)
-   {
-      discsVector.at(i)=(discsVector.at(i-1)+4);
-   }
-     
+///Create default images for each of the disc to be drawn on the screen.
+   discsVector.at(0)=DefaultImage Disc1(1,3,█);
+   discsVector.at(1)=DefaultImage Disc2(1,7,█);
+   discsVector.at(2)=DefaultImage Disc3(1,11,█);
+   discsVector.at(3)=DefaultImage Disc4(1,15,█);
+
    menuOption1="Move disc on peg 1 right.";
    menuOption2="Move disc on peg 2 left.";
    menuOption3="Move disc on peg 2 right.";
@@ -33,10 +36,14 @@ Hanoi::Hanoi()
       tower.at(i).resize(maxStackHeight);   
    }
    ///Put the discs into the first stack to start the game
+   int screenYCoordinate=14;
+   int screenXCoordinate=16;
    for(int i=0; i<maxStackHeight; i++)
    {
       tower.at(0).at(i)=discsVector.at(i);
-
+      tower.at(0).at(i).Draw(HanoiScreen, screenYCoordinate, screenXCoordinate); //screen, y, x
+      ScreenYCoordinate++;
+      ScreenXCoordinate-=2;
    }
 }
 
@@ -71,10 +78,7 @@ void Hanoi::WinCheck()
    if(tower.at(2).size()==4)
       PuzzleEnd=true;
 }
-//      ███
-//    ███████
-//  ███████████
-//███████████████
+
 void Hanoi::MovePiece(int userSelection)
 {
    switch(userSelection)
@@ -198,6 +202,18 @@ void Hanoi::MovePiece(int userSelection)
    } 
 }
 
+void Hanoi::SetScreenSpaces(int discSize, int targetPeg)
+{
+   switch(discSize)
+   {
+      case 3:
+	 if
+}
+
+void Hanoi::ClearScreenSpaces(int discSize, int xCoordinate, int yCoordinate)
+{
+
+}
 
 void Hanoi::OutputGame(Screen &hScreen)
 {

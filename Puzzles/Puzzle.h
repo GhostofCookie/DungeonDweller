@@ -44,9 +44,13 @@ class Puzzle
    ///Sends the menu class the options for the player to select.
    virtual void SetOptionsInMenu()=0;
    ///Sets values to the screen object in each game
-   virtual void SetScreen()=0;
+   /// \param[in]xCoordinate, the coodriante to set on the x-axis
+   /// \param[in]yCoordinate, the coordinate to set on the y-axis
+   virtual void SetScreen(int xCoordinate, int yCoordinate)=0;
    ///Clears spaces in screen appropriately.
-   virtual void ClearScreenSpace()=0;
+   /// \param[in]xCoordinate, the coodriante to clear on the x-axis
+   /// \param[in]yCoordinate, the coordinate to clear on the y-axis                                                                                                                                             
+   virtual void ClearScreenSpace(int xCoordinate, int yCoordinate)=0;
    ///Used to output prompts, take in user input, and handle formatting errors
    //PuzzleMenu *Menu;
 
