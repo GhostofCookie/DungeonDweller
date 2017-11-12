@@ -8,7 +8,8 @@
 #ifndef HANOI_H
 #define HANOI_H
 #include "Puzzle.h"
-#include "../Menu/HanoiMenu"
+#include "../Menu/HanoiMenu.h"
+#include "../Screen/Screen.h"
 #include <iostream>
 using namespace std;
 
@@ -51,6 +52,18 @@ class Hanoi: public virtual Puzzle
    /// Displays the screen containing the gameboard
    /// \param[in] HanoiScreen, the screen object used for the hanoi game.
    void OutputGame(Screen &hScreen);
+   ///Fills the appropriate space on the screen depending on the disc size and
+   ///coordinates passed to the function.
+   /// \param[in] discSize, the size of the disc to be printed on screen
+   /// \param[in] xCoordinate, the x coordinate of the center of the disc
+   /// \param[in] yCoordinate, the y coordinate of the disc.
+   void SetScreen(int discSize, int xCoordinate, int yCoordinate);
+   ///Clears the appropriate space on the screen depending on the disc size
+   ///and the coordinates passed to the function.
+   /// \param[in] discSize, the size of the disc to be cleared off of the screen.
+   /// \param[in] xCoordinate, the x coordinate of the center of the disc
+   /// \param[in] yCoordinate, the y coordinate of the disc. 
+   void ClearScreenSpace(int discSize, int xCoordinate, int yCoordinate);
 
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.
@@ -63,8 +76,12 @@ class Hanoi: public virtual Puzzle
    int maxStackHeight;
    /// Used for the loop to see if the game has ended yet
    bool GameEnd;
+   ///HanoiScreen stores and outputs the contents of the game to the terminal
+   Screen HanoiScreen;
    /// GameMenu is used for handling input
    HanoiMenu HanoiGameMenu;
+   ///A vector to store the size of all the discs in the game
+  std:vector<int>discsVector(4);
    /// MenuOption strings are used for outputting options to the user
    string menuOption1, menuOption2, menuOption3, menuOption4;
 };
