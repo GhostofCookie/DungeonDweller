@@ -15,15 +15,10 @@
 using namespace std;
 
 
-
 /// the Image class represents a 2d vector that displays an image on screen
 class Image
 {
 protected:
-	/// The screen x coordinate to draw on, default to 0
-	int screenX = 0;
-	/// The screen y coordinate to draw on, default to 0
-	int screenY = 0;
 	/// The height of the image
 	int height;
 	/// The width of the image
@@ -32,16 +27,20 @@ protected:
 	
 	
 public:
+	/// The screen x coordinate to draw on, default to 0
+	int screenX = 0;
+	/// The screen y coordinate to draw on, default to 0
+	int screenY = 0;
 	/// Constructs an Image object from the given dimensions
 	/// \param[in] h the height of the image, default to 3
 	/// \param[in] w the width of the image, default to 6
 	Image(int h = 3, int w = 6);
 	/// Copy constructor duplicates a given picture
 	/// \param[in] img the image to copy from
-	Image(const Image& img);
+	Image(Image &img);
 	/// Copy constructor duplicates a given picture
 	/// \param[in] img the image to copy from
-	Image(Image& img);
+	Image(const Image &img);
 	/// Virtual Destructor
 	virtual ~Image();
 	
@@ -50,7 +49,11 @@ public:
 	
 	/// Overloaded '=' operator
 	/// \param[in] img the image being copied
-	virtual void operator =(const Image& img);
+	virtual void operator =(Image &img);
+	/// Overloaded '=' operator
+	/// \param[in] img the image being copied
+	virtual void operator =(const Image &img);
+	
 	/// Returns the height of the image
 	int GetRows() const;
 	/// Returns the width of the image
@@ -60,12 +63,20 @@ public:
 	bool IsEven(const int &num) const;
 	/// Helper function to draw onto the Screen object
 	/// \param[in] scr the screen to draw on
-	virtual void Draw(Screen& scr);
+	virtual void Draw(Screen &scr);
 	/// Helper function to draw onto the Screen object
 	/// \param[in] scr the screen to draw on
 	/// \param[in] x the x coordinate
 	/// \param[in] y the y coordinate
-	virtual void Draw(Screen& scr, int y, int x) = 0;
+	virtual void Draw(Screen &scr, int y, int x) = 0;
+	/// Helper function to draw onto the Screen object
+	/// \param[in] img the screen to draw on
+	virtual void Draw(Image &img);
+	/// Helper function to draw onto the Screen object
+	/// \param[in] img the screen to draw on
+	/// \param[in] x the x coordinate
+	/// \param[in] y the y coordinate
+	virtual void Draw(Image &img, int y, int x);
 	
 	/// Function to create the image
 	virtual void Create();
@@ -77,7 +88,7 @@ public:
 	/// Function to fill the enitre image with a character
 	/// \param[in] ch the character the fill the image with
 	void Fill(char ch);
-	/// Function to set the coordinate of the image with a character
+	/// Function to set the top-left coordinate of the image with a character
 	/// \param[in] y the y coordinate to set
 	/// \param[in] x the x coordniate to set
 	/// \param[in] ch the character to set the coordinate with
@@ -89,6 +100,11 @@ public:
 	/// \param[in] y the y coordinate
 	/// \param[in] x the x coordinate
 	void SetOrigin(Screen &scr, int y, int x);
+	/// Function that sets a permanent location to draw from
+	/// \param[in] img the screen to access
+	/// \param[in] y the y coordinate
+	/// \param[in] x the x coordinate
+	void SetOrigin(Image &img, int y, int x);
 	/// Function that flips an image horizontally
 	/// \param[in] scr the screen the image will flip on
 	void FlipHoriz(Screen &scr);
@@ -105,6 +121,18 @@ public:
 	/// Helper function to align the image center
 	/// \param[in] scr the screen to align to
 	void AlignCenter(Screen &scr);
+	/// Helper function to align the image left
+	/// \param[in] img the screen to align to
+	void AlignLeft(Image &img);
+	/// Helper function to align the image right
+	/// \param[in] img the screen to align to
+	void AlignRight(Image &img);
+	/// Helper function to align the image center
+	/// \param[in] img the screen to align to
+	void AlignCenter(Image &img);
+	/// Helper function to align the image left
+	/// \param[in] img the screen to align to
+	void AlignCenter(Image &img, int x, int y);
 	
 	/// Helper function to shift the image up
 	/// \param[in] scr the screen the image will shift on

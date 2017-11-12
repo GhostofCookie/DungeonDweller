@@ -13,7 +13,6 @@
 using namespace std;
 
 
-
 /// This class represents an abstract base class in which different
 /// screens can be created from the default
 class Screen
@@ -23,17 +22,8 @@ class Screen
    int height = 0;
    /// The width of the image, default to 0
    int width = 0;
-   /// the character used to draw the screen border
-   char outlineCh;
    /// 2D vector representing the screen object
    vector<vector<char>> Window;
-
-   /// Returns the height of the screen
-   int GetRows() const;
-   /// Returns the width of the screen
-   int GetCols() const;
-   /// Returns the center of the screen
-   int GetCenterPnt() const;
 	
 	
 	
@@ -48,6 +38,8 @@ class Screen
 	
    /// Controls whether or not a screen will have an outline
    bool outlineOn = true;
+   /// the character used to draw the screen border
+   char outlineCh;
 	
    /// Helper function to build the screen
    /// \param[in] h the height of the screen
@@ -58,6 +50,12 @@ class Screen
    /// \param[in] w the width of the screen
    void Resize(int h, int w);
 	
+   /// Returns the height of the screen
+   int GetRows() const;
+   /// Returns the width of the screen
+   int GetCols() const;
+   /// Returns the center of the screen
+   int GetCenterPnt() const;
    /// Returns true if the number is even
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
@@ -92,5 +90,5 @@ class Screen
    friend ostream& operator <<(ostream &os, const Screen &s);
 };
 
-#endif /* Screen_hpp */
+#endif /* Screen_h */
 

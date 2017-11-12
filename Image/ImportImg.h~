@@ -5,12 +5,11 @@
 /// \date Oct 20, 2017
 ///
 
-#ifndef ImportedImg_hpp
-#define ImportedImg_hpp
+#ifndef ImportedImg_h
+#define ImportedImg_h
 
 #include <fstream>
-#include "Image.hpp"
-
+#include "Image.h"
 
 
 /// The DefaultImg class represents a basic square image made of characters
@@ -28,12 +27,13 @@ public:
 	/// constructs an Image object from the given dimensions
 	/// \param[in] file the file path to get the image from
 	ImportImg(string file = "");
+
 	/// Copy constructor to duplicate the given image
 	/// \param[in] img the image to copy from
-	ImportImg(const ImportImg& img);
+	ImportImg(ImportImg &img);
 	/// Copy constructor to duplicate the given image
 	/// \param[in] img the image to copy from
-	ImportImg(ImportImg& img);
+	ImportImg(const ImportImg &img);
 	/// Destructor
 	~ImportImg();
 	
@@ -41,7 +41,7 @@ public:
 	/// \param[in] scr the screen being drawn on
 	/// \param[in] y the y coordinate
 	/// \param[in] x the x coordinate
-	void Draw(Screen& scr, int y, int x);
+	void Draw(Screen &scr, int y, int x);
 	/// Function to create the image
 	void Create();
 	
@@ -51,4 +51,4 @@ public:
 	void Import(string file, string &img);
 };
 
-#endif /* ImportedImg_hpp */
+#endif /* ImportedImg_h */

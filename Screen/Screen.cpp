@@ -1,25 +1,17 @@
 #include "Screen.h"
-#define NDEBUG
+
 
 /// Default Constructor
 Screen::Screen(int h, int w, char ch)
    : height{h}, width{w}, outlineCh{ch}
 {
-#ifndef NDEBUG
-   assert(height >= 0 && width >= 0);
-#endif
-      
    Initialize(height, width);
    CreateBorder(outlineCh);
 }
 
 
-
-
 /// Destructor
 Screen::~Screen() {}
-
-
 
 
 
@@ -35,8 +27,6 @@ void Screen::Initialize(int h, int w)
 
 
 
-
-
 void Screen::Resize(int h, int w)
 {
    height = h;
@@ -47,13 +37,9 @@ void Screen::Resize(int h, int w)
 
 
 
-
-
 int Screen::GetRows() const { return height; }
 int Screen::GetCols() const { return width; }
 void Screen::NewOutlineCh(char ch) { outlineCh = ch; }
-
-
 
 
 
@@ -63,8 +49,6 @@ bool Screen::IsEven(const int &num) const
       return true;
    return false;
 }
-
-
 
 
 
@@ -81,8 +65,6 @@ void Screen::CreateBorder(char ch)
 
 
 
-
-
 void Screen::DrawBorder()
 {
    if(outlineOn)
@@ -96,8 +78,6 @@ void Screen::DrawBorder()
 
 
 
-
-
 void Screen::Fill()
 {
    for(int i = 0; i < height; i++)
@@ -105,8 +85,6 @@ void Screen::Fill()
 	 if(i != 0 && i != height-1 && j != 0 && j != width-1)
 	    Set(i, j, outlineCh);
 }
-
-
 
 
 
@@ -120,21 +98,17 @@ void Screen::Fill(char ch)
 
 
 
-
-
 /// Sets the characters at the given location to the given character
 // (rows are numbered from 0 from the top, and columns are numbered 0 from the left)
 // If the location is invalid, simply ignore the request
-/// \param[in] int h
-/// \param[in] int w
+/// \param[in] int row
+/// \param[in] int col
 /// \param[in] char ch
 void Screen::Set(int h, int w, char ch)
 {
-    if((h >= 0 && h < height) && (w >= 0 && w < width))
+   if((h >= 0 && h < height) && (w >= 0 && w < width))
       Window[h][w] = ch;
 }
-
-
 
 
 
@@ -147,8 +121,6 @@ void Screen::Erase()
    if(outlineOn)
       DrawBorder();
 }
-
-
 
 
 
@@ -167,8 +139,6 @@ ostream& operator <<(ostream &os, const Screen &s)
    }
    return os;
 }
-
-
 
 
 

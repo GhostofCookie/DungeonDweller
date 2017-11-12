@@ -8,7 +8,5 @@ SlotScreen::SlotScreen(int h, int w, int slots)
 
 
 
-
-
 SlotScreen::~SlotScreen() {}
 
