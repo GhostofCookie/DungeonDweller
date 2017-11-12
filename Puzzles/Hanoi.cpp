@@ -6,24 +6,38 @@
 //
 #include "Hanoi.h"
 
+
+//screen is 101x33
+
 Hanoi::Hanoi()
 {
+   maxStackHeight=4;
+   discsVector.at(0)=3;
+   for(int i=1; i<maxStackHeight; i++)
+   {
+      discsVector.at(i)=(discsVector.at(i-1)+4);
+   }
+     
    menuOption1="Move disc on peg 1 right.";
    menuOption2="Move disc on peg 2 left.";
    menuOption3="Move disc on peg 2 right.";
    menuOption4="Move disc on peg 3 left.";
+
    PuzzleEnd=false;
-   maxStackHeight=4;
+   
    numberOfStacks=3;
    tower.resize(numberOfStacks);
+   ///Resize all the stacks to the proper height for the discs.
    for(int i=0; i<numberOfStacks; i++)
    {
-      while(tower.at(i).size()=<maxStackHeight)
-      {
-	 tower.at(i).push(0);
-      }
+      tower.at(i).resize(maxStackHeight);   
    }
-   
+   ///Put the discs into the first stack to start the game
+   for(int i=0; i<maxStackHeight; i++)
+   {
+      tower.at(0).at(i)=discsVector.at(i);
+
+   }
 }
 
 Hanoi::~Hanoi()
@@ -57,8 +71,10 @@ void Hanoi::WinCheck()
    if(tower.at(2).size()==4)
       PuzzleEnd=true;
 }
-
-
+//      ███
+//    ███████
+//  ███████████
+//███████████████
 void Hanoi::MovePiece(int userSelection)
 {
    switch(userSelection)
@@ -211,7 +227,6 @@ void Hanoi::OutputGame(Screen &hScreen)
 void Hanoi:: RunGame()
 {
    
-   Screen hScreen;
    SetOptionsInMenu();
    HanoiGameMenu.OutputMenu();
    //hMenu.PromptUser();
