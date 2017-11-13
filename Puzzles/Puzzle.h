@@ -9,7 +9,7 @@
 #define PUZZLE_H
 
 #include "../Menu/Menu.h"
-#include "../Screen/Screen.hh"
+#include "../Screen/Screen.h"
 
 #include <vector>
 

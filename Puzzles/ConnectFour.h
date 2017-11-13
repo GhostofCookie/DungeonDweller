@@ -8,15 +8,17 @@
 #ifndef  CONNECT_FOUR_H
 #define CONNECT_FOUR_H
 #include "Puzzle.h"
+#include "../Menu/ConnectFourMenu.h"
+#include "../Screen/Screen.h"
+#include "../Image/DefaultImg.h"
 
 ///This class contains the mini-game/puzzle Connect Four
 class ConnectFour: virtual Puzzle
 {
   public:
-   ///Default constructor for ConnectFour, sets heigh to : and width to:
+  ///Default constructor for ConnectFour, sets heigh to : and width to:
    ConnectFour();
-
-   ///Deconstructor
+  ///De-constructor
    ~ConnectFour();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
@@ -24,10 +26,10 @@ class ConnectFour: virtual Puzzle
    void RunGame();
 
   private:
-   ///ALL HANDLED BY THE MENU OBJECT?
-   //void PromptUser(&screen);//Prompts user for input
-   //char UserInput(&menu);//Gets user input
-   //bool ValidCommand(char input);//Checks formatting
+  ///ALL HANDLED BY THE MENU OBJECT?
+  //void PromptUser(&screen);//Prompts user for input
+  //char UserInput(&menu);//Gets user input
+  //bool ValidCommand(char input);//Checks formatting
 
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
@@ -36,6 +38,9 @@ class ConnectFour: virtual Puzzle
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
+
+   ///Sets the board up for the beginning of the game, placing the grid
+   void BoardSetup();
 
    ///Assign the player selection to the board.
    ///\param[in] UserPiece, whichever token the player is using for the game
@@ -57,7 +62,7 @@ class ConnectFour: virtual Puzzle
    ///position, returns true if it finds 4 of a kind, false otherwise.
    bool VerticalCheck();
 
-   ///Checks the entire grid to see if there is 4 of a kind in the right diagonal
+   ///Checks the entire grid to see if there's 4 of a kind in the right diagonal
    ///position, returns true if it finds 4 of a kind, false otherwise.   
    bool RightDiagonalCheck();
 
@@ -77,11 +82,16 @@ class ConnectFour: virtual Puzzle
    ///Resets the game for another round in the event that the AI wins.
    void ResetGame();
    
-   /// The vector which stores the gameboards chars.
+   ///The vector which stores the gameboards chars.
    std::vector<vector<char>>grid;
+
+   ///xSize is the horizontal dimensions of the game board, ySize is the
+   ///vertical dimensions of the gameboard vector
    int xSize, ySize;
 
-   
+   ///ConnectFourScreen stores and outputs the contents of the game to the
+   ///terminal
+   Screen ConnectFourScreen;
 };
 #endif
  
