@@ -6,27 +6,30 @@
 
 void RoomTreeTest::setUp()
 {
-	Tree1.newRoom('l',nullptr);
-	Tree1.newRoom('c',nullptr);
-	Tree1.newRoom('r',nullptr);
+	Tree1 = new RoomTree;
+	Tree2 = new RoomTree;
+	Tree3 = new RoomTree;
+	Tree1->newRoom('l',nullptr);
+	Tree1->newRoom('c',nullptr);
+	Tree1->newRoom('r',nullptr);
 }
 
 
 void RoomTreeTest::testMove()
 {
-	CPPUNIT_ASSERT(Tree1.move('l'));
-	CPPUNIT_ASSERT(!Tree1.move('l'));
-	CPPUNIT_ASSERT(!Tree1.move('r'));
-	CPPUNIT_ASSERT(!Tree1.move('c'));
-	CPPUNIT_ASSERT(Tree1.move('p'));
-	CPPUNIT_ASSERT(!Tree1.move('p'));
-	CPPUNIT_ASSERT(Tree1.move('r'));
-	CPPUNIT_ASSERT(Tree1.move('p'));
+	CPPUNIT_ASSERT(Tree1->move('l'));
+	CPPUNIT_ASSERT(!Tree1->move('l'));
+	CPPUNIT_ASSERT(!Tree1->move('r'));
+	CPPUNIT_ASSERT(!Tree1->move('c'));
+	CPPUNIT_ASSERT(Tree1->move('p'));
+	CPPUNIT_ASSERT(!Tree1->move('p'));
+	CPPUNIT_ASSERT(Tree1->move('r'));
+	CPPUNIT_ASSERT(Tree1->move('p'));
 }
 
 void RoomTreeTest::testNewRoom()
 {
-	CPPUNIT_ASSERT_THROW(Tree1.newRoom('r',nullptr),invalid_argument)
+	CPPUNIT_ASSERT_THROW(Tree1->newRoom('r',nullptr),invalid_argument)
 }
 
 void RoomTreeTest::testAt()

@@ -11,8 +11,8 @@ class RoomTreeTest : public CppUnit::TestFixture
 {
    /// test suite macros
    CPPUNIT_TEST_SUITE(RoomTreeTest);
-   CPPUNIT_TEST(testNewRoom);
    CPPUNIT_TEST(testMove);
+   CPPUNIT_TEST(testNewRoom);
    CPPUNIT_TEST(testAt);
    CPPUNIT_TEST_SUITE_END();
 
@@ -30,7 +30,9 @@ class RoomTreeTest : public CppUnit::TestFixture
    void testAt();
 
   private:
-   RoomTree Tree1,Tree2,Tree3;
+	  RoomTree *Tree1;
+	  RoomTree *Tree2;
+	  RoomTree *Tree3;
 
 };
 #endif
