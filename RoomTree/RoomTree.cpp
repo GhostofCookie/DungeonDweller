@@ -15,10 +15,10 @@ using namespace std;
 //*****************************************************************************
 RoomTree::Node::Node()
 {
-	left = nullptr;
-	right = nullptr;
-	center = nullptr;
-	parent = nullptr;
+   left = nullptr;
+   right = nullptr;
+   center = nullptr;
+   parent = nullptr;
 }
 
 //*****************************************************************************
@@ -26,8 +26,9 @@ RoomTree::Node::Node()
 //*****************************************************************************
 RoomTree::RoomTree(Room* rootRoom)
 {
-	root = new Node;
-	root -> room = rootRoom;
+   root = new Node;
+   root->room = rootRoom;
+   currNode = root;
 }
 
 //*****************************************************************************
@@ -35,9 +36,9 @@ RoomTree::RoomTree(Room* rootRoom)
 //*****************************************************************************
 RoomTree::~RoomTree()
 {
-	deleteTree(root);
-	root = nullptr;
-	currNode = nullptr;
+   deleteTree(root);
+   root = nullptr;
+   currNode = nullptr;
 }
 
 //*****************************************************************************
@@ -45,12 +46,12 @@ RoomTree::~RoomTree()
 //*****************************************************************************
 void RoomTree::deleteTree(Node* tempRoot)
 {
-	if(tempRoot) {
-		deleteTree(tempRoot->left);
-		deleteTree(tempRoot->center);
-		deleteTree(tempRoot->right);
-		delete tempRoot;
-	}
+   if(tempRoot) {
+      deleteTree(tempRoot->left);
+      deleteTree(tempRoot->center);
+      deleteTree(tempRoot->right);
+      delete tempRoot;
+   }
 }
 
 //*****************************************************************************
@@ -58,33 +59,33 @@ void RoomTree::deleteTree(Node* tempRoot)
 //*****************************************************************************
 void RoomTree::newRoom(char dir,Room* roomptr)
 {
-	dir = toupper(dir);
+   dir = toupper(dir);
 
-	switch(dir) {
-		case 'L':
-			if(currNode -> left)
-				throw invalid_argument("room occupied");
-			currNode -> left = new Node;
-			currNode -> left -> parent = currNode;
-			currNode -> left -> room = roomptr;
-			break;
-		case 'R':
-			if(currNode -> right)
-				throw invalid_argument("room occupied");
-			currNode -> right = new Node;
-			currNode -> right -> parent = currNode;
-			currNode -> right -> room = roomptr;
-			break;
-		case 'C':
-			if(currNode -> center)
-				throw invalid_argument("room occupied");
-			currNode -> center = new Node;
-			currNode -> center -> parent = currNode;
-			currNode -> center -> room = roomptr;
-			break;
-		default:
-			throw invalid_argument("invalid direction");
-	}
+   switch(dir) {
+      case 'L':
+	 if(currNode->left != nullptr)
+	    throw invalid_argument("room occupied");
+	 currNode->left = new Node;
+	 currNode->left->parent = currNode;
+	 currNode->left->room = roomptr;
+	 break;
+      case 'R':
+	 if(currNode->right != nullptr)
+	    throw invalid_argument("room occupied");
+	 currNode->right = new Node;
+	 currNode->right->parent = currNode;
+	 currNode->right->room = roomptr;
+	 break;
+      case 'C':
+	 if(currNode->center != nullptr)
+	    throw invalid_argument("room occupied");
+	 currNode->center = new Node;
+	 currNode->center->parent = currNode;
+	 currNode->center->room = roomptr;
+	 break;
+      default:
+	 throw invalid_argument("invalid direction");
+   }
 }
 
 //*****************************************************************************
@@ -92,33 +93,33 @@ void RoomTree::newRoom(char dir,Room* roomptr)
 //*****************************************************************************
 bool RoomTree::move(char dir)
 {
-	dir = toupper(dir);
+   dir = toupper(dir);
 
-	switch(dir) {
-		case 'L':
-			if(!(currNode -> left))
-				return false;
-			currNode = currNode -> left;
-			break;
-		case 'R':
-			if(!(currNode -> right))
-				return false;
-			currNode = currNode -> right;
-			break;
-		case 'C':
-			if(!(currNode -> center))
-				return false;
-			currNode = currNode -> center;
-			break;
-		case 'P':
-			if(!(currNode -> parent))
-				throw out_of_range("no parent to root");
-			currNode = currNode -> parent;
-			break;
-		default:
-			throw invalid_argument("invalid direction");
-	}
-	return true;
+   switch(dir) {
+      case 'L':
+	 if(!(currNode->left))
+	    return false;
+	 currNode = currNode->left;
+	 break;
+      case 'R':
+	 if(!(currNode->right))
+	    return false;
+	 currNode = currNode->right;
+	 break;
+      case 'C':
+	 if(!(currNode->center))
+	    return false;
+	 currNode = currNode->center;
+	 break;
+      case 'P':
+	 if(!(currNode->parent))
+	    return false;
+	 currNode = currNode->parent;
+	 break;
+      default:
+	 throw invalid_argument("invalid direction");
+   }
+   return true;
 }
 
 //*****************************************************************************
@@ -126,7 +127,7 @@ bool RoomTree::move(char dir)
 //*****************************************************************************
 const Room* RoomTree::at() const
 {
-	return currNode -> room;
+   return currNode->room;
 }
 
 //*****************************************************************************
@@ -134,6 +135,6 @@ const Room* RoomTree::at() const
 //*****************************************************************************
 Room* RoomTree::at()
 {
-	return currNode -> room;
+   return currNode->room;
 }
 

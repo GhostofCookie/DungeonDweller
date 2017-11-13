@@ -25,7 +25,7 @@ include .prereq
 .PHONY : clean
 clean :                 ## next lines must begin with a TAB
 	rm -f *.o
-	rm -f *~ *# .#*
+	rm -f *~ *# .#* *.gcno *.gcda
 
 .PHONY : clean-all
 clean-all : clean      ## next line must begin with a TAB
