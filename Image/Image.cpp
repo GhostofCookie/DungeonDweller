@@ -346,11 +346,32 @@ void Image::AlignCenter(Image &img, int x, int y)
 }
 
 
+void Image::ShiftUp(Screen &screen, int num)
+{
+   if(screenY >= 0)
+      screenY -= num;
+}
 
-void Image::ShiftUp(Screen &screen, int num) { screenY -= num; }
-void Image::ShiftDown(Screen &screen, int num) { screenY += num; }
-void Image::ShiftLeft(Screen &screen, int num) { screenX -= num; }
-void Image::ShiftRight(Screen &screen, int num) { screenX += num; }
+
+void Image::ShiftDown(Screen &screen, int num)
+{
+   if(screenY < screen.GetRows())
+      screenY += num;
+}
+
+
+void Image::ShiftLeft(Screen &screen, int num)
+{
+   if(screenX >= 0)
+      screenX -= num;
+}
+
+
+void Image::ShiftRight(Screen &screen, int num)
+{
+   if(screenX < screen.GetCols()) 
+      screenX += num;
+}
 
 
 

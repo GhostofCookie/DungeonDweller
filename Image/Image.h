@@ -23,9 +23,16 @@ class Image
    int height;
    /// The width of the image
    int width;
-	
-	
-	
+
+   /// Returns the height of the image
+   int GetRows() const;
+   /// Returns the width of the image
+   int GetCols() const;
+   /// Returns true if the number is even
+   /// \param[in] num the number to check
+   bool IsEven(const int &num) const;
+
+   
   public:
    /// The screen x coordinate to draw on, default to 0
    int screenX = 0;
@@ -53,14 +60,7 @@ class Image
    /// Overloaded '=' operator
    /// \param[in] img the image being copied
    virtual void operator =(const Image &img);
-	
-   /// Returns the height of the image
-   int GetRows() const;
-   /// Returns the width of the image
-   int GetCols() const;
-   /// Returns true if the number is even
-   /// \param[in] num the number to check
-   bool IsEven(const int &num) const;
+  
    /// Helper function to draw onto the Screen object
    /// \param[in] scr the screen to draw on
    virtual void Draw(Screen &scr);
