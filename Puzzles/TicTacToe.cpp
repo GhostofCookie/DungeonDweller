@@ -6,8 +6,10 @@
 //  
 #include "TicTacToe.h"
 
-TicTacToe::TicTacToe(){
-
+TicTacToe::TicTacToe()
+{
+   boardSize=3;
+   PuzzleEnd=false;
 }
 
 TicTacToe::~TicTacToe()
@@ -15,9 +17,41 @@ TicTacToe::~TicTacToe()
 
 }
 
+void TicTacToe::BoardSetup()
+{
+
+}
+
+void TicTacToe::SetOptionsInMenu()
+{
+
+}
+
+void OutputGame()
+{
+
+}
+
+void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
+{
+
+}
+
+void TicTacToe::WinCheck()
+{
+
+}
+
+void TicTacToe::AiMove()
+{
+
+}
+
+
 void TicTacToe::RunGame(){
 
 }
+
 
 // void TicTacToe::PromptUser(&screen)
 // {
@@ -44,18 +78,3 @@ void TicTacToe::RunGame(){
 // {
 
 // }
-
-void TicTacToe::MovePiece(int InputX, int InputY)
-{
-
-}
-
-void TicTacToe::WinCheck()
-{
-
-}
-
-void TicTacToe::AiMove()
-{
-
-}

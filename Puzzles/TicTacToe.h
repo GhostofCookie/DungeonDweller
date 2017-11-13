@@ -8,6 +8,11 @@
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 #include "Puzzle.h"
+#include "../Menu/ConnectFourMenu.h"
+#include "../Screen/Screen.h"
+#include "../Image/DefaultImg.h"
+#include <iostream>
+using namespace std;
 
 ///This class contains the mini-game/puzzle Tic Tac Toe
 class TicTacToe: public virtual Puzzle
@@ -35,17 +40,20 @@ class TicTacToe: public virtual Puzzle
    /// \param[in] inputY, the Y-coordinate of the selection. 
    bool ValidMove(int inputX, int inputY);
 
+   ///Sets the board up for the beginning of the game, placing the grid
+   void BoardSetup();
+
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
    /// Displays the screen containing the gameboard
    /// \param[in] tttScreen,the screen object used for displaying the mini-game 
-   void OutputGame(Screen &tttScreen);
+   void OutputGame();
 
    /// Displays the screen containing the gameboard
    /// \param[in] inputX, the X-coordinate of the selection.
    /// \param[in] inputY, the Y-coordinate of the selection.
-   void MovePiece(int inputX, int inputY);
+   void MovePiece(int inputX, int inputY, char userPiece);
 
    ///Checks the board to see if there are any 3 of a kind for either player
    void WinCheck();
@@ -55,5 +63,9 @@ class TicTacToe: public virtual Puzzle
    
    ///Vector to store the contents of the gameboard
    std::vector<vector<char>>gameBoard;
+
+   int boardSize;
+
+   ///Screen tttScreen;
 };
 #endif

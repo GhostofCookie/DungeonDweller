@@ -19,7 +19,7 @@ class ConnectFour: virtual Puzzle
   ///Default constructor for ConnectFour, sets heigh to : and width to:
    ConnectFour();
   ///De-constructor
-   ~ConnectFour();
+   virtual ~ConnectFour();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
@@ -49,7 +49,7 @@ class ConnectFour: virtual Puzzle
 
    /// Displays the screen containing the gameboard
    /// \param[in] CfScreen, the screen object used for displaying the mini-game 
-   void OutputGame(Screen &cfScreen);
+   void OutputGame();
 
    ///Checks to see if there have been any 4 tokens in a row in the grid vector.
    bool WinCheck();
@@ -72,6 +72,10 @@ class ConnectFour: virtual Puzzle
    
    void PlayAI();
 
+///ConnectFourScreen stores and outputs the contents of the game to the
+   ///terminal
+   Screen ConnectFourScreen;
+
    ///Function which checks if a column is full, returns true if its full
    ///\param[in]input, the column selected by the user to be checked for status
    bool IsColumnFull(int input);
@@ -89,9 +93,7 @@ class ConnectFour: virtual Puzzle
    ///vertical dimensions of the gameboard vector
    int xSize, ySize;
 
-   ///ConnectFourScreen stores and outputs the contents of the game to the
-   ///terminal
-   Screen ConnectFourScreen;
+
 };
 #endif
  

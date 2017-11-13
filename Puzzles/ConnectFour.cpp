@@ -36,7 +36,7 @@ void BoardSetup()
 	 if(i%2!=0)
 	 {
 	    ///11 and 44 should set the board centered inside the screen
-	    ConnectFourScreen.Set(11+i, 44+j,'-');
+	    //ConnectFourScreen.Set(11+i, 44+j,'-');
 	 }
 	 ///If i is even, fill the row with squares to place tokens in later
 	 else
@@ -44,12 +44,12 @@ void BoardSetup()
 	    if(j%2==0)
 	    {
 	       ///11 and 44 should set the board centered inside the screen
-	       ConnectFourScreen.set(11+i,44+j,' ');
+	       //ConnectFourScreen.Set(11+i,44+j,' ');
 	    }
 	    else
 	    {
 	       ///11 and 44 should set the board centered inside the screen
-	       ConnectFourScreen.set(11+i,44+j,'|');
+	       //ConnectFourScreen.Set(11+i,44+j,'|');
 	    }
 	 }
       }

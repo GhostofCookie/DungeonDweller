@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = Hanoi.o ConnectFour.o
+OBJS = TicTacToe.o Hanoi.o ConnectFour.o CodeCracker.o PuzzleMain.o
 .PHONY : all
 all : main
 

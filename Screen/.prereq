@@ -1,3 +1,4 @@
+main.o: main.cpp
 ScreenTest.o: ScreenTest.cpp ScreenTest.h Screen.h SlotScreen.h
 Screen.o: Screen.cpp Screen.h
 SlotScreen.o: SlotScreen.cpp SlotScreen.h Screen.h
