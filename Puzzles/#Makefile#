@@ -1,15 +1,12 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = Hanoi.o CodeCracker.o MemoryMatch.o TicTacToe.o 
+OBJS = testMenu.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o ../Screen/Screen.o
 
 ## targets and prerequisites
 .PHONY : all
-all : HanoiTest runTest
+all : menuTest runTest
 
-HanoiTest : $(OBJS)
-	$(CC) $(CCFLAGS) $^ -o $@
-
-runTest : $(OBJS2)
+Puzzles : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@
 
 # default rule for compiling .cc to .o
