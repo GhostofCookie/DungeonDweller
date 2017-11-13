@@ -1,8 +1,8 @@
 #include "Image.h"
 
 /// Default Constructor
-Image::Image(int h, int w)
-   : height{h}, width{w}
+Image::Image(int h, int w, char c)
+   : height{h}, width{w}, ch{c}
 {
    Create();
 }
@@ -147,7 +147,7 @@ void Image::Create()
    {
       Img.push_back(vector<char>());
       for(int j = 0; j < width; j++)
-	 Img[i].push_back('*');
+	 Img[i].push_back(ch);
    }
 }
 

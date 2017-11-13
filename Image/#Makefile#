@@ -1,20 +1,23 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = main.o ScreenTest.o Screen.o SlotScreen.o ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o ../Room/Room.o ../ImageImporter/ImageImporter.o
+OBJS = main.o IntVector.o
 
 .PHONY : all
-all : main
+all : main mainTest
 
 main : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
-%.o : %.cpp
+mainTest : $(OBJS2)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+
+%.o : %.cc
 	$(CC) -c $(CCFLAGS) $<
 
 ## generate the prerequistes and append to the desired file
-.prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
+.prereq : $(OBJS:.o=.cc) $(OBJS2:.o=.cc) $(wildcard *.h) Makefile
 	rm -f .prereq
-	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cc) $(OBJS2:.o=.cc) >> ./.prereq
 
 ## include the generated prerequisite file
 include .prereq
@@ -25,4 +28,4 @@ clean :
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f main
+	rm -f main mainTest

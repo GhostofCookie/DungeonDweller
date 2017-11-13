@@ -23,11 +23,9 @@ class Image
    int height;
    /// The width of the image
    int width;
+   /// The character used to draw the image
+   char ch;
 
-   /// Returns the height of the image
-   int GetRows() const;
-   /// Returns the width of the image
-   int GetCols() const;
    /// Returns true if the number is even
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
@@ -41,7 +39,7 @@ class Image
    /// Constructs an Image object from the given dimensions
    /// \param[in] h the height of the image, default to 3
    /// \param[in] w the width of the image, default to 6
-   Image(int h = 3, int w = 6);
+   Image(int h = 3, int w = 6, char c = '*');
    /// Copy constructor duplicates a given picture
    /// \param[in] img the image to copy from
    Image(Image &img);
@@ -150,6 +148,11 @@ class Image
    /// \param[in] scr the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftRight(Screen &scr, int num);
+
+   /// Returns the height of the image
+   int GetRows() const;
+   /// Returns the width of the image
+   int GetCols() const;
 	
    /// Helper function to switch the slant characters
    void FixSlants();

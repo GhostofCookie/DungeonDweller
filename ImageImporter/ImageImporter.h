@@ -14,9 +14,9 @@
 #include <map>
 #include <vector>
 //Image Headers
-#include "Image.hpp"
-#include "DefaultImg.h"
-#include "ImportImg.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
 using namespace std;
 
 
