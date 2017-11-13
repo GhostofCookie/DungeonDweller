@@ -6,9 +6,9 @@
 
 void RoomTreeTest::setUp()
 {
-	Tree1 = new RoomTree;
-	Tree2 = new RoomTree;
-	Tree3 = new RoomTree;
+	Tree1 = new RoomTree(nullptr);
+	Tree2 = new RoomTree(nullptr);
+	Tree3 = new RoomTree(nullptr);
 	Tree1->newRoom('l',nullptr);
 	Tree1->newRoom('c',nullptr);
 	Tree1->newRoom('r',nullptr);
