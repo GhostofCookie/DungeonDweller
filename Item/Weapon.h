@@ -37,5 +37,8 @@ protected:
 
 	/// How many more times the wepon can be used
 	int remainingUses;
+
+	/// Tells if the weapon is broken
+	bool broken = false;
 };
 #endif
