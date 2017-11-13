@@ -11,8 +11,8 @@ class RoomTreeTest : public CppUnit::TestFixture
 {
    /// test suite macros
    CPPUNIT_TEST_SUITE(RoomTreeTest);
-   CPPUNIT_TEST(testMove);
    CPPUNIT_TEST(testNewRoom);
+   CPPUNIT_TEST(testMove);
    CPPUNIT_TEST(testAt);
    CPPUNIT_TEST_SUITE_END();
 
