@@ -20,7 +20,7 @@ int main()
    Menu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-   menu = new Menu();
+   menu = new MainMenu();
    screen = new Screen();
 
    menu->AddOption('p', "Pickup",testFunction);

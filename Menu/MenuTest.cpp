@@ -5,19 +5,18 @@
 ///
 
 #include "MenuTest.h"
+void TestAdd(int);
 
 /// Sets up the test variables for testing.
 void MenuTest::SetUp()
 {
    menu = new Menu();
    menu2 = new Menu(100, 100);
-   options.insert(pair<int, string>(1, "I'm the first option!"));
-   options.insert(pair<int, string>(2, "I'm the second!"));
 }
 /// Deletes any pointers to prevent memory leak.
 void MenuTest::TearDown()
 {
-   delete menu;
+//   delete menu;
 }
 /// Tests that the constructor is wokring in several varieties of construction.
 void MenuTest::TestConstructors()
@@ -28,14 +27,24 @@ void MenuTest::TestConstructors()
 /// Tests the setting of options.
 void MenuTest::TestSetting()
 {
-   menu->SetOptions();
-   menu2->SetOptions(5, 10);
+   menu = new Menu();
+   menu->AddOption('1',"tester 1",TestAdd);
+   // menu->SetOptions();
+   //  menu2->AddOption('2',"tester 2",exit);
+   // menu2->SetOptions(5, 10);
+}
+
+void TestAdd(int i)
+{
+
 }
 /// Tests that menu builds correctly.
 void MenuTest::TestBuilding()
 {
-   menu->SetOptions();
-   menu->OutputMenu();
-   menu2->SetOptions(10, 20);
-   menu2->OutputMenu();
+//   menu->AddOption('1',"tester 1",exit);
+//   menu->SetOptions();
+//   menu->OutputMenu();
+//   menu2->AddOption('2',"tester 2",exit);//
+//   menu2->SetOptions(10, 20);
+//   menu2->OutputMenu();
 }

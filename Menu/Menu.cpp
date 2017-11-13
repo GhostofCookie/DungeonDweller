@@ -51,7 +51,7 @@ void Menu::SetOptions(int row,int col,int space)
       for (unsigned int j = 0; j < tempName.length(); j++)
       {
 	 if(it->first!=113) Set(row,col+j,tempName[j]);
-	 else Set(8, menuWidth/2 +j- tempName.length()/2,tempName[j]);
+	 else Set(menuHeight-3, menuWidth/2 +j- tempName.length()/2,tempName[j]);
       }
       if(it->first != 113) row += space;
       if (row >= menuHeight - 1)

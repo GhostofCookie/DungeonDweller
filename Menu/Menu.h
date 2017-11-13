@@ -18,10 +18,9 @@ using namespace std;
 /// \brief This is the base class for all menus for the main game.
 class Menu 
 {
-  private:
+  protected:
    map<int,string> indexMap;
    map<char, void (*)(int)> optionMap;
-  protected:
    int menuHeight;
    int menuWidth;
    char **menu_Array;
