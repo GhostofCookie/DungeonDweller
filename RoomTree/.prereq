@@ -1,0 +1,12 @@
+RoomTreeTester.o: RoomTreeTester.cpp RoomTreeTest.h RoomTree.h \
+ ../Room/Room.h ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
+ ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h
+RoomTreeTest.o: RoomTreeTest.cpp RoomTree.h ../Room/Room.h \
+ ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
+ ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h RoomTreeTest.h
+RoomTree.o: RoomTree.cpp RoomTree.h ../Room/Room.h \
+ ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
+ ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h

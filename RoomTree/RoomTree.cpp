@@ -27,7 +27,7 @@ RoomTree::Node::Node()
 RoomTree::RoomTree(Room* rootRoom)
 {
 	root = new Node;
-	root -> room = roomptr;
+	root -> room = rootRoom;
 }
 
 //*****************************************************************************

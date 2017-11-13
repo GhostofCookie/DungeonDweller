@@ -2,7 +2,7 @@
 
 CC = g++ -std=c++11
 CCFLAGS = -Wall -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS1 = RoomTreeTester.o RoomTreeTest.o
+OBJS1 = RoomTreeTester.o RoomTreeTest.o RoomTree.o
 ## targets and prerequisites
 .PHONY : all
 all : RoomTreeTester

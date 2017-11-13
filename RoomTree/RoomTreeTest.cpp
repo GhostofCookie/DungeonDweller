@@ -29,7 +29,7 @@ void RoomTreeTest::testMove()
 
 void RoomTreeTest::testNewRoom()
 {
-	CPPUNIT_ASSERT_THROW(Tree1->newRoom('r',nullptr),invalid_argument)
+   CPPUNIT_ASSERT_THROW(Tree1->newRoom('r',nullptr),invalid_argument);
 }
 
 void RoomTreeTest::testAt()
