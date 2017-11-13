@@ -3,4 +3,6 @@ Hanoi.o: Hanoi.cpp Hanoi.h Puzzle.h ../Menu/Menu.h ../Screen/Screen.h \
  ../Menu/Menu.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
 ConnectFour.o: ConnectFour.cpp ConnectFour.h Puzzle.h ../Menu/Menu.h \
- ../Screen/Screen.h
+ ../Screen/Screen.h ../Menu/ConnectFourMenu.h ../Menu/MinigameMenu.h \
+ ../Menu/GameMenu.h ../Menu/Menu.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
