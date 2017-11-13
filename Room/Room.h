@@ -14,11 +14,11 @@
 #include <cctype>
 #include <cstdlib>
 //Screen Header
-#include "Screen.h"
+#include "../Screen/Screen.h"
 //Image Headers
-#include "Image.h"
-#include "DefaultImg.h"
-#include "ImportImg.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
 using namespace std;
 
 
@@ -77,4 +77,4 @@ class Room
    /// \param[in] screen the screen drawn on
    void Draw(Screen &screen, int y, int x);
 };
-#endif /* Room_hpp */
+#endif /* Room_h */

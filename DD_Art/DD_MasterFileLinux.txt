@@ -1,42 +1,42 @@
-DD_Art/Rooms/DD_Room_Square.txt 0
-DD_Art/Rooms/DD_Room_Indent.txt 0
-DD_Art/Rooms/DD_Room_LTurn.txt 0
-DD_Art/Rooms/DD_Room_Thin.txt 0
-DD_Art/Rooms/DD_Room_SquareSlant.txt 0
-DD_Art/Rooms/DD_Room_SquareSlantHorizFlip.txt 0
-DD_Art/Rooms/DD_Room_Octagon.txt 0
-DD_Art/Rooms/DD_Room_LTurnHorizFlip.txt 0
-DD_Art/Rooms/DD_Room_HPattrn.txt 0
-DD_Art/Rooms/DD_Room_IndentVertFlip.txt 0
-DD_Art/Rooms/DD_Room_LTurnVar2.txt 0
-DD_Art/Rooms/DD_Room_OctagonVar2.txt 0
-DD_Art/Rooms/DD_Room_SquareVar2.txt 0
-DD_Art/Rooms/DD_Room_SquareSlantVar2.txt 0
-DD_Art/Rooms/DD_Room_IndentVar2.txt 0
-DD_Art/Rooms/DD_Room_LTurnHorizFlipVar2.txt 0
-DD_Art/Rooms/DD_Room_HPattrnVar2.txt 0
+../Rooms/DD_Room_Square.txt 0
+../DD_Art/Rooms/DD_Room_Indent.txt 0
+../DD_Art/Rooms/DD_Room_LTurn.txt 0
+../DD_Art/Rooms/DD_Room_Thin.txt 0
+../DD_Art/Rooms/DD_Room_SquareSlant.txt 0
+../DD_Art/Rooms/DD_Room_SquareSlantHorizFlip.txt 0
+../DD_Art/Rooms/DD_Room_Octagon.txt 0
+../DD_Art/Rooms/DD_Room_LTurnHorizFlip.txt 0
+../DD_Art/Rooms/DD_Room_HPattrn.txt 0
+../DD_Art/Rooms/DD_Room_IndentVertFlip.txt 0
+../DD_Art/Rooms/DD_Room_LTurnVar2.txt 0
+../DD_Art/Rooms/DD_Room_OctagonVar2.txt 0
+../DD_Art/Rooms/DD_Room_SquareVar2.txt 0
+../DD_Art/Rooms/DD_Room_SquareSlantVar2.txt 0
+../DD_Art/Rooms/DD_Room_IndentVar2.txt 0
+../DD_Art/Rooms/DD_Room_LTurnHorizFlipVar2.txt 0
+../DD_Art/Rooms/DD_Room_HPattrnVar2.txt 0
 
-DD_Art/Decor/DD_ExitUp.txt 1
-DD_Art/Decor/DD_ExitRight.txt 2
-DD_Art/Decor/DD_ExitDown.txt 3
-DD_Art/Decor/DD_ExitLeft.txt 4
+../DD_Art/Decor/DD_ExitUp.txt 1
+../DD_Art/Decor/DD_ExitRight.txt 2
+../DD_Art/Decor/DD_ExitDown.txt 3
+../DD_Art/Decor/DD_ExitLeft.txt 4
 
-DD_Art/Decor/DD_LightLeft.txt 5
-DD_Art/Decor/DD_LightRight.txt 6
-DD_Art/Decor/DD_LightLeftDown.txt 7
-DD_Art/Decor/DD_LightRightDown.txt 8
+../DD_Art/Decor/DD_LightLeft.txt 5
+../DD_Art/Decor/DD_LightRight.txt 6
+../DD_Art/Decor/DD_LightLeftDown.txt 7
+../DD_Art/Decor/DD_LightRightDown.txt 8
 
-DD_Art/Decor/DD_Chest.txt t
+../DD_Art/Decor/DD_Chest.txt t
 
-DD_Art/Decor/DD_Carpet.txt c
-DD_Art/Decor/DD_Carpet2.txt c
-DD_Art/Decor/DD_Carpet3.txt c
+../DD_Art/Decor/DD_Carpet.txt c
+../DD_Art/Decor/DD_Carpet2.txt c
+../DD_Art/Decor/DD_Carpet3.txt c
 
-DD_Art/Decor/DD_CarpetHoriz.txt s
-DD_Art/Decor/DD_CarpetHoriz2.txt s
-DD_Art/Decor/DD_CarpetHoriz3.txt s
+../DD_Art/Decor/DD_CarpetHoriz.txt s
+../DD_Art/Decor/DD_CarpetHoriz2.txt s
+../DD_Art/Decor/DD_CarpetHoriz3.txt s
 
-DD_Art/Decor/DD_Pillar.txt p
-DD_Art/Decor/DD_Pillar2.txt p
+../DD_Art/Decor/DD_Pillar.txt p
+../DD_Art/Decor/DD_Pillar2.txt p
 
-DD_Art/Player/DD_Player.txt @
+../DD_Art/Player/DD_Player.txt @
