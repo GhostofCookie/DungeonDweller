@@ -11,32 +11,31 @@
 
 
 /// Subclass of Weapon to represent a sword in game
-class Sword : public Weapon
+class Sword: public Weapon
 {
-  public:
-   
-   /// Defines what happens when the sword is used
-   /// \param[in] target The character that the sword is used on
-   void use(Character *target);
+public:
+	/// Defines what happens when the sword is used
+	/// \param[in] target The character that the sword is used on
+	void use(Character *target);
 };
 
 
 /// Subclass of Weapon to represent a bow in game
-class Bow : public Weapon
+class Bow: public Weapon
 {
-  public:
-   /// Defines what happens when the spell is used
-   /// \param[in] target The character that the spell is used on
-   void use(Character *target);
+public:
+	/// Defines what happens when the spell is used
+	/// \param[in] target The character that the spell is used on
+	void use(Character *target);
 };
 
 
 /// Subclass of Weapon to represent a spell in game
-class Spell : public Weapon
+class Spell: public Weapon
 {
-  public:
-   /// Defines what happens when the spell is used
-   /// \param[in] target The character that the spell is used on
-   void use(Character *target)
+public:
+	/// Defines what happens when the spell is used
+	/// \param[in] target The character that the spell is used on
+	void use(Character *target)
 };
 #endif

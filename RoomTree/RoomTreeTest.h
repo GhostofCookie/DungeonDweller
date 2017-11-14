@@ -30,7 +30,9 @@ class RoomTreeTest : public CppUnit::TestFixture
    void testAt();
 
   private:
-   RoomTree Tree1,Tree2,Tree3;
+	  RoomTree *Tree1;
+	  RoomTree *Tree2;
+	  RoomTree *Tree3;
 
 };
 #endif
