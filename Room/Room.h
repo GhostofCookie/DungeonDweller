@@ -50,7 +50,8 @@ class Room
    void GetRoom(map<char, vector<ImportImg>> &imgFiles);
    /// Locates the key characters used to print other images to the room
    void GetPoints();
-	
+   /// Print event images to the room based on type
+   void GetEventImages(map<char, vector<ImportImg>> &imgFiles);
 	
 	
   public:

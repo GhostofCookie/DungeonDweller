@@ -311,17 +311,7 @@ void Image::AlignCenter(Image &img)
    int scrY = img.GetRows()/2; // 61/2
    int imgX = width/2; // 30  61/2
    int imgY = height/2; // 15  31/2
-	
-   /*
-     if(IsEven(x))
-     scrX--;
-     if(IsEven(y))
-     scrY--;
-     if(IsEven(width))
-     imgX--;
-     if(IsEven(height))
-     imgY--;
-   */
+
    // Relys on it being odd for centering perfection
    screenX = scrX - imgX;
    screenY = scrY - imgY;
@@ -346,11 +336,13 @@ void Image::AlignCenter(Image &img, int x, int y)
 }
 
 
-void Image::ShiftUp(Screen &screen, int num)
+
+void Image::ShiftUp(int num)
 {
    if(screenY >= 0)
       screenY -= num;
 }
+
 
 
 void Image::ShiftDown(Screen &screen, int num)
@@ -360,16 +352,34 @@ void Image::ShiftDown(Screen &screen, int num)
 }
 
 
-void Image::ShiftLeft(Screen &screen, int num)
+
+void Image::ShiftLeft(int num)
 {
    if(screenX >= 0)
       screenX -= num;
 }
 
 
+
 void Image::ShiftRight(Screen &screen, int num)
 {
    if(screenX < screen.GetCols()) 
+      screenX += num;
+}
+
+
+
+void Image::ShiftDown(Image &img, int num)
+{
+   if(screenY < img.GetRows())
+      screenY += num;
+}
+
+
+
+void Image::ShiftRight(Image &img, int num)
+{
+   if(screenX < img.GetCols()) 
       screenX += num;
 }
 

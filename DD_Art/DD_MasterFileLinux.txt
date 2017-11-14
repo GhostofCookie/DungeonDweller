@@ -1,4 +1,4 @@
-../Rooms/DD_Room_Square.txt 0
+../DD_Art/Rooms/DD_Room_Square.txt 0
 ../DD_Art/Rooms/DD_Room_Indent.txt 0
 ../DD_Art/Rooms/DD_Room_LTurn.txt 0
 ../DD_Art/Rooms/DD_Room_Thin.txt 0
@@ -40,3 +40,6 @@
 ../DD_Art/Decor/DD_Pillar2.txt p
 
 ../DD_Art/Player/DD_Player.txt @
+../DD_Art/Player/DD_NPCShop.txt @
+../DD_Art/Player/DD_NPCEnemy.txt @
+../DD_Art/Player/DD_NPCPuzzle.txt @

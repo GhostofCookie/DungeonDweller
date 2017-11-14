@@ -132,22 +132,31 @@ class Image
    /// \param[in] img the screen to align to
    void AlignCenter(Image &img, int x, int y);
 	
-   /// Helper function to shift the image up
-   /// \param[in] scr the screen the image will shift on
-   /// \param[in] num the amount of shifting
-   void ShiftUp(Screen &scr, int num);
    /// Helper function to shift the image down
    /// \param[in] scr the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftDown(Screen &scr, int num);
-   /// Helper function to shift the image left
-   /// \param[in] scr the screen the image will shift on
-   /// \param[in] num the amount of shifting
-   void ShiftLeft(Screen &scr, int num);
    /// Helper function to shift the image right
    /// \param[in] scr the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftRight(Screen &scr, int num);
+
+   /// Helper function to shift the image up
+   /// \param[in] scr the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftUp(int num);
+   /// Helper function to shift the image down
+   /// \param[in] scr the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftDown(Image &img, int num);
+   /// Helper function to shift the image left
+   /// \param[in] img the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftLeft(int num);
+   /// Helper function to shift the image right
+   /// \param[in] img the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftRight(Image &img, int num);
 
    /// Returns the height of the image
    int GetRows() const;

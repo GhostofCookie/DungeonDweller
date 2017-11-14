@@ -53,17 +53,12 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
       img.AlignCenter(*room, point[i].x, point[i].y);
       img.Image::Draw(*room);
    }
-	
-   /*
-   // force draw the player after everything
-   ImportImg img = ImportImg(collection['@'][0]);
-   img.AlignCenter(*room);
-   img.Image::Draw(*room);
-   */
+
+   GetEventImages(collection);
 }
 
 
-
+/// Function that identifies key characters and sets their location
 void Room::GetPoints()
 {
    // Move through the room image and save the locations found as a point
@@ -89,6 +84,46 @@ void Room::GetPoints()
    }
 }
 
+
+/// Helper function to determine what to draw in the room based on type
+void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
+{
+   ImportImg img = ImportImg(collection['@'][0]);
+   ImportImg event;
+   
+   switch(type)
+   {
+      //empty room
+      case 0 :
+	 break;
+	 //NPC Shop
+      case 1 :
+	 event = ImportImg(collection['@'][1]);
+	 event.AlignCenter(*room);
+	 event.Image::ShiftUp(5);
+	 event.Image::Draw(*room);
+	 break;
+	 //NPC Enemy	 
+      case 2 :
+	 event = ImportImg(collection['@'][2]);
+	 event.AlignCenter(*room);
+	 event.Image::ShiftUp(5);
+	 event.Image::Draw(*room);
+	 break;
+	 //NPC Puzzle
+      case 3 :
+	 event = ImportImg(collection['@'][3]);
+	 event.AlignCenter(*room);
+	 event.Image::ShiftUp(5);
+	 event.Image::Draw(*room);
+	 break;
+   }
+   
+   // force draw the player after everything
+   img.AlignCenter(*room);
+   img.Image::Draw(*room);
+   
+}
 
 
 void Room::AlignCenter(Screen &screen)
