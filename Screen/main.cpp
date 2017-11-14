@@ -2,20 +2,18 @@
 // Be sure to have all the files together when running
 // might need ImageImporter classes
 
-
-/*
 #include <iostream>
 #include <vector>
-//ScreenClass headers
+//Screen headers
 #include "Screen.h"
 #include "SlotScreen.h"
 //Image headers
-#include "ImageImporter.h"
-#include "Image.h"
-#include "DefaultImg.h"
-#include "ImportImg.h"
+#include "../ImageImporter/ImageImporter.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
 //Room Header
-#include "Room.h"
+#include "../Room/Room.h"
 //Time Headers
 #include <unistd.h>//for slowing down time
 #include <ctime>
@@ -29,7 +27,7 @@ int main()
    srand( (unsigned int) time(NULL));
 	
    // The file path - ***change as desired
-   string mastrFile = "DD_MasterFile.txt";
+   string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
    
    // Display the rooms on a screen
    Screen *screen = new Screen();
@@ -52,4 +50,3 @@ int main()
 	
    return 0;
 }
-*/

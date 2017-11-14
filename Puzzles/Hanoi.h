@@ -38,7 +38,7 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-  bool ValidMove(const int currentStack,const int newStack) const;
+   bool ValidMove(const int currentStack,const int newStack) const;
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();

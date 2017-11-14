@@ -1,0 +1,31 @@
+CC = g++
+CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
+OBJS = main.o IntVector.o
+
+.PHONY : all
+all : main mainTest
+
+main : $(OBJS)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+
+mainTest : $(OBJS2)
+	$(CC) $(CCFLAGS) $^ -o $@ 
+
+%.o : %.cc
+	$(CC) -c $(CCFLAGS) $<
+
+## generate the prerequistes and append to the desired file
+.prereq : $(OBJS:.o=.cc) $(OBJS2:.o=.cc) $(wildcard *.h) Makefile
+	rm -f .prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cc) $(OBJS2:.o=.cc) >> ./.prereq
+
+## include the generated prerequisite file
+include .prereq
+
+.PHONY : clean
+clean :
+	rm -f *.o *~ #* .#*
+
+.PHONY : clean-all
+clean-all : clean
+	rm -f main mainTest

@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////////////////////////////////
-///connect_four.cpp
-///\author Tyler Siwy
-///CPSC 2720-Howard Cheng-Assignment 2
-////////////////////////////////////////////////////////////////////////////////
+///ConnectFour.cpp
+
 #include "ConnectFour.h"
 
 ConnectFour::ConnectFour()
 {
+   PuzzleEnd=false;
+   ///Setting up the game vector 
    xSize=7;
    ySize=6;
    grid.resize(xSize);
@@ -25,15 +25,46 @@ ConnectFour::~ConnectFour()
 
 }
 
+void BoardSetup()
+{
+   int horizontalBoardSize=15, verticalBoardSize=13;
+   for(int i=0; i<verticalBoardSize; i++)
+   {
+      for(int j=0; j<horizontalBoardSize; j++)
+      {
+	 ///If i is odd, fill the entire row with '-'
+	 if(i%2!=0)
+	 {
+	    ///11 and 44 should set the board centered inside the screen
+	    //ConnectFourScreen.Set(11+i, 44+j,'-');
+	 }
+	 ///If i is even, fill the row with squares to place tokens in later
+	 else
+	 {
+	    if(j%2==0)
+	    {
+	       ///11 and 44 should set the board centered inside the screen
+	       //ConnectFourScreen.Set(11+i,44+j,' ');
+	    }
+	    else
+	    {
+	       ///11 and 44 should set the board centered inside the screen
+	       //ConnectFourScreen.Set(11+i,44+j,'|');
+	    }
+	 }
+      }
+   }
+}
+   
 void ConnectFour::RunGame()
 {
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
-   int CurrentPlayer=1;
+   int currentPlayer=1;
 //Screen connectFourGameScreen;
    //ConnectFourMenu connectFourGameMenu;
    //connectFourGameMenu.OutputMenu();
-   while(GameEnd==false)
+   while(PuzzleEnd==false)
    {
       //connectFourGameScreen.OutputGame(cfScreen);
       //connectFourMenu.OutputMenu();
@@ -54,7 +85,7 @@ void ConnectFour::RunGame()
 	 {
 	    cout << "Congratulations adventurer! You have defeated the champion"
 		 << "! You are free to proceed into the next area!" << endl;
-	    GameEnd==true;
+	    PuzzleEnd=true;
 	 }
       }
       
@@ -88,13 +119,14 @@ void ConnectFour::MovePiece(char userPiece, int column)
    {
       char currentSpot=' ';
       int height=ySize-1;
-      while(currentSpot=' ')
+      while(currentSpot==' ')
       {
 	 ///If we have reached the bottom of the column and not found a piece, set
 	 ///the piece at the bottom of the column and break.
 	 if(height==0)
 	 {
 	    grid.at(column).at(height)=userPiece;
+	    ConnectFourScreen.Set(height*2+11, column*2+44, userPiece);
 	    break;
 	 }
 	 ///If there are no pieces here, keep moving down through the column
@@ -106,6 +138,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 	 else
 	 {
 	    grid.at(column).at(height+1)=userPiece;
+	    ConnectFourScreen.Set(height*2+12, column*2+44, userPiece);
 	    break;
 	 }
       }
@@ -127,7 +160,7 @@ bool ConnectFour::HorizontalCheck()
 {
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '©' tokens in the line. 
-   int atCount=0, copyrightCount=0;
+   int atCount=0, poundCount=0;
    for(int i=0; i<ySize; i++)
    {
       for(int j=0; j<xSize; j++)
@@ -137,26 +170,26 @@ bool ConnectFour::HorizontalCheck()
 	 if(grid.at(i).at(j)=='@')
 	 {
 	    atCount++;
-	    copyrightCount=0;
+	    poundCount=0;
 	 }
-	 ///If a '©' token is found, reset the count for at since it is not
+	 ///If a '#' token is found, reset the count for at since it is not
 	 ///consecutive anymore.  
-	 else if(grid.at(i).at(j)=='©')
+	 else if(grid.at(i).at(j)=='#')
 	 {
-	    copyrightCount++;
+	    poundCount++;
 	    atCount=0;
 	 }
       }
 
       ///If either count is at 4 then we have found four of a kind and a player
       ///has won so return true.                                               
-      if(atCount==4||copyrightCount==4)
+      if(atCount==4||poundCount==4)
 	 return true;
 
       ///Reset both counters since we've reached the end of the column with no
       ///match found.  
       atCount=0;
-      copyrightCount=0;
+      poundCount=0;
    }
    return false;
 }
@@ -167,7 +200,7 @@ bool ConnectFour::VerticalCheck()
 {
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '©' tokens in the line.
-   int atCount=0, copyrightCount=0;
+   int atCount=0, poundCount=0;
    for(int i=0; i<xSize; i++)
    {
       for(int j=0; j<ySize; j++)
@@ -177,26 +210,26 @@ bool ConnectFour::VerticalCheck()
 	 if(grid.at(i).at(j)=='@')
 	 {
 	    atCount++;
-	    copyrightCount=0;
+	    poundCount=0;
 	 }
-	 ///If a '©' token is found, reset the count for at since it is not
+	 ///If a '#' token is found, reset the count for at since it is not
 	 ///consecutive anymore.  
-	 else if(grid.at(i).at(j)=='©')
+	 else if(grid.at(i).at(j)=='#')
 	 {
-	    copyrightCount++;
+	    poundCount++;
 	    atCount=0;
 	 }
       }
 
       ///If either count is at 4 then we have found four of a kind and a player
       ///has won so return true. 
-      if(atCount==4||copyrightCount==4)
+      if(atCount==4||poundCount==4)
 	 return true;
 
       ///Reset both counters since we've reached the end of the column with no
       ///match found.
       atCount=0;
-      copyrightCount=0;
+      poundCount=0;
    }
    return false;
    
@@ -209,7 +242,7 @@ bool ConnectFour::RightDiagonalCheck()
 {
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '©' tokens in the diagonal line.
-   int atCount=0, copyrightCount=0;
+   int atCount=0, poundCount=0;
 
    int j=xSize;
    ///j will the be horizontal movement, i will be the vertical movement. 
@@ -226,14 +259,14 @@ bool ConnectFour::RightDiagonalCheck()
       if(grid.at(j).at(i)=='@')
       {
 	 atCount++;
-	 copyrightCount=0;
+	 poundCount=0;
       }
 
-      ///If a '©' token is found, reset the count for at since it is not
+      ///If a '#' token is found, reset the count for at since it is not
       ///consecutive anymore.
-      else if(grid.at(j).at(i)=='©')
+      else if(grid.at(j).at(i)=='#')
       {
-	 copyrightCount++;
+	 poundCount++;
 	 atCount=0;
       }
 
@@ -241,13 +274,13 @@ bool ConnectFour::RightDiagonalCheck()
       ///consecutive line
       else if(grid.at(j).at(i)==' ')
       {
-	 copyrightCount=0;
+	 poundCount=0;
 	 atCount=0;
       }
 
       ///If either count is at 4 then we have found four of a kind and a player
       ///has won so return true.
-      if(atCount==4||copyrightCount==4)
+      if(atCount==4||poundCount==4)
 	 return true;
    }
    ///If no 4 of a kind has been found, return false.
@@ -260,7 +293,7 @@ bool ConnectFour::LeftDiagonalCheck()
 {
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '©' tokens in the diagonal line. 
-   int atCount=0, copyrightCount=0;
+   int atCount=0, poundCount=0;
 
    int j=-1;
    ///j will the be horizontal movement, i will be the vertical movement.
@@ -278,14 +311,14 @@ bool ConnectFour::LeftDiagonalCheck()
       if((grid.at(j).at(i)=='@'))
       {
 	 atCount++;
-	 copyrightCount=0;
+	 poundCount=0;
       }
 
-      ///If a '©' token is found, reset the count for at since it is not
+      ///If a '#' token is found, reset the count for at since it is not
       ///consecutive anymore.  
-      else if((grid.at(j).at(i)=='©'))
+      else if((grid.at(j).at(i)=='#'))
       {
-	 copyrightCount++;
+	 poundCount++;
 	 atCount=0;
       }
 
@@ -293,13 +326,13 @@ bool ConnectFour::LeftDiagonalCheck()
       ///consecutive line
       else if(grid.at(j).at(i)==' ')
       {
-	 copyrightCount=0;
+	 poundCount=0;
 	 atCount=0;
       }
 
       ///If either count is at 4 then we have found four of a kind and a player
       ///has won so return true.  
-      if(atCount==4||copyrightCount==4)
+      if(atCount==4||poundCount==4)
 	 return true;
    }
    return false;
@@ -311,7 +344,7 @@ bool ConnectFour::IsColumnFull(int x)
    int charCount=0;
    for(int i=0; i<ySize; i++)
    {
-      if(grid.at(x).at(i)=='@'||grid.at(x).at(i)=='©')
+      if(grid.at(x).at(i)=='@'||grid.at(x).at(i)=='#')
 	 charCount++;
    }
    ///If the column is full, return true, else return false.
@@ -328,7 +361,7 @@ bool ConnectFour::IsBoardFull(){
    {
       for(int j=0; j<ySize; j++)
       {
-	 if((grid.at(i).at(j)=='@')||grid.at(i).at(j)=='©')
+	 if((grid.at(i).at(j)=='@')||grid.at(i).at(j)=='#')
 	    charCount++;
       }
    }

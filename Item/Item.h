@@ -36,8 +36,11 @@ public:
 	/// \return Name of the item
 	string name() const;
 
-private:
+protected:
+	/// Helper function to generate random numbers
+	int random(int start,int end);
 
+private:
 	///Name of the item
 	string n;
 };

@@ -1,0 +1,3 @@
+ImageImporter.o: ImageImporter.cpp ImageImporter.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h

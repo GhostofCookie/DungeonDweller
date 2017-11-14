@@ -1,8 +1,8 @@
 #include "Image.h"
 
 /// Default Constructor
-Image::Image(int h, int w)
-   : height{h}, width{w}
+Image::Image(int h, int w, char c)
+   : height{h}, width{w}, ch{c}
 {
    Create();
 }
@@ -147,7 +147,7 @@ void Image::Create()
    {
       Img.push_back(vector<char>());
       for(int j = 0; j < width; j++)
-	 Img[i].push_back('*');
+	 Img[i].push_back(ch);
    }
 }
 
@@ -346,11 +346,32 @@ void Image::AlignCenter(Image &img, int x, int y)
 }
 
 
+void Image::ShiftUp(Screen &screen, int num)
+{
+   if(screenY >= 0)
+      screenY -= num;
+}
 
-void Image::ShiftUp(Screen &screen, int num) { screenY -= num; }
-void Image::ShiftDown(Screen &screen, int num) { screenY += num; }
-void Image::ShiftLeft(Screen &screen, int num) { screenX -= num; }
-void Image::ShiftRight(Screen &screen, int num) { screenX += num; }
+
+void Image::ShiftDown(Screen &screen, int num)
+{
+   if(screenY < screen.GetRows())
+      screenY += num;
+}
+
+
+void Image::ShiftLeft(Screen &screen, int num)
+{
+   if(screenX >= 0)
+      screenX -= num;
+}
+
+
+void Image::ShiftRight(Screen &screen, int num)
+{
+   if(screenX < screen.GetCols()) 
+      screenX += num;
+}
 
 
 

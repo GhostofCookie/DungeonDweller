@@ -1,0 +1,3 @@
+Image.o: Image.cpp Image.h ../Screen/Screen.h
+ImportImg.o: ImportImg.cpp ImportImg.h Image.h ../Screen/Screen.h
+DefaultImg.o: DefaultImg.cpp DefaultImg.h Image.h ../Screen/Screen.h

@@ -1,8 +1,8 @@
 #include "DefaultImg.h"
 
 /// Default Constructor
-DefaultImg::DefaultImg(int h, int w)
-   : _height{h}, _width{w}
+DefaultImg::DefaultImg(int h, int w, char c)
+   : _height{h}, _width{w}, ch{c}
 {
    //couldn't assign directly needed to assign to non-static var first
    height = _height;
@@ -67,6 +67,6 @@ void DefaultImg::Create()
    {
       Img.push_back(vector<char>());
       for(int j = 0; j < width; j++)
-	 Img[i].push_back('*');
+	 Img[i].push_back(ch);
    }
 }
