@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <string>
 #include <cctype>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 Item* Item::GetItem(string itemType)
@@ -31,4 +33,12 @@ Item* Item::GetItem(string itemType)
 		newItem = new Food;
 	else
 		throw invalid_argument("invalid type")
+}
+
+int Item::random(int start,int end)
+{
+	static bool seeded = false;
+	if(!seeded)
+		srand(time(NULL));
+	return rand()%(end-start+1)+start;
 }
