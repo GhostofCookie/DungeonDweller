@@ -45,7 +45,7 @@ void DefaultImg::Draw(Screen &screen, int y, int x)
 	
    // An algorithm that moves through each element in the Img
    // and attempts to place on the screen with the given start location
-   for(int i = 0; i < Img.size(); i++)
+   for(unsigned int i = 0; i < Img.size(); i++)
    {
       for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
       {

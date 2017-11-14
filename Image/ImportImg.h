@@ -5,8 +5,8 @@
 /// \date Oct 20, 2017
 ///
 
-#ifndef ImportedImg_h
-#define ImportedImg_h
+#ifndef ImportImg_h
+#define ImportImg_h
 
 #include <fstream>
 #include "Image.h"
@@ -22,12 +22,10 @@ class ImportImg : public Image
    string imgStr;
 	
 	
-	
   public:
    /// constructs an Image object from the given dimensions
    /// \param[in] file the file path to get the image from
    ImportImg(string file = "");
-
    /// Copy constructor to duplicate the given image
    /// \param[in] img the image to copy from
    ImportImg(ImportImg &img);

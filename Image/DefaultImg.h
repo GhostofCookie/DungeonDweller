@@ -46,4 +46,4 @@ class DefaultImg : public Image
    void Create();
 };
 
-#endif /* DefaultImg_hpp */
+#endif /* DefaultImg_h */

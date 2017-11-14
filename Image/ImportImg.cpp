@@ -69,7 +69,7 @@ void ImportImg::Import(string file, string &img)
       while (getline(in, curLine, '\n'))
       {
 	 Img.push_back(vector<char>());
-	 for(int i = 0; i < curLine.length(); i++)
+	 for(unsigned int i = 0; i < curLine.length(); i++)
 	    Img[index].push_back(curLine[i]);
 			
 	 index++;
@@ -94,8 +94,7 @@ void ImportImg::Draw(Screen &screen, int y, int x)
 	
    // An algorithm that moves through each element in the Img
    // and attempts to place on the screen with the given start location
-	
-   for(int i = 0; i < Img.size(); i++)
+   for(unsigned int i = 0; i < Img.size(); i++)
    {
       for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
       {

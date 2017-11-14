@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = Image.o ImportImg.o DefaultImg.o
+OBJS = main.o Image.o ImportImg.o DefaultImg.o ../Screen/Screen.o
 
 .PHONY : all
 all : main

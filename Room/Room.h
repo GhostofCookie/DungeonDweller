@@ -26,10 +26,14 @@ using namespace std;
 /// It also applies appropriate images onto a given room image
 class Room
 {
+   /// A struct used to contain the location of characters from a room
    struct Point
    {
+      // x coordinate
       int x = -1;
+      // y coordinate
       int y = -1;
+      // character stored
       char ch;
    };
 	
@@ -44,13 +48,14 @@ class Room
 	
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
-   int Randomizer(int n);
+   int Rand(int n);
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles collects all 'event' images for the rooms
    void GetRoom(map<char, vector<ImportImg>> &imgFiles);
    /// Locates the key characters used to print other images to the room
    void GetPoints();
    /// Print event images to the room based on type
+   /// \param[in] imgFiles the collection of images to use
    void GetEventImages(map<char, vector<ImportImg>> &imgFiles);
 	
 	

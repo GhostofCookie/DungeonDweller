@@ -17,6 +17,8 @@ main : $(OBJS)
 	rm -f .prereq
 	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
 
+#include .prereq	
+
 # include the generated prerequisite file
 
 .PHONY : clean

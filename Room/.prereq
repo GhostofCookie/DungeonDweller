@@ -1,3 +1,12 @@
+main.o: main.cpp Room.h ../Screen/Screen.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h
 Room.o: Room.cpp Room.h ../Screen/Screen.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/ImportImg.h
+Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
+Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
+DefaultImg.o: ../Image/DefaultImg.cpp ../Image/DefaultImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h

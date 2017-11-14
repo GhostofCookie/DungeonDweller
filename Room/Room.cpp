@@ -1,24 +1,24 @@
 #include "Room.h"
 
 /// Default Constructor
-Room::Room(map<char, vector<ImportImg>> &imgFiles)
+Room::Room(map<char, vector<ImportImg>> &collection)
 {
    //What type of room is generated e.g. treasure, puzzle, etc
-   type = Randomizer(4);
+   type = Rand(4);
 	
    // Find out how many rooms there are to pick from
    // All rooms are located at '0' in the map
    int roomCount = 0;
-   for(unsigned int i = 0; i < imgFiles['0'].size(); ++i)
+   for(unsigned int i = 0; i < collection['0'].size(); ++i)
       roomCount++;
 	
    // Decides on one of the rooms in that set
-   int num = Randomizer(roomCount);
-   ImportImg img = imgFiles['0'][num];
-   room = new ImportImg(img);
+   int num = Rand(roomCount);
+   room = new ImportImg(collection['0'][num]);
 	
    //Insert the appropriate images to fill the room
-   GetRoom(imgFiles);
+   GetRoom(collection);
+   GetEventImages(collection);
 }
 
 
@@ -37,12 +37,12 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
 	
    GetPoints();
 	
-   // Finds the correct images and then prints them onto room image
-   for(int i = 0; i < point.size(); i++)
+   // Finds the correct images using points and then prints them onto room image
+   for(unsigned int i = 0; i < point.size(); i++)
    {
       // Decides on a varient if there are more than 1 type of object
       if(collection[point[i].ch].size() > 1)
-	 setType.insert(pair<char, int>(point[i].ch, Randomizer(collection[point[i].ch].size())));
+	 setType.insert(pair<char, int>(point[i].ch, Rand(collection[point[i].ch].size())));
       else
 	 setType[point[i].ch] = 0;
 
@@ -53,8 +53,6 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
       img.AlignCenter(*room, point[i].x, point[i].y);
       img.Image::Draw(*room);
    }
-
-   GetEventImages(collection);
 }
 
 
@@ -87,10 +85,10 @@ void Room::GetPoints()
 
 /// Helper function to determine what to draw in the room based on type
 void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
-{
-   ImportImg img = ImportImg(collection['@'][0]);
-   ImportImg event;
-   
+{   
+   ImportImg event = ImportImg("");
+
+   /*
    switch(type)
    {
       //empty room
@@ -100,29 +98,29 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
       case 1 :
 	 event = ImportImg(collection['@'][1]);
 	 event.AlignCenter(*room);
-//	 event.Image::ShiftUp(5);
+	 event.Image::ShiftUp(10);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Enemy	 
       case 2 :
 	 event = ImportImg(collection['@'][2]);
 	 event.AlignCenter(*room);
-//	 event.Image::ShiftUp(5);
+	 event.Image::ShiftUp(10);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Puzzle
       case 3 :
-	 event = ImportImg(collection['@'][3]);
+	 event = ImportImg(collection['@'][2]);
 	 event.AlignCenter(*room);
-//	 event.Image::ShiftUp(5);
+	 event.Image::ShiftUp(10);
 	 event.Image::Draw(*room);
 	 break;
    }
-   
+   */
    // force draw the player after everything
+   ImportImg img = ImportImg(collection['@'][0]);
    img.AlignCenter(*room);
    img.Image::Draw(*room);
-   
 }
 
 
@@ -162,7 +160,7 @@ void Room::Draw(Screen &screen, int y, int x)
 
 
 /// Randomly selects a number from 0 to n-1
-int Room::Randomizer(int n)
+int Room::Rand(int n)
 {
    n = rand() % n;
    return n;

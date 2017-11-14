@@ -11,7 +11,7 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
-#include "../Screen/Screen.h" 
+#include "../Screen/Screen.h"
 using namespace std;
 
 

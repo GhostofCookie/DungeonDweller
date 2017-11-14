@@ -96,7 +96,7 @@ void Image::Draw(Screen &screen, int y, int x)
 	
    // An algorithm that moves through each element in the Img
    // and attempts to place on the screen with the given start location
-   for(int i = 0; i < Img.size(); i++)
+   for(unsigned int i = 0; i < Img.size(); i++)
    {
       for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
       {
@@ -126,7 +126,7 @@ void Image::Draw(Image &img, int y, int x)
 	
    // An algorithm that moves through each element in the Img
    // and attempts to place on the screen with the given start location
-   for(int i = 0; i < Img.size(); i++)
+   for(unsigned int i = 0; i < Img.size(); i++)
    {
       for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
       {
@@ -218,7 +218,7 @@ void Image::FlipHoriz(Screen &screen)
    vector<vector<char>> temp;
    int imgSize = static_cast<int>(Img.size());
 	
-   for(int i = 0; i < Img.size(); ++i)
+   for(unsigned int i = 0; i < Img.size(); ++i)
    {
       vector<char> _temp;
       for(unsigned int j = imgSize-1; j != 1; --j)
@@ -239,35 +239,17 @@ void Image::FlipVert(Screen &screen)
    vector<vector<char>> temp;
    int imgSize = static_cast<int>(Img.size());
 	
-   for(unsigned int i = imgSize-1; i != -1; --i)
+   for(int i = imgSize-1; i != -1; --i)
    {
       vector<char> _temp;
-      for(int j = 0; j < Img[i].size(); ++j)
-      {
+      for(unsigned int j = 0; j < Img[i].size(); ++j)
 	 _temp.push_back(Img[i][j]);
-      }
+      
       temp.push_back(_temp);
    }
 	
    Img = temp;
    FixSlants();//by-product of having console characters
-}
-
-
-
-void Image::AlignLeft(Screen &screen)
-{
-   screenX = 1;//that way the images are always within the border of the screen
-   SetOrigin(screen, screenX, screenY);
-}
-
-
-
-void Image::AlignRight(Screen &screen)
-{
-   //uses the image's width and screen's width to find the right side
-   screenX = static_cast<int>(screen.GetCols()-Img[0].size()-1);
-   SetOrigin(screen, screenX, screenY);
 }
 
 
@@ -280,27 +262,9 @@ void Image::AlignCenter(Screen &screen)
    int imgY = height/2; // 15  31/2
 	
    // Relys on it being odd for centering perfection
-   screenX = scrX - imgX;
-   screenY = scrY - imgY;
-	
-   SetOrigin(screen, screenX, screenY);
-}
-
-
-
-void Image::AlignLeft(Image &img)
-{
-   screenX = 1;//that way the images are always within the border of the screen
-   SetOrigin(img, screenX, screenY);
-}
-
-
-
-void Image::AlignRight(Image &img)
-{
-   //uses the image's width and screen's width to find the right side
-   screenX = static_cast<int>(img.GetCols()-Img[0].size()-1);
-   SetOrigin(img, screenX, screenY);
+   SetOrigin(screen, scrX - imgX, scrY - imgY);
+   // screenX = scrX - imgX;
+   // screenY = scrY - imgY;
 }
 
 
@@ -313,10 +277,7 @@ void Image::AlignCenter(Image &img)
    int imgY = height/2; // 15  31/2
 
    // Relys on it being odd for centering perfection
-   screenX = scrX - imgX;
-   screenY = scrY - imgY;
-	
-   SetOrigin(img, screenX, screenY);
+   SetOrigin(img, scrX - imgX, scrY - imgY);
 }
 
 
@@ -329,67 +290,118 @@ void Image::AlignCenter(Image &img, int x, int y)
    int imgY = height/2;
 	
    // Relys on it being odd for centering perfection
-   screenX = scrX - imgX;
-   screenY = scrY - imgY;
-	
-   SetOrigin(img, screenX, screenY);
+   SetOrigin(img, scrX - imgX, scrY - imgY);
+}
+
+
+
+void Image::AlignLeft(Image &img)
+{
+   screenX = 1;//that way the images are always within the border of the screen
+}
+
+
+
+void Image::AlignRight(Image &img)
+{
+   //uses the image's width and screen's width to find the right side
+   screenX = static_cast<int>(img.GetCols()-Img[0].size()-1);
+}
+
+
+
+void Image::AlignLeft(Screen &screen)
+{
+   screenX = 1;//that way the images are always within the border of the screen
+}
+
+
+
+void Image::AlignRight(Screen &screen)
+{
+   //uses the image's width and screen's width to find the right side
+   screenX = static_cast<int>(screen.GetCols()-Img[0].size()-1);
 }
 
 
 
 void Image::ShiftUp(int num)
 {
-   if(screenY >= 0)
-      screenY -= num;
+   int i = 0;
+   while(i < num && screenY >= 0)
+   {
+      screenY--;
+      i++;
+   }
 }
 
 
 
 void Image::ShiftDown(Screen &screen, int num)
 {
-   if(screenY < screen.GetRows())
-      screenY += num;
-}
-
-
-
-void Image::ShiftLeft(int num)
-{
-   if(screenX >= 0)
-      screenX -= num;
-}
-
-
-
-void Image::ShiftRight(Screen &screen, int num)
-{
-   if(screenX < screen.GetCols()) 
-      screenX += num;
+   int i = 0;
+   while(i < num && screenY < screen.GetRows())
+   {
+      screenY++;
+      i++;
+   }
 }
 
 
 
 void Image::ShiftDown(Image &img, int num)
 {
-   if(screenY < img.GetRows())
-      screenY += num;
+   int i = 0;
+   while(i < num && screenY < img.GetRows())
+   {
+      screenY++;
+      i++;
+   }
+}
+
+
+
+void Image::ShiftLeft(int num)
+{
+   int i = 0;
+   while(i < num && screenX >= 0)
+   {
+      screenX--;
+      i++;
+   }
+}
+
+
+
+void Image::ShiftRight(Screen &screen, int num)
+{
+   int i = 0;
+   while(i < num && screenX < screen.GetCols())
+   {
+      screenX++;
+      i++;
+   }
 }
 
 
 
 void Image::ShiftRight(Image &img, int num)
 {
-   if(screenX < img.GetCols()) 
-      screenX += num;
+   int i = 0;
+   while(i < num && screenX < img.GetCols())
+   {
+      screenX++;
+      i++;
+   }
 }
 
 
 
 void Image::FixSlants()
 {
-   for(int i = 0; i < Img.size(); ++i)
+   for(unsigned int i = 0; i < Img.size(); ++i)
    {
-      for(int j = 0; j < Img[i].size(); ++j)
+      for(unsigned int j = 0; j < Img[i].size(); ++j)
       {
 	 if(Img[i][j] == '/')
 	    Img[i][j] = '\\';
