@@ -10,7 +10,7 @@ HanoiMenu::~HanoiMenu()
 
 void HanoiMenu::SetOptions(int row,int col,int space)
 {
-   map<int,string> optionList;
+   map<int,string> optionList = indexMap;
    int width = 101;
    for(int i=0; i<9; i++)
    {

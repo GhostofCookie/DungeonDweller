@@ -32,7 +32,6 @@ void ConnectFour::SetOptionsInMenu()
 
 void ConnectFour::BoardSetup()
 {
-   cout << "Board Setup." << endl;
    int horizontalBoardSize=15, verticalBoardSize=13, topBound=10, leftBound=43;
    for(int i=0; i<verticalBoardSize; i++)
    {
@@ -192,7 +191,7 @@ bool ConnectFour::VerticalCheck()
 {
    cout << "Vertical Check" << endl;
    ///atCount counts the number of '@' tokens in the line.
-   ///copyrightCount counts the number of '©' tokens in the line.
+   ///copyrightCount counts the number of '#' tokens in the line.
    int atCount=0, poundCount=0;
    for(int i=0; i<xSize; i++)
    {
@@ -282,47 +281,45 @@ bool ConnectFour::RightDiagonalCheck()
    ///copyrightCount counts the number of '©' tokens in the diagonal line.
    int atCount=0, poundCount=0;
 
-   int j=xSize;
    ///j will the be horizontal movement, i will be the vertical movement. 
-   for(int i=0; i<ySize; i++)
+   for(int i=ySize; i>0; i--)
    {
-      j--;
-      ///If j has reached the end of the array, we haven't found four of a king
-      /// so break out of the loop.
-      if(j<0)
-	 break;
-
-      ///If an '@' token is found, reset the count for copyright since it is not
-      ///consecutive anymore.
-      if(grid.at(j).at(i)=='@')
+      for(int j=xSize; j>0; j--)
       {
-	 atCount++;
-	 poundCount=0;
-      }
+	 for(int k=0; k<=i && k<=j; k++)
 
-      ///If a '#' token is found, reset the count for at since it is not
-      ///consecutive anymore.
-      else if(grid.at(j).at(i)=='#')
-      {
-	 poundCount++;
-	 atCount=0;
-      }
+	    ///If an '@' token is found, reset the count for copyright since it is not
+	    ///consecutive anymore.
+	    if(grid.at(j-k).at(i-k)=='@')
+	    {
+	       atCount++;
+	       poundCount=0;
+	    }
 
-      ///If an empty space is found reset both counters since it is no longer a
-      ///consecutive line
-      else if(grid.at(j).at(i)==' ')
-      {
-	 poundCount=0;
-	 atCount=0;
-      }
+	 ///If a '#' token is found, reset the count for at since it is not
+	 ///consecutive anymore.
+	    else if(grid.at(j-k).at(i-k)=='#')
+	    {
+	       poundCount++;
+	       atCount=0;
+	    }
 
-      ///If either count is at 4 then we have found four of a kind and a player
-      ///has won so return true.
-      if(atCount==4||poundCount==4)
-	 return true;
-      cout << "@:" << atCount << "#:" << poundCount << endl;
+	 ///If an empty space is found reset both counters since it is no longer a
+	 ///consecutive line
+	    else if(grid.at(j-k).at(i-k)==' ')
+	    {
+	       poundCount=0;
+	       atCount=0;
+	    }
+      
+	 ///If either count is at 4 then we have found four of a kind and a player
+	 ///has won so return true.
+	 if(atCount==4||poundCount==4)
+	    return true;
+	 cout << "@:" << atCount << "    #:" << poundCount << endl;
+      }
    }
-   ///If no 4 of a kind has been found, return false.
+///If no 4 of a kind has been found, return false.
    return false;
 }
 
@@ -335,47 +332,45 @@ bool ConnectFour::LeftDiagonalCheck()
    ///copyrightCount counts the number of '©' tokens in the diagonal line. 
    int atCount=0, poundCount=0;
 
-   int j=-1;
-   ///j will the be horizontal movement, i will be the vertical movement.
-
-   for(int i=0; i<ySize; i++)
+   for(int i=ySize; i>0; i--)
    {
-      j++;
-      ///If j has reached the end of the array, we haven't found four of a king
-      /// so break out of the loop.    
-      if(j>xSize-1)
-	 break;
-
-      ///If an '@' token is found, reset the count for copyright since it is not
-      ///consecutive anymore.
-      if((grid.at(j).at(i)=='@'))
+      for(int j=xSize; j>0; j++)
       {
-	 atCount++;
-	 poundCount=0;
-      }
+	 for(int k=0; k<=i && k<=j; k++)
+	 {
+	    ///If an '@' token is found, reset the count for copyright since it is not
+	    ///consecutive anymore.
+	    if((grid.at(j-k).at(i+k)=='@'))
+	    {
+	       atCount++;
+	       poundCount=0;
+	    }
 
-      ///If a '#' token is found, reset the count for at since it is not
-      ///consecutive anymore.  
-      else if((grid.at(j).at(i)=='#'))
-      {
-	 poundCount++;
-	 atCount=0;
-      }
+	    ///If a '#' token is found, reset the count for at since it is not
+	    ///consecutive anymore.  
+	    else if((grid.at(j-k).at(i+k)=='#'))
+	    {
+	       poundCount++;
+	       atCount=0;
+	    }
 
-      ///If an empty space is found reset both counters since it is no longer a
-      ///consecutive line
-      else if(grid.at(j).at(i)==' ')
-      {
-	 poundCount=0;
-	 atCount=0;
+	    ///If an empty space is found reset both counters since it is no longer a
+	    ///consecutive line
+	    else if(grid.at(j-k).at(i+k)==' ')
+	    {
+	       poundCount=0;
+	       atCount=0;
+	    }
+	    cout << "@:" << atCount << "    #:" << poundCount << endl;
+	    ///If either count is at 4 then we have found four of a kind and a player
+	    ///has won so return true.  
+	    if(atCount==4||poundCount==4)
+	       return true;
+	 }
       }
-
-      ///If either count is at 4 then we have found four of a kind and a player
-      ///has won so return true.  
-      if(atCount==4||poundCount==4)
-	 return true;
    }
    return false;
+   cout << "LDC FALSE" << endl;
 }
 
 ///Function which checks if a column is full

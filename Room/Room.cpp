@@ -100,21 +100,21 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
       case 1 :
 	 event = ImportImg(collection['@'][1]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(5);
+//	 event.Image::ShiftUp(5);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Enemy	 
       case 2 :
 	 event = ImportImg(collection['@'][2]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(5);
+//	 event.Image::ShiftUp(5);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Puzzle
       case 3 :
 	 event = ImportImg(collection['@'][3]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(5);
+//	 event.Image::ShiftUp(5);
 	 event.Image::Draw(*room);
 	 break;
    }

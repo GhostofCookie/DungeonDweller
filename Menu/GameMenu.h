@@ -18,7 +18,7 @@ class GameMenu : public Menu
 {
 public:
   /// This is the default constructor.
-  GameMenu() {}
+  GameMenu(int height=10):Menu(height) {}
 
   /// This function sets the specific options for the Menu type.
   /// \param[in] OptionsList A map of all the options for the current

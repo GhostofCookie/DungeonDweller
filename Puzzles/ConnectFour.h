@@ -39,7 +39,7 @@ class ConnectFour: virtual Puzzle
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
-   ///Sets the board up for the beginning of the game, placing the grid
+   ///Sets the board up for the beginning of the game, placing the screen
    void BoardSetup();
 
    ///Assign the player selection to the board.

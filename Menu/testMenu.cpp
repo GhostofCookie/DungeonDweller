@@ -24,9 +24,9 @@ int main()
    screen = new Screen();
 
    menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak",testFunction);
-   menu->AddOption('a', "Move",testFunction);
-   menu->AddOption('w', "Move Up",testFunction);
+   menu->AddOption('t', "Speak", menu->QuitGame);
+//   menu->AddOption('a', "Move",testFunction);
+//   menu->AddOption('w', "Move Up",testFunction);
    menu->SetOptions();
    while(true)
    {

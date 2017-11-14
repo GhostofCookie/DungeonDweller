@@ -1,8 +1,12 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
+<<<<<<< HEAD
 OBJS = main.o ScreenTest.o Screen.o SlotScreen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../ImageImporter/ImageImporter.o ../Room/Room.o
 
 ## targets and prerequisites
+=======
+OBJS = main.o ScreenTest.o Screen.o SlotScreen.o ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o ../Room/Room.o ../ImageImporter/ImageImporter.o
+>>>>>>> cb9ab3cde212bd0f90f7af236223edd22f10ed51
 .PHONY : all
 all : main
 
@@ -19,7 +23,7 @@ main : $(OBJS)
 	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
 
 ## include the generated prerequisite file
-include .prereq
+include	.prereq
 
 .PHONY : clean
 clean:
