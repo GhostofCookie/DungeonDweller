@@ -20,13 +20,13 @@ int main()
    Menu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-   menu = new MainMenu();
+   menu = new Menu();
    screen = new Screen();
 
-   menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak",testFunction);
-   menu->AddOption('a', "Move",testFunction);
-   menu->AddOption('w', "Move Up",testFunction);
+//   menu->AddOption('p', "Pickup",testFunction);
+   menu->AddOption('t', "Speak", &Menu::QuitGame);
+//   menu->AddOption('a', "Move",testFunction);
+//   menu->AddOption('w', "Move Up",testFunction);
    menu->SetOptions();
    while(true)
    {

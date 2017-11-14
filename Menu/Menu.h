@@ -20,7 +20,7 @@ class Menu
 {
   protected:
    map<int,string> indexMap;
-   map<char, void (*)(int)> optionMap;
+   map<char, void*> optionMap;
    int menuHeight;
    int menuWidth;
    char **menu_Array;
@@ -28,6 +28,7 @@ class Menu
    /// Builds the menu based on the options and outline to the dimensions
    /// specified by the constructor.
    void BuildMenu();
+  public:
    /// Helper function to quit the game.
    /// \param[in] value This parameter serves to pass the function to the
    /// options map.
@@ -61,10 +62,14 @@ class Menu
    /// \param[in] optionName The name to display for the user.
    /// \param[in] f(int) The is the function which adds functionality to
    /// the option and command.
-   virtual void AddOption(char command, string optionName, void(*f)(int));
+   template<typename T>
+      void AddOption(char command, string optionName, void(T::*f)(int)=0);
+      void AddOption(char command, string optionName, void(*f)(int)=0);
    /// A function to set the added options to the character array.
-   virtual void SetOptions(int row=3, int col=3,
-      int space=2);
+   /// \param[in] row Determines which row the options will start being set at.
+   /// \param[in] col Determines which column the options will start from.
+   /// \param[in] How mush space inbetween rows.
+   virtual void SetOptions(int row=3, int col=3, int space=2);
    /// Handles the user input, and runs an option from the menu.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream& is);

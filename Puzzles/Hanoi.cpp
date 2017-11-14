@@ -15,13 +15,16 @@
 Hanoi::Hanoi()
 {
    maxStackHeight=4;
-
-
+   discsVector.resize(4);
 ///Create default images for each of the disc to be drawn on the screen.
-   discsVector.at(0)=DefaultImg Disc1(1,3,'=');
-   discsVector.at(1)=DefaultImg Disc2(1,7,'=');
-   discsVector.at(2)=DefaultImg Disc3(1,11,'=');
-   discsVector.at(3)=DefaultImg Disc4(1,15,'=');
+   DefaultImg Disc1(1,3,'=');
+   discsVector.at(0)=Disc1;
+   DefaultImg Disc2(1,7,'=');
+   discsVector.at(1)=Disc2;
+   DefaultImg Disc3(1,11,'=');
+   discsVector.at(2)=Disc3;
+   DefaultImg Disc4(1,15,'=');
+   discsVector.at(3)=Disc4;
 
    menuOption1="Move disc on peg 1 right.";
    menuOption2="Move disc on peg 2 left.";
@@ -53,6 +56,11 @@ Hanoi::~Hanoi()
    
 }
 
+void Hanoi:: BoardSetup()
+{
+
+}
+
 bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 {
    ///If the disc on the current stack is smaller than the disc on the new stack
@@ -66,10 +74,11 @@ bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 ///Setup the options in the HanoiMenu object.
 void Hanoi::SetOptionsInMenu()
 {
-   HanoiGameMenu.AddOption('1', menuOption1, MovePiece(int));
-   HanoiGameMenu.AddOption('2', menuOption2, MovePiece(int));
-   HanoiGameMenu.AddOption('3', menuOption3, MovePiece(int));
-   HanoiGameMenu.AddOption('4', menuOption4, MovePiece(int));
+   cout << "Options have been set" << endl;
+   //HanoiGameMenu.AddOption('1', menuOption1, MovePiece);
+//    HanoiGameMenu.AddOption('2', menuOption2, MovePiece);
+//    HanoiGameMenu.AddOption('3', menuOption3, MovePiece);
+//     HanoiGameMenu.AddOption('4', menuOption4, MovePiece);
 }
 
 void Hanoi::WinCheck()
@@ -269,13 +278,11 @@ void Hanoi::ClearScreenOfOldDisc(int sizeOfDisc, int targetTower,int yCoordinate
    
 void Hanoi:: RunGame()
 {
-   
+   cout << "Start" << endl;
    SetOptionsInMenu();
-   HanoiGameMenu.OutputMenu();
-   //hMenu.PromptUser();
    while(GameEnd==false)
    {
-      cout << HanoiScreen << endl;
+      cout << HanoiScreen;
       HanoiGameMenu.OutputMenu();
       HanoiGameMenu.HandleInput(cin);
       WinCheck();
