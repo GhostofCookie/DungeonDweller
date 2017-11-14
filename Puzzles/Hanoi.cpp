@@ -6,7 +6,7 @@
 //
 #include "Hanoi.h"
 
-//      ███       (3)
+//      ===       (3)
 //    ███████     (7)
 //  ███████████   (11)
 //███████████████ (15)
@@ -15,11 +15,13 @@
 Hanoi::Hanoi()
 {
    maxStackHeight=4;
+
+
 ///Create default images for each of the disc to be drawn on the screen.
-   discsVector.at(0)=DefaultImage Disc1(1,3,█);
-   discsVector.at(1)=DefaultImage Disc2(1,7,█);
-   discsVector.at(2)=DefaultImage Disc3(1,11,█);
-   discsVector.at(3)=DefaultImage Disc4(1,15,█);
+   discsVector.at(0)=DefaultImg Disc1(1,3,'=');
+   discsVector.at(1)=DefaultImg Disc2(1,7,'=');
+   discsVector.at(2)=DefaultImg Disc3(1,11,'=');
+   discsVector.at(3)=DefaultImg Disc4(1,15,'=');
 
    menuOption1="Move disc on peg 1 right.";
    menuOption2="Move disc on peg 2 left.";
@@ -30,11 +32,7 @@ Hanoi::Hanoi()
    
    numberOfStacks=3;
    tower.resize(numberOfStacks);
-   ///Resize all the stacks to the proper height for the discs.
-   for(int i=0; i<numberOfStacks; i++)
-   {
-      tower.at(i).resize(maxStackHeight);   
-   }
+
    ///Put the discs into the first stack to start the game
    int screenYCoordinate=14;
    int screenXCoordinate=16;
@@ -44,9 +42,9 @@ Hanoi::Hanoi()
       tower.at(0).push(discsVector.at(i));
       tower.at(0).top().Draw(HanoiScreen, screenYCoordinate, screenXCoordinate); //screen, y, x
       ///Down one line for the next disc
-      ScreenYCoordinate++;
+      screenYCoordinate++;
       ///Move two to left since the next disc is 4 chars larger.
-      ScreenXCoordinate-=2;
+      screenXCoordinate-=2;
    }
 }
 
@@ -59,7 +57,7 @@ bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 {
    ///If the disc on the current stack is smaller than the disc on the new stack
    ///it is considered a valid move, so return true, otherwise return false.
-   if(currentStack<newStack)
+   if(currentStackTop<newStackTop)
       return true;
    else
       return false;
@@ -107,7 +105,7 @@ void Hanoi::MovePiece(int userSelection)
 
 	    ///Check if the move is a valid, if yes, move it over and pop it
 	    ///from its old location.
-	    if(validMove(topOfStack, newStackTop))
+	    if(ValidMove(topOfStack, newStackTop))
 	    {
 	       tower.at(0).pop();
 	       ///Push the right size disc from the vector of discs based on the
@@ -137,7 +135,7 @@ void Hanoi::MovePiece(int userSelection)
 
 	    ///Check if the move is a valid, if yes, move it over and pop it
 	    ///from its old location.   
-	    if(validMove(topOfStack, newStackTop))
+	    if(ValidMove(topOfStack, newStackTop))
 	    {
 	       tower.at(1).pop();
 	       tower.at(0).push(discsVector.at(WhichDiscFromSize(topOfStack)));
@@ -166,7 +164,7 @@ void Hanoi::MovePiece(int userSelection)
 
 	    ///Check if the move is a valid, if yes, move it over and pop it
 	    ///from its old location.   
-	    if(validMove(topOfStack, newStackTop))
+	    if(ValidMove(topOfStack, newStackTop))
 	    {
 	       tower.at(1).pop();
 	       tower.at(2).push(discsVector.at(WhichDiscFromSize(topOfStack)));
@@ -194,7 +192,7 @@ void Hanoi::MovePiece(int userSelection)
 
 	    ///Check if the move is a valid, if yes, move it over and pop it
 	    ///from its old location.   
-	    if(validMove(topOfStack, newStackTop))
+	    if(ValidMove(topOfStack, newStackTop))
 	    {
 	       tower.at(2).pop();
 	       tower.at(1).push(discsVector.at(WhichDiscFromSize(topOfStack)));
@@ -208,43 +206,6 @@ void Hanoi::MovePiece(int userSelection)
    } 
 }
 
-void Hanoi::SetScreenSpaces(int discSize, int targetPeg)
-{
-   switch(discSize)
-   {
-      case 3:
-	 if
-}
-
-void Hanoi::ClearScreenSpaces(int discSize, int xCoordinate, int yCoordinate)
-{
-
-}
-
-void Hanoi::OutputGame(Screen &hScreen)
-{
-   //These for loops to be replaced by a screen function call
-   std::vector<stack<int>>temp(3);
-   for(int i=0; i<3; i++)
-   {
-      while(!(tower.at(i).empty()))
-      {
-	 temp.at(i).push(tower.at(i).top());
-	 tower.at(i).pop();
-      }
-   }
-   for(int i=0; i<3; i++)
-   {
-      while(!(temp.at(i).empty()))
-      {
-	 
-	 tower.at(i).push(temp.at(i).top());
-	 cout << tower.at(i).top() << " ";
-	 temp.at(i).pop();
-      }
-      cout << endl;
-   }
-}
 
 int Hanoi::WhichDiscFromSize(int size)
 {
@@ -261,13 +222,51 @@ int Hanoi::WhichDiscFromSize(int size)
 	 break;
       case 15:
 	 return 3;
-	 break
+	 break;
       default:
-	    cout << "Invalid size" << endl;
+	 cout << "Invalid size" << endl;
 	 return -1;
    }	 
 }
 
+void Hanoi::ClearScreenOfOldDisc(int sizeOfDisc, int targetTower,int yCoordinate)
+{
+   switch(targetTower)
+   {
+      
+      case 1:
+	 for(int i=0; i<sizeOfDisc; i++)
+	 {
+	    ///18 is the center of the first tower, take away half the disc size
+	    ///to start in the right spot, add the interator as we move through
+	    ///the line.
+	    HanoiScreen.Set(yCoordinate,(i+18-(sizeOfDisc%2)),' ');
+	 }
+	 //clear tower 1 top
+	 break;
+      case 2:
+	 //clear tower 2 top
+	 for(int i=0; i<sizeOfDisc; i++)
+	 {
+	    ///18 is the center of the second tower, take away half the disc
+	    ///size to start in the right spot, add the interator as we move
+	    ///through the line.
+	    HanoiScreen.Set(yCoordinate,(i+51-(sizeOfDisc%2)),' ');
+	 }
+	 break;
+      case 3:
+	 //clear tower 3 top
+	 for(int i=0; i<sizeOfDisc; i++)
+	 {
+	    ///84 is the center of the third tower, take away half the disc size
+	    ///to start in the right spot, add the interator as we move through
+	    ///the line.
+	    HanoiScreen.Set(yCoordinate,(i+84-(sizeOfDisc%2)), ' ');
+	 }
+	 break; 
+   }
+}
+   
 void Hanoi:: RunGame()
 {
    
@@ -276,11 +275,10 @@ void Hanoi:: RunGame()
    //hMenu.PromptUser();
    while(GameEnd==false)
    {
-      // OutputGame(hScreen);
+      cout << HanoiScreen << endl;
       HanoiGameMenu.OutputMenu();
       HanoiGameMenu.HandleInput(cin);
-      if(WinCheck())
-	 GameEnd=True;
+      WinCheck();
    }
    cout << "A noise creaks behind the wall and the door slides open." << endl;
 }
