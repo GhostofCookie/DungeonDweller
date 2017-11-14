@@ -91,6 +91,7 @@ bool TicTacToe::VerticalCheck()
 	    return true;
       }
    }
+   return false;
 }
  
 bool TicTacToe::RightDiagonalCheck()
@@ -109,13 +110,19 @@ void TicTacToe::SetOptionsInMenu()
 
 void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 {
-
+   int leftColumn=48, topRow=14;
+   TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
 }
 
-void TicTacToe::WinCheck()
+bool ConnectFour::WinCheck()
 {
-
+   cout << "Win Check" << endl;
+   if(VerticalCheck())//|| HorizontalCheck()||LeftDiagonalCheck())//||RightDiagonalCheck())
+      return true;
+   else
+      return false;
 }
+
 
 void TicTacToe::AiMove()
 {
@@ -124,9 +131,47 @@ void TicTacToe::AiMove()
 
 
 void TicTacToe::RunGame(){
+///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int currentPlayer=1;
+   
+   BoardSetup();
+   //ConnectFourMenu connectFourGameMenu;
+   //connectFourGameMenu.OutputMenu();
 
+   cout << "Drop in column 1" << endl;
+   MovePiece(1,1,'X');
+   while(PuzzleEnd==false)
+   {
+      cout << TicTacToeScreen << endl;
+      //connectFourMenu.OutputMenu();
+      //connectFourMenu.HandleInput(cin);
+      if(WinCheck())
+      {
+	 ///If currentPlayer is even, the AI has won, -1 player health, reset
+	 ///the game for another round until the player has won.
+	 if(currentPlayer%2==0)
+	 {
+	    cout << "The connect four champion has defeated you! Lose 1 health"
+		 << " point." << endl;
+	    //-1 Health
+	    //ResetGame();
+	    cout << "Get ready to duel her again!" << endl;
+	 }
+	 else
+	 {
+	    cout << "Congratulations adventurer! You have defeated the champion"
+		 << "! You are free to proceed into the next area!" << endl;
+	    PuzzleEnd=true;
+	 }
+      }
+
+      //Placed for testing
+      PuzzleEnd=true;
+      ///increment the player
+      currentPlayer++;  
+   }
 }
-
 
 // void TicTacToe::PromptUser(&screen)
 // {
