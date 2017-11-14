@@ -23,7 +23,7 @@ class Hanoi: public virtual Puzzle
    Hanoi();
 
    ///Deconstructor
-   virtual ~Hanoi();
+   ~Hanoi();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
@@ -38,7 +38,7 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(const int currentStack,const int newStack) const;
+   bool ValidMove(const int currentStack, const int newStack) const;
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
@@ -61,6 +61,8 @@ class Hanoi: public virtual Puzzle
    ///have to re-draw everything afterwards and the nature of a stack does not
    ///give you access to elements not on top.
    void ClearScreenOfOldDisc(int sizeOfDisc, int targetTower, int yCoordinate);
+
+   void BoardSetup();
    
    /// The vector which holds each towers' contents. Contents are stored as
    /// integers.

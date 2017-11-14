@@ -47,10 +47,6 @@ class TicTacToe: public virtual Puzzle
    void SetOptionsInMenu();
 
    /// Displays the screen containing the gameboard
-   /// \param[in] tttScreen,the screen object used for displaying the mini-game 
-   void OutputGame();
-
-   /// Displays the screen containing the gameboard
    /// \param[in] inputX, the X-coordinate of the selection.
    /// \param[in] inputY, the Y-coordinate of the selection.
    void MovePiece(int inputX, int inputY, char userPiece);

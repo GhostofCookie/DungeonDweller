@@ -93,7 +93,6 @@ class ConnectFour: virtual Puzzle
    ///vertical dimensions of the gameboard vector
    int xSize, ySize;
 
-
 };
 #endif
  
