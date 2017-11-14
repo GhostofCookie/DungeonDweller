@@ -282,13 +282,13 @@ bool ConnectFour::RightDiagonalCheck()
    ///copyrightCount counts the number of '©' tokens in the diagonal line.
    int atCount=0, poundCount=0;
 
-   int j=xSize;
+   int j=xSize-1;
    ///j will the be horizontal movement, i will be the vertical movement. 
    for(int i=0; i<ySize; i++)
    {
-      j--;
       ///If j has reached the end of the array, we haven't found four of a king
       /// so break out of the loop.
+      
       if(j<0)
 	 break;
 
@@ -320,7 +320,8 @@ bool ConnectFour::RightDiagonalCheck()
       ///has won so return true.
       if(atCount==4||poundCount==4)
 	 return true;
-      cout << "@:" << atCount << "#:" << poundCount << endl;
+      cout << "@:" << atCount << "    #:" << poundCount << endl;
+          j--;
    }
    ///If no 4 of a kind has been found, return false.
    return false;
@@ -369,13 +370,14 @@ bool ConnectFour::LeftDiagonalCheck()
 	 poundCount=0;
 	 atCount=0;
       }
-
+      cout << "@:" << atCount << "    #:" << poundCount << endl;
       ///If either count is at 4 then we have found four of a kind and a player
       ///has won so return true.  
       if(atCount==4||poundCount==4)
 	 return true;
    }
    return false;
+   cout << "LDC FALSE" << endl;
 }
 
 ///Function which checks if a column is full
