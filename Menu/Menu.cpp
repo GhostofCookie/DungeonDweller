@@ -11,7 +11,7 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
-   AddOption('q',"Quit",&Menu::QuitGame);
+   AddOption('q',"Quit",QuitGame);
 }
 
 Menu::~Menu()
@@ -28,22 +28,22 @@ void Menu::HandleInput(istream& is)
    cout<<"-> ";
    is >> option;
    if(optionMap.find(option) != optionMap.end())
-      optionMap.find(option)->second;
+      optionMap.find(option)->second(item);
    if(is.fail())
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
 
-template<typename T>
+/*template<typename T>
 void Menu::AddOption(char command, string optionName, void (T::*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
    optionMap[command] = f;
-}
+   }*/
 
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
-   optionMap[command] = static_cast<void*>(f);
+   optionMap[command] = f;
 }
 
 void Menu::SetOptions(int row,int col,int space)

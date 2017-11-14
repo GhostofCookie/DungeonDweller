@@ -20,7 +20,7 @@ class Menu
 {
   protected:
    map<int,string> indexMap;
-   map<char, void*> optionMap;
+   map<char, void (*)(int)> optionMap;
    int menuHeight;
    int menuWidth;
    char **menu_Array;
@@ -32,7 +32,7 @@ class Menu
    /// Helper function to quit the game.
    /// \param[in] value This parameter serves to pass the function to the
    /// options map.
-   void QuitGame(int value);
+   static void QuitGame(int value);
   protected:
    /// Sets the character of a specific location in the array to a give
    /// character.
@@ -62,8 +62,8 @@ class Menu
    /// \param[in] optionName The name to display for the user.
    /// \param[in] f(int) The is the function which adds functionality to
    /// the option and command.
-   template<typename T>
-      void AddOption(char command, string optionName, void(T::*f)(int)=0);
+//   template<typename T>
+//      void AddOption(char command, string optionName, void(T::*f)(int)=0);
       void AddOption(char command, string optionName, void(*f)(int)=0);
    /// A function to set the added options to the character array.
    /// \param[in] row Determines which row the options will start being set at.

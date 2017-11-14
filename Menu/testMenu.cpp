@@ -23,8 +23,8 @@ int main()
    menu = new Menu();
    screen = new Screen();
 
-//   menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak", &Menu::QuitGame);
+   menu->AddOption('p', "Pickup",testFunction);
+   menu->AddOption('t', "Speak", menu->QuitGame);
 //   menu->AddOption('a', "Move",testFunction);
 //   menu->AddOption('w', "Move Up",testFunction);
    menu->SetOptions();
