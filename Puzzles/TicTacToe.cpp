@@ -65,6 +65,8 @@ void TicTacToe::BoardSetup()
   
 bool TicTacToe::HorizontalCheck()
 {
+   cout << "Horizontal Check" << endl;
+   return true;
 }
 
 bool TicTacToe::VerticalCheck()
@@ -73,7 +75,22 @@ bool TicTacToe::VerticalCheck()
    int xCount=0, oCount=0;
    for(int i=0; i<boardSize; i++)
    {
-      for(int 
+      for(int j=0; j<boardSize; j++)
+      {
+	 if(gameBoard.at(i).at(j)=='X')
+	 {
+	    xCount++;
+	    oCount=0;
+	 }
+	 else if(gameBoard.at(i).at(j)=='O')
+	 {
+	    oCount++;
+	    xCount=0;
+	 }
+	 if(xCount==4 || oCount==3)
+	    return true;
+      }
+   }
 }
  
 bool TicTacToe::RightDiagonalCheck()
