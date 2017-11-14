@@ -56,12 +56,39 @@ class TicTacToe: public virtual Puzzle
 
    ///Performs the selection for the npc opponent.
    void AiMove();
+
+   ///Checks the entire grid to see if there is 3 of a kind in a horizontal
+   ///position, returns true if it finds 3 of a kind, false otherwise.   
+   bool HorizontalCheck();
+
+   ///Checks the entire grid to see if there is 3 of a kind in a vertical
+   ///position, returns true if it finds 3 of a kind, false otherwise.
+   bool VerticalCheck();
+
+   ///Checks the entire grid to see if there's 3 of a kind in a right diagonal
+   ///position, returns true if it finds 3 of a kind, false otherwise.   
+   bool RightDiagonalCheck();
+
+   ///Checks the entire grid to see if there is 3 of a kind in a left diagonal
+   ///position, returns true if it finds 3 of a kind, false otherwise.  
+   bool LeftDiagonalCheck();
    
    ///Vector to store the contents of the gameboard
    std::vector<vector<char>>gameBoard;
 
+   ///Dimensions for the board
    int boardSize;
 
-   ///Screen tttScreen;
+   ///Returns true if every space in the board has been filled with a character 
+   bool IsBoardFull();
+
+   ///Resets the game for another round in the event that the AI wins.
+   void ResetGame();
+
+   ///TicTacToeScreen stores and outputs the contents of the game to the
+   ///terminal
+   Screen TicTacToeScreen;
+
+   ///TicTacToeMenu tttMenu;
 };
 #endif

@@ -30,7 +30,58 @@ TicTacToe::~TicTacToe()
 
 void TicTacToe::BoardSetup()
 {
-   
+   cout << "Board Setup" << endl;
+   int gameBoardSize=15, leftBound=48, topBound=14;
+   for(int i=0;i<gameBoardSize;i++)
+   {
+      for(int j=0; j<gameBoardSize; j++)
+      {
+	 ///If i is odd, fill the row with '-'
+	 if(i%2==0)
+	 {
+	    ///topBound and leftBound should set the board centered inside
+	    ///the screen object.  
+	    TicTacToeScreen.Set(topBound+i, leftBound+j, '-');
+	 }
+	 else
+	 {
+	    if(j%2!=0)
+	    {
+	       ///topBound and leftBound should set the board centered inside
+	       ///the screen object.  
+	       TicTacToeScreen.Set(topBound+i, leftBound+j, ' ');
+	    }
+	    else
+	    {
+	       ///topBound and leftBound should set the board centered inside
+	       ///the screen object.  
+	       TicTacToeScreen.Set(topBound+i, leftBound+j, '|');
+	    }
+	 }
+      }
+   }
+}
+
+  
+bool TicTacToe::HorizontalCheck()
+{
+}
+
+bool TicTacToe::VerticalCheck()
+{
+   cout << "Vertical Check" << endl;
+   int xCount=0, oCount=0;
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int 
+}
+ 
+bool TicTacToe::RightDiagonalCheck()
+{
+}
+ 
+bool TicTacToe::LeftDiagonalCheck()
+{
 }
 
 void TicTacToe::SetOptionsInMenu()
