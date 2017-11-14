@@ -8,8 +8,19 @@
 
 TicTacToe::TicTacToe()
 {
-   boardSize=3;
    PuzzleEnd=false;
+   boardSize=3;
+   
+   gameBoard.resize(boardSize);
+
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int j=0; j<boardSize; j++)
+      {
+	 gameBoard.at(i).resize(boardSize);
+	 gameBoard.at(i).at(j)=' ';
+      }
+   }
 }
 
 TicTacToe::~TicTacToe()
@@ -19,7 +30,7 @@ TicTacToe::~TicTacToe()
 
 void TicTacToe::BoardSetup()
 {
-
+   
 }
 
 void TicTacToe::SetOptionsInMenu()
@@ -27,10 +38,6 @@ void TicTacToe::SetOptionsInMenu()
 
 }
 
-void OutputGame()
-{
-
-}
 
 void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 {

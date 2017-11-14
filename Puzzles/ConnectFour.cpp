@@ -25,18 +25,24 @@ ConnectFour::~ConnectFour()
 
 }
 
-void BoardSetup()
+void ConnectFour::SetOptionsInMenu()
 {
+
+}
+
+void ConnectFour::BoardSetup()
+{
+   cout << "Board Setup." << endl;
    int horizontalBoardSize=15, verticalBoardSize=13;
-   for(int i=0; i<verticalBoardSize; i++)
+   for(int i=0; i<=verticalBoardSize; i++)
    {
-      for(int j=0; j<horizontalBoardSize; j++)
+      for(int j=0; j<=horizontalBoardSize; j++)
       {
 	 ///If i is odd, fill the entire row with '-'
 	 if(i%2!=0)
 	 {
 	    ///11 and 44 should set the board centered inside the screen
-	    //ConnectFourScreen.Set(11+i, 44+j,'-');
+	    ConnectFourScreen.Set((11+i), (44+j),'-');
 	 }
 	 ///If i is even, fill the row with squares to place tokens in later
 	 else
@@ -44,66 +50,17 @@ void BoardSetup()
 	    if(j%2==0)
 	    {
 	       ///11 and 44 should set the board centered inside the screen
-	       //ConnectFourScreen.Set(11+i,44+j,' ');
+	       ConnectFourScreen.Set((11+i),(44+j),' ');
 	    }
 	    else
 	    {
 	       ///11 and 44 should set the board centered inside the screen
-	       //ConnectFourScreen.Set(11+i,44+j,'|');
+	       ConnectFourScreen.Set((11+i),(44+j),'|');
 	    }
 	 }
       }
    }
 }
-   
-void ConnectFour::RunGame()
-{
-   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
-   ///if it is even, it is the AI's turn.
-   int currentPlayer=1;
-//Screen connectFourGameScreen;
-   //ConnectFourMenu connectFourGameMenu;
-   //connectFourGameMenu.OutputMenu();
-   while(PuzzleEnd==false)
-   {
-      //connectFourGameScreen.OutputGame(cfScreen);
-      //connectFourMenu.OutputMenu();
-      //connectFourMenu.HandleInput(cin);
-      if(WinCheck())
-      {
-	 ///If currentPlayer is even, the AI has won, -1 player health, reset
-	 ///the game for another round until the player has won.
-	 if(currentPlayer%2==0)
-	 {
-	    cout << "The connect four champion has defeated you! Lose 1 health"
-		 << " point." << endl;
-	    //-1 Health
-	    ResetGame();
-	    cout << "Get ready to duel her again!" << endl;
-	 }
-	 else
-	 {
-	    cout << "Congratulations adventurer! You have defeated the champion"
-		 << "! You are free to proceed into the next area!" << endl;
-	    PuzzleEnd=true;
-	 }
-      }
-      
-	 
-      
-      currentPlayer++;
-   }
-}
-
-// ConnectFour::void PromptUser(&screen)
-// {
-
-// }
-
-// ConnectFour::char UserInput(&menu)
-// {
-
-// }
 
 bool ConnectFour:: ValidMove(int input)
 {
@@ -126,7 +83,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 	 if(height==0)
 	 {
 	    grid.at(column).at(height)=userPiece;
-	    ConnectFourScreen.Set(height*2+11, column*2+44, userPiece);
+	    ConnectFourScreen.Set((height*2+11), (column*2+44), userPiece);
 	    break;
 	 }
 	 ///If there are no pieces here, keep moving down through the column
@@ -138,7 +95,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 	 else
 	 {
 	    grid.at(column).at(height+1)=userPiece;
-	    ConnectFourScreen.Set(height*2+12, column*2+44, userPiece);
+	    ConnectFourScreen.Set((height*2+12), (column*2+44), userPiece);
 	    break;
 	 }
       }
@@ -147,6 +104,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 
 bool ConnectFour::WinCheck()
 {
+   cout << "Win Check" << endl;
    if(VerticalCheck()||HorizontalCheck()||
       RightDiagonalCheck()||LeftDiagonalCheck())
       return true;
@@ -158,12 +116,13 @@ bool ConnectFour::WinCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.
 bool ConnectFour::HorizontalCheck()
 {
+   cout << "Horizontal Check" << endl;
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '©' tokens in the line. 
    int atCount=0, poundCount=0;
-   for(int i=0; i<ySize; i++)
+   for(int i=0; i<xSize; i++)
    {
-      for(int j=0; j<xSize; j++)
+      for(int j=0; j<ySize; j++)
       {
 	 ///If an '@' token is found, reset the count for copyright since it is
 	 /// not consecutive anymore.
@@ -173,8 +132,8 @@ bool ConnectFour::HorizontalCheck()
 	    poundCount=0;
 	 }
 	 ///If a '#' token is found, reset the count for at since it is not
-	 ///consecutive anymore.  
-	 else if(grid.at(i).at(j)=='#')
+	 ///consecutive anymore.
+	 if(grid.at(i).at(j)=='#')
 	 {
 	    poundCount++;
 	    atCount=0;
@@ -198,6 +157,7 @@ bool ConnectFour::HorizontalCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::VerticalCheck()
 {
+   cout << "Vertical Check" << endl;
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '©' tokens in the line.
    int atCount=0, poundCount=0;
@@ -240,6 +200,7 @@ bool ConnectFour::VerticalCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::RightDiagonalCheck()
 {
+   cout << "RDC" << endl;
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '©' tokens in the diagonal line.
    int atCount=0, poundCount=0;
@@ -291,6 +252,7 @@ bool ConnectFour::RightDiagonalCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::LeftDiagonalCheck()
 {
+   cout << "LDC" << endl;
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '©' tokens in the diagonal line. 
    int atCount=0, poundCount=0;
@@ -386,13 +348,42 @@ void ConnectFour::ResetGame()
    
 }
 
-//bool ConnectFour:: ValidCommand(char input)
-//{
-//   return true;
-//}
-
-//WAITING ON SCREEN FROM REID
-// ConnectFour::void OutputGame(&screen)
-// {
-
-// }
+   
+void ConnectFour::RunGame()
+{
+   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int currentPlayer=1;
+   
+   BoardSetup();
+   //ConnectFourMenu connectFourGameMenu;
+   //connectFourGameMenu.OutputMenu();
+  
+   while(PuzzleEnd==false)
+   {
+      cout << ConnectFourScreen << endl;
+      //connectFourMenu.OutputMenu();
+      //connectFourMenu.HandleInput(cin);
+      if(WinCheck())
+      {
+	 ///If currentPlayer is even, the AI has won, -1 player health, reset
+	 ///the game for another round until the player has won.
+	 if(currentPlayer%2==0)
+	 {
+	    cout << "The connect four champion has defeated you! Lose 1 health"
+		 << " point." << endl;
+	    //-1 Health
+	    ResetGame();
+	    cout << "Get ready to duel her again!" << endl;
+	 }
+	 else
+	 {
+	    cout << "Congratulations adventurer! You have defeated the champion"
+		 << "! You are free to proceed into the next area!" << endl;
+	    PuzzleEnd=true;
+	 }
+      }
+      PuzzleEnd=true;
+      currentPlayer++;
+   }
+}

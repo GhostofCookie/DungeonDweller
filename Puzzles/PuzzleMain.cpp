@@ -6,9 +6,12 @@ using namespace std;
 
 int main(){
    Hanoi HanoiTest;
-   TicTacToe ttt;
-   ConnectFour Cf;
-   HanoiTest.RunGame();
+   ConnectFour ConnectFourTest;
+   ConnectFourTest.RunGame();
+   // HanoiTest.RunGame();
+//TicTacToe ttt;
+   //ConnectFour Cf;
+   //HanoiTest.RunGame();
    return 0;
 }
 
