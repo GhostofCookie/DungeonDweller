@@ -11,7 +11,7 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
-   AddOption('q',"Quit",exit);
+   AddOption('q',"Quit",QuitGame);
 }
 
 Menu::~Menu()
@@ -33,6 +33,13 @@ void Menu::HandleInput(istream& is)
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
 
+/*template<typename T>
+void Menu::AddOption(char command, string optionName, void (T::*f)(int))
+{
+   indexMap[static_cast<int>(command)] = optionName;
+   optionMap[command] = f;
+   }*/
+
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
@@ -51,7 +58,7 @@ void Menu::SetOptions(int row,int col,int space)
       for (unsigned int j = 0; j < tempName.length(); j++)
       {
 	 if(it->first!=113) Set(row,col+j,tempName[j]);
-	 else Set(8, menuWidth/2 +j- tempName.length()/2,tempName[j]);
+	 else Set(menuHeight-3, menuWidth/2 +j- tempName.length()/2,tempName[j]);
       }
       if(it->first != 113) row += space;
       if (row >= menuHeight - 1)
