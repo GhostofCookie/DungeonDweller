@@ -9,8 +9,8 @@
 TicTacToe::TicTacToe()
 {
    PuzzleEnd=false;
+   ///Setting up the game vector
    boardSize=3;
-   
    gameBoard.resize(boardSize);
 
    for(int i=0; i<boardSize; i++)
@@ -28,6 +28,7 @@ TicTacToe::~TicTacToe()
 
 }
 
+///Sets up the board with the ui for the  TicTacToe game
 void TicTacToe::BoardSetup()
 {
    cout << "Board Setup" << endl;
@@ -62,17 +63,41 @@ void TicTacToe::BoardSetup()
    }
 }
 
-  
+///Checks the entire grid to see if there is 3 of a kind in the horizontal
+///position, returns true if it finds 3 of a kind, false otherwise.
 bool TicTacToe::HorizontalCheck()
 {
    cout << "Horizontal Check" << endl;
-   return true;
+   int xCount=0, oCount=0;
+   for(int j=0; j<boardSize; j++)
+   {
+      for(int i=0; i<boardSize; i++)
+      {
+	 if(gameBoard.at(i).at(j)=='X')
+	 {
+	    xCount++;
+	    oCount=0;
+	 }
+	 else if(gameBoard.at(i).at(j)=='O')
+	 {
+	    oCount++;
+	    xCount=0;
+	 }
+	 if(xCount==3 || oCount==3)
+	    return true;
+      }
+   }
+   return false;
 }
 
+///Checks the entire grid to see if there is 3 of a kind in the vertical
+///position, returns true if it finds 3 of a kind, false otherwise.  
 bool TicTacToe::VerticalCheck()
 {
    cout << "Vertical Check" << endl;
+   
    int xCount=0, oCount=0;
+   
    for(int i=0; i<boardSize; i++)
    {
       for(int j=0; j<boardSize; j++)
@@ -87,20 +112,57 @@ bool TicTacToe::VerticalCheck()
 	    oCount++;
 	    xCount=0;
 	 }
-	 if(xCount==4 || oCount==3)
+	 if(xCount==3 || oCount==3)
 	    return true;
       }
    }
    return false;
 }
- 
+
+///Checks the entire grid to see if there is 3 of a kind in the right diagonal
+///position, returns true if it finds 3 of a kind, false otherwise.  
 bool TicTacToe::RightDiagonalCheck()
 {
+   int xCount=0, oCount=0, origin=0;
+   
+   for(int i=0; i<3; i++)
+   {
+      if(gameBoard.at(origin+i).at(origin+i)=='X')
+      {
+	 xCount++;
+	 oCount=0;
+      }
+      else if(gameBoard.at(origin+i).at(origin+i)=='O')
+      {
+	 oCount++;
+	 xCount=0;
+      }
+      if(xCount==3 || oCount==3)
+	 return true;
+   }
    return false;
 }
- 
+
+///Checks the entire grid to see if there is 3 of a kind in the left diagonal
+///position, returns true if it finds 3 of a kind, false otherwise.  
 bool TicTacToe::LeftDiagonalCheck()
 {
+   int xCount=0, oCount=0,origin=3;
+   for(int i=0; i<3; i++)
+   {
+      if(gameBoard.at(origin-i).at(origin-i)=='X')
+      {
+	 xCount++;
+	 oCount=0;
+      }
+      else if(gameBoard.at(origin-i).at(origin-i)=='O')
+      {
+	 oCount++;
+	 xCount=0;
+      }
+      if(xCount==3 || oCount==3)
+	 return true;
+   }
    return false;
 }
 
@@ -113,22 +175,40 @@ void TicTacToe::SetOptionsInMenu()
 void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 {
    int leftColumn=48, topRow=14;
+   
    TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
 }
 
 bool TicTacToe::WinCheck()
 {
    cout << "Win Check" << endl;
-   if(VerticalCheck())//|| HorizontalCheck()||LeftDiagonalCheck())//||RightDiagonalCheck())
+   if(VerticalCheck()|| HorizontalCheck()||LeftDiagonalCheck()||RightDiagonalCheck())
       return true;
    else
       return false;
 }
 
 
-void TicTacToe::AiMove()
+void TicTacToe::AiMove(int AiPiece)
 {
+   int HorizontalMoveCoord, VerticalMoveCoord;
+   HorizontalMoveCoord=RandomNumber(3);
+   VerticalMoveCoord=RandomNumber(3);
 
+   bool moveSuccessful=false;
+   while(moveSuccessful==false)
+   {
+      if(gameBoard.at(HorizontalMoveCoord).at(VerticalMoveCoord)==' ')
+      {
+	 gameBoard.at(HorizontalMoveCoord).at(VerticalMoveCoord)=AiPiece;
+	 moveSuccessful=true;
+      }
+      else
+      {
+	 HorizontalMoveCoord=RandomNumber(3);
+	 VerticalMoveCoord=RandomNumber(3);
+      }
+   }
 }
 
 
@@ -175,6 +255,12 @@ void TicTacToe::RunGame(){
    }
 }
 
+int TicTacToe::RandomNumber(int n)
+{
+   ///Returns 0 to n-1
+   n=rand()%n;
+   return n;
+}
 // void TicTacToe::PromptUser(&screen)
 // {
 

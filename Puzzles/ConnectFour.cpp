@@ -1,5 +1,9 @@
-////////////////////////////////////////////////////////////////////////////////
-///ConnectFour.cpp
+//
+// ConnectFour.cpp
+//
+/// \author Tyler Siwy
+/// \date Nov 15, 2017
+///
 
 #include "ConnectFour.h"
 
@@ -30,6 +34,36 @@ void ConnectFour::SetOptionsInMenu()
 
 }
 
+///Performs the AI players move
+void ConnectFour::PlayAI(char AiPiece)
+{
+   int columnChoice=RandomNumber(xSize);
+   bool moveSuccessful=false;
+
+   while(moveSuccessful==false)
+   {
+      if(IsColumnFull(columnChoice))
+      {
+	 columnChoice=RandomNumber(xSize);
+      }
+      else
+      {
+	 MovePiece(AiPiece, columnChoice);
+	 moveSuccessful=true;
+      }
+   }
+
+}
+
+
+int ConnectFour::RandomNumber(int n)
+{
+   ///Returns 0 to n-1
+   n=rand()%n;
+   return n;
+}
+   
+///Sets up the board with the ui for the connect four game
 void ConnectFour::BoardSetup()
 {
    int horizontalBoardSize=15, verticalBoardSize=13, topBound=10, leftBound=43;
@@ -133,7 +167,6 @@ void ConnectFour::RunGame()
    //ConnectFourMenu connectFourGameMenu;
    //connectFourGameMenu.OutputMenu();
 
-   cout << "Drop in column 1" << endl;
    MovePiece('@',5);
    MovePiece('#',6);
    MovePiece('@',3);
@@ -269,7 +302,7 @@ bool ConnectFour::HorizontalCheck()
 }
 
 ///Checks the entire grid to see if there is 4 of a kind in the left diagonal
-///position, returns true if it finds 4 of a kind, false otherwise.  
+///positions, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::LeftDiagonalCheck()
 {
    cout << "LD Check" << endl;
@@ -316,7 +349,7 @@ bool ConnectFour::LeftDiagonalCheck()
 }
 
 ///Checks the entire grid to see if there is 4 of a kind in the right diagonal
-///position, returns true if it finds 4 of a kind, false otherwise.  
+///positions, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::RightDiagonalCheck()
 {
    cout << "RD Check" << endl;

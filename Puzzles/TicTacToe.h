@@ -55,7 +55,7 @@ class TicTacToe: public virtual Puzzle
    bool WinCheck();
 
    ///Performs the selection for the npc opponent.
-   void AiMove();
+   void AiMove(int AiPiece);
 
    ///Checks the entire grid to see if there is 3 of a kind in a horizontal
    ///position, returns true if it finds 3 of a kind, false otherwise.   
@@ -79,6 +79,8 @@ class TicTacToe: public virtual Puzzle
    ///Dimensions for the board
    int boardSize;
 
+   int RandomNumber(int n);
+   
    ///Returns true if every space in the board has been filled with a character 
    bool IsBoardFull();
 

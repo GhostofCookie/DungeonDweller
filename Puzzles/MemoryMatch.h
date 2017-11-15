@@ -8,6 +8,7 @@
 #ifndef MEMORY_MATCH_H
 #define MEMORY_MATCH_H
 #include "Puzzle.h"
+#include <unistd.h>
 
 ///This class contains the mini-game/puzzle Memory Match
 class MemoryMatch: virtual Puzzle
@@ -17,7 +18,7 @@ class MemoryMatch: virtual Puzzle
    MemoryMatch();
 
    ///Deconstructor
-   ~MemoryMatch();
+   virtual ~MemoryMatch();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
@@ -32,12 +33,12 @@ class MemoryMatch: virtual Puzzle
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
+   ///Sets the board up for the beginning of the game, placing them in screen
+   void BoardSetup();
+   
    ///Checks the semantics of the players selection
-   /// \param[in] The input that the user has selected to try to perform.
-   bool ValidMove(char input);  
-   /// Displays the screen containing the gameboard
-   /// \param[in] memScreen, the screen object used for the MemoryMatch game.
-   void OutputGame(Screen &memScreen);
+  
+   bool ValidMove(int inputX1, int inputY1, int inputX2, int inputY2);  
 
    ///Flips two cards and shows them to the user for a certain time, if they are
    /// a match, it leaves them face-up, otherwise flip them back down.
@@ -57,12 +58,37 @@ class MemoryMatch: virtual Puzzle
    ///Checks the state of the int table to see if the player has won the game,
    ///returns true when they have completed the puzzle.
    void WinCheck();
+
+   ///randomly puts pairs into the table
    
-   ///The vector which holds the char values of the table to be matched
+   void RandomlyInsertIntoTable(char symbol);
+   
+   ///Returns a random number between 0 and n-1
+   
+   int RandomNumber(int n);
+
+///Puts the values in the charTable into the screen in appropriate places among
+///the game board
+   void SaveBoardToScreen();
+
+   ///Causes a three second delay in the program process
+   void ThreeSecondDelay();
+
+   ///Flips two squares and outputs it for 3 seconds then flips it back.
+   
+   void Peek(int inputX1, int inputY1, int inputX2, int inputY2);
+
+   Screen MemoryMatchScreen;
+
+///The vector which holds the char values of the table to be matched
    std::vector<vector<char>>charTable;
 
-   ///The vector which holds the integer value for the table, 1 being matched,
-   /// 0 being unmatched.
-   std::vector<vector<int>>intTable;
+   ///The vector which holds the integer value for the table, true being
+   ///matched, false being unmatched.
+   std::vector<vector<bool>>matchVector;
+
+   std::vector<char>pairsOfCharsVector;
+   
+   int boardSize;
 };
 #endif

@@ -15,7 +15,10 @@ PuzzleMain.o: PuzzleMain.cpp Hanoi.h Puzzle.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Menu/HanoiMenu.h ../Menu/MinigameMenu.h \
  ../Menu/GameMenu.h ../Menu/Menu.h ConnectFour.h \
- ../Menu/ConnectFourMenu.h TicTacToe.h
+ ../Menu/ConnectFourMenu.h TicTacToe.h MemoryMatch.h
+MemoryMatch.o: MemoryMatch.cpp MemoryMatch.h Puzzle.h ../Menu/Menu.h \
+ ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
 HanoiMenu.o: ../Menu/HanoiMenu.cpp ../Menu/HanoiMenu.h \
  ../Menu/MinigameMenu.h ../Menu/GameMenu.h ../Menu/Menu.h
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
