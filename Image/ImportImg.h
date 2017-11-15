@@ -20,6 +20,13 @@ class ImportImg : public Image
    string fileName;
    /// The image in string form
    string imgStr;
+
+   /// Function to create the image
+   void Create();
+   /// Helper function to append the lines from the file to create an image
+   /// \param[in] file the file that is being accessed
+   /// \param[in] img the string containing all the lines that make up the image
+   void Import(string file, string &img);
 	
 	
   public:
@@ -34,19 +41,6 @@ class ImportImg : public Image
    ImportImg(const ImportImg &img);
    /// Destructor
    ~ImportImg();
-	
-   /// Function to draw the image to the screen
-   /// \param[in] scr the screen being drawn on
-   /// \param[in] y the y coordinate
-   /// \param[in] x the x coordinate
-   void Draw(Screen &scr, int y, int x);
-   /// Function to create the image
-   void Create();
-	
-   /// Helper function to append the lines from the file to create an image
-   /// \param[in] file the file that is being accessed
-   /// \param[in] img the string containing all the lines that make up the image
-   void Import(string file, string &img);
 };
 
 #endif /* ImportedImg_h */

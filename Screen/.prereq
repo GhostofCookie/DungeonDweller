@@ -1,11 +1,11 @@
 main.o: main.cpp Screen.h SlotScreen.h ../ImageImporter/ImageImporter.h \
  ../ImageImporter/../Image/Image.h \
  ../ImageImporter/../Image/../Screen/Screen.h \
- ../ImageImporter/../Image/DefaultImg.h ../ImageImporter/../Image/Image.h \
- ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
- ../Image/DefaultImg.h ../Image/ImportImg.h ../Room/Room.h \
- ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
- ../Room/../Image/DefaultImg.h ../Room/../Image/ImportImg.h
+ ../ImageImporter/../Image/ImportImg.h ../ImageImporter/../Image/Image.h \
+ ../Image/Image.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h ../Room/Room.h ../Room/../Screen/Screen.h \
+ ../Room/../Image/Image.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/ImportImg.h
 ScreenTest.o: ScreenTest.cpp ScreenTest.h Screen.h SlotScreen.h
 Screen.o: Screen.cpp Screen.h
 SlotScreen.o: SlotScreen.cpp SlotScreen.h Screen.h
@@ -17,8 +17,7 @@ ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
 ImageImporter.o: ../ImageImporter/ImageImporter.cpp \
  ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
  ../ImageImporter/../Image/../Screen/Screen.h \
- ../ImageImporter/../Image/DefaultImg.h ../ImageImporter/../Image/Image.h \
- ../ImageImporter/../Image/ImportImg.h
+ ../ImageImporter/../Image/ImportImg.h ../ImageImporter/../Image/Image.h
 Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
  ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
  ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \

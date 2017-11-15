@@ -15,7 +15,7 @@
 using namespace std;
 
 
-/// the Image class represents a 2d vector that displays an image on screen
+/// The Image class represents a 2D vector that displays an image on screen
 class Image
 {
   protected:
@@ -32,10 +32,13 @@ class Image
 
    
   public:
-   /// The screen x coordinate to draw on, default to 0
+   /// The image - publically availiable to allow access to locations
+   vector<vector<char>> Img;
+   /// The screen x coordinate to draw on
    int screenX = 0;
-   /// The screen y coordinate to draw on, default to 0
+   /// The screen y coordinate to draw on
    int screenY = 0;
+   
    /// Constructs an Image object from the given dimensions
    /// \param[in] h the height of the image, default to 3
    /// \param[in] w the width of the image, default to 6
@@ -48,9 +51,6 @@ class Image
    Image(const Image &img);
    /// Virtual Destructor
    virtual ~Image();
-	
-   /// The image - publically availiable to allow access to locations
-   vector<vector<char>> Img;
 	
    /// Overloaded '=' operator
    /// \param[in] img the image being copied
@@ -66,7 +66,7 @@ class Image
    /// \param[in] scr the screen to draw on
    /// \param[in] x the x coordinate
    /// \param[in] y the y coordinate
-   virtual void Draw(Screen &scr, int y, int x) = 0;
+   virtual void Draw(Screen &scr, int y, int x);
    /// Helper function to draw onto the Screen object
    /// \param[in] img the screen to draw on
    virtual void Draw(Image &img);
@@ -86,7 +86,7 @@ class Image
    /// Function to fill the enitre image with a character
    /// \param[in] ch the character the fill the image with
    void Fill(char ch);
-   /// Function to set the top-left coordinate of the image with a character
+   /// Function to set the coordinate of the image with a character
    /// \param[in] y the y coordinate to set
    /// \param[in] x the x coordniate to set
    /// \param[in] ch the character to set the coordinate with
@@ -103,12 +103,11 @@ class Image
    /// \param[in] y the y coordinate
    /// \param[in] x the x coordinate
    void SetOrigin(Image &img, int y, int x);
+   
    /// Function that flips an image horizontally
-   /// \param[in] scr the screen the image will flip on
-   void FlipHoriz(Screen &scr);
+   void FlipHoriz();
    /// Function that flips an image vertically
-   /// \param[in] scr the screen the image will flip on
-   void FlipVert(Screen &scr);
+   void FlipVert();
 	
    /// Helper function to align the image left
    /// \param[in] scr the screen to align to
@@ -140,23 +139,23 @@ class Image
    /// \param[in] scr the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftRight(Screen &scr, int num);
+   /// Helper function to shift the image down
+   /// \param[in] scr the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftDown(Image &img, int num);
+   /// Helper function to shift the image right
+   /// \param[in] img the screen the image will shift on
+   /// \param[in] num the amount of shifting
+   void ShiftRight(Image &img, int num);
 
    /// Helper function to shift the image up
    /// \param[in] scr the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftUp(int num);
-   /// Helper function to shift the image down
-   /// \param[in] scr the screen the image will shift on
-   /// \param[in] num the amount of shifting
-   void ShiftDown(Image &img, int num);
    /// Helper function to shift the image left
    /// \param[in] img the screen the image will shift on
    /// \param[in] num the amount of shifting
    void ShiftLeft(int num);
-   /// Helper function to shift the image right
-   /// \param[in] img the screen the image will shift on
-   /// \param[in] num the amount of shifting
-   void ShiftRight(Image &img, int num);
 
    /// Returns the height of the image
    int GetRows() const;

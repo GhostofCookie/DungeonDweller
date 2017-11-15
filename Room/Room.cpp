@@ -24,13 +24,12 @@ Room::Room(map<char, vector<ImportImg>> &collection)
 
 
 /// Destructor
-Room::~Room()
-{
-   delete room;
-}
+Room::~Room() { delete room; }
 
 
 
+/// Function decides which images need to be assigned to the room
+/// \param[in] collection, the set of images passed
 void Room::GetRoom(map<char, vector<ImportImg>> &collection)
 {
    map<char, int> setType;
@@ -54,6 +53,7 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
       img.Image::Draw(*room);
    }
 }
+
 
 
 /// Function that identifies key characters and sets their location
@@ -83,83 +83,86 @@ void Room::GetPoints()
 }
 
 
+
 /// Helper function to determine what to draw in the room based on type
 void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
-{   
-   ImportImg event = ImportImg("");
-
-   /*
+{
+   // force draw the player in the center of the room
+   ImportImg img = ImportImg(collection['@'][0]);
+   img.AlignCenter(*room);
+   img.Image::Draw(*room);
+   
+   ImportImg event = ImportImg(img);//assign it just to avoid error
+   
    switch(type)
    {
       //empty room
       case 0 :
+	 cout << "Default room" << endl;
 	 break;
 	 //NPC Shop
       case 1 :
+	 cout << "Shop room" << endl;
 	 event = ImportImg(collection['@'][1]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(10);
+	 event.Image::ShiftRight(*room, 10);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Enemy	 
       case 2 :
+	 cout << "Enemy room" << endl;
 	 event = ImportImg(collection['@'][2]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(10);
+	 event.Image::ShiftRight(*room, 10);
 	 event.Image::Draw(*room);
 	 break;
 	 //NPC Puzzle
       case 3 :
-	 event = ImportImg(collection['@'][2]);
+	 cout << "Puzzle room" << endl;
+	 event = ImportImg(collection['@'][3]);
 	 event.AlignCenter(*room);
-	 event.Image::ShiftUp(10);
+	 event.Image::ShiftRight(*room, 10);
 	 event.Image::Draw(*room);
 	 break;
    }
-   */
-   // force draw the player after everything
-   ImportImg img = ImportImg(collection['@'][0]);
-   img.AlignCenter(*room);
-   img.Image::Draw(*room);
-}
-
-
-void Room::AlignCenter(Screen &screen)
-{
-   room->AlignCenter(screen);
 }
 
 
 
-void Room::AlignLeft(Screen &screen)
-{
-   room->AlignLeft(screen);
-}
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The screen that is passed
+void Room::AlignCenter(Screen &screen) { room->Image::AlignCenter(screen); }
 
 
 
-void Room::AlignRight(Screen &screen)
-{
-   room->AlignRight(screen);
-}
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The screen that is passed
+void Room::AlignLeft(Screen &screen) { room->Image::AlignLeft(screen); }
 
 
 
-void Room::Draw(Screen &screen)
-{
-   room->Image::Draw(screen);
-}
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The screen that is passed
+void Room::AlignRight(Screen &screen) { room->Image::AlignRight(screen); }
 
 
 
-void Room::Draw(Screen &screen, int y, int x)
-{
-   room->Draw(screen, y, x);
-}
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The screen that is passed
+void Room::Draw(Screen &screen) { room->Image::Draw(screen); }
+
+
+
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The screen that is passed
+/// \param[in] y the y coordinate
+/// \param[in] x The x coordinate
+void Room::Draw(Screen &screen, int y, int x) { room->Image::Draw(screen, y, x); }
 
 
 
 /// Randomly selects a number from 0 to n-1
+/// \param[in] n the range 0-n
 int Room::Rand(int n)
 {
    n = rand() % n;

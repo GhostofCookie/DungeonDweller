@@ -21,6 +21,9 @@ class DefaultImg : public Image
    int _width;
    /// The character used to draw the image
    char ch;
+
+   /// Function to create the image
+   void Create();
 	
 	
   public:
@@ -36,14 +39,6 @@ class DefaultImg : public Image
    DefaultImg(DefaultImg& img);
    /// Destructor
    ~DefaultImg();
-	
-   /// Function to draw the image to the screen
-   /// \param[in] scr the screen being drawn on
-   /// \param[in] y the y coordinate
-   /// \param[in] x the x coordinate
-   void Draw(Screen& scr, int y, int x);
-   /// Function to create the image
-   void Create();
 };
 
 #endif /* DefaultImg_h */

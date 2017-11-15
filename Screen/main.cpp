@@ -37,7 +37,7 @@ int main()
    vector<Room*> rooms;
 	
    // Generate random rooms and print them to the screen
-   for(int i = 0; i < 5; i++)
+   for(int i = 0; i < 10; i++)
    {
       rooms.push_back(new Room(imageImport.collection));
       rooms[i]->AlignCenter(*screen);

@@ -15,7 +15,6 @@
 #include <vector>
 //Image Headers
 #include "../Image/Image.h"
-#include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
 using namespace std;
 
@@ -28,7 +27,9 @@ class ImageImporter
    /// The main file used to open all files
    string masterFile;
 	
-	
+   /// Open and collect each image from each file path
+   /// \param[in] file the masterfile being used
+   void GetAllFilePaths(const string &file);
 	
   public:
    /// Object that opens a main file containing other file paths
@@ -36,15 +37,9 @@ class ImageImporter
    ImageImporter(string file = "");
    /// Deconstuctor
    ~ImageImporter();
-	
-	
-   /// Each image is given an ID based on the type of image
+		
+   /// Each additional image is given an ID based on the type
    map<char, vector<ImportImg>> collection;
-	
-	
-   /// Open and collect each image from each file path
-   /// \param[in] file the masterfile being used
-   void GetAllFilePaths(const string &file);
 };
 
-#endif /* ImageImporter_hpp */
+#endif /* ImageImporter_h */
