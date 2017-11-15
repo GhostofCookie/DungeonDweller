@@ -96,10 +96,12 @@ bool TicTacToe::VerticalCheck()
  
 bool TicTacToe::RightDiagonalCheck()
 {
+   return false;
 }
  
 bool TicTacToe::LeftDiagonalCheck()
 {
+   return false;
 }
 
 void TicTacToe::SetOptionsInMenu()
@@ -114,7 +116,7 @@ void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
    TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
 }
 
-bool ConnectFour::WinCheck()
+bool TicTacToe::WinCheck()
 {
    cout << "Win Check" << endl;
    if(VerticalCheck())//|| HorizontalCheck()||LeftDiagonalCheck())//||RightDiagonalCheck())
