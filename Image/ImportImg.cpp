@@ -1,6 +1,7 @@
 #include "ImportImg.h"
 
 /// Default Constructor
+/// \param[in] file the masterfile used
 ImportImg::ImportImg(string file)
    : fileName{file}
 {
@@ -9,7 +10,8 @@ ImportImg::ImportImg(string file)
 }
 
 
-//construct from base class
+/// Copy constructor
+/// \param[in] image the image being copied from
 ImportImg::ImportImg(const ImportImg &image)
 {
    Img = image.Img;
@@ -22,7 +24,8 @@ ImportImg::ImportImg(const ImportImg &image)
 
 
 
-//construct from base class
+/// Copy constructor
+/// \param[in] image the image being copied from
 ImportImg::ImportImg(ImportImg &image)
 {
    Img = image.Img;
@@ -43,29 +46,29 @@ ImportImg::~ImportImg()
 
 
 
-void ImportImg::Create()
-{
-   Import(fileName, imgStr);
-}
+/// Function that creates an image based on the file name
+void ImportImg::Create() { Import(fileName, imgStr); }
 
 
 
+/// Function that imports from a file
+/// \param[in] file the file to be opened
+/// \param[in] the image in string form (can be used for later)
 void ImportImg::Import(string file, string &img)
 {
    ifstream in;
    string curLine;
 	
-   int index = 0;//index of the vector (height)
-   img = "";//resets the room
+   int index = 0;// index of the vector (height)
+   img = "";// resets the room
 	
    Img.clear();//ensures image is empty before beginning
    height = width = 0;
-	
-	
+		
    in.open(file);
-   //Only activates if the file is opened
    if(in)
    {
+      // push back lines and insert them into the 2D vector
       while (getline(in, curLine, '\n'))
       {
 	 Img.push_back(vector<char>());
@@ -83,27 +86,4 @@ void ImportImg::Import(string file, string &img)
 		
    } else
       cout << "Empty or lost file? Couldn't locate: " << file << endl;
-}
-
-
-
-void ImportImg::Draw(Screen &screen, int y, int x)
-{
-   int imgY = y;
-   int imgX = x;
-	
-   // An algorithm that moves through each element in the Img
-   // and attempts to place on the screen with the given start location
-   for(unsigned int i = 0; i < Img.size(); i++)
-   {
-      for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
-      {
-	 if((imgX >= 0 || imgX < screen.GetCols()) && (imgY >= 0 || imgY < screen.GetRows()))
-	    screen.Set(imgY, imgX, *p);
-	 imgX++;
-      }
-      imgY++;
-      imgX = x;
-   }
-   screen.DrawBorder();
 }

@@ -1,10 +1,13 @@
 #include "DefaultImg.h"
 
 /// Default Constructor
+/// \param[in] h the height of the image
+/// \param[in] w the width of the image
+/// \param[in] c the character used to draw the image
 DefaultImg::DefaultImg(int h, int w, char c)
    : _height{h}, _width{w}, ch{c}
 {
-   //couldn't assign directly needed to assign to non-static var first
+   // couldn't assign directly needed to assign to non-static var first
    height = _height;
    width = _width;
    Create();
@@ -12,6 +15,8 @@ DefaultImg::DefaultImg(int h, int w, char c)
 
 
 
+/// Copy constructor
+/// \param[in] image the image copied from
 DefaultImg::DefaultImg(const DefaultImg &image)
 {
    Img = image.Img;
@@ -21,6 +26,8 @@ DefaultImg::DefaultImg(const DefaultImg &image)
 
 
 
+/// Copy constructor
+/// \param[in] image the image copied from
 DefaultImg::DefaultImg(DefaultImg &image)
 {
    Img = image.Img;
@@ -38,29 +45,7 @@ DefaultImg::~DefaultImg()
 
 
 
-void DefaultImg::Draw(Screen &screen, int y, int x)
-{
-   int imgY = y;
-   int imgX = x;
-	
-   // An algorithm that moves through each element in the Img
-   // and attempts to place on the screen with the given start location
-   for(unsigned int i = 0; i < Img.size(); i++)
-   {
-      for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
-      {
-	 if((imgX >= 0 || imgX < screen.GetCols()) && (imgY >= 0 || imgY < screen.GetRows()))
-	    screen.Set(imgY, imgX, *p);
-	 imgX++;
-      }
-      imgY++;
-      imgX = x;
-   }
-   screen.DrawBorder();
-}
-
-
-
+/// Function that creates the image by pushing back the vector
 void DefaultImg::Create()
 {
    for(int i = 0; i < height; i++)
