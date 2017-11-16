@@ -20,10 +20,10 @@ class FightMenu : public GameMenu
   /// This is the virtual destructor.
   virtual ~FightMenu();
   /// This function sets the specific options for the Menu type.
-  /// \param[in] OptionsList A map of all the options for the current
-  /// menu. Each option has a unique key to make input easier.
-  /// \param[in] type This denotes the type of menu to display.
-  virtual void SetOptions(int row, int col);
+  /// \param[in] row Determines which row the options will start being set at.
+  /// \param[in] col Determines which column the options will start from.
+  /// \param[in] How mush space inbetween rows.
+  virtual void SetOptions(int row, int col, int space);
   /// This function handles the input for the menu options.
   /// \param[in,out] is The in-stream operator to read the input.
   virtual void HandleInput(istream &is);
