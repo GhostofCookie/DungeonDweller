@@ -175,14 +175,18 @@ int Room::Rand(int n)
 /// Function generate a roomType using a basic random # with weighting %
 int Room::RoomChance()
 {
+   srand( unsigned (time(NULL)) );
+   
    bool selected = false;
-   int chance[ROOMTYPES] = {50, 3, 30, 3};
+   vector<int> chance = {50, 3, 30, 3};
    int roomType = 0;
 
    int outOf = 0;
    for(int i = 0; i < ROOMTYPES; i++)
       outOf += chance[i];
 
+
+   random_shuffle(chance.begin(), chance.end());
    // Function runs while a room has not been chosen
    do
       for(int i = 0; i < ROOMTYPES; i++)

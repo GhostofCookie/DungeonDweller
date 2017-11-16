@@ -13,6 +13,7 @@
 #include <ctime>
 #include <cctype>
 #include <cstdlib>
+#include <algorithm>
 //Screen Header
 #include "../Screen/Screen.h"
 //Image Headers
