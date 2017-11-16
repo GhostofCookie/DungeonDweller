@@ -10,13 +10,17 @@ Class to represent the layout of rooms in a doubly linked tree-\/like format.
 
 {\ttfamily \#include $<$Room\-Tree.\-h$>$}
 
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classRoomTree_1_1Node}{Node}
+\begin{DoxyCompactList}\small\item\em Class to represent nodes on the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classRoomTree_a2ea4adb06c7a1913d21ebaa6548a0167}{Room\-Tree} (\hyperlink{classRoom}{Room} $\ast$root\-Room)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classRoomTree}{Room\-Tree} Constructor. \end{DoxyCompactList}\item 
-\hypertarget{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{\hyperlink{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{$\sim$\-Room\-Tree} ()}\label{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}
-
+\hyperlink{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{$\sim$\-Room\-Tree} ()
 \begin{DoxyCompactList}\small\item\em \hyperlink{classRoomTree}{Room\-Tree} Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classRoomTree_a198fd76507d341091eff6f9cb367d551}{new\-Room} (char dir, \hyperlink{classRoom}{Room} $\ast$roomptr)
 \begin{DoxyCompactList}\small\item\em Inserts a new room at child (throws exeption if already occupied) \end{DoxyCompactList}\item 
@@ -26,6 +30,18 @@ const \hyperlink{classRoom}{Room} $\ast$ \hyperlink{classRoomTree_a077743215ed41
 \begin{DoxyCompactList}\small\item\em Gives a const pointer to the room currently at for accessing. \end{DoxyCompactList}\item 
 \hyperlink{classRoom}{Room} $\ast$ \hyperlink{classRoomTree_abfad141f868410fa8c578d19f45eaa05}{at} ()
 \begin{DoxyCompactList}\small\item\em Gives a pointer to the room currently at. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRoomTree_a52c351beb62f7b4f1fe5e1c21d5353fe}{delete\-Tree} (\hyperlink{classRoomTree_1_1Node}{Node} $\ast$temp\-Root)
+\begin{DoxyCompactList}\small\item\em Helper function to assist in deleting the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_a3e7726e562748d38e587bb20ccde6451}{root}
+\begin{DoxyCompactList}\small\item\em Root or starting room of the dungeon. \end{DoxyCompactList}\item 
+\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_a1a16bf654348f42b373a3ccc742bb360}{curr\-Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRoomTree_1_1Node}{Node} of the current room. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,7 +59,18 @@ Class to represent the layout of rooms in a doubly linked tree-\/like format.
 
 \hyperlink{classRoomTree}{Room\-Tree} Constructor. 
 
-\hyperlink{classRoomTree}{Room\-Tree} Construtor. 
+\hyperlink{classRoomTree}{Room\-Tree} Construtor. \hypertarget{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{\index{Room\-Tree@{Room\-Tree}!$\sim$\-Room\-Tree@{$\sim$\-Room\-Tree}}
+\index{$\sim$\-Room\-Tree@{$\sim$\-Room\-Tree}!RoomTree@{Room\-Tree}}
+\subsubsection[{$\sim$\-Room\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}Room\-Tree\-::$\sim$\-Room\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}
+
+
+\hyperlink{classRoomTree}{Room\-Tree} Destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classRoomTree_a077743215ed41e741fd4106b3d285693}{\index{Room\-Tree@{Room\-Tree}!at@{at}}
@@ -74,6 +101,22 @@ Gives a pointer to the room currently at.
 Gives a pointer to current room \begin{DoxyReturn}{Returns}
 Pointer to current room 
 \end{DoxyReturn}
+\hypertarget{classRoomTree_a52c351beb62f7b4f1fe5e1c21d5353fe}{\index{Room\-Tree@{Room\-Tree}!delete\-Tree@{delete\-Tree}}
+\index{delete\-Tree@{delete\-Tree}!RoomTree@{Room\-Tree}}
+\subsubsection[{delete\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-Tree\-::delete\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$}]{temp\-Root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoomTree_a52c351beb62f7b4f1fe5e1c21d5353fe}
+
+
+Helper function to assist in deleting the tree. 
+
+Helper function to assist in deleting the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em temp\-Root} & The root of the tree to be deleted \\
+\hline
+\end{DoxyParams}
 \hypertarget{classRoomTree_af3d5ff5c2c7722186283c69c9519cd14}{\index{Room\-Tree@{Room\-Tree}!move@{move}}
 \index{move@{move}!RoomTree@{Room\-Tree}}
 \subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}bool Room\-Tree\-::move (
@@ -124,7 +167,24 @@ Inserts a new room at child (throws exeption if already occupied)
 \end{DoxyExceptions}
 
 
+\subsection{Member Data Documentation}
+\hypertarget{classRoomTree_a1a16bf654348f42b373a3ccc742bb360}{\index{Room\-Tree@{Room\-Tree}!curr\-Node@{curr\-Node}}
+\index{curr\-Node@{curr\-Node}!RoomTree@{Room\-Tree}}
+\subsubsection[{curr\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::curr\-Node\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoomTree_a1a16bf654348f42b373a3ccc742bb360}
+
+
+\hyperlink{classRoomTree_1_1Node}{Node} of the current room. 
+
+\hypertarget{classRoomTree_a3e7726e562748d38e587bb20ccde6451}{\index{Room\-Tree@{Room\-Tree}!root@{root}}
+\index{root@{root}!RoomTree@{Room\-Tree}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::root\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoomTree_a3e7726e562748d38e587bb20ccde6451}
+
+
+Root or starting room of the dungeon. 
+
+
+
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Room\-Tree/Room\-Tree.\-h\item 
-Room\-Tree/Room\-Tree.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Room\-Tree/\hyperlink{RoomTree_8h}{Room\-Tree.\-h}\item 
+/home/rigt2720/\-Kodika/\-Room\-Tree/\hyperlink{RoomTree_8cpp}{Room\-Tree.\-cpp}\end{DoxyCompactItemize}

@@ -8,7 +8,7 @@ The \hyperlink{classDefaultImg}{Default\-Img} class represents a basic square im
 
 
 
-{\ttfamily \#include $<$Default\-Img.\-hh$>$}
+{\ttfamily \#include $<$Default\-Img.\-h$>$}
 
 Inheritance diagram for Default\-Img\-:\begin{figure}[H]
 \begin{center}
@@ -19,20 +19,28 @@ Inheritance diagram for Default\-Img\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}{Default\-Img} (int h=3, int w=6)
+\hyperlink{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}{Default\-Img} (int h=3, int w=6, char c= '$\ast$')
 \item 
 \hyperlink{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}{Default\-Img} (const \hyperlink{classDefaultImg}{Default\-Img} \&img)
 \item 
 \hyperlink{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}{Default\-Img} (\hyperlink{classDefaultImg}{Default\-Img} \&img)
 \item 
-\hypertarget{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{\hyperlink{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{$\sim$\-Default\-Img} ()}\label{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}
-
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{Draw} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)
+\hyperlink{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{$\sim$\-Default\-Img} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{void \hyperlink{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{Create} ()}\label{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}
-
+void \hyperlink{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{Create} ()
 \begin{DoxyCompactList}\small\item\em Function to create the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classDefaultImg_a563e191151451d5d3058ed646b8008ab}{\-\_\-height}
+\begin{DoxyCompactList}\small\item\em The height of the image. \end{DoxyCompactList}\item 
+int \hyperlink{classDefaultImg_a258f5ac708d83e06e924985dab85f221}{\-\_\-width}
+\begin{DoxyCompactList}\small\item\em The width of the image. \end{DoxyCompactList}\item 
+char \hyperlink{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}{ch}
+\begin{DoxyCompactList}\small\item\em The character used to draw the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -48,72 +56,121 @@ Oct 20, 2017
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
+\hypertarget{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
 \index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
 \subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
 \begin{DoxyParamCaption}
 \item[{int}]{h = {\ttfamily 3}, }
-\item[{int}]{w = {\ttfamily 6}}
+\item[{int}]{w = {\ttfamily 6}, }
+\item[{char}]{c = {\ttfamily '$\ast$'}}
 \end{DoxyParamCaption}
-)}}\label{classDefaultImg_a09ec4746579dd44736ffa58ca53239c8}
+)}}\label{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}
 Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the image, default to 3 \\
 \hline
-\mbox{\tt in}  & {\em w} & the width of the image, default to 6 \\
+\mbox{\tt in}  & {\em w} & the width of the image, default to 6\\
+\hline
+\end{DoxyParams}
+Default Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the image \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the image \\
+\hline
+\mbox{\tt in}  & {\em c} & the character used to draw the image \\
 \hline
 \end{DoxyParams}
 \hypertarget{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
 \index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
 \subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
 \begin{DoxyParamCaption}
-\item[{const {\bf Default\-Img} \&}]{img}
+\item[{const {\bf Default\-Img} \&}]{image}
 \end{DoxyParamCaption}
 )}}\label{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}
 Copy constructor duplicates a given picture 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em img} & the image to copy from\\
+\hline
+\end{DoxyParams}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image copied from \\
 \hline
 \end{DoxyParams}
 \hypertarget{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
 \index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
 \subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
 \begin{DoxyParamCaption}
-\item[{{\bf Default\-Img} \&}]{img}
+\item[{{\bf Default\-Img} \&}]{image}
 \end{DoxyParamCaption}
 )}}\label{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}
 Copy constructor duplicates a given picture 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em img} & the image to copy from\\
 \hline
 \end{DoxyParams}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image copied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{\index{Default\-Img@{Default\-Img}!$\sim$\-Default\-Img@{$\sim$\-Default\-Img}}
+\index{$\sim$\-Default\-Img@{$\sim$\-Default\-Img}!DefaultImg@{Default\-Img}}
+\subsubsection[{$\sim$\-Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::$\sim$\-Default\-Img (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}
+
+
+Destructor. 
+
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{\index{Default\-Img@{Default\-Img}!Draw@{Draw}}
-\index{Draw@{Draw}!DefaultImg@{Default\-Img}}
-\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Default\-Img\-::\-Draw (
+\hypertarget{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{\index{Default\-Img@{Default\-Img}!Create@{Create}}
+\index{Create@{Create}!DefaultImg@{Default\-Img}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}void Default\-Img\-::\-Create (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
-\item[{int}]{y, }
-\item[{int}]{x}
+{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}
-Function to draw the image to the screen 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen being drawn on \\
-\hline
-\mbox{\tt in}  & {\em y} & the y coordinate \\
-\hline
-\mbox{\tt in}  & {\em x} & the x coordinate \\
-\hline
-\end{DoxyParams}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}
 
 
-Implements \hyperlink{classImage_a72d145544910c3a28cbc326c009d67c1}{Image}.
+Function to create the image. 
+
+Function that creates the image by pushing back the vector. 
+
+Reimplemented from \hyperlink{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{Image}.
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classDefaultImg_a563e191151451d5d3058ed646b8008ab}{\index{Default\-Img@{Default\-Img}!\-\_\-height@{\-\_\-height}}
+\index{\-\_\-height@{\-\_\-height}!DefaultImg@{Default\-Img}}
+\subsubsection[{\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}int Default\-Img\-::\-\_\-height\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_a563e191151451d5d3058ed646b8008ab}
+
+
+The height of the image. 
+
+\hypertarget{classDefaultImg_a258f5ac708d83e06e924985dab85f221}{\index{Default\-Img@{Default\-Img}!\-\_\-width@{\-\_\-width}}
+\index{\-\_\-width@{\-\_\-width}!DefaultImg@{Default\-Img}}
+\subsubsection[{\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}int Default\-Img\-::\-\_\-width\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_a258f5ac708d83e06e924985dab85f221}
+
+
+The width of the image. 
+
+\hypertarget{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}{\index{Default\-Img@{Default\-Img}!ch@{ch}}
+\index{ch@{ch}!DefaultImg@{Default\-Img}}
+\subsubsection[{ch}]{\setlength{\rightskip}{0pt plus 5cm}char Default\-Img\-::ch\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}
+
+
+The character used to draw the image. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Image/Default\-Img.\-hh\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{DefaultImg_8h}{Default\-Img.\-h}\item 
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{DefaultImg_8cpp}{Default\-Img.\-cpp}\end{DoxyCompactItemize}

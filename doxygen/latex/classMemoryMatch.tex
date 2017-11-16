@@ -8,7 +8,7 @@ This class contains the mini-\/game/puzzle Memory Match.
 
 
 
-{\ttfamily \#include $<$memory\-\_\-match.\-h$>$}
+{\ttfamily \#include $<$Memory\-Match.\-h$>$}
 
 Inheritance diagram for Memory\-Match\-:\begin{figure}[H]
 \begin{center}
@@ -21,18 +21,47 @@ Inheritance diagram for Memory\-Match\-:\begin{figure}[H]
 \item 
 \hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{Memory\-Match} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: and width to\-: \end{DoxyCompactList}\item 
-\hypertarget{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{$\sim$\-Memory\-Match} ()}\label{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}
-
+virtual \hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{$\sim$\-Memory\-Match} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
 void \hyperlink{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{Run\-Game} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{\hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{Memory\-Match} ()}\label{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}
-
-\begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: and width to\-: \end{DoxyCompactList}\item 
-\hypertarget{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{$\sim$\-Memory\-Match} ()}\label{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}
-
-\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{Run\-Game} ()
+void \hyperlink{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{Set\-Options\-In\-Menu} ()
+\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}{Board\-Setup} ()
+\begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game, placing them in screen. \end{DoxyCompactList}\item 
+bool \hyperlink{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}{Valid\-Move} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
+\begin{DoxyCompactList}\small\item\em Checks the semantics of the players selection. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryMatch_a68e81f3e7ed13385f430da0bc938d7e9}{Move\-Piece} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
+\item 
+bool \hyperlink{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}{Match\-Check} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
+\item 
+void \hyperlink{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}{Win\-Check} ()
+\item 
+void \hyperlink{classMemoryMatch_a61158d799b281be3607860233899b405}{Randomly\-Insert\-Into\-Table} (char symbol)
+\begin{DoxyCompactList}\small\item\em randomly puts pairs into the table \end{DoxyCompactList}\item 
+int \hyperlink{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}{Random\-Number} (int n)
+\begin{DoxyCompactList}\small\item\em Returns a random number between 0 and n-\/1. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryMatch_a6d4c54b56ee4f5b4df36b7767e07ebd5}{Save\-Board\-To\-Screen} ()
+\item 
+void \hyperlink{classMemoryMatch_a698d59d1b34658bc2266bfe297623690}{Three\-Second\-Delay} ()
+\begin{DoxyCompactList}\small\item\em Causes a three second delay in the program process. \end{DoxyCompactList}\item 
+void \hyperlink{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}{Peek} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
+\begin{DoxyCompactList}\small\item\em Flips two squares and outputs it for 3 seconds then flips it back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScreen}{Screen} \hyperlink{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}{Memory\-Match\-Screen}
+\item 
+std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}{char\-Table}
+\begin{DoxyCompactList}\small\item\em The vector which holds the char values of the table to be matched. \end{DoxyCompactList}\item 
+std\-::vector$<$ vector$<$ bool $>$ $>$ \hyperlink{classMemoryMatch_ac42fc8b5ac8b04bd0651222fa31d2251}{match\-Vector}
+\item 
+std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{pairs\-Of\-Chars\-Vector}
+\item 
+int \hyperlink{classMemoryMatch_aae0a9e51558d70e671fa64aa246de499}{board\-Size}
 \end{DoxyCompactItemize}
 
 
@@ -62,10 +91,122 @@ Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height
 memory\-\_\-match.\-cpp \begin{DoxyAuthor}{Author}
 Tyler Siwy C\-P\-S\-C 2720-\/\-Howard Cheng-\/\-Dungeon Dweller 
 \end{DoxyAuthor}
+\hypertarget{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\index{Memory\-Match@{Memory\-Match}!$\sim$\-Memory\-Match@{$\sim$\-Memory\-Match}}
+\index{$\sim$\-Memory\-Match@{$\sim$\-Memory\-Match}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{$\sim$\-Memory\-Match}]{\setlength{\rightskip}{0pt plus 5cm}Memory\-Match\-::$\sim$\-Memory\-Match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}
+
+
+Deconstructor. 
+
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{\index{Memory\-Match@{Memory\-Match}!Run\-Game@{Run\-Game}}
+\hypertarget{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}{\index{Memory\-Match@{Memory\-Match}!Board\-Setup@{Board\-Setup}}
+\index{Board\-Setup@{Board\-Setup}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Board\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Board\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}
+
+
+Sets the board up for the beginning of the game, placing them in screen. 
+
+Holds a memory of all pairs previously used
+
+Setting up the match-\/true/false value vector for win checking/error checking
+
+Try random pairs until the table has been filled in a random order
+
+If we find any pair previously matched, try another random pair 
+
+Implements \hyperlink{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}{Puzzle}.
+
+\hypertarget{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}{\index{Memory\-Match@{Memory\-Match}!Match\-Check@{Match\-Check}}
+\index{Match\-Check@{Match\-Check}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Match\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Match\-Check (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-X1, }
+\item[{int}]{input\-Y1, }
+\item[{int}]{input\-X2, }
+\item[{int}]{input\-Y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}
+Checks if the two cards selected are a match, returns true if yes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to flip \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMemoryMatch_a68e81f3e7ed13385f430da0bc938d7e9}{\index{Memory\-Match@{Memory\-Match}!Move\-Piece@{Move\-Piece}}
+\index{Move\-Piece@{Move\-Piece}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Move\-Piece}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Move\-Piece (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-X1, }
+\item[{int}]{input\-Y1, }
+\item[{int}]{input\-X2, }
+\item[{int}]{input\-Y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a68e81f3e7ed13385f430da0bc938d7e9}
+Flips two cards and shows them to the user for a certain time, if they are a match, it leaves them face-\/up, otherwise flip them back down. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to flip \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}{\index{Memory\-Match@{Memory\-Match}!Peek@{Peek}}
+\index{Peek@{Peek}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Peek}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Peek (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-X1, }
+\item[{int}]{input\-Y1, }
+\item[{int}]{input\-X2, }
+\item[{int}]{input\-Y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}
+
+
+Flips two squares and outputs it for 3 seconds then flips it back. 
+
+\hypertarget{classMemoryMatch_a61158d799b281be3607860233899b405}{\index{Memory\-Match@{Memory\-Match}!Randomly\-Insert\-Into\-Table@{Randomly\-Insert\-Into\-Table}}
+\index{Randomly\-Insert\-Into\-Table@{Randomly\-Insert\-Into\-Table}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Randomly\-Insert\-Into\-Table}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Randomly\-Insert\-Into\-Table (
+\begin{DoxyParamCaption}
+\item[{char}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a61158d799b281be3607860233899b405}
+
+
+randomly puts pairs into the table 
+
+Happens twice since it's a pair
+
+Keep repeating until an acceptable location is found, randomly. \hypertarget{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}{\index{Memory\-Match@{Memory\-Match}!Random\-Number@{Random\-Number}}
+\index{Random\-Number@{Random\-Number}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Random\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Memory\-Match\-::\-Random\-Number (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}
+
+
+Returns a random number between 0 and n-\/1. 
+
+Generates a random number between 0 and n-\/1. Returns 0 to n-\/1 \hypertarget{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{\index{Memory\-Match@{Memory\-Match}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Run\-Game (
 \begin{DoxyParamCaption}
@@ -74,24 +215,95 @@ Tyler Siwy C\-P\-S\-C 2720-\/\-Howard Cheng-\/\-Dungeon Dweller
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}
 Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
 
-Reimplemented from \hyperlink{classPuzzle_a0962210916279dc1368b695b399c8ea6}{Puzzle}.
+Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
 
-\hypertarget{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{\index{Memory\-Match@{Memory\-Match}!Run\-Game@{Run\-Game}}
-\index{Run\-Game@{Run\-Game}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Run\-Game (
+\hypertarget{classMemoryMatch_a6d4c54b56ee4f5b4df36b7767e07ebd5}{\index{Memory\-Match@{Memory\-Match}!Save\-Board\-To\-Screen@{Save\-Board\-To\-Screen}}
+\index{Save\-Board\-To\-Screen@{Save\-Board\-To\-Screen}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Save\-Board\-To\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Save\-Board\-To\-Screen (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a6d4c54b56ee4f5b4df36b7767e07ebd5}
+Puts the values in the char\-Table into the screen in appropriate places among the game board If i is odd, fill the entire row with '-\/'
 
-Reimplemented from \hyperlink{classPuzzle_a0962210916279dc1368b695b399c8ea6}{Puzzle}.
+top\-Bound and left\-Bound should set the board centered inside the screen object.
 
+If i is even, fill the row with squares to place tokens in later
+
+top\-Bound and left\-Bound should set the board centered inside the screen object.
+
+top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{\index{Memory\-Match@{Memory\-Match}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
+\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Set\-Options\-In\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}
+
+
+Sends the menu class the options for the player to select. 
+
+
+
+Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
+
+\hypertarget{classMemoryMatch_a698d59d1b34658bc2266bfe297623690}{\index{Memory\-Match@{Memory\-Match}!Three\-Second\-Delay@{Three\-Second\-Delay}}
+\index{Three\-Second\-Delay@{Three\-Second\-Delay}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Three\-Second\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Three\-Second\-Delay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a698d59d1b34658bc2266bfe297623690}
+
+
+Causes a three second delay in the program process. 
+
+\hypertarget{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}{\index{Memory\-Match@{Memory\-Match}!Valid\-Move@{Valid\-Move}}
+\index{Valid\-Move@{Valid\-Move}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Valid\-Move (
+\begin{DoxyParamCaption}
+\item[{int}]{X1, }
+\item[{int}]{Y1, }
+\item[{int}]{X2, }
+\item[{int}]{Y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}
+
+
+Checks the semantics of the players selection. 
+
+Checks if the coordinates have been matched already, returns true if they are unmatched, false if they have previously been matched \hypertarget{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}{\index{Memory\-Match@{Memory\-Match}!Win\-Check@{Win\-Check}}
+\index{Win\-Check@{Win\-Check}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Win\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Win\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}
+Checks the state of the int table to see if the player has won the game, returns true when they have completed the puzzle. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classMemoryMatch_aae0a9e51558d70e671fa64aa246de499}{\index{Memory\-Match@{Memory\-Match}!board\-Size@{board\-Size}}
+\index{board\-Size@{board\-Size}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{board\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Memory\-Match\-::board\-Size\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_aae0a9e51558d70e671fa64aa246de499}
+\hypertarget{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}{\index{Memory\-Match@{Memory\-Match}!char\-Table@{char\-Table}}
+\index{char\-Table@{char\-Table}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{char\-Table}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$char$>$ $>$ Memory\-Match\-::char\-Table\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}
+
+
+The vector which holds the char values of the table to be matched. 
+
+\hypertarget{classMemoryMatch_ac42fc8b5ac8b04bd0651222fa31d2251}{\index{Memory\-Match@{Memory\-Match}!match\-Vector@{match\-Vector}}
+\index{match\-Vector@{match\-Vector}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{match\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$bool$>$ $>$ Memory\-Match\-::match\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ac42fc8b5ac8b04bd0651222fa31d2251}
+The vector which holds the integer value for the table, true being matched, false being unmatched. \hypertarget{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}{\index{Memory\-Match@{Memory\-Match}!Memory\-Match\-Screen@{Memory\-Match\-Screen}}
+\index{Memory\-Match\-Screen@{Memory\-Match\-Screen}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Memory\-Match\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Memory\-Match\-::\-Memory\-Match\-Screen\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}
+\hypertarget{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{\index{Memory\-Match@{Memory\-Match}!pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}}
+\index{pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{pairs\-Of\-Chars\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$char$>$ Memory\-Match\-::pairs\-Of\-Chars\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Puzzles/memory\-\_\-match.\-h\item 
-Puzzles/Memory\-Match.\-h\item 
-Puzzles/memory\-\_\-match.\-cpp\item 
-Puzzles/Memory\-Match.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Puzzles/\hyperlink{MemoryMatch_8h}{Memory\-Match.\-h}\item 
+/home/rigt2720/\-Kodika/\-Puzzles/\hyperlink{MemoryMatch_8cpp}{Memory\-Match.\-cpp}\end{DoxyCompactItemize}

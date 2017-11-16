@@ -19,13 +19,11 @@ Inheritance diagram for Dialogue\-Menu\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}{\hyperlink{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}{Dialogue\-Menu} ()}\label{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}
-
+\hyperlink{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}{Dialogue\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}{virtual \hyperlink{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}{$\sim$\-Dialogue\-Menu} ()}\label{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}
-
+virtual \hyperlink{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}{$\sim$\-Dialogue\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classDialogueMenu_ac6ca871d2108cea94c33ef9f97d47cfd}{Set\-Options} (int row, int col)
+virtual void \hyperlink{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}{Set\-Options} (int row, int col, int space)
 \item 
 virtual void \hyperlink{classDialogueMenu_af682f751ddb1f30c679a19dcf6703856}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
@@ -34,6 +32,31 @@ virtual void \hyperlink{classDialogueMenu_af682f751ddb1f30c679a19dcf6703856}{Han
 
 \subsection{Detailed Description}
 This is the menu displayed when the player character is engaging in dialogue with an N\-P\-C. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}{\index{Dialogue\-Menu@{Dialogue\-Menu}!Dialogue\-Menu@{Dialogue\-Menu}}
+\index{Dialogue\-Menu@{Dialogue\-Menu}!DialogueMenu@{Dialogue\-Menu}}
+\subsubsection[{Dialogue\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Dialogue\-Menu\-::\-Dialogue\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDialogueMenu_a062e15c446d9a559a20bfdc19fb190c5}
+
+
+This is the default constructor. 
+
+\hypertarget{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}{\index{Dialogue\-Menu@{Dialogue\-Menu}!$\sim$\-Dialogue\-Menu@{$\sim$\-Dialogue\-Menu}}
+\index{$\sim$\-Dialogue\-Menu@{$\sim$\-Dialogue\-Menu}!DialogueMenu@{Dialogue\-Menu}}
+\subsubsection[{$\sim$\-Dialogue\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Dialogue\-Menu\-::$\sim$\-Dialogue\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDialogueMenu_a11adf9b9db3cdeca6e0c38f0beec81dc}
+
+
+This is the virtual destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classDialogueMenu_af682f751ddb1f30c679a19dcf6703856}{\index{Dialogue\-Menu@{Dialogue\-Menu}!Handle\-Input@{Handle\-Input}}
@@ -52,24 +75,31 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
 
-\hypertarget{classDialogueMenu_ac6ca871d2108cea94c33ef9f97d47cfd}{\index{Dialogue\-Menu@{Dialogue\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}{\index{Dialogue\-Menu@{Dialogue\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!DialogueMenu@{Dialogue\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Dialogue\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
 \item[{int}]{row, }
-\item[{int}]{col}
+\item[{int}]{col, }
+\item[{int}]{space}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDialogueMenu_ac6ca871d2108cea94c33ef9f97d47cfd}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
 \hline
-\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
 
+Implements \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Menu}.
+
+
+
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Dialogue\-Menu.\-h\item 
-Menu/Dialogue\-Menu.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{DialogueMenu_8h}{Dialogue\-Menu.\-h}\item 
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{DialogueMenu_8cpp}{Dialogue\-Menu.\-cpp}\end{DoxyCompactItemize}

@@ -19,20 +19,16 @@ Inheritance diagram for Game\-State\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}{\hyperlink{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}{Game\-State} ()}\label{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}
-
+\hyperlink{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}{Game\-State} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classGameState_af22e9a43999f99b784a35fab85cd9208}{virtual void \hyperlink{classGameState_af22e9a43999f99b784a35fab85cd9208}{Set} ()=0}\label{classGameState_af22e9a43999f99b784a35fab85cd9208}
-
+virtual void \hyperlink{classGameState_af22e9a43999f99b784a35fab85cd9208}{Set} ()=0
 \begin{DoxyCompactList}\small\item\em Sets the layout of the game. \end{DoxyCompactList}\item 
-\hypertarget{classGameState_a4283cb3aa5637d4815d64272843a0625}{virtual void \hyperlink{classGameState_a4283cb3aa5637d4815d64272843a0625}{Get} ()=0}\label{classGameState_a4283cb3aa5637d4815d64272843a0625}
-
+virtual void \hyperlink{classGameState_a4283cb3aa5637d4815d64272843a0625}{Get} ()=0
 \begin{DoxyCompactList}\small\item\em Outputs the set layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGameState_aebc12d6e90edfbe51a571858f6288f93}{\hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classGameState_aebc12d6e90edfbe51a571858f6288f93}{menu}}\label{classGameState_aebc12d6e90edfbe51a571858f6288f93}
-
+\hyperlink{classMenu}{Menu} $\ast$ \hyperlink{classGameState_aebc12d6e90edfbe51a571858f6288f93}{menu}
 \begin{DoxyCompactList}\small\item\em pointer to the menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -47,6 +43,63 @@ Tomas Rigaux
 \end{DoxyAuthor}
 This class defines the current state of the game, based on the current location and actions of the player character. 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}{\index{Game\-State@{Game\-State}!Game\-State@{Game\-State}}
+\index{Game\-State@{Game\-State}!GameState@{Game\-State}}
+\subsubsection[{Game\-State}]{\setlength{\rightskip}{0pt plus 5cm}Game\-State\-::\-Game\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGameState_a4fa0a2bf50315c4a35a3890a0adcee5c}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGameState_a4283cb3aa5637d4815d64272843a0625}{\index{Game\-State@{Game\-State}!Get@{Get}}
+\index{Get@{Get}!GameState@{Game\-State}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\-State\-::\-Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classGameState_a4283cb3aa5637d4815d64272843a0625}
+
+
+Outputs the set layout. 
+
+
+
+Implemented in \hyperlink{classDialogueState_ab2f436b23d15e13cda1d756b8d47a982}{Dialogue\-State}, \hyperlink{classMainState_a23233e859905d025cfc031a12977a844}{Main\-State}, \hyperlink{classPuzzleState_ac9f6dd77d6471165d9eb2c18bd051dd1}{Puzzle\-State}, \hyperlink{classTradeState_a6479e704b1063281721200a0beac6bc1}{Trade\-State}, \hyperlink{classExploreState_ace76d7a24bcb85f6f0a0fe0d0e763e21}{Explore\-State}, and \hyperlink{classFightState_afeff88d0e0c0fa25049e2152190429ed}{Fight\-State}.
+
+\hypertarget{classGameState_af22e9a43999f99b784a35fab85cd9208}{\index{Game\-State@{Game\-State}!Set@{Set}}
+\index{Set@{Set}!GameState@{Game\-State}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Game\-State\-::\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classGameState_af22e9a43999f99b784a35fab85cd9208}
+
+
+Sets the layout of the game. 
+
+
+
+Implemented in \hyperlink{classDialogueState_a203e463dc924a2492db74b749b81b9f1}{Dialogue\-State}, \hyperlink{classMainState_ac01eced9d617c8c8f5382a9aa96adb45}{Main\-State}, \hyperlink{classPuzzleState_a966b0f168ff5499f247c9ab519b524ab}{Puzzle\-State}, \hyperlink{classTradeState_af0d9fdcd649c1e74620dc77a4b8f92f9}{Trade\-State}, \hyperlink{classExploreState_a8fb38f9fca513b87d914d077a0f2652b}{Explore\-State}, and \hyperlink{classFightState_a853f6d2a9caf7343b8d75165e44bf5c1}{Fight\-State}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGameState_aebc12d6e90edfbe51a571858f6288f93}{\index{Game\-State@{Game\-State}!menu@{menu}}
+\index{menu@{menu}!GameState@{Game\-State}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Menu}$\ast$ Game\-State\-::menu\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGameState_aebc12d6e90edfbe51a571858f6288f93}
+
+
+pointer to the menu. 
+
+
+
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-Game\-State/Game\-State.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Game\-State/\hyperlink{GameState_8h}{Game\-State.\-h}\end{DoxyCompactItemize}

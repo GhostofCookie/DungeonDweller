@@ -8,23 +8,28 @@
 Inheritance diagram for Puzzle\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=10.000000cm]{classPuzzle}
+\includegraphics[height=2.000000cm]{classPuzzle}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}{virtual \hyperlink{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}{$\sim$\-Puzzle} ()}\label{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}
-
+virtual \hyperlink{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}{$\sim$\-Puzzle} ()
 \begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classPuzzle_a0962210916279dc1368b695b399c8ea6}{Run\-Game} ()
+virtual void \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Run\-Game} ()=0
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{bool \hyperlink{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{Puzzle\-End}}\label{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}
-
+bool \hyperlink{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{Puzzle\-End}
 \begin{DoxyCompactList}\small\item\em Remains false until the mini-\/game/puzzle is ready to be terminated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Set\-Options\-In\-Menu} ()=0
+\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}{Board\-Setup} ()=0
+\begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -36,20 +41,74 @@ Oct 20, 2017\-This class represents an abstract base class for each mini-\/game/
 \end{DoxyDate}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}{\index{Puzzle@{Puzzle}!$\sim$\-Puzzle@{$\sim$\-Puzzle}}
+\index{$\sim$\-Puzzle@{$\sim$\-Puzzle}!Puzzle@{Puzzle}}
+\subsubsection[{$\sim$\-Puzzle}]{\setlength{\rightskip}{0pt plus 5cm}virtual Puzzle\-::$\sim$\-Puzzle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}
+
+
+Virtual Destructor. 
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{classPuzzle_a0962210916279dc1368b695b399c8ea6}{\index{Puzzle@{Puzzle}!Run\-Game@{Run\-Game}}
+\hypertarget{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}{\index{Puzzle@{Puzzle}!Board\-Setup@{Board\-Setup}}
+\index{Board\-Setup@{Board\-Setup}!Puzzle@{Puzzle}}
+\subsubsection[{Board\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Puzzle\-::\-Board\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}
+
+
+Sets the board up for the beginning of the game. 
+
+
+
+Implemented in \hyperlink{classHanoi_a5dc7aab5bfe9d0b9d83ba75be22412e2}{Hanoi}, \hyperlink{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}{Connect\-Four}, \hyperlink{classTicTacToe_a5a03afaffde20d826472e7a8e27995e4}{Tic\-Tac\-Toe}, and \hyperlink{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}{Memory\-Match}.
+
+\hypertarget{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{\index{Puzzle@{Puzzle}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!Puzzle@{Puzzle}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Puzzle\-::\-Run\-Game (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPuzzle_a0962210916279dc1368b695b399c8ea6}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}
 Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
 
-Reimplemented in \hyperlink{classHanoi_a2032169272e11d26ce253e2b264b9f31}{Hanoi}, \hyperlink{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{Code\-Cracker}, \hyperlink{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{Code\-Cracker}, \hyperlink{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}{Connect\-Four}, \hyperlink{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}{Connect\-Four}, \hyperlink{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{Memory\-Match}, \hyperlink{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{Memory\-Match}, \hyperlink{classTicTacToe_a811356ea0290bf50ca522c79bead1e05}{Tic\-Tac\-Toe}, and \hyperlink{classTicTacToe_a233703b78605561c39e680609a7a46e7}{Tic\-Tac\-Toe}.
+Implemented in \hyperlink{classHanoi_a2032169272e11d26ce253e2b264b9f31}{Hanoi}, \hyperlink{classTicTacToe_a811356ea0290bf50ca522c79bead1e05}{Tic\-Tac\-Toe}, \hyperlink{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}{Connect\-Four}, \hyperlink{classMemoryMatch_a3973ebb1ab8d44a51bd629bc3b0df370}{Memory\-Match}, and \hyperlink{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{Code\-Cracker}.
+
+\hypertarget{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{\index{Puzzle@{Puzzle}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
+\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!Puzzle@{Puzzle}}
+\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Puzzle\-::\-Set\-Options\-In\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classPuzzle_adc90364342151caf536c4a34f2ca71d3}
+
+
+Sends the menu class the options for the player to select. 
+
+Does the appropriate action to the space selected by the user depending on which puzzle derived class it is being used in. 
+
+Implemented in \hyperlink{classTicTacToe_a5fd34a83c96edbcf3c3c5a0930d513fb}{Tic\-Tac\-Toe}, \hyperlink{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}{Hanoi}, \hyperlink{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{Connect\-Four}, and \hyperlink{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{Memory\-Match}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{\index{Puzzle@{Puzzle}!Puzzle\-End@{Puzzle\-End}}
+\index{Puzzle\-End@{Puzzle\-End}!Puzzle@{Puzzle}}
+\subsubsection[{Puzzle\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool Puzzle\-::\-Puzzle\-End}}\label{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}
+
+
+Remains false until the mini-\/game/puzzle is ready to be terminated. 
 
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-Puzzles/Puzzle.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Puzzles/\hyperlink{Puzzle_8h}{Puzzle.\-h}\end{DoxyCompactItemize}

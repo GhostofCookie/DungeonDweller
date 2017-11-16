@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classPuzzle.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,11 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classPuzzle-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Puzzle Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -99,39 +123,95 @@ Inheritance diagram for Puzzle:</div>
  <div class="center">
   <img src="classPuzzle.png" usemap="#Puzzle_map" alt=""/>
   <map id="Puzzle_map" name="Puzzle_map">
-<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="103,56,196,80"/>
-<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="103,112,196,136"/>
-<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,168,196,192"/>
-<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,224,196,248"/>
-<area href="classHanoi.html" title="This class contains the mini-game/Puzzle Towers of Hanoi. " alt="Hanoi" shape="rect" coords="103,280,196,304"/>
-<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="103,336,196,360"/>
-<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="103,392,196,416"/>
-<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="103,448,196,472"/>
-<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="103,504,196,528"/>
+<area href="classCodeCracker.html" title="This class contains the mini-game/puzzle Code Cracker. " alt="CodeCracker" shape="rect" coords="0,56,93,80"/>
+<area href="classConnectFour.html" title="This class contains the mini-game/puzzle Connect Four. " alt="ConnectFour" shape="rect" coords="103,56,196,80"/>
+<area href="classHanoi.html" title="This class contains the mini-game/Puzzle Towers of Hanoi. " alt="Hanoi" shape="rect" coords="206,56,299,80"/>
+<area href="classMemoryMatch.html" title="This class contains the mini-game/puzzle Memory Match. " alt="MemoryMatch" shape="rect" coords="309,56,402,80"/>
+<area href="classTicTacToe.html" title="This class contains the mini-game/puzzle Tic Tac Toe. " alt="TicTacToe" shape="rect" coords="412,56,505,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4319df1536a07cd1aaf23b27aeb53579"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
-<tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor. <br/></td></tr>
+<tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
+<tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4319df1536a07cd1aaf23b27aeb53579">More...</a><br/></td></tr>
 <tr class="separator:a4319df1536a07cd1aaf23b27aeb53579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0962210916279dc1368b695b399c8ea6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a0962210916279dc1368b695b399c8ea6">RunGame</a> ()</td></tr>
-<tr class="separator:a0962210916279dc1368b695b399c8ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac92d0a3389cc806c0334aa224b72fa78"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ac92d0a3389cc806c0334aa224b72fa78">RunGame</a> ()=0</td></tr>
+<tr class="separator:ac92d0a3389cc806c0334aa224b72fa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a965ad54e9f7340c3cad944fc82c61a2b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
-<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated. <br/></td></tr>
+<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
+<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated.  <a href="#a965ad54e9f7340c3cad944fc82c61a2b">More...</a><br/></td></tr>
 <tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adc90364342151caf536c4a34f2ca71d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#adc90364342151caf536c4a34f2ca71d3">SetOptionsInMenu</a> ()=0</td></tr>
+<tr class="memdesc:adc90364342151caf536c4a34f2ca71d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the menu class the options for the player to select.  <a href="#adc90364342151caf536c4a34f2ca71d3">More...</a><br/></td></tr>
+<tr class="separator:adc90364342151caf536c4a34f2ca71d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdb2ccc770062952c0d96d9dae27e7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#aefdb2ccc770062952c0d96d9dae27e7a">BoardSetup</a> ()=0</td></tr>
+<tr class="memdesc:aefdb2ccc770062952c0d96d9dae27e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the board up for the beginning of the game.  <a href="#aefdb2ccc770062952c0d96d9dae27e7a">More...</a><br/></td></tr>
+<tr class="separator:aefdb2ccc770062952c0d96d9dae27e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Oct 20, 2017This class represents an abstract base class for each mini-game/puzzle to derive from. </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0962210916279dc1368b695b399c8ea6"></a>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4319df1536a07cd1aaf23b27aeb53579"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Puzzle::~Puzzle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual Destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aefdb2ccc770062952c0d96d9dae27e7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Puzzle::BoardSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the board up for the beginning of the game. </p>
+
+<p>Implemented in <a class="el" href="classHanoi.html#a5dc7aab5bfe9d0b9d83ba75be22412e2">Hanoi</a>, <a class="el" href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">ConnectFour</a>, <a class="el" href="classTicTacToe.html#a5a03afaffde20d826472e7a8e27995e4">TicTacToe</a>, and <a class="el" href="classMemoryMatch.html#a1e3b9172bdd0fb69f0360bb28acee65c">MemoryMatch</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac92d0a3389cc806c0334aa224b72fa78"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -147,25 +227,72 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
 
-<p>Reimplemented in <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>, and <a class="el" href="classTicTacToe.html#a233703b78605561c39e680609a7a46e7">TicTacToe</a>.</p>
+<p>Implemented in <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, and <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc90364342151caf536c4a34f2ca71d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Puzzle::SetOptionsInMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends the menu class the options for the player to select. </p>
+<p>Does the appropriate action to the space selected by the user depending on which puzzle derived class it is being used in. </p>
+
+<p>Implemented in <a class="el" href="classTicTacToe.html#a5fd34a83c96edbcf3c3c5a0930d513fb">TicTacToe</a>, <a class="el" href="classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a">Hanoi</a>, <a class="el" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour</a>, and <a class="el" href="classMemoryMatch.html#a62548d6cf028d372c08cc01a0693edb2">MemoryMatch</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a965ad54e9f7340c3cad944fc82c61a2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Puzzle::PuzzleEnd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remains false until the mini-game/puzzle is ready to be terminated. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Puzzles/<a class="el" href="Puzzle_8h_source.html">Puzzle.h</a></li>
+<li>/home/rigt2720/Kodika/Puzzles/<a class="el" href="Puzzle_8h_source.html">Puzzle.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classPuzzle.html">Puzzle</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

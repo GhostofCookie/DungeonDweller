@@ -19,13 +19,11 @@ Inheritance diagram for Riddle\-Menu\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}{\hyperlink{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}{Riddle\-Menu} ()}\label{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}
-
+\hyperlink{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}{Riddle\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classRiddleMenu_a9366deb179c1145947e37d599216d64e}{virtual \hyperlink{classRiddleMenu_a9366deb179c1145947e37d599216d64e}{$\sim$\-Riddle\-Menu} ()}\label{classRiddleMenu_a9366deb179c1145947e37d599216d64e}
-
+virtual \hyperlink{classRiddleMenu_a9366deb179c1145947e37d599216d64e}{$\sim$\-Riddle\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classRiddleMenu_aeef176b2f0b886cd7b0325fc0dc1c6a4}{Set\-Options} (map$<$ int, string $>$ options\-List, int row, int col)
+virtual void \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Set\-Options} (int row, int col, int space)
 \item 
 virtual void \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
@@ -34,6 +32,31 @@ virtual void \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Handl
 
 \subsection{Detailed Description}
 This is the menu class for the Riddle minigame. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}{\index{Riddle\-Menu@{Riddle\-Menu}!Riddle\-Menu@{Riddle\-Menu}}
+\index{Riddle\-Menu@{Riddle\-Menu}!RiddleMenu@{Riddle\-Menu}}
+\subsubsection[{Riddle\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Riddle\-Menu\-::\-Riddle\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRiddleMenu_a68e4be3bbc49bdb2f3d8a9fda74614d9}
+
+
+This is the default constructor. 
+
+\hypertarget{classRiddleMenu_a9366deb179c1145947e37d599216d64e}{\index{Riddle\-Menu@{Riddle\-Menu}!$\sim$\-Riddle\-Menu@{$\sim$\-Riddle\-Menu}}
+\index{$\sim$\-Riddle\-Menu@{$\sim$\-Riddle\-Menu}!RiddleMenu@{Riddle\-Menu}}
+\subsubsection[{$\sim$\-Riddle\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Riddle\-Menu\-::$\sim$\-Riddle\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRiddleMenu_a9366deb179c1145947e37d599216d64e}
+
+
+This is the virtual destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{\index{Riddle\-Menu@{Riddle\-Menu}!Handle\-Input@{Handle\-Input}}
@@ -52,25 +75,31 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}.
 
-\hypertarget{classRiddleMenu_aeef176b2f0b886cd7b0325fc0dc1c6a4}{\index{Riddle\-Menu@{Riddle\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{\index{Riddle\-Menu@{Riddle\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!RiddleMenu@{Riddle\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Riddle\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{map$<$ int, string $>$}]{options\-List, }
 \item[{int}]{row, }
-\item[{int}]{col}
+\item[{int}]{col, }
+\item[{int}]{space}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRiddleMenu_aeef176b2f0b886cd7b0325fc0dc1c6a4}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
 \hline
-\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
 
+Implements \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}.
+
+
+
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Riddle\-Menu.\-h\item 
-Menu/Riddle\-Menu.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{RiddleMenu_8h}{Riddle\-Menu.\-h}\item 
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{RiddleMenu_8cpp}{Riddle\-Menu.\-cpp}\end{DoxyCompactItemize}
