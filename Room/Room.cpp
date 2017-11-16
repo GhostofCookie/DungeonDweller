@@ -1,10 +1,11 @@
 #include "Room.h"
+#define ROOMTYPES 5
 
 /// Default Constructor
 Room::Room(map<char, vector<ImportImg>> &collection)
 {
    //What type of room is generated e.g. treasure, puzzle, etc
-   type = Rand(4);
+   type = RoomChance();
 	
    // Find out how many rooms there are to pick from
    // All rooms are located at '0' in the map
@@ -167,4 +168,34 @@ int Room::Rand(int n)
 {
    n = rand() % n;
    return n;
+}
+
+
+
+/// Function generate a roomType using a basic random # with weighting %
+int Room::RoomChance()
+{
+   bool selected = false;
+   int chance[ROOMTYPES] = {50, 3, 30, 3};
+   int roomType = 0;
+
+   int outOf = 0;
+   for(int i = 0; i < ROOMTYPES; i++)
+      outOf += chance[i];
+
+   // Function runs while a room has not been chosen
+   do
+      for(int i = 0; i < ROOMTYPES; i++)
+      {
+	 int n = Rand(outOf);
+	 // trys to generate a random number less than the chance %
+	 if(n < chance[i])
+	 {
+	    selected = true;
+	    roomType = i;
+	 }
+      }
+   while(!selected);
+
+   return roomType;
 }

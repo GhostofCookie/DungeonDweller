@@ -49,6 +49,8 @@ class Room
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
    int Rand(int n);
+   /// Function to choose a random type - with weighting
+   int RoomChance();
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles collects all 'event' images for the rooms
    void GetRoom(map<char, vector<ImportImg>> &imgFiles);

@@ -37,14 +37,14 @@ int main()
    vector<Room*> rooms;
 	
    // Generate random rooms and print them to the screen
-   for(int i = 0; i < 10; i++)
+   for(int i = 0; i < 50; i++)
    {
       rooms.push_back(new Room(imageImport.collection));
       rooms[i]->AlignCenter(*screen);
       rooms[i]->Draw(*screen);
 		
-      //Print the current screen and then erase it for the next frame
-      cout << screen;
+//Print the current screen and then erase it for the next frame
+cout << screen << endl;
       screen->Erase();
    }
 	
