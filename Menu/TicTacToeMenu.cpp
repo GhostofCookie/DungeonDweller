@@ -8,10 +8,12 @@ TicTacToeMenu::~TicTacToeMenu()
 {
 }
 
-void TicTacToeMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void TicTacToeMenu::SetOptions(int row, int col, int space)
 {
+   Menu::SetOptions(row,col,space);
 }
 
 void TicTacToeMenu::HandleInput(istream & is)
 {
+   Menu::HandleInput(is);
 }

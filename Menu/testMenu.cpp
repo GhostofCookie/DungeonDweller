@@ -20,14 +20,15 @@ int main()
    Menu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-   menu = new Menu();
+   menu = new TicTacToeMenu();
    screen = new Screen();
 
    menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak", menu->QuitGame);
-//   menu->AddOption('a', "Move",testFunction);
-//   menu->AddOption('w', "Move Up",testFunction);
+   menu->AddOption('t', "Speak", testFunction);
+   menu->AddOption('a', "Move",testFunction);
+   menu->AddOption('w', "Move Up",testFunction);
    menu->SetOptions();
+
    while(true)
    {
       cout<<screen;
@@ -41,7 +42,6 @@ int main()
 
 void testFunction(int x)
 {
-   system("clear");
    cout<<"You added and used an option properly!"<<endl;
    
 }

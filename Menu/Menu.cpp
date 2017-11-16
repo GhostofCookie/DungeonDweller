@@ -33,13 +33,6 @@ void Menu::HandleInput(istream& is)
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
 
-/*template<typename T>
-void Menu::AddOption(char command, string optionName, void (T::*f)(int))
-{
-   indexMap[static_cast<int>(command)] = optionName;
-   optionMap[command] = f;
-   }*/
-
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
