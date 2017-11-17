@@ -35,7 +35,21 @@ Item* Item::GetItem(string itemType)
 		throw invalid_argument("invalid type")
 }
 
-int Item::random(int start,int end)
+string &Item::name()
+{
+	return itemName;
+
+string Item::name() const
+{
+	return itemName;
+}
+
+string Item::nameGenerator()
+{
+	return string();
+}
+
+int Item::random(unsigned int start,unsigned int end)
 {
 	static bool seeded = false;
 	if(!seeded)

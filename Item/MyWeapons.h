@@ -27,6 +27,12 @@ public:
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
 	void use(Character *target);
+
+
+protected:
+	/// The bows accuracy as a percent
+	/// (accuracy less than 1 always miss) (accuracy greater than 99 always hit)
+	int hitPercent;
 };
 
 
