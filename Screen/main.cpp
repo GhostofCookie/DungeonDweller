@@ -24,7 +24,7 @@ using namespace std;
 int main()
 {
    //Needed for Room randomization
-   srand( (unsigned int) time(NULL));
+srand( (unsigned int) time(NULL));
 	
    // The file path - ***change as desired
    string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
@@ -42,11 +42,12 @@ int main()
       rooms.push_back(new Room(imageImport.collection));
       rooms[i]->AlignCenter(*screen);
       rooms[i]->Draw(*screen);
-		
+
 //Print the current screen and then erase it for the next frame
 cout << screen << endl;
-      screen->Erase();
-   }
+screen->Erase();
+
+}
 	
    return 0;
 }

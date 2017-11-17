@@ -188,9 +188,7 @@ int Room::RoomChance()
    do
    {
       // allows the index to start at a random location in the vector
-      int r = Rand(4);
-   
-      for(r = 0; r < ROOMTYPES; r++)
+      for(int r = Rand(4); r < ROOMTYPES; r++)
       {
 	 int n = Rand(outOf);
 	 // trys to generate a random number less than the chance %
