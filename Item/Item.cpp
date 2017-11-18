@@ -13,11 +13,13 @@
 #include <cctype>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 Item* Item::GetItem(string itemType)
 {
-	transform(itemType.begin(),itemType.end(),itemType.begin(),::toupper);
+	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
 
 	Item* newItem;
 
@@ -35,10 +37,51 @@ Item* Item::GetItem(string itemType)
 		throw invalid_argument("invalid type")
 }
 
-int Item::random(int start,int end)
+string &Item::name()
+{
+	return itemName;
+}
+
+string Item::name() const
+{
+	return itemName;
+}
+
+
+string Item::nameGenerator()
+{
+	static vector<string> weaponNames;
+	static bool gotNames = false;
+	
+	// Generates the vector if it is first time
+	if(!gotNames) {
+		ifstream fin;
+		fin.open("WeaponNames.txt");
+		string tempName;
+		while(!fin.eof()) {
+			getline(fin,tempName);
+			weaponNames.push_back(tempName)
+		}
+		fin.close();
+		if(weaponNames.size < 1)
+			throw runtime_error("WeaponNames.txt is empty");
+		gotNames=true;
+	}
+
+	// Returns a random element of the array
+	return weaponNames[random(0,weaponNames.size())]
+}
+
+
+int Item::random(unsigned int start,unsigned int end)
 {
 	static bool seeded = false;
 	if(!seeded)
 		srand(time(NULL));
+	
+	// Makes sure end is not less than start
+	if(start > end)
+		swap(start,end);
+
 	return rand()%(end-start+1)+start;
 }
