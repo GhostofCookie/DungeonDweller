@@ -14,9 +14,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <vector>
 using namespace std;
 
+//*****************************************************************************
+/// Item Factory
+//*****************************************************************************
 Item* Item::GetItem(string itemType)
 {
 	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
@@ -37,42 +39,25 @@ Item* Item::GetItem(string itemType)
 		throw invalid_argument("invalid type")
 }
 
+//*****************************************************************************
+/// read or write to name
+//*****************************************************************************
 string &Item::name()
 {
 	return itemName;
 }
 
+//*****************************************************************************
+/// read name
+//*****************************************************************************
 string Item::name() const
 {
 	return itemName;
 }
 
-
-string Item::nameGenerator()
-{
-	static vector<string> weaponNames;
-	static bool gotNames = false;
-	
-	// Generates the vector if it is first time
-	if(!gotNames) {
-		ifstream fin;
-		fin.open("WeaponNames.txt");
-		string tempName;
-		while(!fin.eof()) {
-			getline(fin,tempName);
-			weaponNames.push_back(tempName)
-		}
-		fin.close();
-		if(weaponNames.size < 1)
-			throw runtime_error("WeaponNames.txt is empty");
-		gotNames=true;
-	}
-
-	// Returns a random element of the vector
-	return weaponNames[random(0,weaponNames.size()-1)]
-}
-
-
+//*****************************************************************************
+/// random number generator
+//*****************************************************************************
 int Item::random(unsigned int start,unsigned int end)
 {
 	static bool seeded = false;
