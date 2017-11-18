@@ -3,12 +3,12 @@
 }
 
 
-the \hyperlink{classImage}{Image} class represents a 2d vector that displays an image on screen  
+The \hyperlink{classImage}{Image} class represents a 2\-D vector that displays an image on screen.  
 
 
 
 
-{\ttfamily \#include $<$Image.\-hh$>$}
+{\ttfamily \#include $<$Image.\-h$>$}
 
 Inheritance diagram for Image\-:\begin{figure}[H]
 \begin{center}
@@ -19,203 +19,406 @@ Inheritance diagram for Image\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classImage_ae2d055b04fd05ec57cf5fb927c33ff47}{Image} (int h=3, int w=6)
-\item 
-\hyperlink{classImage_aa44ed77d00d96d2c878b050835f828c4}{Image} (const \hyperlink{classImage}{Image} \&img)
+\hyperlink{classImage_a13aa6167bbc77b7a311a181d67caa058}{Image} (int h=3, int w=6, char c= '$\ast$')
 \item 
 \hyperlink{classImage_ad9a2ebd07a4f458ba24d91af0122418e}{Image} (\hyperlink{classImage}{Image} \&img)
 \item 
-\hypertarget{classImage_a46561cd7dcf7e203e9579737e8ace4eb}{virtual \hyperlink{classImage_a46561cd7dcf7e203e9579737e8ace4eb}{$\sim$\-Image} ()}\label{classImage_a46561cd7dcf7e203e9579737e8ace4eb}
-
+\hyperlink{classImage_aa44ed77d00d96d2c878b050835f828c4}{Image} (const \hyperlink{classImage}{Image} \&img)
+\item 
+virtual \hyperlink{classImage_a0294f63700543e11c0f0da85601c7ae5}{$\sim$\-Image} ()
 \begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classImage_aa11e7269dc21f4b05f7c4d896b11aaa8}{operator=} (const \hyperlink{classImage}{Image} \&img)
+virtual void \hyperlink{classImage_abfcde35c430b0dae18df1c09b62700f0}{operator=} (\hyperlink{classImage}{Image} \&img)
 \item 
-\hypertarget{classImage_a91b5bb5c3fef2795ec9838763536ed78}{int \hyperlink{classImage_a91b5bb5c3fef2795ec9838763536ed78}{Get\-Rows} () const }\label{classImage_a91b5bb5c3fef2795ec9838763536ed78}
-
-\begin{DoxyCompactList}\small\item\em Returns the height of the image. \end{DoxyCompactList}\item 
-\hypertarget{classImage_a5377ce45ff29db084776e675b413f165}{int \hyperlink{classImage_a5377ce45ff29db084776e675b413f165}{Get\-Cols} () const }\label{classImage_a5377ce45ff29db084776e675b413f165}
-
-\begin{DoxyCompactList}\small\item\em Returns the width of the image. \end{DoxyCompactList}\item 
-bool \hyperlink{classImage_aa723637c3d64e1290dbfc67238321413}{Is\-Even} (const int \&num) const 
+virtual void \hyperlink{classImage_a4da7f72e4063bd0764caa635c0e0aaae}{operator=} (const \hyperlink{classImage}{Image} \&img)
 \item 
-virtual void \hyperlink{classImage_a71cee63ad701ddbb0268e09a7b64d697}{Draw} (\hyperlink{classScreen}{Screen} \&scr)
+virtual void \hyperlink{classImage_a057cb6b10590608656ff2a7aa159f515}{Draw} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
-virtual void \hyperlink{classImage_a72d145544910c3a28cbc326c009d67c1}{Draw} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)=0
+virtual void \hyperlink{classImage_a1e3d4ae638b3fc1fbee81c509c1551f6}{Draw} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)
 \item 
-\hypertarget{classImage_ac497774e777c10606e8179b1f350ebef}{virtual void \hyperlink{classImage_ac497774e777c10606e8179b1f350ebef}{Create} ()}\label{classImage_ac497774e777c10606e8179b1f350ebef}
-
+virtual void \hyperlink{classImage_ad20f87dc888d01cadc829f18d23066dc}{Draw} (\hyperlink{classImage}{Image} \&img)
+\item 
+virtual void \hyperlink{classImage_a2e863a5b8287ca3adb08fdaae513f437}{Draw} (\hyperlink{classImage}{Image} \&img, int y, int x)
+\item 
+virtual void \hyperlink{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{Create} ()
 \begin{DoxyCompactList}\small\item\em Function to create the image. \end{DoxyCompactList}\item 
-void \hyperlink{classImage_a16f8719e59b1180aa7e0e2fdf3e4d421}{Draw\-Border} (char ch)
+void \hyperlink{classImage_a16f8719e59b1180aa7e0e2fdf3e4d421}{Draw\-Border} (char \hyperlink{classImage_a2d2bff881014df332b1086483d0eb0e9}{ch})
 \item 
-\hypertarget{classImage_a118986dafc30b76c4aa5e7453236a8b2}{void \hyperlink{classImage_a118986dafc30b76c4aa5e7453236a8b2}{Erase} ()}\label{classImage_a118986dafc30b76c4aa5e7453236a8b2}
-
+void \hyperlink{classImage_a118986dafc30b76c4aa5e7453236a8b2}{Erase} ()
 \begin{DoxyCompactList}\small\item\em Function to erase the contents of the image and replace with spaces. \end{DoxyCompactList}\item 
-void \hyperlink{classImage_a39486b75d05a1d3c0206a9ce909f3571}{Fill} (char ch)
+void \hyperlink{classImage_a39486b75d05a1d3c0206a9ce909f3571}{Fill} (char \hyperlink{classImage_a2d2bff881014df332b1086483d0eb0e9}{ch})
 \item 
-void \hyperlink{classImage_a4fbbffe74cd76d884f1e2a96d0bb6c09}{Set} (int y, int x, char ch)
-\item 
+void \hyperlink{classImage_a4fbbffe74cd76d884f1e2a96d0bb6c09}{Set} (int y, int x, char \hyperlink{classImage_a2d2bff881014df332b1086483d0eb0e9}{ch})
+\begin{DoxyCompactList}\small\item\em Sets the characters at the given location to the given character. \end{DoxyCompactList}\item 
 void \hyperlink{classImage_ab68774143becf8906bf8b1931511cb66}{Set\-Origin} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)
 \item 
-void \hyperlink{classImage_a3da9cb3d16c05f2037704331dfce2d5d}{Flip\-Horiz} (\hyperlink{classScreen}{Screen} \&scr)
+void \hyperlink{classImage_adfe7a1b2cf0bd7893cdd55a646da8d77}{Set\-Origin} (\hyperlink{classImage}{Image} \&img, int y, int x)
 \item 
-void \hyperlink{classImage_a72a724415fa05ca58956b84c0985807a}{Flip\-Vert} (\hyperlink{classScreen}{Screen} \&scr)
-\item 
+void \hyperlink{classImage_a1c7560c1e8f95eb0a879fb4fac72fa28}{Flip\-Horiz} ()
+\begin{DoxyCompactList}\small\item\em Function that flips an image horizontally. \end{DoxyCompactList}\item 
+void \hyperlink{classImage_a94fe8fd85b9ef3461c2576d29ebd3a86}{Flip\-Vert} ()
+\begin{DoxyCompactList}\small\item\em Function that flips an image vertically. \end{DoxyCompactList}\item 
 void \hyperlink{classImage_a605b3921fed112ffb8a371341c68eb4c}{Align\-Left} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
 void \hyperlink{classImage_abbb7cdfe276a373ad9b50d5be641eeef}{Align\-Right} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
 void \hyperlink{classImage_a691da8aebb2d92b7471da96a19e0fc22}{Align\-Center} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
-void \hyperlink{classImage_afb13957a77e34a87d0991567455a30d5}{Shift\-Up} (\hyperlink{classScreen}{Screen} \&scr, int num)
+void \hyperlink{classImage_a863eee8dfbe927d73fba705844eb3117}{Align\-Left} (\hyperlink{classImage}{Image} \&img)
+\item 
+void \hyperlink{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}{Align\-Right} (\hyperlink{classImage}{Image} \&img)
+\item 
+void \hyperlink{classImage_a7471581b8a028a79fd87d741ae825e23}{Align\-Center} (\hyperlink{classImage}{Image} \&img)
+\item 
+void \hyperlink{classImage_a4607fa422c54fb4bf0412edd47214b40}{Align\-Center} (\hyperlink{classImage}{Image} \&img, int x, int y)
 \item 
 void \hyperlink{classImage_aed099dcc3c5113b7171daa35460df948}{Shift\-Down} (\hyperlink{classScreen}{Screen} \&scr, int num)
 \item 
-void \hyperlink{classImage_abaa7b2fe4eb322156bb14c60d4003ef3}{Shift\-Left} (\hyperlink{classScreen}{Screen} \&scr, int num)
-\item 
 void \hyperlink{classImage_a1dc60415fb8f71c1c9345382be4ee32f}{Shift\-Right} (\hyperlink{classScreen}{Screen} \&scr, int num)
 \item 
-\hypertarget{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}{void \hyperlink{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}{Fix\-Slants} ()}\label{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}
-
+void \hyperlink{classImage_ad3fec1f163c82a6dc376e1727e42de30}{Shift\-Down} (\hyperlink{classImage}{Image} \&img, int num)
+\item 
+void \hyperlink{classImage_ae905765bb51e09a8252dcb157b2bcf28}{Shift\-Right} (\hyperlink{classImage}{Image} \&img, int num)
+\item 
+void \hyperlink{classImage_a8b15a9bbf2a56bd2105bbc1114bba173}{Shift\-Up} (int num)
+\item 
+void \hyperlink{classImage_a1bc3f79eeff5bfcc430299cb149071f5}{Shift\-Left} (int num)
+\item 
+int \hyperlink{classImage_a91b5bb5c3fef2795ec9838763536ed78}{Get\-Rows} () const 
+\begin{DoxyCompactList}\small\item\em Returns the height of the image. \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a5377ce45ff29db084776e675b413f165}{Get\-Cols} () const 
+\begin{DoxyCompactList}\small\item\em Returns the width of the image. \end{DoxyCompactList}\item 
+void \hyperlink{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}{Fix\-Slants} ()
 \begin{DoxyCompactList}\small\item\em Helper function to switch the slant characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}{vector$<$ vector$<$ char $>$ $>$ \hyperlink{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}{Img}}\label{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}
-
-\begin{DoxyCompactList}\small\item\em The image -\/ publically availiable to allow access to locations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+vector$<$ vector$<$ char $>$ $>$ \hyperlink{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}{Img}
+\begin{DoxyCompactList}\small\item\em The image -\/ publically availiable to allow access to locations. \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a0488098c125477f82fc6ca8e14cc170f}{screen\-X} = 0
+\begin{DoxyCompactList}\small\item\em The screen x coordinate to draw on. \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}{screen\-Y} = 0
+\begin{DoxyCompactList}\small\item\em The screen y coordinate to draw on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classImage_aa723637c3d64e1290dbfc67238321413}{Is\-Even} (const int \&num) const 
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classImage_a0488098c125477f82fc6ca8e14cc170f}{int \hyperlink{classImage_a0488098c125477f82fc6ca8e14cc170f}{screen\-X} = 0}\label{classImage_a0488098c125477f82fc6ca8e14cc170f}
-
-\begin{DoxyCompactList}\small\item\em The screen x coordinate to draw on, default to 0. \end{DoxyCompactList}\item 
-\hypertarget{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}{int \hyperlink{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}{screen\-Y} = 0}\label{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}
-
-\begin{DoxyCompactList}\small\item\em The screen y coordinate to draw on, default to 0. \end{DoxyCompactList}\item 
-\hypertarget{classImage_a51df43db420c9c0b57536cb2dd36de5c}{int \hyperlink{classImage_a51df43db420c9c0b57536cb2dd36de5c}{height}}\label{classImage_a51df43db420c9c0b57536cb2dd36de5c}
-
+int \hyperlink{classImage_a51df43db420c9c0b57536cb2dd36de5c}{height}
 \begin{DoxyCompactList}\small\item\em The height of the image. \end{DoxyCompactList}\item 
-\hypertarget{classImage_ab8d12f635013c04159cd4d3d972bac88}{int \hyperlink{classImage_ab8d12f635013c04159cd4d3d972bac88}{width}}\label{classImage_ab8d12f635013c04159cd4d3d972bac88}
-
-\begin{DoxyCompactList}\small\item\em The width of the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{classImage_ab8d12f635013c04159cd4d3d972bac88}{width}
+\begin{DoxyCompactList}\small\item\em The width of the image. \end{DoxyCompactList}\item 
+char \hyperlink{classImage_a2d2bff881014df332b1086483d0eb0e9}{ch}
+\begin{DoxyCompactList}\small\item\em The character used to draw the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-the \hyperlink{classImage}{Image} class represents a 2d vector that displays an image on screen 
+The \hyperlink{classImage}{Image} class represents a 2\-D vector that displays an image on screen. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classImage_ae2d055b04fd05ec57cf5fb927c33ff47}{\index{Image@{Image}!Image@{Image}}
+\hypertarget{classImage_a13aa6167bbc77b7a311a181d67caa058}{\index{Image@{Image}!Image@{Image}}
 \index{Image@{Image}!Image@{Image}}
 \subsubsection[{Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\-::\-Image (
 \begin{DoxyParamCaption}
 \item[{int}]{h = {\ttfamily 3}, }
-\item[{int}]{w = {\ttfamily 6}}
+\item[{int}]{w = {\ttfamily 6}, }
+\item[{char}]{c = {\ttfamily '$\ast$'}}
 \end{DoxyParamCaption}
-)}}\label{classImage_ae2d055b04fd05ec57cf5fb927c33ff47}
+)}}\label{classImage_a13aa6167bbc77b7a311a181d67caa058}
 Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the image, default to 3 \\
 \hline
-\mbox{\tt in}  & {\em w} & the width of the image, default to 6 \\
+\mbox{\tt in}  & {\em w} & the width of the image, default to 6\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_aa44ed77d00d96d2c878b050835f828c4}{\index{Image@{Image}!Image@{Image}}
-\index{Image@{Image}!Image@{Image}}
-\subsubsection[{Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\-::\-Image (
-\begin{DoxyParamCaption}
-\item[{const {\bf Image} \&}]{img}
-\end{DoxyParamCaption}
-)}}\label{classImage_aa44ed77d00d96d2c878b050835f828c4}
-Copy constructor duplicates a given picture 
+Default Constructor 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em h} & the height of the image \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the image \\
+\hline
+\mbox{\tt in}  & {\em c} & the character to be drawn with \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_ad9a2ebd07a4f458ba24d91af0122418e}{\index{Image@{Image}!Image@{Image}}
 \index{Image@{Image}!Image@{Image}}
 \subsubsection[{Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\-::\-Image (
 \begin{DoxyParamCaption}
-\item[{{\bf Image} \&}]{img}
+\item[{{\bf Image} \&}]{image}
 \end{DoxyParamCaption}
 )}}\label{classImage_ad9a2ebd07a4f458ba24d91af0122418e}
 Copy constructor duplicates a given picture 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em img} & the image to copy from\\
 \hline
 \end{DoxyParams}
+Copy Constructor for the image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image to be copied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_aa44ed77d00d96d2c878b050835f828c4}{\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection[{Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\-::\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{classImage_aa44ed77d00d96d2c878b050835f828c4}
+Copy constructor duplicates a given picture 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from\\
+\hline
+\end{DoxyParams}
+Copy Constructor for the image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image to be copied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a0294f63700543e11c0f0da85601c7ae5}{\index{Image@{Image}!$\sim$\-Image@{$\sim$\-Image}}
+\index{$\sim$\-Image@{$\sim$\-Image}!Image@{Image}}
+\subsubsection[{$\sim$\-Image}]{\setlength{\rightskip}{0pt plus 5cm}Image\-::$\sim$\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a0294f63700543e11c0f0da85601c7ae5}
 
+
+Virtual Destructor. 
+
+Destructor. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classImage_a691da8aebb2d92b7471da96a19e0fc22}{\index{Image@{Image}!Align\-Center@{Align\-Center}}
 \index{Align\-Center@{Align\-Center}!Image@{Image}}
 \subsubsection[{Align\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Center (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+\item[{{\bf Screen} \&}]{screen}
 \end{DoxyParamCaption}
 )}}\label{classImage_a691da8aebb2d92b7471da96a19e0fc22}
 Helper function to align the image center 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen to align to \\
+\mbox{\tt in}  & {\em scr} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the center of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & checks to ensure the bounds aren't exceeded \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a7471581b8a028a79fd87d741ae825e23}{\index{Image@{Image}!Align\-Center@{Align\-Center}}
+\index{Align\-Center@{Align\-Center}!Image@{Image}}
+\subsubsection[{Align\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Center (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classImage_a7471581b8a028a79fd87d741ae825e23}
+Helper function to align the image center 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the center of the given image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & checks to ensure the bounds aren't exceeded \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a4607fa422c54fb4bf0412edd47214b40}{\index{Image@{Image}!Align\-Center@{Align\-Center}}
+\index{Align\-Center@{Align\-Center}!Image@{Image}}
+\subsubsection[{Align\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Center (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classImage_a4607fa422c54fb4bf0412edd47214b40}
+Helper function to align the image left 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the center of the given image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & checks to ensure the bounds aren't exceeded \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate to center around \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate to center around \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_a605b3921fed112ffb8a371341c68eb4c}{\index{Image@{Image}!Align\-Left@{Align\-Left}}
 \index{Align\-Left@{Align\-Left}!Image@{Image}}
 \subsubsection[{Align\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Left (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+\item[{{\bf Screen} \&}]{screen}
 \end{DoxyParamCaption}
 )}}\label{classImage_a605b3921fed112ffb8a371341c68eb4c}
 Helper function to align the image left 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen to align to \\
+\mbox{\tt in}  & {\em scr} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the left of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & used to align with \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a863eee8dfbe927d73fba705844eb3117}{\index{Image@{Image}!Align\-Left@{Align\-Left}}
+\index{Align\-Left@{Align\-Left}!Image@{Image}}
+\subsubsection[{Align\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Left (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classImage_a863eee8dfbe927d73fba705844eb3117}
+Helper function to align the image left 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the left of the given image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & checks to ensure the bounds aren't exceeded \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_abbb7cdfe276a373ad9b50d5be641eeef}{\index{Image@{Image}!Align\-Right@{Align\-Right}}
 \index{Align\-Right@{Align\-Right}!Image@{Image}}
 \subsubsection[{Align\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Right (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+\item[{{\bf Screen} \&}]{screen}
 \end{DoxyParamCaption}
 )}}\label{classImage_abbb7cdfe276a373ad9b50d5be641eeef}
 Helper function to align the image right 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen to align to \\
+\mbox{\tt in}  & {\em scr} & the screen to align to\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_a71cee63ad701ddbb0268e09a7b64d697}{\index{Image@{Image}!Draw@{Draw}}
-\index{Draw@{Draw}!Image@{Image}}
-\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Image\-::\-Draw (
+Align the image to the right of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & used to align with \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}{\index{Image@{Image}!Align\-Right@{Align\-Right}}
+\index{Align\-Right@{Align\-Right}!Image@{Image}}
+\subsubsection[{Align\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Right (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+\item[{{\bf Image} \&}]{img}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a71cee63ad701ddbb0268e09a7b64d697}
+)}}\label{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}
+Helper function to align the image right 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the right of the given image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & checks to ensure the bounds aren't exceeded \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{\index{Image@{Image}!Create@{Create}}
+\index{Create@{Create}!Image@{Image}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}
+
+
+Function to create the image. 
+
+Function that fills in the vector that makes up the image. 
+
+Reimplemented in \hyperlink{classDefaultImg_a9ab21b397e0d23831b2944b651058b89}{Default\-Img}, and \hyperlink{classImportImg_a7e1cc1bf176cedb14938519950719fa2}{Import\-Img}.
+
+\hypertarget{classImage_a057cb6b10590608656ff2a7aa159f515}{\index{Image@{Image}!Draw@{Draw}}
+\index{Draw@{Draw}!Image@{Image}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{screen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a057cb6b10590608656ff2a7aa159f515}
 Helper function to draw onto the \hyperlink{classScreen}{Screen} object 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen to draw on \\
+\mbox{\tt in}  & {\em scr} & the screen to draw on\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_a72d145544910c3a28cbc326c009d67c1}{\index{Image@{Image}!Draw@{Draw}}
+Function to draw the image to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & the screen drawn on \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a1e3d4ae638b3fc1fbee81c509c1551f6}{\index{Image@{Image}!Draw@{Draw}}
 \index{Draw@{Draw}!Image@{Image}}
-\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Image\-::\-Draw (
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Draw (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
+\item[{{\bf Screen} \&}]{screen, }
 \item[{int}]{y, }
 \item[{int}]{x}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classImage_a72d145544910c3a28cbc326c009d67c1}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a1e3d4ae638b3fc1fbee81c509c1551f6}
 Helper function to draw onto the \hyperlink{classScreen}{Screen} object 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em scr} & the screen to draw on \\
 \hline
 \mbox{\tt in}  & {\em x} & the x coordinate \\
 \hline
-\mbox{\tt in}  & {\em y} & the y coordinate \\
+\mbox{\tt in}  & {\em y} & the y coordinate\\
 \hline
 \end{DoxyParams}
-
-
-Implemented in \hyperlink{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{Default\-Img}, and \hyperlink{classImportImg_a6a9c209e731c443ba060aa7d809a15e7}{Import\-Img}.
-
+Function to draw the image to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & the screen drawn on \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate to begin drawing from \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate to begin drawing from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_ad20f87dc888d01cadc829f18d23066dc}{\index{Image@{Image}!Draw@{Draw}}
+\index{Draw@{Draw}!Image@{Image}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_ad20f87dc888d01cadc829f18d23066dc}
+Helper function to draw onto the \hyperlink{classScreen}{Screen} object 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to draw on\\
+\hline
+\end{DoxyParams}
+Function to draw the image to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image drawn on \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a2e863a5b8287ca3adb08fdaae513f437}{\index{Image@{Image}!Draw@{Draw}}
+\index{Draw@{Draw}!Image@{Image}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img, }
+\item[{int}]{y, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a2e863a5b8287ca3adb08fdaae513f437}
+Helper function to draw onto the \hyperlink{classScreen}{Screen} object 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to draw on \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate\\
+\hline
+\end{DoxyParams}
+Function to draw the image to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image drawn on \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate to begin drawing from \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate to begin drawing from \\
+\hline
+\end{DoxyParams}
 \hypertarget{classImage_a16f8719e59b1180aa7e0e2fdf3e4d421}{\index{Image@{Image}!Draw\-Border@{Draw\-Border}}
 \index{Draw\-Border@{Draw\-Border}!Image@{Image}}
 \subsubsection[{Draw\-Border}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Draw\-Border (
@@ -225,10 +428,26 @@ Implemented in \hyperlink{classDefaultImg_a3a356e422b5575bc9b500d0783fb070c}{Def
 )}}\label{classImage_a16f8719e59b1180aa7e0e2fdf3e4d421}
 Function to draw a border around the image 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em ch} & the character to draw the border with \\
+\mbox{\tt in}  & {\em ch} & the character to draw the border with\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_a39486b75d05a1d3c0206a9ce909f3571}{\index{Image@{Image}!Fill@{Fill}}
+Function that draws and border around the image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to draw the border \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a118986dafc30b76c4aa5e7453236a8b2}{\index{Image@{Image}!Erase@{Erase}}
+\index{Erase@{Erase}!Image@{Image}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Erase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classImage_a118986dafc30b76c4aa5e7453236a8b2}
+
+
+Function to erase the contents of the image and replace with spaces. 
+
+Erase the image contents be replacing with spaces. \hypertarget{classImage_a39486b75d05a1d3c0206a9ce909f3571}{\index{Image@{Image}!Fill@{Fill}}
 \index{Fill@{Fill}!Image@{Image}}
 \subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Fill (
 \begin{DoxyParamCaption}
@@ -240,52 +459,110 @@ Function to fill the enitre image with a character
 \mbox{\tt in}  & {\em ch} & the character the fill the image with \\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_a3da9cb3d16c05f2037704331dfce2d5d}{\index{Image@{Image}!Flip\-Horiz@{Flip\-Horiz}}
+\hypertarget{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}{\index{Image@{Image}!Fix\-Slants@{Fix\-Slants}}
+\index{Fix\-Slants@{Fix\-Slants}!Image@{Image}}
+\subsubsection[{Fix\-Slants}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Fix\-Slants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classImage_a5c723d560bde4b6aa45f3eaa36ffb4f2}
+
+
+Helper function to switch the slant characters. 
+
+Function that switches the slant characters Used for images that looks wierd after being flipped \hypertarget{classImage_a1c7560c1e8f95eb0a879fb4fac72fa28}{\index{Image@{Image}!Flip\-Horiz@{Flip\-Horiz}}
 \index{Flip\-Horiz@{Flip\-Horiz}!Image@{Image}}
 \subsubsection[{Flip\-Horiz}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Flip\-Horiz (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+{}
 \end{DoxyParamCaption}
-)}}\label{classImage_a3da9cb3d16c05f2037704331dfce2d5d}
-Function that flips an image horizontally 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen the image will flip on \\
-\hline
-\end{DoxyParams}
-\hypertarget{classImage_a72a724415fa05ca58956b84c0985807a}{\index{Image@{Image}!Flip\-Vert@{Flip\-Vert}}
+)}}\label{classImage_a1c7560c1e8f95eb0a879fb4fac72fa28}
+
+
+Function that flips an image horizontally. 
+
+Function to flip the image horizontally. \hypertarget{classImage_a94fe8fd85b9ef3461c2576d29ebd3a86}{\index{Image@{Image}!Flip\-Vert@{Flip\-Vert}}
 \index{Flip\-Vert@{Flip\-Vert}!Image@{Image}}
 \subsubsection[{Flip\-Vert}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Flip\-Vert (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr}
+{}
 \end{DoxyParamCaption}
-)}}\label{classImage_a72a724415fa05ca58956b84c0985807a}
-Function that flips an image vertically 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen the image will flip on \\
-\hline
-\end{DoxyParams}
-\hypertarget{classImage_aa723637c3d64e1290dbfc67238321413}{\index{Image@{Image}!Is\-Even@{Is\-Even}}
+)}}\label{classImage_a94fe8fd85b9ef3461c2576d29ebd3a86}
+
+
+Function that flips an image vertically. 
+
+Function to flip the image vertically. \hypertarget{classImage_a5377ce45ff29db084776e675b413f165}{\index{Image@{Image}!Get\-Cols@{Get\-Cols}}
+\index{Get\-Cols@{Get\-Cols}!Image@{Image}}
+\subsubsection[{Get\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::\-Get\-Cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classImage_a5377ce45ff29db084776e675b413f165}
+
+
+Returns the width of the image. 
+
+Function that returns the height of the image. \hypertarget{classImage_a91b5bb5c3fef2795ec9838763536ed78}{\index{Image@{Image}!Get\-Rows@{Get\-Rows}}
+\index{Get\-Rows@{Get\-Rows}!Image@{Image}}
+\subsubsection[{Get\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::\-Get\-Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classImage_a91b5bb5c3fef2795ec9838763536ed78}
+
+
+Returns the height of the image. 
+
+Function that returns the width of the image. \hypertarget{classImage_aa723637c3d64e1290dbfc67238321413}{\index{Image@{Image}!Is\-Even@{Is\-Even}}
 \index{Is\-Even@{Is\-Even}!Image@{Image}}
 \subsubsection[{Is\-Even}]{\setlength{\rightskip}{0pt plus 5cm}bool Image\-::\-Is\-Even (
 \begin{DoxyParamCaption}
 \item[{const int \&}]{num}
 \end{DoxyParamCaption}
-) const}}\label{classImage_aa723637c3d64e1290dbfc67238321413}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classImage_aa723637c3d64e1290dbfc67238321413}
 Returns true if the number is even 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em num} & the number to check \\
+\mbox{\tt in}  & {\em num} & the number to check\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_aa11e7269dc21f4b05f7c4d896b11aaa8}{\index{Image@{Image}!operator=@{operator=}}
+Function returns true if a number is even 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the number to be checked \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_abfcde35c430b0dae18df1c09b62700f0}{\index{Image@{Image}!operator=@{operator=}}
 \index{operator=@{operator=}!Image@{Image}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Image\-::operator= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Image} \&}]{img}
+\item[{{\bf Image} \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_aa11e7269dc21f4b05f7c4d896b11aaa8}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_abfcde35c430b0dae18df1c09b62700f0}
 Overloaded '=' operator 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image being copied \\
+\mbox{\tt in}  & {\em img} & the image being copied\\
+\hline
+\end{DoxyParams}
+Overloaded assignemnt operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image to be compied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a4da7f72e4063bd0764caa635c0e0aaae}{\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} \&}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a4da7f72e4063bd0764caa635c0e0aaae}
+Overloaded '=' operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image being copied\\
+\hline
+\end{DoxyParams}
+Overloaded assignemnt operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image to be compied from \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_a4fbbffe74cd76d884f1e2a96d0bb6c09}{\index{Image@{Image}!Set@{Set}}
@@ -297,6 +574,10 @@ Overloaded '=' operator
 \item[{char}]{ch}
 \end{DoxyParamCaption}
 )}}\label{classImage_a4fbbffe74cd76d884f1e2a96d0bb6c09}
+
+
+Sets the characters at the given location to the given character. 
+
 Function to set the coordinate of the image with a character 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em y} & the y coordinate to set \\
@@ -310,7 +591,7 @@ Function to set the coordinate of the image with a character
 \index{Set\-Origin@{Set\-Origin}!Image@{Image}}
 \subsubsection[{Set\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Set\-Origin (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
+\item[{{\bf Screen} \&}]{screen, }
 \item[{int}]{y, }
 \item[{int}]{x}
 \end{DoxyParamCaption}
@@ -321,14 +602,46 @@ Function that sets a permanent location to draw from
 \hline
 \mbox{\tt in}  & {\em y} & the y coordinate \\
 \hline
-\mbox{\tt in}  & {\em x} & the x coordinate \\
+\mbox{\tt in}  & {\em x} & the x coordinate\\
+\hline
+\end{DoxyParams}
+Sets the print origin of the image relative to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em the} & x coordinate to begin from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_adfe7a1b2cf0bd7893cdd55a646da8d77}{\index{Image@{Image}!Set\-Origin@{Set\-Origin}}
+\index{Set\-Origin@{Set\-Origin}!Image@{Image}}
+\subsubsection[{Set\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Set\-Origin (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img, }
+\item[{int}]{y, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{classImage_adfe7a1b2cf0bd7893cdd55a646da8d77}
+Function that sets a permanent location to draw from 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen to access \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate\\
+\hline
+\end{DoxyParams}
+Sets the print origin of the image relative to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em the} & x coordinate to begin from \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_aed099dcc3c5113b7171daa35460df948}{\index{Image@{Image}!Shift\-Down@{Shift\-Down}}
 \index{Shift\-Down@{Shift\-Down}!Image@{Image}}
 \subsubsection[{Shift\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Down (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
+\item[{{\bf Screen} \&}]{screen, }
 \item[{int}]{num}
 \end{DoxyParamCaption}
 )}}\label{classImage_aed099dcc3c5113b7171daa35460df948}
@@ -336,29 +649,62 @@ Helper function to shift the image down
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em scr} & the screen the image will shift on \\
 \hline
-\mbox{\tt in}  & {\em num} & the amount of shifting \\
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_abaa7b2fe4eb322156bb14c60d4003ef3}{\index{Image@{Image}!Shift\-Left@{Shift\-Left}}
-\index{Shift\-Left@{Shift\-Left}!Image@{Image}}
-\subsubsection[{Shift\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Left (
+Function to shift the image down 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & checks the bounds of the screen \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_ad3fec1f163c82a6dc376e1727e42de30}{\index{Image@{Image}!Shift\-Down@{Shift\-Down}}
+\index{Shift\-Down@{Shift\-Down}!Image@{Image}}
+\subsubsection[{Shift\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Down (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
+\item[{{\bf Image} \&}]{img, }
 \item[{int}]{num}
 \end{DoxyParamCaption}
-)}}\label{classImage_abaa7b2fe4eb322156bb14c60d4003ef3}
-Helper function to shift the image left 
+)}}\label{classImage_ad3fec1f163c82a6dc376e1727e42de30}
+Helper function to shift the image down 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em scr} & the screen the image will shift on \\
 \hline
-\mbox{\tt in}  & {\em num} & the amount of shifting \\
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
+\hline
+\end{DoxyParams}
+Function to shift the image down 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & checks the bounds of the image \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a1bc3f79eeff5bfcc430299cb149071f5}{\index{Image@{Image}!Shift\-Left@{Shift\-Left}}
+\index{Shift\-Left@{Shift\-Left}!Image@{Image}}
+\subsubsection[{Shift\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Left (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classImage_a1bc3f79eeff5bfcc430299cb149071f5}
+Helper function to shift the image left 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen the image will shift on \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
+\hline
+\end{DoxyParams}
+Function to shift the image left 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_a1dc60415fb8f71c1c9345382be4ee32f}{\index{Image@{Image}!Shift\-Right@{Shift\-Right}}
 \index{Shift\-Right@{Shift\-Right}!Image@{Image}}
 \subsubsection[{Shift\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Right (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
+\item[{{\bf Screen} \&}]{screen, }
 \item[{int}]{num}
 \end{DoxyParamCaption}
 )}}\label{classImage_a1dc60415fb8f71c1c9345382be4ee32f}
@@ -366,26 +712,105 @@ Helper function to shift the image right
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em scr} & the screen the image will shift on \\
 \hline
-\mbox{\tt in}  & {\em num} & the amount of shifting \\
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_afb13957a77e34a87d0991567455a30d5}{\index{Image@{Image}!Shift\-Up@{Shift\-Up}}
+Function to shift the image right 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screne} & checks the bounds of the screen \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_ae905765bb51e09a8252dcb157b2bcf28}{\index{Image@{Image}!Shift\-Right@{Shift\-Right}}
+\index{Shift\-Right@{Shift\-Right}!Image@{Image}}
+\subsubsection[{Shift\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Right (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classImage_ae905765bb51e09a8252dcb157b2bcf28}
+Helper function to shift the image right 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the screen the image will shift on \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
+\hline
+\end{DoxyParams}
+Function to shift the image right 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & checks the bounds of the image \\
+\hline
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a8b15a9bbf2a56bd2105bbc1114bba173}{\index{Image@{Image}!Shift\-Up@{Shift\-Up}}
 \index{Shift\-Up@{Shift\-Up}!Image@{Image}}
 \subsubsection[{Shift\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Shift\-Up (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
 \item[{int}]{num}
 \end{DoxyParamCaption}
-)}}\label{classImage_afb13957a77e34a87d0991567455a30d5}
+)}}\label{classImage_a8b15a9bbf2a56bd2105bbc1114bba173}
 Helper function to shift the image up 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em scr} & the screen the image will shift on \\
 \hline
-\mbox{\tt in}  & {\em num} & the amount of shifting \\
+\mbox{\tt in}  & {\em num} & the amount of shifting\\
+\hline
+\end{DoxyParams}
+Function to shift the image up 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the amount to shift by \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classImage_a2d2bff881014df332b1086483d0eb0e9}{\index{Image@{Image}!ch@{ch}}
+\index{ch@{ch}!Image@{Image}}
+\subsubsection[{ch}]{\setlength{\rightskip}{0pt plus 5cm}char Image\-::ch\hspace{0.3cm}{\ttfamily [protected]}}}\label{classImage_a2d2bff881014df332b1086483d0eb0e9}
+
+
+The character used to draw the image. 
+
+\hypertarget{classImage_a51df43db420c9c0b57536cb2dd36de5c}{\index{Image@{Image}!height@{height}}
+\index{height@{height}!Image@{Image}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::height\hspace{0.3cm}{\ttfamily [protected]}}}\label{classImage_a51df43db420c9c0b57536cb2dd36de5c}
+
+
+The height of the image. 
+
+\hypertarget{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}{\index{Image@{Image}!Img@{Img}}
+\index{Img@{Img}!Image@{Image}}
+\subsubsection[{Img}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$char$>$ $>$ Image\-::\-Img}}\label{classImage_ac3bad7d8544990b7be9e9c5ee0fb26b8}
+
+
+The image -\/ publically availiable to allow access to locations. 
+
+\hypertarget{classImage_a0488098c125477f82fc6ca8e14cc170f}{\index{Image@{Image}!screen\-X@{screen\-X}}
+\index{screen\-X@{screen\-X}!Image@{Image}}
+\subsubsection[{screen\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::screen\-X = 0}}\label{classImage_a0488098c125477f82fc6ca8e14cc170f}
+
+
+The screen x coordinate to draw on. 
+
+\hypertarget{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}{\index{Image@{Image}!screen\-Y@{screen\-Y}}
+\index{screen\-Y@{screen\-Y}!Image@{Image}}
+\subsubsection[{screen\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::screen\-Y = 0}}\label{classImage_a4c5bb89eba006c3768c2f36ef54d2c5b}
+
+
+The screen y coordinate to draw on. 
+
+\hypertarget{classImage_ab8d12f635013c04159cd4d3d972bac88}{\index{Image@{Image}!width@{width}}
+\index{width@{width}!Image@{Image}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Image\-::width\hspace{0.3cm}{\ttfamily [protected]}}}\label{classImage_ab8d12f635013c04159cd4d3d972bac88}
+
+
+The width of the image. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Image/Image.\-hh\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{Image_8h}{Image.\-h}\item 
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{Image_8cpp}{Image.\-cpp}\end{DoxyCompactItemize}

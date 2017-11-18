@@ -4,16 +4,24 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Dungeon Dwellers: Puzzles/TicTacToe.h Source File</title>
+<title>Dungeon Dwellers: /home/rigt2720/Kodika/Puzzles/TicTacToe.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -62,14 +71,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('TicTacToe_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,66 +103,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_aa51b64dee1cbb04155b0de9dbe2737a.html">Puzzles</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">TicTacToe.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="TicTacToe_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// tic_tac_toe.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TIC_TAC_TOE_H</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TIC_TAC_TOE_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;Puzzle.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="classTicTacToe.html">TicTacToe</a>: <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <a class="code" href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5">~TicTacToe</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">RunGame</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="comment">//void PromptUser(&amp;screen);//Prompts user for input</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="comment">//char UserInput(&amp;menu);//Gets user input</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="comment">//bool ValidCommand(char input);//Checks formatting</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <span class="keywordtype">bool</span> ValidMove(<span class="keywordtype">int</span> inputX, <span class="keywordtype">int</span> inputY);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   <span class="keywordtype">void</span> SetOptionsInMenu();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="keywordtype">void</span> OutputGame(<a class="code" href="classScreen.html">Screen</a> &amp;tttScreen);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <span class="keywordtype">void</span> MovePiece(<span class="keywordtype">int</span> inputX, <span class="keywordtype">int</span> inputY);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="keywordtype">void</span> WinCheck();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordtype">void</span> AiMove();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   std::vector&lt;vector&lt;char&gt;&gt;gameBoard;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:19</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Puzzle_8h.html">Puzzle.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../Menu/ConnectFourMenu.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Screen/Screen.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Image/DefaultImg.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTicTacToe.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicTacToe.html">TicTacToe</a>: <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <a class="code" href="classTicTacToe.html">TicTacToe</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classTicTacToe.html">TicTacToe</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> RunGame();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="comment">//void PromptUser(&amp;screen);//Prompts user for input</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   <span class="comment">//char UserInput(&amp;menu);//Gets user input</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="comment">//bool ValidCommand(char input);//Checks formatting</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keywordtype">bool</span> ValidMove(<span class="keywordtype">int</span> inputX, <span class="keywordtype">int</span> inputY);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordtype">void</span> BoardSetup();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keywordtype">void</span> SetOptionsInMenu();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordtype">void</span> MovePiece(<span class="keywordtype">int</span> inputX, <span class="keywordtype">int</span> inputY, <span class="keywordtype">char</span> userPiece);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keywordtype">bool</span> WinCheck();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keywordtype">void</span> AiMove(<span class="keywordtype">int</span> AiPiece);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">bool</span> HorizontalCheck();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keywordtype">bool</span> VerticalCheck();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <span class="keywordtype">bool</span> RightDiagonalCheck();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <span class="keywordtype">bool</span> LeftDiagonalCheck();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classTicTacToe.html#a9e4321945ff098996c42cc56936445b9">   77</a></span>&#160;   std::vector&lt;vector&lt;char&gt;&gt;<a class="code" href="classTicTacToe.html#a9e4321945ff098996c42cc56936445b9">gameBoard</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classTicTacToe.html#a0aab68285cb8b8f5ce6159ed5cfc8bbd">   80</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classTicTacToe.html#a0aab68285cb8b8f5ce6159ed5cfc8bbd">boardSize</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   <span class="keywordtype">int</span> RandomNumber(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   <span class="keywordtype">bool</span> IsBoardFull();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <span class="keywordtype">void</span> ResetGame();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classTicTacToe.html#a6749582a8480be3cbae920f8f2cca8ce">   92</a></span>&#160;   <a class="code" href="classScreen.html">Screen</a> <a class="code" href="classTicTacToe.html#a6749582a8480be3cbae920f8f2cca8ce">TicTacToeScreen</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
+<div class="ttc" id="Puzzle_8h_html"><div class="ttname"><a href="Puzzle_8h.html">Puzzle.h</a></div></div>
+<div class="ttc" id="classTicTacToe_html_a0aab68285cb8b8f5ce6159ed5cfc8bbd"><div class="ttname"><a href="classTicTacToe.html#a0aab68285cb8b8f5ce6159ed5cfc8bbd">TicTacToe::boardSize</a></div><div class="ttdeci">int boardSize</div><div class="ttdoc">Dimensions for the board. </div><div class="ttdef"><b>Definition:</b> TicTacToe.h:80</div></div>
 <div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:18</div></div>
-<div class="ttc" id="classTicTacToe_html_a811356ea0290bf50ca522c79bead1e05"><div class="ttname"><a href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe::RunGame</a></div><div class="ttdeci">virtual void RunGame()</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:18</div></div>
-<div class="ttc" id="classTicTacToe_html_a103fe9a5ae41b5ef756e20594a70cb7a"><div class="ttname"><a href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe::TicTacToe</a></div><div class="ttdeci">TicTacToe()</div><div class="ttdoc">Default constructor for TicTacToe, sets height to 3 and width to 3. </div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:9</div></div>
-<div class="ttc" id="classTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdoc">This class contains the mini-game/puzzle Tic Tac Toe. </div><div class="ttdef"><b>Definition:</b> tic_tac_toe.h:13</div></div>
-<div class="ttc" id="classTicTacToe_html_a5e9c4ed3279034d5530cc7b94a3e10e5"><div class="ttname"><a href="classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5">TicTacToe::~TicTacToe</a></div><div class="ttdeci">virtual ~TicTacToe()</div><div class="ttdoc">Deconstructor. </div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:13</div></div>
+<div class="ttc" id="classTicTacToe_html_a6749582a8480be3cbae920f8f2cca8ce"><div class="ttname"><a href="classTicTacToe.html#a6749582a8480be3cbae920f8f2cca8ce">TicTacToe::TicTacToeScreen</a></div><div class="ttdeci">Screen TicTacToeScreen</div><div class="ttdef"><b>Definition:</b> TicTacToe.h:92</div></div>
+<div class="ttc" id="classTicTacToe_html_a9e4321945ff098996c42cc56936445b9"><div class="ttname"><a href="classTicTacToe.html#a9e4321945ff098996c42cc56936445b9">TicTacToe::gameBoard</a></div><div class="ttdeci">std::vector&lt; vector&lt; char &gt; &gt; gameBoard</div><div class="ttdoc">Vector to store the contents of the gameboard. </div><div class="ttdef"><b>Definition:</b> TicTacToe.h:77</div></div>
+<div class="ttc" id="classTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdoc">This class contains the mini-game/puzzle Tic Tac Toe. </div><div class="ttdef"><b>Definition:</b> TicTacToe.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_aa51b64dee1cbb04155b0de9dbe2737a.html">Puzzles</a></li><li class="navelem"><a class="el" href="TicTacToe_8h.html">TicTacToe.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

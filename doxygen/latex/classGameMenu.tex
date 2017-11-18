@@ -19,8 +19,7 @@ Inheritance diagram for Game\-Menu\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classGameMenu_ae31c50148abf655297a2a3eab53c15a3}{\hyperlink{classGameMenu_ae31c50148abf655297a2a3eab53c15a3}{Game\-Menu} ()}\label{classGameMenu_ae31c50148abf655297a2a3eab53c15a3}
-
+\hyperlink{classGameMenu_aee692d042333761f688de3fbdbb89c67}{Game\-Menu} (int height=10)
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Set\-Options} (int row, int col, int space)=0
 \item 
@@ -31,6 +30,20 @@ virtual void \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Handle\
 
 \subsection{Detailed Description}
 An abstract class, this is the base class for the all the in-\/game menu classes. It requires less member functions than \hyperlink{classMenu}{Menu}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGameMenu_aee692d042333761f688de3fbdbb89c67}{\index{Game\-Menu@{Game\-Menu}!Game\-Menu@{Game\-Menu}}
+\index{Game\-Menu@{Game\-Menu}!GameMenu@{Game\-Menu}}
+\subsubsection[{Game\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Menu\-::\-Game\-Menu (
+\begin{DoxyParamCaption}
+\item[{int}]{height = {\ttfamily 10}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGameMenu_aee692d042333761f688de3fbdbb89c67}
+
+
+This is the default constructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{\index{Game\-Menu@{Game\-Menu}!Handle\-Input@{Handle\-Input}}
@@ -62,11 +75,13 @@ Implemented in \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea}{
 \item[{int}]{space}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}
-This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
+This function sets the specific options for the \hyperlink{classMenu}{Menu} type. It is pure virtual 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
 \hline
-\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
@@ -75,10 +90,10 @@ Reimplemented from \hyperlink{classMenu_acc31e14c9ed4dd2fb5dc4319738bafba}{Menu}
 
 
 
-Implemented in \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, and \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}.
+Implemented in \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}{Dialogue\-Menu}, \hyperlink{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}{Explore\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}, \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}, \hyperlink{classTradeMenu_aaf93d0a5ee2574d2926bd22de278fb17}{Trade\-Menu}, \hyperlink{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}{Fight\-Menu}, and \hyperlink{classMainMenu_a44ab04810a68d7ddf3843464573b7967}{Main\-Menu}.
 
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Game\-Menu.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{GameMenu_8h}{Game\-Menu.\-h}\end{DoxyCompactItemize}

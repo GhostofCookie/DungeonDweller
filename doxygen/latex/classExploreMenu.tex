@@ -19,13 +19,11 @@ Inheritance diagram for Explore\-Menu\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{\hyperlink{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{Explore\-Menu} ()}\label{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}
-
+\hyperlink{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{Explore\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{virtual \hyperlink{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{$\sim$\-Explore\-Menu} ()}\label{classExploreMenu_ade9d89c5b19679f01b73120120022e68}
-
+virtual \hyperlink{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{$\sim$\-Explore\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}{Set\-Options} (int row, int col)
+virtual void \hyperlink{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}{Set\-Options} (int row, int col, int space)
 \item 
 virtual void \hyperlink{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
@@ -36,6 +34,31 @@ virtual void \hyperlink{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{Hand
 This is the menu displayed when the player character is being chosen before the game begins. 
 
 This is the menu displayed when the player character is exploring rooms. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}{\index{Explore\-Menu@{Explore\-Menu}!Explore\-Menu@{Explore\-Menu}}
+\index{Explore\-Menu@{Explore\-Menu}!ExploreMenu@{Explore\-Menu}}
+\subsubsection[{Explore\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Explore\-Menu\-::\-Explore\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classExploreMenu_ac05a4f8e2972f1617a702e04677f241b}
+
+
+This is the default constructor. 
+
+\hypertarget{classExploreMenu_ade9d89c5b19679f01b73120120022e68}{\index{Explore\-Menu@{Explore\-Menu}!$\sim$\-Explore\-Menu@{$\sim$\-Explore\-Menu}}
+\index{$\sim$\-Explore\-Menu@{$\sim$\-Explore\-Menu}!ExploreMenu@{Explore\-Menu}}
+\subsubsection[{$\sim$\-Explore\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Explore\-Menu\-::$\sim$\-Explore\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_ade9d89c5b19679f01b73120120022e68}
+
+
+This is the virtual destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{\index{Explore\-Menu@{Explore\-Menu}!Handle\-Input@{Handle\-Input}}
@@ -54,24 +77,31 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
 
-\hypertarget{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}{\index{Explore\-Menu@{Explore\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}{\index{Explore\-Menu@{Explore\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!ExploreMenu@{Explore\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Explore\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
 \item[{int}]{row, }
-\item[{int}]{col}
+\item[{int}]{col, }
+\item[{int}]{space}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_ab31bbcb898e635120ec88eb296fa1825}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu.\\
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
 \hline
-\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
 
+Implements \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Menu}.
+
+
+
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Explore\-Menu.\-h\item 
-Menu/Explore\-Menu.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{ExploreMenu_8h}{Explore\-Menu.\-h}\item 
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{ExploreMenu_8cpp}{Explore\-Menu.\-cpp}\end{DoxyCompactItemize}

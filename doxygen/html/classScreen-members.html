@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classScreen.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +105,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Screen Member List</div>  </div>
@@ -91,50 +114,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This is the complete list of members for <a class="el" href="classScreen.html">Screen</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a2ba1e54cb2fee7f246a25aed46c3ff3f">CreateBorder</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a2ba1e54cb2fee7f246a25aed46c3ff3f">CreateBorder</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a146a94183c6c610ae8a619521fc9d102">DrawBorder</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a146a94183c6c610ae8a619521fc9d102">DrawBorder</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a7e2c21a6e63390eb3d8b46ee85af05d2">Erase</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a7e2c21a6e63390eb3d8b46ee85af05d2">Erase</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a8cf89892a333f7d6e7227ffdf77b3351">Fill</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#aeeebb297b5f39c2b25ee026df8fec9ac">Fill</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a8cf89892a333f7d6e7227ffdf77b3351">Fill</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#aeeebb297b5f39c2b25ee026df8fec9ac">Fill</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a95daa612c5ec6a8018b89cfc2d785e27">GetCenterPnt</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classScreen.html#a8cf89892a333f7d6e7227ffdf77b3351">Fill</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#aeeebb297b5f39c2b25ee026df8fec9ac">Fill</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a95daa612c5ec6a8018b89cfc2d785e27">GetCenterPnt</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a223cd8821b2b8006c61545ff41aa0091">GetCols</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a223cd8821b2b8006c61545ff41aa0091">GetCols</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#aa12cc4ea36f5d2ac98b3c7334616acbc">GetRows</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#aa12cc4ea36f5d2ac98b3c7334616acbc">GetRows</a>() const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a55405920693276db8fbdbf3a903b8d2f">height</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909">Initialize</a>(int h, int w)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909">Initialize</a>(int h, int w)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b">IsEven</a>(const int &amp;num) const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b">IsEven</a>(const int &amp;num) const </td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a27dcfac6e64ab72059d0801dd9714d7a">NewOutlineCh</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a27dcfac6e64ab72059d0801dd9714d7a">NewOutlineCh</a>(char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a9d1583ec176b804e06d7c6d2a8bf3bcd">operator&lt;&lt;</a>(ostream &amp;os, const Screen *s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#adb701ccee14124fb66506086b5a34199">operator&lt;&lt;</a>(ostream &amp;os, const Screen &amp;s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a9d1583ec176b804e06d7c6d2a8bf3bcd">operator&lt;&lt;</a>(ostream &amp;os, const Screen *s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#adb701ccee14124fb66506086b5a34199">operator&lt;&lt;</a>(ostream &amp;os, const Screen &amp;s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">outlineCh</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a6f906b745f406576d9f7aeaec330c9d6">outlineOn</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#a11f9842c836301989f7c3d84eb043700">Resize</a>(int h, int w)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a9d1583ec176b804e06d7c6d2a8bf3bcd">operator&lt;&lt;</a>(ostream &amp;os, const Screen *s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classScreen.html#adb701ccee14124fb66506086b5a34199">operator&lt;&lt;</a>(ostream &amp;os, const Screen &amp;s)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">outlineCh</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classScreen.html#a6f906b745f406576d9f7aeaec330c9d6">outlineOn</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a11f9842c836301989f7c3d84eb043700">Resize</a>(int h, int w)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a932b81c3d221d644cc40ffe9003515a5">Screen</a>(int h=33, int w=101, char ch= '-')</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a932b81c3d221d644cc40ffe9003515a5">Screen</a>(int h=33, int w=101, char ch= '-')</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classScreen.html#ab035671163a5cabee7611c7c456b1c56">Set</a>(int y, int x, char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classScreen.html#ab035671163a5cabee7611c7c456b1c56">Set</a>(int y, int x, char ch)</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a49be8f8ccf7ed7a3151a761495c0ce21">width</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#aa91047854045bd18158557ea4b0c596f">Window</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a7349f56b4976f03dc9977dc613a8bbab">Window</a></td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classScreen.html#a4243bc17596af96415b09ac48205676d">~Screen</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classScreen.html#a0bc1a2ceaee4a245e0d31822ea0643bd">~Screen</a>()</td><td class="entry"><a class="el" href="classScreen.html">Screen</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

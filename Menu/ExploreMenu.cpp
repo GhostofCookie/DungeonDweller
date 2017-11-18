@@ -8,7 +8,7 @@ ExploreMenu::~ExploreMenu()
 {
 }
 
-void ExploreMenu::SetOptions(int row, int col)
+void ExploreMenu::SetOptions(int row, int col,int space)
 {
 }
 

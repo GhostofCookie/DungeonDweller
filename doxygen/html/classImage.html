@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classImage.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,22 +105,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classImage-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Image Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Image Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>the <a class="el" href="classImage.html" title="the Image class represents a 2d vector that displays an image on screen ">Image</a> class represents a 2d vector that displays an image on screen  
+<p>The <a class="el" href="classImage.html" title="The Image class represents a 2D vector that displays an image on screen. ">Image</a> class represents a 2D vector that displays an image on screen.  
  <a href="classImage.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Image_8hh_source.html">Image.hh</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Image_8h_source.html">Image.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Image:</div>
 <div class="dyncontent">
@@ -110,101 +134,119 @@ Inheritance diagram for Image:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae2d055b04fd05ec57cf5fb927c33ff47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ae2d055b04fd05ec57cf5fb927c33ff47">Image</a> (int h=3, int w=6)</td></tr>
-<tr class="separator:ae2d055b04fd05ec57cf5fb927c33ff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa44ed77d00d96d2c878b050835f828c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa44ed77d00d96d2c878b050835f828c4">Image</a> (const <a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
-<tr class="separator:aa44ed77d00d96d2c878b050835f828c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13aa6167bbc77b7a311a181d67caa058"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a13aa6167bbc77b7a311a181d67caa058">Image</a> (int h=3, int w=6, char c= '*')</td></tr>
+<tr class="separator:a13aa6167bbc77b7a311a181d67caa058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a2ebd07a4f458ba24d91af0122418e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ad9a2ebd07a4f458ba24d91af0122418e">Image</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
 <tr class="separator:ad9a2ebd07a4f458ba24d91af0122418e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46561cd7dcf7e203e9579737e8ace4eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46561cd7dcf7e203e9579737e8ace4eb"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a46561cd7dcf7e203e9579737e8ace4eb">~Image</a> ()</td></tr>
-<tr class="memdesc:a46561cd7dcf7e203e9579737e8ace4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor. <br/></td></tr>
-<tr class="separator:a46561cd7dcf7e203e9579737e8ace4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa11e7269dc21f4b05f7c4d896b11aaa8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa11e7269dc21f4b05f7c4d896b11aaa8">operator=</a> (const <a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
-<tr class="separator:aa11e7269dc21f4b05f7c4d896b11aaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91b5bb5c3fef2795ec9838763536ed78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91b5bb5c3fef2795ec9838763536ed78"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a91b5bb5c3fef2795ec9838763536ed78">GetRows</a> () const </td></tr>
-<tr class="memdesc:a91b5bb5c3fef2795ec9838763536ed78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the image. <br/></td></tr>
-<tr class="separator:a91b5bb5c3fef2795ec9838763536ed78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5377ce45ff29db084776e675b413f165"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5377ce45ff29db084776e675b413f165"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a5377ce45ff29db084776e675b413f165">GetCols</a> () const </td></tr>
-<tr class="memdesc:a5377ce45ff29db084776e675b413f165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the image. <br/></td></tr>
-<tr class="separator:a5377ce45ff29db084776e675b413f165"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa723637c3d64e1290dbfc67238321413"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa723637c3d64e1290dbfc67238321413">IsEven</a> (const int &amp;num) const </td></tr>
-<tr class="separator:aa723637c3d64e1290dbfc67238321413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71cee63ad701ddbb0268e09a7b64d697"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a71cee63ad701ddbb0268e09a7b64d697">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
-<tr class="separator:a71cee63ad701ddbb0268e09a7b64d697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72d145544910c3a28cbc326c009d67c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a72d145544910c3a28cbc326c009d67c1">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int y, int x)=0</td></tr>
-<tr class="separator:a72d145544910c3a28cbc326c009d67c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac497774e777c10606e8179b1f350ebef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac497774e777c10606e8179b1f350ebef"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ac497774e777c10606e8179b1f350ebef">Create</a> ()</td></tr>
-<tr class="memdesc:ac497774e777c10606e8179b1f350ebef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the image. <br/></td></tr>
-<tr class="separator:ac497774e777c10606e8179b1f350ebef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f8719e59b1180aa7e0e2fdf3e4d421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a16f8719e59b1180aa7e0e2fdf3e4d421">DrawBorder</a> (char ch)</td></tr>
+<tr class="memitem:aa44ed77d00d96d2c878b050835f828c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa44ed77d00d96d2c878b050835f828c4">Image</a> (const <a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:aa44ed77d00d96d2c878b050835f828c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0294f63700543e11c0f0da85601c7ae5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a0294f63700543e11c0f0da85601c7ae5">~Image</a> ()</td></tr>
+<tr class="memdesc:a0294f63700543e11c0f0da85601c7ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a0294f63700543e11c0f0da85601c7ae5">More...</a><br/></td></tr>
+<tr class="separator:a0294f63700543e11c0f0da85601c7ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfcde35c430b0dae18df1c09b62700f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#abfcde35c430b0dae18df1c09b62700f0">operator=</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:abfcde35c430b0dae18df1c09b62700f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da7f72e4063bd0764caa635c0e0aaae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4da7f72e4063bd0764caa635c0e0aaae">operator=</a> (const <a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:a4da7f72e4063bd0764caa635c0e0aaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057cb6b10590608656ff2a7aa159f515"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a057cb6b10590608656ff2a7aa159f515">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
+<tr class="separator:a057cb6b10590608656ff2a7aa159f515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3d4ae638b3fc1fbee81c509c1551f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a1e3d4ae638b3fc1fbee81c509c1551f6">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int y, int x)</td></tr>
+<tr class="separator:a1e3d4ae638b3fc1fbee81c509c1551f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20f87dc888d01cadc829f18d23066dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ad20f87dc888d01cadc829f18d23066dc">Draw</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:ad20f87dc888d01cadc829f18d23066dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e863a5b8287ca3adb08fdaae513f437"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a2e863a5b8287ca3adb08fdaae513f437">Draw</a> (<a class="el" href="classImage.html">Image</a> &amp;img, int y, int x)</td></tr>
+<tr class="separator:a2e863a5b8287ca3adb08fdaae513f437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb7dff9e4c4c31b2d63d7b0a330ef89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a6bb7dff9e4c4c31b2d63d7b0a330ef89">Create</a> ()</td></tr>
+<tr class="memdesc:a6bb7dff9e4c4c31b2d63d7b0a330ef89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the image.  <a href="#a6bb7dff9e4c4c31b2d63d7b0a330ef89">More...</a><br/></td></tr>
+<tr class="separator:a6bb7dff9e4c4c31b2d63d7b0a330ef89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f8719e59b1180aa7e0e2fdf3e4d421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a16f8719e59b1180aa7e0e2fdf3e4d421">DrawBorder</a> (char <a class="el" href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">ch</a>)</td></tr>
 <tr class="separator:a16f8719e59b1180aa7e0e2fdf3e4d421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a118986dafc30b76c4aa5e7453236a8b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a118986dafc30b76c4aa5e7453236a8b2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a118986dafc30b76c4aa5e7453236a8b2">Erase</a> ()</td></tr>
-<tr class="memdesc:a118986dafc30b76c4aa5e7453236a8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to erase the contents of the image and replace with spaces. <br/></td></tr>
+<tr class="memitem:a118986dafc30b76c4aa5e7453236a8b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a118986dafc30b76c4aa5e7453236a8b2">Erase</a> ()</td></tr>
+<tr class="memdesc:a118986dafc30b76c4aa5e7453236a8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to erase the contents of the image and replace with spaces.  <a href="#a118986dafc30b76c4aa5e7453236a8b2">More...</a><br/></td></tr>
 <tr class="separator:a118986dafc30b76c4aa5e7453236a8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39486b75d05a1d3c0206a9ce909f3571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a39486b75d05a1d3c0206a9ce909f3571">Fill</a> (char ch)</td></tr>
+<tr class="memitem:a39486b75d05a1d3c0206a9ce909f3571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a39486b75d05a1d3c0206a9ce909f3571">Fill</a> (char <a class="el" href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">ch</a>)</td></tr>
 <tr class="separator:a39486b75d05a1d3c0206a9ce909f3571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fbbffe74cd76d884f1e2a96d0bb6c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4fbbffe74cd76d884f1e2a96d0bb6c09">Set</a> (int y, int x, char ch)</td></tr>
+<tr class="memitem:a4fbbffe74cd76d884f1e2a96d0bb6c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4fbbffe74cd76d884f1e2a96d0bb6c09">Set</a> (int y, int x, char <a class="el" href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">ch</a>)</td></tr>
+<tr class="memdesc:a4fbbffe74cd76d884f1e2a96d0bb6c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the characters at the given location to the given character.  <a href="#a4fbbffe74cd76d884f1e2a96d0bb6c09">More...</a><br/></td></tr>
 <tr class="separator:a4fbbffe74cd76d884f1e2a96d0bb6c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab68774143becf8906bf8b1931511cb66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ab68774143becf8906bf8b1931511cb66">SetOrigin</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int y, int x)</td></tr>
 <tr class="separator:ab68774143becf8906bf8b1931511cb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3da9cb3d16c05f2037704331dfce2d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a3da9cb3d16c05f2037704331dfce2d5d">FlipHoriz</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
-<tr class="separator:a3da9cb3d16c05f2037704331dfce2d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72a724415fa05ca58956b84c0985807a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a72a724415fa05ca58956b84c0985807a">FlipVert</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
-<tr class="separator:a72a724415fa05ca58956b84c0985807a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe7a1b2cf0bd7893cdd55a646da8d77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#adfe7a1b2cf0bd7893cdd55a646da8d77">SetOrigin</a> (<a class="el" href="classImage.html">Image</a> &amp;img, int y, int x)</td></tr>
+<tr class="separator:adfe7a1b2cf0bd7893cdd55a646da8d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7560c1e8f95eb0a879fb4fac72fa28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a1c7560c1e8f95eb0a879fb4fac72fa28">FlipHoriz</a> ()</td></tr>
+<tr class="memdesc:a1c7560c1e8f95eb0a879fb4fac72fa28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that flips an image horizontally.  <a href="#a1c7560c1e8f95eb0a879fb4fac72fa28">More...</a><br/></td></tr>
+<tr class="separator:a1c7560c1e8f95eb0a879fb4fac72fa28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94fe8fd85b9ef3461c2576d29ebd3a86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a94fe8fd85b9ef3461c2576d29ebd3a86">FlipVert</a> ()</td></tr>
+<tr class="memdesc:a94fe8fd85b9ef3461c2576d29ebd3a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that flips an image vertically.  <a href="#a94fe8fd85b9ef3461c2576d29ebd3a86">More...</a><br/></td></tr>
+<tr class="separator:a94fe8fd85b9ef3461c2576d29ebd3a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a605b3921fed112ffb8a371341c68eb4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a605b3921fed112ffb8a371341c68eb4c">AlignLeft</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
 <tr class="separator:a605b3921fed112ffb8a371341c68eb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb7cdfe276a373ad9b50d5be641eeef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#abbb7cdfe276a373ad9b50d5be641eeef">AlignRight</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
 <tr class="separator:abbb7cdfe276a373ad9b50d5be641eeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a691da8aebb2d92b7471da96a19e0fc22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a691da8aebb2d92b7471da96a19e0fc22">AlignCenter</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr)</td></tr>
 <tr class="separator:a691da8aebb2d92b7471da96a19e0fc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb13957a77e34a87d0991567455a30d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#afb13957a77e34a87d0991567455a30d5">ShiftUp</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int num)</td></tr>
-<tr class="separator:afb13957a77e34a87d0991567455a30d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863eee8dfbe927d73fba705844eb3117"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a863eee8dfbe927d73fba705844eb3117">AlignLeft</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:a863eee8dfbe927d73fba705844eb3117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171b44f5d1ac53bfa9984a87c9786dd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a171b44f5d1ac53bfa9984a87c9786dd1">AlignRight</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:a171b44f5d1ac53bfa9984a87c9786dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7471581b8a028a79fd87d741ae825e23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a7471581b8a028a79fd87d741ae825e23">AlignCenter</a> (<a class="el" href="classImage.html">Image</a> &amp;img)</td></tr>
+<tr class="separator:a7471581b8a028a79fd87d741ae825e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4607fa422c54fb4bf0412edd47214b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4607fa422c54fb4bf0412edd47214b40">AlignCenter</a> (<a class="el" href="classImage.html">Image</a> &amp;img, int x, int y)</td></tr>
+<tr class="separator:a4607fa422c54fb4bf0412edd47214b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed099dcc3c5113b7171daa35460df948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aed099dcc3c5113b7171daa35460df948">ShiftDown</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int num)</td></tr>
 <tr class="separator:aed099dcc3c5113b7171daa35460df948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa7b2fe4eb322156bb14c60d4003ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#abaa7b2fe4eb322156bb14c60d4003ef3">ShiftLeft</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int num)</td></tr>
-<tr class="separator:abaa7b2fe4eb322156bb14c60d4003ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dc60415fb8f71c1c9345382be4ee32f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a1dc60415fb8f71c1c9345382be4ee32f">ShiftRight</a> (<a class="el" href="classScreen.html">Screen</a> &amp;scr, int num)</td></tr>
 <tr class="separator:a1dc60415fb8f71c1c9345382be4ee32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c723d560bde4b6aa45f3eaa36ffb4f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c723d560bde4b6aa45f3eaa36ffb4f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a5c723d560bde4b6aa45f3eaa36ffb4f2">FixSlants</a> ()</td></tr>
-<tr class="memdesc:a5c723d560bde4b6aa45f3eaa36ffb4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to switch the slant characters. <br/></td></tr>
+<tr class="memitem:ad3fec1f163c82a6dc376e1727e42de30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ad3fec1f163c82a6dc376e1727e42de30">ShiftDown</a> (<a class="el" href="classImage.html">Image</a> &amp;img, int num)</td></tr>
+<tr class="separator:ad3fec1f163c82a6dc376e1727e42de30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae905765bb51e09a8252dcb157b2bcf28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ae905765bb51e09a8252dcb157b2bcf28">ShiftRight</a> (<a class="el" href="classImage.html">Image</a> &amp;img, int num)</td></tr>
+<tr class="separator:ae905765bb51e09a8252dcb157b2bcf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b15a9bbf2a56bd2105bbc1114bba173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a8b15a9bbf2a56bd2105bbc1114bba173">ShiftUp</a> (int num)</td></tr>
+<tr class="separator:a8b15a9bbf2a56bd2105bbc1114bba173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc3f79eeff5bfcc430299cb149071f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a1bc3f79eeff5bfcc430299cb149071f5">ShiftLeft</a> (int num)</td></tr>
+<tr class="separator:a1bc3f79eeff5bfcc430299cb149071f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b5bb5c3fef2795ec9838763536ed78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a91b5bb5c3fef2795ec9838763536ed78">GetRows</a> () const </td></tr>
+<tr class="memdesc:a91b5bb5c3fef2795ec9838763536ed78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the image.  <a href="#a91b5bb5c3fef2795ec9838763536ed78">More...</a><br/></td></tr>
+<tr class="separator:a91b5bb5c3fef2795ec9838763536ed78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5377ce45ff29db084776e675b413f165"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a5377ce45ff29db084776e675b413f165">GetCols</a> () const </td></tr>
+<tr class="memdesc:a5377ce45ff29db084776e675b413f165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the image.  <a href="#a5377ce45ff29db084776e675b413f165">More...</a><br/></td></tr>
+<tr class="separator:a5377ce45ff29db084776e675b413f165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c723d560bde4b6aa45f3eaa36ffb4f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a5c723d560bde4b6aa45f3eaa36ffb4f2">FixSlants</a> ()</td></tr>
+<tr class="memdesc:a5c723d560bde4b6aa45f3eaa36ffb4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to switch the slant characters.  <a href="#a5c723d560bde4b6aa45f3eaa36ffb4f2">More...</a><br/></td></tr>
 <tr class="separator:a5c723d560bde4b6aa45f3eaa36ffb4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac3bad7d8544990b7be9e9c5ee0fb26b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3bad7d8544990b7be9e9c5ee0fb26b8"></a>
-vector&lt; vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ac3bad7d8544990b7be9e9c5ee0fb26b8">Img</a></td></tr>
-<tr class="memdesc:ac3bad7d8544990b7be9e9c5ee0fb26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The image - publically availiable to allow access to locations. <br/></td></tr>
+<tr class="memitem:ac3bad7d8544990b7be9e9c5ee0fb26b8"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ac3bad7d8544990b7be9e9c5ee0fb26b8">Img</a></td></tr>
+<tr class="memdesc:ac3bad7d8544990b7be9e9c5ee0fb26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The image - publically availiable to allow access to locations.  <a href="#ac3bad7d8544990b7be9e9c5ee0fb26b8">More...</a><br/></td></tr>
 <tr class="separator:ac3bad7d8544990b7be9e9c5ee0fb26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0488098c125477f82fc6ca8e14cc170f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a0488098c125477f82fc6ca8e14cc170f">screenX</a> = 0</td></tr>
+<tr class="memdesc:a0488098c125477f82fc6ca8e14cc170f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The screen x coordinate to draw on.  <a href="#a0488098c125477f82fc6ca8e14cc170f">More...</a><br/></td></tr>
+<tr class="separator:a0488098c125477f82fc6ca8e14cc170f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b">screenY</a> = 0</td></tr>
+<tr class="memdesc:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The screen y coordinate to draw on.  <a href="#a4c5bb89eba006c3768c2f36ef54d2c5b">More...</a><br/></td></tr>
+<tr class="separator:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa723637c3d64e1290dbfc67238321413"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#aa723637c3d64e1290dbfc67238321413">IsEven</a> (const int &amp;num) const </td></tr>
+<tr class="separator:aa723637c3d64e1290dbfc67238321413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0488098c125477f82fc6ca8e14cc170f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0488098c125477f82fc6ca8e14cc170f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a0488098c125477f82fc6ca8e14cc170f">screenX</a> = 0</td></tr>
-<tr class="memdesc:a0488098c125477f82fc6ca8e14cc170f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The screen x coordinate to draw on, default to 0. <br/></td></tr>
-<tr class="separator:a0488098c125477f82fc6ca8e14cc170f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c5bb89eba006c3768c2f36ef54d2c5b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b">screenY</a> = 0</td></tr>
-<tr class="memdesc:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The screen y coordinate to draw on, default to 0. <br/></td></tr>
-<tr class="separator:a4c5bb89eba006c3768c2f36ef54d2c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51df43db420c9c0b57536cb2dd36de5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51df43db420c9c0b57536cb2dd36de5c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a51df43db420c9c0b57536cb2dd36de5c">height</a></td></tr>
-<tr class="memdesc:a51df43db420c9c0b57536cb2dd36de5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the image. <br/></td></tr>
+<tr class="memitem:a51df43db420c9c0b57536cb2dd36de5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a51df43db420c9c0b57536cb2dd36de5c">height</a></td></tr>
+<tr class="memdesc:a51df43db420c9c0b57536cb2dd36de5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the image.  <a href="#a51df43db420c9c0b57536cb2dd36de5c">More...</a><br/></td></tr>
 <tr class="separator:a51df43db420c9c0b57536cb2dd36de5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d12f635013c04159cd4d3d972bac88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8d12f635013c04159cd4d3d972bac88"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ab8d12f635013c04159cd4d3d972bac88">width</a></td></tr>
-<tr class="memdesc:ab8d12f635013c04159cd4d3d972bac88"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the image. <br/></td></tr>
+<tr class="memitem:ab8d12f635013c04159cd4d3d972bac88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#ab8d12f635013c04159cd4d3d972bac88">width</a></td></tr>
+<tr class="memdesc:ab8d12f635013c04159cd4d3d972bac88"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the image.  <a href="#ab8d12f635013c04159cd4d3d972bac88">More...</a><br/></td></tr>
 <tr class="separator:ab8d12f635013c04159cd4d3d972bac88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2bff881014df332b1086483d0eb0e9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">ch</a></td></tr>
+<tr class="memdesc:a2d2bff881014df332b1086483d0eb0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character used to draw the image.  <a href="#a2d2bff881014df332b1086483d0eb0e9">More...</a><br/></td></tr>
+<tr class="separator:a2d2bff881014df332b1086483d0eb0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>the <a class="el" href="classImage.html" title="the Image class represents a 2d vector that displays an image on screen ">Image</a> class represents a 2d vector that displays an image on screen </p>
+<div class="textblock"><p>The <a class="el" href="classImage.html" title="The Image class represents a 2D vector that displays an image on screen. ">Image</a> class represents a 2D vector that displays an image on screen. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae2d055b04fd05ec57cf5fb927c33ff47"></a>
+<a class="anchor" id="a13aa6167bbc77b7a311a181d67caa058"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -218,7 +260,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>w</em> = <code>6</code>&#160;</td>
+          <td class="paramname"><em>w</em> = <code>6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em> = <code>'*'</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -227,34 +275,20 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs an <a class="el" href="classImage.html" title="the Image class represents a 2d vector that displays an image on screen ">Image</a> object from the given dimensions </p>
+<p>Constructs an <a class="el" href="classImage.html" title="The Image class represents a 2D vector that displays an image on screen. ">Image</a> object from the given dimensions </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the image, default to 3 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the image, default to 6 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the image, default to 6</td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="aa44ed77d00d96d2c878b050835f828c4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Image::Image </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>img</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Copy constructor duplicates a given picture </p>
+<p>Default Constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image to copy from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>the character to be drawn with </td></tr>
   </table>
   </dd>
 </dl>
@@ -269,7 +303,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">Image::Image </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>img</em></td><td>)</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -277,10 +311,73 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Copy constructor duplicates a given picture </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image to copy from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image to copy from</td></tr>
   </table>
   </dd>
 </dl>
+<p>Copy Constructor for the image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>the image to be copied from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa44ed77d00d96d2c878b050835f828c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Image::Image </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy constructor duplicates a given picture </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image to copy from</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Copy Constructor for the image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>the image to be copied from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0294f63700543e11c0f0da85601c7ae5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Image::~Image </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual Destructor. </p>
+<p>Destructor. </p>
 
 </div>
 </div>
@@ -293,7 +390,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::AlignCenter </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -301,7 +398,92 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Helper function to align the image center </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the center of the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>checks to ensure the bounds aren't exceeded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7471581b8a028a79fd87d741ae825e23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::AlignCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to align the image center </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the center of the given image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>checks to ensure the bounds aren't exceeded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4607fa422c54fb4bf0412edd47214b40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::AlignCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to align the image left </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the center of the given image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>checks to ensure the bounds aren't exceeded </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate to center around </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate to center around </td></tr>
   </table>
   </dd>
 </dl>
@@ -316,7 +498,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::AlignLeft </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -324,7 +506,44 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Helper function to align the image left </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the left of the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>used to align with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a863eee8dfbe927d73fba705844eb3117"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::AlignLeft </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to align the image left </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the left of the given image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>checks to ensure the bounds aren't exceeded </td></tr>
   </table>
   </dd>
 </dl>
@@ -339,7 +558,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::AlignRight </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -347,14 +566,51 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Helper function to align the image right </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the right of the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>used to align with </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a71cee63ad701ddbb0268e09a7b64d697"></a>
+<a class="anchor" id="a171b44f5d1ac53bfa9984a87c9786dd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::AlignRight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to align the image right </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to align to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Align the image to the right of the given image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>checks to ensure the bounds aren't exceeded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6bb7dff9e4c4c31b2d63d7b0a330ef89"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -362,10 +618,38 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Image::Draw </td>
+          <td class="memname">void Image::Create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to create the image. </p>
+<p>Function that fills in the vector that makes up the image. </p>
+
+<p>Reimplemented in <a class="el" href="classDefaultImg.html#a9ab21b397e0d23831b2944b651058b89">DefaultImg</a>, and <a class="el" href="classImportImg.html#a7e1cc1bf176cedb14938519950719fa2">ImportImg</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a057cb6b10590608656ff2a7aa159f515"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::Draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -378,14 +662,21 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Helper function to draw onto the <a class="el" href="classScreen.html">Screen</a> object </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to draw on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to draw on</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to draw the image to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>the screen drawn on </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a72d145544910c3a28cbc326c009d67c1"></a>
+<a class="anchor" id="a1e3d4ae638b3fc1fbee81c509c1551f6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -393,10 +684,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Image::Draw </td>
+          <td class="memname">void Image::Draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramname"><em>screen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -418,7 +709,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -427,12 +718,115 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to draw on </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to draw the image to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>the screen drawn on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate to begin drawing from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate to begin drawing from </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classDefaultImg.html#a3a356e422b5575bc9b500d0783fb070c">DefaultImg</a>, and <a class="el" href="classImportImg.html#a6a9c209e731c443ba060aa7d809a15e7">ImportImg</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ad20f87dc888d01cadc829f18d23066dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Helper function to draw onto the <a class="el" href="classScreen.html">Screen</a> object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to draw on</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to draw the image to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>the image drawn on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2e863a5b8287ca3adb08fdaae513f437"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Helper function to draw onto the <a class="el" href="classScreen.html">Screen</a> object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to draw on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to draw the image to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image drawn on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate to begin drawing from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate to begin drawing from </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -452,10 +846,35 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Function to draw a border around the image </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character to draw the border with </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character to draw the border with</td></tr>
   </table>
   </dd>
 </dl>
+<p>Function that draws and border around the image </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to draw the border </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a118986dafc30b76c4aa5e7453236a8b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::Erase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to erase the contents of the image and replace with spaces. </p>
+<p>Erase the image contents be replacing with spaces. </p>
 
 </div>
 </div>
@@ -482,55 +901,102 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="a3da9cb3d16c05f2037704331dfce2d5d"></a>
+<a class="anchor" id="a5c723d560bde4b6aa45f3eaa36ffb4f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::FixSlants </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Helper function to switch the slant characters. </p>
+<p>Function that switches the slant characters Used for images that looks wierd after being flipped </p>
+
+</div>
+</div>
+<a class="anchor" id="a1c7560c1e8f95eb0a879fb4fac72fa28"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Image::FlipHoriz </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function that flips an image horizontally </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will flip on </td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>Function that flips an image horizontally. </p>
+<p>Function to flip the image horizontally. </p>
 
 </div>
 </div>
-<a class="anchor" id="a72a724415fa05ca58956b84c0985807a"></a>
+<a class="anchor" id="a94fe8fd85b9ef3461c2576d29ebd3a86"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Image::FlipVert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function that flips an image vertically </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will flip on </td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>Function that flips an image vertically. </p>
+<p>Function to flip the image vertically. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5377ce45ff29db084776e675b413f165"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::GetCols </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the width of the image. </p>
+<p>Function that returns the height of the image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91b5bb5c3fef2795ec9838763536ed78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::GetRows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the height of the image. </p>
+<p>Function that returns the width of the image. </p>
 
 </div>
 </div>
 <a class="anchor" id="aa723637c3d64e1290dbfc67238321413"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Image::IsEven </td>
@@ -540,18 +1006,30 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Returns true if the number is even </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function returns true if a number is even </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to be checked </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa11e7269dc21f4b05f7c4d896b11aaa8"></a>
+<a class="anchor" id="abfcde35c430b0dae18df1c09b62700f0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -559,10 +1037,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Image::operator= </td>
+          <td class="memname">void Image::operator= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
-          <td class="paramname"><em>img</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -575,7 +1053,52 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Overloaded '=' operator </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image being copied </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image being copied</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Overloaded assignemnt operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>the image to be compied from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4da7f72e4063bd0764caa635c0e0aaae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overloaded '=' operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the image being copied</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Overloaded assignemnt operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>the image to be compied from </td></tr>
   </table>
   </dd>
 </dl>
@@ -611,6 +1134,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the characters at the given location to the given character. </p>
 <p>Function to set the coordinate of the image with a character </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -631,7 +1156,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::SetOrigin </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramname"><em>screen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -657,7 +1182,64 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen to access </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sets the print origin of the image relative to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate to begin from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">the</td><td>x coordinate to begin from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adfe7a1b2cf0bd7893cdd55a646da8d77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::SetOrigin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function that sets a permanent location to draw from </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen to access </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the x coordinate</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sets the print origin of the image relative to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate to begin from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">the</td><td>x coordinate to begin from </td></tr>
   </table>
   </dd>
 </dl>
@@ -672,7 +1254,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::ShiftDown </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramname"><em>screen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -691,22 +1273,30 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will shift on </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image down </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>checks the bounds of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="abaa7b2fe4eb322156bb14c60d4003ef3"></a>
+<a class="anchor" id="ad3fec1f163c82a6dc376e1727e42de30"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Image::ShiftLeft </td>
+          <td class="memname">void Image::ShiftDown </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -721,11 +1311,50 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Helper function to shift the image left </p>
+<p>Helper function to shift the image down </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will shift on </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image down </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>checks the bounds of the image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bc3f79eeff5bfcc430299cb149071f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::ShiftLeft </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to shift the image left </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen the image will shift on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image left </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
   </table>
   </dd>
 </dl>
@@ -740,7 +1369,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="memname">void Image::ShiftRight </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramname"><em>screen</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -759,22 +1388,30 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will shift on </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image right </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screne</td><td>checks the bounds of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="afb13957a77e34a87d0991567455a30d5"></a>
+<a class="anchor" id="ae905765bb51e09a8252dcb157b2bcf28"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Image::ShiftUp </td>
+          <td class="memname">void Image::ShiftRight </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
-          <td class="paramname"><em>scr</em>, </td>
+          <td class="paramtype"><a class="el" href="classImage.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -789,26 +1426,179 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Helper function to shift the image up </p>
+<p>Helper function to shift the image right </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will shift on </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the screen the image will shift on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image right </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>checks the bounds of the image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>Image/<a class="el" href="Image_8hh_source.html">Image.hh</a></li>
+<a class="anchor" id="a8b15a9bbf2a56bd2105bbc1114bba173"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Image::ShiftUp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function to shift the image up </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">scr</td><td>the screen the image will shift on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount of shifting</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to shift the image up </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the amount to shift by </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a2d2bff881014df332b1086483d0eb0e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Image::ch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The character used to draw the image. </p>
+
+</div>
+</div>
+<a class="anchor" id="a51df43db420c9c0b57536cb2dd36de5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The height of the image. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3bad7d8544990b7be9e9c5ee0fb26b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;char&gt; &gt; Image::Img</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The image - publically availiable to allow access to locations. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0488098c125477f82fc6ca8e14cc170f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::screenX = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The screen x coordinate to draw on. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4c5bb89eba006c3768c2f36ef54d2c5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::screenY = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The screen y coordinate to draw on. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab8d12f635013c04159cd4d3d972bac88"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Image::width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The width of the image. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/rigt2720/Kodika/Image/<a class="el" href="Image_8h_source.html">Image.h</a></li>
+<li>/home/rigt2720/Kodika/Image/<a class="el" href="Image_8cpp.html">Image.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classImage.html">Image</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

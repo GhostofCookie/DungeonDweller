@@ -8,9 +8,9 @@ DialogueMenu::~DialogueMenu()
 {
 }
 
-void DialogueMenu::SetOptions(int row, int col)
+void DialogueMenu::SetOptions(int row, int col, int space)
 {
-   map<int,string> optionsList;
+   map<int,string> optionsList = indexMap;
    Menu::SetOptions();
 }
 

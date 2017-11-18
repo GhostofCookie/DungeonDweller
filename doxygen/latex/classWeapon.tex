@@ -19,35 +19,110 @@ Inheritance diagram for Weapon\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classWeapon_ab66a42df24e121bf9499f473a42ca325}{durability} ()
-\end{DoxyCompactItemize}
+int \hyperlink{classWeapon_a1a74dac4314abc954c2f60d9ac204ae2}{base\-Damage} () const 
+\begin{DoxyCompactList}\small\item\em read base damage \end{DoxyCompactList}\item 
+int \& \hyperlink{classWeapon_afbc352ff3215793c073501859aa9c10d}{base\-Damage} ()
+\begin{DoxyCompactList}\small\item\em write base damage \end{DoxyCompactList}\item 
+int \hyperlink{classWeapon_a8f016a5f36802b05e92969f4a0d87649}{durability} () const 
+\begin{DoxyCompactList}\small\item\em read durability \end{DoxyCompactList}\item 
+int \& \hyperlink{classWeapon_a3557c5fa326d73478b97787ceaef532b}{durability} ()
+\begin{DoxyCompactList}\small\item\em write durability \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classWeapon_a507937307f9f92fc29b4b6827d85585a}{int \hyperlink{classWeapon_a507937307f9f92fc29b4b6827d85585a}{base\-Damage}}\label{classWeapon_a507937307f9f92fc29b4b6827d85585a}
-
+int \hyperlink{classWeapon_a81c4f950298060a4b91c4170fc128631}{base\-Dmg}
 \begin{DoxyCompactList}\small\item\em The Base damage of the weapon. \end{DoxyCompactList}\item 
-\hypertarget{classWeapon_abbc826be5477aa791910f871d76a1da2}{int \hyperlink{classWeapon_abbc826be5477aa791910f871d76a1da2}{remaining\-Uses}}\label{classWeapon_abbc826be5477aa791910f871d76a1da2}
-
-\begin{DoxyCompactList}\small\item\em How many more times the wepon can be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{classWeapon_abbc826be5477aa791910f871d76a1da2}{remaining\-Uses}
+\begin{DoxyCompactList}\small\item\em How many more times the wepon can be used. \end{DoxyCompactList}\item 
+bool \hyperlink{classWeapon_a5191f40be1f7cf9163e042d07f8fcd53}{broken} = false
+\begin{DoxyCompactList}\small\item\em Tells if the weapon is broken. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 This class is a abstract base class derived from \hyperlink{classItem}{Item} to represent weapons in game. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classWeapon_ab66a42df24e121bf9499f473a42ca325}{\index{Weapon@{Weapon}!durability@{durability}}
+\hypertarget{classWeapon_a1a74dac4314abc954c2f60d9ac204ae2}{\index{Weapon@{Weapon}!base\-Damage@{base\-Damage}}
+\index{base\-Damage@{base\-Damage}!Weapon@{Weapon}}
+\subsubsection[{base\-Damage}]{\setlength{\rightskip}{0pt plus 5cm}int Weapon\-::base\-Damage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classWeapon_a1a74dac4314abc954c2f60d9ac204ae2}
+
+
+read base damage 
+
+Returns the base damage of the weapon (for reading only) \begin{DoxyReturn}{Returns}
+base damage of the weapon 
+\end{DoxyReturn}
+\hypertarget{classWeapon_afbc352ff3215793c073501859aa9c10d}{\index{Weapon@{Weapon}!base\-Damage@{base\-Damage}}
+\index{base\-Damage@{base\-Damage}!Weapon@{Weapon}}
+\subsubsection[{base\-Damage}]{\setlength{\rightskip}{0pt plus 5cm}int \& Weapon\-::base\-Damage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWeapon_afbc352ff3215793c073501859aa9c10d}
+
+
+write base damage 
+
+Returns the base damage of the weapon (for writing)  Reference to base\-Dmg \hypertarget{classWeapon_a8f016a5f36802b05e92969f4a0d87649}{\index{Weapon@{Weapon}!durability@{durability}}
 \index{durability@{durability}!Weapon@{Weapon}}
 \subsubsection[{durability}]{\setlength{\rightskip}{0pt plus 5cm}int Weapon\-::durability (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classWeapon_ab66a42df24e121bf9499f473a42ca325}
-The number of time the weapon can be used \begin{DoxyReturn}{Returns}
+) const}}\label{classWeapon_a8f016a5f36802b05e92969f4a0d87649}
+
+
+read durability 
+
+Returns the number of times the weapon can be used (for reading only) \begin{DoxyReturn}{Returns}
 number of remaining\-Uses 
+\end{DoxyReturn}
+\hypertarget{classWeapon_a3557c5fa326d73478b97787ceaef532b}{\index{Weapon@{Weapon}!durability@{durability}}
+\index{durability@{durability}!Weapon@{Weapon}}
+\subsubsection[{durability}]{\setlength{\rightskip}{0pt plus 5cm}int \& Weapon\-::durability (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classWeapon_a3557c5fa326d73478b97787ceaef532b}
+
+
+write durability 
+
+Returns the number of times the weapon can be used (for writing) \begin{DoxyReturn}{Returns}
+a reference to remaining\-Uses 
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classWeapon_a81c4f950298060a4b91c4170fc128631}{\index{Weapon@{Weapon}!base\-Dmg@{base\-Dmg}}
+\index{base\-Dmg@{base\-Dmg}!Weapon@{Weapon}}
+\subsubsection[{base\-Dmg}]{\setlength{\rightskip}{0pt plus 5cm}int Weapon\-::base\-Dmg\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWeapon_a81c4f950298060a4b91c4170fc128631}
+
+
+The Base damage of the weapon. 
+
+\hypertarget{classWeapon_a5191f40be1f7cf9163e042d07f8fcd53}{\index{Weapon@{Weapon}!broken@{broken}}
+\index{broken@{broken}!Weapon@{Weapon}}
+\subsubsection[{broken}]{\setlength{\rightskip}{0pt plus 5cm}bool Weapon\-::broken = false\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWeapon_a5191f40be1f7cf9163e042d07f8fcd53}
+
+
+Tells if the weapon is broken. 
+
+\hypertarget{classWeapon_abbc826be5477aa791910f871d76a1da2}{\index{Weapon@{Weapon}!remaining\-Uses@{remaining\-Uses}}
+\index{remaining\-Uses@{remaining\-Uses}!Weapon@{Weapon}}
+\subsubsection[{remaining\-Uses}]{\setlength{\rightskip}{0pt plus 5cm}int Weapon\-::remaining\-Uses\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWeapon_abbc826be5477aa791910f871d76a1da2}
+
+
+How many more times the wepon can be used. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Item/Weapon.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{Weapon_8h}{Weapon.\-h}\item 
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{Weapon_8cpp}{Weapon.\-cpp}\end{DoxyCompactItemize}

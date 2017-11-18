@@ -8,7 +8,7 @@ ConnectFourMenu::~ConnectFourMenu()
 {
 }
 
-void ConnectFourMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void ConnectFourMenu::SetOptions(int row, int col, int space)
 {
 }
 

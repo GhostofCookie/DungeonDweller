@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classHanoi.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,10 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classHanoi-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Hanoi Class Reference</div>  </div>
@@ -110,24 +135,70 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2af453ec21277f20edc002be08f22346"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a2af453ec21277f20edc002be08f22346">Hanoi</a> ()</td></tr>
 <tr class="memdesc:a2af453ec21277f20edc002be08f22346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for hanoi, sets height to: and width to:  <a href="#a2af453ec21277f20edc002be08f22346">More...</a><br/></td></tr>
 <tr class="separator:a2af453ec21277f20edc002be08f22346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59760291bfeda65330ff53c429a4e55b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59760291bfeda65330ff53c429a4e55b"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a59760291bfeda65330ff53c429a4e55b">~Hanoi</a> ()</td></tr>
-<tr class="memdesc:a59760291bfeda65330ff53c429a4e55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor. <br/></td></tr>
+<tr class="memitem:a59760291bfeda65330ff53c429a4e55b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a59760291bfeda65330ff53c429a4e55b">~Hanoi</a> ()</td></tr>
+<tr class="memdesc:a59760291bfeda65330ff53c429a4e55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor.  <a href="#a59760291bfeda65330ff53c429a4e55b">More...</a><br/></td></tr>
 <tr class="separator:a59760291bfeda65330ff53c429a4e55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2032169272e11d26ce253e2b264b9f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">RunGame</a> ()</td></tr>
 <tr class="separator:a2032169272e11d26ce253e2b264b9f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
-<tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4319df1536a07cd1aaf23b27aeb53579"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
-<tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor. <br/></td></tr>
+<tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
+<tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4319df1536a07cd1aaf23b27aeb53579">More...</a><br/></td></tr>
 <tr class="separator:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a30dc9940db3589121396850f52ea7730"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a30dc9940db3589121396850f52ea7730">ValidMove</a> (const int currentStack, const int newStack) const </td></tr>
+<tr class="separator:a30dc9940db3589121396850f52ea7730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd4c6028ade2b265ce98e48c3f2fb2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a">SetOptionsInMenu</a> ()</td></tr>
+<tr class="memdesc:a4dd4c6028ade2b265ce98e48c3f2fb2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the menu class the options for the player to select.  <a href="#a4dd4c6028ade2b265ce98e48c3f2fb2a">More...</a><br/></td></tr>
+<tr class="separator:a4dd4c6028ade2b265ce98e48c3f2fb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefbb40fc625506daa131076206e85b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#aefbb40fc625506daa131076206e85b69">WinCheck</a> ()</td></tr>
+<tr class="separator:aefbb40fc625506daa131076206e85b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b377a6ff0a2fc7d94d4fef0701345f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a99b377a6ff0a2fc7d94d4fef0701345f">MovePiece</a> (int userSelection)</td></tr>
+<tr class="separator:a99b377a6ff0a2fc7d94d4fef0701345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec34fb3a3682f6a8dcc1007e013ded0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a8ec34fb3a3682f6a8dcc1007e013ded0">WhichDiscFromSize</a> (int size)</td></tr>
+<tr class="separator:a8ec34fb3a3682f6a8dcc1007e013ded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37d25d89cfdb3504d8f0702d0fff930"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#ad37d25d89cfdb3504d8f0702d0fff930">ClearScreenOfOldDisc</a> (int sizeOfDisc, int targetTower, int yCoordinate)</td></tr>
+<tr class="separator:ad37d25d89cfdb3504d8f0702d0fff930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc7aab5bfe9d0b9d83ba75be22412e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a5dc7aab5bfe9d0b9d83ba75be22412e2">BoardSetup</a> ()</td></tr>
+<tr class="memdesc:a5dc7aab5bfe9d0b9d83ba75be22412e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the board up for the beginning of the game.  <a href="#a5dc7aab5bfe9d0b9d83ba75be22412e2">More...</a><br/></td></tr>
+<tr class="separator:a5dc7aab5bfe9d0b9d83ba75be22412e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afe67c656c8ce8c7006e8b7f23fbe9ae9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; stack&lt; <a class="el" href="classDefaultImg.html">DefaultImg</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">tower</a></td></tr>
+<tr class="separator:afe67c656c8ce8c7006e8b7f23fbe9ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcdaa5a4b56f9c3916bf49e054e1cf8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">numberOfStacks</a></td></tr>
+<tr class="separator:abcdaa5a4b56f9c3916bf49e054e1cf8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826f3bc786cb5c7b6499508d0b8bc9b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">maxStackHeight</a></td></tr>
+<tr class="memdesc:a826f3bc786cb5c7b6499508d0b8bc9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maintains the height of the stacks in the game.  <a href="#a826f3bc786cb5c7b6499508d0b8bc9b4">More...</a><br/></td></tr>
+<tr class="separator:a826f3bc786cb5c7b6499508d0b8bc9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7a10d6c208cb15d315436b91017bed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#aff7a10d6c208cb15d315436b91017bed">GameEnd</a></td></tr>
+<tr class="memdesc:aff7a10d6c208cb15d315436b91017bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for the loop to see if the game has ended yet.  <a href="#aff7a10d6c208cb15d315436b91017bed">More...</a><br/></td></tr>
+<tr class="separator:aff7a10d6c208cb15d315436b91017bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9bfd6a0428f772d78b66a5a3268c4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreen.html">Screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">HanoiScreen</a></td></tr>
+<tr class="memdesc:a1b9bfd6a0428f772d78b66a5a3268c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">HanoiScreen stores and outputs the contents of the game to the terminal.  <a href="#a1b9bfd6a0428f772d78b66a5a3268c4c">More...</a><br/></td></tr>
+<tr class="separator:a1b9bfd6a0428f772d78b66a5a3268c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d73005d59c4f2134ffd564964ab3f49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHanoiMenu.html">HanoiMenu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">HanoiGameMenu</a></td></tr>
+<tr class="memdesc:a7d73005d59c4f2134ffd564964ab3f49"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classGameMenu.html" title="An abstract class, this is the base class for the all the in-game menu classes. It requires less memb...">GameMenu</a> is used for handling input.  <a href="#a7d73005d59c4f2134ffd564964ab3f49">More...</a><br/></td></tr>
+<tr class="separator:a7d73005d59c4f2134ffd564964ab3f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a8288cd0c9a1acc3e5201621505afa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classDefaultImg.html">DefaultImg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a67a8288cd0c9a1acc3e5201621505afa">discsVector</a></td></tr>
+<tr class="separator:a67a8288cd0c9a1acc3e5201621505afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f971c51b287b61d8a919c26780e3f66"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a9f971c51b287b61d8a919c26780e3f66">menuOption1</a></td></tr>
+<tr class="memdesc:a9f971c51b287b61d8a919c26780e3f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">MenuOption strings are used for outputting options to the user.  <a href="#a9f971c51b287b61d8a919c26780e3f66">More...</a><br/></td></tr>
+<tr class="separator:a9f971c51b287b61d8a919c26780e3f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9345e1760d1367ee05ecdf2e15d3d69"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#ac9345e1760d1367ee05ecdf2e15d3d69">menuOption2</a></td></tr>
+<tr class="separator:ac9345e1760d1367ee05ecdf2e15d3d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c22f2842c5473df08839fc9d4e860f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a94c22f2842c5473df08839fc9d4e860f">menuOption3</a></td></tr>
+<tr class="separator:a94c22f2842c5473df08839fc9d4e860f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6ac9ab6b2941ab955a2bc2c58cf93a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHanoi.html#a3c6ac9ab6b2941ab955a2bc2c58cf93a">menuOption4</a></td></tr>
+<tr class="separator:a3c6ac9ab6b2941ab955a2bc2c58cf93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
-<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a965ad54e9f7340c3cad944fc82c61a2b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
-<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated. <br/></td></tr>
+<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
+<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated.  <a href="#a965ad54e9f7340c3cad944fc82c61a2b">More...</a><br/></td></tr>
 <tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -149,10 +220,143 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Default constructor for hanoi, sets height to: and width to: </p>
 <dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Oct 20, 2017 </dd></dl>
+<p>Create default images for each of the disc to be drawn on the screen.</p>
+<p>Put the discs into the first stack to start the game</p>
+<p>Push the discs on in descending order since it's a stack.</p>
+<p>Down one line for the next disc</p>
+<p>Move two to left since the next disc is 4 chars larger. </p>
+
+</div>
+</div>
+<a class="anchor" id="a59760291bfeda65330ff53c429a4e55b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Hanoi::~Hanoi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deconstructor. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5dc7aab5bfe9d0b9d83ba75be22412e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hanoi::BoardSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the board up for the beginning of the game. </p>
+
+<p>Implements <a class="el" href="classPuzzle.html#aefdb2ccc770062952c0d96d9dae27e7a">Puzzle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad37d25d89cfdb3504d8f0702d0fff930"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hanoi::ClearScreenOfOldDisc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sizeOfDisc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>targetTower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yCoordinate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Function which clears the discs previous location from the screen object You cannot use the erase function in the screen class because you would have to re-draw everything afterwards and the nature of a stack does not give you access to elements not on top. </p>
+<p>18 is the center of the first tower, take away half the disc size to start in the right spot, add the interator as we move through the line.</p>
+<p>18 is the center of the second tower, take away half the disc size to start in the right spot, add the interator as we move through the line.</p>
+<p>84 is the center of the third tower, take away half the disc size to start in the right spot, add the interator as we move through the line. </p>
+
+</div>
+</div>
+<a class="anchor" id="a99b377a6ff0a2fc7d94d4fef0701345f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hanoi::MovePiece </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userSelection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Moves the piece the depending on which option the player selects </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">userSelection,the</td><td>option of moves the player chose </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.</p>
+<p>Check if the move is a valid, if yes, move it over and pop it from its old location.</p>
+<p>Push the right size disc from the vector of discs based on the size passed into WhichDiscFromSize, size is topOfStack</p>
+<p>If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.</p>
+<p>Check if the move is a valid, if yes, move it over and pop it from its old location.</p>
+<p>If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.</p>
+<p>Check if the move is a valid, if yes, move it over and pop it from its old location.</p>
+<p>If the tower is empty, the disc should go in spot 0, otherwise place it at the top.</p>
+<p>Check if the move is a valid, if yes, move it over and pop it from its old location. </p>
+
+</div>
+</div>
 <a class="anchor" id="a2032169272e11d26ce253e2b264b9f31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -175,20 +379,384 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
 
-<p>Reimplemented from <a class="el" href="classPuzzle.html#a0962210916279dc1368b695b399c8ea6">Puzzle</a>.</p>
+<p>Implements <a class="el" href="classPuzzle.html#ac92d0a3389cc806c0334aa224b72fa78">Puzzle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4dd4c6028ade2b265ce98e48c3f2fb2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hanoi::SetOptionsInMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends the menu class the options for the player to select. </p>
+<p>Setup the options in the <a class="el" href="classHanoiMenu.html" title="This is the menu class for the Hanoi minigame. ">HanoiMenu</a> object. </p>
+
+<p>Implements <a class="el" href="classPuzzle.html#adc90364342151caf536c4a34f2ca71d3">Puzzle</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a30dc9940db3589121396850f52ea7730"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Hanoi::ValidMove </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>currentStack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>newStack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks the semantics of the user choice to make sure they aren't doing something that would break the game with their input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">has</td><td>been checked for syntax by input method </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the disc on the current stack is smaller than the disc on the new stack it is considered a valid move, so return true, otherwise return false. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8ec34fb3a3682f6a8dcc1007e013ded0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Hanoi::WhichDiscFromSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>WhichDiscFromSize returns an index to wich disc in discsVector the size is referenced with </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">the</td><td>size of disc we wouild like to know the location of </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aefbb40fc625506daa131076206e85b69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hanoi::WinCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks the state of Tower to see if the player has won the game, sets GameEnd to true when they have completed the puzzle. </p>
+<p>If the user has managed to successfully move all discs to the last peg then its size should be 4. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a67a8288cd0c9a1acc3e5201621505afa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classDefaultImg.html">DefaultImg</a>&gt; Hanoi::discsVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A vector to store the size of all the discs in the game, stored in ascending order of size of discs. 0=3,1=7,2=11,3=15 </p>
+
+</div>
+</div>
+<a class="anchor" id="aff7a10d6c208cb15d315436b91017bed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Hanoi::GameEnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used for the loop to see if the game has ended yet. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7d73005d59c4f2134ffd564964ab3f49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHanoiMenu.html">HanoiMenu</a> Hanoi::HanoiGameMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classGameMenu.html" title="An abstract class, this is the base class for the all the in-game menu classes. It requires less memb...">GameMenu</a> is used for handling input. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1b9bfd6a0428f772d78b66a5a3268c4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScreen.html">Screen</a> Hanoi::HanoiScreen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>HanoiScreen stores and outputs the contents of the game to the terminal. </p>
+
+</div>
+</div>
+<a class="anchor" id="a826f3bc786cb5c7b6499508d0b8bc9b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Hanoi::maxStackHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maintains the height of the stacks in the game. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9f971c51b287b61d8a919c26780e3f66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Hanoi::menuOption1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MenuOption strings are used for outputting options to the user. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9345e1760d1367ee05ecdf2e15d3d69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Hanoi::menuOption2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a94c22f2842c5473df08839fc9d4e860f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Hanoi::menuOption3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c6ac9ab6b2941ab955a2bc2c58cf93a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Hanoi::menuOption4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcdaa5a4b56f9c3916bf49e054e1cf8c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Hanoi::numberOfStacks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Number of stacks in the game X-coordinate size in the tower vector </p>
+
+</div>
+</div>
+<a class="anchor" id="afe67c656c8ce8c7006e8b7f23fbe9ae9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;stack&lt;<a class="el" href="classDefaultImg.html">DefaultImg</a>&gt; &gt; Hanoi::tower</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The vector which holds each towers' contents. Contents are stored as integers. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Puzzles/<a class="el" href="Hanoi_8h_source.html">Hanoi.h</a></li>
-<li>Puzzles/Hanoi.cpp</li>
+<li>/home/rigt2720/Kodika/Puzzles/<a class="el" href="Hanoi_8h_source.html">Hanoi.h</a></li>
+<li>/home/rigt2720/Kodika/Puzzles/<a class="el" href="Hanoi_8cpp.html">Hanoi.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classHanoi.html">Hanoi</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

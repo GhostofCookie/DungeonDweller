@@ -21,14 +21,19 @@ Inheritance diagram for Slot\-Screen\-:\begin{figure}[H]
 \item 
 \hyperlink{classSlotScreen_a55b2a1537eb5cf4735f624e50946bc5a}{Slot\-Screen} (int h=13, int w=101, int slots=1)
 \item 
-\hypertarget{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{\hyperlink{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{$\sim$\-Slot\-Screen} ()}\label{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}
-
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-\hyperlink{classSlotScreen_a55b2a1537eb5cf4735f624e50946bc5a}{Slot\-Screen} (int h=13, int w=101, int slots=1)
-\item 
-\hypertarget{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{\hyperlink{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{$\sim$\-Slot\-Screen} ()}\label{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}
-
+\hyperlink{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{$\sim$\-Slot\-Screen} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSlotScreen_a332d1b2fc1c48b2c455cc276bf638891}{height}
+\begin{DoxyCompactList}\small\item\em The height of the image. \end{DoxyCompactList}\item 
+int \hyperlink{classSlotScreen_a04705a45598ba5e7db362913bedc12b9}{width}
+\begin{DoxyCompactList}\small\item\em The width of the image. \end{DoxyCompactList}\item 
+int \hyperlink{classSlotScreen_adc177088622711869c8ddec331058a78}{slot\-Count}
+\begin{DoxyCompactList}\small\item\em The number of images to be ordered. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classSlotScreen_adff0222578ff70c1362880d2a8bede80}{pictures}
+\begin{DoxyCompactList}\small\item\em All images to be evenly printed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -54,28 +59,51 @@ Constructs an \hyperlink{classImage}{Image} object from the given dimensions
 \mbox{\tt in}  & {\em slots} & the amount of images to be evenly spaced, default to 1 \\
 \hline
 \end{DoxyParams}
-\hypertarget{classSlotScreen_a55b2a1537eb5cf4735f624e50946bc5a}{\index{Slot\-Screen@{Slot\-Screen}!Slot\-Screen@{Slot\-Screen}}
-\index{Slot\-Screen@{Slot\-Screen}!SlotScreen@{Slot\-Screen}}
-\subsubsection[{Slot\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}Slot\-Screen\-::\-Slot\-Screen (
+\hypertarget{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}{\index{Slot\-Screen@{Slot\-Screen}!$\sim$\-Slot\-Screen@{$\sim$\-Slot\-Screen}}
+\index{$\sim$\-Slot\-Screen@{$\sim$\-Slot\-Screen}!SlotScreen@{Slot\-Screen}}
+\subsubsection[{$\sim$\-Slot\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}Slot\-Screen\-::$\sim$\-Slot\-Screen (
 \begin{DoxyParamCaption}
-\item[{int}]{h = {\ttfamily 13}, }
-\item[{int}]{w = {\ttfamily 101}, }
-\item[{int}]{slots = {\ttfamily 1}}
+{}
 \end{DoxyParamCaption}
-)}}\label{classSlotScreen_a55b2a1537eb5cf4735f624e50946bc5a}
-Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em h} & the height of the image, default to 13 \\
-\hline
-\mbox{\tt in}  & {\em w} & the width of the image, default to 101 \\
-\hline
-\mbox{\tt in}  & {\em slots} & the amount of images to be evenly spaced, default to 1 \\
-\hline
-\end{DoxyParams}
+)}}\label{classSlotScreen_a1978a574c2835aeafd746ff3813c7253}
+
+
+Destructor. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSlotScreen_a332d1b2fc1c48b2c455cc276bf638891}{\index{Slot\-Screen@{Slot\-Screen}!height@{height}}
+\index{height@{height}!SlotScreen@{Slot\-Screen}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Slot\-Screen\-::height\hspace{0.3cm}{\ttfamily [private]}}}\label{classSlotScreen_a332d1b2fc1c48b2c455cc276bf638891}
+
+
+The height of the image. 
+
+\hypertarget{classSlotScreen_adff0222578ff70c1362880d2a8bede80}{\index{Slot\-Screen@{Slot\-Screen}!pictures@{pictures}}
+\index{pictures@{pictures}!SlotScreen@{Slot\-Screen}}
+\subsubsection[{pictures}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Slot\-Screen\-::pictures\hspace{0.3cm}{\ttfamily [private]}}}\label{classSlotScreen_adff0222578ff70c1362880d2a8bede80}
+
+
+All images to be evenly printed. 
+
+\hypertarget{classSlotScreen_adc177088622711869c8ddec331058a78}{\index{Slot\-Screen@{Slot\-Screen}!slot\-Count@{slot\-Count}}
+\index{slot\-Count@{slot\-Count}!SlotScreen@{Slot\-Screen}}
+\subsubsection[{slot\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Slot\-Screen\-::slot\-Count\hspace{0.3cm}{\ttfamily [private]}}}\label{classSlotScreen_adc177088622711869c8ddec331058a78}
+
+
+The number of images to be ordered. 
+
+\hypertarget{classSlotScreen_a04705a45598ba5e7db362913bedc12b9}{\index{Slot\-Screen@{Slot\-Screen}!width@{width}}
+\index{width@{width}!SlotScreen@{Slot\-Screen}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Slot\-Screen\-::width\hspace{0.3cm}{\ttfamily [private]}}}\label{classSlotScreen_a04705a45598ba5e7db362913bedc12b9}
+
+
+The width of the image. 
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Screen/Slot\-Screen.\-h\item 
-Screen/Slot\-Screen.\-hh\item 
-Screen/Slot\-Screen.\-cpp\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Screen/\hyperlink{SlotScreen_8h}{Slot\-Screen.\-h}\item 
+/home/rigt2720/\-Kodika/\-Screen/\hyperlink{SlotScreen_8cpp}{Slot\-Screen.\-cpp}\end{DoxyCompactItemize}

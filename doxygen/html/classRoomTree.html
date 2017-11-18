@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classRoomTree.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,11 +105,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classRoomTree-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RoomTree Class Reference</div>  </div>
@@ -97,14 +122,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="RoomTree_8h_source.html">RoomTree.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree_1_1Node.html">Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to represent nodes on the tree.  <a href="classRoomTree_1_1Node.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ea4adb06c7a1913d21ebaa6548a0167"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a2ea4adb06c7a1913d21ebaa6548a0167">RoomTree</a> (<a class="el" href="classRoom.html">Room</a> *rootRoom)</td></tr>
 <tr class="memdesc:a2ea4adb06c7a1913d21ebaa6548a0167"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Constructor.  <a href="#a2ea4adb06c7a1913d21ebaa6548a0167">More...</a><br/></td></tr>
 <tr class="separator:a2ea4adb06c7a1913d21ebaa6548a0167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bd0bf9ba15d59e29127f762a3cdf036"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bd0bf9ba15d59e29127f762a3cdf036"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a1bd0bf9ba15d59e29127f762a3cdf036">~RoomTree</a> ()</td></tr>
-<tr class="memdesc:a1bd0bf9ba15d59e29127f762a3cdf036"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Destructor. <br/></td></tr>
+<tr class="memitem:a1bd0bf9ba15d59e29127f762a3cdf036"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a1bd0bf9ba15d59e29127f762a3cdf036">~RoomTree</a> ()</td></tr>
+<tr class="memdesc:a1bd0bf9ba15d59e29127f762a3cdf036"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Destructor.  <a href="#a1bd0bf9ba15d59e29127f762a3cdf036">More...</a><br/></td></tr>
 <tr class="separator:a1bd0bf9ba15d59e29127f762a3cdf036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a198fd76507d341091eff6f9cb367d551"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a198fd76507d341091eff6f9cb367d551">newRoom</a> (char dir, <a class="el" href="classRoom.html">Room</a> *roomptr)</td></tr>
 <tr class="memdesc:a198fd76507d341091eff6f9cb367d551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new room at child (throws exeption if already occupied)  <a href="#a198fd76507d341091eff6f9cb367d551">More...</a><br/></td></tr>
@@ -118,6 +148,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfad141f868410fa8c578d19f45eaa05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoom.html">Room</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#abfad141f868410fa8c578d19f45eaa05">at</a> ()</td></tr>
 <tr class="memdesc:abfad141f868410fa8c578d19f45eaa05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a pointer to the room currently at.  <a href="#abfad141f868410fa8c578d19f45eaa05">More...</a><br/></td></tr>
 <tr class="separator:abfad141f868410fa8c578d19f45eaa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a52c351beb62f7b4f1fe5e1c21d5353fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a52c351beb62f7b4f1fe5e1c21d5353fe">deleteTree</a> (<a class="el" href="classRoomTree_1_1Node.html">Node</a> *tempRoot)</td></tr>
+<tr class="memdesc:a52c351beb62f7b4f1fe5e1c21d5353fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to assist in deleting the tree.  <a href="#a52c351beb62f7b4f1fe5e1c21d5353fe">More...</a><br/></td></tr>
+<tr class="separator:a52c351beb62f7b4f1fe5e1c21d5353fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3e7726e562748d38e587bb20ccde6451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoomTree_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">root</a></td></tr>
+<tr class="memdesc:a3e7726e562748d38e587bb20ccde6451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root or starting room of the dungeon.  <a href="#a3e7726e562748d38e587bb20ccde6451">More...</a><br/></td></tr>
+<tr class="separator:a3e7726e562748d38e587bb20ccde6451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a16bf654348f42b373a3ccc742bb360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoomTree_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">currNode</a></td></tr>
+<tr class="memdesc:a1a16bf654348f42b373a3ccc742bb360"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRoomTree_1_1Node.html" title="Class to represent nodes on the tree. ">Node</a> of the current room.  <a href="#a1a16bf654348f42b373a3ccc742bb360">More...</a><br/></td></tr>
+<tr class="separator:a1a16bf654348f42b373a3ccc742bb360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to represent the layout of rooms in a doubly linked tree-like format. </p>
@@ -138,6 +183,23 @@ Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Constructor. </p>
 <p><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Construtor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1bd0bf9ba15d59e29127f762a3cdf036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RoomTree::~RoomTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classRoomTree.html" title="Class to represent the layout of rooms in a doubly linked tree-like format. ">RoomTree</a> Destructor. </p>
 
 </div>
 </div>
@@ -177,6 +239,39 @@ Public Member Functions</h2></td></tr>
 <p>Gives a pointer to the room currently at. </p>
 <p>Gives a pointer to current room </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to current room </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a52c351beb62f7b4f1fe5e1c21d5353fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoomTree::deleteTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRoomTree_1_1Node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>tempRoot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function to assist in deleting the tree. </p>
+<p>Helper function to assist in deleting the tree </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tempRoot</td><td>The root of the tree to be deleted </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -254,16 +349,65 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a1a16bf654348f42b373a3ccc742bb360"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRoomTree_1_1Node.html">Node</a>* RoomTree::currNode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classRoomTree_1_1Node.html" title="Class to represent nodes on the tree. ">Node</a> of the current room. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e7726e562748d38e587bb20ccde6451"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRoomTree_1_1Node.html">Node</a>* RoomTree::root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Root or starting room of the dungeon. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>RoomTree/<a class="el" href="RoomTree_8h_source.html">RoomTree.h</a></li>
-<li>RoomTree/RoomTree.cpp</li>
+<li>/home/rigt2720/Kodika/RoomTree/<a class="el" href="RoomTree_8h_source.html">RoomTree.h</a></li>
+<li>/home/rigt2720/Kodika/RoomTree/<a class="el" href="RoomTree_8cpp.html">RoomTree.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classRoomTree.html">RoomTree</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

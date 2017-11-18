@@ -21,7 +21,7 @@ class Menu
   protected:
    /// \var indexMap This is the map used to display the options on the screen
    map<int,string> indexMap;
-   /// \var optionMap This is a map of the command character and the function it runs
+   /// \var optionMap A map of the command character and the function it runs
    map<char, void (*)(int)> optionMap;
    /// \var menuHeight This is the height of the menu.
    int menuHeight;
@@ -46,7 +46,7 @@ class Menu
    /// \param[in] optionName The name to display for the user.
    /// \param[in] f(int) The is the function which adds functionality to
    /// the option and command.
-   void AddOption(char command, string optionName, void(*f)(int)=0);
+   void AddOption(char command, string optionName, void (*f)(int)=0);
 
    /// A function to set the added options to the character array.
    /// \param[in] row Determines which row the options will start being set at.

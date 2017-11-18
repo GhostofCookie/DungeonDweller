@@ -8,7 +8,7 @@ RiddleMenu::~RiddleMenu()
 {
 }
 
-void RiddleMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void RiddleMenu::SetOptions(int row, int col, int space)
 {
 }
 
