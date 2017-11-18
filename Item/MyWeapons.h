@@ -14,6 +14,9 @@
 class Sword: public Weapon
 {
 public:
+	/// Constructor
+	Sword();
+
 	/// Defines what happens when the sword is used
 	/// \param[in] target The character that the sword is used on
 	void use(Character *target);
@@ -24,10 +27,20 @@ public:
 class Bow: public Weapon
 {
 public:
+	/// Constructor
+	Bow();
+
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
 	void use(Character *target);
 
+	/// Returns the accuracy of the bow (for reading only)
+	/// \returns Bow accuracy
+	int accuracy() const;
+
+	/// Returns the accuracy of the weapon (for writing)
+	/// \returns reference to hitPercent
+	int &accuracy();
 
 protected:
 	/// The bows accuracy as a percent
@@ -40,6 +53,9 @@ protected:
 class Spell: public Weapon
 {
 public:
+	/// Constructor
+	Spell();
+
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
 	void use(Character *target)

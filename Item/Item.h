@@ -38,9 +38,11 @@ public:
 	string name() const;
 
 	/// Generates adjictives to add to Item names
+	/// \exception runtime_error Thrown if source file has no names
 	string nameGenerator();
 protected:
 	/// Helper function to generate random positive numbers
+	/// \return Random number between start and end
 	int random(unsigned int start,unsigned int end);
 
 private:
