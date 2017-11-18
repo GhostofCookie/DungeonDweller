@@ -19,6 +19,7 @@ public:
 
 	/// Defines what happens when the sword is used
 	/// \param[in] target The character that the sword is used on
+	/// \return true if use was successfull
 	bool use(Character *target);
 };
 
@@ -32,6 +33,7 @@ public:
 
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
+	/// \return true if use was successfull
 	bool use(Character *target);
 
 	/// Returns the accuracy of the bow (for reading only)
@@ -58,6 +60,7 @@ public:
 
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
+	/// \return true if use was successfull
 	bool use(Character *target);
 };
 #endif

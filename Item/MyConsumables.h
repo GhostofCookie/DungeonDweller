@@ -19,6 +19,7 @@ public:
 
 	/// Defines what happens when the health potion is used
 	/// \param[in] target The Character that the health potion is used on
+	/// \return true if use was successfull
 	bool use(Character *target);
 };
 
@@ -32,6 +33,8 @@ public:
 
 	/// Defines what happens when the food is used
 	/// \param[in] target The Character that the food is used on
+	/// \return true if use was successfull
+	/// \exeption invalid_argument Thrown if target is not a player
 	bool use(Character *target);
 };
 
