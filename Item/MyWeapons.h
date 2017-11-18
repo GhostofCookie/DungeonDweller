@@ -19,7 +19,7 @@ public:
 
 	/// Defines what happens when the sword is used
 	/// \param[in] target The character that the sword is used on
-	void use(Character *target);
+	bool use(Character *target);
 };
 
 
@@ -32,7 +32,7 @@ public:
 
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
-	void use(Character *target);
+	bool use(Character *target);
 
 	/// Returns the accuracy of the bow (for reading only)
 	/// \returns Bow accuracy
@@ -58,6 +58,6 @@ public:
 
 	/// Defines what happens when the spell is used
 	/// \param[in] target The character that the spell is used on
-	void use(Character *target)
+	bool use(Character *target);
 };
 #endif

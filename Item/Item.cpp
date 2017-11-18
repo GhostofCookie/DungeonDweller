@@ -68,8 +68,8 @@ string Item::nameGenerator()
 		gotNames=true;
 	}
 
-	// Returns a random element of the array
-	return weaponNames[random(0,weaponNames.size())]
+	// Returns a random element of the vector
+	return weaponNames[random(0,weaponNames.size()-1)]
 }
 
 

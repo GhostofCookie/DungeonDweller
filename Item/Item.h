@@ -27,7 +27,7 @@ public:
 
 	/// Pure Virtual funtion that forces all subclasses to define how to use themselves
 	/// \param[in] target The Character the item is being used on
-	virtual void use(Charater *target)=0;
+	virtual bool use(Charater *target)=0;
 
 	/// Allows access to the items name
 	/// \return Reference to the name of the item
@@ -45,7 +45,6 @@ protected:
 	/// \return Random number between start and end
 	int random(unsigned int start,unsigned int end);
 
-private:
 	///Name of the item
 	string itemName;
 };
