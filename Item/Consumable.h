@@ -14,10 +14,6 @@ using namespace std;
 class Consumable : public Item
 {
 public:
-	/// Generates adjectives to add to Consumable names
-	/// \exception runtime_error Thrown if source file has no names
-	string nameGenerator();
-
 	/// Returns the the actuall value of the consumable (for reading only)
 	/// \returns value of the consumable
 	int power() const;

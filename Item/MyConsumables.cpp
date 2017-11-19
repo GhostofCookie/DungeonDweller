@@ -15,7 +15,7 @@ using namespace std;
 HealthPotion::HealthPotion()
 {
    value = 10;
-   itemName = nameGenerator() + " Health Potion";
+   itemName = nameGenerator("ConsumableNames.txt") + " Health Potion";
    used = false;
 }
 
@@ -38,7 +38,7 @@ bool HealthPotion::use(Character *target)
 Food::Food()
 {
    value = 3;
-   itemName = nameGenerator() + " Food";
+   itemName = nameGenerator("ConsumableNames.txt") + " Food";
    used = false;
 }
 

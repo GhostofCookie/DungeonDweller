@@ -29,7 +29,7 @@ public:
 	/// Pure Virtual funtion that forces all subclasses to define how to use themselves
 	/// \param[in] target The Character the item is being used on
 	/// \return true if use was successfull
-	virtual bool use(Charater *target)=0;
+	virtual bool use(Character *target)=0;
 
 	/// Allows access to the items name
 	/// \return Reference to the name of the item
@@ -38,6 +38,12 @@ public:
 	/// Gives the name of the item without allowing chages
 	/// \return Name of the item
 	string name() const;
+
+	/// Generates adjectives to add to Item names
+	/// \param[in] fileName the file that the names comme from
+	/// \returns Adjective generated and to be used
+	/// \exception runtime_error Thrown if source file has no names
+	string nameGenerator(string fileName);
 
 protected:
 	/// Helper function to generate random positive numbers

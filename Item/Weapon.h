@@ -30,9 +30,6 @@ public:
 	/// \returns a reference to remainingUses
 	int &durability();
 
-	/// Generates adjictives to add to Weapon names
-	/// \exception runtime_error Thrown if source file has no names
-	string nameGenerator();
 protected:
 
 	/// The Base damage of the weapon
