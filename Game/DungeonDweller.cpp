@@ -51,12 +51,26 @@
 // Character Headers
 #include "../Character/Npc.h"
 #include "../Character/Player.h"
+// Misc Headers
+#include <iostream>
+#include <ctime>
 using namespace std;
 
 
 
 int main()
 {
-   cout << "main worked" << endl;
+   //Needed for randomization seed
+   srand( (unsigned int) time(NULL));
+	
+   // The file path - ***change as desired
+   string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
+   // Create an importer object and read in the masterFile for Images
+   ImageImporter imageImport = ImageImporter(mastrFile);
+   // MainGame Screen
+   Screen *screen = new Screen();
+
+   
+   cout << "main worked" << endl << screen;
    return 0;
 }
