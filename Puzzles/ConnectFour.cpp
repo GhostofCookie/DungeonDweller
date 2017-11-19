@@ -55,14 +55,6 @@ void ConnectFour::PlayAI(char AiPiece)
 
 }
 
-
-int ConnectFour::RandomNumber(int n)
-{
-   ///Returns 0 to n-1
-   n=rand()%n;
-   return n;
-}
-   
 ///Sets up the board with the ui for the connect four game
 void ConnectFour::BoardSetup()
 {

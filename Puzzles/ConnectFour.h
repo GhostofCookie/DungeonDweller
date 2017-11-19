@@ -88,9 +88,6 @@ class ConnectFour: virtual Puzzle
 
 ///Resets the game for another round in the event that the AI wins.
    void ResetGame();
-
-///Returns a random number between 0 and n-1
-   int RandomNumber(int n);
    
 ///The vector which stores the gameboards chars.
    std::vector<vector<char>>grid;

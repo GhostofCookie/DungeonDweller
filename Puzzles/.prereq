@@ -1,3 +1,5 @@
+Puzzle.o: Puzzle.cpp Puzzle.h ../Menu/Menu.h ../Screen/Screen.h \
+ ../Image/DefaultImg.h ../Image/Image.h ../Image/../Screen/Screen.h
 TicTacToe.o: TicTacToe.cpp TicTacToe.h Puzzle.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Menu/ConnectFourMenu.h \
@@ -10,7 +12,9 @@ ConnectFour.o: ConnectFour.cpp ConnectFour.h Puzzle.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Menu/ConnectFourMenu.h \
  ../Menu/MinigameMenu.h ../Menu/GameMenu.h ../Menu/Menu.h
-CodeCracker.o: CodeCracker.cpp
+CodeCracker.o: CodeCracker.cpp CodeCracker.h Puzzle.h ../Menu/Menu.h \
+ ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
 PuzzleMain.o: PuzzleMain.cpp Hanoi.h Puzzle.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Menu/HanoiMenu.h ../Menu/MinigameMenu.h \
