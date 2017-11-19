@@ -65,7 +65,7 @@ class Screen
    void NewOutlineCh(char ch);
    /// Helper function to switch the border character
    /// \param[in] ch the character used to draw the border
-   void CreateBorder(char ch);
+   void DrawBorder(char ch);
    /// Helper function to draw the border on the screen
    void DrawBorder();
    /// Fill the screen with the default character

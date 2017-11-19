@@ -2,12 +2,16 @@
 
 
 /// Default Constructor
+/// \param[in] h the height of the screen
+/// \param[in] w the width of the screen
+/// \param[in] ch the character used to draw the outline of the screen
 Screen::Screen(int h, int w, char ch)
    : height{h}, width{w}, outlineCh{ch}
 {
    Initialize(height, width);
-   CreateBorder(outlineCh);
+   DrawBorder();
 }
+
 
 
 /// Destructor
@@ -15,6 +19,9 @@ Screen::~Screen() {}
 
 
 
+/// Function sets up the screen by pushing back the required size
+/// \param[in] h the height of the screen
+/// \param[in] w the width of the screen
 void Screen::Initialize(int h, int w)
 {
    for(int i = 0; i < h; i++)
@@ -27,6 +34,9 @@ void Screen::Initialize(int h, int w)
 
 
 
+/// Function to resize the screen
+/// \param[in] h the new height of the screen
+/// \param[in] w the new width of the screen
 void Screen::Resize(int h, int w)
 {
    height = h;
@@ -37,12 +47,17 @@ void Screen::Resize(int h, int w)
 
 
 
+/// Helper function to return the width of the screen
 int Screen::GetRows() const { return height; }
+/// Helper function to return the height of the screen
 int Screen::GetCols() const { return width; }
+/// Helper function to set a new character for the border
 void Screen::NewOutlineCh(char ch) { outlineCh = ch; }
 
 
 
+/// Function that returns TRUE if a number is even
+/// \param[in] num the number to be checked
 bool Screen::IsEven(const int &num) const
 {
    if(num % 2 == 0)
@@ -52,7 +67,9 @@ bool Screen::IsEven(const int &num) const
 
 
 
-void Screen::CreateBorder(char ch)
+/// Function that draws the border to the edges of the screen
+/// \param[in] ch the character used to draw the screen
+void Screen::DrawBorder(char ch)
 {
    if(outlineOn)
    {
@@ -65,6 +82,7 @@ void Screen::CreateBorder(char ch)
 
 
 
+/// Function that draws the border to the edges of the screen
 void Screen::DrawBorder()
 {
    if(outlineOn)
@@ -78,6 +96,7 @@ void Screen::DrawBorder()
 
 
 
+/// Function that fills the innards of the screen object
 void Screen::Fill()
 {
    for(int i = 0; i < height; i++)
@@ -88,6 +107,8 @@ void Screen::Fill()
 
 
 
+/// Function that fills the innards of the screen
+/// \param[in] ch the character used to fill with
 void Screen::Fill(char ch)
 {
    for(int i = 0; i < height; i++)
@@ -124,6 +145,9 @@ void Screen::Erase()
 
 
 
+/// Overloaded ostream operator
+/// \param[in] os the ostream
+/// \param[in] s the screen being drawn
 ostream& operator <<(ostream &os, const Screen &s)
 {
    //checks if s is empty
@@ -142,6 +166,9 @@ ostream& operator <<(ostream &os, const Screen &s)
 
 
 
+/// Overloaded ostream operator
+/// \param[in] os the ostream operator
+/// \param[in] s the screen being drawn
 ostream& operator <<(ostream &os, const Screen *s)
 {
    //checks if s is empty
