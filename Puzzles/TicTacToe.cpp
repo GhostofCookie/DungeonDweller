@@ -192,8 +192,8 @@ bool TicTacToe::WinCheck()
 void TicTacToe::AiMove(int AiPiece)
 {
    int HorizontalMoveCoord, VerticalMoveCoord;
-   HorizontalMoveCoord=RandomNumber(3);
-   VerticalMoveCoord=RandomNumber(3);
+   // HorizontalMoveCoord=Puzzle::RandomNumber(3);
+   // VerticalMoveCoord=Puzzle::RandomNumber(3);
 
    bool moveSuccessful=false;
    while(moveSuccessful==false)
@@ -205,8 +205,8 @@ void TicTacToe::AiMove(int AiPiece)
       }
       else
       {
-	 HorizontalMoveCoord=RandomNumber(3);
-	 VerticalMoveCoord=RandomNumber(3);
+	 HorizontalMoveCoord=Puzzle::RandomNumber(3);
+	 VerticalMoveCoord=Puzzle::RandomNumber(3);
       }
    }
 }
@@ -255,12 +255,6 @@ void TicTacToe::RunGame(){
    }
 }
 
-int TicTacToe::RandomNumber(int n)
-{
-   ///Returns 0 to n-1
-   n=rand()%n;
-   return n;
-}
 // void TicTacToe::PromptUser(&screen)
 // {
 

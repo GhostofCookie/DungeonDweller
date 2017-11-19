@@ -18,6 +18,7 @@
 class Puzzle
 {
   public:
+   int RandomNumber(int n) const;
    ///Virtual Destructor
    virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
@@ -41,6 +42,8 @@ class Puzzle
 
    ///Sets the board up for the beginning of the game
    virtual void BoardSetup()=0;
+
+  
    
 };
 #endif

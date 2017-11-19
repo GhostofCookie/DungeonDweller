@@ -79,8 +79,6 @@ class TicTacToe: public virtual Puzzle
    ///Dimensions for the board
    int boardSize;
 
-   int RandomNumber(int n);
-   
    ///Returns true if every space in the board has been filled with a character 
    bool IsBoardFull();
 
