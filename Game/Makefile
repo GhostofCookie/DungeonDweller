@@ -1,13 +1,13 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g
-MENU = Menu/CharacterMenu.o Menu/ConnectFourMenu.o Menu/DialogueMenu.o Menu/ExploreMenu.o Menu/FightMenu.o Menu/HanoiMenu.o Menu/MainMenu.o Menu/MemoryMenu.o Menu/Menu.o Menu/RiddleMenu.o Menu/TicTacToeMenu.o Menu/TradeMenu.o
-SCREEN = Screen/Screen.o Screen/SlotScreen.o
-IMAGE = Image/Image.o Image/ImportImg.o Image/DefaultImg.o
-ROOM =  Room/Room.o
-ROOMTREE = RoomTree/RoomTree.o
-PUZZLE = Puzzles/CodeCracker.o Puzzles/ConnectFour.o Puzzles/Hanoi.o Puzzles/MemoryMatch.o Puzzles/TicTacToe.o   
-ITEM = Item/Item.o Item/Weapon.o Item/Consumable.o Item/MyWeapons.o Item/MyConsumables.o
-CHARACTER = Character/Npc.o Character/Player.o
+MENU = ../Menu/CharacterMenu.o ../Menu/ConnectFourMenu.o ../Menu/DialogueMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/HanoiMenu.o ../Menu/MainMenu.o ../Menu/MemoryMenu.o ../Menu/Menu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/TradeMenu.o
+SCREEN = ../Screen/Screen.o ../Screen/SlotScreen.o
+IMAGE = ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o
+ROOM =  ../Room/Room.o
+ROOMTREE = ../RoomTree/RoomTree.o
+PUZZLE = ../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o   
+ITEM = ../Item/Item.o ../Item/Weapon.o ../Item/Consumable.o ../Item/MyWeapons.o ../Item/MyConsumables.o
+CHARACTER = ../Character/Npc.o ../Character/Player.o
 OBJS = $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(GAMESTATE) $(PUZZLE) $(ITEM) $(CHARACTER) DungeonDweller.o
 
 
