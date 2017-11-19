@@ -37,4 +37,4 @@ public:
 	/// \exeption invalid_argument Thrown if target is not a player
 	bool use(Character *target);
 };
-
+#endif
