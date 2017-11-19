@@ -69,11 +69,11 @@ string Item::nameGenerator(string fileName)
 		adjectives.push_back(tempName);
 	}
 	fin.close();
-	if(adjectives.size < 1)
-		throw runtime_error(filename + " is empty");
+	if(adjectives.size() < 1)
+		throw runtime_error(fileName + " is empty");
 	
 	// Returns a random element of the vector
-	return adjectives[random(0,adjictives.size()-1)]
+	return adjectives[random(0,adjectives.size()-1)];
 }
 
 //*****************************************************************************
