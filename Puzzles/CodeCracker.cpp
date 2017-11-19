@@ -100,7 +100,6 @@ void CodeCracker::ImportRiddles()
 	    question.at(i)=questionString;
 	    format.at(i)=questionFormat;
 	    answer.at(i)=qAnswer;
-	    // if the key doesn't exist then create a key
 	 }
       }
       in.close();	
