@@ -19,7 +19,7 @@ using namespace std;
 //*****************************************************************************
 /// Item Factory
 //*****************************************************************************
-Item* Item::GetItem(string itemType)
+Item *Item::getItem(string itemType)
 {
 	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
 
