@@ -14,22 +14,22 @@ using namespace std;
 //*****************************************************************************
 HealthPotion::HealthPotion()
 {
-	value = 10;
-	itemName = nameGenerator() + " Health Potion";
-	used = false;
+   value = 10;
+   itemName = nameGenerator() + " Health Potion";
+   used = false;
 }
 
 //*****************************************************************************
 /// Use HealthPotion Implementation
 //*****************************************************************************
-bool HealthPotion::use(Character * target)
+bool HealthPotion::use(Character *target)
 {
-	if(!used) {
-		target->ChangeHealth(value);
-		used = true;
-		return true;
-	}
-	return false;
+   if(!used) {
+      target->ChangeHealth(value);
+      used = true;
+      return true;
+   }
+   return false;
 }
 
 //*****************************************************************************
@@ -37,23 +37,23 @@ bool HealthPotion::use(Character * target)
 //*****************************************************************************
 Food::Food()
 {
-	value = 3;
-	itemName = nameGenerator() + " Food";
-	used = false;
+   value = 3;
+   itemName = nameGenerator() + " Food";
+   used = false;
 }
 
 //*****************************************************************************
 /// Use Food Implementation
 //*****************************************************************************
-bool Food::use(Character * target)
+bool Food::use(Character *target)
 {
-	if(!used) {
-		if(typeid(target).name() != "Player")
-			throw invalid_argument("target is not a player");
-		Player *newTarget = target;
-		newTarget->ChangeStamina(value);
-		used = true;
-		return true;
-	}
-	return false;
+   if(!used) {
+      if(typeid(target).name() != "Player")
+	 throw invalid_argument("target is not a player");
+      Player *newTarget = target;
+      newTarget->ChangeStamina(value);
+      used = true;
+      return true;
+   }
+   return false;
 }

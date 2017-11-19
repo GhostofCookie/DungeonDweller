@@ -1,11 +1,20 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11 -g  
-MENU = main.o Menu/Menu.o
+CCFLAGS = -Wall -std=c++11 -g
+MENU = Menu/Menu.o
+SCREEN = 
+IMAGE = 
+ROOM = 
+ROOMTREE = RoomTree.o
+GAMESTATE = 
+PUZZLE =
+ITEM = Item.o Weapon.o Consumable.o MyWeapons.o MyConsumables.o
+CHARACTER = 
+OBJS = $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(GAMESTATE) $(PUZZLE) $(ITEM) $(CHARACTER) DungeonDweller.o
 ## targets and prerequisites
 .PHONY : all
-all : main
+all : DungeonDweller
 
-main : $(MENU)
+main : $(OBJS)
 	$(CC) -o $@ $(CCFLAGS) $^
 
 # default rule for compiling .cc to .o
@@ -13,9 +22,9 @@ main : $(MENU)
 	$(CC) -c -o $@ $(CCFLAGS) $<
 
 ## generate the prerequisites and append to the desired file
-.prereq : $(MENU:.o=.cpp) $(wildcard *.h) Makefile
+.prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq
-	$(CC) $(CCFLAGS) -MM $(MENU:.o=.cpp) >> ./.prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS:.o=.cpp) >> ./.prereq
 
 ## include the generated prerequisite file
 include .prereq
