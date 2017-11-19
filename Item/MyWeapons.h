@@ -62,5 +62,6 @@ public:
 	/// \param[in] target The character that the spell is used on
 	/// \return true if use was successfull
 	bool use(Character *target);
+
 };
 #endif

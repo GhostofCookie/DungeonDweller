@@ -55,6 +55,27 @@ string Item::name() const
 	return itemName;
 }
 
+string Item::nameGenerator(string fileName)
+{
+	static vector<string> adjectives;
+
+	ifstream fin;
+	fin.open(fileName);
+	if(fin.fail())
+		throw invalid_argument("Could not open " + fileName);
+	string tempName;
+	while(!fin.eof()) {
+		getline(fin,tempName);
+		adjectives.push_back(tempName);
+	}
+	fin.close();
+	if(adjectives.size < 1)
+		throw runtime_error(filename + " is empty");
+	
+	// Returns a random element of the vector
+	return adjectives[random(0,adjictives.size()-1)]
+}
+
 //*****************************************************************************
 /// random number generator
 //*****************************************************************************
