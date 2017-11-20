@@ -35,19 +35,22 @@ Hanoi::Hanoi()
    
    numberOfStacks=3;
    tower.resize(numberOfStacks);
-
+   BoardSetup();
    ///Put the discs into the first stack to start the game
-   int screenYCoordinate=14;
-   int screenXCoordinate=16;
-   for(int i=maxStackHeight; i<0; i--)
+   int screenYCoordinate=31;
+   int screenXCoordinate=9;
+   for(int i=maxStackHeight; i>0; i--)
    {
+      cout << "i:" << i <<  "     maxstack:" << maxStackHeight << endl;
       ///Push the discs on in descending order since it's a stack.
-      tower.at(0).push(discsVector.at(i));
-      tower.at(0).top().Draw(HanoiScreen, screenYCoordinate, screenXCoordinate); //screen, y, x
+      tower.at(0).push(discsVector.at(i-1));
+      tower.at(0).top().Draw(HanoiScreen,screenYCoordinate,screenXCoordinate);
+      cout << HanoiScreen;
+      cout << "LOOPYLOOP" << endl;
       ///Down one line for the next disc
-      screenYCoordinate++;
+      screenYCoordinate--;
       ///Move two to left since the next disc is 4 chars larger.
-      screenXCoordinate-=2;
+      screenXCoordinate+=2;
    }
 }
 
@@ -58,7 +61,8 @@ Hanoi::~Hanoi()
 
 void Hanoi:: BoardSetup()
 {
-   int leftDivider=18, centerPeg=60,peg=34, rightDivider=16, bottom=11;
+   cout << "BOARD SETUP" << endl;
+   int leftDivider=18, peg=34, rightDivider=16, bottom=11;
    DefaultImg Divider1(31,1,'|');
    Divider1.AlignCenter(HanoiScreen);
    Divider1.ShiftLeft(leftDivider);
@@ -116,6 +120,7 @@ void Hanoi::WinCheck()
    if(tower.at(2).size()==4)
       PuzzleEnd=true;
 }
+
 
 void Hanoi::MovePiece(int userSelection)
 {
@@ -243,7 +248,8 @@ void Hanoi::MovePiece(int userSelection)
    } 
 }
 
-
+///WhichDiscFromSize returns an index to wich disc in discsVector the size is
+///referenced with
 int Hanoi::WhichDiscFromSize(int size)
 {
    switch(size)
@@ -308,7 +314,7 @@ void Hanoi:: RunGame()
 {
    cout << "Start" << endl;
    SetOptionsInMenu();
-   BoardSetup();
+   //BoardSetup();
    while(GameEnd==false)
    {
       cout << HanoiScreen;
