@@ -21,7 +21,7 @@ using namespace std;
 //*****************************************************************************
 Item *Item::getItem(string itemType)
 {
-	std::transform(itemType.begin(),itemType.end(),itemType.begin(),std::toupper);
+//	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
 
 	Item* newItem;
 
@@ -36,7 +36,8 @@ Item *Item::getItem(string itemType)
 	else if(itemType == "FOOD")
 		newItem = new Food;
 	else
-		throw invalid_argument("invalid type");
+	   throw invalid_argument("invalid type");
+	return newItem;
 }
 
 //*****************************************************************************

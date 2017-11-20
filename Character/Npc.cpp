@@ -1,6 +1,6 @@
 #include "Npc.h"
 
-using nampespace std;
+using namespace std;
 
 Npc:: Npc(int h)
    : health{h} {}
