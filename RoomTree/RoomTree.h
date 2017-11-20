@@ -38,7 +38,7 @@ class RoomTree {
    };
    //**************************************************************************
 
-public:
+  public:
 
    /// RoomTree Constructor
    RoomTree(Room* rootRoom);
@@ -49,28 +49,32 @@ public:
    /// Inserts a new room at child (throws exeption if already occupied)
    /// \param[in] dir Direction of the new child (left(l) right(r) or center(c))
    /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
-   void newRoom(char dir, Room* roomptr);
+   void NewRoom(char dir, Room* roomptr);
 
    /// Moves through the tree
    /// \param[in] dir Direction to move(left(l) right(r) center(c) or parent(p))
    /// \return True if move was successfull, false otherwise
    /// \exception invalid_argument Thrown if the direction is invalid
    /// \exception out_of_range Thrown if trying to move to the parent of the root
-   bool move(char dir);
+   bool Move(char dir);
 
    /// Gives a const pointer to the room currently at for accessing
    /// \return A const pointer to current room
-   const Room* at() const;
+   const Room* At() const;
 
    /// Gives a pointer to current room
    /// \return Pointer to current room
-   Room* at();
+   Room* At();
 
-private:
-	/// Helper function to assist in deleting the tree
-	/// \param[in] tempRoot The root of the tree to be deleted
-	void deleteTree(Node* tempRoot);
+   /// Gives the height of the tree at the current room
+   /// \returns the height of the current node
+   unsigned int CurrrentHeight() const;
 
+  private:
+   /// Helper function to assist in deleting the tree
+   /// \param[in] tempRoot The root of the tree to be deleted
+   void DeleteTree(Node* tempRoot);
+   
    /// Root or starting room of the dungeon
    Node* root;
 

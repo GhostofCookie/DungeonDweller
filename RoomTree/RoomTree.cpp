@@ -138,3 +138,16 @@ Room* RoomTree::at()
    return currNode->room;
 }
 
+//*****************************************************************************
+/// Gives the height of the tree at the current node
+//*****************************************************************************
+unsigned int RoomTree::CurrentHeight() const
+{
+   if(!currNode)
+      return 0;
+   Node *findNode;
+   unsigned int i;
+   for(i = 1; findNode != root; ++i)
+      findNode = findNode->parent;
+   return i;
+}
