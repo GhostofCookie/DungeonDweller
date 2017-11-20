@@ -55,7 +55,7 @@ void Menu::HandleInput(istream& is)
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
-   optionMap[command] = reinterpret_cast<void(*)(int)>(f);
+   optionMap[command] = static_cast<void(*)(int)>(f);
 }
 
 /// A function to set the added options to the character array.
