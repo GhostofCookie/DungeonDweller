@@ -145,7 +145,7 @@ unsigned int RoomTree::CurrentHeight() const
 {
    if(!currNode)
       return 0;
-   Node *findNode;
+   Node *findNode = currNode;
    unsigned int i;
    for(i = 1; findNode != root; ++i)
       findNode = findNode->parent;
