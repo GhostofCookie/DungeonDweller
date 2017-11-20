@@ -9,9 +9,9 @@ PUZZLE = ##../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o 
 ITEM = ##../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
 CHARACTER = ## ../Character/Npc.o ../Character/Player.o
 OBJS = DungeonDweller.o $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(PUZZLE) $(ITEM) $(CHARACTER)
-
-CCFLAGS = -Wall -std=c++11 #-I$(ARCHIVEDIR) -g 
 COV = -fprofile-arcs -ftest-coverage #-lcppunit -ldl 
+CCFLAGS = -Wall -std=c++11 $(COV)#-I$(ARCHIVEDIR) -g 
+
 LIB = ./lib
 LINKS = -L $(LIB) $(COV)
 

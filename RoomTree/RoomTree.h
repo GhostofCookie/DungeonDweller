@@ -68,7 +68,7 @@ class RoomTree {
 
    /// Gives the height of the tree at the current room
    /// \returns the height of the current node
-   unsigned int CurrrentHeight() const;
+   unsigned int CurrentHeight() const;
 
   private:
    /// Helper function to assist in deleting the tree
