@@ -66,21 +66,21 @@ class Menu
    /// options map.
    static void QuitGame(int value);
 
-private:
-	/// Builds the menu based on the options and outline to the dimensions
-	/// specified by the constructor.
-	void BuildMenu();
+  private:
+   /// Builds the menu based on the options and outline to the dimensions
+   /// specified by the constructor.
+   void BuildMenu();
 
-protected:
-	/// Sets the character of a specific location in the array to a give
-	/// character.
-	/// \param[in] x This is the x-coordinate of the multi-dimensional
-	/// array. (A[x,y])
-	/// \param[in] y This is the y-coordinate of the multi-dimensional
-	/// array. (A[x,y])
-	/// \param[in] ch This is the character to be set at the coordinates
-	/// (x,y) in the multi-dimensional array.
-	void Set(int x, int y, char ch);
+  protected:
+   /// Sets the character of a specific location in the array to a give
+   /// character.
+   /// \param[in] x This is the x-coordinate of the multi-dimensional
+   /// array. (A[x,y])
+   /// \param[in] y This is the y-coordinate of the multi-dimensional
+   /// array. (A[x,y])
+   /// \param[in] ch This is the character to be set at the coordinates
+   /// (x,y) in the multi-dimensional array.
+   void Set(int x, int y, char ch);
 
 };
 
