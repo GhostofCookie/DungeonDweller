@@ -8,7 +8,6 @@ var classTicTacToe =
     [ "IsBoardFull", "classTicTacToe.html#a7bb5521e85c2a1d4c61ab405d03a62c5", null ],
     [ "LeftDiagonalCheck", "classTicTacToe.html#ad65a6d8382d7a59c68a6778caea91d78", null ],
     [ "MovePiece", "classTicTacToe.html#afb236f340525d12a81667a340440b210", null ],
-    [ "RandomNumber", "classTicTacToe.html#acdbb2da0bf1dc1c1689bac3b5a86281c", null ],
     [ "ResetGame", "classTicTacToe.html#a36b58f33246558d0b7b34412b641cff6", null ],
     [ "RightDiagonalCheck", "classTicTacToe.html#a3b96d4252e042b2e85bb0bc9a501bc0c", null ],
     [ "RunGame", "classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05", null ],

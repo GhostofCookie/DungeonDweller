@@ -6,6 +6,6 @@ var searchData=
   ['options',['options',['../classMenuTest.html#a49607805fcfaf8b080037d0a2b377e74',1,'MenuTest']]],
   ['outlinech',['outlineCh',['../classScreen.html#a0b59df2bfafff7a121286a5ea40503b6',1,'Screen']]],
   ['outlineon',['outlineOn',['../classScreen.html#a6f906b745f406576d9f7aeaec330c9d6',1,'Screen']]],
-  ['outputgame',['OutputGame',['../classCodeCracker.html#a1b27237e5cac2dbe68c2656a24a9c22e',1,'CodeCracker::OutputGame()'],['../classConnectFour.html#aeec5d9114f72805796129ebd6e94c6d8',1,'ConnectFour::OutputGame()']]],
+  ['outputgame',['OutputGame',['../classConnectFour.html#aeec5d9114f72805796129ebd6e94c6d8',1,'ConnectFour']]],
   ['outputmenu',['OutputMenu',['../classMenu.html#a4665a914fe24a8b11d8d6c95792184b3',1,'Menu']]]
 ];

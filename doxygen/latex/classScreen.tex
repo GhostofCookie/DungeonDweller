@@ -15,7 +15,7 @@ Inheritance diagram for Screen\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classScreen_a932b81c3d221d644cc40ffe9003515a5}{Screen} (int h=33, int w=101, char ch= '-\/')
-\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\item 
 virtual \hyperlink{classScreen_a4243bc17596af96415b09ac48205676d}{$\sim$\-Screen} ()
 \begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{Initialize} (int h, int w)
@@ -31,8 +31,8 @@ int \hyperlink{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{Get\-Center\-Pnt} 
 bool \hyperlink{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{Is\-Even} (const int \&num) const 
 \item 
 void \hyperlink{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{New\-Outline\-Ch} (char ch)
-\item 
-void \hyperlink{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{Create\-Border} (char ch)
+\begin{DoxyCompactList}\small\item\em Helper function to set a new character for the border. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_abe4420082458330e5c853c342b201956}{Draw\-Border} (char ch)
 \item 
 void \hyperlink{classScreen_a146a94183c6c610ae8a619521fc9d102}{Draw\-Border} ()
 \begin{DoxyCompactList}\small\item\em Helper function to draw the border on the screen. \end{DoxyCompactList}\item 
@@ -82,17 +82,22 @@ This class represents an abstract base class in which different screens can be c
 \item[{char}]{ch = {\ttfamily '-\/'}}
 \end{DoxyParamCaption}
 )}}\label{classScreen_a932b81c3d221d644cc40ffe9003515a5}
-
-
-Default Constructor. 
-
 Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the image, default to 33 \\
 \hline
 \mbox{\tt in}  & {\em w} & the width of the image, default to 101 \\
 \hline
-\mbox{\tt in}  & {\em ch} & the default character to draw the border with \\
+\mbox{\tt in}  & {\em ch} & the default character to draw the border with\\
+\hline
+\end{DoxyParams}
+Default Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen \\
+\hline
+\mbox{\tt in}  & {\em ch} & the character used to draw the outline of the screen \\
 \hline
 \end{DoxyParams}
 \hypertarget{classScreen_a4243bc17596af96415b09ac48205676d}{\index{Screen@{Screen}!$\sim$\-Screen@{$\sim$\-Screen}}
@@ -109,16 +114,21 @@ Virtual Destructor.
 Destructor. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}{\index{Screen@{Screen}!Create\-Border@{Create\-Border}}
-\index{Create\-Border@{Create\-Border}!Screen@{Screen}}
-\subsubsection[{Create\-Border}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Create\-Border (
+\hypertarget{classScreen_abe4420082458330e5c853c342b201956}{\index{Screen@{Screen}!Draw\-Border@{Draw\-Border}}
+\index{Draw\-Border@{Draw\-Border}!Screen@{Screen}}
+\subsubsection[{Draw\-Border}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Draw\-Border (
 \begin{DoxyParamCaption}
 \item[{char}]{ch}
 \end{DoxyParamCaption}
-)}}\label{classScreen_a2ba1e54cb2fee7f246a25aed46c3ff3f}
+)}}\label{classScreen_abe4420082458330e5c853c342b201956}
 Helper function to switch the border character 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em ch} & the character used to draw the border \\
+\mbox{\tt in}  & {\em ch} & the character used to draw the border\\
+\hline
+\end{DoxyParams}
+Function that draws the border to the edges of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to draw the screen \\
 \hline
 \end{DoxyParams}
 \hypertarget{classScreen_a146a94183c6c610ae8a619521fc9d102}{\index{Screen@{Screen}!Draw\-Border@{Draw\-Border}}
@@ -132,7 +142,7 @@ Helper function to switch the border character
 
 Helper function to draw the border on the screen. 
 
-\hypertarget{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{\index{Screen@{Screen}!Erase@{Erase}}
+Function that draws the border to the edges of the screen. \hypertarget{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{\index{Screen@{Screen}!Erase@{Erase}}
 \index{Erase@{Erase}!Screen@{Screen}}
 \subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Erase (
 \begin{DoxyParamCaption}
@@ -154,7 +164,7 @@ This function erases the contents of the screen and resets.
 
 Fill the screen with the default character. 
 
-\hypertarget{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{\index{Screen@{Screen}!Fill@{Fill}}
+Function that fills the innards of the screen object. \hypertarget{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{\index{Screen@{Screen}!Fill@{Fill}}
 \index{Fill@{Fill}!Screen@{Screen}}
 \subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Fill (
 \begin{DoxyParamCaption}
@@ -165,6 +175,11 @@ Fill the screen with the default character.
 
 Fill the screen with a given character. 
 
+Function that fills the innards of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ch} & the character used to fill with \\
+\hline
+\end{DoxyParams}
 \hypertarget{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{\index{Screen@{Screen}!Get\-Center\-Pnt@{Get\-Center\-Pnt}}
 \index{Get\-Center\-Pnt@{Get\-Center\-Pnt}!Screen@{Screen}}
 \subsubsection[{Get\-Center\-Pnt}]{\setlength{\rightskip}{0pt plus 5cm}int Screen\-::\-Get\-Center\-Pnt (
@@ -187,7 +202,7 @@ Returns the center of the screen.
 
 Returns the width of the screen. 
 
-\hypertarget{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{\index{Screen@{Screen}!Get\-Rows@{Get\-Rows}}
+Helper function to return the height of the screen. \hypertarget{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{\index{Screen@{Screen}!Get\-Rows@{Get\-Rows}}
 \index{Get\-Rows@{Get\-Rows}!Screen@{Screen}}
 \subsubsection[{Get\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}int Screen\-::\-Get\-Rows (
 \begin{DoxyParamCaption}
@@ -198,7 +213,7 @@ Returns the width of the screen.
 
 Returns the height of the screen. 
 
-\hypertarget{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{\index{Screen@{Screen}!Initialize@{Initialize}}
+Helper function to return the width of the screen. \hypertarget{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}{\index{Screen@{Screen}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Screen@{Screen}}
 \subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Initialize (
 \begin{DoxyParamCaption}
@@ -207,6 +222,13 @@ Returns the height of the screen.
 \end{DoxyParamCaption}
 )}}\label{classScreen_a455b38b1ac9b18bd67ecd2e056dff909}
 Helper function to build the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the screen\\
+\hline
+\end{DoxyParams}
+Function sets up the screen by pushing back the required size 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the screen \\
 \hline
@@ -222,7 +244,12 @@ Helper function to build the screen
 ) const}}\label{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}
 Returns true if the number is even 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em num} & the number to check \\
+\mbox{\tt in}  & {\em num} & the number to check\\
+\hline
+\end{DoxyParams}
+Function that returns T\-R\-U\-E if a number is even 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num} & the number to be checked \\
 \hline
 \end{DoxyParams}
 \hypertarget{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{\index{Screen@{Screen}!New\-Outline\-Ch@{New\-Outline\-Ch}}
@@ -232,6 +259,10 @@ Returns true if the number is even
 \item[{char}]{ch}
 \end{DoxyParamCaption}
 )}}\label{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}
+
+
+Helper function to set a new character for the border. 
+
 Helper function to swap out the character used to draw the border 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em ch} & the character used to create the outline \\
@@ -249,7 +280,14 @@ Helper function to resize the screen
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the screen \\
 \hline
-\mbox{\tt in}  & {\em w} & the width of the screen \\
+\mbox{\tt in}  & {\em w} & the width of the screen\\
+\hline
+\end{DoxyParams}
+Function to resize the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & the new height of the screen \\
+\hline
+\mbox{\tt in}  & {\em w} & the new width of the screen \\
 \hline
 \end{DoxyParams}
 \hypertarget{classScreen_ab035671163a5cabee7611c7c456b1c56}{\index{Screen@{Screen}!Set@{Set}}
@@ -295,6 +333,13 @@ Sets the characters at the given location to the given character.
 
 Overloaded ostream operator. 
 
+Overloaded ostream operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & the ostream operator \\
+\hline
+\mbox{\tt in}  & {\em s} & the screen being drawn \\
+\hline
+\end{DoxyParams}
 \hypertarget{classScreen_adb701ccee14124fb66506086b5a34199}{\index{Screen@{Screen}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Screen@{Screen}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
@@ -307,6 +352,13 @@ Overloaded ostream operator.
 
 Overloaded ostream operator. 
 
+Overloaded ostream operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & the ostream \\
+\hline
+\mbox{\tt in}  & {\em s} & the screen being drawn \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}

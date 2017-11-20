@@ -55,9 +55,7 @@ bool \hyperlink{classConnectFour_a26d75c9c50d6424df11de765086edc8a}{Is\-Column\-
 bool \hyperlink{classConnectFour_a408b2a0222e08488c258e4225ba5b8f6}{Is\-Board\-Full} ()
 \begin{DoxyCompactList}\small\item\em Returns true if every space in the board has been filled with a character. \end{DoxyCompactList}\item 
 void \hyperlink{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{Reset\-Game} ()
-\begin{DoxyCompactList}\small\item\em Resets the game for another round in the event that the A\-I wins. \end{DoxyCompactList}\item 
-int \hyperlink{classConnectFour_a51e2239fa0b4e8c16fb43fe2efb543aa}{Random\-Number} (int n)
-\begin{DoxyCompactList}\small\item\em Returns a random number between 0 and n-\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Resets the game for another round in the event that the A\-I wins. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,7 +118,7 @@ De-\/constructor.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}
 
 
 Sets the board up for the beginning of the game, placing them in screen. 
@@ -133,11 +131,7 @@ If i is even, fill the row with squares to place tokens in later
 
 top\-Bound and left\-Bound should set the board centered inside the screen object.
 
-top\-Bound and left\-Bound should set the board centered inside the screen object. 
-
-Implements \hyperlink{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}{Puzzle}.
-
-\hypertarget{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{\index{Connect\-Four@{Connect\-Four}!Horizontal\-Check@{Horizontal\-Check}}
+top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{\index{Connect\-Four@{Connect\-Four}!Horizontal\-Check@{Horizontal\-Check}}
 \index{Horizontal\-Check@{Horizontal\-Check}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Horizontal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Horizontal\-Check (
 \begin{DoxyParamCaption}
@@ -262,18 +256,7 @@ Displays the screen containing the gameboard
 
 Performs the A\-I players move. 
 
-\hypertarget{classConnectFour_a51e2239fa0b4e8c16fb43fe2efb543aa}{\index{Connect\-Four@{Connect\-Four}!Random\-Number@{Random\-Number}}
-\index{Random\-Number@{Random\-Number}!ConnectFour@{Connect\-Four}}
-\subsubsection[{Random\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Connect\-Four\-::\-Random\-Number (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a51e2239fa0b4e8c16fb43fe2efb543aa}
-
-
-Returns a random number between 0 and n-\/1. 
-
-Returns 0 to n-\/1 \hypertarget{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{\index{Connect\-Four@{Connect\-Four}!Reset\-Game@{Reset\-Game}}
+\hypertarget{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{\index{Connect\-Four@{Connect\-Four}!Reset\-Game@{Reset\-Game}}
 \index{Reset\-Game@{Reset\-Game}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Reset\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Reset\-Game (
 \begin{DoxyParamCaption}

@@ -120,32 +120,51 @@ $(document).ready(function(){initNavTree('MyWeapons_8h_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classSword.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSword.html">Sword</a>: <span class="keyword">public</span> <a class="code" href="classWeapon.html">Weapon</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSword.html#a21231a94ed57dc5fac7cae1c84002e5c">use</a>(<a class="code" href="classCharacter.html">Character</a> *target);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classBow.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBow.html">Bow</a>: <span class="keyword">public</span> <a class="code" href="classWeapon.html">Weapon</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBow.html#acdca55097e449415445fdcbda11037c8">use</a>(<a class="code" href="classCharacter.html">Character</a> *target);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classSpell.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSpell.html">Spell</a>: <span class="keyword">public</span> <a class="code" href="classWeapon.html">Weapon</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classItem.html#a6905855bea19d5f5ccc098cf39dc147f">use</a>(<a class="code" href="classCharacter.html">Character</a> *target)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classItem_html_a6905855bea19d5f5ccc098cf39dc147f"><div class="ttname"><a href="classItem.html#a6905855bea19d5f5ccc098cf39dc147f">Item::use</a></div><div class="ttdeci">virtual void use(Charater *target)=0</div></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classSword.html#af33284e40825ec8ddccd01fa5833be36">Sword</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSword.html#ac9613c1b3c9a3b748c6e36b1285924b9">use</a>(<a class="code" href="classCharacter.html">Character</a> *target);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classBow.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBow.html">Bow</a>: <span class="keyword">public</span> <a class="code" href="classWeapon.html">Weapon</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classBow.html#ae13f3721e07f62cacca7dc87e7cd3e09">Bow</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classBow.html#a19250cbc06d6bd21f83be645e880fd76">use</a>(<a class="code" href="classCharacter.html">Character</a> *target);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBow.html#acf3a40fb7f8d2320677da3948e1e6930">accuracy</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> &amp;<a class="code" href="classBow.html#acf3a40fb7f8d2320677da3948e1e6930">accuracy</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classBow.html#ab6156932e51ec7833d07a669e5e346ff">   50</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBow.html#ab6156932e51ec7833d07a669e5e346ff">hitPercent</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSpell.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSpell.html">Spell</a>: <span class="keyword">public</span> <a class="code" href="classWeapon.html">Weapon</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classSpell.html#a614361c1702859a162e1572030166cb0">Spell</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSpell.html#ae59f9a3082d49559fae99ee05014988b">use</a>(<a class="code" href="classCharacter.html">Character</a> *target);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classSpell_html_ae59f9a3082d49559fae99ee05014988b"><div class="ttname"><a href="classSpell.html#ae59f9a3082d49559fae99ee05014988b">Spell::use</a></div><div class="ttdeci">bool use(Character *target)</div><div class="ttdoc">Use Spell Implementation. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:101</div></div>
+<div class="ttc" id="classBow_html_acf3a40fb7f8d2320677da3948e1e6930"><div class="ttname"><a href="classBow.html#acf3a40fb7f8d2320677da3948e1e6930">Bow::accuracy</a></div><div class="ttdeci">int accuracy() const </div><div class="ttdoc">Allows reading of the accuracy. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:75</div></div>
 <div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class to provide input and output of Npc&amp;#39;s and Player. </div><div class="ttdef"><b>Definition:</b> Character.h:18</div></div>
-<div class="ttc" id="classBow_html_acdca55097e449415445fdcbda11037c8"><div class="ttname"><a href="classBow.html#acdca55097e449415445fdcbda11037c8">Bow::use</a></div><div class="ttdeci">void use(Character *target)</div></div>
+<div class="ttc" id="classSpell_html_a614361c1702859a162e1572030166cb0"><div class="ttname"><a href="classSpell.html#a614361c1702859a162e1572030166cb0">Spell::Spell</a></div><div class="ttdeci">Spell()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:91</div></div>
+<div class="ttc" id="classSword_html_af33284e40825ec8ddccd01fa5833be36"><div class="ttname"><a href="classSword.html#af33284e40825ec8ddccd01fa5833be36">Sword::Sword</a></div><div class="ttdeci">Sword()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:14</div></div>
+<div class="ttc" id="classBow_html_a19250cbc06d6bd21f83be645e880fd76"><div class="ttname"><a href="classBow.html#a19250cbc06d6bd21f83be645e880fd76">Bow::use</a></div><div class="ttdeci">bool use(Character *target)</div><div class="ttdoc">Use Bow Implementation. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:53</div></div>
+<div class="ttc" id="classSword_html_ac9613c1b3c9a3b748c6e36b1285924b9"><div class="ttname"><a href="classSword.html#ac9613c1b3c9a3b748c6e36b1285924b9">Sword::use</a></div><div class="ttdeci">bool use(Character *target)</div><div class="ttdoc">Use Sword Implementation. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:24</div></div>
 <div class="ttc" id="classSword_html"><div class="ttname"><a href="classSword.html">Sword</a></div><div class="ttdoc">Subclass of Weapon to represent a sword in game. </div><div class="ttdef"><b>Definition:</b> MyWeapons.h:14</div></div>
 <div class="ttc" id="Weapon_8h_html"><div class="ttname"><a href="Weapon_8h.html">Weapon.h</a></div></div>
-<div class="ttc" id="classSword_html_a21231a94ed57dc5fac7cae1c84002e5c"><div class="ttname"><a href="classSword.html#a21231a94ed57dc5fac7cae1c84002e5c">Sword::use</a></div><div class="ttdeci">void use(Character *target)</div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:11</div></div>
+<div class="ttc" id="classBow_html_ab6156932e51ec7833d07a669e5e346ff"><div class="ttname"><a href="classBow.html#ab6156932e51ec7833d07a669e5e346ff">Bow::hitPercent</a></div><div class="ttdeci">int hitPercent</div><div class="ttdef"><b>Definition:</b> MyWeapons.h:50</div></div>
+<div class="ttc" id="classBow_html_ae13f3721e07f62cacca7dc87e7cd3e09"><div class="ttname"><a href="classBow.html#ae13f3721e07f62cacca7dc87e7cd3e09">Bow::Bow</a></div><div class="ttdeci">Bow()</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> MyWeapons.cpp:42</div></div>
 <div class="ttc" id="classWeapon_html"><div class="ttname"><a href="classWeapon.html">Weapon</a></div><div class="ttdoc">This class is a abstract base class derived from Item to represent weapons in game. </div><div class="ttdef"><b>Definition:</b> Weapon.h:14</div></div>
-<div class="ttc" id="classBow_html"><div class="ttname"><a href="classBow.html">Bow</a></div><div class="ttdoc">Subclass of Weapon to represent a bow in game. </div><div class="ttdef"><b>Definition:</b> MyWeapons.h:24</div></div>
-<div class="ttc" id="classSpell_html"><div class="ttname"><a href="classSpell.html">Spell</a></div><div class="ttdoc">Subclass of Weapon to represent a spell in game. </div><div class="ttdef"><b>Definition:</b> MyWeapons.h:34</div></div>
+<div class="ttc" id="classBow_html"><div class="ttname"><a href="classBow.html">Bow</a></div><div class="ttdoc">Subclass of Weapon to represent a bow in game. </div><div class="ttdef"><b>Definition:</b> MyWeapons.h:28</div></div>
+<div class="ttc" id="classSpell_html"><div class="ttname"><a href="classSpell.html">Spell</a></div><div class="ttdoc">Subclass of Weapon to represent a spell in game. </div><div class="ttdef"><b>Definition:</b> MyWeapons.h:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,7 +1,7 @@
 var dir_a2ee3c219a349d2fa420a04c54f658ee =
 [
     [ "Consumable.h", "Consumable_8h.html", [
-      [ "Consumable", "classConsumable.html", null ]
+      [ "Consumable", "classConsumable.html", "classConsumable" ]
     ] ],
     [ "Item.cpp", "Item_8cpp.html", null ],
     [ "Item.h", "Item_8h.html", [
@@ -16,7 +16,7 @@ var dir_a2ee3c219a349d2fa420a04c54f658ee =
     [ "MyWeapons.h", "MyWeapons_8h.html", [
       [ "Sword", "classSword.html", "classSword" ],
       [ "Bow", "classBow.html", "classBow" ],
-      [ "Spell", "classSpell.html", null ]
+      [ "Spell", "classSpell.html", "classSpell" ]
     ] ],
     [ "Weapon.cpp", "Weapon_8cpp.html", null ],
     [ "Weapon.h", "Weapon_8h.html", [

@@ -1,4 +1,5 @@
 var classHealthPotion =
 [
-    [ "use", "classHealthPotion.html#a7e5875271f122606edb7e10f1a8a53d1", null ]
+    [ "HealthPotion", "classHealthPotion.html#a99e942956f7f1e07dd13c46daae08713", null ],
+    [ "use", "classHealthPotion.html#a5e1fc49fe1d5440f56baddfe219c31fe", null ]
 ];

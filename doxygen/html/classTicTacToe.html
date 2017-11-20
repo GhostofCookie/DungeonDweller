@@ -141,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a811356ea0290bf50ca522c79bead1e05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">RunGame</a> ()</td></tr>
 <tr class="separator:a811356ea0290bf50ca522c79bead1e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
+<tr class="memitem:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ad0be5c887460d0b386bf5d97264f0c24">RandomNumber</a> (int n) const </td></tr>
+<tr class="separator:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
 <tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4319df1536a07cd1aaf23b27aeb53579">More...</a><br/></td></tr>
 <tr class="separator:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,8 +174,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a3b96d4252e042b2e85bb0bc9a501bc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad65a6d8382d7a59c68a6778caea91d78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#ad65a6d8382d7a59c68a6778caea91d78">LeftDiagonalCheck</a> ()</td></tr>
 <tr class="separator:ad65a6d8382d7a59c68a6778caea91d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbb2da0bf1dc1c1689bac3b5a86281c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#acdbb2da0bf1dc1c1689bac3b5a86281c">RandomNumber</a> (int n)</td></tr>
-<tr class="separator:acdbb2da0bf1dc1c1689bac3b5a86281c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb5521e85c2a1d4c61ab405d03a62c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a7bb5521e85c2a1d4c61ab405d03a62c5">IsBoardFull</a> ()</td></tr>
 <tr class="memdesc:a7bb5521e85c2a1d4c61ab405d03a62c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if every space in the board has been filled with a character.  <a href="#a7bb5521e85c2a1d4c61ab405d03a62c5">More...</a><br/></td></tr>
 <tr class="separator:a7bb5521e85c2a1d4c61ab405d03a62c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -301,8 +301,6 @@ Additional Inherited Members</h2></td></tr>
 <p>topBound and leftBound should set the board centered inside the screen object.</p>
 <p>topBound and leftBound should set the board centered inside the screen object.</p>
 <p>topBound and leftBound should set the board centered inside the screen object. </p>
-
-<p>Implements <a class="el" href="classPuzzle.html#aefdb2ccc770062952c0d96d9dae27e7a">Puzzle</a>.</p>
 
 </div>
 </div>
@@ -426,31 +424,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="acdbb2da0bf1dc1c1689bac3b5a86281c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int TicTacToe::RandomNumber </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns 0 to n-1 </p>
 
 </div>
 </div>

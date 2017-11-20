@@ -172,7 +172,11 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ae78665422f8d46d0c4639916f494845c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryMatch.html#ae78665422f8d46d0c4639916f494845c">Peek</a> (int inputX1, int inputY1, int inputX2, int inputY2)</td></tr>
 <tr class="memdesc:ae78665422f8d46d0c4639916f494845c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flips two squares and outputs it for 3 seconds then flips it back.  <a href="#ae78665422f8d46d0c4639916f494845c">More...</a><br/></td></tr>
 <tr class="separator:ae78665422f8d46d0c4639916f494845c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3998ff0f59a063a493156c2d00eca2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryMatch.html#a7f3998ff0f59a063a493156c2d00eca2">IsInUsedPairs</a> (char symbol)</td></tr>
+<tr class="separator:a7f3998ff0f59a063a493156c2d00eca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
+<tr class="memitem:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ad0be5c887460d0b386bf5d97264f0c24">RandomNumber</a> (int n) const </td></tr>
+<tr class="separator:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
 <tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4319df1536a07cd1aaf23b27aeb53579">More...</a><br/></td></tr>
 <tr class="separator:a4319df1536a07cd1aaf23b27aeb53579 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +192,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac42fc8b5ac8b04bd0651222fa31d2251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80336b0b989152fed590a6fa755197bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryMatch.html#a80336b0b989152fed590a6fa755197bc">pairsOfCharsVector</a></td></tr>
 <tr class="separator:a80336b0b989152fed590a6fa755197bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb66679aaceb1414fe023d065863d2f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryMatch.html#adcb66679aaceb1414fe023d065863d2f">usedPairs</a></td></tr>
+<tr class="separator:adcb66679aaceb1414fe023d065863d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0a9e51558d70e671fa64aa246de499"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryMatch.html#aae0a9e51558d70e671fa64aa246de499">boardSize</a></td></tr>
 <tr class="separator:aae0a9e51558d70e671fa64aa246de499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Private Attributes inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
@@ -261,18 +267,42 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Sets the board up for the beginning of the game, placing them in screen. </p>
-<p>Holds a memory of all pairs previously used</p>
 <p>Setting up the match-true/false value vector for win checking/error checking</p>
 <p>Try random pairs until the table has been filled in a random order</p>
-<p>If we find any pair previously matched, try another random pair </p>
+<p>half of the area of the board since there are pairs so /2</p>
+<p>Chose a random pair from the table of possible pairs</p>
+<p>If we haven't used any pair yet. Insert right away</p>
+<p>Else check if we have used it before, if yes, try another pair </p>
 
-<p>Implements <a class="el" href="classPuzzle.html#aefdb2ccc770062952c0d96d9dae27e7a">Puzzle</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a7f3998ff0f59a063a493156c2d00eca2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MemoryMatch::IsInUsedPairs </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>symbol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -765,6 +795,26 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;char&gt; MemoryMatch::pairsOfCharsVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adcb66679aaceb1414fe023d065863d2f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; MemoryMatch::usedPairs</td>
         </tr>
       </table>
   </td>

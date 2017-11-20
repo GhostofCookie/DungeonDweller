@@ -19,24 +19,57 @@ Inheritance diagram for Food\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classFood_aeb50d8749f9fa2c9bfbc18c642607c41}{use} (\hyperlink{classCharacter}{Character} $\ast$taget)
-\end{DoxyCompactItemize}
+\hyperlink{classFood_a75d4d7f76fd495cc8133302ca9fdc485}{Food} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFood}{Food} Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classFood_a545771c5cb1d9d74ab05d393ed216fa4}{use} (\hyperlink{classCharacter}{Character} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Use \hyperlink{classFood}{Food} Implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 Subclass of \hyperlink{classConsumable}{Consumable} to represent in game food. 
 
-\subsection{Member Function Documentation}
-\hypertarget{classFood_aeb50d8749f9fa2c9bfbc18c642607c41}{\index{Food@{Food}!use@{use}}
-\index{use@{use}!Food@{Food}}
-\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}void Food\-::use (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFood_a75d4d7f76fd495cc8133302ca9fdc485}{\index{Food@{Food}!Food@{Food}}
+\index{Food@{Food}!Food@{Food}}
+\subsubsection[{Food}]{\setlength{\rightskip}{0pt plus 5cm}Food\-::\-Food (
 \begin{DoxyParamCaption}
-\item[{{\bf Character} $\ast$}]{taget}
+{}
 \end{DoxyParamCaption}
-)}}\label{classFood_aeb50d8749f9fa2c9bfbc18c642607c41}
-Defines what happens when the food is used param\mbox{[}in\mbox{]} target The \hyperlink{classCharacter}{Character} that the food is used on 
+)}}\label{classFood_a75d4d7f76fd495cc8133302ca9fdc485}
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+
+\hyperlink{classFood}{Food} Constructor. 
+
+\hyperlink{classFood}{Food} Constuctor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classFood_a545771c5cb1d9d74ab05d393ed216fa4}{\index{Food@{Food}!use@{use}}
+\index{use@{use}!Food@{Food}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}bool Food\-::use (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFood_a545771c5cb1d9d74ab05d393ed216fa4}
+
+
+Use \hyperlink{classFood}{Food} Implementation. 
+
+Defines what happens when the food is used 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em target} & The \hyperlink{classCharacter}{Character} that the food is used on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if use was successfull  invalid\-\_\-argument Thrown if target is not a player 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classItem_a790283e2fb63df00eb61a95bb9921051}{Item}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyConsumables_8h}{My\-Consumables.\-h}\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyConsumables_8h}{My\-Consumables.\-h}\item 
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyConsumables_8cpp}{My\-Consumables.\-cpp}\end{DoxyCompactItemize}

@@ -19,8 +19,10 @@ Inheritance diagram for Sword\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classSword_a21231a94ed57dc5fac7cae1c84002e5c}{use} (\hyperlink{classCharacter}{Character} $\ast$target)
-\end{DoxyCompactItemize}
+\hyperlink{classSword_af33284e40825ec8ddccd01fa5833be36}{Sword} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classSword_ac9613c1b3c9a3b748c6e36b1285924b9}{use} (\hyperlink{classCharacter}{Character} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Use \hyperlink{classSword}{Sword} Implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -35,19 +37,44 @@ Oct 25, 2017
 \end{DoxyDate}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSword_af33284e40825ec8ddccd01fa5833be36}{\index{Sword@{Sword}!Sword@{Sword}}
+\index{Sword@{Sword}!Sword@{Sword}}
+\subsubsection[{Sword}]{\setlength{\rightskip}{0pt plus 5cm}Sword\-::\-Sword (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSword_af33284e40825ec8ddccd01fa5833be36}
+
+
+Constructor. 
+
+\hyperlink{classSword}{Sword} Constructor. 
+
 \subsection{Member Function Documentation}
-\hypertarget{classSword_a21231a94ed57dc5fac7cae1c84002e5c}{\index{Sword@{Sword}!use@{use}}
+\hypertarget{classSword_ac9613c1b3c9a3b748c6e36b1285924b9}{\index{Sword@{Sword}!use@{use}}
 \index{use@{use}!Sword@{Sword}}
-\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}void Sword\-::use (
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}bool Sword\-::use (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{target}
 \end{DoxyParamCaption}
-)}}\label{classSword_a21231a94ed57dc5fac7cae1c84002e5c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSword_ac9613c1b3c9a3b748c6e36b1285924b9}
+
+
+Use \hyperlink{classSword}{Sword} Implementation. 
+
 Defines what happens when the sword is used 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em target} & The character that the sword is used on \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if use was successfull 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classItem_a790283e2fb63df00eb61a95bb9921051}{Item}.
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

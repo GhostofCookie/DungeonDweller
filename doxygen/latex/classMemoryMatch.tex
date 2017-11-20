@@ -49,7 +49,9 @@ void \hyperlink{classMemoryMatch_a6d4c54b56ee4f5b4df36b7767e07ebd5}{Save\-Board\
 void \hyperlink{classMemoryMatch_a698d59d1b34658bc2266bfe297623690}{Three\-Second\-Delay} ()
 \begin{DoxyCompactList}\small\item\em Causes a three second delay in the program process. \end{DoxyCompactList}\item 
 void \hyperlink{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}{Peek} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
-\begin{DoxyCompactList}\small\item\em Flips two squares and outputs it for 3 seconds then flips it back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flips two squares and outputs it for 3 seconds then flips it back. \end{DoxyCompactList}\item 
+bool \hyperlink{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}{Is\-In\-Used\-Pairs} (char symbol)
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,6 +62,8 @@ std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classMemoryMatch_af2437cf6ce0
 std\-::vector$<$ vector$<$ bool $>$ $>$ \hyperlink{classMemoryMatch_ac42fc8b5ac8b04bd0651222fa31d2251}{match\-Vector}
 \item 
 std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{pairs\-Of\-Chars\-Vector}
+\item 
+std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}{used\-Pairs}
 \item 
 int \hyperlink{classMemoryMatch_aae0a9e51558d70e671fa64aa246de499}{board\-Size}
 \end{DoxyCompactItemize}
@@ -111,21 +115,28 @@ Deconstructor.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}
 
 
 Sets the board up for the beginning of the game, placing them in screen. 
-
-Holds a memory of all pairs previously used
 
 Setting up the match-\/true/false value vector for win checking/error checking
 
 Try random pairs until the table has been filled in a random order
 
-If we find any pair previously matched, try another random pair 
+half of the area of the board since there are pairs so /2
 
-Implements \hyperlink{classPuzzle_aefdb2ccc770062952c0d96d9dae27e7a}{Puzzle}.
+Chose a random pair from the table of possible pairs
 
+If we haven't used any pair yet. Insert right away
+
+Else check if we have used it before, if yes, try another pair \hypertarget{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}{\index{Memory\-Match@{Memory\-Match}!Is\-In\-Used\-Pairs@{Is\-In\-Used\-Pairs}}
+\index{Is\-In\-Used\-Pairs@{Is\-In\-Used\-Pairs}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{Is\-In\-Used\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Is\-In\-Used\-Pairs (
+\begin{DoxyParamCaption}
+\item[{char}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}
 \hypertarget{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}{\index{Memory\-Match@{Memory\-Match}!Match\-Check@{Match\-Check}}
 \index{Match\-Check@{Match\-Check}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Match\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Match\-Check (
@@ -301,6 +312,9 @@ The vector which holds the integer value for the table, true being matched, fals
 \hypertarget{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{\index{Memory\-Match@{Memory\-Match}!pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}}
 \index{pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{pairs\-Of\-Chars\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$char$>$ Memory\-Match\-::pairs\-Of\-Chars\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}
+\hypertarget{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}{\index{Memory\-Match@{Memory\-Match}!used\-Pairs@{used\-Pairs}}
+\index{used\-Pairs@{used\-Pairs}!MemoryMatch@{Memory\-Match}}
+\subsubsection[{used\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$char$>$ Memory\-Match\-::used\-Pairs\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
