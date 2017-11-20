@@ -70,7 +70,6 @@ int main()
   ImageImporter imageImport = ImageImporter(mastrFile);
   // MainGame Screen
   Screen *screen = new Screen();
-
   // Menu
   Menu *menu = new Menu();
   menu->AddOption('W',"Move Up");
@@ -79,7 +78,6 @@ int main()
   Room *roomptr = new Room(imageImport.collection);
   RoomTree roomTree(roomptr);
 
-
    
   char n;
   while(true)
@@ -87,9 +85,9 @@ int main()
       // clear the screen
       screen->Erase();
       // align the current room to the screen and print
-      (*roomTree.at()).AlignCenter(*screen);
-      (*roomTree.at()).Draw(*screen);
-      cout << screen << endl;
+      (*roomTree.At()).AlignCenter(*screen);
+      (*roomTree.At()).Draw(*screen);
+      cout << endl << screen << endl;
  
       cin >> n;
 
@@ -97,36 +95,36 @@ int main()
       switch(n)
 	{
 	case 'w' :
-	  if(!roomTree.move('p'))
+	  if(!roomTree.Move('p'))
 	    {
-	      roomTree.newRoom('p', new Room(imageImport.collection));
-	      roomTree.move('p');
+	      roomTree.NewRoom('p', new Room(imageImport.collection));
+	      roomTree.Move('p');
 	    }
 	  break;
 	case 'a' :
-	  if(!roomTree.move('l'))
+	  if(!roomTree.Move('l'))
 	    {
-	      roomTree.newRoom('l', new Room(imageImport.collection));
-	      roomTree.move('l');
+	      roomTree.NewRoom('l', new Room(imageImport.collection));
+	      roomTree.Move('l');
 	    }
 	  break;
 	case 's' :
-	  if(!roomTree.move('c'))
+	  if(!roomTree.Move('c'))
 	    {
-	      roomTree.newRoom('c', new Room(imageImport.collection));
-	      roomTree.move('c');
+	      roomTree.NewRoom('c', new Room(imageImport.collection));
+	      roomTree.Move('c');
 	    }
 	  break;
 	case 'd' :
-	  if(!roomTree.move('r'))
+	  if(!roomTree.Move('r'))
 	    {
-	      roomTree.newRoom('r', new Room(imageImport.collection));
-	      roomTree.move('r');
+	      roomTree.NewRoom('r', new Room(imageImport.collection));
+	      roomTree.Move('r');
 	    }
 	  break;
 	default :
 	  break;
 	};
-    }
+  }
   return 0;
 }

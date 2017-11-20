@@ -36,7 +36,7 @@ RoomTree::RoomTree(Room* rootRoom)
 //*****************************************************************************
 RoomTree::~RoomTree()
 {
-   deleteTree(root);
+   DeleteTree(root);
    root = nullptr;
    currNode = nullptr;
 }
@@ -44,12 +44,12 @@ RoomTree::~RoomTree()
 //*****************************************************************************
 /// Helper function to assist in deleting the tree
 //*****************************************************************************
-void RoomTree::deleteTree(Node* tempRoot)
+void RoomTree::DeleteTree(Node* tempRoot)
 {
    if(tempRoot) {
-      deleteTree(tempRoot->left);
-      deleteTree(tempRoot->center);
-      deleteTree(tempRoot->right);
+      DeleteTree(tempRoot->left);
+      DeleteTree(tempRoot->center);
+      DeleteTree(tempRoot->right);
       delete tempRoot;
    }
 }
@@ -57,7 +57,7 @@ void RoomTree::deleteTree(Node* tempRoot)
 //*****************************************************************************
 /// Inserts a new room at child (throws exeption if already occupied)
 //*****************************************************************************
-void RoomTree::newRoom(char dir,Room* roomptr)
+void RoomTree::NewRoom(char dir,Room* roomptr)
 {
    dir = toupper(dir);
 
@@ -91,7 +91,7 @@ void RoomTree::newRoom(char dir,Room* roomptr)
 //*****************************************************************************
 /// Moves current position through the tree
 //*****************************************************************************
-bool RoomTree::move(char dir)
+bool RoomTree::Move(char dir)
 {
    dir = toupper(dir);
 
@@ -125,7 +125,7 @@ bool RoomTree::move(char dir)
 //*****************************************************************************
 /// Gives a const pointer to the room currently at for accessing
 //*****************************************************************************
-const Room* RoomTree::at() const
+const Room* RoomTree::At() const
 {
    return currNode->room;
 }
@@ -133,7 +133,7 @@ const Room* RoomTree::at() const
 //*****************************************************************************
 /// Gives a pointer to the room currently at
 //*****************************************************************************
-Room* RoomTree::at()
+Room* RoomTree::At()
 {
    return currNode->room;
 }
