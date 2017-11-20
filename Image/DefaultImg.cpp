@@ -49,7 +49,7 @@ DefaultImg::~DefaultImg()
 /// Function that creates the image by pushing back the vector
 void DefaultImg::Create()
 {
-   Erase();
+   Img.clear();
    
    for(int i = 0; i < height; i++)
    {
