@@ -7,6 +7,7 @@
 #include "CodeCracker.h"
 
 CodeCracker::CodeCracker(){
+   riddleCorrect=false;
    riddleCompletionCount=0;
    numberOfRiddles=0; //first char in the txt file
    question.resize(numberOfRiddles);
@@ -32,12 +33,29 @@ void CodeCracker:: RunGame()
 {
    cout << "Start" << endl;
    SetOptionsInMenu();
+   ImportRiddles();
 
    int currentRiddle;
    while(PuzzleEnd==false)
    {
-      //currentRiddle=
-
+      cout << "Loop" << endl;
+      currentRiddle=Puzzle::RandomNumber(numberOfRiddles);
+      ///Do riddle
+      
+      if(riddleCorrect==true)
+      {
+	 ///if riddle was completed successfully 
+	 riddleCompletionCount++;
+      }
+      else
+      {
+	 ///Decrement player health
+	 ///If player has died
+	 ///PuzzleEnd=true;
+	 ///
+      }
+      WinCheck();
+      PuzzleEnd=true;
    }
 }
 
@@ -60,6 +78,8 @@ bool CodeCracker::ValidAnswer(const char input)
 ///Checks if the player has successfully answered 3 riddles.
 void CodeCracker::WinCheck()
 {
+   if(riddleCompletionCount==3)
+      PuzzleEnd=true;
 }
 
 ///Checks if the player is now dead
@@ -69,9 +89,6 @@ void CodeCracker::DeathCheck()
 
 /// Displays the screen containing the gameboard
 /// \param[in] CfScreen, the screen object used for displaying the mini-game 
-void CodeCracker::OutputGame(Screen &ccScreen)
-{
-}
 
 void CodeCracker::SetOptionsInMenu()
 {
@@ -80,26 +97,30 @@ void CodeCracker::SetOptionsInMenu()
 ///Imports riddles from a text file and stores them in the vector.
 void CodeCracker::ImportRiddles()
 {
-   ifstream in;
    string line, questionString, questionFormat;
+   char number;
    int qAnswer;
 
+   ifstream in;
    in.open("Riddles.txt");	
+
    if(in)
    {
-      getline(in, line, '\n');
-      numberOfRiddles=line[0];
+      in >> numberOfRiddles;
+            cout << "Number of Riddles: " << numberOfRiddles << endl;
       for(int i=0; i<numberOfRiddles; i++)
       {
 	 if(line != "")
 	 {
-	    // get both the file and the ID
-	    istringstream iss(line);
-	    iss >> questionString >> questionFormat >> qAnswer;
+	    getline(in, line, '\n');
 
+	    cout << "Question:" << line << endl;
+	    cout << "Format:" << questionFormat << endl;
+	    cout << "Answer:" << qAnswer << endl;
 	    question.at(i)=questionString;
 	    format.at(i)=questionFormat;
 	    answer.at(i)=qAnswer;
+
 	 }
       }
       in.close();	
