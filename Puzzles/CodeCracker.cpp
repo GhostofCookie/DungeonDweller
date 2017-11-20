@@ -99,7 +99,7 @@ void CodeCracker::ImportRiddles()
 {
    string line, questionString, questionFormat;
    char number;
-   int qAnswer;
+   int qAnswer=0;
 
    ifstream in;
    in.open("Riddles.txt");	
@@ -107,21 +107,19 @@ void CodeCracker::ImportRiddles()
    if(in)
    {
       in >> numberOfRiddles;
-            cout << "Number of Riddles: " << numberOfRiddles << endl;
+      cout << "Number of Riddles: " << numberOfRiddles << endl;
       for(int i=0; i<numberOfRiddles; i++)
       {
-	 if(line != "")
-	 {
-	    getline(in, line, '\n');
 
-	    cout << "Question:" << line << endl;
-	    cout << "Format:" << questionFormat << endl;
-	    cout << "Answer:" << qAnswer << endl;
-	    question.at(i)=questionString;
-	    format.at(i)=questionFormat;
-	    answer.at(i)=qAnswer;
+	 getline(in, line, '\n');
 
-	 }
+	 cout << "Question:" << line << endl;
+	 cout << "Format:" << questionFormat << endl;
+	 cout << "Answer:" << qAnswer << endl;
+	 question.at(i)=questionString;
+	 format.at(i)=questionFormat;
+	 answer.at(i)=qAnswer;
+
       }
       in.close();	
    }

@@ -12,15 +12,15 @@ int main(){
    srand(time(NULL));
    //Hanoi HanoiTest;
    //ConnectFour ConnectFourTest;
-   //MemoryMatch mmTest;
+   MemoryMatch mmTest;
    //TicTacToe ttt;
-   CodeCracker cc;
+   //CodeCracker cc;
    
    //HanoiTest.RunGame();
 //ConnectFourTest.RunGame();
-   //mmTest.RunGame();
+   mmTest.RunGame();
    //ttt.RunGame();
-   cc.RunGame();
+   //cc.RunGame();
 
    return 0;
 }

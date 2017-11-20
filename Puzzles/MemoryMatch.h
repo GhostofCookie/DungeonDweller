@@ -74,10 +74,12 @@ class MemoryMatch: virtual Puzzle
    ///Causes a three second delay in the program process
    void ThreeSecondDelay();
 
-   ///Flips two squares and outputs it for 3 seconds then flips it back.
-   
+   ///Flips two squares and outputs it for 3 seconds then flips it back.   
    void Peek(int inputX1, int inputY1, int inputX2, int inputY2);
 
+//Checks if a char is in the used pairs vector
+   bool IsInUsedPairs(char symbol);
+      
    Screen MemoryMatchScreen;
 
 ///The vector which holds the char values of the table to be matched
@@ -88,6 +90,8 @@ class MemoryMatch: virtual Puzzle
    std::vector<vector<bool>>matchVector;
 
    std::vector<char>pairsOfCharsVector;
+
+   std::vector<char>usedPairs;
    
    int boardSize;
 };

@@ -38,45 +38,116 @@ MemoryMatch::~MemoryMatch()
 
 void MemoryMatch::RunGame()
 {
-   cout << "WELCOME TO MEMORY MATCH" << endl;
+   cout << "Start" << endl;
+   SetOptionsInMenu();
+   BoardSetup();
+   SaveBoardToScreen();
+   while(PuzzleEnd==false)
+   {
+      cout << MemoryMatchScreen;
+      //MemoryMatchMenu.OutputMenu();
+      //MemoryMatchMenu.HandleInput(cin);
+      WinCheck();
+      
+      PuzzleEnd=true;//to be removed
+   }
+	   
 }
 
 ///Sets the board up for the beginning of the game, placing them in screen
 void MemoryMatch::BoardSetup()
 {
-   ///Holds a memory of all pairs previously used
-   std::vector<char>usedPairs(8);
-
+   cout << "Board Setup" << endl << endl;
    int randomPairIndex;
    char randomPairToInsert;
    bool reSelect=true;
    ///Setting up the match-true/false value vector for win checking/error checking
    for(unsigned int i=0; i<pairsOfCharsVector.size(); i++)
    {
+      cout << "i:" << i<< endl;
       ///Try random pairs until the table has been filled in a random order
       while(reSelect==true)
       {
 	 reSelect=false;
+	 ///half of the area of the board since there are pairs so /2
 	 randomPairIndex=RandomNumber(boardSize*boardSize/2);
+	 ///Chose a random pair from the table of possible pairs
 	 randomPairToInsert=pairsOfCharsVector.at(randomPairIndex);
-      
-	 for(unsigned int i=0; i<pairsOfCharsVector.size(); i++)
+	 
+	 ///If we haven't used any pair yet. Insert right away
+	 if(usedPairs.empty())
 	 {
-	    ///If we find any pair previously matched, try another random pair
-	    if(randomPairToInsert==usedPairs.at(i))
-	       reSelect=true;
+	    cout << "Empty Vector" << endl;
+	    break;
+	 }///Else check if we have used it before, if yes, try another pair
+	 else if(IsInUsedPairs(randomPairToInsert))
+	 {
+	    reSelect=true;
+	 }	 
+      }
+      usedPairs.push_back(pairsOfCharsVector.at(randomPairIndex));
+      cout << endl << "symbol:" << pairsOfCharsVector.at(randomPairIndex) << "   ";
+
+      RandomlyInsertIntoTable(pairsOfCharsVector.at(randomPairIndex));
+      //If we inserted, try another value.
+      reSelect=true;
+   }
+ 
+   cout << endl << "1234" << endl;
+   for(int i=0; i<charTable.size(); i++)
+   {
+        
+      for(int j=0; j<charTable.at(i).size(); j++)
+      {
+	 cout << charTable.at(i).at(j);
+      }
+      cout << endl;
+   }
+   cout << endl << "1234" << endl;
+}
+
+bool MemoryMatch:: IsInUsedPairs(char symbol)
+{
+   for(int i=0; i<usedPairs.size(); i++)
+   {
+      if(symbol==usedPairs.at(i))
+      {
+	 cout << "used";
+	 return true;
+      }
+   }
+   return false;
+}
+///randomly puts pairs into the table
+void MemoryMatch::RandomlyInsertIntoTable(char symbol)
+{
+   int randomXCoordinate;
+   int randomYCoordinate;
+   bool insertSuccess=false;
+   ///Happens twice since it's a pair
+   for(int i=0; i<2; i++)
+   {
+      ///Keep repeating until an acceptable location is found, randomly.
+      while(insertSuccess==false)
+      {
+	 randomXCoordinate=Puzzle::RandomNumber(boardSize-1);
+	 randomYCoordinate=Puzzle::RandomNumber(boardSize-1);
+	 cout << "Random X:" << randomXCoordinate << "  Random Y:" << randomYCoordinate << endl;
+	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)!=' ')
+	 {
+	    charTable.at(randomXCoordinate).at(randomYCoordinate)=symbol;
+	    insertSuccess=true;
 	 }
       }
-	 usedPairs.back()= pairsOfCharsVector.at(randomPairIndex);
-	 RandomlyInsertIntoTable(pairsOfCharsVector.at(randomPairIndex));
+      insertSuccess=false;
    }
-   
 }
 
 ///Puts the values in the charTable into the screen in appropriate places among
 ///the game board
 void MemoryMatch::SaveBoardToScreen()
 {
+   cout << "SaveBoardToScreen" << endl;
    int screenBoardSize=9, topBound=11, leftBound=45;
    for(int i=0; i<screenBoardSize; i++)
    {
@@ -104,29 +175,6 @@ void MemoryMatch::SaveBoardToScreen()
 	       ///the screen object.  
 	       MemoryMatchScreen.Set((topBound+i),(leftBound+j),'|');
 	    }
-	 }
-      }
-   }
-}
-
-///randomly puts pairs into the table
-void MemoryMatch::RandomlyInsertIntoTable(char symbol)
-{
-   int randomXCoordinate;
-   int randomYCoordinate;
-   bool insertSuccess=false;
-   ///Happens twice since it's a pair
-   for(int i=0; i<2; i++)
-   {
-      ///Keep repeating until an acceptable location is found, randomly.
-      while(insertSuccess==false)
-      {
-	 randomXCoordinate=RandomNumber(boardSize-1);
-	 randomYCoordinate=RandomNumber(boardSize-1);
-	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)==' ')
-	 {
-	    charTable.at(randomXCoordinate).at(randomYCoordinate)=symbol;
-	    insertSuccess=true;
 	 }
       }
    }
