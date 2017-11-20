@@ -60,11 +60,13 @@ class MemoryMatch: virtual Puzzle
    void WinCheck();
 
    ///randomly puts pairs into the table
-   
    void RandomlyInsertIntoTable(char symbol);
+
+   ///Flips the char stored at the inputted coordinates on chartable and sets
+   ///them on the screen.
+   void FlipTwoChars(int inputX, int inputY);
    
-   ///Returns a random number between 0 and n-1
-   
+   ///Returns a random number between 0 and n-1 
    int RandomNumber(int n);
 
 ///Puts the values in the charTable into the screen in appropriate places among
@@ -82,6 +84,9 @@ class MemoryMatch: virtual Puzzle
    
 //Checks if a char is in the used pairs vector
    bool IsInUsedPairs(char symbol);
+
+   ///Returns true if char has a true value in the matchVector, false otherwise
+   bool IsCharAlreadyMatched(int inputX, int inputY);
    
    Screen MemoryMatchScreen;
 
@@ -92,10 +97,13 @@ class MemoryMatch: virtual Puzzle
    ///matched, false being unmatched.
    std::vector<vector<bool>>matchVector;
 
+   ///Vector containing symbols to be randomly inserted on the screen at start
    std::vector<char>pairsOfCharsVector;
 
+   ///Vector containing all pairs that have already been matched up
    std::vector<char>usedPairs;
-   
+
+   ///dimensions for the gameboard
    int boardSize;
 };
 #endif
