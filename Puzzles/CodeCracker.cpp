@@ -39,7 +39,7 @@ void CodeCracker:: RunGame()
    while(PuzzleEnd==false)
    {
       cout << "Loop" << endl;
-      currentRiddle=RandomNumber(numberOfRiddles);
+      currentRiddle=Puzzle::RandomNumber(numberOfRiddles);
       ///Do riddle
       
       if(riddleCorrect==true)

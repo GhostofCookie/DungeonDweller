@@ -37,14 +37,14 @@ void ConnectFour::SetOptionsInMenu()
 ///Performs the AI players move
 void ConnectFour::PlayAI(char AiPiece)
 {
-   int columnChoice=RandomNumber(xSize);
+   int columnChoice=Puzzle::RandomNumber(xSize);
    bool moveSuccessful=false;
 
    while(moveSuccessful==false)
    {
       if(IsColumnFull(columnChoice))
       {
-	 columnChoice=RandomNumber(xSize);
+	 columnChoice=Puzzle::RandomNumber(xSize);
       }
       else
       {
