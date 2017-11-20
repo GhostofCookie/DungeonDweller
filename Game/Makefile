@@ -1,5 +1,4 @@
 CC = g++
-<<<<<<< HEAD
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
 MENU = ../Menu/CharacterMenu.o ../Menu/ConnectFourMenu.o ../Menu/DialogueMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/HanoiMenu.o ../Menu/MainMenu.o ../Menu/MemoryMenu.o ../Menu/Menu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/TradeMenu.o
 SCREEN = ../Screen/Screen.o ../Screen/SlotScreen.o
@@ -18,7 +17,6 @@ CCFLAGS = -Wall -std=c++11 -I$(ARCHIVEDIR) -g
 COV = -fprofile-arcs -ftest-coverage #-lcppunit -ldl 
 LIB = ./lib
 LINKS = -L $(LIB) $(COV)
->>>>>>> 5e40a92571f36d49b522d99aa808708d1fdc319a
 
 ## targets and prerequisites
 .PHONY : all
