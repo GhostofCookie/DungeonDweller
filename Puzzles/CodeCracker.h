@@ -48,27 +48,25 @@ class CodeCracker: public virtual Puzzle
 ///Checks if the player is now dead
    void DeathCheck();//Will need to take some kind of character variable/object
 
-/// Displays the screen containing the gameboard
-/// \param[in] CfScreen, the screen object used for displaying the mini-game 
-   void OutputGame(Screen &ccScreen);
-
 ///Imports riddles from a text file and stores them in the vector.
    void ImportRiddles();
 
-   void SetOptionsInMenu();
+void SetOptionsInMenu();
    
 ///Vector to store the question strings read in from the file 
-   std::vector<string>question;
+std::vector<string>question;
 
 ///Vector to store the descriptions on how to answer each question, in order.
-   std::vector<string>format;//Descriptions of how to answer questions
+std::vector<string>format;//Descriptions of how to answer questions
 
 ///Vector to store the questions answers read in from the file, in order
-   std::vector<int>answer;
+std::vector<int>answer;
 
-   int riddleCompletionCount;
+int riddleCompletionCount;
 
-   int numberOfRiddles;
+int numberOfRiddles;
+
+bool riddleCorrect;
 };
 #endif
 

@@ -2,6 +2,7 @@
 #include "ConnectFour.h"
 #include "TicTacToe.h"
 #include "MemoryMatch.h"
+#include "CodeCracker.h"
 #include <unistd.h>
 #include <ctime>
 #include <iostream>
@@ -11,14 +12,16 @@ int main(){
    srand(time(NULL));
    //Hanoi HanoiTest;
    //ConnectFour ConnectFourTest;
-   //ConnectFourTest.RunGame();
-   //HanoiTest.RunGame();
+   //MemoryMatch mmTest;
    //TicTacToe ttt;
-   //ttt.RunGame();
-   //ConnectFour Cf;
-   MemoryMatch mmTest;
-   mmTest.RunGame();
+   CodeCracker cc;
+   
    //HanoiTest.RunGame();
+//ConnectFourTest.RunGame();
+   //mmTest.RunGame();
+   //ttt.RunGame();
+   cc.RunGame();
+
    return 0;
 }
 

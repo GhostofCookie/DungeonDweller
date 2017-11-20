@@ -39,11 +39,6 @@ class Puzzle
 
    ///Sends the menu class the options for the player to select.
    virtual void SetOptionsInMenu()=0;
-
-   ///Sets the board up for the beginning of the game
-   virtual void BoardSetup()=0;
-
-  
-   
+    
 };
 #endif
