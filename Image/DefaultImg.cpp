@@ -5,11 +5,12 @@
 /// \param[in] w the width of the image
 /// \param[in] c the character used to draw the image
 DefaultImg::DefaultImg(int h, int w, char c)
-   : _height{h}, _width{w}, ch{c}
+   : _height{h}, _width{w}, _ch{c}
 {
    // couldn't assign directly needed to assign to non-static var first
    height = _height;
    width = _width;
+   ch = _ch;
    Create();
 }
 
