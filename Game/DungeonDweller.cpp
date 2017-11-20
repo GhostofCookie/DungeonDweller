@@ -87,7 +87,7 @@ int main()
       // align the current room to the screen and print
       (*roomTree.At()).AlignCenter(*screen);
       (*roomTree.At()).Draw(*screen);
-      cout << endl << screen << endl;
+      cout << roomTree.CurrentHeight() << endl << screen << endl;
  
       cin >> n;
 

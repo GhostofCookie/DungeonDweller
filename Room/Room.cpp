@@ -176,7 +176,7 @@ int Room::Rand(int n)
 int Room::RoomChance()
 {  
    bool selected = false;
-   vector<int> chance = {50, 10, 35, 5}; // weight
+   vector<int> chance = {50, 10, 25, 5}; // weight
    int roomType = 0;
 
    int outOf = 0; // total of the weights
@@ -188,7 +188,7 @@ int Room::RoomChance()
    do
    {
       // allows the index to start at a random location in the vector
-      for(int r = Rand(4); r < ROOMTYPES; r++)
+      for(int r = Rand(ROOMTYPES); r < ROOMTYPES; r++)
       {
 	 int n = Rand(outOf);
 	 // trys to generate a random number less than the chance %

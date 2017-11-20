@@ -1,5 +1,4 @@
 3
-
 I have a bad of 17 red rocks and 17 blue rocks. I (blindly) remove two balls. If they are both the same colour I put a blue rock back in, if they are different colours I put a red rock back in. I repeat this until only one rock remains. What colour is the last rock?
 1:Blue, 2:Red.
 1

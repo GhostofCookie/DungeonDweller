@@ -7,19 +7,8 @@
 #include "CodeCracker.h"
 
 CodeCracker::CodeCracker(){
-   riddleCorrect=false;
-   riddleCompletionCount=0;
-   numberOfRiddles=0; //first char in the txt file
-   question.resize(numberOfRiddles);
-   question.resize(numberOfRiddles);
-   question.resize(numberOfRiddles);
-   for(int i=0; i<numberOfRiddles; i++)
-   {
-      ///Read in the riddle question string
-      ///Read in the answer format
-      ///Read in the anwer
-   }
-   
+      riddleCompletionCount=0;
+   numberOfRiddles=0;
 }
 
 ///Deconstructor
@@ -39,25 +28,35 @@ void CodeCracker:: RunGame()
    while(PuzzleEnd==false)
    {
       cout << "Loop" << endl;
-      currentRiddle=Puzzle::RandomNumber(numberOfRiddles);
-      ///Do riddle
-      
-      if(riddleCorrect==true)
-      {
-	 ///if riddle was completed successfully 
-	 riddleCompletionCount++;
-      }
+      currentRiddle=UnusedRandomRiddleGenerator();
+///Do riddle output, input
+      int userinput;
+      if(ValidAnswer(userinput, currentRiddle)==false)
+	 DeathCheck(); //************NEEDS TO BE IMPLEMENTED******************
       else
-      {
-	 ///Decrement player health
-	 ///If player has died
-	 ///PuzzleEnd=true;
-	 ///
-      }
-      WinCheck();
-      PuzzleEnd=true;
+	 WinCheck();
+      PuzzleEnd=true;//***********TO BE REMOVED**************
    }
 }
+///Picks one of the unused riddles randomly and returns its index
+int CodeCracker::UnusedRandomRiddleGenerator()
+{
+   int randRiddle;
+   bool validRiddleFound=false;
+   while(validRiddleFound==false)
+   {
+      randRiddle=Puzzle::RandomNumber(numberOfRiddles);
+      for(int i=0; i<usedRiddles.size(); i++)
+      {
+	 if(randRiddle==usedRiddles.at(i))
+	    return false;
+	 else
+	    return true;
+      }
+   }
+   return randRiddle;
+}
+
 
 ///Checks the semantics of the user choice to make sure they aren't doing
 ///something that would break the game with their input.
@@ -68,13 +67,20 @@ bool CodeCracker::ValidMove(char input)
    return false;
 }
 
+
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
-bool CodeCracker::ValidAnswer(const char input)
+bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
-   return false;
+  if(input==answer.at(riddleIndex))
+   {
+      riddleCompletionCount++;
+      return true;
+   }
+   else
+      return false;
 }
-   
+
 ///Checks if the player has successfully answered 3 riddles.
 void CodeCracker::WinCheck()
 {
@@ -102,24 +108,29 @@ void CodeCracker::ImportRiddles()
    int qAnswer=0;
 
    ifstream in;
-   in.open("Riddles.txt");	
+   in.open("Riddles.txt");
 
    if(in)
    {
       in >> numberOfRiddles;
       cout << "Number of Riddles: " << numberOfRiddles << endl;
+      std::getline(in,line);
+      question.resize(numberOfRiddles);
+      format.resize(numberOfRiddles);
+      answer.resize(numberOfRiddles);
+      usedRiddles.resize(numberOfRiddles);
       for(int i=0; i<numberOfRiddles; i++)
       {
-
-	 getline(in, line, '\n');
-
-	 cout << "Question:" << line << endl;
+	 std::getline(in, questionString);
+	 std::getline(in, questionFormat);
+	 in >> qAnswer;
+	 cout << "Question:" << questionString << endl;
 	 cout << "Format:" << questionFormat << endl;
 	 cout << "Answer:" << qAnswer << endl;
 	 question.at(i)=questionString;
 	 format.at(i)=questionFormat;
 	 answer.at(i)=qAnswer;
-
+	 std::getline(in,line);
       }
       in.close();	
    }
