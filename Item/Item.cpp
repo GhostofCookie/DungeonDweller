@@ -36,7 +36,7 @@ Item *Item::getItem(string itemType)
 	else if(itemType == "FOOD")
 		newItem = new Food;
 	else
-		throw invalid_argument("invalid type")
+		throw invalid_argument("invalid type");
 }
 
 //*****************************************************************************
