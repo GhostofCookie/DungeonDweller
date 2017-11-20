@@ -19,7 +19,18 @@ Inheritance diagram for Bow\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classBow_acdca55097e449415445fdcbda11037c8}{use} (\hyperlink{classCharacter}{Character} $\ast$target)
+\hyperlink{classBow_ae13f3721e07f62cacca7dc87e7cd3e09}{Bow} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classBow_a19250cbc06d6bd21f83be645e880fd76}{use} (\hyperlink{classCharacter}{Character} $\ast$target)
+\begin{DoxyCompactList}\small\item\em Use \hyperlink{classBow}{Bow} Implementation. \end{DoxyCompactList}\item 
+int \hyperlink{classBow_acf3a40fb7f8d2320677da3948e1e6930}{accuracy} () const 
+\begin{DoxyCompactList}\small\item\em Allows reading of the accuracy. \end{DoxyCompactList}\item 
+int \& \hyperlink{classBow_a2d68e17d2f9f39b4decce2ab90cc180b}{accuracy} ()
+\begin{DoxyCompactList}\small\item\em Allows reading and writing of accuracy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classBow_ab6156932e51ec7833d07a669e5e346ff}{hit\-Percent}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -27,21 +38,81 @@ void \hyperlink{classBow_acdca55097e449415445fdcbda11037c8}{use} (\hyperlink{cla
 \subsection{Detailed Description}
 Subclass of \hyperlink{classWeapon}{Weapon} to represent a bow in game. 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classBow_ae13f3721e07f62cacca7dc87e7cd3e09}{\index{Bow@{Bow}!Bow@{Bow}}
+\index{Bow@{Bow}!Bow@{Bow}}
+\subsubsection[{Bow}]{\setlength{\rightskip}{0pt plus 5cm}Bow\-::\-Bow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBow_ae13f3721e07f62cacca7dc87e7cd3e09}
+
+
+Constructor. 
+
+\hyperlink{classBow}{Bow} Constructor. 
+
 \subsection{Member Function Documentation}
-\hypertarget{classBow_acdca55097e449415445fdcbda11037c8}{\index{Bow@{Bow}!use@{use}}
+\hypertarget{classBow_acf3a40fb7f8d2320677da3948e1e6930}{\index{Bow@{Bow}!accuracy@{accuracy}}
+\index{accuracy@{accuracy}!Bow@{Bow}}
+\subsubsection[{accuracy}]{\setlength{\rightskip}{0pt plus 5cm}int Bow\-::accuracy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classBow_acf3a40fb7f8d2320677da3948e1e6930}
+
+
+Allows reading of the accuracy. 
+
+Returns the accuracy of the bow (for reading only) \begin{DoxyReturn}{Returns}
+\hyperlink{classBow}{Bow} accuracy 
+\end{DoxyReturn}
+\hypertarget{classBow_a2d68e17d2f9f39b4decce2ab90cc180b}{\index{Bow@{Bow}!accuracy@{accuracy}}
+\index{accuracy@{accuracy}!Bow@{Bow}}
+\subsubsection[{accuracy}]{\setlength{\rightskip}{0pt plus 5cm}int \& Bow\-::accuracy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBow_a2d68e17d2f9f39b4decce2ab90cc180b}
+
+
+Allows reading and writing of accuracy. 
+
+Returns the accuracy of the weapon (for writing) \begin{DoxyReturn}{Returns}
+reference to hit\-Percent 
+\end{DoxyReturn}
+\hypertarget{classBow_a19250cbc06d6bd21f83be645e880fd76}{\index{Bow@{Bow}!use@{use}}
 \index{use@{use}!Bow@{Bow}}
-\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}void Bow\-::use (
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}bool Bow\-::use (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{target}
 \end{DoxyParamCaption}
-)}}\label{classBow_acdca55097e449415445fdcbda11037c8}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBow_a19250cbc06d6bd21f83be645e880fd76}
+
+
+Use \hyperlink{classBow}{Bow} Implementation. 
+
 Defines what happens when the spell is used 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em target} & The character that the spell is used on \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if use was successfull 
+\end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+Implements \hyperlink{classItem_a790283e2fb63df00eb61a95bb9921051}{Item}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classBow_ab6156932e51ec7833d07a669e5e346ff}{\index{Bow@{Bow}!hit\-Percent@{hit\-Percent}}
+\index{hit\-Percent@{hit\-Percent}!Bow@{Bow}}
+\subsubsection[{hit\-Percent}]{\setlength{\rightskip}{0pt plus 5cm}int Bow\-::hit\-Percent\hspace{0.3cm}{\ttfamily [protected]}}}\label{classBow_ab6156932e51ec7833d07a669e5e346ff}
+The bows accuracy as a percent (accuracy less than 1 always miss) (accuracy greater than 99 always hit) 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyWeapons_8h}{My\-Weapons.\-h}\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyWeapons_8h}{My\-Weapons.\-h}\item 
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{MyWeapons_8cpp}{My\-Weapons.\-cpp}\end{DoxyCompactItemize}

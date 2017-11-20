@@ -1,6 +1,8 @@
 var dir_ad5ebf44828b4c656083035f2f9871fe =
 [
-    [ "DialogueState.h", "DialogueState_8h.html", "DialogueState_8h" ],
+    [ "DialogueState.h", "DialogueState_8h.html", [
+      [ "DialogueState", "classDialogueState.html", "classDialogueState" ]
+    ] ],
     [ "ExploreState.h", "ExploreState_8h.html", [
       [ "ExploreState", "classExploreState.html", "classExploreState" ]
     ] ],

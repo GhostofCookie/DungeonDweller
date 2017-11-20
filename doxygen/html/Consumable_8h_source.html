@@ -111,19 +111,29 @@ $(document).ready(function(){initNavTree('Consumable_8h_source.html','');});
 <a href="Consumable_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Consumable Header File</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef CONSUMABLE_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONSUMABLE_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Item_8h.html">Item.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classConsumable.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsumable.html">Consumable</a> : <span class="keyword">public</span> <a class="code" href="classItem.html">Item</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classItem_html"><div class="ttname"><a href="classItem.html">Item</a></div><div class="ttdoc">This class is an abstract base class to represent items in game. </div><div class="ttdef"><b>Definition:</b> Item.h:14</div></div>
-<div class="ttc" id="classConsumable_html"><div class="ttname"><a href="classConsumable.html">Consumable</a></div><div class="ttdoc">This class is an abstaract base class derived from Item to represent in game consumables. </div><div class="ttdef"><b>Definition:</b> Consumable.h:13</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef CONSUMABLE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONSUMABLE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Item_8h.html">Item.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classConsumable.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsumable.html">Consumable</a> : <span class="keyword">public</span> <a class="code" href="classItem.html">Item</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> power() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> &amp;power();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classConsumable.html#a492024e0b8fd5b6c6e944116cbff3e32">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classConsumable.html#a492024e0b8fd5b6c6e944116cbff3e32">value</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classConsumable.html#a261f0f34c301027337ffe6bf32bf0200">   28</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classConsumable.html#a261f0f34c301027337ffe6bf32bf0200">used</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classConsumable_html_a261f0f34c301027337ffe6bf32bf0200"><div class="ttname"><a href="classConsumable.html#a261f0f34c301027337ffe6bf32bf0200">Consumable::used</a></div><div class="ttdeci">bool used</div><div class="ttdef"><b>Definition:</b> Consumable.h:28</div></div>
+<div class="ttc" id="classItem_html"><div class="ttname"><a href="classItem.html">Item</a></div><div class="ttdoc">This class is an abstract base class to represent items in game. </div><div class="ttdef"><b>Definition:</b> Item.h:16</div></div>
+<div class="ttc" id="classConsumable_html"><div class="ttname"><a href="classConsumable.html">Consumable</a></div><div class="ttdoc">This class is an abstaract base class derived from Item to represent in game consumables. </div><div class="ttdef"><b>Definition:</b> Consumable.h:14</div></div>
 <div class="ttc" id="Item_8h_html"><div class="ttname"><a href="Item_8h.html">Item.h</a></div></div>
+<div class="ttc" id="classConsumable_html_a492024e0b8fd5b6c6e944116cbff3e32"><div class="ttname"><a href="classConsumable.html#a492024e0b8fd5b6c6e944116cbff3e32">Consumable::value</a></div><div class="ttdeci">int value</div><div class="ttdoc">The actuall value of the item(ex how much health it restores) </div><div class="ttdef"><b>Definition:</b> Consumable.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

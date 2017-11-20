@@ -131,7 +131,6 @@ Inheritance diagram for Screen:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a932b81c3d221d644cc40ffe9003515a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a932b81c3d221d644cc40ffe9003515a5">Screen</a> (int h=33, int w=101, char ch= '-')</td></tr>
-<tr class="memdesc:a932b81c3d221d644cc40ffe9003515a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor.  <a href="#a932b81c3d221d644cc40ffe9003515a5">More...</a><br/></td></tr>
 <tr class="separator:a932b81c3d221d644cc40ffe9003515a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4243bc17596af96415b09ac48205676d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a4243bc17596af96415b09ac48205676d">~Screen</a> ()</td></tr>
 <tr class="memdesc:a4243bc17596af96415b09ac48205676d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4243bc17596af96415b09ac48205676d">More...</a><br/></td></tr>
@@ -152,9 +151,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7a18ec4e53fb371293e9ebcc23b7e2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b">IsEven</a> (const int &amp;num) const </td></tr>
 <tr class="separator:af7a18ec4e53fb371293e9ebcc23b7e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27dcfac6e64ab72059d0801dd9714d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a27dcfac6e64ab72059d0801dd9714d7a">NewOutlineCh</a> (char ch)</td></tr>
+<tr class="memdesc:a27dcfac6e64ab72059d0801dd9714d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to set a new character for the border.  <a href="#a27dcfac6e64ab72059d0801dd9714d7a">More...</a><br/></td></tr>
 <tr class="separator:a27dcfac6e64ab72059d0801dd9714d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ba1e54cb2fee7f246a25aed46c3ff3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a2ba1e54cb2fee7f246a25aed46c3ff3f">CreateBorder</a> (char ch)</td></tr>
-<tr class="separator:a2ba1e54cb2fee7f246a25aed46c3ff3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4420082458330e5c853c342b201956"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#abe4420082458330e5c853c342b201956">DrawBorder</a> (char ch)</td></tr>
+<tr class="separator:abe4420082458330e5c853c342b201956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a146a94183c6c610ae8a619521fc9d102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a146a94183c6c610ae8a619521fc9d102">DrawBorder</a> ()</td></tr>
 <tr class="memdesc:a146a94183c6c610ae8a619521fc9d102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to draw the border on the screen.  <a href="#a146a94183c6c610ae8a619521fc9d102">More...</a><br/></td></tr>
 <tr class="separator:a146a94183c6c610ae8a619521fc9d102"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,14 +233,21 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Default Constructor. </p>
 <p>Constructs an <a class="el" href="classImage.html" title="The Image class represents a 2D vector that displays an image on screen. ">Image</a> object from the given dimensions </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the image, default to 33 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the image, default to 101 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the default character to draw the border with </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the default character to draw the border with</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Default Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to draw the outline of the screen </td></tr>
   </table>
   </dd>
 </dl>
@@ -274,12 +281,12 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2ba1e54cb2fee7f246a25aed46c3ff3f"></a>
+<a class="anchor" id="abe4420082458330e5c853c342b201956"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Screen::CreateBorder </td>
+          <td class="memname">void Screen::DrawBorder </td>
           <td>(</td>
           <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>ch</em></td><td>)</td>
@@ -290,7 +297,14 @@ Friends</h2></td></tr>
 <p>Helper function to switch the border character </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to draw the border </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to draw the border</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function that draws the border to the edges of the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to draw the screen </td></tr>
   </table>
   </dd>
 </dl>
@@ -311,6 +325,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Helper function to draw the border on the screen. </p>
+<p>Function that draws the border to the edges of the screen. </p>
 
 </div>
 </div>
@@ -345,6 +360,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill the screen with the default character. </p>
+<p>Function that fills the innards of the screen object. </p>
 
 </div>
 </div>
@@ -363,6 +379,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fill the screen with a given character. </p>
+<p>Function that fills the innards of the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>the character used to fill with </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -397,6 +420,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the width of the screen. </p>
+<p>Helper function to return the height of the screen. </p>
 
 </div>
 </div>
@@ -414,6 +438,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the height of the screen. </p>
+<p>Helper function to return the width of the screen. </p>
 
 </div>
 </div>
@@ -444,6 +469,14 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the screen</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function sets up the screen by pushing back the required size </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the screen </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the screen </td></tr>
   </table>
   </dd>
@@ -467,7 +500,14 @@ Friends</h2></td></tr>
 <p>Returns true if the number is even </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function that returns TRUE if a number is even </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>the number to be checked </td></tr>
   </table>
   </dd>
 </dl>
@@ -487,6 +527,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Helper function to set a new character for the border. </p>
 <p>Helper function to swap out the character used to draw the border </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -524,7 +566,15 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the screen </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the width of the screen</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function to resize the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the new height of the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>the new width of the screen </td></tr>
   </table>
   </dd>
 </dl>
@@ -610,6 +660,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Overloaded ostream operator. </p>
+<p>Overloaded ostream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">os</td><td>the ostream operator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>the screen being drawn </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -646,6 +704,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Overloaded ostream operator. </p>
+<p>Overloaded ostream operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">os</td><td>the ostream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>the screen being drawn </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

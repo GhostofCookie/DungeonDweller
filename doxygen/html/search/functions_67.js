@@ -7,7 +7,7 @@ var searchData=
   ['getcenterpnt',['GetCenterPnt',['../classScreen.html#a95daa612c5ec6a8018b89cfc2d785e27',1,'Screen']]],
   ['getcols',['GetCols',['../classImage.html#a5377ce45ff29db084776e675b413f165',1,'Image::GetCols()'],['../classScreen.html#a223cd8821b2b8006c61545ff41aa0091',1,'Screen::GetCols()']]],
   ['geteventimages',['GetEventImages',['../classRoom.html#a3e33111e62068e4ae0fef5b17a1f1841',1,'Room']]],
-  ['getitem',['getItem',['../classItem.html#ae2398e06c05c81df420d4ce92cd69a80',1,'Item']]],
+  ['getitem',['getItem',['../classItem.html#aa0110e08655e85befca5bc462700e127',1,'Item']]],
   ['getpoints',['GetPoints',['../classRoom.html#a15f3f815f6d41e61e7e12465994fa185',1,'Room']]],
   ['getroom',['GetRoom',['../classRoom.html#ad791cbeff004df5ae7c8655f85e540ae',1,'Room']]],
   ['getrows',['GetRows',['../classImage.html#a91b5bb5c3fef2795ec9838763536ed78',1,'Image::GetRows()'],['../classScreen.html#aa12cc4ea36f5d2ac98b3c7334616acbc',1,'Screen::GetRows()']]]

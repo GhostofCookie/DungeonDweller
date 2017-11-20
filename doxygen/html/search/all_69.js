@@ -18,7 +18,9 @@ var searchData=
   ['isboardfull',['IsBoardFull',['../classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6',1,'ConnectFour::IsBoardFull()'],['../classTicTacToe.html#a7bb5521e85c2a1d4c61ab405d03a62c5',1,'TicTacToe::IsBoardFull()']]],
   ['iscolumnfull',['IsColumnFull',['../classConnectFour.html#a26d75c9c50d6424df11de765086edc8a',1,'ConnectFour']]],
   ['iseven',['IsEven',['../classImage.html#aa723637c3d64e1290dbfc67238321413',1,'Image::IsEven()'],['../classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b',1,'Screen::IsEven()']]],
+  ['isinusedpairs',['IsInUsedPairs',['../classMemoryMatch.html#a7f3998ff0f59a063a493156c2d00eca2',1,'MemoryMatch']]],
   ['item',['Item',['../classItem.html',1,'']]],
   ['item_2ecpp',['Item.cpp',['../Item_8cpp.html',1,'']]],
-  ['item_2eh',['Item.h',['../Item_8h.html',1,'']]]
+  ['item_2eh',['Item.h',['../Item_8h.html',1,'']]],
+  ['itemname',['itemName',['../classItem.html#af7a09a8db2072c632d84a992e76408b9',1,'Item']]]
 ];

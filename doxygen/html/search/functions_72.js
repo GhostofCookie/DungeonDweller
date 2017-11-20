@@ -1,9 +1,9 @@
 var searchData=
 [
   ['rand',['Rand',['../classRoom.html#aebcb2b6bf73c7a2592a1e5c5d02b40ce',1,'Room']]],
-  ['random',['random',['../classItem.html#ac2b19cad5b3945337b672a4d839938d0',1,'Item']]],
+  ['random',['random',['../classItem.html#ad60b9683d09792d206d9557527f10d05',1,'Item']]],
   ['randomlyinsertintotable',['RandomlyInsertIntoTable',['../classMemoryMatch.html#a61158d799b281be3607860233899b405',1,'MemoryMatch']]],
-  ['randomnumber',['RandomNumber',['../classConnectFour.html#a51e2239fa0b4e8c16fb43fe2efb543aa',1,'ConnectFour::RandomNumber()'],['../classMemoryMatch.html#a0543038015f3bbd9db9e9a235cf12579',1,'MemoryMatch::RandomNumber()'],['../classTicTacToe.html#acdbb2da0bf1dc1c1689bac3b5a86281c',1,'TicTacToe::RandomNumber()']]],
+  ['randomnumber',['RandomNumber',['../classMemoryMatch.html#a0543038015f3bbd9db9e9a235cf12579',1,'MemoryMatch::RandomNumber()'],['../classPuzzle.html#ad0be5c887460d0b386bf5d97264f0c24',1,'Puzzle::RandomNumber()']]],
   ['read',['Read',['../classCharacter.html#a21de96f408a3db5e0734012c27587c8c',1,'Character']]],
   ['resetgame',['ResetGame',['../classConnectFour.html#aa563db9c04480dc44a37df28d07c776c',1,'ConnectFour::ResetGame()'],['../classTicTacToe.html#a36b58f33246558d0b7b34412b641cff6',1,'TicTacToe::ResetGame()']]],
   ['resize',['Resize',['../classScreen.html#a11f9842c836301989f7c3d84eb043700',1,'Screen']]],

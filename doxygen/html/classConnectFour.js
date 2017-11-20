@@ -10,7 +10,6 @@ var classConnectFour =
     [ "MovePiece", "classConnectFour.html#a6bde7d38a9493ea5475a0a941f4c96df", null ],
     [ "OutputGame", "classConnectFour.html#aeec5d9114f72805796129ebd6e94c6d8", null ],
     [ "PlayAI", "classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b", null ],
-    [ "RandomNumber", "classConnectFour.html#a51e2239fa0b4e8c16fb43fe2efb543aa", null ],
     [ "ResetGame", "classConnectFour.html#aa563db9c04480dc44a37df28d07c776c", null ],
     [ "RightDiagonalCheck", "classConnectFour.html#ac49d716bde974c19aab3e47e66d94073", null ],
     [ "RunGame", "classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c", null ],

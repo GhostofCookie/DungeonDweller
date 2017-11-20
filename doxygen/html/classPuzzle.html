@@ -133,6 +133,8 @@ Inheritance diagram for Puzzle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad0be5c887460d0b386bf5d97264f0c24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ad0be5c887460d0b386bf5d97264f0c24">RandomNumber</a> (int n) const </td></tr>
+<tr class="separator:ad0be5c887460d0b386bf5d97264f0c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4319df1536a07cd1aaf23b27aeb53579"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579">~Puzzle</a> ()</td></tr>
 <tr class="memdesc:a4319df1536a07cd1aaf23b27aeb53579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor.  <a href="#a4319df1536a07cd1aaf23b27aeb53579">More...</a><br/></td></tr>
 <tr class="separator:a4319df1536a07cd1aaf23b27aeb53579"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,9 +152,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:adc90364342151caf536c4a34f2ca71d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#adc90364342151caf536c4a34f2ca71d3">SetOptionsInMenu</a> ()=0</td></tr>
 <tr class="memdesc:adc90364342151caf536c4a34f2ca71d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the menu class the options for the player to select.  <a href="#adc90364342151caf536c4a34f2ca71d3">More...</a><br/></td></tr>
 <tr class="separator:adc90364342151caf536c4a34f2ca71d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefdb2ccc770062952c0d96d9dae27e7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#aefdb2ccc770062952c0d96d9dae27e7a">BoardSetup</a> ()=0</td></tr>
-<tr class="memdesc:aefdb2ccc770062952c0d96d9dae27e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the board up for the beginning of the game.  <a href="#aefdb2ccc770062952c0d96d9dae27e7a">More...</a><br/></td></tr>
-<tr class="separator:aefdb2ccc770062952c0d96d9dae27e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
@@ -184,30 +183,20 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aefdb2ccc770062952c0d96d9dae27e7a"></a>
+<a class="anchor" id="ad0be5c887460d0b386bf5d97264f0c24"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Puzzle::BoardSetup </td>
+          <td class="memname">int Puzzle::RandomNumber </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>Sets the board up for the beginning of the game. </p>
-
-<p>Implemented in <a class="el" href="classHanoi.html#a5dc7aab5bfe9d0b9d83ba75be22412e2">Hanoi</a>, <a class="el" href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">ConnectFour</a>, <a class="el" href="classTicTacToe.html#a5a03afaffde20d826472e7a8e27995e4">TicTacToe</a>, and <a class="el" href="classMemoryMatch.html#a1e3b9172bdd0fb69f0360bb28acee65c">MemoryMatch</a>.</p>
+<p>Returns 0 to n-1 </p>
 
 </div>
 </div>
@@ -233,7 +222,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
 
-<p>Implemented in <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>, and <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>.</p>
+<p>Implemented in <a class="el" href="classHanoi.html#a2032169272e11d26ce253e2b264b9f31">Hanoi</a>, <a class="el" href="classTicTacToe.html#a811356ea0290bf50ca522c79bead1e05">TicTacToe</a>, <a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">CodeCracker</a>, <a class="el" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour</a>, and <a class="el" href="classMemoryMatch.html#a3973ebb1ab8d44a51bd629bc3b0df370">MemoryMatch</a>.</p>
 
 </div>
 </div>
@@ -261,7 +250,7 @@ Private Member Functions</h2></td></tr>
 <p>Sends the menu class the options for the player to select. </p>
 <p>Does the appropriate action to the space selected by the user depending on which puzzle derived class it is being used in. </p>
 
-<p>Implemented in <a class="el" href="classTicTacToe.html#a5fd34a83c96edbcf3c3c5a0930d513fb">TicTacToe</a>, <a class="el" href="classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a">Hanoi</a>, <a class="el" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour</a>, and <a class="el" href="classMemoryMatch.html#a62548d6cf028d372c08cc01a0693edb2">MemoryMatch</a>.</p>
+<p>Implemented in <a class="el" href="classCodeCracker.html#acbbd890be17cec27b879eb369de82017">CodeCracker</a>, <a class="el" href="classTicTacToe.html#a5fd34a83c96edbcf3c3c5a0930d513fb">TicTacToe</a>, <a class="el" href="classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a">Hanoi</a>, <a class="el" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour</a>, and <a class="el" href="classMemoryMatch.html#a62548d6cf028d372c08cc01a0693edb2">MemoryMatch</a>.</p>
 
 </div>
 </div>
@@ -280,8 +269,9 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/rigt2720/Kodika/Puzzles/<a class="el" href="Puzzle_8h_source.html">Puzzle.h</a></li>
+<li>/home/rigt2720/Kodika/Puzzles/<a class="el" href="Puzzle_8cpp.html">Puzzle.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -10,6 +10,6 @@ var searchData=
   ['fixslants',['FixSlants',['../classImage.html#a5c723d560bde4b6aa45f3eaa36ffb4f2',1,'Image']]],
   ['fliphoriz',['FlipHoriz',['../classImage.html#a1c7560c1e8f95eb0a879fb4fac72fa28',1,'Image']]],
   ['flipvert',['FlipVert',['../classImage.html#a94fe8fd85b9ef3461c2576d29ebd3a86',1,'Image']]],
-  ['food',['Food',['../classFood.html',1,'']]],
-  ['format',['format',['../classCodeCracker.html#ae485d1778f29749aea98c4137beeb96f',1,'CodeCracker']]]
+  ['food',['Food',['../classFood.html',1,'Food'],['../classFood.html#a75d4d7f76fd495cc8133302ca9fdc485',1,'Food::Food()']]],
+  ['format',['format',['../classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e',1,'CodeCracker']]]
 ];

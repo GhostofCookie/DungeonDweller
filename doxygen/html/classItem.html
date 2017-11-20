@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('classItem.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classItem-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Item Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -141,26 +141,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33cc9c0bc556b5a33a9d0d58d37c602b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a33cc9c0bc556b5a33a9d0d58d37c602b">~Item</a> ()</td></tr>
 <tr class="memdesc:a33cc9c0bc556b5a33a9d0d58d37c602b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#a33cc9c0bc556b5a33a9d0d58d37c602b">More...</a><br/></td></tr>
 <tr class="separator:a33cc9c0bc556b5a33a9d0d58d37c602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2398e06c05c81df420d4ce92cd69a80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#ae2398e06c05c81df420d4ce92cd69a80">getItem</a> (string itemType)</td></tr>
-<tr class="separator:ae2398e06c05c81df420d4ce92cd69a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6905855bea19d5f5ccc098cf39dc147f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a6905855bea19d5f5ccc098cf39dc147f">use</a> (Charater *target)=0</td></tr>
-<tr class="separator:a6905855bea19d5f5ccc098cf39dc147f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeae73c8d4d4364d62a4984c85d1d2a3b"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#aeae73c8d4d4364d62a4984c85d1d2a3b">name</a> ()</td></tr>
-<tr class="separator:aeae73c8d4d4364d62a4984c85d1d2a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0110e08655e85befca5bc462700e127"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#aa0110e08655e85befca5bc462700e127">getItem</a> (string itemType)</td></tr>
+<tr class="memdesc:aa0110e08655e85befca5bc462700e127"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classItem.html" title="This class is an abstract base class to represent items in game. ">Item</a> Factory.  <a href="#aa0110e08655e85befca5bc462700e127">More...</a><br/></td></tr>
+<tr class="separator:aa0110e08655e85befca5bc462700e127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790283e2fb63df00eb61a95bb9921051"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a790283e2fb63df00eb61a95bb9921051">use</a> (<a class="el" href="classCharacter.html">Character</a> *target)=0</td></tr>
+<tr class="separator:a790283e2fb63df00eb61a95bb9921051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39021b642fa436b3c0b898314de012c"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#ad39021b642fa436b3c0b898314de012c">name</a> ()</td></tr>
+<tr class="memdesc:ad39021b642fa436b3c0b898314de012c"><td class="mdescLeft">&#160;</td><td class="mdescRight">read or write to name  <a href="#ad39021b642fa436b3c0b898314de012c">More...</a><br/></td></tr>
+<tr class="separator:ad39021b642fa436b3c0b898314de012c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefdaa767e00c0fcfe2801a5e3e4e951d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#aefdaa767e00c0fcfe2801a5e3e4e951d">name</a> () const </td></tr>
+<tr class="memdesc:aefdaa767e00c0fcfe2801a5e3e4e951d"><td class="mdescLeft">&#160;</td><td class="mdescRight">read name  <a href="#aefdaa767e00c0fcfe2801a5e3e4e951d">More...</a><br/></td></tr>
 <tr class="separator:aefdaa767e00c0fcfe2801a5e3e4e951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8d2ce6b8192a4b2ca5ede6a25a49a4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a3e8d2ce6b8192a4b2ca5ede6a25a49a4">nameGenerator</a> (string fileName)</td></tr>
+<tr class="separator:a3e8d2ce6b8192a4b2ca5ede6a25a49a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac2b19cad5b3945337b672a4d839938d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#ac2b19cad5b3945337b672a4d839938d0">random</a> (int start, int end)</td></tr>
-<tr class="memdesc:ac2b19cad5b3945337b672a4d839938d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to generate random numbers.  <a href="#ac2b19cad5b3945337b672a4d839938d0">More...</a><br/></td></tr>
-<tr class="separator:ac2b19cad5b3945337b672a4d839938d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60b9683d09792d206d9557527f10d05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#ad60b9683d09792d206d9557527f10d05">random</a> (unsigned int start, unsigned int end)</td></tr>
+<tr class="memdesc:ad60b9683d09792d206d9557527f10d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">random number generator  <a href="#ad60b9683d09792d206d9557527f10d05">More...</a><br/></td></tr>
+<tr class="separator:ad60b9683d09792d206d9557527f10d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a7d544a5227a9905e352735bd81df42cb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#a7d544a5227a9905e352735bd81df42cb">n</a></td></tr>
-<tr class="memdesc:a7d544a5227a9905e352735bd81df42cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the item.  <a href="#a7d544a5227a9905e352735bd81df42cb">More...</a><br/></td></tr>
-<tr class="separator:a7d544a5227a9905e352735bd81df42cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:af7a09a8db2072c632d84a992e76408b9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classItem.html#af7a09a8db2072c632d84a992e76408b9">itemName</a></td></tr>
+<tr class="memdesc:af7a09a8db2072c632d84a992e76408b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the item.  <a href="#af7a09a8db2072c632d84a992e76408b9">More...</a><br/></td></tr>
+<tr class="separator:af7a09a8db2072c632d84a992e76408b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is an abstract base class to represent items in game. </p>
@@ -191,12 +196,12 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae2398e06c05c81df420d4ce92cd69a80"></a>
+<a class="anchor" id="aa0110e08655e85befca5bc462700e127"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classItem.html">Item</a>* Item::getItem </td>
+          <td class="memname"><a class="el" href="classItem.html">Item</a> * Item::getItem </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>itemType</em></td><td>)</td>
@@ -204,6 +209,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classItem.html" title="This class is an abstract base class to represent items in game. ">Item</a> Factory. </p>
 <p>Uses factory design pattern to create items </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -221,18 +228,20 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aeae73c8d4d4364d62a4984c85d1d2a3b"></a>
+<a class="anchor" id="ad39021b642fa436b3c0b898314de012c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string&amp; Item::name </td>
+          <td class="memname">string &amp; Item::name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>read or write to name </p>
 <p>Allows access to the items name </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the name of the item </dd></dl>
 
@@ -250,12 +259,44 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>read name </p>
 <p>Gives the name of the item without allowing chages </p>
 <dl class="section return"><dt>Returns</dt><dd>Name of the item </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac2b19cad5b3945337b672a4d839938d0"></a>
+<a class="anchor" id="a3e8d2ce6b8192a4b2ca5ede6a25a49a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Item::nameGenerator </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Generates adjectives to add to <a class="el" href="classItem.html" title="This class is an abstract base class to represent items in game. ">Item</a> names </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>the file that the names comme from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Adjective generated and to be used </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">runtime_error</td><td>Thrown if source file has no names </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad60b9683d09792d206d9557527f10d05"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -265,13 +306,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int Item::random </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>end</em>&#160;</td>
         </tr>
         <tr>
@@ -287,11 +328,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Helper function to generate random numbers. </p>
+<p>random number generator </p>
+<p>Helper function to generate random positive numbers </p>
+<dl class="section return"><dt>Returns</dt><dd>Random number between start and end </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6905855bea19d5f5ccc098cf39dc147f"></a>
+<a class="anchor" id="a790283e2fb63df00eb61a95bb9921051"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -299,9 +342,9 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Item::use </td>
+          <td class="memname">virtual bool Item::use </td>
           <td>(</td>
-          <td class="paramtype">Charater *&#160;</td>
+          <td class="paramtype"><a class="el" href="classCharacter.html">Character</a> *&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>
@@ -319,11 +362,14 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if use was successfull </dd></dl>
+
+<p>Implemented in <a class="el" href="classSpell.html#ae59f9a3082d49559fae99ee05014988b">Spell</a>, <a class="el" href="classFood.html#a545771c5cb1d9d74ab05d393ed216fa4">Food</a>, <a class="el" href="classBow.html#a19250cbc06d6bd21f83be645e880fd76">Bow</a>, <a class="el" href="classHealthPotion.html#a5e1fc49fe1d5440f56baddfe219c31fe">HealthPotion</a>, and <a class="el" href="classSword.html#ac9613c1b3c9a3b748c6e36b1285924b9">Sword</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7d544a5227a9905e352735bd81df42cb"></a>
+<a class="anchor" id="af7a09a8db2072c632d84a992e76408b9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -331,12 +377,12 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Item::n</td>
+          <td class="memname">string Item::itemName</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

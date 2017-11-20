@@ -2,7 +2,7 @@ var classScreen =
 [
     [ "Screen", "classScreen.html#a932b81c3d221d644cc40ffe9003515a5", null ],
     [ "~Screen", "classScreen.html#a4243bc17596af96415b09ac48205676d", null ],
-    [ "CreateBorder", "classScreen.html#a2ba1e54cb2fee7f246a25aed46c3ff3f", null ],
+    [ "DrawBorder", "classScreen.html#abe4420082458330e5c853c342b201956", null ],
     [ "DrawBorder", "classScreen.html#a146a94183c6c610ae8a619521fc9d102", null ],
     [ "Erase", "classScreen.html#a7e2c21a6e63390eb3d8b46ee85af05d2", null ],
     [ "Fill", "classScreen.html#a8cf89892a333f7d6e7227ffdf77b3351", null ],
