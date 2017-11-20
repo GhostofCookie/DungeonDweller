@@ -20,7 +20,7 @@ class DefaultImg : public Image
    /// The width of the image
    int _width;
    /// The character used to draw the image
-   char ch;
+   char _ch;
 
    /// Function to create the image
    void Create();
