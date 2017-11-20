@@ -5,8 +5,8 @@ SCREEN = ../Screen/Screen.o ../Screen/SlotScreen.o
 IMAGE = ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o ../ImageImporter/ImageImporter.o
 ROOM =  ../Room/Room.o
 ROOMTREE = ../RoomTree/RoomTree.o
-PUZZLE = ../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o   
-ITEM = ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
+PUZZLE = ##../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o   
+ITEM = ##../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
 CHARACTER = ## ../Character/Npc.o ../Character/Player.o
 OBJS = $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(GAMESTATE) $(PUZZLE) $(ITEM) $(CHARACTER) DungeonDweller.o
 
