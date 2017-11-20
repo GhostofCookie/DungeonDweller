@@ -77,9 +77,12 @@ class MemoryMatch: virtual Puzzle
    ///Flips two squares and outputs it for 3 seconds then flips it back.   
    void Peek(int inputX1, int inputY1, int inputX2, int inputY2);
 
+   ///Returns true if n is odd, false if even.
+   bool IsOdd(int n);
+   
 //Checks if a char is in the used pairs vector
    bool IsInUsedPairs(char symbol);
-      
+   
    Screen MemoryMatchScreen;
 
 ///The vector which holds the char values of the table to be matched
