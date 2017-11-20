@@ -21,22 +21,23 @@ using namespace std;
 //*****************************************************************************
 Item *Item::getItem(string itemType)
 {
-	std::transform(itemType.begin(),itemType.end(),itemType.begin(),std::toupper);
+   transform(itemType.begin(),itemType.end(),itemType.begin(),::toupper);
 
-	Item* newItem;
+   Item* newItem;
 
-	if(itemType == "SWORD")
-		newItem = new Sword;
-	else if(itemType == "BOW")
-		newItem = new Bow;
-	else if(itemType == "SPELL")
-		newItem = new Spell;
-	else if(itemType == "HEALTH POTION")
-		newItem = new HealthPotion;
-	else if(itemType == "FOOD")
-		newItem = new Food;
-	else
-		throw invalid_argument("invalid type");
+   if(itemType == "SWORD")
+      newItem = new Sword;
+   else if(itemType == "BOW")
+      newItem = new Bow;
+   else if(itemType == "SPELL")
+      newItem = new Spell;
+   else if(itemType == "HEALTH POTION")
+      newItem = new HealthPotion;
+   else if(itemType == "FOOD")
+      newItem = new Food;
+   else
+      throw invalid_argument("invalid type");
+   return newItem;
 }
 
 //*****************************************************************************
@@ -44,7 +45,7 @@ Item *Item::getItem(string itemType)
 //*****************************************************************************
 string &Item::name()
 {
-	return itemName;
+   return itemName;
 }
 
 //*****************************************************************************
@@ -52,28 +53,28 @@ string &Item::name()
 //*****************************************************************************
 string Item::name() const
 {
-	return itemName;
+   return itemName;
 }
 
 string Item::nameGenerator(string fileName)
 {
-	static vector<string> adjectives;
+   static vector<string> adjectives;
 
-	ifstream fin;
-	fin.open(fileName);
-	if(fin.fail())
-		throw invalid_argument("Could not open " + fileName);
-	string tempName;
-	while(!fin.eof()) {
-		getline(fin,tempName);
-		adjectives.push_back(tempName);
-	}
-	fin.close();
-	if(adjectives.size() < 1)
-		throw runtime_error(fileName + " is empty");
+   ifstream fin;
+   fin.open(fileName);
+   if(fin.fail())
+      throw invalid_argument("Could not open " + fileName);
+   string tempName;
+   while(!fin.eof()) {
+      getline(fin,tempName);
+      adjectives.push_back(tempName);
+   }
+   fin.close();
+   if(adjectives.size() < 1)
+      throw runtime_error(fileName + " is empty");
 	
-	// Returns a random element of the vector
-	return adjectives[random(0,adjectives.size()-1)];
+   // Returns a random element of the vector
+   return adjectives[random(0,adjectives.size()-1)];
 }
 
 //*****************************************************************************
@@ -81,13 +82,14 @@ string Item::nameGenerator(string fileName)
 //*****************************************************************************
 int Item::random(unsigned int start,unsigned int end)
 {
-	static bool seeded = false;
-	if(!seeded)
-		srand(time(NULL));
-	
-	// Makes sure end is not less than start
-	if(start > end)
-		swap(start,end);
+   static bool seeded = false;
+   if(!seeded)
+      srand(time(NULL));
+   
+   // Makes sure end is not less than start
+   if(start > end)
+      swap(start,end);
 
-	return rand()%(end-start+1)+start;
+   return rand()%(end-start+1)+start;
+   return rand()%(end-start+1)+start;
 }

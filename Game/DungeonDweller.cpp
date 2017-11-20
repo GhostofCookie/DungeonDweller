@@ -71,7 +71,58 @@ int main()
    // MainGame Screen
    Screen *screen = new Screen();
 
+   // Construct the roomtree
+   Room *roomptr = new Room(imageImport.collection);
+   RoomTree roomTree(roomptr);
+
+
    
-   cout << "main worked" << endl << screen;
+   char n;
+   while(true)
+   {
+      // clear the screen
+      screen->Erase();
+      // align the current room to the screen and print
+      (*roomTree.at()).AlignCenter(*screen);
+      (*roomTree.at()).Draw(*screen);
+      cout << screen << endl;
+ 
+      cin >> n;
+
+      // case to select direction ('w' always means go back currently)
+      switch(n)
+      {
+	 case 'w' :
+	    if(!roomTree.move('p'))
+	    {
+	       roomTree.newRoom('p', new Room(imageImport.collection));
+	       roomTree.move('p');
+	    }
+	    break;
+	 case 'a' :
+	    if(!roomTree.move('l'))
+	    {
+	       roomTree.newRoom('l', new Room(imageImport.collection));
+	       roomTree.move('l');
+	    }
+	    break;
+	 case 's' :
+	    if(!roomTree.move('c'))
+	    {
+	       roomTree.newRoom('c', new Room(imageImport.collection));
+	       roomTree.move('c');
+	    }
+	    break;
+	 case 'd' :
+	    if(!roomTree.move('r'))
+	    {
+	       roomTree.newRoom('r', new Room(imageImport.collection));
+	       roomTree.move('r');
+	    }
+	    break;
+	 default :
+	    break;
+      };
+   }
    return 0;
 }

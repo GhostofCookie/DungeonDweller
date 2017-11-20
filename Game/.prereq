@@ -44,6 +44,8 @@ RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/ImportImg.h
+<<<<<<< HEAD
+=======
 CodeCracker.o: ../Puzzles/CodeCracker.cpp ../Puzzles/CodeCracker.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
@@ -70,6 +72,18 @@ TicTacToe.o: ../Puzzles/TicTacToe.cpp ../Puzzles/TicTacToe.h \
  ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
  ../Puzzles/../Menu/ConnectFourMenu.h ../Puzzles/../Menu/MinigameMenu.h \
  ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
+Item.o: ../Item/Item.cpp ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/Player.h ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/MyConsumables.h ../Item/Consumable.h
+Weapon.o: ../Item/Weapon.cpp ../Item/Weapon.h ../Item/Item.h \
+ ../Item/../Character/Character.h ../Item/../Character/Player.h
+MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/Player.h
+MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/Player.h
+>>>>>>> 9f018b2fa23734ad7c866685e13a68459e26a42f
 DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../Screen/SlotScreen.h ../Screen/Screen.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \

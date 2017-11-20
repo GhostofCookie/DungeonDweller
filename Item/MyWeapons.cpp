@@ -13,7 +13,7 @@ using namespace std;
 //*****************************************************************************
 Sword::Sword()
 {
-	baseDamage = 5;
+	baseDmg = 5;
 	remainingUses = 10;
 	itemName = nameGenerator("WeaponNames.txt") + " Sword";
 }
@@ -27,7 +27,7 @@ bool Sword::use(Character *target)
 		
 		//Modifies the damage output by up to +- 20%
 		double modifier = static_cast<double>(random(0,40)-20) / 100);
-		int damage = baseDamage + static_cast<int>(static_cast<double>(baseDamage) * modifier + 0.5);
+		int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
 		
 		target->ChangeHealth(-damage);
 		--remainingUses;
@@ -41,7 +41,7 @@ bool Sword::use(Character *target)
 //*****************************************************************************
 Bow::Bow()
 {
-	baseDamage = 10;
+	baseDmg = 10;
 	remainingUses = 5;
 	hitPercent = 70;
 	itemName = nameGenerator("WeaponNames.txt") + " Bow";
@@ -59,7 +59,7 @@ bool Bow::use(Character *target)
 
 			//Modifies the damage output by up to +- 50%
 			double modifier = static_cast<double>(random(0,100)-50) / 100);
-			int damage = baseDamage + static_cast<int>(static_cast<double>(baseDamage) * modifier + 0.5);
+			int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
 			
 			target->ChangeHealth(-damage);
 			--remainingUses;
@@ -90,7 +90,7 @@ int & Bow::accuracy()
 //*****************************************************************************
 Spell::Spell()
 {
-	baseDamage = 20;
+	baseDmg = 20;
 	remainingUses = 1;
 	itemName = nameGenerator("SpellNames.txt") + " Spell";
 }
@@ -98,12 +98,12 @@ Spell::Spell()
 //*****************************************************************************
 /// Use Spell Implementation
 //*****************************************************************************
-void Spell::use(Character * target)
+bool Spell::use(Character * target)
 {
 	if(remainingUses > 0) {
 		//Modifies the damage output by up to +- 75%
 		double modifier = static_cast<double>(random(0,150)-75) / 100);
-		int damage = baseDamage + static_cast<int>(static_cast<double>(baseDamage) * modifier + 0.5);
+		int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
 
 		target->ChangeHealth(-damage);
 		--remainingUses;
