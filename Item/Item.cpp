@@ -21,7 +21,7 @@ using namespace std;
 //*****************************************************************************
 Item *Item::getItem(string itemType)
 {
-	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
+	std::transform(itemType.begin(),itemType.end(),itemType.begin(),std::toupper);
 
 	Item* newItem;
 
