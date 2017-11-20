@@ -26,7 +26,10 @@ MemoryMatch::MemoryMatch()
       matchVector.at(i).resize(boardSize);
 
       for(int j=0; j<boardSize; j++)
+      {
 	 matchVector.at(i).at(j)=false;
+	 charTable.at(i).at(j)=' ';
+      }
    }
       
 }
@@ -47,6 +50,7 @@ void MemoryMatch::RunGame()
       cout << MemoryMatchScreen;
       //MemoryMatchMenu.OutputMenu();
       //MemoryMatchMenu.HandleInput(cin);
+      MatchCheck(0,0,1,1);//Top left
       WinCheck();
       
       PuzzleEnd=true;//to be removed
@@ -78,7 +82,7 @@ void MemoryMatch::BoardSetup()
 	 if(usedPairs.empty())
 	 {
 	    cout << "Empty Vector" << endl;
-	    break;
+	    reSelect=false;
 	 }///Else check if we have used it before, if yes, try another pair
 	 else if(IsInUsedPairs(randomPairToInsert))
 	 {
@@ -92,7 +96,7 @@ void MemoryMatch::BoardSetup()
       //If we inserted, try another value.
       reSelect=true;
    }
- 
+//Output the contents for development purposes 
    cout << endl << "1234" << endl;
    for(int i=0; i<charTable.size(); i++)
    {
@@ -103,9 +107,10 @@ void MemoryMatch::BoardSetup()
       }
       cout << endl;
    }
-   cout << endl << "1234" << endl;
+    cout << "1234" << endl;
 }
 
+///Checks if the symbol has been used in the random board already
 bool MemoryMatch:: IsInUsedPairs(char symbol)
 {
    for(int i=0; i<usedPairs.size(); i++)
@@ -130,13 +135,15 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
       ///Keep repeating until an acceptable location is found, randomly.
       while(insertSuccess==false)
       {
-	 randomXCoordinate=Puzzle::RandomNumber(boardSize-1);
-	 randomYCoordinate=Puzzle::RandomNumber(boardSize-1);
-	 cout << "Random X:" << randomXCoordinate << "  Random Y:" << randomYCoordinate << endl;
-	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)!=' ')
+	 randomXCoordinate=Puzzle::RandomNumber(boardSize);
+	 randomYCoordinate=Puzzle::RandomNumber(boardSize);
+	 
+	 cout << "Random X:" << randomXCoordinate << "  Random Y:" << randomYCoordinate << "    Symbol:"<< charTable.at(randomXCoordinate).at(randomYCoordinate)<<endl;													    
+	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)==' ')
 	 {
 	    charTable.at(randomXCoordinate).at(randomYCoordinate)=symbol;
 	    insertSuccess=true;
+	    cout << "insert Success" << endl;
 	 }
       }
       insertSuccess=false;
@@ -209,20 +216,64 @@ int MemoryMatch::RandomNumber(int n)
    return n;
 }
 
+///Returns true if n is odd, false if even.
+bool MemoryMatch:: IsOdd(int n)
+{
+   if(n%2==0)
+      return false;
+   else
+      return true;
+}
+
 ///Flips two squares and outputs it for 3 seconds then flips it back.
 void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 {
-  int topBound=12, leftBound=46;
+   int topBound=12, leftBound=46;
    char symbol;
    symbol=charTable.at(inputX1).at(inputY1);
-   MemoryMatchScreen.Set(inputX1, inputY1, symbol);
+   
+   if(IsOdd(inputX1) && (!IsOdd(inputY1)))//X1 odd, Y1 even
+      MemoryMatchScreen.Set(inputY1+topBound, inputX1+leftBound+1, symbol);
+   if((!IsOdd(inputX1)) && IsOdd(inputY1))//X1 even, Y1 odd
+      MemoryMatchScreen.Set(inputY1+topBound+1, inputX1+leftBound, symbol);
+   if(IsOdd(inputX1) && IsOdd(inputY1))//both are odd
+      MemoryMatchScreen.Set(inputY1+topBound+1, inputX1+leftBound+1, symbol);
+   if((!IsOdd(inputX1)) && (!IsOdd(inputY1)))///both are even
+      MemoryMatchScreen.Set(inputX1+topBound, inputY1+leftBound, symbol);
    
    symbol=charTable.at(inputX2).at(inputY2);
-   MemoryMatchScreen.Set(inputX2, inputY2, symbol);
+   
+   if(IsOdd(inputX2) && (!IsOdd(inputY2)))//X1 odd, Y1 even
+      MemoryMatchScreen.Set(inputY2+topBound, inputX2+leftBound+1, symbol);
+   if((!IsOdd(inputX2)) && IsOdd(inputY2))//X1 even, Y1 odd
+      MemoryMatchScreen.Set(inputY2+topBound+1, inputX2+leftBound, symbol);
+   if(IsOdd(inputX2) && IsOdd(inputY2))//both are odd
+      MemoryMatchScreen.Set(inputY2+topBound+1, inputX2+leftBound+1, symbol);
+   if((!IsOdd(inputX2)) && (!IsOdd(inputY2)))///both are even
+      MemoryMatchScreen.Set(inputX2+topBound, inputY2+leftBound, symbol);
+   
    cout << MemoryMatchScreen << endl; 
+   
    ThreeSecondDelay();
-   MemoryMatchScreen.Set(topBound+inputY1, leftBound+inputX1, ' ');
-   MemoryMatchScreen.Set(topBound+inputY2, leftBound+inputX2, ' ');
+   
+   if(IsOdd(inputX1) && (!IsOdd(inputY1)))//X1 odd, Y1 even
+      MemoryMatchScreen.Set(inputY1+topBound, inputX1+leftBound+1, ' ');
+   if((!IsOdd(inputX1)) && IsOdd(inputY1))//X1 even, Y1 odd
+      MemoryMatchScreen.Set(inputY1+topBound+1, inputX1+leftBound, ' ');
+   if(IsOdd(inputX1) && IsOdd(inputY1))//both are odd
+      MemoryMatchScreen.Set(inputY1+topBound+1, inputX1+leftBound+1, ' ');
+   if((!IsOdd(inputX1)) && (!IsOdd(inputY1)))///both are even
+      MemoryMatchScreen.Set(inputX1+topBound, inputY1+leftBound, ' ');
+   
+   if(IsOdd(inputX2) && (!IsOdd(inputY2)))//X1 odd, Y1 even
+      MemoryMatchScreen.Set(inputY2+topBound, inputX2+leftBound+1, ' ');
+   if((!IsOdd(inputX2)) && IsOdd(inputY2))//X1 even, Y1 odd
+      MemoryMatchScreen.Set(inputY2+topBound+1, inputX2+leftBound, ' ');
+   if(IsOdd(inputX2) && IsOdd(inputY2))//both are odd
+      MemoryMatchScreen.Set(inputY2+topBound+1, inputX2+leftBound+1, ' ');
+   if((!IsOdd(inputX2)) && (!IsOdd(inputY2)))///both are even
+      MemoryMatchScreen.Set(inputX2+topBound, inputY2+leftBound, ' ');
+   
    cout << MemoryMatchScreen << endl;
 }
 

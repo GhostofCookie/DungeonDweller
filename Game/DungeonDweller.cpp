@@ -72,7 +72,7 @@ int main()
   Screen *screen = new Screen();
 
   // Menu
-  Menu *menu = new menu();
+  Menu *menu = new Menu();
   menu->AddOption('W',"Move Up");
    
   // Construct the roomtree
