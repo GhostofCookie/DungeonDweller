@@ -58,7 +58,7 @@ Hanoi::~Hanoi()
 
 void Hanoi:: BoardSetup()
 {
-   int leftDivider=18, centerPeg=60,peg=35, rightDivider=16, bottom=11;
+   int leftDivider=18, centerPeg=60,peg=34, rightDivider=16, bottom=11;
    DefaultImg Divider1(31,1,'|');
    Divider1.AlignCenter(HanoiScreen);
    Divider1.ShiftLeft(leftDivider);
@@ -74,6 +74,17 @@ void Hanoi:: BoardSetup()
    Peg1.ShiftLeft(peg);
    Peg1.ShiftDown(HanoiScreen, bottom);
    Peg1.Draw(HanoiScreen);
+
+   DefaultImg Peg2(10,1,'|');
+   Peg2.AlignCenter(HanoiScreen);
+   Peg2.ShiftDown(HanoiScreen, bottom);
+   Peg2.Draw(HanoiScreen);
+   
+   DefaultImg Peg3(10,1,'|');
+   Peg3.AlignCenter(HanoiScreen);
+   Peg3.ShiftRight(HanoiScreen, peg);
+   Peg3.ShiftDown(HanoiScreen, bottom);
+   Peg3.Draw(HanoiScreen);
 
 
 }
