@@ -22,7 +22,7 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
-   AddOption('q',"Quit",QuitGame);
+   AddOption('q',"Quit",&Menu::QuitGame);
 }
 
 /// This is the destructor for the class. It is virtual.
@@ -52,6 +52,13 @@ void Menu::HandleInput(istream& is)
 /// \param[in] optionName The name to display for the user.
 /// \param[in] f(int) The is the function which adds functionality to
 /// the option and command.
+template<typename T>
+void Menu::AddOption(char command, string optionName, void (T::*f)(int))
+{
+     indexMap[static_cast<int>(command)] = optionName;
+     optionMap[command] = reinterpret_cast<void(*)(int)>(f);
+}
+
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;

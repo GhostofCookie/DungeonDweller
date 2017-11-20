@@ -46,8 +46,9 @@ class Menu
    /// \param[in] optionName The name to display for the user.
    /// \param[in] f(int) The is the function which adds functionality to
    /// the option and command.
+   template<typename T>
+      void AddOption(char command, string optionName, void (T::*f)(int)=0);
    void AddOption(char command, string optionName, void (*f)(int)=0);
-
    /// A function to set the added options to the character array.
    /// \param[in] row Determines which row the options will start being set at.
    /// \param[in] col Determines which column the options will start from.
@@ -64,7 +65,7 @@ class Menu
    /// Helper function to quit the game. This may be removed in future.
    /// \param[in] value This parameter serves to pass the function to the
    /// options map.
-   static void QuitGame(int value);
+   void QuitGame(int value);
 
   private:
    /// Builds the menu based on the options and outline to the dimensions
