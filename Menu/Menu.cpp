@@ -55,8 +55,9 @@ void Menu::HandleInput(istream& is)
 template<typename T>
 void Menu::AddOption(char command, string optionName, void (T::*f)(int))
 {
-     indexMap[static_cast<int>(command)] = optionName;
-     optionMap[command] = reinterpret_cast<void(*)(int)>(f);
+   T* temp;
+   indexMap[static_cast<int>(command)] = optionName;
+   optionMap[command] = reinterpret_cast<void(*)(int)>(temp->*f);
 }
 
 void Menu::AddOption(char command, string optionName, void (*f)(int))
