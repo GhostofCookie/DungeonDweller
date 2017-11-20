@@ -44,10 +44,6 @@ RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/ImportImg.h
-Puzzle.o: ../Puzzles/Puzzle.cpp ../Puzzles/Puzzle.h \
- ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
- ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
- ../Puzzles/../Image/../Screen/Screen.h
 CodeCracker.o: ../Puzzles/CodeCracker.cpp ../Puzzles/CodeCracker.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
