@@ -98,7 +98,7 @@ Spell::Spell()
 //*****************************************************************************
 /// Use Spell Implementation
 //*****************************************************************************
-void Spell::use(Character * target)
+bool Spell::use(Character * target)
 {
 	if(remainingUses > 0) {
 		//Modifies the damage output by up to +- 75%
