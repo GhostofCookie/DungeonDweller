@@ -242,8 +242,6 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 {
    ///top left coordinate of the game board on the screen
    int topBound=11, leftBound=45;
-   ///Symbol to be displayed
-   char symbol;
 
    ///Flip the two selected chars, first check if they have been previously
    ///matched, if so, do nothing to them. Otherwise, flip.

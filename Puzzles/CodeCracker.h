@@ -40,7 +40,7 @@ class CodeCracker: public virtual Puzzle
 
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
-   bool ValidAnswer(const char input);
+   bool ValidAnswer(int input, int riddleIndex);
    
 ///Checks if the player has successfully answered 3 riddles.
    void WinCheck();
@@ -48,25 +48,40 @@ class CodeCracker: public virtual Puzzle
 ///Checks if the player is now dead
    void DeathCheck();//Will need to take some kind of character variable/object
 
+   ///Outputs the selected riddle, limiting the characters to a set length
+   ///and moving them down to the next line if the string is longer than they
+   ///limit.
+   void OutputRiddle(int index);
+   
 ///Imports riddles from a text file and stores them in the vector.
    void ImportRiddles();
 
-void SetOptionsInMenu();
+   void SetOptionsInMenu();
+
+   ///Picks one of the unused riddles randomly and returns its index
+   int UnusedRandomRiddleGenerator();
+
    
 ///Vector to store the question strings read in from the file 
-std::vector<string>question;
+   std::vector<string>question;
 
 ///Vector to store the descriptions on how to answer each question, in order.
-std::vector<string>format;//Descriptions of how to answer questions
+   std::vector<string>format;//Descriptions of how to answer questions
 
 ///Vector to store the questions answers read in from the file, in order
-std::vector<int>answer;
+   std::vector<int>answer;
 
-int riddleCompletionCount;
+   ///Stores the indexes of all used riddle strings so that they aren't asked
+   ///twice.
+   std::vector<int>usedRiddles;
 
-int numberOfRiddles;
+   ///Total riddles compeleted
+   int riddleCompletionCount;
 
-bool riddleCorrect;
+   ///Total number of riddles imported into the game
+   int numberOfRiddles;
+
+
 };
 #endif
 

@@ -63,25 +63,32 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 
    switch(dir) {
       case 'L':
-	 if(currNode->left != nullptr)
+	 if(currNode->left)
 	    throw invalid_argument("room occupied");
 	 currNode->left = new Node;
 	 currNode->left->parent = currNode;
 	 currNode->left->room = roomptr;
 	 break;
       case 'R':
-	 if(currNode->right != nullptr)
+	 if(currNode->right)
 	    throw invalid_argument("room occupied");
 	 currNode->right = new Node;
 	 currNode->right->parent = currNode;
 	 currNode->right->room = roomptr;
 	 break;
       case 'C':
-	 if(currNode->center != nullptr)
+	 if(currNode->center)
 	    throw invalid_argument("room occupied");
 	 currNode->center = new Node;
 	 currNode->center->parent = currNode;
 	 currNode->center->room = roomptr;
+	 break;
+      case 'P':
+	 if(currNode->parent)
+	    throw invalid_argument("room occupied");
+	 currNode->parent = new Node;
+	 currNode->parent->parent = currNode;
+	 currNode->parent->room = roomptr;
 	 break;
       default:
 	 throw invalid_argument("invalid direction");
@@ -145,7 +152,7 @@ unsigned int RoomTree::CurrentHeight() const
 {
    if(!currNode)
       return 0;
-   Node *findNode;
+   Node *findNode = currNode;
    unsigned int i;
    for(i = 1; findNode != root; ++i)
       findNode = findNode->parent;

@@ -55,7 +55,6 @@ class RoomTree {
    /// \param[in] dir Direction to move(left(l) right(r) center(c) or parent(p))
    /// \return True if move was successfull, false otherwise
    /// \exception invalid_argument Thrown if the direction is invalid
-   /// \exception out_of_range Thrown if trying to move to the parent of the root
    bool Move(char dir);
 
    /// Gives a const pointer to the room currently at for accessing
