@@ -38,11 +38,10 @@ Menu::~Menu()
 void Menu::HandleInput(istream& is)
 {
    char option;
-   int item =1;
    cout<<"-> ";
    is >> option;
    if(optionMap.find(option) != optionMap.end())
-      optionMap.find(option)->second(item);
+      optionMap.find(option)->second(optionMap.find(option)->first);
    if(is.fail())
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
@@ -56,7 +55,7 @@ void Menu::HandleInput(istream& is)
 void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
-   optionMap[command] = f;
+   optionMap[command] = reinterpret_cast<void(*)(int)>(f);
 }
 
 /// A function to set the added options to the character array.

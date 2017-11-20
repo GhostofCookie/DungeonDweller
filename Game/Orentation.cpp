@@ -9,7 +9,7 @@ char Orientation(char[4] directions, char dir);
 
 int main()
 {
-   char orientation[4] = {'p','l','c','r'}
+   char orientation[4] = {'p','l','c','r'};
    return 0;
 }
 
