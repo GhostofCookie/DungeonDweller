@@ -58,6 +58,17 @@ Hanoi::~Hanoi()
 
 void Hanoi:: BoardSetup()
 {
+   int leftDivider=18, centerPeg=60, rightDivider=16;
+   DefaultImg Divider1(31,1,'|');
+   Divider1.AlignCenter(HanoiScreen);
+   Divider1.ShiftLeft(leftDivider);
+   Divider1.Draw(HanoiScreen);
+
+   DefaultImg Divider2(31,1,'|');
+   Divider2.AlignCenter(HanoiScreen);
+   Divider2.ShiftRight(HanoiScreen, rightDivider);
+   Divider2.Draw(HanoiScreen);
+
 
 }
 
@@ -280,6 +291,7 @@ void Hanoi:: RunGame()
 {
    cout << "Start" << endl;
    SetOptionsInMenu();
+   BoardSetup();
    while(GameEnd==false)
    {
       cout << HanoiScreen;
