@@ -70,17 +70,17 @@ int main()
   ImageImporter imageImport = ImageImporter(mastrFile);
   // MainGame Screen
   Screen *screen = new Screen();
-
+  cout<<screen<<endl;
   // Menu
   Menu *menu = new Menu();
   menu->AddOption('W',"Move Up");
    
   // Construct the roomtree
-  Room *roomptr = new Room(imageImport.collection);
+/*  Room *roomptr = new Room(imageImport.collection);
   RoomTree roomTree(roomptr);
+*/
 
-
-   
+/*   
   char n;
   while(true)
     {
@@ -127,6 +127,6 @@ int main()
 	default :
 	  break;
 	};
-    }
+	}*/
   return 0;
 }
