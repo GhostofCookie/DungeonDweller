@@ -2,12 +2,12 @@ CC = g++
 CCFLAGS = -Wall -std=c++11 -g
 MENU = ../Menu/CharacterMenu.o ../Menu/ConnectFourMenu.o ../Menu/DialogueMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/HanoiMenu.o ../Menu/MainMenu.o ../Menu/MemoryMenu.o ../Menu/Menu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/TradeMenu.o
 SCREEN = ../Screen/Screen.o ../Screen/SlotScreen.o
-IMAGE = ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o
+IMAGE = ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o ../ImageImporter/ImageImporter.o
 ROOM =  ../Room/Room.o
 ROOMTREE = ../RoomTree/RoomTree.o
 PUZZLE = ../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o   
-ITEM = ../Item/Item.o ../Item/Weapon.o ../Item/Consumable.o ../Item/MyWeapons.o ../Item/MyConsumables.o
-CHARACTER = ../Character/Npc.o ../Character/Player.o
+ITEM = ##../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
+CHARACTER = ## ../Character/Npc.o ../Character/Player.o
 OBJS = $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(GAMESTATE) $(PUZZLE) $(ITEM) $(CHARACTER) DungeonDweller.o
 
 
@@ -15,7 +15,7 @@ OBJS = $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(GAMESTATE) $(PUZZLE) $(I
 .PHONY : all
 all : DungeonDweller
 
-main : $(OBJS)
+DungeonDweller : $(OBJS)
 	$(CC) -o $@ $(CCFLAGS) $^
 
 ## default rule for compiling .cc to .o
@@ -41,4 +41,4 @@ clean:
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f main
+	rm -f DungeonDweller

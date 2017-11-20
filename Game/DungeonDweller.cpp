@@ -11,6 +11,7 @@
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
+#include "../ImageImporter/ImageImporter.h"
 // Room Header
 #include "../Room/Room.h"
 // RoomTree Headers
@@ -53,7 +54,7 @@
 #include "../Character/Player.h"
 // Misc Headers
 #include <iostream>
-#include <ctime>
+#include <ctime> //srand()
 using namespace std;
 
 

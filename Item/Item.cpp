@@ -19,9 +19,9 @@ using namespace std;
 //*****************************************************************************
 /// Item Factory
 //*****************************************************************************
-Item* Item::GetItem(string itemType)
+Item *Item::getItem(string itemType)
 {
-	transform(itemType.begin(),itemType.end(),itemType.begin(),toupper);
+	std::transform(itemType.begin(),itemType.end(),itemType.begin(),std::toupper);
 
 	Item* newItem;
 
@@ -36,7 +36,7 @@ Item* Item::GetItem(string itemType)
 	else if(itemType == "FOOD")
 		newItem = new Food;
 	else
-		throw invalid_argument("invalid type")
+		throw invalid_argument("invalid type");
 }
 
 //*****************************************************************************
@@ -69,11 +69,11 @@ string Item::nameGenerator(string fileName)
 		adjectives.push_back(tempName);
 	}
 	fin.close();
-	if(adjectives.size < 1)
-		throw runtime_error(filename + " is empty");
+	if(adjectives.size() < 1)
+		throw runtime_error(fileName + " is empty");
 	
 	// Returns a random element of the vector
-	return adjectives[random(0,adjictives.size()-1)]
+	return adjectives[random(0,adjectives.size()-1)];
 }
 
 //*****************************************************************************
