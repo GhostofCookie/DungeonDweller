@@ -93,7 +93,7 @@ int main()
   /*
     Whenever roomTree.Move(dir) is used and is successfull, it must be used like this:
 
-    roomTree.Move(Orientation(directions),dir);
+    roomTree.Move(Orientation(directions,dir));
     FindNewOrientation(directions,dir,roomTree.CurrentHeight());
     
    */
@@ -115,32 +115,36 @@ int main()
       switch(n)
 	{
 	case 'w' :
-	  if(!roomTree.Move('p'))
+	  if(!roomTree.Move(Orientation(directions,'p')))
 	    {
 	      roomTree.NewRoom('p', new Room(imageImport.collection));
 	      roomTree.Move('p');
 	    }
+	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
 	case 'a' :
-	  if(!roomTree.Move('l'))
+	  if(!roomTree.Move(Orientation(directions,'l')))
 	    {
 	      roomTree.NewRoom('l', new Room(imageImport.collection));
 	      roomTree.Move('l');
 	    }
+	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
 	case 's' :
-	  if(!roomTree.Move('c'))
+	  if(!roomTree.Move(Orientation(directions,'c')))
 	    {
 	      roomTree.NewRoom('c', new Room(imageImport.collection));
 	      roomTree.Move('c');
 	    }
+	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
 	case 'd' :
-	  if(!roomTree.Move('r'))
-	    {
+	  if(!roomTree.Move(Orientation(directions,'r')))
+	  {
 	      roomTree.NewRoom('r', new Room(imageImport.collection));
 	      roomTree.Move('r');
-	    }
+	  }
+	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
 	default :
 	  break;
