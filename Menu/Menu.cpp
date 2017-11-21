@@ -14,7 +14,7 @@ using namespace std;
 /// \param[in] height This is the height of the menu.
 /// \param[in] width This is the width of the menu.
 Menu::Menu(int height, int width)
-   : menuHeight{ height }, menuWidth{ width }, menu_Array{ new char*[height]}
+  : currOption{' '}, menu_Array{ new char*[height]}, menuHeight{ height }, menuWidth{ width }
 {
    for (int i = 0; i < height; i++)
    {
@@ -22,7 +22,11 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
+<<<<<<< HEAD
+   AddOption('q',"Quit");
+=======
    AddOption('q',"Quit",&Menu::QuitGame);
+>>>>>>> d9677e72a1a72d5b9282cae0adc2d57b1c53e5f1
 }
 
 /// This is the destructor for the class. It is virtual.
@@ -37,11 +41,30 @@ Menu::~Menu()
 /// \param[in,out] is The in-stream operator to read the input.
 void Menu::HandleInput(istream& is)
 {
+<<<<<<< HEAD
+  char option;
+   cout<<"-> ";
+   is >> option;
+   auto it = indexMap.find(option);
+   while(it != indexMap.end())
+     {
+       if(static_cast<char>(it->first) == option)
+       {
+	 currOption = option;
+	 it = indexMap.end();
+       }
+       else ++it;
+     }
+	 
+   if(option == 'q')
+     QuitGame(0);
+=======
    char option;
    cout<<"-> ";
    is >> option;
    if(optionMap.find(option) != optionMap.end())
       optionMap.find(option)->second(optionMap.find(option)->first);
+>>>>>>> d9677e72a1a72d5b9282cae0adc2d57b1c53e5f1
    if(is.fail())
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
@@ -50,6 +73,16 @@ void Menu::HandleInput(istream& is)
 /// display, and function to run.
 /// \param[in] command The character for the user to input.
 /// \param[in] optionName The name to display for the user.
+<<<<<<< HEAD
+void Menu::AddOption(char command, string optionName)
+{
+   indexMap[static_cast<int>(command)] = optionName;
+}
+
+char Menu::GetOption() const
+{
+  return currOption;
+=======
 /// \param[in] f(int) The is the function which adds functionality to
 /// the option and command.
 template<typename T>
@@ -64,6 +97,7 @@ void Menu::AddOption(char command, string optionName, void (*f)(int))
 {
    indexMap[static_cast<int>(command)] = optionName;
    optionMap[command] = static_cast<void(*)(int)>(f);
+>>>>>>> d9677e72a1a72d5b9282cae0adc2d57b1c53e5f1
 }
 
 /// A function to set the added options to the character array.
