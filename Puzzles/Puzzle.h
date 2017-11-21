@@ -9,8 +9,8 @@
 #define PUZZLE_H
 
 #include "../Menu/Menu.h"
-#include "../Screen/Screen.hh"
-
+#include "../Screen/Screen.h"
+#include "../Image/DefaultImg.h"
 #include <vector>
 
 ///This class represents an abstract base class for each mini-game/puzzle to
@@ -18,11 +18,12 @@
 class Puzzle
 {
   public:
+   int RandomNumber(int n) const;
    ///Virtual Destructor
    virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
-   virtual void RunGame();
+   virtual void RunGame()=0;
 
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;
@@ -32,22 +33,12 @@ class Puzzle
    //virtual char UserInput(Menu &menu);
    //virtual bool ValidCommand(char input);
 
-   ///Checks whether the move that is to be attempted is valid.  
-   /// \param[in] input, Checks the input for semantic logic, otherwise error
-   virtual bool ValidMove(char input)=0;
    ///Does the appropriate action to the space selected by the user depending on
    ///which puzzle derived class it is being used in.
-   virtual void MovePiece()=0;
-   /// Displays the screen containing the gameboard
-   /// \param[in] screen, the screen object used for displaying the game. 
-   virtual void OutputGame(Screen &screen)=0;
+   //virtual void MovePiece(int input)=0;
+
    ///Sends the menu class the options for the player to select.
    virtual void SetOptionsInMenu()=0;
-   
-   ///Used to output prompts, take in user input, and handle formatting errors
-   //PuzzleMenu *Menu;
-
-   ///Used to display the gameboard to the user.
-   //PuzzleScreen *Screen;
+    
 };
 #endif

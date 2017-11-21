@@ -10,36 +10,31 @@
 #include "Consumable.h"
 using namespace std;
 
-
 /// Subclass of Consumable to represent an in game health potion
-class HealthPotion : public Consumable
+class HealthPotion: public Consumable
 {
-  public:
+public:
+	/// HealthPotion Constructor
+	HealthPotion();
 
-   /// Defines what happens when the health potion is used
-   /// param[in] target The Character that the health potion is used on
-   void use(Character *taget);
+	/// Defines what happens when the health potion is used
+	/// \param[in] target The Character that the health potion is used on
+	/// \return true if use was successfull
+	bool use(Character *target);
 };
 
 
 /// Subclass of Consumable to represent in game food
-class Food : public Consumable
+class Food: public Consumable
 {
-  public:
+public:
+	/// Food Constructor
+	Food();
 
-   /// Defines what happens when the food is used
-   /// param[in] target The Character that the food is used on
-   void use(Character *taget);
-};
-
-
-/// Subclass of Consumable to represent an in game invisibility potion
-class InvisiblePotion : public Consumable
-{
-  public:
-
-   /// Defines what happens when the invisibility potion is used
-   /// param[in] target The Character that the invisibility potion is used on
-   void use(Character *taget);
+	/// Defines what happens when the food is used
+	/// \param[in] target The Character that the food is used on
+	/// \return true if use was successfull
+	/// \exeption invalid_argument Thrown if target is not a player
+	bool use(Character *target);
 };
 #endif

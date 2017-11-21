@@ -40,7 +40,6 @@ class MenuTest : public CppUnit::TestFixture
    Menu *menu = nullptr;
    Menu *menu2 = nullptr;
    std::map<int,string> options;
-   
 };
 
 #endif

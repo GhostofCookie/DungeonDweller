@@ -1,0 +1,105 @@
+\hypertarget{classConnectFourMenu}{\section{Connect\-Four\-Menu Class Reference}
+\label{classConnectFourMenu}\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}}
+}
+
+
+This is the menu class for the Connect Four minigame.  
+
+
+
+
+{\ttfamily \#include $<$Connect\-Four\-Menu.\-h$>$}
+
+Inheritance diagram for Connect\-Four\-Menu\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classConnectFourMenu}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}{Connect\-Four\-Menu} ()
+\begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classConnectFourMenu_a53789934922dbbd5bfa5be90e69dfcb4}{$\sim$\-Connect\-Four\-Menu} ()
+\begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Set\-Options} (int row, int col, int space)
+\item 
+virtual void \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Handle\-Input} (istream \&is)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the menu class for the Connect Four minigame. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Connect\-Four\-Menu@{Connect\-Four\-Menu}}
+\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Connect\-Four\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Connect\-Four\-Menu\-::\-Connect\-Four\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConnectFourMenu_a368513cbf367d7014e664667dbbb94ae}
+
+
+This is the default constructor. 
+
+\hypertarget{classConnectFourMenu_a53789934922dbbd5bfa5be90e69dfcb4}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!$\sim$\-Connect\-Four\-Menu@{$\sim$\-Connect\-Four\-Menu}}
+\index{$\sim$\-Connect\-Four\-Menu@{$\sim$\-Connect\-Four\-Menu}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{$\sim$\-Connect\-Four\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Connect\-Four\-Menu\-::$\sim$\-Connect\-Four\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_a53789934922dbbd5bfa5be90e69dfcb4}
+
+
+This is the virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Handle\-Input@{Handle\-Input}}
+\index{Handle\-Input@{Handle\-Input}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-Menu\-::\-Handle\-Input (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}
+This function handles the input for the menu options. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em is} & The in-\/stream operator to read the input. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}.
+
+\hypertarget{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{\index{Connect\-Four\-Menu@{Connect\-Four\-Menu}!Set\-Options@{Set\-Options}}
+\index{Set\-Options@{Set\-Options}!ConnectFourMenu@{Connect\-Four\-Menu}}
+\subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-Menu\-::\-Set\-Options (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col, }
+\item[{int}]{space}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}
+This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
+\hline
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{ConnectFourMenu_8h}{Connect\-Four\-Menu.\-h}\item 
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{ConnectFourMenu_8cpp}{Connect\-Four\-Menu.\-cpp}\end{DoxyCompactItemize}

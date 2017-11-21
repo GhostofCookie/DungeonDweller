@@ -8,7 +8,7 @@ This class contains the mini-\/game/puzzle Code Cracker.
 
 
 
-{\ttfamily \#include $<$code\-\_\-cracker.\-h$>$}
+{\ttfamily \#include $<$Code\-Cracker.\-h$>$}
 
 Inheritance diagram for Code\-Cracker\-:\begin{figure}[H]
 \begin{center}
@@ -19,18 +19,59 @@ Inheritance diagram for Code\-Cracker\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}{\hyperlink{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}{Code\-Cracker} ()}\label{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}
-
+\hyperlink{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}{Code\-Cracker} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for hanoi, reads in riddles from .txt files. \end{DoxyCompactList}\item 
-\hypertarget{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{\hyperlink{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{$\sim$\-Code\-Cracker} ()}\label{classCodeCracker_ae7dc389e166286ca2271625154dde39c}
-
+virtual \hyperlink{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{$\sim$\-Code\-Cracker} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{Run\-Game} ()
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}{Valid\-Move} (char input)
+\item 
+bool \hyperlink{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}{Valid\-Answer} (const char input)
+\item 
+void \hyperlink{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{Win\-Check} ()
+\begin{DoxyCompactList}\small\item\em Checks if the player has successfully answered 3 riddles. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}{Death\-Check} ()
+\begin{DoxyCompactList}\small\item\em Checks if the player is now dead. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{Import\-Riddles} ()
+\begin{DoxyCompactList}\small\item\em Imports riddles from a text file and stores them in the vector. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_acbbd890be17cec27b879eb369de82017}{Set\-Options\-In\-Menu} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}{question}
+\begin{DoxyCompactList}\small\item\em Vector to store the question strings read in from the file. \end{DoxyCompactList}\item 
+std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}{format}
+\begin{DoxyCompactList}\small\item\em Vector to store the descriptions on how to answer each question, in order. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}{answer}
+\begin{DoxyCompactList}\small\item\em Vector to store the questions answers read in from the file, in order. \end{DoxyCompactList}\item 
+int \hyperlink{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}{riddle\-Completion\-Count}
+\item 
+int \hyperlink{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{number\-Of\-Riddles}
+\item 
+bool \hyperlink{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}{riddle\-Correct}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 This class contains the mini-\/game/puzzle Code Cracker. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}{\index{Code\-Cracker@{Code\-Cracker}!Code\-Cracker@{Code\-Cracker}}
+\index{Code\-Cracker@{Code\-Cracker}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Code\-Cracker}]{\setlength{\rightskip}{0pt plus 5cm}Code\-Cracker\-::\-Code\-Cracker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCodeCracker_a46b5ec438efd38104b9a406b45c8cd68}
+
+
+Default constructor for hanoi, reads in riddles from .txt files. 
 
 \begin{DoxyAuthor}{Author}
 Tyler Siwy 
@@ -38,9 +79,42 @@ Tyler Siwy
 \begin{DoxyDate}{Date}
 Oct 20, 2017 
 \end{DoxyDate}
+Read in the riddle question string Read in the answer format Read in the anwer \hypertarget{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{\index{Code\-Cracker@{Code\-Cracker}!$\sim$\-Code\-Cracker@{$\sim$\-Code\-Cracker}}
+\index{$\sim$\-Code\-Cracker@{$\sim$\-Code\-Cracker}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{$\sim$\-Code\-Cracker}]{\setlength{\rightskip}{0pt plus 5cm}Code\-Cracker\-::$\sim$\-Code\-Cracker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_ae7dc389e166286ca2271625154dde39c}
+
+
+Deconstructor. 
+
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}{\index{Code\-Cracker@{Code\-Cracker}!Death\-Check@{Death\-Check}}
+\index{Death\-Check@{Death\-Check}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Death\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Death\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}
+
+
+Checks if the player is now dead. 
+
+\hypertarget{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{\index{Code\-Cracker@{Code\-Cracker}!Import\-Riddles@{Import\-Riddles}}
+\index{Import\-Riddles@{Import\-Riddles}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Import\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Import\-Riddles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}
+
+
+Imports riddles from a text file and stores them in the vector. 
+
 \hypertarget{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Run\-Game (
@@ -48,12 +122,101 @@ Oct 20, 2017
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. Do riddle
 
-Reimplemented from \hyperlink{classPuzzle_a0962210916279dc1368b695b399c8ea6}{Puzzle}.
+if riddle was completed successfully
+
+Decrement player health If player has died Puzzle\-End=true;
+
+Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
+
+\hypertarget{classCodeCracker_acbbd890be17cec27b879eb369de82017}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
+\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Set\-Options\-In\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCodeCracker_acbbd890be17cec27b879eb369de82017}
+Displays the screen containing the gameboard 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Cf\-Screen,the} & screen object used for displaying the mini-\/game \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
+
+\hypertarget{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}{\index{Code\-Cracker@{Code\-Cracker}!Valid\-Answer@{Valid\-Answer}}
+\index{Valid\-Answer@{Valid\-Answer}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Valid\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::\-Valid\-Answer (
+\begin{DoxyParamCaption}
+\item[{const char}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}
+Checks to see if the user input is one of the accepted answers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Input,an} & answer to the riddle in the form of the char. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}{\index{Code\-Cracker@{Code\-Cracker}!Valid\-Move@{Valid\-Move}}
+\index{Valid\-Move@{Valid\-Move}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::\-Valid\-Move (
+\begin{DoxyParamCaption}
+\item[{char}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}
+Checks the semantics of the user choice to make sure they aren't doing something that would break the game with their input. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em has} & been checked for syntax by input method \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{\index{Code\-Cracker@{Code\-Cracker}!Win\-Check@{Win\-Check}}
+\index{Win\-Check@{Win\-Check}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Win\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Win\-Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a3177ddb9deb208ac462d55970b112626}
+
+
+Checks if the player has successfully answered 3 riddles. 
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}{\index{Code\-Cracker@{Code\-Cracker}!answer@{answer}}
+\index{answer@{answer}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{answer}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ Code\-Cracker\-::answer\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}
+
+
+Vector to store the questions answers read in from the file, in order. 
+
+\hypertarget{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}{\index{Code\-Cracker@{Code\-Cracker}!format@{format}}
+\index{format@{format}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$string$>$ Code\-Cracker\-::format\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}
+
+
+Vector to store the descriptions on how to answer each question, in order. 
+
+\hypertarget{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{\index{Code\-Cracker@{Code\-Cracker}!number\-Of\-Riddles@{number\-Of\-Riddles}}
+\index{number\-Of\-Riddles@{number\-Of\-Riddles}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{number\-Of\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::number\-Of\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}
+\hypertarget{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}{\index{Code\-Cracker@{Code\-Cracker}!question@{question}}
+\index{question@{question}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{question}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$string$>$ Code\-Cracker\-::question\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}
+
+
+Vector to store the question strings read in from the file. 
+
+\hypertarget{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}{\index{Code\-Cracker@{Code\-Cracker}!riddle\-Completion\-Count@{riddle\-Completion\-Count}}
+\index{riddle\-Completion\-Count@{riddle\-Completion\-Count}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{riddle\-Completion\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::riddle\-Completion\-Count\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}
+\hypertarget{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}{\index{Code\-Cracker@{Code\-Cracker}!riddle\-Correct@{riddle\-Correct}}
+\index{riddle\-Correct@{riddle\-Correct}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{riddle\-Correct}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::riddle\-Correct\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Puzzles/code\-\_\-cracker.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Puzzles/\hyperlink{CodeCracker_8h}{Code\-Cracker.\-h}\item 
+/home/rigt2720/\-Kodika/\-Puzzles/\hyperlink{CodeCracker_8cpp}{Code\-Cracker.\-cpp}\end{DoxyCompactItemize}

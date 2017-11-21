@@ -1,5 +1,5 @@
 #include <iostream>
-//#include "../Screen/Screen.h"
+#include "../Screen/Screen.h"
 #include "MainMenu.h"
 #include "ExploreMenu.h"
 #include "FightMenu.h"
@@ -13,43 +13,50 @@
 #include "ConnectFourMenu.h"
 using namespace std;
 
-void testFunction(int);
+void testFunction(char);
 
 int main()
 {
    Menu *menu = nullptr;
+   Screen *screen = nullptr;
    map<int, string> options;
-   menu = new MainMenu();
-   menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak",testFunction);
-   menu->AddOption('w', "Move",testFunction);
-   menu->SetOptions(options,2,2);
-   menu->OutputMenu();
+   menu = new TicTacToeMenu();
+   screen = new Screen();
+
+   menu->AddOption('W', "Move Up");
+   menu->AddOption('S', "Move Down");
+   menu->AddOption('A', "Move Left");
+   menu->AddOption('D', "Move Right");
+   
    while(true)
+   {
+      cout<<screen;
+      menu->OutputMenu();
       menu->HandleInput(cin);
+      cout<<menu->GetOption();
+      testFunction(menu->GetOption());
+   }
    delete menu;
-/*   menu = new MainMenu();
-   menu->AddOption('i', "Inventory", testFunction);
-   menu->SetOptions(options,2,2);
-   menu->OutputMenu();
-   menu->HandleInput(cin);
-   delete menu;
-*/  /*
-     menu = new ExploreMenu();
-     menu->HandleInput(cin);
-     menu = new ExploreMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-     menu = new FightMenu();
-     menu= new HanoiMenu();
-     menu->SetOptions(options);
-     menu->OutputMenu();
-   */
+
    return 0;
 }
 
-void testFunction(int x)
+void testFunction(char x)
 {
-   cout<<"You added and used an option properly!"<<endl;
-   
+  switch(x)
+    {
+    case 'W':
+      cout<<"Moved Up!"<<endl;
+      break;
+    case 'S':
+      cout<<"Moved Down."<<endl;
+      break;
+    case 'A':
+      cout<<"Moved left."<<endl;
+      break;
+    case 'D':
+      cout<<"Moved Right!"<<endl;
+      break;
+    };
+  
 }

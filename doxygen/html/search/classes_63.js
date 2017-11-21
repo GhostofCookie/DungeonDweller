@@ -4,5 +4,6 @@ var searchData=
   ['charactermenu',['CharacterMenu',['../classCharacterMenu.html',1,'']]],
   ['codecracker',['CodeCracker',['../classCodeCracker.html',1,'']]],
   ['connectfour',['ConnectFour',['../classConnectFour.html',1,'']]],
+  ['connectfourmenu',['ConnectFourMenu',['../classConnectFourMenu.html',1,'']]],
   ['consumable',['Consumable',['../classConsumable.html',1,'']]]
 ];

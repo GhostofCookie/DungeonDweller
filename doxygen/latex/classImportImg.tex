@@ -8,7 +8,7 @@ The \hyperlink{classDefaultImg}{Default\-Img} class represents a basic square im
 
 
 
-{\ttfamily \#include $<$Import\-Img.\-hh$>$}
+{\ttfamily \#include $<$Import\-Img.\-h$>$}
 
 Inheritance diagram for Import\-Img\-:\begin{figure}[H]
 \begin{center}
@@ -21,20 +21,26 @@ Inheritance diagram for Import\-Img\-:\begin{figure}[H]
 \item 
 \hyperlink{classImportImg_a888292aaf716935b9e6baddea62af5d8}{Import\-Img} (string file=\char`\"{}\char`\"{})
 \item 
-\hyperlink{classImportImg_adfc26e250764e4388d9aee048a22a673}{Import\-Img} (const \hyperlink{classImportImg}{Import\-Img} \&img)
-\item 
 \hyperlink{classImportImg_a42a6d3113dfaa5c94fb43360d1641b6f}{Import\-Img} (\hyperlink{classImportImg}{Import\-Img} \&img)
 \item 
-\hypertarget{classImportImg_a5b0782a45e30d935067919e69169e809}{\hyperlink{classImportImg_a5b0782a45e30d935067919e69169e809}{$\sim$\-Import\-Img} ()}\label{classImportImg_a5b0782a45e30d935067919e69169e809}
-
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-void \hyperlink{classImportImg_a6a9c209e731c443ba060aa7d809a15e7}{Draw} (\hyperlink{classScreen}{Screen} \&scr, int y, int x)
+\hyperlink{classImportImg_adfc26e250764e4388d9aee048a22a673}{Import\-Img} (const \hyperlink{classImportImg}{Import\-Img} \&img)
 \item 
-\hypertarget{classImportImg_a7e1cc1bf176cedb14938519950719fa2}{void \hyperlink{classImportImg_a7e1cc1bf176cedb14938519950719fa2}{Create} ()}\label{classImportImg_a7e1cc1bf176cedb14938519950719fa2}
-
+\hyperlink{classImportImg_a5b0782a45e30d935067919e69169e809}{$\sim$\-Import\-Img} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classImportImg_a7e1cc1bf176cedb14938519950719fa2}{Create} ()
 \begin{DoxyCompactList}\small\item\em Function to create the image. \end{DoxyCompactList}\item 
 void \hyperlink{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}{Import} (string file, string \&img)
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classImportImg_a153117d9186b4d7317259ea9dd4c47b1}{file\-Name}
+\begin{DoxyCompactList}\small\item\em The file name containing the image contents. \end{DoxyCompactList}\item 
+string \hyperlink{classImportImg_a3529487bc41c4ae9a7926b09aec05305}{img\-Str}
+\begin{DoxyCompactList}\small\item\em The image in string form. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -59,57 +65,76 @@ Oct 20, 2017
 )}}\label{classImportImg_a888292aaf716935b9e6baddea62af5d8}
 constructs an \hyperlink{classImage}{Image} object from the given dimensions 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & the file path to get the image from \\
+\mbox{\tt in}  & {\em file} & the file path to get the image from\\
 \hline
 \end{DoxyParams}
-\hypertarget{classImportImg_adfc26e250764e4388d9aee048a22a673}{\index{Import\-Img@{Import\-Img}!Import\-Img@{Import\-Img}}
-\index{Import\-Img@{Import\-Img}!ImportImg@{Import\-Img}}
-\subsubsection[{Import\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Import\-Img\-::\-Import\-Img (
-\begin{DoxyParamCaption}
-\item[{const {\bf Import\-Img} \&}]{img}
-\end{DoxyParamCaption}
-)}}\label{classImportImg_adfc26e250764e4388d9aee048a22a673}
-Copy constructor to duplicate the given image 
+Default Constructor 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em file} & the masterfile used \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImportImg_a42a6d3113dfaa5c94fb43360d1641b6f}{\index{Import\-Img@{Import\-Img}!Import\-Img@{Import\-Img}}
 \index{Import\-Img@{Import\-Img}!ImportImg@{Import\-Img}}
 \subsubsection[{Import\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Import\-Img\-::\-Import\-Img (
 \begin{DoxyParamCaption}
-\item[{{\bf Import\-Img} \&}]{img}
+\item[{{\bf Import\-Img} \&}]{image}
 \end{DoxyParamCaption}
 )}}\label{classImportImg_a42a6d3113dfaa5c94fb43360d1641b6f}
 Copy constructor to duplicate the given image 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image to copy from \\
+\mbox{\tt in}  & {\em img} & the image to copy from\\
 \hline
 \end{DoxyParams}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image being copied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImportImg_adfc26e250764e4388d9aee048a22a673}{\index{Import\-Img@{Import\-Img}!Import\-Img@{Import\-Img}}
+\index{Import\-Img@{Import\-Img}!ImportImg@{Import\-Img}}
+\subsubsection[{Import\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Import\-Img\-::\-Import\-Img (
+\begin{DoxyParamCaption}
+\item[{const {\bf Import\-Img} \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{classImportImg_adfc26e250764e4388d9aee048a22a673}
+Copy constructor to duplicate the given image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from\\
+\hline
+\end{DoxyParams}
+Copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image being copied from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImportImg_a5b0782a45e30d935067919e69169e809}{\index{Import\-Img@{Import\-Img}!$\sim$\-Import\-Img@{$\sim$\-Import\-Img}}
+\index{$\sim$\-Import\-Img@{$\sim$\-Import\-Img}!ImportImg@{Import\-Img}}
+\subsubsection[{$\sim$\-Import\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Import\-Img\-::$\sim$\-Import\-Img (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classImportImg_a5b0782a45e30d935067919e69169e809}
+
+
+Destructor. 
+
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classImportImg_a6a9c209e731c443ba060aa7d809a15e7}{\index{Import\-Img@{Import\-Img}!Draw@{Draw}}
-\index{Draw@{Draw}!ImportImg@{Import\-Img}}
-\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Import\-Img\-::\-Draw (
+\hypertarget{classImportImg_a7e1cc1bf176cedb14938519950719fa2}{\index{Import\-Img@{Import\-Img}!Create@{Create}}
+\index{Create@{Create}!ImportImg@{Import\-Img}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}void Import\-Img\-::\-Create (
 \begin{DoxyParamCaption}
-\item[{{\bf Screen} \&}]{scr, }
-\item[{int}]{y, }
-\item[{int}]{x}
+{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImportImg_a6a9c209e731c443ba060aa7d809a15e7}
-Function to draw the image to the screen 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scr} & the screen being drawn on \\
-\hline
-\mbox{\tt in}  & {\em y} & the y coordinate \\
-\hline
-\mbox{\tt in}  & {\em x} & the x coordinate \\
-\hline
-\end{DoxyParams}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classImportImg_a7e1cc1bf176cedb14938519950719fa2}
 
 
-Implements \hyperlink{classImage_a72d145544910c3a28cbc326c009d67c1}{Image}.
+Function to create the image. 
+
+Function that creates an image based on the file name. 
+
+Reimplemented from \hyperlink{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{Image}.
 
 \hypertarget{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}{\index{Import\-Img@{Import\-Img}!Import@{Import}}
 \index{Import@{Import}!ImportImg@{Import\-Img}}
@@ -118,16 +143,41 @@ Implements \hyperlink{classImage_a72d145544910c3a28cbc326c009d67c1}{Image}.
 \item[{string}]{file, }
 \item[{string \&}]{img}
 \end{DoxyParamCaption}
-)}}\label{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}
 Helper function to append the lines from the file to create an image 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em file} & the file that is being accessed \\
 \hline
-\mbox{\tt in}  & {\em img} & the string containing all the lines that make up the image \\
+\mbox{\tt in}  & {\em img} & the string containing all the lines that make up the image\\
+\hline
+\end{DoxyParams}
+Function that imports from a file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & the file to be opened \\
+\hline
+\mbox{\tt in}  & {\em the} & image in string form (can be used for later) \\
 \hline
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classImportImg_a153117d9186b4d7317259ea9dd4c47b1}{\index{Import\-Img@{Import\-Img}!file\-Name@{file\-Name}}
+\index{file\-Name@{file\-Name}!ImportImg@{Import\-Img}}
+\subsubsection[{file\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Import\-Img\-::file\-Name\hspace{0.3cm}{\ttfamily [private]}}}\label{classImportImg_a153117d9186b4d7317259ea9dd4c47b1}
+
+
+The file name containing the image contents. 
+
+\hypertarget{classImportImg_a3529487bc41c4ae9a7926b09aec05305}{\index{Import\-Img@{Import\-Img}!img\-Str@{img\-Str}}
+\index{img\-Str@{img\-Str}!ImportImg@{Import\-Img}}
+\subsubsection[{img\-Str}]{\setlength{\rightskip}{0pt plus 5cm}string Import\-Img\-::img\-Str\hspace{0.3cm}{\ttfamily [private]}}}\label{classImportImg_a3529487bc41c4ae9a7926b09aec05305}
+
+
+The image in string form. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-Image/Import\-Img.\-hh\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{ImportImg_8h}{Import\-Img.\-h}\item 
+/home/rigt2720/\-Kodika/\-Image/\hyperlink{ImportImg_8cpp}{Import\-Img.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+#titlearea {
+    background: #2F2F2F;
+    color: #999999;
+}
+/*
+#doc-content {
+    background: #2F2F2F;
+    color: #EEEEEE
+}
+
+.memdoc {
+    background: #1F1F41;
+}
+
+.title {
+    color: #222222;
+}
+.directory {
+    background: #555555;
+}
+.even {
+    background-image: none;
+    background: #333333;
+}*/

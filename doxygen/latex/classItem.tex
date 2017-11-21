@@ -1,29 +1,185 @@
 \hypertarget{classItem}{\section{Item Class Reference}
 \label{classItem}\index{Item@{Item}}
 }
+
+
+This class is an abstract base class to represent items in game.  
+
+
+
+
+{\ttfamily \#include $<$Item.\-h$>$}
+
 Inheritance diagram for Item\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classItem}
+\includegraphics[height=3.000000cm]{classItem}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classItem_ae2398e06c05c81df420d4ce92cd69a80}{\hyperlink{classItem}{Item} $\ast$ {\bfseries get\-Item} (string item\-Type)}\label{classItem_ae2398e06c05c81df420d4ce92cd69a80}
-
+virtual \hyperlink{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{$\sim$\-Item} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\hyperlink{classItem}{Item} $\ast$ \hyperlink{classItem_aa0110e08655e85befca5bc462700e127}{get\-Item} (string item\-Type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classItem}{Item} Factory. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classItem_a790283e2fb63df00eb61a95bb9921051}{use} (\hyperlink{classCharacter}{Character} $\ast$target)=0
 \item 
-\hypertarget{classItem_a288f11fb8e6a7689e76d9b35baff47a6}{void {\bfseries use} (Charater $\ast$target)}\label{classItem_a288f11fb8e6a7689e76d9b35baff47a6}
-
-\item 
-\hypertarget{classItem_aec2f225f58b466627cb268d8f67b6c2f}{string {\bfseries name} ()}\label{classItem_aec2f225f58b466627cb268d8f67b6c2f}
-
-\item 
-\hypertarget{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{string {\bfseries name} () const }\label{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}
-
+string \& \hyperlink{classItem_ad39021b642fa436b3c0b898314de012c}{name} ()
+\begin{DoxyCompactList}\small\item\em read or write to name \end{DoxyCompactList}\item 
+string \hyperlink{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{name} () const 
+\begin{DoxyCompactList}\small\item\em read name \end{DoxyCompactList}\item 
+string \hyperlink{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}{name\-Generator} (string file\-Name)
 \end{DoxyCompactItemize}
-
-
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-Item/Item.\-h\end{DoxyCompactItemize}
+int \hyperlink{classItem_ad60b9683d09792d206d9557527f10d05}{random} (unsigned int start, unsigned int end)
+\begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classItem_af7a09a8db2072c632d84a992e76408b9}{item\-Name}
+\begin{DoxyCompactList}\small\item\em Name of the item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is an abstract base class to represent items in game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{\index{Item@{Item}!$\sim$\-Item@{$\sim$\-Item}}
+\index{$\sim$\-Item@{$\sim$\-Item}!Item@{Item}}
+\subsubsection[{$\sim$\-Item}]{\setlength{\rightskip}{0pt plus 5cm}virtual Item\-::$\sim$\-Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classItem_aa0110e08655e85befca5bc462700e127}{\index{Item@{Item}!get\-Item@{get\-Item}}
+\index{get\-Item@{get\-Item}!Item@{Item}}
+\subsubsection[{get\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item} $\ast$ Item\-::get\-Item (
+\begin{DoxyParamCaption}
+\item[{string}]{item\-Type}
+\end{DoxyParamCaption}
+)}}\label{classItem_aa0110e08655e85befca5bc462700e127}
+
+
+\hyperlink{classItem}{Item} Factory. 
+
+Uses factory design pattern to create items 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em item\-Type} & The type of item to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to created item 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\-\_\-argument} & Thrown if type does not exist or is not allowed \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classItem_ad39021b642fa436b3c0b898314de012c}{\index{Item@{Item}!name@{name}}
+\index{name@{name}!Item@{Item}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Item\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classItem_ad39021b642fa436b3c0b898314de012c}
+
+
+read or write to name 
+
+Allows access to the items name \begin{DoxyReturn}{Returns}
+Reference to the name of the item 
+\end{DoxyReturn}
+\hypertarget{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{\index{Item@{Item}!name@{name}}
+\index{name@{name}!Item@{Item}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}
+
+
+read name 
+
+Gives the name of the item without allowing chages \begin{DoxyReturn}{Returns}
+Name of the item 
+\end{DoxyReturn}
+\hypertarget{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}{\index{Item@{Item}!name\-Generator@{name\-Generator}}
+\index{name\-Generator@{name\-Generator}!Item@{Item}}
+\subsubsection[{name\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::name\-Generator (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}
+Generates adjectives to add to \hyperlink{classItem}{Item} names 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-Name} & the file that the names comme from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Adjective generated and to be used 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\-\_\-error} & Thrown if source file has no names \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classItem_ad60b9683d09792d206d9557527f10d05}{\index{Item@{Item}!random@{random}}
+\index{random@{random}!Item@{Item}}
+\subsubsection[{random}]{\setlength{\rightskip}{0pt plus 5cm}int Item\-::random (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{start, }
+\item[{unsigned int}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classItem_ad60b9683d09792d206d9557527f10d05}
+
+
+random number generator 
+
+Helper function to generate random positive numbers \begin{DoxyReturn}{Returns}
+Random number between start and end 
+\end{DoxyReturn}
+\hypertarget{classItem_a790283e2fb63df00eb61a95bb9921051}{\index{Item@{Item}!use@{use}}
+\index{use@{use}!Item@{Item}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Item\-::use (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classItem_a790283e2fb63df00eb61a95bb9921051}
+Pure Virtual funtion that forces all subclasses to define how to use themselves 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em target} & The \hyperlink{classCharacter}{Character} the item is being used on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if use was successfull 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classSpell_ae59f9a3082d49559fae99ee05014988b}{Spell}, \hyperlink{classFood_a545771c5cb1d9d74ab05d393ed216fa4}{Food}, \hyperlink{classBow_a19250cbc06d6bd21f83be645e880fd76}{Bow}, \hyperlink{classHealthPotion_a5e1fc49fe1d5440f56baddfe219c31fe}{Health\-Potion}, and \hyperlink{classSword_ac9613c1b3c9a3b748c6e36b1285924b9}{Sword}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classItem_af7a09a8db2072c632d84a992e76408b9}{\index{Item@{Item}!item\-Name@{item\-Name}}
+\index{item\-Name@{item\-Name}!Item@{Item}}
+\subsubsection[{item\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::item\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classItem_af7a09a8db2072c632d84a992e76408b9}
+
+
+Name of the item. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{Item_8h}{Item.\-h}\item 
+/home/rigt2720/\-Kodika/\-Item/\hyperlink{Item_8cpp}{Item.\-cpp}\end{DoxyCompactItemize}

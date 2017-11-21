@@ -13,19 +13,17 @@ An abstract class, this is the base class for the all the in-\/game puzzle/minig
 Inheritance diagram for Minigame\-Menu\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{classMinigameMenu}
+\includegraphics[height=3.555556cm]{classMinigameMenu}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classMinigameMenu_ae43222d43cab574372707a21bd22a2b5}{\hyperlink{classMinigameMenu_ae43222d43cab574372707a21bd22a2b5}{Game\-Menu} ()}\label{classMinigameMenu_ae43222d43cab574372707a21bd22a2b5}
-
+\hyperlink{classMinigameMenu_a90d42578d68f68c3b26c414f90f2d950}{Minigame\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
-\hypertarget{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}{virtual \hyperlink{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}{$\sim$\-Minigame\-Menu} ()}\label{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}
-
+virtual \hyperlink{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}{$\sim$\-Minigame\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classMinigameMenu_abf3dcda8c256be03ebe3661b8dde2ea2}{Set\-Options} (map$<$ string $>$ options\-List, string type=\char`\"{}minigame\char`\"{})=0
+virtual void \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Set\-Options} (int row, int col, int space)=0
 \item 
 virtual void \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Handle\-Input} (istream \&is)=0
 \end{DoxyCompactItemize}
@@ -34,6 +32,31 @@ virtual void \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Han
 
 \subsection{Detailed Description}
 An abstract class, this is the base class for the all the in-\/game puzzle/minigame menu classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMinigameMenu_a90d42578d68f68c3b26c414f90f2d950}{\index{Minigame\-Menu@{Minigame\-Menu}!Minigame\-Menu@{Minigame\-Menu}}
+\index{Minigame\-Menu@{Minigame\-Menu}!MinigameMenu@{Minigame\-Menu}}
+\subsubsection[{Minigame\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Minigame\-Menu\-::\-Minigame\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMinigameMenu_a90d42578d68f68c3b26c414f90f2d950}
+
+
+This is the default constructor. 
+
+\hypertarget{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}{\index{Minigame\-Menu@{Minigame\-Menu}!$\sim$\-Minigame\-Menu@{$\sim$\-Minigame\-Menu}}
+\index{$\sim$\-Minigame\-Menu@{$\sim$\-Minigame\-Menu}!MinigameMenu@{Minigame\-Menu}}
+\subsubsection[{$\sim$\-Minigame\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual Minigame\-Menu\-::$\sim$\-Minigame\-Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}
+
+
+This is the virtual destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{\index{Minigame\-Menu@{Minigame\-Menu}!Handle\-Input@{Handle\-Input}}
@@ -54,33 +77,36 @@ Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Men
 
 
 
-Implemented in \hyperlink{classHanoiMenu_a8d287d810bc4cf49775503470830e48f}{Hanoi\-Menu}.
+Implemented in \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a8f85bae3166bf122c5800aab41c87d54}{Hanoi\-Menu}, \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Memory\-Menu}, \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Riddle\-Menu}, and \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Tic\-Tac\-Toe\-Menu}.
 
-\hypertarget{classMinigameMenu_abf3dcda8c256be03ebe3661b8dde2ea2}{\index{Minigame\-Menu@{Minigame\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{\index{Minigame\-Menu@{Minigame\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!MinigameMenu@{Minigame\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Minigame\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{map$<$ string $>$}]{options\-List, }
-\item[{string}]{type = {\ttfamily \char`\"{}minigame\char`\"{}}}
+\item[{int}]{row, }
+\item[{int}]{col, }
+\item[{int}]{space}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classMinigameMenu_abf3dcda8c256be03ebe3661b8dde2ea2}
-This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}
+This function sets the specific options for the minigame. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
 \hline
-\mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{classGameMenu_a25172d8d311df4f7b79074d60f74642e}{Game\-Menu}.
+Implements \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Menu}.
 
 
 
-Implemented in \hyperlink{classHanoiMenu_a1ad3788638502865cb8d52040dcc27f8}{Hanoi\-Menu}.
+Implemented in \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}, and \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}.
 
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-Menu/Minigame\-Menu.\-h\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Menu/\hyperlink{MinigameMenu_8h}{Minigame\-Menu.\-h}\end{DoxyCompactItemize}

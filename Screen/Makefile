@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS = main.o ScreenTest.o Screen.o SlotScreen.o
+OBJS = main.o ScreenTest.o Screen.o SlotScreen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../ImageImporter/ImageImporter.o ../Room/Room.o
 
 .PHONY : all
 all : main
@@ -21,7 +21,8 @@ include .prereq
 
 .PHONY : clean
 clean :
-	rm -f *.o *~ #* .#*
+	rm -f *.o *.gcda *.gcno
+	rm -f *~ *# .#*
 
 .PHONY : clean-all
 clean-all : clean

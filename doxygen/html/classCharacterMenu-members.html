@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -67,12 +76,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classCharacterMenu.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +105,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">CharacterMenu Member List</div>  </div>
@@ -90,24 +113,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classCharacterMenu.html">CharacterMenu</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classCharacterMenu.html#a1cccb5ffc144797bd6472e0839c38c03">CharacterMenu</a>()</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classGameMenu.html#ae31c50148abf655297a2a3eab53c15a3">GameMenu</a>()</td><td class="entry"><a class="el" href="classGameMenu.html">GameMenu</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classCharacterMenu.html#a7a9163eec7ac69aeb5431869a0675646">HandleInput</a>(istream &amp;is)</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classMenu.html#a81bb84f921911944e4060d1c5a1b2507">HandleOptionInput</a>(istream &amp;is)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a5a60e837b160444bee4525c06fd4c51e">Menu</a>(int height=10, int width=100)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classMenu.html#a4665a914fe24a8b11d8d6c95792184b3">OutputMenu</a>()</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a09adbf38cefb171f8f06536c881d3944">set</a>(int x, int y, char ch)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#a374493bc5b1e04b13647482c98df5fd6">SetOptions</a>(map&lt; string &gt; optionsList, string type)</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SetOptions</b>(map&lt; int, string &gt; optionsList, string type=&quot;generic&quot;) (defined in <a class="el" href="classMenu.html">Menu</a>)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#a6e7e278406e10cd6eb0f3d5aea5fb4b2">~CharacterMenu</a>()</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classGameMenu.html#a8901f02e327b01a79b6e10a580154c44">~GameMenu</a>()</td><td class="entry"><a class="el" href="classGameMenu.html">GameMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a>()</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a3cf7c25cc9c1b45664a2f68da25b9373">AddOption</a>(char command, string optionName, void(*f)(int)=0)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#a1cccb5ffc144797bd6472e0839c38c03">CharacterMenu</a>()</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classGameMenu.html#aee692d042333761f688de3fbdbb89c67">GameMenu</a>(int height=10)</td><td class="entry"><a class="el" href="classGameMenu.html">GameMenu</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#a9530ef35d34be27d09f740563dbe59ea">HandleInput</a>(istream &amp;is)</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a18566c84b43074d03f0ad3cacd748aae">indexMap</a></td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMenu.html#a28ea9cee39d242905df93e6baa1544ea">Menu</a>(int height=10, int width=101)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a6fdd29d716c7fb985f038ddde93794a0">menu_Array</a></td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMenu.html#ad9364e391e91acd266444a2604cb838e">menuHeight</a></td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a5c90eda61cd9071dcafda04569dfdd67">menuWidth</a></td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMenu.html#a1482795732b18033b8cc3214b4c87176">optionMap</a></td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a4665a914fe24a8b11d8d6c95792184b3">OutputMenu</a>()</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMenu.html#a8acabbf165ce6e169f67389ee54c988d">QuitGame</a>(int value)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#aa13913062e78fbd036ca698e0c0c5038">Set</a>(int x, int y, char ch)</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#aeabd6f68d7edaf282be3b61c4103d4f8">SetOptions</a>(map&lt; int, string &gt; optionsList, string type)</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classGameMenu.html#ac32ff465c5a4f30979e8851fa21cb230">GameMenu::SetOptions</a>(int row, int col, int space)=0</td><td class="entry"><a class="el" href="classGameMenu.html">GameMenu</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classCharacterMenu.html#a13cc9232a05a31d3771f6ef1a2038c18">~CharacterMenu</a>()</td><td class="entry"><a class="el" href="classCharacterMenu.html">CharacterMenu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a>()</td><td class="entry"><a class="el" href="classMenu.html">Menu</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

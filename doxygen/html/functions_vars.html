@@ -8,12 +8,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,10 +29,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Dungeon Dwellers
    </div>
-   <div id="projectbrief">Insertabriefgamedescriptionhere.</div>
+   <div id="projectbrief">Insert a brief game description here.</div>
   </td>
  </tr>
  </tbody>
@@ -75,13 +84,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+      <li><a href="#index_x"><span>x</span></a></li>
+      <li><a href="#index_y"><span>y</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions_vars.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,16 +142,223 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>_height
+: <a class="el" href="classDefaultImg.html#a563e191151451d5d3058ed646b8008ab">DefaultImg</a>
+</li>
+<li>_width
+: <a class="el" href="classDefaultImg.html#a258f5ac708d83e06e924985dab85f221">DefaultImg</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>answer
+: <a class="el" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">CodeCracker</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>baseDmg
+: <a class="el" href="classWeapon.html#a81c4f950298060a4b91c4170fc128631">Weapon</a>
+</li>
+<li>boardSize
+: <a class="el" href="classTicTacToe.html#a0aab68285cb8b8f5ce6159ed5cfc8bbd">TicTacToe</a>
+, <a class="el" href="classMemoryMatch.html#aae0a9e51558d70e671fa64aa246de499">MemoryMatch</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>center
+: <a class="el" href="classRoomTree_1_1Node.html#a336e4def48d57a7f6a83c7f7f2a78a7f">RoomTree::Node</a>
+</li>
+<li>ch
+: <a class="el" href="classDefaultImg.html#ac77e80e5517c44a6c6a7f7d50fe30bbc">DefaultImg</a>
+, <a class="el" href="structRoom_1_1Point.html#aa27da949fd69ddedd3b9a2c3e20626dc">Room::Point</a>
+, <a class="el" href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">Image</a>
+</li>
+<li>charTable
+: <a class="el" href="classMemoryMatch.html#af2437cf6ce06147e64feb7dca23715e7">MemoryMatch</a>
+</li>
+<li>collection
+: <a class="el" href="classImageImporter.html#a8f0b778e6af2bd36dcda7a35107e4a18">ImageImporter</a>
+</li>
+<li>ConnectFourScreen
+: <a class="el" href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">ConnectFour</a>
+</li>
+<li>currNode
+: <a class="el" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">RoomTree</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>discsVector
+: <a class="el" href="classHanoi.html#a67a8288cd0c9a1acc3e5201621505afa">Hanoi</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>fileName
+: <a class="el" href="classImportImg.html#a153117d9186b4d7317259ea9dd4c47b1">ImportImg</a>
+</li>
+<li>format
+: <a class="el" href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">CodeCracker</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>gameBoard
+: <a class="el" href="classTicTacToe.html#a9e4321945ff098996c42cc56936445b9">TicTacToe</a>
+</li>
+<li>GameEnd
+: <a class="el" href="classHanoi.html#aff7a10d6c208cb15d315436b91017bed">Hanoi</a>
+</li>
+<li>gold
+: <a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">Character</a>
+</li>
+<li>grid
+: <a class="el" href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">ConnectFour</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>HanoiGameMenu
+: <a class="el" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">Hanoi</a>
+</li>
+<li>HanoiScreen
+: <a class="el" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">Hanoi</a>
+</li>
+<li>health
+: <a class="el" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">Character</a>
+</li>
 <li>height
 : <a class="el" href="classImage.html#a51df43db420c9c0b57536cb2dd36de5c">Image</a>
 , <a class="el" href="classScreen.html#a55405920693276db8fbdbf3a903b8d2f">Screen</a>
+, <a class="el" href="classSlotScreen.html#a332d1b2fc1c48b2c455cc276bf638891">SlotScreen</a>
 </li>
+<li>heightMax
+: <a class="el" href="classScreenTest.html#a6a160dcd61b42aaa5b59fe7c0336f65d">ScreenTest</a>
+</li>
+<li>heightMin
+: <a class="el" href="classScreenTest.html#ae40c862539e810eecfc3bd07250dd630">ScreenTest</a>
+</li>
+<li>heightNegative
+: <a class="el" href="classScreenTest.html#a7bdca9dbaf4acbc80516502d91ad6a8e">ScreenTest</a>
+</li>
+<li>hitPercent
+: <a class="el" href="classBow.html#ab6156932e51ec7833d07a669e5e346ff">Bow</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>Img
 : <a class="el" href="classImage.html#ac3bad7d8544990b7be9e9c5ee0fb26b8">Image</a>
 </li>
+<li>imgStr
+: <a class="el" href="classImportImg.html#a3529487bc41c4ae9a7926b09aec05305">ImportImg</a>
+</li>
+<li>indexMap
+: <a class="el" href="classMenu.html#a18566c84b43074d03f0ad3cacd748aae">Menu</a>
+</li>
+<li>itemName
+: <a class="el" href="classItem.html#af7a09a8db2072c632d84a992e76408b9">Item</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
+<li>key
+: <a class="el" href="classPlayerTest.html#aeba80cc755ca737972055b668af786f0">PlayerTest</a>
+</li>
+<li>keyMod
+: <a class="el" href="classPlayerTest.html#ae4e634b9de6e1a835fead6433fb68108">PlayerTest</a>
+</li>
+<li>keys
+: <a class="el" href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">Player</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>left
+: <a class="el" href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">RoomTree::Node</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>masterFile
+: <a class="el" href="classImageImporter.html#ac525acb521f6790cd85877f828fac54c">ImageImporter</a>
+</li>
+<li>matchVector
+: <a class="el" href="classMemoryMatch.html#ac42fc8b5ac8b04bd0651222fa31d2251">MemoryMatch</a>
+</li>
+<li>maxStackHeight
+: <a class="el" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">Hanoi</a>
+</li>
+<li>MemoryMatchScreen
+: <a class="el" href="classMemoryMatch.html#a78399975fec5fea7b2102449a4536fcd">MemoryMatch</a>
+</li>
 <li>menu
 : <a class="el" href="classGameState.html#aebc12d6e90edfbe51a571858f6288f93">GameState</a>
+, <a class="el" href="classMainMenu.html#ae7d51673d2212c49550307dff79f6aba">MainMenu</a>
+, <a class="el" href="classMenuTest.html#a1112471b20626234fa45958cce6ed8d5">MenuTest</a>
+</li>
+<li>menu2
+: <a class="el" href="classMenuTest.html#a9d994a71bc3d2d182f63030492aeb84d">MenuTest</a>
+</li>
+<li>menu_Array
+: <a class="el" href="classMenu.html#a6fdd29d716c7fb985f038ddde93794a0">Menu</a>
+</li>
+<li>menuHeight
+: <a class="el" href="classMenu.html#ad9364e391e91acd266444a2604cb838e">Menu</a>
+</li>
+<li>menuOption1
+: <a class="el" href="classHanoi.html#a9f971c51b287b61d8a919c26780e3f66">Hanoi</a>
+</li>
+<li>menuOption2
+: <a class="el" href="classHanoi.html#ac9345e1760d1367ee05ecdf2e15d3d69">Hanoi</a>
+</li>
+<li>menuOption3
+: <a class="el" href="classHanoi.html#a94c22f2842c5473df08839fc9d4e860f">Hanoi</a>
+</li>
+<li>menuOption4
+: <a class="el" href="classHanoi.html#a3c6ac9ab6b2941ab955a2bc2c58cf93a">Hanoi</a>
+</li>
+<li>menuWidth
+: <a class="el" href="classMenu.html#a5c90eda61cd9071dcafda04569dfdd67">Menu</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>name
+: <a class="el" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">Player</a>
+</li>
+<li>numberOfRiddles
+: <a class="el" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">CodeCracker</a>
+</li>
+<li>numberOfStacks
+: <a class="el" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">Hanoi</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>optionMap
+: <a class="el" href="classMenu.html#a1482795732b18033b8cc3214b4c87176">Menu</a>
+</li>
+<li>options
+: <a class="el" href="classMenuTest.html#a49607805fcfaf8b080037d0a2b377e74">MenuTest</a>
 </li>
 <li>outlineCh
 : <a class="el" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">Screen</a>
@@ -108,8 +366,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>outlineOn
 : <a class="el" href="classScreen.html#a6f906b745f406576d9f7aeaec330c9d6">Screen</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>pairsOfCharsVector
+: <a class="el" href="classMemoryMatch.html#a80336b0b989152fed590a6fa755197bc">MemoryMatch</a>
+</li>
+<li>parent
+: <a class="el" href="classRoomTree_1_1Node.html#af9ac8d99a8290e915138b944f967da2c">RoomTree::Node</a>
+</li>
+<li>pictures
+: <a class="el" href="classSlotScreen.html#adff0222578ff70c1362880d2a8bede80">SlotScreen</a>
+</li>
+<li>point
+: <a class="el" href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">Room</a>
+</li>
 <li>PuzzleEnd
 : <a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">Puzzle</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>question
+: <a class="el" href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">CodeCracker</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>race
+: <a class="el" href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">Player</a>
+</li>
+<li>remainingUses
+: <a class="el" href="classWeapon.html#abbc826be5477aa791910f871d76a1da2">Weapon</a>
+</li>
+<li>riddleCompletionCount
+: <a class="el" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">CodeCracker</a>
+</li>
+<li>riddleCorrect
+: <a class="el" href="classCodeCracker.html#ab497c5b666243b85ec3c754590ee7450">CodeCracker</a>
+</li>
+<li>right
+: <a class="el" href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">RoomTree::Node</a>
+</li>
+<li>room
+: <a class="el" href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">Room</a>
+, <a class="el" href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">RoomTree::Node</a>
+</li>
+<li>root
+: <a class="el" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">RoomTree</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>screen
+: <a class="el" href="classScreenTest.html#af1600b7ee78b7292084cad1902fc0b65">ScreenTest</a>
+</li>
+<li>screen2
+: <a class="el" href="classScreenTest.html#a7953fa476ae723c712ca44ea5336dd8b">ScreenTest</a>
 </li>
 <li>screenX
 : <a class="el" href="classImage.html#a0488098c125477f82fc6ca8e14cc170f">Image</a>
@@ -117,20 +434,109 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>screenY
 : <a class="el" href="classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b">Image</a>
 </li>
+<li>slotCount
+: <a class="el" href="classSlotScreen.html#adc177088622711869c8ddec331058a78">SlotScreen</a>
+</li>
+<li>stamina
+: <a class="el" href="classPlayer.html#a3642fc1d242a769a2ea76dc0b1662a20">Player</a>
+, <a class="el" href="classPlayerTest.html#a21d883f41fe9bc9fec5aafc6377aca6a">PlayerTest</a>
+</li>
+<li>staminaMod
+: <a class="el" href="classPlayerTest.html#a34b22c1470a735f5000b85c8a35c09d6">PlayerTest</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>T
+: <a class="el" href="classPlayerTest.html#aa4d4751434ca1508f9962ffc03c37447">PlayerTest</a>
+</li>
+<li>TicTacToeScreen
+: <a class="el" href="classTicTacToe.html#a6749582a8480be3cbae920f8f2cca8ce">TicTacToe</a>
+</li>
+<li>tower
+: <a class="el" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">Hanoi</a>
+</li>
+<li>Tree1
+: <a class="el" href="classRoomTreeTest.html#aba5c37d20a82bff695de4c78a547f23f">RoomTreeTest</a>
+</li>
+<li>Tree2
+: <a class="el" href="classRoomTreeTest.html#aada805154b8f5306805936f0ba43834c">RoomTreeTest</a>
+</li>
+<li>Tree3
+: <a class="el" href="classRoomTreeTest.html#aa70878ec1fa44e95f78e59a236572b27">RoomTreeTest</a>
+</li>
+<li>type
+: <a class="el" href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">Room</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>used
+: <a class="el" href="classConsumable.html#a261f0f34c301027337ffe6bf32bf0200">Consumable</a>
+</li>
+<li>usedPairs
+: <a class="el" href="classMemoryMatch.html#adcb66679aaceb1414fe023d065863d2f">MemoryMatch</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>value
+: <a class="el" href="classConsumable.html#a492024e0b8fd5b6c6e944116cbff3e32">Consumable</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>width
 : <a class="el" href="classImage.html#ab8d12f635013c04159cd4d3d972bac88">Image</a>
 , <a class="el" href="classScreen.html#a49be8f8ccf7ed7a3151a761495c0ce21">Screen</a>
+, <a class="el" href="classSlotScreen.html#a04705a45598ba5e7db362913bedc12b9">SlotScreen</a>
+</li>
+<li>widthMax
+: <a class="el" href="classScreenTest.html#ad96290caf1612456f32e6ec760184421">ScreenTest</a>
+</li>
+<li>widthMin
+: <a class="el" href="classScreenTest.html#a226ac6b531b24a7e858f92ae6ecfc326">ScreenTest</a>
+</li>
+<li>widthNegative
+: <a class="el" href="classScreenTest.html#a6dcea4998a473e9c5fbc7e3bfa074ab4">ScreenTest</a>
 </li>
 <li>Window
 : <a class="el" href="classScreen.html#a7349f56b4976f03dc9977dc613a8bbab">Screen</a>
 </li>
 </ul>
+
+
+<h3><a class="anchor" id="index_x"></a>- x -</h3><ul>
+<li>x
+: <a class="el" href="structRoom_1_1Point.html#acad019753cb67182b5372525e510a389">Room::Point</a>
+</li>
+<li>xSize
+: <a class="el" href="classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63">ConnectFour</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_y"></a>- y -</h3><ul>
+<li>y
+: <a class="el" href="structRoom_1_1Point.html#acc33ccc063a15e925a489b72fffa19fa">Room::Point</a>
+</li>
+<li>ySize
+: <a class="el" href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">ConnectFour</a>
+</li>
+</ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -8,10 +8,12 @@ ExploreMenu::~ExploreMenu()
 {
 }
 
-void ExploreMenu::SetOptions(map<int,string> optionsList, int row, int col)
+void ExploreMenu::SetOptions(int row, int col,int space)
 {
+  Menu::SetOptions(row,col,space);
 }
 
 void ExploreMenu::HandleInput(istream & is)
 {
+  Menu::HandleInput(is);
 }

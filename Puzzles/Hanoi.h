@@ -8,6 +8,10 @@
 #ifndef HANOI_H
 #define HANOI_H
 #include "Puzzle.h"
+#include "../Menu/HanoiMenu.h"
+#include "../Screen/Screen.h"
+#include "../Image/DefaultImg.h"
+#include <stack>
 #include <iostream>
 using namespace std;
 
@@ -19,14 +23,14 @@ class Hanoi: public virtual Puzzle
    Hanoi();
 
    ///Deconstructor
-   virtual ~Hanoi();
+   ~Hanoi();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
    void RunGame();
 
   private:
-   //ALL HANDLDED BY THE MENU OBJECT
+   //ALL HANDLED BY THE MENU OBJECT
    //void PromptUser(&screen);//Prompts user for input
    //char UserInput(Menu &menu);//Gets user input
    //bool ValidCommand(char input);//Checks Formatting
@@ -34,33 +38,55 @@ class Hanoi: public virtual Puzzle
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input. 
    ///\param[in]input, has been checked for syntax by input method
-   bool ValidMove(int input);
+   bool ValidMove(const int currentStack, const int newStack) const;
 
    ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
    ///Checks the state of Tower to see if the player has won the game,
-   ///returns true when they have completed the puzzle.
+   ///sets GameEnd to true when they have completed the puzzle.
    void WinCheck();
 
    ///Moves the piece the depending on which option the player selects
    /// \param[in] userSelection, the option of moves the player chose
    void MovePiece(int userSelection);
 
-   /// Displays the screen containing the gameboard
-   /// \param[in] HanoiScreen, the screen object used for the hanoi game.
-   void OutputGame(Screen &hScreen);
+   ///WhichDiscFromSize returns an index to wich disc in discsVector the size is
+   ///referenced with
+   /// \param[in]size, the size of disc we wouild like to know the location of
+   int WhichDiscFromSize(int size);
 
-   /// The vector which holds each towers' contents. Contents are stored as
-   /// integers.
-   std::vector<stack<int>>tower;
+   ///Function which clears the discs previous location from the screen object
+   ///You cannot use the erase function in the screen class because you would
+   ///have to re-draw everything afterwards and the nature of a stack does not
+   ///give you access to elements not on top.
+   void ClearTopDisc(int targetTower);
 
+   void BoardSetup();
+   
+   /// The vector which holds each towers' defaultImg
+   std::vector<stack<DefaultImg>>tower;
    /// Number of stacks in the game
    ///X-coordinate size in the tower vector
+
    int numberOfStacks;
-/// Maintains the height of the stacks in the game
+   /// Maintains the height of the stacks in the game
+
    int maxStackHeight;
    /// Used for the loop to see if the game has ended yet
+
    bool GameEnd;
+   ///HanoiScreen stores and outputs the contents of the game to the terminal
+
+   Screen HanoiScreen;
+   /// GameMenu is used for handling input
+
+   HanoiMenu HanoiGameMenu;
+   ///A vector to store the size of all the discs in the game, stored in
+   ///ascending order of size of discs. 0=3,1=7,2=11,3=15
+   std::vector<DefaultImg>discsVector;
+   
+   /// MenuOption strings are used for outputting options to the user
+   string menuOption1, menuOption2, menuOption3, menuOption4;
 };
 #endif

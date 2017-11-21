@@ -1,0 +1,25 @@
+main.o: main.cpp Cutscene.h ../Screen/Screen.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h ../Room/Room.h ../Room/../Screen/Screen.h \
+ ../Room/../Image/Image.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/ImportImg.h ../ImageImporter/ImageImporter.h \
+ ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h
+Cutscene.o: Cutscene.cpp Cutscene.h ../Screen/Screen.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h ../Room/Room.h ../Room/../Screen/Screen.h \
+ ../Room/../Image/Image.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/ImportImg.h
+ImageImporter.o: ../ImageImporter/ImageImporter.cpp \
+ ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
+ ../ImageImporter/../Image/../Screen/Screen.h \
+ ../ImageImporter/../Image/ImportImg.h ../ImageImporter/../Image/Image.h
+Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
+Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
+DefaultImg.o: ../Image/DefaultImg.cpp ../Image/DefaultImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
+Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
+ ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
+ ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
+ ../Room/../Image/ImportImg.h
