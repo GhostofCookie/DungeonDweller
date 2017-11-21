@@ -55,9 +55,20 @@
 // Misc Headers
 #include <iostream>
 #include <ctime> //srand()
+#include <cctype>
+#include <stdexcept>
 using namespace std;
 
+//***FUNCTION PROTOTYPES********************************************************
 
+// Orientation Translation Functions
+void FindNewOrientation(char directions[], char dir, int treeHeight);
+void ShiftDir(char directions[],unsigned int numOfShifts);
+char Orientation(char directions[], char dir);
+
+
+
+//******************************************************************************
 
 int main()
 {
@@ -70,7 +81,6 @@ int main()
   ImageImporter imageImport = ImageImporter(mastrFile);
   // MainGame Screen
   Screen *screen = new Screen();
-
   // Menu
   Menu *menu = new Menu();
   menu->AddOption('W',"Move Up");
@@ -79,54 +89,128 @@ int main()
   Room *roomptr = new Room(imageImport.collection);
   RoomTree roomTree(roomptr);
 
+  // Remember Orientation
+  /*
+    Whenever roomTree.Move(dir) is used and is successfull, it must be used like this:
 
-   
+    roomTree.Move(Orientation(directions,dir));
+    FindNewOrientation(directions,dir,roomTree.CurrentHeight());
+    
+   */
+  char directions[4] = {'p','l','c','r'};
   char n;
   while(true)
     {
       // clear the screen
       screen->Erase();
       // align the current room to the screen and print
-      (*roomTree.at()).AlignCenter(*screen);
-      (*roomTree.at()).Draw(*screen);
-      cout << screen << endl;
+      (*roomTree.At()).AlignCenter(*screen);
+      (*roomTree.At()).Draw(*screen);
+      cout << roomTree.CurrentHeight() << endl << screen << endl;
  
       cin >> n;
 
       // case to select direction ('w' always means go back currently)
-      switch(n)
-	{
+      switch(n)	{
 	case 'w' :
-	  if(!roomTree.move('p'))
+	  if(!roomTree.Move(Orientation(directions,'p')))
 	    {
-	      roomTree.newRoom('p', new Room(imageImport.collection));
-	      roomTree.move('p');
+	      roomTree.NewRoom(Orientation(directions,'p'), new Room(imageImport.collection));
+	      roomTree.Move(Orientation(directions,'p'));
 	    }
+	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
 	case 'a' :
-	  if(!roomTree.move('l'))
+	  if(!roomTree.Move(Orientation(directions,'l')))
 	    {
-	      roomTree.newRoom('l', new Room(imageImport.collection));
-	      roomTree.move('l');
+	      roomTree.NewRoom(Orientation(directions,'l'), new Room(imageImport.collection));
+	      roomTree.Move(Orientation(directions,'l'));
 	    }
+	  FindNewOrientation(directions,'l',roomTree.CurrentHeight());
 	  break;
 	case 's' :
-	  if(!roomTree.move('c'))
+	  if(!roomTree.Move(Orientation(directions,'c')))
 	    {
-	      roomTree.newRoom('c', new Room(imageImport.collection));
-	      roomTree.move('c');
+	      roomTree.NewRoom(Orientation(directions,'c'), new Room(imageImport.collection));
+	      roomTree.Move(Orientation(directions,'c'));
 	    }
+	  FindNewOrientation(directions,'c',roomTree.CurrentHeight());
 	  break;
 	case 'd' :
-	  if(!roomTree.move('r'))
-	    {
-	      roomTree.newRoom('r', new Room(imageImport.collection));
-	      roomTree.move('r');
-	    }
+	  if(!roomTree.Move(Orientation(directions,'r')))
+	  {
+	      roomTree.NewRoom(Orientation(directions,'r'), new Room(imageImport.collection));
+	      roomTree.Move(Orientation(directions,'r'));
+	  }
+	  FindNewOrientation(directions,'r',roomTree.CurrentHeight());
 	  break;
 	default :
 	  break;
 	};
-    }
+  }
   return 0;
 }
+
+
+//***FUNCTION DEFINITIONS*******************************************************
+
+// Orientation Translation Functions
+void FindNewOrientation(char directions[], char dir, int treeHeight)
+{
+   dir = toupper(dir);
+   switch(dir) {
+      case 'P':
+	 if(treeHeight == 1)
+	    ShiftDir(directions,2);
+	 break;
+      case 'L':
+	 ShiftDir(directions,1);
+	 break;
+      case 'R':
+	 ShiftDir(directions,3);
+	 break;
+      case 'C':
+	 if(treeHeight == 2 && directions[0] == 'c')
+	    ShiftDir(directions,2);
+	 break;
+      default:
+	 throw invalid_argument("invalid direction1");
+   }
+}
+
+void ShiftDir(char directions[],unsigned int numOfShifts)
+{
+   for(int i = 0; i < numOfShifts; ++i) {
+      char temp = directions[0];
+      directions[0] = directions[1];
+      directions[1] = directions[2];
+      directions[2] = directions[3];
+      directions[3] = temp;
+   }
+}
+
+char Orientation(char directions[], char dir)
+{
+   dir = toupper(dir);
+   switch(dir) {
+      case 'P':
+	 return directions[0];
+	 break;
+      case 'L':
+	 return directions[1];
+	 break;
+      case 'R':
+	 return directions[3];
+	 break;
+      case 'C':
+	 return directions[2];
+	 break;
+      default:
+	 throw invalid_argument("invalid direction2");
+   }
+
+}
+
+
+
+//******************************************************************************

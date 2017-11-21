@@ -36,7 +36,7 @@ RoomTree::RoomTree(Room* rootRoom)
 //*****************************************************************************
 RoomTree::~RoomTree()
 {
-   deleteTree(root);
+   DeleteTree(root);
    root = nullptr;
    currNode = nullptr;
 }
@@ -44,12 +44,12 @@ RoomTree::~RoomTree()
 //*****************************************************************************
 /// Helper function to assist in deleting the tree
 //*****************************************************************************
-void RoomTree::deleteTree(Node* tempRoot)
+void RoomTree::DeleteTree(Node* tempRoot)
 {
    if(tempRoot) {
-      deleteTree(tempRoot->left);
-      deleteTree(tempRoot->center);
-      deleteTree(tempRoot->right);
+      DeleteTree(tempRoot->left);
+      DeleteTree(tempRoot->center);
+      DeleteTree(tempRoot->right);
       delete tempRoot;
    }
 }
@@ -57,31 +57,38 @@ void RoomTree::deleteTree(Node* tempRoot)
 //*****************************************************************************
 /// Inserts a new room at child (throws exeption if already occupied)
 //*****************************************************************************
-void RoomTree::newRoom(char dir,Room* roomptr)
+void RoomTree::NewRoom(char dir,Room* roomptr)
 {
    dir = toupper(dir);
 
    switch(dir) {
       case 'L':
-	 if(currNode->left != nullptr)
+	 if(currNode->left)
 	    throw invalid_argument("room occupied");
 	 currNode->left = new Node;
 	 currNode->left->parent = currNode;
 	 currNode->left->room = roomptr;
 	 break;
       case 'R':
-	 if(currNode->right != nullptr)
+	 if(currNode->right)
 	    throw invalid_argument("room occupied");
 	 currNode->right = new Node;
 	 currNode->right->parent = currNode;
 	 currNode->right->room = roomptr;
 	 break;
       case 'C':
-	 if(currNode->center != nullptr)
+	 if(currNode->center)
 	    throw invalid_argument("room occupied");
 	 currNode->center = new Node;
 	 currNode->center->parent = currNode;
 	 currNode->center->room = roomptr;
+	 break;
+      case 'P':
+	 if(currNode->parent)
+	    throw invalid_argument("room occupied");
+	 currNode->parent = new Node;
+	 currNode->parent->parent = currNode;
+	 currNode->parent->room = roomptr;
 	 break;
       default:
 	 throw invalid_argument("invalid direction");
@@ -91,7 +98,7 @@ void RoomTree::newRoom(char dir,Room* roomptr)
 //*****************************************************************************
 /// Moves current position through the tree
 //*****************************************************************************
-bool RoomTree::move(char dir)
+bool RoomTree::Move(char dir)
 {
    dir = toupper(dir);
 
@@ -125,7 +132,7 @@ bool RoomTree::move(char dir)
 //*****************************************************************************
 /// Gives a const pointer to the room currently at for accessing
 //*****************************************************************************
-const Room* RoomTree::at() const
+const Room* RoomTree::At() const
 {
    return currNode->room;
 }
@@ -133,8 +140,21 @@ const Room* RoomTree::at() const
 //*****************************************************************************
 /// Gives a pointer to the room currently at
 //*****************************************************************************
-Room* RoomTree::at()
+Room* RoomTree::At()
 {
    return currNode->room;
 }
 
+//*****************************************************************************
+/// Gives the height of the tree at the current node
+//*****************************************************************************
+unsigned int RoomTree::CurrentHeight() const
+{
+   if(!currNode)
+      return 0;
+   Node *findNode = currNode;
+   unsigned int i;
+   for(i = 1; findNode != root; ++i)
+      findNode = findNode->parent;
+   return i;
+}

@@ -79,7 +79,10 @@ class TicTacToe: public virtual Puzzle
    ///Dimensions for the board
    int boardSize;
 
-   ///Returns true if every space in the board has been filled with a character 
+   ///returns true if character is filled, false otherwise
+   bool IsSpotFilled(int inputX, int inputY);
+
+///Returns true if every space in the board has been filled with a character 
    bool IsBoardFull();
 
    ///Resets the game for another round in the event that the AI wins.

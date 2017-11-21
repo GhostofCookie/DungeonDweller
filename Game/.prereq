@@ -1,3 +1,34 @@
+DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
+ ../Screen/SlotScreen.h ../Screen/Screen.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h ../ImageImporter/ImageImporter.h \
+ ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
+ ../Room/Room.h ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
+ ../Room/../Image/DefaultImg.h ../Room/../Image/ImportImg.h \
+ ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
+ ../Menu/CharacterMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/ConnectFourMenu.h ../Menu/MinigameMenu.h ../Menu/DialogueMenu.h \
+ ../Menu/ExploreMenu.h ../Menu/FightMenu.h ../Menu/GameMenu.h \
+ ../Menu/HanoiMenu.h ../Menu/MainMenu.h ../Menu/MemoryMenu.h \
+ ../Menu/Menu.h ../Menu/RiddleMenu.h ../Menu/TicTacToeMenu.h \
+ ../Menu/TradeMenu.h ../GameState/DialogueState.h \
+ ../GameState/GameState.h ../GameState/../Menu/Menu.h \
+ ../GameState/../Screen/Screen.h ../GameState/../Menu/MainMenu.h \
+ ../GameState/../Menu/GameMenu.h ../GameState/../Menu/Menu.h \
+ ../GameState/../Menu/FightMenu.h ../GameState/../Menu/ExploreMenu.h \
+ ../GameState/FightState.h ../GameState/MainState.h \
+ ../GameState/PuzzleState.h ../GameState/ExploreState.h \
+ ../GameState/GameState.h ../GameState/TradeState.h \
+ ../Puzzles/CodeCracker.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
+ ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
+ ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h \
+ ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
+ ../Puzzles/../Menu/Menu.h ../Puzzles/Hanoi.h \
+ ../Puzzles/../Menu/HanoiMenu.h ../Puzzles/MemoryMatch.h \
+ ../Puzzles/Puzzle.h ../Puzzles/TicTacToe.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/Player.h ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Character/Npc.h ../Character/Character.h ../Character/Player.h
 CharacterMenu.o: ../Menu/CharacterMenu.cpp ../Menu/CharacterMenu.h \
  ../Menu/GameMenu.h ../Menu/Menu.h
 ConnectFourMenu.o: ../Menu/ConnectFourMenu.cpp ../Menu/ConnectFourMenu.h \
@@ -44,34 +75,3 @@ RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/ImportImg.h
-DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
- ../Screen/SlotScreen.h ../Screen/Screen.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
- ../Image/ImportImg.h ../ImageImporter/ImageImporter.h \
- ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
- ../Room/Room.h ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
- ../Room/../Image/DefaultImg.h ../Room/../Image/ImportImg.h \
- ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../Menu/CharacterMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
- ../Menu/ConnectFourMenu.h ../Menu/MinigameMenu.h ../Menu/DialogueMenu.h \
- ../Menu/ExploreMenu.h ../Menu/FightMenu.h ../Menu/GameMenu.h \
- ../Menu/HanoiMenu.h ../Menu/MainMenu.h ../Menu/MemoryMenu.h \
- ../Menu/Menu.h ../Menu/RiddleMenu.h ../Menu/TicTacToeMenu.h \
- ../Menu/TradeMenu.h ../GameState/DialogueState.h \
- ../GameState/GameState.h ../GameState/../Menu/Menu.h \
- ../GameState/../Screen/Screen.h ../GameState/../Menu/MainMenu.h \
- ../GameState/../Menu/GameMenu.h ../GameState/../Menu/Menu.h \
- ../GameState/../Menu/FightMenu.h ../GameState/../Menu/ExploreMenu.h \
- ../GameState/FightState.h ../GameState/MainState.h \
- ../GameState/PuzzleState.h ../GameState/ExploreState.h \
- ../GameState/GameState.h ../GameState/TradeState.h \
- ../Puzzles/CodeCracker.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
- ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
- ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h \
- ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
- ../Puzzles/../Menu/Menu.h ../Puzzles/Hanoi.h \
- ../Puzzles/../Menu/HanoiMenu.h ../Puzzles/MemoryMatch.h \
- ../Puzzles/Puzzle.h ../Puzzles/TicTacToe.h ../Item/MyConsumables.h \
- ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
- ../Item/../Character/Player.h ../Item/MyWeapons.h ../Item/Weapon.h \
- ../Character/Npc.h ../Character/Character.h ../Character/Player.h

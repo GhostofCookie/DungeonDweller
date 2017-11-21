@@ -60,7 +60,7 @@ class Hanoi: public virtual Puzzle
    ///You cannot use the erase function in the screen class because you would
    ///have to re-draw everything afterwards and the nature of a stack does not
    ///give you access to elements not on top.
-   void ClearTopDisc(int targetTower);
+   void ClearScreenOfOldDisc(int sizeOfDisc, int targetTower, int yCoordinate);
 
    void BoardSetup();
    

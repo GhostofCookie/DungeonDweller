@@ -5,11 +5,12 @@
 /// \param[in] w the width of the image
 /// \param[in] c the character used to draw the image
 DefaultImg::DefaultImg(int h, int w, char c)
-   : _height{h}, _width{w}, ch{c}
+   : _height{h}, _width{w}, _ch{c}
 {
    // couldn't assign directly needed to assign to non-static var first
    height = _height;
    width = _width;
+   ch = _ch;
    Create();
 }
 
@@ -48,6 +49,8 @@ DefaultImg::~DefaultImg()
 /// Function that creates the image by pushing back the vector
 void DefaultImg::Create()
 {
+   Img.clear();
+   
    for(int i = 0; i < height; i++)
    {
       Img.push_back(vector<char>());
@@ -55,3 +58,6 @@ void DefaultImg::Create()
 	 Img[i].push_back(ch);
    }
 }
+
+
+
