@@ -62,9 +62,9 @@ using namespace std;
 //***FUNCTION PROTOTYPES********************************************************
 
 // Orientation Translation Functions
-void FindNewOrientation(char[4] directions, char dir, int treeHeight);
-void ShiftDir(char[4] directions,unsigned int numOfShifts);
-char Orientation(char[4] directions, char dir);
+void FindNewOrientation(char directions[], char dir, int treeHeight);
+void ShiftDir(char directions[],unsigned int numOfShifts);
+char Orientation(char directions[], char dir);
 
 
 
@@ -98,7 +98,6 @@ int main()
     
    */
   char directions[4] = {'p','l','c','r'};
-   
   char n;
   while(true)
     {
@@ -112,13 +111,12 @@ int main()
       cin >> n;
 
       // case to select direction ('w' always means go back currently)
-      switch(n)
-	{
+      switch(n)	{
 	case 'w' :
 	  if(!roomTree.Move(Orientation(directions,'p')))
 	    {
 	      roomTree.NewRoom('p', new Room(imageImport.collection));
-	      roomTree.Move('p');
+	      roomTree.Move(Orientation(directions,'p'));
 	    }
 	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
 	  break;
@@ -126,25 +124,25 @@ int main()
 	  if(!roomTree.Move(Orientation(directions,'l')))
 	    {
 	      roomTree.NewRoom('l', new Room(imageImport.collection));
-	      roomTree.Move('l');
+	      roomTree.Move(Orientation(directions,'l'));
 	    }
-	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
+	  FindNewOrientation(directions,'l',roomTree.CurrentHeight());
 	  break;
 	case 's' :
 	  if(!roomTree.Move(Orientation(directions,'c')))
 	    {
 	      roomTree.NewRoom('c', new Room(imageImport.collection));
-	      roomTree.Move('c');
+	      roomTree.Move(Orientation(directions,'c'));
 	    }
-	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
+	  FindNewOrientation(directions,'c',roomTree.CurrentHeight());
 	  break;
 	case 'd' :
 	  if(!roomTree.Move(Orientation(directions,'r')))
 	  {
 	      roomTree.NewRoom('r', new Room(imageImport.collection));
-	      roomTree.Move('r');
+	      roomTree.Move(Orientation(directions,'r'));
 	  }
-	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
+	  FindNewOrientation(directions,'r',roomTree.CurrentHeight());
 	  break;
 	default :
 	  break;
@@ -157,7 +155,7 @@ int main()
 //***FUNCTION DEFINITIONS*******************************************************
 
 // Orientation Translation Functions
-void FindNewOrientation(char[4] directions, char dir, int treeHeight)
+void FindNewOrientation(char directions[], char dir, int treeHeight)
 {
    dir = toupper(dir);
    switch(dir) {
@@ -172,13 +170,15 @@ void FindNewOrientation(char[4] directions, char dir, int treeHeight)
 	 ShiftDir(directions,3);
 	 break;
       case 'C':
+	 if(treeHeight == 2 && directions[0] == 'c')
+	    ShiftDir(directions,2);
 	 break;
       default:
-	 throw invalid_argument("invalid direction");
+	 throw invalid_argument("invalid direction1");
    }
 }
 
-void ShiftDir(char[4] directions,unsigned int numOfShifts)
+void ShiftDir(char directions[],unsigned int numOfShifts)
 {
    for(int i = 0; i < numOfShifts; ++i) {
       char temp = directions[0];
@@ -189,8 +189,9 @@ void ShiftDir(char[4] directions,unsigned int numOfShifts)
    }
 }
 
-char Orientation(char[4] directions, char dir)
+char Orientation(char directions[], char dir)
 {
+   dir = toupper(dir);
    switch(dir) {
       case 'P':
 	 return directions[0];
@@ -205,7 +206,7 @@ char Orientation(char[4] directions, char dir)
 	 return directions[2];
 	 break;
       default:
-	 throw invalid_argument("invalid direction");
+	 throw invalid_argument("invalid direction2");
    }
 
 }
