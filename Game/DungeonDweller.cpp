@@ -115,7 +115,7 @@ int main()
 	case 'w' :
 	  if(!roomTree.Move(Orientation(directions,'p')))
 	    {
-	      roomTree.NewRoom('p', new Room(imageImport.collection));
+	      roomTree.NewRoom(Orientation(directions,'p'), new Room(imageImport.collection));
 	      roomTree.Move(Orientation(directions,'p'));
 	    }
 	  FindNewOrientation(directions,'p',roomTree.CurrentHeight());
@@ -123,7 +123,7 @@ int main()
 	case 'a' :
 	  if(!roomTree.Move(Orientation(directions,'l')))
 	    {
-	      roomTree.NewRoom('l', new Room(imageImport.collection));
+	      roomTree.NewRoom(Orientation(directions,'l'), new Room(imageImport.collection));
 	      roomTree.Move(Orientation(directions,'l'));
 	    }
 	  FindNewOrientation(directions,'l',roomTree.CurrentHeight());
@@ -131,7 +131,7 @@ int main()
 	case 's' :
 	  if(!roomTree.Move(Orientation(directions,'c')))
 	    {
-	      roomTree.NewRoom('c', new Room(imageImport.collection));
+	      roomTree.NewRoom(Orientation(directions,'c'), new Room(imageImport.collection));
 	      roomTree.Move(Orientation(directions,'c'));
 	    }
 	  FindNewOrientation(directions,'c',roomTree.CurrentHeight());
@@ -139,7 +139,7 @@ int main()
 	case 'd' :
 	  if(!roomTree.Move(Orientation(directions,'r')))
 	  {
-	      roomTree.NewRoom('r', new Room(imageImport.collection));
+	      roomTree.NewRoom(Orientation(directions,'r'), new Room(imageImport.collection));
 	      roomTree.Move(Orientation(directions,'r'));
 	  }
 	  FindNewOrientation(directions,'r',roomTree.CurrentHeight());
