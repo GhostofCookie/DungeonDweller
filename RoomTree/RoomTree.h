@@ -28,10 +28,13 @@ class RoomTree {
       Node* right;
 
       /// Pointer to center child node
-      Node* center;
+      Node* down;
 
       /// Pointer to parent node
-      Node* parent;
+      Node* up;
+
+	  /// Direction toward the root
+	  char RootDir;
 
       /// Pointer to the room
       Room* room;
@@ -47,12 +50,12 @@ class RoomTree {
    ~RoomTree();
 
    /// Inserts a new room at child (throws exeption if already occupied)
-   /// \param[in] dir Direction of the new child (left(l) right(r) or center(c))
+   /// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
    /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
    void NewRoom(char dir, Room* roomptr);
 
    /// Moves through the tree
-   /// \param[in] dir Direction to move(left(l) right(r) center(c) or parent(p))
+   /// \param[in] dir Direction to move(left(l) right(r) up(u) or down(d))
    /// \return True if move was successfull, false otherwise
    /// \exception invalid_argument Thrown if the direction is invalid
    bool Move(char dir);
@@ -72,7 +75,7 @@ class RoomTree {
   private:
    /// Helper function to assist in deleting the tree
    /// \param[in] tempRoot The root of the tree to be deleted
-   void DeleteTree(Node* tempRoot);
+   void DeleteTree(Node *tempRoot);
    
    /// Root or starting room of the dungeon
    Node* root;
