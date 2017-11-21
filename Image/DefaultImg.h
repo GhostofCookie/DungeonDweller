@@ -33,12 +33,14 @@ class DefaultImg : public Image
    DefaultImg(int h = 3, int w = 6, char c = '$');
    /// Copy constructor duplicates a given picture
    /// \param[in] img the image to copy from
-   DefaultImg(const DefaultImg& img);
+   DefaultImg(const DefaultImg &img);
    /// Copy constructor duplicates a given picture
    /// \param[in] img the image to copy from
    DefaultImg(DefaultImg& img);
    /// Destructor
    ~DefaultImg();
+
+   DefaultImg& operator=(const DefaultImg &img);
 };
 
 #endif /* DefaultImg_h */

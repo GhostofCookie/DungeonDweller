@@ -4,8 +4,9 @@ Cutscene::Cutscene(ImportImg image, ImportImg r)
 {
    img = ImportImg(image);
    room = ImportImg(r);
-   startX = image.screenX;
-   startY = image.screenY;
+   cout << room.GetImageFile() << ", " << room.GetRows() << endl;
+   startX = img.screenX;
+   startY = img.screenY;
 }
 
 

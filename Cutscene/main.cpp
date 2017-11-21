@@ -26,9 +26,9 @@ int main()
    // runs 4 different cutscene tests
    cutscene.CenterToTop(*screen);
    cutscene.TopToCenter(*screen);
-   cutscene.CenterToBottom(*screen);
+   //cutscene.CenterToBottom(*screen);
    //cutscene.CenterToLeft(*screen);
-   //cutscene.CenterToRight(*screen);
+   cutscene.CenterToRight(*screen);
 
    return 0;
 }
