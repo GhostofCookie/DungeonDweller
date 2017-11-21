@@ -14,7 +14,7 @@ using namespace std;
 /// \param[in] height This is the height of the menu.
 /// \param[in] width This is the width of the menu.
 Menu::Menu(int height, int width)
-   : menuHeight{ height }, menuWidth{ width }, menu_Array{ new char*[height]}
+  : currOption{' '}, menu_Array{ new char*[height]}, menuHeight{ height }, menuWidth{ width }
 {
    for (int i = 0; i < height; i++)
    {
@@ -22,7 +22,7 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
-   AddOption('q',"Quit",QuitGame);
+   AddOption('q',"Quit");
 }
 
 /// This is the destructor for the class. It is virtual.
@@ -37,12 +37,22 @@ Menu::~Menu()
 /// \param[in,out] is The in-stream operator to read the input.
 void Menu::HandleInput(istream& is)
 {
-   char option;
-   int item =1;
+  char option;
    cout<<"-> ";
    is >> option;
-   if(optionMap.find(option) != optionMap.end())
-      optionMap.find(option)->second(item);
+   auto it = indexMap.find(option);
+   while(it != indexMap.end())
+     {
+       if(static_cast<char>(it->first) == option)
+       {
+	 currOption = option;
+	 it = indexMap.end();
+       }
+       else ++it;
+     }
+	 
+   if(option == 'q')
+     QuitGame(0);
    if(is.fail())
       throw invalid_argument("Invalid input. Please enter something more sensible.");
 }
@@ -51,12 +61,14 @@ void Menu::HandleInput(istream& is)
 /// display, and function to run.
 /// \param[in] command The character for the user to input.
 /// \param[in] optionName The name to display for the user.
-/// \param[in] f(int) The is the function which adds functionality to
-/// the option and command.
-void Menu::AddOption(char command, string optionName, void (*f)(int))
+void Menu::AddOption(char command, string optionName)
 {
    indexMap[static_cast<int>(command)] = optionName;
-   optionMap[command] = f;
+}
+
+char Menu::GetOption() const
+{
+  return currOption;
 }
 
 /// A function to set the added options to the character array.
