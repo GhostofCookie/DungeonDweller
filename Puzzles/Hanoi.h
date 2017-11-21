@@ -60,28 +60,32 @@ class Hanoi: public virtual Puzzle
    ///You cannot use the erase function in the screen class because you would
    ///have to re-draw everything afterwards and the nature of a stack does not
    ///give you access to elements not on top.
-   void ClearScreenOfOldDisc(int sizeOfDisc, int targetTower, int yCoordinate);
+   void ClearTopDisc(int targetTower);
 
    void BoardSetup();
    
    /// The vector which holds each towers' defaultImg
    std::vector<stack<DefaultImg>>tower;
-
    /// Number of stacks in the game
    ///X-coordinate size in the tower vector
+
    int numberOfStacks;
    /// Maintains the height of the stacks in the game
+
    int maxStackHeight;
    /// Used for the loop to see if the game has ended yet
+
    bool GameEnd;
-  
    ///HanoiScreen stores and outputs the contents of the game to the terminal
+
    Screen HanoiScreen;
    /// GameMenu is used for handling input
+
    HanoiMenu HanoiGameMenu;
    ///A vector to store the size of all the discs in the game, stored in
    ///ascending order of size of discs. 0=3,1=7,2=11,3=15
    std::vector<DefaultImg>discsVector;
+   
    /// MenuOption strings are used for outputting options to the user
    string menuOption1, menuOption2, menuOption3, menuOption4;
 };

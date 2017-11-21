@@ -32,7 +32,7 @@ TicTacToe::~TicTacToe()
 void TicTacToe::BoardSetup()
 {
    cout << "Board Setup" << endl;
-   int gameBoardSize=15, leftBound=48, topBound=14;
+   int gameBoardSize=7, leftBound=48, topBound=14;
    for(int i=0;i<gameBoardSize;i++)
    {
       for(int j=0; j<gameBoardSize; j++)
@@ -123,6 +123,7 @@ bool TicTacToe::VerticalCheck()
 ///position, returns true if it finds 3 of a kind, false otherwise.  
 bool TicTacToe::RightDiagonalCheck()
 {
+   cout << "RightDiag" << endl;
    int xCount=0, oCount=0, origin=0;
    
    for(int i=0; i<3; i++)
@@ -147,7 +148,8 @@ bool TicTacToe::RightDiagonalCheck()
 ///position, returns true if it finds 3 of a kind, false otherwise.  
 bool TicTacToe::LeftDiagonalCheck()
 {
-   int xCount=0, oCount=0,origin=3;
+   cout << "LeftDiag" << endl;
+   int xCount=0, oCount=0, origin=2;
    for(int i=0; i<3; i++)
    {
       if(gameBoard.at(origin-i).at(origin-i)=='X')
@@ -171,12 +173,21 @@ void TicTacToe::SetOptionsInMenu()
 
 }
 
+bool TicTacToe::IsSpotFilled(int inputX, int inputY)
+{
+   if(gameBoard.at(inputX).at(inputY)==' ')
+      return false;
+   else true;
+}
+
 
 void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 {
    int leftColumn=48, topRow=14;
-   
-   TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
+   if(!IsSpotFilled(inputX, inputY)){//FIGURE OUT HOW TO USE THIS IN THE MAIN*****************************************************************************************************************************************************************************************8
+      gameBoard.at(inputX).at(inputY)=userPiece;
+      TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
+   }
 }
 
 bool TicTacToe::WinCheck()
@@ -192,8 +203,8 @@ bool TicTacToe::WinCheck()
 void TicTacToe::AiMove(int AiPiece)
 {
    int HorizontalMoveCoord, VerticalMoveCoord;
-   // HorizontalMoveCoord=Puzzle::RandomNumber(3);
-   // VerticalMoveCoord=Puzzle::RandomNumber(3);
+   HorizontalMoveCoord=Puzzle::RandomNumber(3);
+   VerticalMoveCoord=Puzzle::RandomNumber(3);
 
    bool moveSuccessful=false;
    while(moveSuccessful==false)
@@ -228,6 +239,7 @@ void TicTacToe::RunGame(){
       cout << TicTacToeScreen << endl;
       //connectFourMenu.OutputMenu();
       //connectFourMenu.HandleInput(cin);
+      
       if(WinCheck())
       {
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset

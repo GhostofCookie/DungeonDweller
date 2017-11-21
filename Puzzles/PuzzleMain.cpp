@@ -10,16 +10,16 @@ using namespace std;
 
 int main(){
    srand(time(NULL));
-   Hanoi HanoiTest;
+   //Hanoi HanoiTest;
    //ConnectFour ConnectFourTest;
    //MemoryMatch mmTest;
-   //TicTacToe ttt;
+   TicTacToe ttt;
    // CodeCracker cc;
    
-   HanoiTest.RunGame();
+   //HanoiTest.RunGame();
 //ConnectFourTest.RunGame();
    //mmTest.RunGame();
-   //ttt.RunGame();
+   ttt.RunGame();
    //cc.RunGame();
 
    return 0;

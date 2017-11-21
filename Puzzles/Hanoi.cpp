@@ -36,19 +36,19 @@ Hanoi::Hanoi()
    numberOfStacks=3;
    tower.resize(numberOfStacks);
    BoardSetup();
+   
    ///Put the discs into the first stack to start the game
    int screenYCoordinate=31;
    int screenXCoordinate=9;
    for(int i=maxStackHeight; i>0; i--)
    {
-      cout << "i:" << i <<  "     maxstack:" << maxStackHeight << endl;
       ///Push the discs on in descending order since it's a stack.
       tower.at(0).push(discsVector.at(i-1));
       tower.at(0).top().Draw(HanoiScreen,screenYCoordinate,screenXCoordinate);
-      cout << HanoiScreen;
-      cout << "LOOPYLOOP" << endl;
-      ///Down one line for the next disc
+      
+///Down one line for the next disc
       screenYCoordinate--;
+
       ///Move two to left since the next disc is 4 chars larger.
       screenXCoordinate+=2;
    }
@@ -61,7 +61,6 @@ Hanoi::~Hanoi()
 
 void Hanoi:: BoardSetup()
 {
-   cout << "BOARD SETUP" << endl;
    int leftDivider=18, peg=34, rightDivider=16, bottom=11;
    DefaultImg Divider1(31,1,'|');
    Divider1.AlignCenter(HanoiScreen);
@@ -107,7 +106,7 @@ bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 void Hanoi::SetOptionsInMenu()
 {
    cout << "Options have been set" << endl;
-   //HanoiGameMenu.AddOption('1', menuOption1, MovePiece);
+   //  HanoiGameMenu.AddOption('1', menuOption1, &Hanoi::MovePiece);
 //    HanoiGameMenu.AddOption('2', menuOption2, MovePiece);
 //    HanoiGameMenu.AddOption('3', menuOption3, MovePiece);
 //     HanoiGameMenu.AddOption('4', menuOption4, MovePiece);
@@ -272,40 +271,37 @@ int Hanoi::WhichDiscFromSize(int size)
    }	 
 }
 
-void Hanoi::ClearScreenOfOldDisc(int sizeOfDisc, int targetTower,int yCoordinate)
+void Hanoi::ClearTopDisc(int targetTower)
 {
+   ///***********************************************************************
+
    switch(targetTower)
    {
       
       case 1:
-	 for(int i=0; i<sizeOfDisc; i++)
-	 {
-	    ///18 is the center of the first tower, take away half the disc size
-	    ///to start in the right spot, add the interator as we move through
-	    ///the line.
-	    HanoiScreen.Set(yCoordinate,(i+18-(sizeOfDisc%2)),' ');
-	 }
-	 //clear tower 1 top
+	 cout << "CASE 1" << endl;
+	 tower.at(targetTower-1).top().Fill('$');
+	 tower.at(targetTower-1).top().Draw(HanoiScreen);	 
 	 break;
       case 2:
-	 //clear tower 2 top
-	 for(int i=0; i<sizeOfDisc; i++)
-	 {
-	    ///18 is the center of the second tower, take away half the disc
-	    ///size to start in the right spot, add the interator as we move
-	    ///through the line.
-	    HanoiScreen.Set(yCoordinate,(i+51-(sizeOfDisc%2)),' ');
-	 }
+	 // //clear tower 2 top
+	 // for(int i=0; i<discSize; i++)
+	 // {
+	 //    ///18 is the center of the second tower, take away half the disc
+	 //    ///size to start in the right spot, add the interator as we move
+	 //    ///through the line.
+	 //    HanoiScreen.Set(yTarget,(i+51-(discSize%2)),' ');
+	 // }
 	 break;
       case 3:
 	 //clear tower 3 top
-	 for(int i=0; i<sizeOfDisc; i++)
-	 {
-	    ///84 is the center of the third tower, take away half the disc size
-	    ///to start in the right spot, add the interator as we move through
-	    ///the line.
-	    HanoiScreen.Set(yCoordinate,(i+84-(sizeOfDisc%2)), ' ');
-	 }
+	 // for(int i=0; i<discSize; i++)
+	 // {
+	 //    ///84 is the center of the third tower, take away half the disc size
+	 //    ///to start in the right spot, add the interator as we move through
+	 //    ///the line.
+	 //    HanoiScreen.Set(yTarget,(i+84-(discSize%2)), ' ');
+	 // }
 	 break; 
    }
 }
@@ -313,8 +309,8 @@ void Hanoi::ClearScreenOfOldDisc(int sizeOfDisc, int targetTower,int yCoordinate
 void Hanoi:: RunGame()
 {
    cout << "Start" << endl;
+   ClearTopDisc(1);
    SetOptionsInMenu();
-   //BoardSetup();
    while(GameEnd==false)
    {
       cout << HanoiScreen;
