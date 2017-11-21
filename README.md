@@ -42,6 +42,9 @@ Item/:
    - contains all header files and implementations for consumables, items, weapons,
      etc.
 
+Cutscene/:
+   - constains all header files and implementations for animating images on the screen
+
 [VERSION INFORMATION]
 =====================
 
