@@ -60,7 +60,7 @@
 using namespace std;
 
 //***FUNCTION PROTOTYPES********************************************************
-
+void SwitchRooms(char, RoomTree&, ImageImporter&);
 
 
 //******************************************************************************
@@ -78,7 +78,10 @@ int main()
   Screen *screen = new Screen();
   // Menu
   Menu *menu = new Menu();
-  menu->AddOption('W',"Move Up");
+  menu->AddOption('w',"Move Up");
+  menu->AddOption('a',"Move Left");
+  menu->AddOption('s',"Move Down");
+  menu->AddOption('d',"Move Right");
    
   // Construct the roomtree
   Room *roomptr = new Room(imageImport.collection);
@@ -92,50 +95,55 @@ int main()
       // align the current room to the screen and print
       (*roomTree.At()).AlignCenter(*screen);
       (*roomTree.At()).Draw(*screen);
-      cout << roomTree.CurrentHeight() << endl << screen << endl;
- 
-      cin >> n;
+      cout << roomTree.CurrentHeight() << endl << screen;
+      // Print the menu and handle user input
+      menu->OutputMenu();
+      menu->HandleInput(cin);
+      SwitchRooms(menu->GetOption(),roomTree,imageImport);
 
       // case to select direction ('w' always means go back currently)
-      switch(n)	{
-	case 'w' :
-	  if(!roomTree.Move('u'))
-	    {
-	      roomTree.NewRoom('u', new Room(imageImport.collection));
-	      roomTree.Move('u');
-	    }
-	  break;
-	case 'a' :
-		if(!roomTree.Move('l'))
-		{
-			roomTree.NewRoom('l',new Room(imageImport.collection));
-			roomTree.Move('l');
-		}
-	  break;
-	case 's' :
-		if(!roomTree.Move('d'))
-		{
-			roomTree.NewRoom('d',new Room(imageImport.collection));
-			roomTree.Move('d');
-		}
-	  break;
-	case 'd' :
-		if(!roomTree.Move('r'))
-		{
-			roomTree.NewRoom('r',new Room(imageImport.collection));
-			roomTree.Move('r');
-		}
-	  break;
-	default :
-	  break;
-	};
+
   }
   return 0;
 }
 
 
 //***FUNCTION DEFINITIONS*******************************************************
-
+void SwitchRooms(char n, RoomTree &roomTree, ImageImporter &imageImport)
+{
+  switch(n)	{
+  case 'w' :
+    if(!roomTree.Move('u'))
+      {
+	roomTree.NewRoom('u', new Room(imageImport.collection));
+	roomTree.Move('u');
+      }
+    break;
+  case 'a' :
+    if(!roomTree.Move('l'))
+      {
+	roomTree.NewRoom('l',new Room(imageImport.collection));
+	roomTree.Move('l');
+      }
+    break;
+  case 's' :
+    if(!roomTree.Move('d'))
+      {
+	roomTree.NewRoom('d',new Room(imageImport.collection));
+	roomTree.Move('d');
+      }
+    break;
+  case 'd' :
+    if(!roomTree.Move('r'))
+      {
+	roomTree.NewRoom('r',new Room(imageImport.collection));
+	roomTree.Move('r');
+      }
+    break;
+  default :
+    break;
+  };
+}
 
 
 
