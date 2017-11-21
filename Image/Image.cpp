@@ -12,7 +12,7 @@ Image::Image(int h, int w, char c)
 
 /// Copy Constructor for the image
 /// \param[in] image the image to be copied from
-Image::Image(const Image& image)
+Image::Image(const Image &image)
 {
    Img = image.Img;
    height = image.GetRows();
@@ -25,7 +25,7 @@ Image::Image(const Image& image)
 
 /// Copy Constructor for the image
 /// \param[in] image the image to be copied from
-Image::Image(Image& image)
+Image::Image(Image &image)
 {
    Img = image.Img;
    height = image.GetRows();
@@ -346,7 +346,7 @@ void Image::AlignRight(Image &img)
 /// Align the image to the left of the screen
 /// \param[in] screen used to align with
 // Ensures it draws one character from the border
-void Image::AlignLeft(Screen &screen) { screenX = 1; }
+void Image::AlignLeft(Screen &screen) { screenX = 1; };
 
 
 
@@ -357,6 +357,34 @@ void Image::AlignRight(Screen &screen)
    // uses the image's width and screen's width to find the right side
    screenX = static_cast<int>(screen.GetCols()-Img[0].size()-1);
 }
+
+
+
+/// Align the image to the top of the screen
+/// \param[in] screen used to align with
+// Ensures it draws one character from the border
+void Image::AlignTop(Screen &screen) { screenY = 1; };
+
+
+
+/// Align the image to the top of the image
+/// \param[in] img used to align with
+// Ensures it draws one character from the border
+void Image::AlignTop(Image &img) { screenY = img.screenY-1; };
+
+
+
+/// Align the image to the bottom of the screen
+/// \param[in] screen used to align with
+// Ensures it draws one character from the border
+void Image::AlignBottom(Screen &screen) { screenY = static_cast<int>(screen.GetRows() - Img.size()-1); };
+
+
+
+/// Align the image to the bottom of the image
+/// \param[in] img used to align with
+// Ensures it draws one character from the border
+void Image::AlignBottom(Image &img) { screenY = static_cast<int>(img.GetRows() - Img.size()-1); };
 
 
 

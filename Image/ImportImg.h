@@ -41,6 +41,9 @@ class ImportImg : public Image
    ImportImg(const ImportImg &img);
    /// Destructor
    ~ImportImg();
+
+
+   string GetImageFile();
 };
 
 #endif /* ImportedImg_h */
