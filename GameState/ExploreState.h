@@ -5,6 +5,14 @@
 ///
 
 #include "GameState.h"
+#include "../Menu/ExploreMenu.h"
+#include "../RoomTree/RoomTree.h"
+#include "../ImageImporter/ImageImporter.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
+#include <iostream>
+using namespace std;
 
 #ifndef EXPLORESTATE_H
 #define EXPLORESTATE_H
@@ -17,10 +25,20 @@ class ExploreState : public GameState
   public:
    /// This is the the default constructor.
    ExploreState();
+   /// This is the default destructor.
+   ~ExploreState(){}
    /// Sets the layout for the game menu and screen.
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();
+  private:
+   void SwitchRooms();
+   ImageImporter imageImport;
+   Room *roomPtr;
+   RoomTree *roomTree;
+   string masterFile;
+
+
 };
 
 #endif

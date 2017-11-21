@@ -1,0 +1,19 @@
+#include "GameState.h"
+
+/// This is the the default constructor.
+ExploreState()
+{
+  menu = new ExploreMenu();
+  screen = new Screen();
+}
+/// Sets the layout for the game menu and screen.
+void Set()
+{
+  
+}
+
+/// Gets the layout for the game menu and screen.
+void Get()
+{
+
+}
