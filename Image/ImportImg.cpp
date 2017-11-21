@@ -18,9 +18,11 @@ ImportImg::ImportImg(string file)
 ImportImg::ImportImg(const ImportImg &image)
 {
    Img = image.Img;
+   imgStr = image.imgStr;
+
    height = image.GetRows();
    width = image.GetCols();
-   imgStr = image.imgStr;
+
    screenX = image.screenX;
    screenY = image.screenY;
 }
@@ -32,9 +34,11 @@ ImportImg::ImportImg(const ImportImg &image)
 ImportImg::ImportImg(ImportImg &image)
 {
    Img = image.Img;
+   imgStr = image.imgStr;
+
    height = image.GetRows();
    width = image.GetCols();
-   imgStr = image.imgStr;
+
    screenX = image.screenX;
    screenY = image.screenY;
 }
@@ -47,6 +51,23 @@ ImportImg::~ImportImg()
 	
 }
 
+
+
+ImportImg& ImportImg::operator=(const ImportImg& img)
+{
+   Image::operator=(img);
+   
+   height = img.GetRows();
+   width = img.GetCols();
+   
+   screenX = img.screenX;
+   screenY = img.screenY;
+
+   Img = img.Img;
+   imgStr = img.imgStr;
+   
+   return *this;
+}
 
 
 /// Function that creates an image based on the file name
@@ -67,7 +88,9 @@ void ImportImg::Import(string file, string &img)
 	
    Img.clear();//ensures image is empty before beginning
    height = width = 0;
-		
+
+   if(file != "")
+   {
    in.open(file);
    if(in)
    {
@@ -89,6 +112,7 @@ void ImportImg::Import(string file, string &img)
 		
    } else
       cout << "Empty or lost file? Couldn't locate: " << file << endl;
+   }
 }
 
 

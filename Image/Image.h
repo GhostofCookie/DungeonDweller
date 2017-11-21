@@ -54,10 +54,7 @@ class Image
 	
    /// Overloaded '=' operator
    /// \param[in] img the image being copied
-   virtual void operator =(Image &img);
-   /// Overloaded '=' operator
-   /// \param[in] img the image being copied
-   virtual void operator =(const Image &img);
+   virtual Image& operator=(const Image &img);
   
    /// Helper function to draw onto the Screen object
    /// \param[in] scr the screen to draw on

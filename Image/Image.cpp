@@ -13,26 +13,16 @@ Image::Image(int h, int w, char c)
 /// Copy Constructor for the image
 /// \param[in] image the image to be copied from
 Image::Image(const Image &image)
-{
-   Img = image.Img;
-   height = image.GetRows();
-   width = image.GetCols();
-   screenX = image.screenX;
-   screenY = image.screenY;
-}
+   : height{image.GetRows()}, width{image.GetCols()}, screenX{image.screenX}, screenY{image.screenY}
+{}
 
 
 
 /// Copy Constructor for the image
 /// \param[in] image the image to be copied from
 Image::Image(Image &image)
-{
-   Img = image.Img;
-   height = image.GetRows();
-   width = image.GetCols();
-   screenX = image.screenX;
-   screenY = image.screenY;
-}
+   : height{image.GetRows()}, width{image.GetCols()}, screenX{image.screenX}, screenY{image.screenY}
+{}
 
 
 
@@ -42,34 +32,16 @@ Image::~Image()
 
 
 
-/// Overloaded assignemnt operator
-/// \param[in] image the image to be compied from
-void Image::operator=(const Image &image)
+Image& Image::operator=(const Image& img)
 {
-   Img.clear();
-	
-   for(int i = 0; i < image.GetRows(); ++i)
-   {
-      Img.push_back(vector<char>());
-      for(int j = 0; j < image.GetCols(); ++j)
-	 Img[i].push_back(image.Img[i][j]);
-   }
-}
-
-
-
-/// Overloaded assignemnt operator
-/// \param[in] image the image to be compied from
-void Image::operator=(Image &image)
-{
-   Img.clear();
-	
-   for(int i = 0; i < image.GetRows(); ++i)
-   {
-      Img.push_back(vector<char>());
-      for(int j = 0; j < image.GetCols(); ++j)
-	 Img[i].push_back(image.Img[i][j]);
-   }
+   Img = img.Img;
+   
+   height = img.GetRows();
+   width = img.GetCols();
+   screenX = img.screenX;
+   screenY = img.screenY;
+   ch = img.ch;
+   return *this;
 }
 
 

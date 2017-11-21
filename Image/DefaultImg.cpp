@@ -46,6 +46,13 @@ DefaultImg::~DefaultImg()
 }
 
 
+DefaultImg& DefaultImg::operator=(const DefaultImg &img)
+{
+   Image::operator=(img);
+   return *this;
+}
+
+
 
 /// Function that creates the image by pushing back the vector
 void DefaultImg::Create()
