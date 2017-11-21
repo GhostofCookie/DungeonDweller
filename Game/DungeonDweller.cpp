@@ -164,13 +164,13 @@ void FindNewOrientation(char directions[], char dir, int treeHeight)
 	    ShiftDir(directions,2);
 	 break;
       case 'L':
-	 ShiftDir(directions,1);
-	 break;
-      case 'R':
 	 ShiftDir(directions,3);
 	 break;
+      case 'R':
+	 ShiftDir(directions,1);
+	 break;
       case 'C':
-	 if(treeHeight == 2 && directions[0] == 'c')
+	 if(treeHeight == 2 && directions[2] == 'p')
 	    ShiftDir(directions,2);
 	 break;
       default:
@@ -180,7 +180,7 @@ void FindNewOrientation(char directions[], char dir, int treeHeight)
 
 void ShiftDir(char directions[],unsigned int numOfShifts)
 {
-   for(int i = 0; i < numOfShifts; ++i) {
+   for(unsigned int i = 0; i < numOfShifts; ++i) {
       char temp = directions[0];
       directions[0] = directions[1];
       directions[1] = directions[2];
