@@ -16,6 +16,8 @@
 #include "../Room/Room.h"
 // RoomTree Headers
 #include "../RoomTree/RoomTree.h"
+// Cutscene Header
+#include "../Cutscene/Cutscene.h"
 // Menu Headers
 #include "../Menu/CharacterMenu.h"
 #include "../Menu/ConnectFourMenu.h"
@@ -47,11 +49,11 @@
 #include "../Puzzles/Puzzle.h"
 #include "../Puzzles/TicTacToe.h"
 // Item Headers
-#include "../Item/MyConsumables.h"
-#include "../Item/MyWeapons.h"
+//#include "../Item/MyConsumables.h"
+//#include "../Item/MyWeapons.h"
 // Character Headers
-#include "../Character/Npc.h"
-#include "../Character/Player.h"
+//#include "../Character/Npc.h"
+//#include "../Character/Player.h"
 // Misc Headers
 #include <iostream>
 #include <ctime> //srand()
@@ -86,8 +88,10 @@ int main()
   // Construct the roomtree
   Room *roomptr = new Room(imageImport.collection);
   RoomTree roomTree(roomptr);
+  
 
-  char n;
+  
+  // CURRENT GAME LOOP
   while(true)
     {
       // clear the screen
@@ -100,7 +104,6 @@ int main()
       menu->OutputMenu();
       menu->HandleInput(cin);
       SwitchRooms(menu->GetOption(),roomTree,imageImport);
-
       // case to select direction ('w' always means go back currently)
 
   }
@@ -111,35 +114,71 @@ int main()
 //***FUNCTION DEFINITIONS*******************************************************
 void SwitchRooms(char n, RoomTree &roomTree, ImageImporter &imageImport)
 {
-  switch(n)	{
+   Cutscene cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+   
+   switch(n)
+   {
   case 'w' :
     if(!roomTree.Move('u'))
-      {
+    {
+       // run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.CenterToTop();
+       
 	roomTree.NewRoom('u', new Room(imageImport.collection));
 	roomTree.Move('u');
+
+	// run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.BottomToCenter();
       }
     break;
   case 'a' :
     if(!roomTree.Move('l'))
-      {
+    {
+       // run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.CenterToLeft();
+       
 	roomTree.NewRoom('l',new Room(imageImport.collection));
 	roomTree.Move('l');
+
+	// run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.RightToCenter();
       }
     break;
   case 's' :
     if(!roomTree.Move('d'))
-      {
+    {
+       // run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.CenterToBottom();
+       
 	roomTree.NewRoom('d',new Room(imageImport.collection));
 	roomTree.Move('d');
+
+	// run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.TopToCenter();
       }
     break;
   case 'd' :
     if(!roomTree.Move('r'))
-      {
+    {
+       // run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.CenterToRight();
+       
 	roomTree.NewRoom('r',new Room(imageImport.collection));
 	roomTree.Move('r');
+
+	// run a room transition (WIP)
+       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+       cutscene.LeftToCenter();
       }
     break;
+    
   default :
     break;
   };

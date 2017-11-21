@@ -10,9 +10,9 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "/home/kemg2720/Kodika/Item/Item.h"
-#include "/home/kemg2720/Kodika/Screen"
-#include "/home/kemg2720/Kodika/Image"
+#include "../Item/Item.h"
+#include "../Screen/Screen.h"
+#include "../Image/Image.h"
 
 
 using namespace std;

@@ -1,7 +1,12 @@
 #include "Cutscene.h"
+#define HORIZSPEED 60000
+#define VERTSPEED 120000
+
 
 Cutscene::Cutscene(ImportImg image, ImportImg r)
 {
+   screen = Screen();
+   
    img = ImportImg(image);
    room = ImportImg(r);
    cout << room.GetImageFile() << ", " << room.GetRows() << endl;
@@ -18,13 +23,10 @@ Cutscene::~Cutscene()
 
 
 
-void Cutscene::TopToCenter(Screen &screen)
+void Cutscene::TopToCenter()
 {
    // Center the room for the cutscene
    room.AlignCenter(screen);
-   cout << "screenX: " << room.screenX << ", screenY: " << room.screenY << endl;
-   cout << "width: " << room.GetCols() << ", height: " << room.GetRows() << endl;
-
    
    // Set up the position of the image to animate
    img.AlignCenter(screen);
@@ -44,25 +46,100 @@ void Cutscene::TopToCenter(Screen &screen)
       img.Draw(screen);
       
       cout << screen << endl;
-      usleep(100000);
+      usleep(VERTSPEED);
    }
 }
 
 
 
-void Cutscene::BottomToCenter(Screen &screen) {}
+void Cutscene::BottomToCenter()
+{
+   // Center the room for the cutscene
+   room.AlignCenter(screen);
+   
+   // Set up the position of the image to animate
+   img.AlignCenter(screen);
+   SaveCurrentPosition();
+   img.AlignBottom(screen);
+
+   // This loop will animate the image and print to the screen
+   int n = img.screenY;
+   while(n > startY)
+   {
+      img.ShiftUp(1);
+      n--;
+
+      ClearScreen();
+      screen.Erase();
+      room.Draw(screen);
+      img.Draw(screen);
+      
+      cout << screen << endl;
+      usleep(VERTSPEED);
+   }
+}
 
 
 
-void Cutscene::LeftToCenter(Screen &screen) {}
+void Cutscene::LeftToCenter()
+{
+// Center the room for the cutscene
+   room.AlignCenter(screen);
+
+   // Set up the position of the image to animate
+   img.AlignCenter(screen);
+   SaveCurrentPosition();
+   img.AlignLeft(screen);
+
+   // This loop will animate the image and print to the screen
+   int n = img.screenX;
+   while(n < startX)
+   {
+      img.ShiftRight(screen, 1);
+      n++;
+
+      ClearScreen();
+      screen.Erase();
+      room.Draw(screen);
+      img.Draw(screen);
+      
+      cout << screen << endl;
+      usleep(HORIZSPEED);
+   }
+}
 
 
 
-void Cutscene::RightToCenter(Screen &screen) {}
+void Cutscene::RightToCenter()
+{
+   // Center the room for the cutscene
+   room.AlignCenter(screen);
+   
+   // Set up the position of the image to animate
+   img.AlignCenter(screen);
+   SaveCurrentPosition();
+   img.AlignRight(screen);
+
+   // This loop will animate the image and print to the screen
+   int n = img.screenX;
+   while(n > startX)
+   {
+      img.ShiftLeft(1);
+      n--;
+
+      ClearScreen();
+      screen.Erase();
+      room.Draw(screen);
+      img.Draw(screen);
+      
+      cout << screen << endl;
+      usleep(HORIZSPEED);
+   }
+}
 
 
 
-void Cutscene::CenterToTop(Screen &screen)
+void Cutscene::CenterToTop()
 {
    // Set the image to the center for the animation
    room.AlignCenter(screen);
@@ -83,13 +160,13 @@ void Cutscene::CenterToTop(Screen &screen)
       img.Draw(screen);
       
       cout << screen << endl;
-      usleep(100000);
+      usleep(VERTSPEED);
    }
 }
 
 
 
-void Cutscene::CenterToBottom(Screen &screen)
+void Cutscene::CenterToBottom()
 {
    // Set the room to the center for the animation
    room.AlignCenter(screen);
@@ -109,13 +186,13 @@ void Cutscene::CenterToBottom(Screen &screen)
       img.Draw(screen);
       
       cout << screen << endl;
-      usleep(100000);
+      usleep(VERTSPEED);
    }
 }
 
 
 
-void Cutscene::CenterToLeft(Screen &screen)
+void Cutscene::CenterToLeft()
 {
    // Set the room to the center for the animation
    room.AlignCenter(screen);
@@ -135,13 +212,13 @@ void Cutscene::CenterToLeft(Screen &screen)
       img.Draw(screen);
       
       cout << screen << endl;
-      usleep(50000);
+      usleep(HORIZSPEED);
    }
 }
 
 
 
-void Cutscene::CenterToRight(Screen &screen)
+void Cutscene::CenterToRight()
 {
    // Set the room to the center for the animation
    room.AlignCenter(screen);
@@ -159,9 +236,9 @@ void Cutscene::CenterToRight(Screen &screen)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      
+
       cout << screen << endl;
-      usleep(50000);
+      usleep(HORIZSPEED);
    }
 }
 
