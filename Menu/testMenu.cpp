@@ -13,7 +13,7 @@
 #include "ConnectFourMenu.h"
 using namespace std;
 
-void testFunction(int);
+void testFunction(char);
 
 int main()
 {
@@ -23,25 +23,40 @@ int main()
    menu = new TicTacToeMenu();
    screen = new Screen();
 
-   menu->AddOption('p', "Pickup",testFunction);
-   menu->AddOption('t', "Speak", testFunction);
-   menu->AddOption('a', "Move",testFunction);
-   menu->AddOption('w', "Move Up",testFunction);
-   menu->SetOptions();
-
+   menu->AddOption('W', "Move Up");
+   menu->AddOption('S', "Move Down");
+   menu->AddOption('A', "Move Left");
+   menu->AddOption('D', "Move Right");
+   
    while(true)
    {
       cout<<screen;
       menu->OutputMenu();
       menu->HandleInput(cin);
+      cout<<menu->GetOption();
+      testFunction(menu->GetOption());
    }
    delete menu;
 
    return 0;
 }
 
-void testFunction(int x)
+void testFunction(char x)
 {
-   cout<<"You added and used an option properly!"<<endl;
-   
+  switch(x)
+    {
+    case 'W':
+      cout<<"Moved Up!"<<endl;
+      break;
+    case 'S':
+      cout<<"Moved Down."<<endl;
+      break;
+    case 'A':
+      cout<<"Moved left."<<endl;
+      break;
+    case 'D':
+      cout<<"Moved Right!"<<endl;
+      break;
+    };
+  
 }

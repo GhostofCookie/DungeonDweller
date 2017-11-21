@@ -20,6 +20,9 @@ class RoomTreeTest : public CppUnit::TestFixture
    /// Sets up tests for RoomTree
    void setUp();
 
+   /// Cleans up tests
+   void tearDown();
+
    /// Tests the move Function
    void testMove();
 

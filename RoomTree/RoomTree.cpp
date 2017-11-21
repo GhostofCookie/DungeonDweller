@@ -15,10 +15,11 @@ using namespace std;
 //*****************************************************************************
 RoomTree::Node::Node()
 {
-   left = nullptr;
-   right = nullptr;
-   center = nullptr;
-   parent = nullptr;
+	left = nullptr;
+	right = nullptr;
+	down = nullptr;
+	up = nullptr;
+	RootDir = NULL;
 }
 
 //*****************************************************************************
@@ -26,9 +27,9 @@ RoomTree::Node::Node()
 //*****************************************************************************
 RoomTree::RoomTree(Room* rootRoom)
 {
-   root = new Node;
-   root->room = rootRoom;
-   currNode = root;
+	root = new Node;
+	root->room = rootRoom;
+	currNode = root;
 }
 
 //*****************************************************************************
@@ -36,22 +37,32 @@ RoomTree::RoomTree(Room* rootRoom)
 //*****************************************************************************
 RoomTree::~RoomTree()
 {
-   DeleteTree(root);
-   root = nullptr;
-   currNode = nullptr;
+	DeleteTree(root);
+	root = nullptr;
+	currNode = nullptr;
 }
 
 //*****************************************************************************
 /// Helper function to assist in deleting the tree
 //*****************************************************************************
-void RoomTree::DeleteTree(Node* tempRoot)
+void RoomTree::DeleteTree(Node *tempRoot)
 {
-   if(tempRoot) {
-      DeleteTree(tempRoot->left);
-      DeleteTree(tempRoot->center);
-      DeleteTree(tempRoot->right);
-      delete tempRoot;
-   }
+	if(!tempRoot) { //if this node exists
+
+		if(parent != tempRoot->RootDir) //delete up child if its not the parent node
+			DeleteTree(tempRoot->up);
+
+		if(parent != tempRoot->RootDir) //delete left child if its not the parent node
+			DeleteTree(tempRoot->left);
+
+		if(parent != tempRoot->RootDir) //delete right child if its not the parent node
+			DeleteTree(tempRoot->right);
+
+		if(parent != tempRoot->RootDir) //delete down child if its not the parent node
+			DeleteTree(tempRoot->down);
+
+		delete tempRoot; //delete this node
+	}
 }
 
 //*****************************************************************************
@@ -59,40 +70,47 @@ void RoomTree::DeleteTree(Node* tempRoot)
 //*****************************************************************************
 void RoomTree::NewRoom(char dir,Room* roomptr)
 {
-   dir = toupper(dir);
+	dir = toupper(dir);
 
-   switch(dir) {
-      case 'L':
-	 if(currNode->left)
-	    throw invalid_argument("room occupied");
-	 currNode->left = new Node;
-	 currNode->left->parent = currNode;
-	 currNode->left->room = roomptr;
-	 break;
-      case 'R':
-	 if(currNode->right)
-	    throw invalid_argument("room occupied");
-	 currNode->right = new Node;
-	 currNode->right->parent = currNode;
-	 currNode->right->room = roomptr;
-	 break;
-      case 'C':
-	 if(currNode->center)
-	    throw invalid_argument("room occupied");
-	 currNode->center = new Node;
-	 currNode->center->parent = currNode;
-	 currNode->center->room = roomptr;
-	 break;
-      case 'P':
-	 if(currNode->parent)
-	    throw invalid_argument("room occupied");
-	 currNode->parent = new Node;
-	 currNode->parent->parent = currNode;
-	 currNode->parent->room = roomptr;
-	 break;
-      default:
-	 throw invalid_argument("invalid direction");
-   }
+	switch(dir) {
+		case 'U':
+			if(currNode->up)
+				throw invalid_argument("room occupied");
+			currNode->up = new Node;
+			currNode->up->down = currNode;
+			currNode->up->room = roomptr;
+			currNode->up->RootDir = 'D';
+			break;
+
+		case 'L':
+			if(currNode->left)
+				throw invalid_argument("room occupied");
+			currNode->left = new Node;
+			currNode->left->right = currNode;
+			currNode->left->room = roomptr;
+			currNode->left->RootDir = 'R';
+			break;
+
+		case 'R':
+			if(currNode->right)
+				throw invalid_argument("room occupied");
+			currNode->right = new Node;
+			currNode->right->left = currNode;
+			currNode->right->room = roomptr;
+			currNode->right->RootDir = 'L';
+			break;
+
+		case 'D':
+			if(currNode->down)
+				throw invalid_argument("room occupied");
+			currNode->down = new Node;
+			currNode->down->up = currNode;
+			currNode->down->room = roomptr;
+			currNode->down->RootDir = 'U';
+			break;
+		default:
+			throw invalid_argument("invalid direction");
+	}
 }
 
 //*****************************************************************************
@@ -100,33 +118,33 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 //*****************************************************************************
 bool RoomTree::Move(char dir)
 {
-   dir = toupper(dir);
+	dir = toupper(dir);
 
-   switch(dir) {
-      case 'L':
-	 if(!(currNode->left))
-	    return false;
-	 currNode = currNode->left;
-	 break;
-      case 'R':
-	 if(!(currNode->right))
-	    return false;
-	 currNode = currNode->right;
-	 break;
-      case 'C':
-	 if(!(currNode->center))
-	    return false;
-	 currNode = currNode->center;
-	 break;
-      case 'P':
-	 if(!(currNode->parent))
-	    return false;
-	 currNode = currNode->parent;
-	 break;
-      default:
-	 throw invalid_argument("invalid direction");
-   }
-   return true;
+	switch(dir) {
+		case 'L':
+			if(!(currNode->left))
+				return false;
+			currNode = currNode->left;
+			break;
+		case 'R':
+			if(!(currNode->right))
+				return false;
+			currNode = currNode->right;
+			break;
+		case 'D':
+			if(!(currNode->down))
+				return false;
+			currNode = currNode->down;
+			break;
+		case 'U':
+			if(!(currNode->up))
+				return false;
+			currNode = currNode->up;
+			break;
+		default:
+			throw invalid_argument("invalid direction");
+	}
+	return true;
 }
 
 //*****************************************************************************
@@ -134,7 +152,7 @@ bool RoomTree::Move(char dir)
 //*****************************************************************************
 const Room* RoomTree::At() const
 {
-   return currNode->room;
+	return currNode->room;
 }
 
 //*****************************************************************************
@@ -142,7 +160,7 @@ const Room* RoomTree::At() const
 //*****************************************************************************
 Room* RoomTree::At()
 {
-   return currNode->room;
+	return currNode->room;
 }
 
 //*****************************************************************************
@@ -150,11 +168,27 @@ Room* RoomTree::At()
 //*****************************************************************************
 unsigned int RoomTree::CurrentHeight() const
 {
-   if(!currNode)
-      return 0;
-   Node *findNode = currNode;
-   unsigned int i;
-   for(i = 1; findNode != root; ++i)
-      findNode = findNode->parent;
-   return i;
+	if(!currNode)
+		return 0;
+	Node *findNode = currNode;
+	unsigned int i;
+	for(i = 1; findNode->RootDir != NULL; ++i)
+		switch(findNode->RootDir) {
+			case 'U':
+				findNode = findNode->up;
+				break;
+
+			case 'L':
+				findNode = findNode->left;
+				break;
+
+			case 'R':
+				findNode = findNode->right;
+				break;
+
+			case 'D':
+				findNode = findNode->down;
+				break;
+		}
+	return i;
 }
