@@ -7,6 +7,9 @@ ImportImg::ImportImg(string file)
 {
    screenX = screenY = 0;
    Create();
+
+   height = GetRows();
+   width = GetCols();
 }
 
 
@@ -15,8 +18,8 @@ ImportImg::ImportImg(string file)
 ImportImg::ImportImg(const ImportImg &image)
 {
    Img = image.Img;
-   height = image.height;
-   width = image.width;
+   height = image.GetRows();
+   width = image.GetCols();
    imgStr = image.imgStr;
    screenX = image.screenX;
    screenY = image.screenY;
@@ -29,8 +32,8 @@ ImportImg::ImportImg(const ImportImg &image)
 ImportImg::ImportImg(ImportImg &image)
 {
    Img = image.Img;
-   height = image.height;
-   width = image.width;
+   height = image.GetRows();
+   width = image.GetCols();
    imgStr = image.imgStr;
    screenX = image.screenX;
    screenY = image.screenY;
@@ -87,3 +90,8 @@ void ImportImg::Import(string file, string &img)
    } else
       cout << "Empty or lost file? Couldn't locate: " << file << endl;
 }
+
+
+
+/// Function that returns the file path
+string ImportImg::GetImageFile() { return imgStr; }

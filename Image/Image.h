@@ -118,18 +118,30 @@ class Image
    /// Helper function to align the image center
    /// \param[in] scr the screen to align to
    void AlignCenter(Screen &scr);
+   /// Helper function to align the image to the top
+   /// \param[in] scr the screen to draw to
+   void AlignTop(Screen &scr);
+   /// Helper function to align the image to the bottom
+   /// \param[in] scr the screen to draw to
+   void AlignBottom(Screen &scr);
    /// Helper function to align the image left
    /// \param[in] img the screen to align to
    void AlignLeft(Image &img);
    /// Helper function to align the image right
-   /// \param[in] img the screen to align to
+   /// \param[in] img the image to align to
    void AlignRight(Image &img);
-   /// Helper function to align the image center
-   /// \param[in] img the screen to align to
+   /// Helper function to align the image to the center
+   /// \param[in] img the image to align to
    void AlignCenter(Image &img);
    /// Helper function to align the image left
-   /// \param[in] img the screen to align to
+   /// \param[in] img the image to align to
    void AlignCenter(Image &img, int x, int y);
+   /// Helper function to align the image to the top
+   /// \param[in] img the image to align to
+   void AlignTop(Image &img);
+   /// Helper function to align the image to the bottom
+   /// \param[in] img the image to draw to
+   void AlignBottom(Image &img);
 	
    /// Helper function to shift the image down
    /// \param[in] scr the screen the image will shift on

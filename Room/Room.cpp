@@ -1,7 +1,8 @@
 #include "Room.h"
-#define ROOMTYPES 5
+#define ROOMTYPES 4
 
 /// Default Constructor
+/// \param[in] collection the images used to generate a room
 Room::Room(map<char, vector<ImportImg>> &collection)
 {
    //What type of room is generated e.g. treasure, puzzle, etc
@@ -24,8 +25,47 @@ Room::Room(map<char, vector<ImportImg>> &collection)
 
 
 
+/// Copy Constructor
+Room::Room(Room &r)
+{
+   string s = r.GetImageFile();
+   delete room;
+   room = new ImportImg(s);
+
+   type = r.GetType();
+}
+
+
+
+/// Copy Constructor
+Room::Room(const Room &r)
+{
+   string s = r.GetImageFile();
+   delete room;
+   room = new ImportImg(s);
+
+   type = r.GetType();
+}
+
+
+
 /// Destructor
 Room::~Room() { delete room; }
+
+
+
+/// Function to return the image
+ImportImg Room::GetImage() const { return *room; }
+
+
+
+/// Function to return the image file path
+string Room::GetImageFile() const { return room->GetImageFile(); }
+
+
+
+/// Function to return the type
+int Room::GetType() const { return type; }
 
 
 
@@ -87,13 +127,8 @@ void Room::GetPoints()
 
 /// Helper function to determine what to draw in the room based on type
 void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
-{
-   // force draw the player in the center of the room
-   ImportImg img = ImportImg(collection['@'][0]);
-   img.AlignCenter(*room);
-   img.Image::Draw(*room);
-   
-   ImportImg event = ImportImg(img);//assign it just to avoid error
+{  
+   ImportImg event = ImportImg(collection['@'][0]);//assign it just to avoid error
    
    switch(type)
    {
@@ -145,6 +180,18 @@ void Room::AlignLeft(Screen &screen) { room->Image::AlignLeft(screen); }
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignRight(Screen &screen) { room->Image::AlignRight(screen); }
+
+
+
+/// Function aligns the room to the top to the screen
+/// \param[in] screen The screen that is passed
+void Room::AlignTop(Screen &screen) { room->Image::AlignTop(screen); }
+
+
+
+/// Function aligns the room to the bottom to the screen
+/// \param[in] screen The screen that is passed
+void Room::AlignBottom(Screen &screen) { room->Image::AlignBottom(screen); }
 
 
 

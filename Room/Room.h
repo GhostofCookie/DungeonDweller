@@ -66,8 +66,21 @@ class Room
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles the image used as the room
    Room(map<char, vector<ImportImg>> &imgFiles);
+   /// Copy Constructor
+   /// \param[in] r the room being copied
+   Room(Room &r);
+   /// Copy Constructor
+   /// \param[in] r the room being copied
+   Room(const Room &r);
    /// Destroys the object
    ~Room();
+
+   /// Function that returns the image object
+   ImportImg GetImage() const;
+   /// Function that returns the room's image file path
+   string GetImageFile() const;
+   /// Function that returns the room's type
+   int GetType() const;
 	
    /// Function to align to the center of the screen
    /// \param[in] screen the screen drawn on
@@ -78,6 +91,12 @@ class Room
    /// Function to align to the right of the screen
    /// \param[in] screen the screen drawn on
    void AlignRight(Screen &screen);
+   /// Function to align to the top of the screen
+   /// \param[in] screen the screen drawn on
+   void AlignTop(Screen &screen);
+   /// Function to align the room to the bottom of the screen
+   /// \param[in] screen the screen drawn on
+   void AlignBottom(Screen &screen);
 	
    /// Function to draw to the screen
    /// \param[in] screen the screen drawn on

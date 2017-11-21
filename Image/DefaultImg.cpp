@@ -21,8 +21,9 @@ DefaultImg::DefaultImg(int h, int w, char c)
 DefaultImg::DefaultImg(const DefaultImg &image)
 {
    Img = image.Img;
-   _height = image.GetRows();
-   _width = image.GetCols();
+   _height = height = image.GetRows();
+   _width = width = image.GetCols();
+   
 }
 
 
@@ -32,8 +33,8 @@ DefaultImg::DefaultImg(const DefaultImg &image)
 DefaultImg::DefaultImg(DefaultImg &image)
 {
    Img = image.Img;
-   _height = image.GetRows();
-   _width = image.GetCols();
+   _height = height = image.GetRows();
+   _width = height = image.GetCols();
 }
 
 
