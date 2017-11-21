@@ -49,16 +49,16 @@ void RoomTree::DeleteTree(Node *tempRoot)
 {
 	if(!tempRoot) { //if this node exists
 
-		if(parent != tempRoot->RootDir) //delete up child if its not the parent node
+		if('U' != tempRoot->RootDir) //delete up child if its not the parent node
 			DeleteTree(tempRoot->up);
 
-		if(parent != tempRoot->RootDir) //delete left child if its not the parent node
+		if('L' != tempRoot->RootDir) //delete left child if its not the parent node
 			DeleteTree(tempRoot->left);
 
-		if(parent != tempRoot->RootDir) //delete right child if its not the parent node
+		if('R' != tempRoot->RootDir) //delete right child if its not the parent node
 			DeleteTree(tempRoot->right);
 
-		if(parent != tempRoot->RootDir) //delete down child if its not the parent node
+		if('D' != tempRoot->RootDir) //delete down child if its not the parent node
 			DeleteTree(tempRoot->down);
 
 		delete tempRoot; //delete this node
