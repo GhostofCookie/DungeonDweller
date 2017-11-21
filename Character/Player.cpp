@@ -10,18 +10,20 @@ Player:: ~Player()
 
 }
 
-void Player:: ChangeStamina(int& s, int sMod)
+void Player:: ChangeStamina(int& stamina, int sMod)
 {
-   if(s += sMod <= 0)
-      s = 0;
-   s += sMod;
+   if(stamina += sMod <= 0)
+      stamina = 0;
+   else
+      stamina += sMod;
 }
 
 void Player:: ChangeKeys(int& keys, int keyMod)
 {
    if(keys += keyMod <= 0)
       keys = 0;
-   keys += keyMod;
+   else
+      keys += keyMod;
 }
 
 bool Player:: UseKey(int& keys)
@@ -31,4 +33,10 @@ bool Player:: UseKey(int& keys)
    else
       return 0;
    return keys;
+}
+
+void Player:: AttackNpc(Weapon damage, Npc enemy)
+{
+   int healthMod = Weapon.baseDamage;
+   ChangeHealth(Npc.health, healthMod);
 }

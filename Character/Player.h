@@ -10,14 +10,13 @@
 #define Player_h
 
 #include <stdio.h>
-//#include "Character.h"
+#include "Character.h"
 #include <vector>
 #include <string>
 using namespace std; 
 
 ///Derived class from Character which provides Player attributes
-// : public Character
-class Player
+class Player : public Character
 {
 
 
@@ -46,6 +45,11 @@ public:
    ///Function to use a key
    /// \param[in] keys, uses a key if availible
    bool UseKey(int& keys);
+
+   ///Attack function for the player to attack the Npc
+   /// \param[in] damage, the base damage of the weapon
+   /// \param[in] enemy, the Npc being attacked
+   virtual void AttackNpc(Weapon damage, Npc enemy);
 
   private:
    
