@@ -122,6 +122,7 @@ void SwitchRooms(char n, RoomTree &roomTree, ImageImporter &imageImport)
 	 // run a room transition (WIP)
 	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
 	 cutscene.CenterToTop();
+	 
 	 if(!roomTree.Move('u'))
 	 { 
 	    roomTree.NewRoom('u', new Room(imageImport.collection));
@@ -151,6 +152,7 @@ void SwitchRooms(char n, RoomTree &roomTree, ImageImporter &imageImport)
 	 // run a room transition (WIP)
 	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
 	 cutscene.CenterToBottom();
+	 
 	 if(!roomTree.Move('d'))
 	 {
 	    roomTree.NewRoom('d',new Room(imageImport.collection));

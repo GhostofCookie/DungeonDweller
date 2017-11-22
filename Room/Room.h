@@ -44,8 +44,6 @@ class Room
    ImportImg *room;
    /// The type of room that will be generated
    int type;
-   /// The points of each image's key character
-   vector<Point> point; // stores the points to each key
 	
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
@@ -74,6 +72,9 @@ class Room
    Room(const Room &r);
    /// Destroys the object
    ~Room();
+
+   /// The points of each image's key character
+   vector<Point> point; // stores the points to each key
 
    /// Function that returns the image object
    ImportImg GetImage() const;
