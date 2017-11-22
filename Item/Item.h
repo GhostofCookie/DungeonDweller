@@ -8,9 +8,10 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include <iostream>
-#include "../Character/Character.h"
-#include "../Character/Player.h"
 using namespace std;
+
+class Character;
+class Player;
 
 /// This class is an abstract base class to represent items in game
 class Item
@@ -29,7 +30,7 @@ public:
 	/// Pure Virtual funtion that forces all subclasses to define how to use themselves
 	/// \param[in] target The Character the item is being used on
 	/// \return true if use was successfull
-	virtual bool use(Character *target)=0;
+	virtual bool use(Character *target) = 0;
 
 	/// Allows access to the items name
 	/// \return Reference to the name of the item
