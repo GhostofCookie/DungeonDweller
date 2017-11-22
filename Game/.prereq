@@ -20,7 +20,8 @@ DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../GameState/../Menu/Menu.h ../GameState/../Menu/FightMenu.h \
  ../GameState/../Menu/ExploreMenu.h ../GameState/FightState.h \
  ../GameState/MainState.h ../GameState/PuzzleState.h \
- ../GameState/ExploreState.h ../GameState/../RoomTree/RoomTree.h \
+ ../GameState/ExploreState.h ../GameState/../Cutscene/Cutscene.h \
+ ../GameState/../RoomTree/RoomTree.h \
  ../GameState/../ImageImporter/ImageImporter.h \
  ../GameState/../Image/Image.h ../GameState/../Image/DefaultImg.h \
  ../GameState/../Image/ImportImg.h ../GameState/GameState.h \

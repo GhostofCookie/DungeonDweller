@@ -69,31 +69,31 @@ void SwitchRooms(char, RoomTree&, ImageImporter&);
 
 int main()
 {
-  //Needed for randomization seed
-  srand( (unsigned int) time(NULL));
+   //Needed for randomization seed
+   srand( (unsigned int) time(NULL));
 	
-  // The file path - ***change as desired
-  string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
-  // Create an importer object and read in the masterFile for Images
-  ImageImporter imageImport = ImageImporter(mastrFile);
-  // MainGame Screen
-  Screen *screen = new Screen();
-  // Menu
-  Menu *menu = new Menu();
-  menu->AddOption('w',"Move Up");
-  menu->AddOption('a',"Move Left");
-  menu->AddOption('s',"Move Down");
-  menu->AddOption('d',"Move Right");
+   // The file path - ***change as desired
+   string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
+   // Create an importer object and read in the masterFile for Images
+   ImageImporter imageImport = ImageImporter(mastrFile);
+   // MainGame Screen
+   Screen *screen = new Screen();
+   // Menu
+   Menu *menu = new Menu();
+   menu->AddOption('w',"Move Up");
+   menu->AddOption('a',"Move Left");
+   menu->AddOption('s',"Move Down");
+   menu->AddOption('d',"Move Right");
    
-  // Construct the roomtree
-  Room *roomptr = new Room(imageImport.collection);
-  RoomTree roomTree(roomptr);
+   // Construct the roomtree
+   Room *roomptr = new Room(imageImport.collection);
+   RoomTree roomTree(roomptr);
   
 
   
-  // CURRENT GAME LOOP
-  while(true)
-    {
+   // CURRENT GAME LOOP
+   while(true)
+   {
       // clear the screen
       screen->Erase();
       // align the current room to the screen and print
@@ -106,8 +106,8 @@ int main()
       SwitchRooms(menu->GetOption(),roomTree,imageImport);
       // case to select direction ('w' always means go back currently)
 
-  }
-  return 0;
+   }
+   return 0;
 }
 
 
@@ -118,73 +118,64 @@ void SwitchRooms(char n, RoomTree &roomTree, ImageImporter &imageImport)
    
    switch(n)
    {
-  case 'w' :
-    if(!roomTree.Move('u'))
-    {
-       // run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.CenterToTop();
-       
-	roomTree.NewRoom('u', new Room(imageImport.collection));
-	roomTree.Move('u');
-
-	// run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.BottomToCenter();
-      }
-    break;
-  case 'a' :
-    if(!roomTree.Move('l'))
-    {
-       // run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.CenterToLeft();
-       
-	roomTree.NewRoom('l',new Room(imageImport.collection));
-	roomTree.Move('l');
-
-	// run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.RightToCenter();
-      }
-    break;
-  case 's' :
-    if(!roomTree.Move('d'))
-    {
-       // run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.CenterToBottom();
-       
-	roomTree.NewRoom('d',new Room(imageImport.collection));
-	roomTree.Move('d');
-
-	// run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.TopToCenter();
-      }
-    break;
-  case 'd' :
-    if(!roomTree.Move('r'))
-    {
-       // run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.CenterToRight();
-       
-	roomTree.NewRoom('r',new Room(imageImport.collection));
-	roomTree.Move('r');
-
-	// run a room transition (WIP)
-       cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
-       cutscene.LeftToCenter();
-      }
-    break;
+      case 'w' :
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.CenterToTop();
+	 if(!roomTree.Move('u'))
+	 { 
+	    roomTree.NewRoom('u', new Room(imageImport.collection));
+	    roomTree.Move('u');
+	 }
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.BottomToCenter();
+	 break;
+	 
+      case 'a' :
+         // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.CenterToLeft();
+	 
+	 if(!roomTree.Move('l'))
+	 { 
+	    roomTree.NewRoom('l',new Room(imageImport.collection));
+	    roomTree.Move('l');
+	 }
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.RightToCenter();
+	 break;
+	 
+      case 's' :
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.CenterToBottom();
+	 if(!roomTree.Move('d'))
+	 {
+	    roomTree.NewRoom('d',new Room(imageImport.collection));
+	    roomTree.Move('d');
+	 }
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.TopToCenter();
+	 break;
+	 
+      case 'd' :
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.CenterToRight();
+	 if(!roomTree.Move('r'))
+	 {
+	    roomTree.NewRoom('r',new Room(imageImport.collection));
+	    roomTree.Move('r');
+	 }
+	 // run a room transition (WIP)
+	 cutscene = Cutscene(imageImport.collection['@'][0], roomTree.At()->GetImage());
+	 cutscene.LeftToCenter();
+	 break;
     
-  default :
-    break;
-  };
+      default :
+	 break;
+   };
 }
-
-
-
-
-//******************************************************************************
