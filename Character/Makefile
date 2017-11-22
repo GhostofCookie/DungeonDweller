@@ -1,6 +1,6 @@
 CC=g++
 CCFLAGS=-Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
-OBJS= Player.o
+OBJS= Player.o Npc.o Character.o
 OBJS2= mainTest.o PlayerTest.o Player.o 
 
 .PHONY : all

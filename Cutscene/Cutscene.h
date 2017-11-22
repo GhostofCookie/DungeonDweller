@@ -21,6 +21,8 @@ using namespace std;
 class Cutscene
 {
   private:
+   Screen screen;
+   
    int startX = 0;
    int startY = 0;
    ImportImg img;
@@ -37,15 +39,15 @@ class Cutscene
    /// Destructor
    ~Cutscene();
 
-   void TopToCenter(Screen&);
-   void BottomToCenter(Screen&);
-   void LeftToCenter(Screen&);
-   void RightToCenter(Screen&);
+   void TopToCenter();
+   void BottomToCenter();
+   void LeftToCenter();
+   void RightToCenter();
 
-   void CenterToTop(Screen&);
-   void CenterToBottom(Screen&);
-   void CenterToLeft(Screen&);
-   void CenterToRight(Screen&);
+   void CenterToTop();
+   void CenterToBottom();
+   void CenterToLeft();
+   void CenterToRight();
 
    void SaveCurrentPosition();
 };

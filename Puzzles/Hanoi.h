@@ -49,7 +49,7 @@ class Hanoi: public virtual Puzzle
 
    ///Moves the piece the depending on which option the player selects
    /// \param[in] userSelection, the option of moves the player chose
-   void MovePiece(int userSelection);
+   void MovePiece(char userSelection);
 
    ///WhichDiscFromSize returns an index to wich disc in discsVector the size is
    ///referenced with

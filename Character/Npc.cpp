@@ -2,9 +2,19 @@
 
 using namespace std;
 
-Npc:: Npc(int h)
-   : health{h} {}
+Npc:: Npc()
+{
+
+}
+   
 
 Npc:: ~Npc()
 {
+   
+}
+
+void Npc:: AttackPlayer(Weapon damage, Player enemy)
+{
+   int healthMod = Weapon.baseDamage;
+   ChangeHealth(Player.health, healthMod);
 }

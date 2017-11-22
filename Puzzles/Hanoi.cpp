@@ -6,10 +6,10 @@
 //
 #include "Hanoi.h"
 
-//      ===       (3)
-//    ███████     (7)
-//  ███████████   (11)
-//███████████████ (15)
+//       ===       (3)
+//     =======     (7)
+//   ===========   (11)
+// =============== (15)
 //screen is 101x33
 
 Hanoi::Hanoi()
@@ -106,10 +106,10 @@ bool Hanoi:: ValidMove(const int currentStackTop, const int newStackTop) const
 void Hanoi::SetOptionsInMenu()
 {
    cout << "Options have been set" << endl;
-   //  HanoiGameMenu.AddOption('1', menuOption1, &Hanoi::MovePiece);
-//    HanoiGameMenu.AddOption('2', menuOption2, MovePiece);
-//    HanoiGameMenu.AddOption('3', menuOption3, MovePiece);
-//     HanoiGameMenu.AddOption('4', menuOption4, MovePiece);
+   HanoiGameMenu.AddOption('1', menuOption1);
+   HanoiGameMenu.AddOption('2', menuOption2);
+   HanoiGameMenu.AddOption('3', menuOption3);
+   HanoiGameMenu.AddOption('4', menuOption4);
 }
 
 void Hanoi::WinCheck()
@@ -121,11 +121,11 @@ void Hanoi::WinCheck()
 }
 
 
-void Hanoi::MovePiece(int userSelection)
+void Hanoi::MovePiece(char userSelection)
 {
    switch(userSelection)
    {
-      case 1:
+      case '1':
 	 if(tower.at(0).empty())
 	 {
 	    cout << "That peg is empty, please try another" << endl;
@@ -156,7 +156,7 @@ void Hanoi::MovePiece(int userSelection)
 	 }
 	 break;
 	 
-      case 2:
+      case '2':
 	 if(tower.at(1).empty())
 	 {
 	    cout << "That peg is empty, please try another" << endl;
@@ -185,7 +185,7 @@ void Hanoi::MovePiece(int userSelection)
 	 break;
 
 	 	 
-      case 3:
+      case '3':
 	 if(tower.at(1).empty())
 	 {
 	    cout << "That peg is empty, please try another" << endl;
@@ -213,7 +213,7 @@ void Hanoi::MovePiece(int userSelection)
 	 }
 	 break;
 	 
-      case 4:
+      case '4':
 	 if(tower.at(2).empty())
 	 {
 	    cout << "That peg is empty, please try another" << endl;
@@ -309,6 +309,7 @@ void Hanoi::ClearTopDisc(int targetTower)
 void Hanoi:: RunGame()
 {
    cout << "Start" << endl;
+   char input;
    ClearTopDisc(1);
    SetOptionsInMenu();
    while(GameEnd==false)
@@ -316,6 +317,8 @@ void Hanoi:: RunGame()
       cout << HanoiScreen;
       HanoiGameMenu.OutputMenu();
       HanoiGameMenu.HandleInput(cin);
+      input=HanoiGameMenu.GetOption();//returns a char
+      MovePiece(input);
       WinCheck();
    }
    cout << "A noise creaks behind the wall and the door slides open." << endl;

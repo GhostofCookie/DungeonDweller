@@ -12,7 +12,6 @@ using namespace std;
 
 int main()
 {
-   Screen *screen = new Screen();
    ImageImporter import = ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    ImportImg *img = new ImportImg(import.collection['@'][0]);
 
@@ -24,11 +23,11 @@ int main()
 
    
    // runs 4 different cutscene tests
-   cutscene.CenterToTop(*screen);
-   cutscene.TopToCenter(*screen);
-   //cutscene.CenterToBottom(*screen);
-   //cutscene.CenterToLeft(*screen);
-   cutscene.CenterToRight(*screen);
+   cutscene.CenterToTop();
+   cutscene.TopToCenter();
+   cutscene.CenterToBottom();
+   //cutscene.CenterToLeft();
+   //cutscene.CenterToRight();
 
    return 0;
 }
