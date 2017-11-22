@@ -23,7 +23,7 @@ include .prereq
 
 .PHONY : clean
 clean:
-	rm -rf *~ *.o
+	rm -rf *~ *.o *.gcda *.gcno
 
 clean-all: clean
 	rm -rf mainTest

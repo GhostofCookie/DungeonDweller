@@ -12,6 +12,8 @@
 #include <cassert>
 #include <vector>
 #include "../Screen/Screen.h"
+#include "../Image/ImportImg.h"
+#include "../Image/DefaultImg.h"
 using namespace std;
 
 

@@ -36,5 +36,5 @@ Item Character:: GetInventoryItems(Item *inventory)
 
 void Character:: FillInventory(vector<*Item> &inventory, Item item)
 {
-   inventor.pushback(item);
+   inventory.pushback(item);
 }
