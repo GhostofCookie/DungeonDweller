@@ -4,12 +4,14 @@
 ExploreState::ExploreState()
 //  :roomTree{roomPtr}
 {
-  menu = new Menu();
+  menu = new ExploreMenu();
   screen = new Screen();
   masterFile = "../DD_Art/DD_MasterFileLinux.txt";
   imageImport = ImageImporter(masterFile);
   roomPtr = new Room(imageImport.collection);
   roomTree = new RoomTree(roomPtr);
+  ImportImg *img = new ImportImg(imageImport.collection['@'][0]);
+  anim = new Cutscene(*img, roomPtr->GetImage());
 }
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
@@ -18,7 +20,6 @@ void ExploreState::Set()
   menu->AddOption('a',"Move Left");
   menu->AddOption('s',"Move Down");
   menu->AddOption('d',"Move Right");
-
 }
 
 /// Gets the layout for the game menu and screen.
@@ -47,6 +48,7 @@ void ExploreState::SwitchRooms()
   case 'w' :
     if(!roomTree->Move('u'))
       {
+	anim->CenterToTop(*screen);
 	roomTree->NewRoom('u', new Room(imageImport.collection));
 	roomTree->Move('u');
       }
@@ -54,6 +56,7 @@ void ExploreState::SwitchRooms()
   case 'a' :
     if(!roomTree->Move('l'))
       {
+	anim->CenterToLeft(*screen);
 	roomTree->NewRoom('l',new Room(imageImport.collection));
 	roomTree->Move('l');
       }
@@ -61,6 +64,7 @@ void ExploreState::SwitchRooms()
   case 's' :
     if(!roomTree->Move('d'))
       {
+	anim->CenterToBottom(*screen);
 	roomTree->NewRoom('d',new Room(imageImport.collection));
 	roomTree->Move('d');
       }
@@ -68,6 +72,7 @@ void ExploreState::SwitchRooms()
   case 'd' :
     if(!roomTree->Move('r'))
       {
+	anim->CenterToRight(*screen);
 	roomTree->NewRoom('r',new Room(imageImport.collection));
 	roomTree->Move('r');
       }

@@ -6,6 +6,7 @@
 
 #include "GameState.h"
 #include "../Menu/ExploreMenu.h"
+#include "../Cutscene/Cutscene.h"
 #include "../RoomTree/RoomTree.h"
 #include "../ImageImporter/ImageImporter.h"
 #include "../Image/Image.h"
@@ -36,6 +37,7 @@ class ExploreState : public GameState
    ImageImporter imageImport;
    Room *roomPtr;
    RoomTree *roomTree;
+   Cutscene *anim;
    string masterFile;
 
 
