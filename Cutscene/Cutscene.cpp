@@ -1,6 +1,6 @@
 #include "Cutscene.h"
-#define HORIZSPEED 60000
-#define VERTSPEED 120000
+#define HORIZSPEED 30000
+#define VERTSPEED 60000
 
 
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
@@ -10,8 +10,8 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
    img = ImportImg(image);
    room = ImportImg(r);
    
-   startX = img.screenX;
-   startY = img.screenY;
+   img.AlignCenter(screen);
+   SaveCurrentPosition();
 
    point.reserve(4);
    FindCharacter(point[0].y, point[0].x, '1', tempRoom);
@@ -123,82 +123,67 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       
       cout << screen << endl;
       usleep(HORIZSPEED);
-   }
+    }
 }
 
 
 
 void Cutscene::TopToCenter()
 {
-   img.AlignCenter(screen);
-   SaveCurrentPosition();
    img.AlignTop(screen);
-   
-   MoveDown(img.screenY, img.screenX, screen.GetRows()/2);
+   MoveDown(img.screenY, img.screenX, startY - img.screenY);
 }
 
 
 
 void Cutscene::BottomToCenter()
 {
-   img.AlignCenter(screen);
-   SaveCurrentPosition();
    img.AlignBottom(screen);
-   
-   MoveUp(img.screenY, img.screenX, screen.GetRows()/2);
+   MoveUp(img.screenY, img.screenX, img.screenY - startY);
 }
 
 
 
 void Cutscene::LeftToCenter()
 {
-   img.AlignCenter(screen);
-   SaveCurrentPosition();
    img.AlignLeft(screen);
-   
-   MoveRight(img.screenY, img.screenX, screen.GetCols()/2);
+   MoveRight(img.screenY, img.screenX, startX - img.screenX);
 }
 
 
 
 void Cutscene::RightToCenter()
 {
-   img.AlignCenter(screen);
-   SaveCurrentPosition();
    img.AlignRight(screen);
-   MoveLeft(img.screenY, img.screenX, screen.GetCols()/2);
+   MoveLeft(img.screenY, img.screenX, img.screenX - startX);
 }
 
 
 
 void Cutscene::CenterToTop()
 {
-   img.AlignCenter(screen);
-   MoveUp(img.screenY, img.screenX, screen.GetRows()/2);
+   MoveUp(img.screenY, img.screenX, screen.GetRows() - img.screenY);
 }
 
 
 
 void Cutscene::CenterToBottom()
 {
-   img.AlignCenter(screen);
-   MoveDown(img.screenY, img.screenX, screen.GetRows()/2);
+   MoveDown(img.screenY, img.screenX, screen.GetRows() - img.screenY);
 }
 
 
 
 void Cutscene::CenterToLeft()
 {
-   img.AlignCenter(screen);
-   MoveLeft(img.screenY, img.screenX, screen.GetCols()/2);
+   MoveLeft(img.screenY, img.screenX, screen.GetCols() - img.screenX);
 }
 
 
 
 void Cutscene::CenterToRight()
 {
-   img.AlignCenter(screen);
-   MoveRight(img.screenY, img.screenX, screen.GetCols()/2);
+   MoveRight(img.screenY, img.screenX, screen.GetCols() - img.screenX - img.GetCols()+1);
 }
 
 

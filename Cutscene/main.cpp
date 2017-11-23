@@ -25,13 +25,16 @@ int main()
    Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
 
 
-   cutscene.LeftToUp(1,1,1,1,1,1);
+   //cutscene.LeftToUp(1,1,1,1,1,1);
    // runs 4 different cutscene tests
-   //cutscene.CenterToTop();
-   //cutscene.TopToCenter();
-   //cutscene.CenterToBottom();
-   //cutscene.CenterToLeft();
-   //cutscene.CenterToRight();
+   cutscene.CenterToTop();
+   cutscene.TopToCenter();
+   cutscene.CenterToBottom();
+   cutscene.BottomToCenter();
+   cutscene.CenterToLeft();
+   cutscene.LeftToCenter();
+   cutscene.CenterToRight();
+   cutscene.RightToCenter();
 
    return 0;
 }
