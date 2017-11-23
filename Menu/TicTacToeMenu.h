@@ -29,7 +29,15 @@ class TicTacToeMenu : public virtual MinigameMenu
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);
-
+   /// This function returns the coordinates the player entered.
+   Coord void GetCoordinates();
+  private:
+   /// \struct Coord
+   /// The coordinates of the location the player wishes to place their piece.
+   struct Coord
+   {
+      int x,y;
+   };
 };
 
 #endif
