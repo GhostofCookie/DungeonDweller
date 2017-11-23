@@ -33,14 +33,17 @@ class Cutscene
    /// A screen to draw the cutscene on
    Screen screen;
 
+   /// x coordinate to keep track of the center ALWAYS
+   int centerX = 0;
+   /// y coordinate to keep track of the center ALWAYS
+   int centerY = 0;
    /// variable to keep track of a position for animating
-   int startX = 0;
+   int savedX = 0;
    /// variable to keep track of a position for animating
-   int startY = 0;
-
-   /// variable to keep track of a character found
+   int savedY = 0;
+   /// temporary variable to keep track of a character found
    int foundX = 0;
-   /// variable to keep track of character found
+   /// temporary variable to keep track of character found
    int foundY = 0;
 
    /// container to store the 4 directions of the given room
@@ -68,24 +71,25 @@ class Cutscene
    void MoveLeft(const int originX, const int originY, const int y);
    void MoveRight(const int originX, const int originY, const int y);
 
-   void TopToCenter();
-   void BottomToCenter();
-   void LeftToCenter();
-   void RightToCenter();
+   void EnterTopToCenter();
+   void EnterBottomToCenter();
+   void EnterLeftToCenter();
+   void EnterRightToCenter();
 
-   void CenterToTop();
-   void CenterToBottom();
-   void CenterToLeft();
-   void CenterToRight();
+   void ExitCenterToTop();
+   void ExitCenterToBottom();
+   void ExitCenterToLeft();
+   void ExitCenterToRight();
 
-   void DownToLeft(const int yD, const int xD, const int nD, const int yL, const int xL, const int nL);
-   void DownToRight(const int yD, const int xD, const int nD, const int yR, const int xR, const int nR);
-   void UpToLeft(const int yU, const int xU, const int nU, const int yL, const int xL, const int nL);
-   void UpToRight(const int yU, const int xU, const int nU, const int yR, const int xR, const int nR);
-   void RightToUp(const int yR, const int xR, const int nR, const int yU, const int xU, const int nU);
-   void RightToDown(const int yR, const int xR, const int nR, const int yD, const int xD, const int nD);
-   void LeftToUp(const int yL, const int xL, const int nL, const int yU, const int xU, const int nU);
-   void LeftToDown(const int yL, const int xL, const int nL, const int yD, const int xD, const int nD);
+   void ExitLeft();
+   void ExitRight();
+   void ExitUp();
+   void ExitDown();
+
+   void EnterLeft();
+   void EnterRight();
+   void EnterUp();
+   void EnterDown();
 
    void SaveCurrentPosition();
 };

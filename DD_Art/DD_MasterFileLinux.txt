@@ -15,6 +15,7 @@
 ../DD_Art/Rooms/DD_Room_IndentVar2.txt 0
 ../DD_Art/Rooms/DD_Room_LTurnHorizFlipVar2.txt 0
 ../DD_Art/Rooms/DD_Room_HPattrnVar2.txt 0
+../DD_Art/Rooms/DD_Room_Thin2.txt 0
 
 ../DD_Art/Decor/DD_ExitUp.txt 1
 ../DD_Art/Decor/DD_ExitRight.txt 2
@@ -34,7 +35,7 @@
 
 ../DD_Art/Decor/DD_CarpetHoriz.txt s
 ../DD_Art/Decor/DD_CarpetHoriz2.txt s
-../DD_Art/Decor/DD_CarpetHoriz3.txt s
+../DD_Art/Decor/DD_CarpetHoriz3.txt ?
 
 ../DD_Art/Decor/DD_Pillar.txt p
 ../DD_Art/Decor/DD_Pillar2.txt p
