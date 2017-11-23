@@ -1,6 +1,7 @@
 #include "Cutscene.h"
-#define HORIZSPEED 30000
-#define VERTSPEED 60000
+#include <stdlib.h>
+#define HORIZSPEED 50000 //This is half the vert speed in microseconds.
+#define VERTSPEED HORIZSPEED*2
 
 
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
@@ -44,7 +45,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       img.ShiftUp(1);
       n++;
 
-      ClearScreen();
+      system("clear");
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -68,7 +69,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       img.ShiftDown(screen, 1);
       n++;
 
-      ClearScreen();
+      system("clear");
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -92,7 +93,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       img.ShiftLeft(1);
       n++;
 
-      ClearScreen();
+      system("clear");
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -116,7 +117,7 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       img.ShiftRight(screen, 1);
       n++;
 
-      ClearScreen();
+      system("clear");
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -176,14 +177,14 @@ void Cutscene::CenterToBottom()
 
 void Cutscene::CenterToLeft()
 {
-   MoveLeft(img.screenY, img.screenX, screen.GetCols() - img.screenX);
+   MoveLeft(img.screenY, img.screenX, room.GetCols()/2 + img.GetCols()/2);
 }
 
 
 
 void Cutscene::CenterToRight()
 {
-   MoveRight(img.screenY, img.screenX, screen.GetCols() - img.screenX - img.GetCols()+1);
+   MoveRight(img.screenY, img.screenX, room.GetCols()/2 + img.GetCols()/2);
 }
 
 

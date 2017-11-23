@@ -31,6 +31,7 @@ void ExploreState::Get()
    while(true)
    {
       system("clear");
+      system("clear");
       // clear the screen
       screen->Erase();
       // align the current room to the screen and print
