@@ -17,7 +17,7 @@ Hanoi::Hanoi()
    BoardSetup();
    numberOfStacks=3;
    maxStackHeight=4;
-   tower.resize(3);
+   tower.resize(numberOfStacks);
    ///Create default images for each of the disc to be drawn on the screen.
    DefaultImg disc1(1,3,'=');
    DefaultImg disc2(1,7,'=');
@@ -63,6 +63,7 @@ Hanoi::~Hanoi()
 {
 }
 
+///Sets up the screen with the appropriate game board.    
 void Hanoi:: BoardSetup()
 {
    int leftDivider=18, peg=34, rightDivider=16, bottom=11;
@@ -105,6 +106,9 @@ void Hanoi::SetOptionsInMenu()
    HanoiGameMenu.AddOption('6', menuOption4);
 }
 
+///Checks the state of Tower to see if the player has won the game,
+///sets GameEnd to true when they have completed the puzzle by getting all
+///discs to the fourth peg.  
 void Hanoi::WinCheck()
 {
    ///If the user has managed to successfully move all discs to the last peg
@@ -113,7 +117,9 @@ void Hanoi::WinCheck()
       PuzzleEnd=true;
 }
 
-///Draws the disc movement to the screen
+///Moves the disc on the screen from the sourcestack to the targetstack
+///\param[in] sourceStack, the tower to copy the disc from
+///\param[in] targetStack, the tower to copy the disc to 
 void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 {
    cout << "DRAW DISC ON TARGET STACK" << endl;
@@ -137,7 +143,6 @@ void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 	 tower.at(sourceStack).top().ShiftDown(HanoiScreen, bottom-targetHeight);
 	 tower.at(sourceStack).top().Draw(HanoiScreen);
 	 break;
-
       case 2:
 	 targetHeight=tower.at(targetStack).size();
 	 
@@ -150,6 +155,10 @@ void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
    }
 }
 
+///Checks to see if the target stack has a larger disc than that of the
+///source stack, returns false if target is smaller than source.
+///\param[in]sourceStack, used for comparison against target stack
+///\param[in]targetStack, used for comparison against source stack 
 bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize) const
 {
    ///If the disc on the current stack is smaller than the disc on the new stack
@@ -196,58 +205,56 @@ void Hanoi::MovePiece(int sourceTower, int targetTower)
       tower.at(sourceTower).pop();
       cout << HanoiScreen;
    }
-
 }
 
+///Function which clears the discs previous location from the screen object
+///You cannot use the erase function in the screen class because you would
+///have to re-draw everything afterwards and the nature of a stack does not
+///give you access to elements not on top.
+///\param[in] targetTower, the tower which you wish to have cleared on top.  
 void Hanoi::ClearTopDisc(int targetTower)
 {
    cout << "CLEAR TOP DISC" << endl;
    cout << "TargetTower:" << targetTower << endl;
+   int discWidth, centerOfScreen=50, midPointInDisc, bottomStartPoint=32
+      ,pegDistance=34, startingPoint;
+   discWidth=tower.at(targetTower).top().GetCols();
+   
    switch(targetTower)
    {
       case 0:
-	 cout << "tower 1 " << tower.at(targetTower).top().GetCols() << endl;
-	 tower.at(targetTower).top().Erase();
-	 cout << "2" << endl;
-	 tower.at(targetTower).top().Draw(HanoiScreen);
-	 tower.at(targetTower).top().Fill('4');
-	 cout << "END OF CASE 1" << endl;
-//cout << HanoiScreen;
+	 startingPoint=centerOfScreen-pegDistance;
 	 break;
       case 1:
-	 //clear tower 2 top
-	 cout << "tower2 " << tower.at(targetTower).top().GetCols() << endl;
-	 tower.at(targetTower).top().Erase();
-	 tower.at(targetTower).top().Draw(HanoiScreen);	
-	 ///18 is the center of the second tower, take away half the disc
-	 ///size to start in the right spot, add the interator as we move
-	 ///through the line.
-	 //HanoiScreen.Set(yTarget,(i+51-(discSize%2)),' ');
+	 startingPoint=centerOfScreen;
 	 break;
       case 2:
-	 //clear tower 3 top
-	 cout << "tower3 " << tower.at(targetTower).top().GetCols() << endl;
-	 tower.at(targetTower).top().Erase();
-	 tower.at(targetTower).top().Draw(HanoiScreen);	
-	 // for(int i=0; i<discSize; i++)
-	 // {
-	 //    cout << "Clear tower 3 top" << endl;
-	 //    ///84 is the center of the third tower, take away half the disc size
-	 //    ///to start in the right spot, add the interator as we move through
-	 //    ///the line.
-	 //    // HanoiScreen.Set(yTarget,(i+84-(discSize%2)), ' ');
-	 // }
-	 break; 
+	 startingPoint=centerOfScreen+pegDistance;
+	 break;
+   }
+   cout << "tower 1 " << tower.at(targetTower).top().GetCols() << endl;
+   midPointInDisc=discWidth/2;
+   bottomStartPoint-=tower.at(targetTower).size();
+   cout << "STARTINGPOINT:" << startingPoint << "     MidPointInDisc:" <<midPointInDisc << endl;
+   ///Start at 1 always so that the smallest discs get cleared since starting at
+   ///0 wouldn't clear anything for the top disc.
+   for(int i=1; i<midPointInDisc+1; i++)
+   {
+      HanoiScreen.Set(bottomStartPoint, startingPoint+i, ' ');
+      HanoiScreen.Set(bottomStartPoint, startingPoint-i, ' ');
+      HanoiScreen.Set(bottomStartPoint, startingPoint, '|');
    }
 }
-   
+
+///Method to run the game, serves as a 'main' for the mini-game, calling
+///functions from private until the player has won. 
 void Hanoi:: RunGame()
 {
    cout << "Start" << endl;
    char input;
    SetOptionsInMenu();
 
-   while(GameEnd==false)
+   while(PuzzleEnd==false)
    {
       cout << HanoiScreen;
       HanoiGameMenu.OutputMenu();
@@ -260,6 +267,8 @@ void Hanoi:: RunGame()
    cout << "A noise creaks behind the wall and the door slides open." << endl;
 }
 
+///Moves the piece the depending on which option the player selects
+/// \param[in] userSelection, the option of moves the player chose  
 void Hanoi::LogicSwitch(char userSelection)
 {
    cout << "Stack 1 Size:" << tower.at(0).size() << "     Stack 2 Size:" <<tower.at(1).size() << "     Stack 3 size: " << tower.at(2).size() << endl;
@@ -324,27 +333,3 @@ void Hanoi::LogicSwitch(char userSelection)
 	 break;
    }
 }
-
-// void Hanoi::PromptUser()
-// {
-//    cout << "The door is locked, there is three pressure plates in front of you"
-// 	<< "with rods pertruding from them. Fixed on the far left is 4 disks,"
-// 	<< "all different sizes. In order to open the door you must move them"
-// 	<< " one at a time to the right side. They must be in order on the "
-// 	<< "third rod." << endl;
-// }
-
-// int Hanoi::UserInput(Menu &menu)
-// {
-//    int input;
-//    cin >> input;
-//    getline(cin, garbage);///<Used to clear the buffer.
-//    if(cin.fail())
-//    {
-//       cin.clear();
-//       cout << "Throw exception, invalid selection" << endl;
-//    }
-//    return input;	 
-// }
-
-
