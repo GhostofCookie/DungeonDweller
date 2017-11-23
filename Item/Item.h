@@ -8,41 +8,14 @@
 #ifndef ITEM_H
 #define ITEM_H
 #include <iostream>
-#include "../Character/Character.h"
-#include "../Character/Player.h"
 using namespace std;
+
+class Character;
+class Player;
 
 /// This class is an abstract base class to represent items in game
 class Item
 {
-<<<<<<< HEAD
-  public:
-
-   /// Virtual destructor
-   virtual ~Item();
-
-   /// Uses factory design pattern to create items
-   /// \param[in] itemType The type of item to be created
-   /// \return Pointer to created item
-   Item* getItem(string itemType);
-
-   /// Pure Virtual funtion that forces all subclasses to define how to use themselves
-   /// \param[in] target The Character the item is being used on
-   virtual void use(Character *target)=0;
-
-   /// Allows access to the items name
-   /// \return Reference to the name of the item
-   string &name();
-
-   /// Gives the name of the item without allowing chages
-   /// \return Name of the item
-   string name() const;
-
-  private:
-   
-   /// Name of the item
-   string n;
-=======
 public:
 
 	/// Virtual destructor
@@ -57,7 +30,7 @@ public:
 	/// Pure Virtual funtion that forces all subclasses to define how to use themselves
 	/// \param[in] target The Character the item is being used on
 	/// \return true if use was successfull
-	virtual bool use(Character *target)=0;
+	virtual bool use(Character *target) = 0;
 
 	/// Allows access to the items name
 	/// \return Reference to the name of the item
@@ -80,6 +53,5 @@ protected:
 
 	///Name of the item
 	string itemName;
->>>>>>> 353212ca8cb715576b9af5978df364572b6e1267
 };
 #endif

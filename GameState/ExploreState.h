@@ -12,6 +12,7 @@
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
+#include <ctime>
 #include <iostream>
 using namespace std;
 
@@ -34,12 +35,9 @@ class ExploreState : public GameState
    void Get();
   private:
    void SwitchRooms();
-   ImageImporter imageImport;
+   ImageImporter *imageImport;
    Room *roomPtr;
    RoomTree *roomTree;
-   Cutscene *anim;
-   string masterFile;
-
 
 };
 
