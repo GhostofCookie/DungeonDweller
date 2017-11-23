@@ -210,7 +210,7 @@ void Hanoi::ClearTopDisc(int targetTower)
 	 tower.at(targetTower).top().Erase();
 	 cout << "2" << endl;
 	 tower.at(targetTower).top().Draw(HanoiScreen);
-	 tower.at(targetTower).top().Fill('4');
+	 tower.at(targetTower).top().Fill('=');
 	 cout << "END OF CASE 1" << endl;
 //cout << HanoiScreen;
 	 break;
