@@ -6,7 +6,6 @@
 ///
 
 #include "MinigameMenu.h"
-#include <map>
 using namespace std;
 
 #ifndef TICTACTOEMENU_H
@@ -16,6 +15,16 @@ using namespace std;
 /// \brief This is the menu class for the Tic Tac Toe minigame.
 class TicTacToeMenu : public virtual MinigameMenu
 {
+  private:
+   /// \struct Coord
+   /// The coordinates of the location the player wishes to place their piece.
+   struct Coord
+   {
+     char x;
+     int y;
+   };
+   Coord coordinates;
+   friend Coord;
   public:
    /// This is the default constructor.
    TicTacToeMenu();
@@ -30,14 +39,8 @@ class TicTacToeMenu : public virtual MinigameMenu
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);
    /// This function returns the coordinates the player entered.
-   Coord void GetCoordinates();
-  private:
-   /// \struct Coord
-   /// The coordinates of the location the player wishes to place their piece.
-   struct Coord
-   {
-      int x,y;
-   };
+   Coord GetCoordinates() const;
+
 };
 
 #endif
