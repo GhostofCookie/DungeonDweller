@@ -49,8 +49,12 @@ class Hanoi: public virtual Puzzle
 
    ///Moves the piece the depending on which option the player selects
    /// \param[in] userSelection, the option of moves the player chose
-   void MovePiece(char userSelection);
+   void LogicSwitch(char userSelection);
 
+   ///Moves the disc from source tower to target tower.
+   void MovePiece(int sourceTower, int targetTower);
+
+   
    ///WhichDiscFromSize returns an index to wich disc in discsVector the size is
    ///referenced with
    /// \param[in]size, the size of disc we wouild like to know the location of
@@ -63,9 +67,12 @@ class Hanoi: public virtual Puzzle
    void ClearTopDisc(int targetTower);
 
    void BoardSetup();
+
+   void DrawDiscOnTargetStack(int targetSize);
    
    /// The vector which holds each towers' defaultImg
-   std::vector<stack<DefaultImg>>tower;
+   std::vector<stack<DefaultImg*>>tower;
+   
    /// Number of stacks in the game
    ///X-coordinate size in the tower vector
 
@@ -84,9 +91,9 @@ class Hanoi: public virtual Puzzle
    HanoiMenu HanoiGameMenu;
    ///A vector to store the size of all the discs in the game, stored in
    ///ascending order of size of discs. 0=3,1=7,2=11,3=15
-   std::vector<DefaultImg>discsVector;
-   
-   /// MenuOption strings are used for outputting options to the user
-   string menuOption1, menuOption2, menuOption3, menuOption4;
+   std::vector<DefaultImg*>discsVector;
+
+   string menuOption1, menuOption2, menuOption3,
+      menuOption4, menuOption5, menuOption6;
 };
 #endif

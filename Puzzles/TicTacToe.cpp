@@ -229,17 +229,16 @@ void TicTacToe::RunGame(){
    int currentPlayer=1;
    
    BoardSetup();
-   //ConnectFourMenu connectFourGameMenu;
-   //connectFourGameMenu.OutputMenu();
+   ConnectFourMenu connectFourGameMenu;
 
    cout << "Drop in column 1" << endl;
    MovePiece(1,1,'X');
    while(PuzzleEnd==false)
    {
       cout << TicTacToeScreen << endl;
-      //connectFourMenu.OutputMenu();
-      //connectFourMenu.HandleInput(cin);
-      
+      connectFourGameMenu.OutputMenu();
+      connectFourGameMenu.HandleInput(cin);
+      //=connectFourGameMenu.GetOption();
       if(WinCheck())
       {
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset
