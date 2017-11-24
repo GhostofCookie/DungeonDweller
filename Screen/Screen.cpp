@@ -145,6 +145,24 @@ void Screen::Erase()
 
 
 
+/// Function to prints as many screens as you want side by side
+void Screen::MultiPrint(const vector<Screen> &screens)
+{
+   int h = 0;
+   while(h < screens[0].height)
+   {
+      for(unsigned int i = 0; i < screens.size(); i++)
+      {
+	 for(int col = 0; col < screens[i].width; col++)
+	    cout << screens[i].Window[h][col];
+      }
+      h++;
+      cout << endl;
+   }
+}
+
+
+
 /// Overloaded ostream operator
 /// \param[in] os the ostream
 /// \param[in] s the screen being drawn

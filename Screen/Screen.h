@@ -49,7 +49,7 @@ class Screen
    /// \param[in] h the height of the screen
    /// \param[in] w the width of the screen
    void Resize(int h, int w);
-	
+
    /// Returns the height of the screen
    int GetRows() const;
    /// Returns the width of the screen
@@ -83,6 +83,8 @@ class Screen
 	
    /// This function erases the contents of the screen and resets
    void Erase();
+
+   void MultiPrint(const vector<Screen> &screens);
 	
    /// Overloaded ostream operator
    friend ostream& operator <<(ostream &os, const Screen *s);

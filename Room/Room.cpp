@@ -134,11 +134,9 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
    {
       //empty room
       case 0 :
-	 cout << "Default room" << endl;
 	 break;
 	 //NPC Shop
       case 1 :
-	 cout << "Shop room" << endl;
 	 event = ImportImg(collection['@'][1]);
 	 event.AlignCenter(*room);
 	 event.Image::ShiftRight(*room, 10);
@@ -146,7 +144,6 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
 	 break;
 	 //NPC Enemy	 
       case 2 :
-	 cout << "Enemy room" << endl;
 	 event = ImportImg(collection['@'][2]);
 	 event.AlignCenter(*room);
 	 event.Image::ShiftRight(*room, 10);
@@ -154,7 +151,6 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
 	 break;
 	 //NPC Puzzle
       case 3 :
-	 cout << "Puzzle room" << endl;
 	 event = ImportImg(collection['@'][3]);
 	 event.AlignCenter(*room);
 	 event.Image::ShiftRight(*room, 10);
