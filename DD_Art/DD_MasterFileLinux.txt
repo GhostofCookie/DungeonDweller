@@ -16,6 +16,9 @@
 ../DD_Art/Rooms/DD_Room_LTurnHorizFlipVar2.txt 0
 ../DD_Art/Rooms/DD_Room_HPattrnVar2.txt 0
 ../DD_Art/Rooms/DD_Room_Thin2.txt 0
+../DD_Art/Rooms/DD_Room_Thin3.txt 0
+../DD_Art/Rooms/DD_Room_SquareVar3.txt 0
+../DD_Art/Rooms/DD_Room_SquareSlantVar3.txt 0
 
 ../DD_Art/Decor/DD_ExitUp.txt 1
 ../DD_Art/Decor/DD_ExitRight.txt 2
