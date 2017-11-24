@@ -42,6 +42,8 @@ void ConnectFour::PlayAI(char AiPiece)
 
    while(moveSuccessful==false)
    {
+      if(columnChoice==0)
+	 columnChoice++;
       if(IsColumnFull(columnChoice))
       {
 	 columnChoice=Puzzle::RandomNumber(xSize);
@@ -100,54 +102,51 @@ bool ConnectFour:: ValidMove(int input)
 
 void ConnectFour::MovePiece(char userPiece, int column)
 {
+   cout << "MOVE PIECE:" << column << endl;
    int leftBound=42, bottomSlotHeight=21;;
-   if(!IsColumnFull(column))
+   char currentSpot=' ';
+   int height=ySize-1;
+
+   while(currentSpot==' ')
    {
-      char currentSpot=' ';
-      int height=ySize-1;
-      while(currentSpot==' ')
+      if(grid.at(column-1).at(ySize-height)!=' ')
       {
-	 ///If there are no pieces here, keep moving down through the column
-	 if(grid.at(column-1).at(height)==' ')
-	 {
-	    height--;
-	 }
-	 ///Else we have found a characters piece, place on top of it and break
-	 if(grid.at(column-1).at(height)=='#' ||grid.at(column-1).at(height)=='@')
-	 {
-	    ///Height needs to be incremented since we want to place one space
-	    ///above the char that we just found in the grid.
-	    height++;
-	    ///Set the char in the vector grid
-	    grid.at(column-1).at(height)=userPiece;
-	    ///Set the char in the screen
-	    ///Height and column are multiplied by 2 since the actual vector has
-	    /// 1/2 as many spots as the grid displayed on the screen does.
-	    height*=2;
-	    ConnectFourScreen.Set((bottomSlotHeight-height),(column*2+leftBound)
-				  ,(userPiece));
-	    ///Break the loop
-	    currentSpot=userPiece;
-	 }
-	 ///If we have reached the bottom of the column and not found a piece, set
-	 ///the piece at the bottom of the column and break.
-	 if(height==0)
-	 {
-	    ///Set the char in the vector grid
-	    grid.at(column-1).at(height)=userPiece;
-	    ///Set the char in the screen
-            ///Height and column are multiplied by 2 since the actual vector has
-	    /// 1/2 as many spots as the grid displayed on the screen does.
-	    ///Add 11 to the topBound to place it in the bottom slot in the grid.
-	    ConnectFourScreen.Set((height*2+bottomSlotHeight),(column*2+leftBound)
-				  ,(userPiece));
-	    ///Break the loop
-	    currentSpot=userPiece;
-	 }
+	 cout << "SET AT HIEGHT:" << ySize-height << endl;
+	 height++;
+	 grid.at(column-1).at(ySize-height)=userPiece;
+	 height--;
+	 ConnectFourScreen.Set((bottomSlotHeight-(height*2)),(column*2+leftBound), userPiece);
+	 currentSpot=userPiece;//Loop break
       }
-   }else
-      cout << "Column is full!" << endl;
+      else
+      {
+	 height--;
+      }
+      ///If we have reached the bottom of the column and not found a piece, set
+      ///the piece at the bottom of the column and break.
+      if(height==0 && (grid.at(column).at(height))==' ')
+      {
+	 cout << "SET AT ZERO" << endl;
+	 ///Set the char in the vector grid
+	 grid.at(column-1).at(ySize-1)=userPiece;
+	 ///Set the char in the screen
+	 ///Height and column are multiplied by 2 since the actual vector has
+	 /// 1/2 as many spots as the grid displayed on the screen does.
+	 ///Add 11 to the topBound to place it in the bottom slot in the grid.
+	 ConnectFourScreen.Set((bottomSlotHeight+(height*2)),(column*2+leftBound),(userPiece));
+	    ///Break the loop
+	 currentSpot=userPiece;
+      }
+   }
+   cout << "GRID" << endl;
+   for(int i=0; i<ySize; i++)
+   {
+      for(int j=0; j<xSize; j++)
+	 cout << grid.at(j).at(i);
+      cout << endl;
+   }      
 }
+
 void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 {
    if(currentPlayer%2==0)
@@ -156,7 +155,7 @@ void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
    }
    else
    {
-      currentPlayerChar='0';
+      currentPlayerChar='#';
    }
 }
 
@@ -168,9 +167,10 @@ void ConnectFour::RunGame()
    
    BoardSetup();
    ConnectFourMenu connectFourGameMenu;
-  
+   
    while(PuzzleEnd==false)
    {
+      cout << "CurrentPlayer:" << currentPlayer <<  endl;
       cout << ConnectFourScreen << endl;
       SetCurrentPlayerChar(currentPlayer);
       if(currentPlayer%2==0)
@@ -182,6 +182,7 @@ void ConnectFour::RunGame()
 	 connectFourGameMenu.OutputMenu();
 	 connectFourGameMenu.HandleInput(cin);
 	 userInput=connectFourGameMenu.GetColumn();
+	 cout << "userInput:" << userInput << endl;
 	 MovePiece(currentPlayerChar, userInput);
       }
       if(WinCheck())
@@ -357,36 +358,36 @@ bool ConnectFour::RightDiagonalCheck()
    int atCount=0, poundCount=0;
 
    ///j will the be horizontal movement, i will be the vertical movement. 
-   for(int i=3; i<6; i--)
+   for(int i=0; i<3; i++)
    {
-      for(int j=0; j<3; j++)
+      for(int j=6; j<4; j--)
       {
 	 for(int k=0; k<4; k++)
 	 {
+	    cout << "i:" << i << "     j:" << j << "     k:" << k << endl;
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
-	    if(grid.at(j+k).at(i-k)=='@')
-	    {
+	    if(grid.at(j-k).at(i+k)=='@')
+	    { 
 	       atCount++;
 	       poundCount=0;
 	    }
-
+	    
 	    ///If a '#' token is found, reset the count for at since it is not
 	    ///consecutive anymore.
-	    else if(grid.at(j+k).at(i-k)=='#')
+	    else if(grid.at(j-k).at(i+k)=='#')
 	    {
 	       poundCount++;
 	       atCount=0;
 	    }
-
 	    ///If an empty space is found reset both counters since it is no longer a
 	    ///consecutive line
-	    else if(grid.at(j+k).at(i-k)==' ')
+	    else if(grid.at(j-k).at(i+k)==' ')
 	    {
 	       poundCount=0;
 	       atCount=0;
 	    }
-      
+	    
 	    ///If either count is at 4 then we have found four of a kind and a player
 	    ///has won so return true.
 	    if(atCount==4||poundCount==4)
@@ -394,6 +395,7 @@ bool ConnectFour::RightDiagonalCheck()
 	 }
       }
    }
+   cout << "END OF RD" << endl;
 ///If no 4 of a kind has been found, return false.
       return false;
 }
@@ -401,19 +403,23 @@ bool ConnectFour::RightDiagonalCheck()
 ///Function which checks if a column is full
 bool ConnectFour::IsColumnFull(int input)
 {
-   ///Changing the value to -1 since vectors are zero relative
-   int column=input-1;
+   cout << "IS COLUMN FULL:" << input << " "<< endl;
    int charCount=0;
-   for(int i=0; i<ySize; i++)
+      for(int i=0; i<ySize; i++)
    {
-      if(grid.at(column).at(i)=='@'||grid.at(column).at(i)=='#')
+      if(grid.at(input).at(i)=='@'|| grid.at(input).at(i)=='#')
 	 charCount++;
+      // cout << "AT I:" << grid.at(input).at(i);
+      //cout << "      CharCount:" << charCount << endl;
    }
    ///If the column is full, return true, else return false.
    if(charCount==ySize)
       return true;
    else
+   {
+      cout << "RETURN FALSE" << endl;
       return false;
+   }
 }
 
 ///Returns true if every space in the board has been filled with a character
