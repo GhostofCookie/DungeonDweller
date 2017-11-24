@@ -115,7 +115,7 @@ void Image::Draw(Image &img, int y, int x)
    {
       for(auto p = Img[i].begin(); p != Img[i].end(); ++p)
       {
-	 if((imgX >= 0 || imgX < img.GetCols()) && (imgY >= 0 || imgY < img.GetRows()))
+	 if((imgX >= 0 && imgX < img.GetCols()) && (imgY >= 0 && imgY < img.GetRows()))
 	    img.Set(imgY, imgX, *p);
 	 imgX++;
       }
@@ -166,7 +166,8 @@ void Image::Erase()
 // If the location is invalid, simply ignore the request
 void Image::Set(int y, int x, char ch)
 {
-   Img[y][x] = ch;
+   if((y >= 0 || x >= 0) && (y < GetRows() && x < GetCols()))
+      Img[y][x] = ch;
 }
 
 
