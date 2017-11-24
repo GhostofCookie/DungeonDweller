@@ -1,0 +1,11 @@
+#include "PuzzleState.h"
+
+PuzzleState::PuzzleState()
+{
+
+}
+
+void PuzzleState::Set()
+{
+
+}
