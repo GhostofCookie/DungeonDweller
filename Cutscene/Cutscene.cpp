@@ -6,8 +6,14 @@
 
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 {
-   screen = Screen(31, 61);
+   // initialize a screen for the image to lay on
+   screen = Screen(33, 61);
+   leftSide = rightSide = Screen(33, 20, ' ');
+
    screen.outlineOn = false;
+   
+   leftSide.Fill(' ');
+   rightSide.Fill(' ');
    
    img = ImportImg(image);
    room = ImportImg(r);
@@ -24,11 +30,6 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
    FindCharacter(point[1].y, point[1].x, '2', tempRoom);
    FindCharacter(point[2].y, point[2].x, '3', tempRoom);
    FindCharacter(point[3].y, point[3].x, '4', tempRoom);
-
-   for(int i = 0; i < 4; i++)
-      cout << i << ":  point:x " << point[i].x << ", y " << point[i].y << endl;
-   cout << endl;
-   cout << "screenY: " << img.screenY << ", screenX: " << img.screenX << endl;
 }
 
 
@@ -42,6 +43,7 @@ Cutscene::~Cutscene()
 
 void Cutscene::MoveUp(const int originY, const int originX, const int d)
 {
+   vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -56,7 +58,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       room.Draw(screen);
       img.Draw(screen);
       
-      cout << screen << endl;
+      screen.MultiPrint(scr);
       usleep(VERTSPEED);
    }
 }
@@ -65,6 +67,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
 
 void Cutscene::MoveDown(const int originY, const int originX, const int d)
 {
+   vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -79,7 +82,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       room.Draw(screen);
       img.Draw(screen);
       
-      cout << screen << endl;
+      screen.MultiPrint(scr);
       usleep(VERTSPEED);
    }
 }
@@ -88,6 +91,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
 
 void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 {
+   vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -102,7 +106,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       room.Draw(screen);
       img.Draw(screen);
       
-      cout << screen << endl;
+      screen.MultiPrint(scr);
       usleep(HORIZSPEED);
    }
 }
@@ -111,6 +115,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 
 void Cutscene::MoveRight(const int originY, const int originX, const int d)
 {
+   vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -125,7 +130,7 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       room.Draw(screen);
       img.Draw(screen);
       
-      cout << screen << endl;
+      screen.MultiPrint(scr);
       usleep(HORIZSPEED);
     }
 }
@@ -203,7 +208,7 @@ void Cutscene::ExitCenterToRight()
 /// Function To animate this direction
 void Cutscene::ExitLeft()
 {
-   foundY = point[3].y - img.GetRows()/2;
+   foundY = point[3].y - img.GetRows()/2 + 1;
    foundX = point[3].x - img.GetCols();
 
    if(img.screenY == foundY) {
@@ -229,7 +234,7 @@ void Cutscene::ExitLeft()
 /// Function To animate this direction
 void Cutscene::ExitRight()
 {
-   foundY = point[1].y - img.GetRows()/2;
+   foundY = point[1].y - img.GetRows()/2 + 1;
    foundX = point[1].x + img.GetCols();
 
    if(img.screenY == foundY) {
@@ -307,7 +312,7 @@ void Cutscene::ExitDown()
 /// Function To animate this direction
 void Cutscene::EnterLeft()
 {
-   img.screenY = point[3].y - img.GetRows()/2;
+   img.screenY = point[3].y - img.GetRows()/2 + 1;
    img.screenX = point[3].x - img.GetCols();
 
    if(img.screenY == centerY) {
@@ -333,7 +338,7 @@ void Cutscene::EnterLeft()
 /// Function To animate this direction
 void Cutscene::EnterRight()
 {
-   img.screenY = point[1].y - img.GetRows()/2;
+   img.screenY = point[1].y - img.GetRows()/2 + 1;
    img.screenX = point[1].x - img.GetCols();
 
    if(img.screenY == centerY) {
