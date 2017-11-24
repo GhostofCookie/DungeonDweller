@@ -6,13 +6,15 @@
 
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 {
-   screen = Screen(33, 63);
+   screen = Screen(31, 61);
+   screen.outlineOn = false;
    
    img = ImportImg(image);
    room = ImportImg(r);
 
    /// set the center point to gain access later on
-   img.AlignCenter(screen);
+   room.AlignCenter(screen);
+   img.AlignCenter(room);
    centerY = img.screenY;
    centerX = img.screenX;
 
@@ -24,7 +26,9 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
    FindCharacter(point[3].y, point[3].x, '4', tempRoom);
 
    for(int i = 0; i < 4; i++)
-      cout << "point:x " << point[i].x << ", y " << point[i].y << endl;
+      cout << i << ":  point:x " << point[i].x << ", y " << point[i].y << endl;
+   cout << endl;
+   cout << "screenY: " << img.screenY << ", screenX: " << img.screenX << endl;
 }
 
 
@@ -38,7 +42,6 @@ Cutscene::~Cutscene()
 
 void Cutscene::MoveUp(const int originY, const int originX, const int d)
 {
-   room.AlignCenter(screen);
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -62,7 +65,6 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
 
 void Cutscene::MoveDown(const int originY, const int originX, const int d)
 {
-   room.AlignCenter(screen);
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -86,7 +88,6 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
 
 void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 {
-   room.AlignCenter(screen);
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -110,7 +111,6 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 
 void Cutscene::MoveRight(const int originY, const int originX, const int d)
 {
-   room.AlignCenter(screen);
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -203,23 +203,25 @@ void Cutscene::ExitCenterToRight()
 /// Function To animate this direction
 void Cutscene::ExitLeft()
 {
-   foundY = point[3].y;
-   foundX = point[3].x;
+   foundY = point[3].y - img.GetRows()/2;
+   foundX = point[3].x - img.GetCols();
 
-   //if in the center
-   if(centerY == foundY) {
-      MoveLeft(img.screenY, img.screenX, centerX - foundX);
-      // if top
-   } else if(centerY > foundY) {
-      MoveUp(img.screenY, img.screenX, img.screenY - foundY);
-      MoveLeft(img.screenY, img.screenX, centerX - foundX);
+   if(img.screenY == foundY) {
+      while(img.screenX > foundX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenY > foundY) {
+      while(img.screenY > foundY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      while(img.screenX > foundX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      
    } else {
-      //if bottom
-      MoveDown(img.screenY, img.screenX, foundY - img.screenY);
-      MoveLeft(img.screenY, img.screenX, centerX - foundX);
+      while(img.screenY < foundY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      while(img.screenX > foundX)
+	 MoveLeft(img.screenY, img.screenX, 1);
    }
-
-   img.AlignCenter(screen);
 }
 
 
@@ -227,23 +229,25 @@ void Cutscene::ExitLeft()
 /// Function To animate this direction
 void Cutscene::ExitRight()
 {
-   foundY = point[1].y;
-   foundX = point[1].x;
+   foundY = point[1].y - img.GetRows()/2;
+   foundX = point[1].x + img.GetCols();
 
-   // if in the center
-   if(centerY == foundY) {
-      MoveRight(img.screenY, img.screenX, foundX/2);
-      // if 
-   } else if(centerY > foundY) {
-      MoveUp(img.screenY, img.screenX, img.screenY - foundY);
-      MoveRight(img.screenY, img.screenX, foundX/2);
+   if(img.screenY == foundY) {
+      while(img.screenX < foundX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenY > foundY) {
+      while(img.screenY > foundY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      while(img.screenX < foundX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      
    } else {
-      // if bottom
-      MoveDown(img.screenY, img.screenX, foundY - img.screenY);
-      MoveRight(img.screenY, img.screenX, foundX/2);
+      while(img.screenY < foundY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      while(img.screenX < foundX)
+	 MoveRight(img.screenY, img.screenX, 1);
    }
-
-   img.AlignCenter(screen);
 }
 
 
@@ -251,23 +255,25 @@ void Cutscene::ExitRight()
 /// Function To animate this direction
 void Cutscene::ExitUp()
 {
-   foundY = point[0].y;
-   foundX = point[0].x - img.GetCols()/2 + 1;
+   foundY = point[0].y - img.GetRows();
+   foundX = point[0].x - img.GetCols()/2;
 
-   // if in the center
-   if(centerX == foundX) {
-      MoveUp(img.screenY, img.screenX, centerY - foundY);
-      // if leftside
-   } else if(centerX > foundX) {
-      MoveLeft(img.screenY, img.screenX, img.screenX - foundX);
-      MoveUp(img.screenY, img.screenX, img.screenY - foundY);
+   if(img.screenX == foundX) {
+      while(img.screenY != foundY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenX > foundX) {
+      while(img.screenX > foundX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      while(img.screenY > foundY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      
    } else {
-      // if rightside
-      MoveRight(img.screenY, img.screenX, foundX - img.screenX);   
-      MoveUp(img.screenY, img.screenX, img.screenY - foundY);
-   }
-
-   img.AlignCenter(screen);
+      while(img.screenX < foundX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      while(img.screenY > foundY)
+	 MoveUp(img.screenY, img.screenX, 1);
+   } 
 }
 
 
@@ -275,23 +281,25 @@ void Cutscene::ExitUp()
 /// Function To animate this direction
 void Cutscene::ExitDown()
 {
-   foundY = point[2].y;
-   foundX = point[2].x - img.GetCols()/2 + 1;
+   foundY = point[2].y + img.GetRows();
+   foundX = point[2].x - img.GetCols()/2;
 
-   // if in the center
-   if(centerX == foundX) {
-      MoveDown(img.screenY, img.screenX, foundY - centerY);
-      // if top
-   } else if(centerX > foundX) {
-      MoveLeft(img.screenY, img.screenX, img.screenX - foundX);
-      MoveDown(img.screenY, img.screenX, foundY - img.screenY);
+   if(img.screenX == foundX) {
+      while(img.screenY < foundY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenX > foundX) {
+      while(img.screenX > foundX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      while(img.screenY < foundY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      
    } else {
-      // if bottom
-      MoveRight(img.screenY, img.screenX, foundX - img.screenX);   
-      MoveDown(img.screenY, img.screenX, foundY - img.screenY);
+      while(img.screenX < foundX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      while(img.screenY < foundY)
+	 MoveDown(img.screenY, img.screenX, 1);
    }
-
-   img.AlignCenter(screen);
 }
 
 
@@ -299,20 +307,24 @@ void Cutscene::ExitDown()
 /// Function To animate this direction
 void Cutscene::EnterLeft()
 {
-   img.screenY = point[3].y;
-   img.screenX = point[3].x;
+   img.screenY = point[3].y - img.GetRows()/2;
+   img.screenX = point[3].x - img.GetCols();
 
-   //if in the center
-   if(centerY == img.screenY) {
-      MoveRight(img.screenY, img.screenX, centerX - img.screenX);
-      // if coming in from left top
-   } else if(centerY > img.screenY) {
-      MoveRight(img.screenY, img.screenX, centerX - img.screenX);
-      MoveDown(img.screenY, img.screenX, centerY - img.screenY);
+   if(img.screenY == centerY) {
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenY > centerY) {
+      while(img.screenY > centerY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      
    } else {
-      //if coming in from left bottom
-      MoveRight(img.screenY, img.screenX, centerX - img.screenX);
-      MoveUp(img.screenY, img.screenX, img.screenY - centerY);
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
    }
 }
 
@@ -321,20 +333,24 @@ void Cutscene::EnterLeft()
 /// Function To animate this direction
 void Cutscene::EnterRight()
 {
-   img.screenY = point[1].y;
-   img.screenX = point[1].x;
+   img.screenY = point[1].y - img.GetRows()/2;
+   img.screenX = point[1].x - img.GetCols();
 
-   // if in the center
-   if(centerY == img.screenY) {
-      MoveLeft(img.screenY, img.screenX, img.screenX - centerX);
-      // if coming in from top right
-   } else if(centerY > foundY) {
-      MoveLeft(img.screenY, img.screenX, img.screenX - centerX);
-      MoveDown(img.screenY, img.screenX, centerY - img.screenY);
+   if(img.screenY == centerY) {
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenY > centerY) {
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      while(img.screenY > centerY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      
    } else {
-      // if coming in from bottom right
-      MoveLeft(img.screenY, img.screenX, img.screenX - centerX);
-      MoveUp(img.screenY, img.screenX, img.screenY - centerY);
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
 
@@ -343,20 +359,24 @@ void Cutscene::EnterRight()
 /// Function To animate this direction
 void Cutscene::EnterUp()
 {
-   img.screenY = point[0].y;
-   img.screenX = point[0].x - img.GetCols()/2 + 1;
+   img.screenY = point[0].y - img.GetRows();
+   img.screenX = point[0].x - img.GetCols()/2;
 
-   // if in the center
-   if(centerX == img.screenX) {
-      MoveDown(img.screenY, img.screenX, centerY - img.screenY);
-      // if coming in from right side
-   } else if(centerX > img.screenX) {
-      MoveDown(img.screenY, img.screenX, centerY - img.screenY);
-      MoveRight(img.screenY, img.screenX, centerX - img.screenX);
+   if(img.screenX == centerX) {
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenX > centerX) {
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
+      
    } else {
-      // if coming in from left side
-      MoveDown(img.screenY, img.screenX, centerY - img.screenY);
-      MoveLeft(img.screenY, img.screenX, img.screenY - centerY);
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
+      while(img.screenX < centerX)
+	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
 
@@ -365,20 +385,24 @@ void Cutscene::EnterUp()
 /// Function To animate this direction
 void Cutscene::EnterDown()
 {
-   img.screenY = point[2].y;
-   img.screenX = point[2].x - img.GetCols()/2 + 1;
+   img.screenY = point[2].y + img.GetRows();
+   img.screenX = point[2].x - img.GetCols()/2;
 
-   // if in the center
-   if(centerX == img.screenX) {
-      MoveUp(img.screenY, img.screenX, img.screenY - centerY);
-      // if coming in from bottom right side
-   } else if(centerX < img.screenX) {
-      MoveUp(img.screenY, img.screenX, img.screenY - centerY);
-      MoveLeft(img.screenY, img.screenX, img.screenX - centerX);
+   if(img.screenX == centerX) {
+      while(img.screenY > centerY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      
+   } else if(img.screenX > centerX) {
+      while(img.screenY > centerY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
+      
    } else {
-      // if coming in from bottom left side
-      MoveUp(img.screenY, img.screenX, centerY - img.screenY);
-      MoveRight(img.screenY, img.screenX, centerX - img.screenX);
+      while(img.screenY > centerY)
+	 MoveUp(img.screenY, img.screenX, 1);
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
    }
 }
 

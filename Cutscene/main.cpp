@@ -20,9 +20,12 @@ int main()
 
    // create a quick room to demonstrate movements
    Room *room = new Room(import.collection);
+   Room *room2 = new Room(import.collection);
+   Room *room3 = new Room(import.collection);
+   Room *room4 = new Room(import.collection);
 
    // create a cutscene that uses this image
-   Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
+   // Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
 
    
    // runs 4 different cutscene tests
@@ -37,16 +40,20 @@ int main()
    cutscene.EnterRightToCenter();
    */
 
-   // runs 4 different DYNAMIC cutscene tests (run seperately!!)
-   
-   cutscene.ExitUp();
+    // create a cutscene that uses this image
+   Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
+   // runs 4 different DYNAMIC cutscene tests
+   cutscene.EnterRight();
+   //cutscene.ExitUp();
+   //cutscene = Cutscene(*img, room2->GetImage(), *room2);
    cutscene.EnterDown();
-   cutscene.ExitRight();
-   cutscene.EnterRight();
-   cutscene.ExitDown();
-   cutscene.EnterRight();
-   cutscene.ExitLeft();
-   cutscene.EnterRight();
+   //cutscene.ExitRight();
+   //cutscene = Cutscene(*img, room3->GetImage(), *room3);
+   cutscene.EnterUp();
+   //cutscene.ExitDown();
+   //cutscene = Cutscene(*img, room4->GetImage(), *room4);
+   cutscene.EnterLeft();
+   //cutscene.ExitLeft();
    
   
    return 0;
