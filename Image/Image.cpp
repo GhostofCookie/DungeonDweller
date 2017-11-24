@@ -32,6 +32,8 @@ Image::~Image()
 
 
 
+/// Overloaded assignment operator
+/// \param[in] img the image to copy
 Image& Image::operator=(const Image& img)
 {
    Img = img.Img;

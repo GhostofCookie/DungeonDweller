@@ -37,7 +37,9 @@ class Room
       // character stored
       char ch;
    };
-	
+
+
+   
   private:
    /// A finalized version of the room with data values included
    // Public to allow user to use all the image functions from the room object
@@ -48,18 +50,23 @@ class Room
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
    int Rand(int n);
+   
    /// Function to choose a random type - with weighting
    int RoomChance();
+   
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles collects all 'event' images for the rooms
    void GetRoom(map<char, vector<ImportImg>> &imgFiles);
+   
    /// Locates the key characters used to print other images to the room
    void GetPoints();
+   
    /// Print event images to the room based on type
    /// \param[in] imgFiles the collection of images to use
    void GetEventImages(map<char, vector<ImportImg>> &imgFiles);
 	
-	
+
+   
   public:
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles the image used as the room
@@ -78,20 +85,25 @@ class Room
 
    /// Function that returns the image object
    ImportImg GetImage() const;
+   
    /// Function that returns the room's image file path
    string GetImageFile() const;
+   
    /// Function that returns the room's type
    int GetType() const;
 	
    /// Function to align to the center of the screen
    /// \param[in] screen the screen drawn on
    void AlignCenter(Screen &screen);
+   
    /// Function to align to the left of the screen
    /// \param[in] screen the screen drawn on
    void AlignLeft(Screen &screen);
+   
    /// Function to align to the right of the screen
    /// \param[in] screen the screen drawn on
    void AlignRight(Screen &screen);
+   
    /// Function to align to the top of the screen
    /// \param[in] screen the screen drawn on
    void AlignTop(Screen &screen);
@@ -102,6 +114,7 @@ class Room
    /// Function to draw to the screen
    /// \param[in] screen the screen drawn on
    void Draw(Screen &screen);
+   
    /// Function to draw to the screen
    /// \param[in] screen the screen drawn on
    void Draw(Screen &screen, int y, int x);

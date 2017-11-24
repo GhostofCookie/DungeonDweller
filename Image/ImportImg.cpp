@@ -53,6 +53,8 @@ ImportImg::~ImportImg()
 
 
 
+/// Overloaded assignment operator
+/// \param[in] img the image to be copied from
 ImportImg& ImportImg::operator=(const ImportImg& img)
 {
    Image::operator=(img);

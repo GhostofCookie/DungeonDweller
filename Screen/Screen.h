@@ -38,6 +38,7 @@ class Screen
 	
    /// Controls whether or not a screen will have an outline
    bool outlineOn = true;
+   
    /// the character used to draw the screen border
    char outlineCh;
 	
@@ -45,6 +46,7 @@ class Screen
    /// \param[in] h the height of the screen
    /// \param[in] w the width of the screen
    void Initialize(int h, int w);
+   
    /// Helper function to resize the screen
    /// \param[in] h the height of the screen
    /// \param[in] w the width of the screen
@@ -52,10 +54,13 @@ class Screen
 
    /// Returns the height of the screen
    int GetRows() const;
+   
    /// Returns the width of the screen
    int GetCols() const;
+   
    /// Returns the center of the screen
    int GetCenterPnt() const;
+   
    /// Returns true if the number is even
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
@@ -63,13 +68,17 @@ class Screen
    /// Helper function to swap out the character used to draw the border
    /// \param[in] ch the character used to create the outline
    void NewOutlineCh(char ch);
+   
    /// Helper function to switch the border character
    /// \param[in] ch the character used to draw the border
    void DrawBorder(char ch);
+   
    /// Helper function to draw the border on the screen
    void DrawBorder();
+   
    /// Fill the screen with the default character
    void Fill();
+   
    /// Fill the screen with a given character
    void Fill(char ch);
 	
@@ -84,10 +93,15 @@ class Screen
    /// This function erases the contents of the screen and resets
    void Erase();
 
+   /// Function to print multiple screens beside each other
    void MultiPrint(const vector<Screen> &screens);
-	
+
+
+
+   
    /// Overloaded ostream operator
    friend ostream& operator <<(ostream &os, const Screen *s);
+   
    /// Overloaded ostream operator
    friend ostream& operator <<(ostream &os, const Screen &s);
 };

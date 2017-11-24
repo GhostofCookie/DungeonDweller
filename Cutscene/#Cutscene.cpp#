@@ -1,4 +1,4 @@
-#include "Cutscene.h"
+ C#include "Cutscene.h"
 #include <stdlib.h>
 #define HORIZSPEED 40000 //This is half the vert speed in microseconds.
 #define VERTSPEED HORIZSPEED*2

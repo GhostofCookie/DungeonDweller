@@ -40,6 +40,8 @@ class DefaultImg : public Image
    /// Destructor
    ~DefaultImg();
 
+   /// Overloaded Assignment operator
+   /// \param[in] img the image to copy from
    DefaultImg& operator=(const DefaultImg &img);
 };
 

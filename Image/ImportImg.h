@@ -23,11 +23,13 @@ class ImportImg : public Image
 
    /// Function to create the image
    void Create();
+   
    /// Helper function to append the lines from the file to create an image
    /// \param[in] file the file that is being accessed
    /// \param[in] img the string containing all the lines that make up the image
    void Import(string file, string &img);
-	
+
+   
 	
   public:
    /// constructs an Image object from the given dimensions
@@ -42,8 +44,11 @@ class ImportImg : public Image
    /// Destructor
    ~ImportImg();
 
+   /// Overloaded Assignment operator
+   /// \param[in] img the image to copy from
    ImportImg& operator=(const ImportImg &img);
 
+   /// Function that returns the import image's file path
    string GetImageFile();
 };
 
