@@ -8,6 +8,7 @@
 #include "../Menu/ExploreMenu.h"
 #include "../Cutscene/Cutscene.h"
 #include "../RoomTree/RoomTree.h"
+#include "../Room/Room.h"
 #include "../ImageImporter/ImageImporter.h"
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"

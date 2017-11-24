@@ -10,10 +10,11 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../Cutscene/../Room/../Image/Image.h \
  ../Cutscene/../Room/../Image/DefaultImg.h \
  ../Cutscene/../Room/../Image/ImportImg.h ../RoomTree/RoomTree.h \
- ../RoomTree/../Room/Room.h ../ImageImporter/ImageImporter.h \
- ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
- ../Image/Image.h ../Image/DefaultImg.h ../Image/ImportImg.h \
- PuzzleState.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
+ ../RoomTree/../Room/Room.h ../Room/Room.h \
+ ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
+ ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h PuzzleState.h \
+ ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
  ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
@@ -57,9 +58,10 @@ ExploreState.o: ExploreState.cpp ExploreState.h GameState.h \
  ../Cutscene/../Room/../Image/Image.h \
  ../Cutscene/../Room/../Image/DefaultImg.h \
  ../Cutscene/../Room/../Image/ImportImg.h ../RoomTree/RoomTree.h \
- ../RoomTree/../Room/Room.h ../ImageImporter/ImageImporter.h \
- ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
- ../Image/Image.h ../Image/DefaultImg.h ../Image/ImportImg.h
+ ../RoomTree/../Room/Room.h ../Room/Room.h \
+ ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
+ ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h
 RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
