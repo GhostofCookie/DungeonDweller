@@ -148,13 +148,23 @@ void ConnectFour::MovePiece(char userPiece, int column)
    }else
       cout << "Column is full!" << endl;
 }
+void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
+{
+   if(currentPlayer%2==0)
+   {
+      currentPlayerChar='@';
+   }
+   else
+   {
+      currentPlayerChar='0';
+   }
+}
 
 void ConnectFour::RunGame()
 {
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer=1, userInput;
-   int currentPlayerChar;
    
    BoardSetup();
    ConnectFourMenu connectFourGameMenu;
@@ -162,9 +172,18 @@ void ConnectFour::RunGame()
    while(PuzzleEnd==false)
    {
       cout << ConnectFourScreen << endl;
-      connectFourGameMenu.OutputMenu();
-      connectFourGameMenu.HandleInput(cin);
-      userInput=connectFourGameMenu.GetColumn();
+      SetCurrentPlayerChar(currentPlayer);
+      if(currentPlayer%2==0)
+      {
+	 PlayAI(currentPlayerChar);
+      }
+      else
+      {	 
+	 connectFourGameMenu.OutputMenu();
+	 connectFourGameMenu.HandleInput(cin);
+	 userInput=connectFourGameMenu.GetColumn();
+	 MovePiece(currentPlayerChar, userInput);
+      }
       if(WinCheck())
       {
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset
@@ -174,8 +193,8 @@ void ConnectFour::RunGame()
 	    cout << "The connect four champion has defeated you! Lose 1 health"
 		 << " point." << endl;
 	    //-1 Health
-	    ResetGame();
-	    cout << "Get ready to duel her again!" << endl;
+	       ResetGame();
+	       cout << "Get ready to duel her again!" << endl;
 	 }
 	 else
 	 {
@@ -184,8 +203,6 @@ void ConnectFour::RunGame()
 	    PuzzleEnd=true;
 	 }
       }
-      //Placed for testing
-      PuzzleEnd=true;
       ///increment the player
       currentPlayer++;
    }
