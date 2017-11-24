@@ -91,10 +91,17 @@ void ConnectFour::BoardSetup()
       }
    }
 }
-
+bool ConnectFour:: IsInputOutOfScope(int input)
+{
+   if(input<=7 && input>0)
+      return false;
+   else
+      return true;
+}
+	 
 bool ConnectFour:: ValidMove(int input)
 {
-   if(IsColumnFull(input))
+   if(IsColumnFull(input) || IsInputOutOfScope(input))
       return false;
    else
       return true;
@@ -161,6 +168,27 @@ void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
    }
 }
 
+///If currentPlayer is even, the AI has won, -1 player health, reset
+///the game for another round until the player has won.
+void ConnectFour::EndGamePrompt(int &currentPlayer)
+{
+   cout << ConnectFourScreen;
+   if(currentPlayer%2==0)
+   {
+      cout << "The connect four champion has defeated you! Lose 1 health"
+	   << " point." << endl;
+      //-1 Health
+      ResetGame(currentPlayer);
+      cout << "Get ready to duel her again!" << endl;
+   }
+   else
+   {
+      cout << "Congratulations adventurer! You have defeated the champion"
+	   << "! You are free to proceed into the next area!" << endl;
+      PuzzleEnd=true;
+   }
+}
+
 void ConnectFour::RunGame()
 {
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
@@ -184,32 +212,22 @@ void ConnectFour::RunGame()
 	 connectFourGameMenu.HandleInput(cin);
 	 userInput=connectFourGameMenu.GetColumn();
 	 cout << "userInput:" << userInput << endl;
-	 MovePiece(currentPlayerChar, userInput);
-      }
-      if(WinCheck())
-      {
-	 cout << ConnectFourScreen;
-	 ///If currentPlayer is even, the AI has won, -1 player health, reset
-	 ///the game for another round until the player has won.
-	 if(currentPlayer%2==0)
+	 
+	 if(ValidMove(userInput))
 	 {
-	    cout << "The connect four champion has defeated you! Lose 1 health"
-		 << " point." << endl;
-	    //-1 Health
-	       ResetGame();
-	       cout << "Get ready to duel her again!" << endl;
+	    MovePiece(currentPlayerChar, userInput);
+	  
 	 }
 	 else
-	 {
-	    cout << "Congratulations adventurer! You have defeated the champion"
-		 << "! You are free to proceed into the next area!" << endl;
-	    PuzzleEnd=true;
-	 }
+	    cout << "Invalid Move, please try again" << endl;
       }
-      ///increment the player
-      currentPlayer++;
+       if(WinCheck())
+	  EndGamePrompt(currentPlayer);
+       else
+	  currentPlayer++;
    }
 }
+
 
 bool ConnectFour::WinCheck()
 {
@@ -282,9 +300,14 @@ bool ConnectFour::HorizontalCheck()
 	 }
 	 ///If a '#' token is found, reset the count for at since it is not
 	 ///consecutive anymore.
-	 if(grid.at(j).at(i)=='#')
+	 else if(grid.at(j).at(i)=='#')
 	 {
 	    poundCount++;
+	    atCount=0;
+	 }
+	 else if(grid.at(j).at(i)==' ')
+	 {
+	    poundCount=0;
 	    atCount=0;
 	 }
 	 ///If either count is at 4 then we have found four of a kind and a player
@@ -409,16 +432,10 @@ bool ConnectFour::IsColumnFull(int input)
    int charCount=0;
       for(int i=0; i<ySize; i++)
    {
-      if(grid.at(input).at(i)=='@'|| grid.at(input).at(i)=='#')
-	 charCount++;
+      if(grid.at(input-1).at(i)==' ')
+	 return false;
    }
-   ///If the column is full, return true, else return false.
-   if(charCount==ySize)
       return true;
-   else
-   {
-      return false;
-   }
 }
 
 ///Returns true if every space in the board has been filled with a character
@@ -435,7 +452,7 @@ bool ConnectFour::IsBoardFull(){
    return false;   
 }
 
-void ConnectFour::ResetGame()
+void ConnectFour::ResetGame(int &currentPlayer)
 {
    for(int i=0; i<xSize; i++)
    {
@@ -446,6 +463,9 @@ void ConnectFour::ResetGame()
       {
 	 grid.at(i).at(j)=' ';
       }
+      ConnectFourScreen.Erase();
+      BoardSetup();
+      currentPlayer=1;
    }
    
 }

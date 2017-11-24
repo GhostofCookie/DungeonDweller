@@ -73,6 +73,10 @@ class TicTacToe: public virtual Puzzle
    ///position, returns true if it finds 3 of a kind, false otherwise.  
    bool LeftDiagonalCheck();
 
+   bool IsInputValid(char inputX, int inputY);
+
+   bool IsIntInputValid(int inputY);
+   
    ///Checks who's turn it is and sets CurrentPlayerChar to their
    ///correct char.
    void SetCurrentPlayersChar(int currentPlayer);

@@ -11,14 +11,14 @@ using namespace std;
 int main(){
    srand(time(NULL));
    //Hanoi HanoiTest;
-   //ConnectFour ConnectFourTest;
-   MemoryMatch mmTest;
+   ConnectFour ConnectFourTest;
+   //MemoryMatch mmTest;
    //TicTacToe ttt;
    // CodeCracker cc;
    
 //HanoiTest.RunGame();
-//ConnectFourTest.RunGame();
-   mmTest.RunGame();
+ConnectFourTest.RunGame();
+   //mmTest.RunGame();
    //ttt.RunGame();
    //cc.RunGame();
 
