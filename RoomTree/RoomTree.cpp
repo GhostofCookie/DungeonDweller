@@ -19,7 +19,7 @@ RoomTree::Node::Node()
    right = nullptr;
    down = nullptr;
    up = nullptr;
-   RootDir = NULL;
+   RootDir = '\0';
 }
 
 //*****************************************************************************
@@ -172,7 +172,8 @@ unsigned int RoomTree::CurrentHeight() const
       return 0;
    Node *findNode = currNode;
    unsigned int i;
-   for(i = 1; findNode->RootDir != NULL; ++i)
+   
+   for(i = 1; findNode->RootDir != '\0'; ++i)
       switch(findNode->RootDir) {
 	 case 'U':
 	    findNode = findNode->up;
