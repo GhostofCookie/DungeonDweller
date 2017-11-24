@@ -36,7 +36,7 @@ class ExploreState : public GameState
   private:
    void SetState(int);
    void SwitchRooms();
-   ImageImporter *imageImport;
+   ImageImporter *import;
    Room *roomPtr;
    RoomTree *roomTree;
 

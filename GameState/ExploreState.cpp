@@ -10,8 +10,8 @@ ExploreState::ExploreState()
    
    menu = new ExploreMenu();
    screen = new Screen();
-   imageImport = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   roomPtr = new Room(imageImport->collection);
+   import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
+   roomPtr = new Room(import->collection);
    roomTree = new RoomTree(roomPtr);
 }
 /// Sets the layout for the game menu and screen.
@@ -28,7 +28,7 @@ void ExploreState::Set()
 void ExploreState::Get()
 {
    //Remove in the future
-   ImportImg player = ImportImg(imageImport->collection['@'][0]);
+   ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
    
    while(true)
@@ -60,62 +60,62 @@ void ExploreState::SwitchRooms()
    switch(n)
    {
       case 'w' :
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->ExitUp();
 	    
 	 if(!roomTree->Move('u'))
 	 {
-	    roomTree->NewRoom('u', new Room(imageImport->collection));
+	    roomTree->NewRoom('u', new Room(import->collection));
 	    roomTree->Move('u');
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->EnterDown();
 	 break;
 	 
       case 'a' :
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->ExitLeft();
 	 
 	 if(!roomTree->Move('l'))
 	 {
-	    roomTree->NewRoom('l',new Room(imageImport->collection));
+	    roomTree->NewRoom('l',new Room(import->collection));
 	    roomTree->Move('l');
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->EnterRight();
 	 break;
 	 
       case 's' :
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->ExitDown();
 	 
 	 if(!roomTree->Move('d'))
 	 {
-	    roomTree->NewRoom('d',new Room(imageImport->collection));
+	    roomTree->NewRoom('d',new Room(import->collection));
 	    roomTree->Move('d');
 	 }
 	 
 	 delete anim;
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->EnterUp();
 	 break;
 	 
       case 'd' :
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->ExitRight();
 	 
 	 if(!roomTree->Move('r'))
 	 {
-	    roomTree->NewRoom('r',new Room(imageImport->collection));
+	    roomTree->NewRoom('r',new Room(import->collection));
 	    roomTree->Move('r');
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
 	 anim->EnterLeft();
 	 break;
 	 
