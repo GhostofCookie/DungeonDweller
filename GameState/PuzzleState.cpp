@@ -11,7 +11,7 @@ void PuzzleState::Set()
   puzzles.push_back(new TicTacToe());
   puzzles.push_back(new ConnectFour());
   puzzles.push_back(new MemoryMatch());
-  puzzles.push_back(new CodeCracker());
+  //  puzzles.push_back(new CodeCracker());
 }
 
 void PuzzleState::Get()

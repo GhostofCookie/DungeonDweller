@@ -17,6 +17,7 @@ ExploreState::ExploreState()
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
+ 
    menu->AddOption('w',"Move Up");
    menu->AddOption('a',"Move Left");
    menu->AddOption('s',"Move Down");
@@ -44,6 +45,7 @@ void ExploreState::Get()
       cout<<screen;
       // Print the menu and handle user input
       menu->OutputMenu();
+ menu->AddOption(roomTree->At()->GetType(),"Current room Type");
       menu->HandleInput(cin);
       SwitchRooms();
    }

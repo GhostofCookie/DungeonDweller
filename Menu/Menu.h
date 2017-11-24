@@ -19,11 +19,11 @@ using namespace std;
 class Menu 
 {
  private:
-  /// \var currOption This is the current option chosen.
-  char currOption;
   /// \var menu_Array This is the multi-dimensional array to display the menu
   char **menu_Array;
  protected:
+ /// \var currOption This is the current option chosen.
+  char currOption;
   /// \var indexMap This is the map used to display the options on the screen
   map<int,string> indexMap;
   /// \var menuHeight This is the height of the menu.

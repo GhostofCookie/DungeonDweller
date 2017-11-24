@@ -14,7 +14,7 @@ using namespace std;
 /// \param[in] height This is the height of the menu.
 /// \param[in] width This is the width of the menu.
 Menu::Menu(int height, int width)
-  : currOption{' '}, menu_Array{ new char*[height]}, menuHeight{ height }, menuWidth{ width }
+  : menu_Array{ new char*[height]}, currOption{' '}, menuHeight{ height }, menuWidth{ width }
 {
    for (int i = 0; i < height; i++)
    {
@@ -44,13 +44,18 @@ void Menu::HandleInput(istream& is)
   is.ignore(255,'\n');
 
   auto it = indexMap.find(option);
-  if(static_cast<char>(it->first) == option)
+  if(it != indexMap.end())
       currOption = option;
-  else currOption='\n';
+  else
+    throw invalid_argument("That option does not exist.");
   if(option == 'q')
     QuitGame(0);
   if(is.fail())
-    throw invalid_argument("Invalid input. Please enter something more sensible.");
+    {
+      throw invalid_argument("Invalid input. Please enter something more sensible.");
+      is.clear();
+      is.ignore(255,'\n');
+    }
 }
 
 /// Adds an option with a character for the user to call, a name to 
