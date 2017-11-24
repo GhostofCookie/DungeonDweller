@@ -17,15 +17,10 @@ ExploreState::ExploreState()
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
-  int i = roomTree->At()->GetType();
-  char ch = static_cast<char>(i);
-  SetState(i);
    menu->AddOption('w',"Move Up");
    menu->AddOption('a',"Move Left");
    menu->AddOption('s',"Move Down");
    menu->AddOption('d',"Move Right");
-   menu->AddOption(currState,"Current State");
-   menu->AddOption(ch, "Current Room Type");
 }
 
 /// Gets the layout for the game menu and screen.
