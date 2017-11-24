@@ -52,9 +52,9 @@ Hanoi::Hanoi()
    tower.at(0).push(disc1);
    bottom--;
  
-   menuOption1="Move disc on peg 1 to peg 2.", menuOption2="Move disc on peg 2 to peg 1";
-   menuOption3="Move disc on peg 3 to peg 2.", menuOption4="Move disc on peg 1 to peg 2.";
-   menuOption5="Move disc on peg 2 to peg 3.",menuOption6="Move disc on peg 3 to peg 1.";
+   menuOption1="Move disc on peg 1 to peg 2", menuOption2="Move disc on peg 2 to peg 1";
+   menuOption3="Move disc on peg 3 to peg 2", menuOption4="Move disc on peg 1 to peg 2";
+   menuOption5="Move disc on peg 2 to peg 3",menuOption6="Move disc on peg 3 to peg 1";
 
    PuzzleEnd=false;
 }
@@ -66,7 +66,7 @@ Hanoi::~Hanoi()
 ///Sets up the screen with the appropriate game board.    
 void Hanoi:: BoardSetup()
 {
-   int leftDivider=18, peg=34, rightDivider=16, bottom=11;
+   int leftDivider=17, peg=34, rightDivider=16, bottom=11;
    DefaultImg Divider1(31,1,'|');
    Divider1.AlignCenter(HanoiScreen);
    Divider1.ShiftLeft(leftDivider);

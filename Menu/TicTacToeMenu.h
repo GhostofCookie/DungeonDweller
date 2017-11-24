@@ -24,7 +24,7 @@ class TicTacToeMenu : public virtual MinigameMenu
      int y;
    };
    Coord coordinates;
-   friend Coord;
+   string query;
   public:
    /// This is the default constructor.
    TicTacToeMenu();

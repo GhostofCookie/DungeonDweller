@@ -14,10 +14,10 @@
 using namespace std;
 
 void testFunction(char);
-
+void testCoord(char,int);
 int main()
 {
-   Menu *menu = nullptr;
+   TicTacToeMenu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
    menu = new TicTacToeMenu();
@@ -33,14 +33,16 @@ int main()
       cout<<screen;
       menu->OutputMenu();
       menu->HandleInput(cin);
-      cout<<menu->GetOption();
-      testFunction(menu->GetOption());
+      testCoord(menu->GetCoordinates().x, menu->GetCoordinates().y);
    }
    delete menu;
 
    return 0;
 }
-
+void testCoord(char x, int y)
+{
+  cout<<"X = "<<x<<"Y = "<<y<<endl;
+}
 void testFunction(char x)
 {
   switch(x)

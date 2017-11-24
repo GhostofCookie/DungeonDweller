@@ -4,6 +4,9 @@ TicTacToeMenu::TicTacToeMenu()
 {
   coordinates.x = ' ';
   coordinates.y = 1;
+  indexMap.clear();
+  indexMap.erase('q');
+  query = "Enter coordinates (e.g. A1)";
 }
 
 TicTacToeMenu::~TicTacToeMenu()
@@ -12,14 +15,17 @@ TicTacToeMenu::~TicTacToeMenu()
 
 void TicTacToeMenu::SetOptions(int row, int col, int space)
 {
-   Menu::SetOptions(row,col,space);
+  for(int i = 0; i < menuWidth-2; i++)
+      Set(menuHeight/2-1,i, ' ');
+  for(unsigned int i = 0; i < query.length(); i++)
+      Set(menuHeight/2-1,menuWidth/2 - query.length()/2-1+i, query[i]);
 }
 
 void TicTacToeMenu::HandleInput(istream & is)
 {
   char x;
   int y;
-  cout << "Enter coordinates (e.g. A1)-> ";
+  cout << "-> ";
   is>>x>>y;
   is.clear();
   is.ignore(255,'\n');
@@ -27,9 +33,14 @@ void TicTacToeMenu::HandleInput(istream & is)
     {
       coordinates.x = x;
       coordinates.y = y;
+      query = "Enter coordinates (e.g. A1)";
     }
-  if(x == 'q')
-    QuitGame(0);
+  else 
+    {
+      query = "Invalid coordinates. Please ensure that your query is between A1 and C3";
+      coordinates.x = ' ';
+      coordinates.y = 0;
+    }
   if(is.fail())
     throw invalid_argument("Invalid input. please enterr coordinates in format A1.");
    
