@@ -18,11 +18,11 @@ void testCoord(char,int);
 int main()
 {
   //   TicTacToeMenu *menu = nullptr;
-//   ConnectFourMenu * menu = nullptr;
-   Menu *menu = nullptr;
+   ConnectFourMenu * menu = new ConnectFourMenu();;
+//   Menu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-   menu = new Menu();
+//   menu = new Menu();
    screen = new Screen();
 
    menu->AddOption('W', "Move Up");
@@ -35,8 +35,9 @@ int main()
       cout<<screen;
       menu->OutputMenu();
       menu->HandleInput(cin);
-      testFunction(menu->GetOption());
-//      menu->GetColumn();
+//      testFunction(menu->GetOption());
+//      testCoord(menu->GetCoordinates().x, menu->GetCoordinates().y);
+      menu->GetColumn();
    }
 //   delete menu;
 
