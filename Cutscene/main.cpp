@@ -44,16 +44,16 @@ int main()
    Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
    // runs 4 different DYNAMIC cutscene tests
    cutscene.EnterRight();
-   //cutscene.ExitUp();
+   cutscene.ExitUp();
    //cutscene = Cutscene(*img, room2->GetImage(), *room2);
    cutscene.EnterDown();
-   //cutscene.ExitRight();
+   cutscene.ExitRight();
    //cutscene = Cutscene(*img, room3->GetImage(), *room3);
    cutscene.EnterUp();
-   //cutscene.ExitDown();
+   cutscene.ExitDown();
    //cutscene = Cutscene(*img, room4->GetImage(), *room4);
    cutscene.EnterLeft();
-   //cutscene.ExitLeft();
+   cutscene.ExitLeft();
    
   
    return 0;

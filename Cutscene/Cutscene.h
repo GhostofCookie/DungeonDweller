@@ -32,6 +32,8 @@ class Cutscene
   private:
    /// A screen to draw the cutscene on
    Screen screen;
+   Screen leftSide;
+   Screen rightSide;
 
    /// x coordinate to keep track of the center ALWAYS
    int centerX = 0;
