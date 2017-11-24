@@ -7,10 +7,14 @@ PuzzleState::PuzzleState()
 
 void PuzzleState::Set()
 {
-  puzzle = new Hanoi();
+  puzzles.push_back(new Hanoi());
+  puzzles.push_back(new TicTacToe());
 }
 
 void PuzzleState::Get()
 {
-  puzzle->RunGame();
+  random_shuffle(puzzles.begin(), puzzles.end());
+  auto it = puzzles.begin();
+  
+  it->RunGame();
 }
