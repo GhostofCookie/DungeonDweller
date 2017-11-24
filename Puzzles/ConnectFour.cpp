@@ -154,11 +154,11 @@ void ConnectFour::RunGame()
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer=1;
+   int currentPlayerChar;
    
    BoardSetup();
-   //ConnectFourMenu connectFourGameMenu;
-   //connectFourGameMenu.OutputMenu();
-
+   ConnectFourMenu connectFourGameMenu;
+  
    MovePiece('@',5);
    MovePiece('#',6);
    MovePiece('@',3);
@@ -172,8 +172,9 @@ void ConnectFour::RunGame()
    while(PuzzleEnd==false)
    {
       cout << ConnectFourScreen << endl;
-      //connectFourMenu.OutputMenu();
-      //connectFourMenu.HandleInput(cin);
+      connectFourGameMenu.OutputMenu();
+      connectFourGameMenu.HandleInput(cin);
+
       if(WinCheck())
       {
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset
@@ -193,7 +194,6 @@ void ConnectFour::RunGame()
 	    PuzzleEnd=true;
 	 }
       }
-
       //Placed for testing
       PuzzleEnd=true;
       ///increment the player

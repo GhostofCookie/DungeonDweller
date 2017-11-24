@@ -256,7 +256,6 @@ void TicTacToe::AiMove(char AiPiece)
    }
 }
 
-
 void TicTacToe::RunGame(){
 ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
@@ -276,64 +275,39 @@ void TicTacToe::RunGame(){
       {
 	 ticTacToeGameMenu.OutputMenu();
 	 ticTacToeGameMenu.HandleInput(cin);
-	 ///X is taken as a,b, or c, Y is taken in as an integer.
+	 
+         ///X is taken as a,b, or c, Y is taken in as an integer.
 	 inputX=ConvertCharCoordinateToIndex(ticTacToeGameMenu.GetCoordinates().x);
 	 inputY=ticTacToeGameMenu.GetCoordinates().y;
 	 
 	 cout << "InputX:" << inputX << "     inputY:" << inputY << "     currentPlayerChar:" << currentPlayerChar << endl;
-	 if(!IsSpotFilled(inputX,inputY-1))
-	 {
-	    MovePiece(inputX, inputY-1, currentPlayerChar);
-	    if(WinCheck())
+		    if(!IsSpotFilled(inputX,inputY-1))
 	    {
-	       ///If currentPlayer is even, the AI has won, -1 player health, reset
-	       ///the game for another round until the player has won.
-	       if(currentPlayer%2==0)
+	       MovePiece(inputX, inputY-1, currentPlayerChar);
+	       if(WinCheck())
 	       {
-		  cout << "The connect four champion has defeated you! Lose 1 health"
-		    << " point." << endl;
-		  //-1 Health
-		  //ResetGame();
-		  cout << "Get ready to duel her again!" << endl;
+		  ///If currentPlayer is even, the AI has won, -1 player health, reset
+		  ///the game for another round until the player has won.
+		  if(currentPlayer%2==0)
+		  {
+		     cout << "The connect four champion has defeated you! Lose 1 health"
+			  << " point." << endl;
+		     //-1 Health
+		     //ResetGame();***********************************************************************************************************************
+		     cout << "Get ready to duel her again!" << endl;
+		  }
+		  else
+		  {
+		     cout << TicTacToeScreen << endl;
+		     cout << "Congratulations adventurer! You have defeated the champion"
+			  << "! You are free to proceed into the next area!" << endl;
+		     PuzzleEnd=true;
+		  }
 	       }
-	       else
-	       {
-		  cout << TicTacToeScreen << endl;
-		  cout << "Congratulations adventurer! You have defeated the champion"
-		       << "! You are free to proceed into the next area!" << endl;
-		  PuzzleEnd=true;
-	       }
+	       currentPlayer++;
 	    }
-	    currentPlayer++;
-	 }
-	 else
-	    cout << "Sorry that spot is already taken!" << endl;
+	    else
+	       cout << "Sorry that spot is already taken!" << endl;
       }
    }
 }
-
-// void TicTacToe::PromptUser(&screen)
-// {
-
-// }
-
-//char TicTacToe::UserInput(Menu &menu)
-//{
-//  return 'c';
-//}
-
-//bool TicTacToe::ValidMove(char input)
-//{
-//   return true;
-//}
-
-
-//bool TicTacToe::ValidCommand(char input)
-//{
-//   return true;
-//}
-
-// void TicTacToe::OutputGame(&screen)
-// {
-
-// }
