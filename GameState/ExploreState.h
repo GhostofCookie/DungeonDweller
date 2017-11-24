@@ -34,6 +34,7 @@ class ExploreState : public GameState
    /// Gets the layout for the game menu and screen.
    void Get();
   private:
+   void SetState(int);
    void SwitchRooms();
    ImageImporter *imageImport;
    Room *roomPtr;
