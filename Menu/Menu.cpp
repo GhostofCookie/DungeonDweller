@@ -14,7 +14,7 @@ using namespace std;
 /// \param[in] height This is the height of the menu.
 /// \param[in] width This is the width of the menu.
 Menu::Menu(int height, int width)
-  : menu_Array{ new char*[height]}, currOption{' '}, menuHeight{ height }, menuWidth{ width }
+   : menu_Array{ new char*[height]}, currOption{' '}, menuHeight{ height }, menuWidth{ width }
 {
    for (int i = 0; i < height; i++)
    {
@@ -37,25 +37,29 @@ Menu::~Menu()
 /// \param[in,out] is The in-stream operator to read the input.
 void Menu::HandleInput(istream& is)
 {
-  char option;
-  cout<<"-> ";
-  is >> option;
-  is.clear();
-  is.ignore(255,'\n');
+   char option;
+   cout<<"-> ";
+   is >> option;
+   is.clear();
+   is.ignore(255,'\n');
 
-  auto it = indexMap.find(option);
-  if(it != indexMap.end())
+   auto it = indexMap.find(option);
+   if(it != indexMap.end())
       currOption = option;
-  else
-    throw invalid_argument("That option does not exist.");
-  if(option == 'q')
-    QuitGame(0);
-  if(is.fail())
-    {
+   else
+   {
+      is.clear();
+      is.ignore(255,'\n');
+      // currOption='\n';
+   }
+   if(option == 'q')
+      QuitGame(0);
+   if(is.fail())
+   {
       throw invalid_argument("Invalid input. Please enter something more sensible.");
       is.clear();
       is.ignore(255,'\n');
-    }
+   }
 }
 
 /// Adds an option with a character for the user to call, a name to 
@@ -64,15 +68,15 @@ void Menu::HandleInput(istream& is)
 /// \param[in] optionName The name to display for the user.
 void Menu::AddOption(char command, string optionName)
 {
-  auto it = indexMap.find(command);
-  if(it->first != command)
-    indexMap[static_cast<int>(command)] = optionName;
-  else return;
+   auto it = indexMap.find(command);
+   if(it->first != command)
+      indexMap[static_cast<int>(command)] = optionName;
+   else return;
 }
 
 char Menu::GetOption() const
 {
-  return currOption;
+   return currOption;
 }
 /// A function to set the added options to the character array.
 /// \param[in] row Determines which row the options will start being set at.
