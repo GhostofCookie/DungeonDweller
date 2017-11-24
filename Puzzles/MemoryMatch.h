@@ -11,7 +11,7 @@
 #include <unistd.h>
 
 ///This class contains the mini-game/puzzle Memory Match
-class MemoryMatch: virtual Puzzle
+class MemoryMatch: virtual public Puzzle
 {
   public:
    ///Default constructor for MemoryMatch, sets height to: and width to:

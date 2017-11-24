@@ -15,7 +15,7 @@
 #include "../Image/DefaultImg.h"
 
 ///This class contains the mini-game/puzzle Connect Four
-class ConnectFour: virtual Puzzle
+class ConnectFour: virtual public Puzzle
 {
   public:
 ///Default constructor for ConnectFour, sets heigh to : and width to:

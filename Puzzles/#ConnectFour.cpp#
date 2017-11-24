@@ -165,6 +165,7 @@ void ConnectFour::RunGame()
       connectFourGameMenu.OutputMenu();
       connectFourGameMenu.HandleInput(cin);
       userInput=connectFourGameMenu.GetColumn();
+      movePiece(
       if(WinCheck())
       {
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset
