@@ -12,6 +12,9 @@
 #include "../Puzzles/TicTacToe.h"
 #include "../Puzzles/MemoryMatch.h"
 #include "../Puzzles/ConnectFour.h"
+#include <vector>
+#include <algorithm>
+using namespace std;
 
 #ifndef PUZZLESTATE_H
 #define PUZZLESTATE_H
@@ -29,7 +32,7 @@ class PuzzleState : public GameState
   /// Outputs the set layout.
   void Get();
  private:
-  Puzzle *puzzle;
+  vector<Puzzle*> puzzles;
 };
 
 #endif
