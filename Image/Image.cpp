@@ -164,8 +164,7 @@ void Image::Erase()
 // If the location is invalid, simply ignore the request
 void Image::Set(int y, int x, char ch)
 {
-   if((y >= 0 && y < height) && (x >= 0 && x < width))
-      Img[y][x] = ch;
+   Img[y][x] = ch;
 }
 
 
@@ -365,7 +364,7 @@ void Image::AlignBottom(Image &img) { screenY = static_cast<int>(img.GetRows() -
 void Image::ShiftUp(int num)
 {
    int i = 0;
-   while(i < num && screenY >= 0)
+   while(i < num)
    {
       screenY--;
       i++;
@@ -380,7 +379,7 @@ void Image::ShiftUp(int num)
 void Image::ShiftDown(Screen &screen, int num)
 {
    int i = 0;
-   while(i < num && screenY < screen.GetRows())
+   while(i < num)
    {
       screenY++;
       i++;
@@ -395,7 +394,7 @@ void Image::ShiftDown(Screen &screen, int num)
 void Image::ShiftDown(Image &img, int num)
 {
    int i = 0;
-   while(i < num && screenY < img.GetRows())
+   while(i < num)
    {
       screenY++;
       i++;
@@ -409,7 +408,7 @@ void Image::ShiftDown(Image &img, int num)
 void Image::ShiftLeft(int num)
 {
    int i = 0;
-   while(i < num && screenX >= 0)
+   while(i < num)
    {
       screenX--;
       i++;
@@ -424,7 +423,7 @@ void Image::ShiftLeft(int num)
 void Image::ShiftRight(Screen &screen, int num)
 {
    int i = 0;
-   while(i < num && screenX < screen.GetCols())
+   while(i < num)
    {
       screenX++;
       i++;
@@ -439,7 +438,7 @@ void Image::ShiftRight(Screen &screen, int num)
 void Image::ShiftRight(Image &img, int num)
 {
    int i = 0;
-   while(i < num && screenX < img.GetCols())
+   while(i < num)
    {
       screenX++;
       i++;

@@ -22,17 +22,20 @@ class GameState
   /// on the current situation of the player character.
  public:
   /// Default constructor
-  GameState(){}
+  GameState(){currentState='E';}
   /// Default destructor
   virtual ~GameState(){}
   /// Sets the layout of the game.
   virtual void Set() = 0;
   /// Outputs the set layout.
   virtual void Get() = 0;
+  /// Returns the current state.
+  char GetState() const {return currentState;}
 
  protected:
   Menu *menu; ///< pointer to the menu.
   Screen *screen; ///< pointer to the screen;
+  char currentState; ///< defines which gamestate will be used.
 };
 
 #endif
