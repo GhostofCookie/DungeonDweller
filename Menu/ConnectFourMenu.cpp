@@ -36,7 +36,8 @@ void ConnectFourMenu::HandleInput(istream & is)
    {
       query = "Invalid column number. Please enter a number from 1-7";
       is.clear();
-      is.ignore(255,'\n');
+
+      HandleInput(is);
       
    }
    if(is.fail())
