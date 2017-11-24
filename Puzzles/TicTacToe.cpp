@@ -177,17 +177,29 @@ bool TicTacToe::IsSpotFilled(int inputX, int inputY)
 {
    if(gameBoard.at(inputX).at(inputY)==' ')
       return false;
-   else true;
+   else
+      return true;
 }
 
+void TicTacToe::SetCurrentPlayersChar(int currentPlayer)
+{
+   if(currentPlayer%2!=0)
+   {
+      cout << "Set X" << endl;
+      currentPlayerChar='X';
+   }
+   else
+   {
+      cout << "Set Y" << endl;
+      currentPlayerChar='O';
+   }
+}
 
 void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 {
-   int leftColumn=48, topRow=14;
-   if(!IsSpotFilled(inputX, inputY)){//FIGURE OUT HOW TO USE THIS IN THE MAIN*****************************************************************************************************************************************************************************************8
-      gameBoard.at(inputX).at(inputY)=userPiece;
-      TicTacToeScreen.Set(inputY+topRow, inputX+leftColumn, userPiece);
-   }
+   int leftColumn=49, topRow=15;
+   gameBoard.at(inputX).at(inputY)=userPiece;
+   TicTacToeScreen.Set(inputY*2+topRow, inputX*2+leftColumn, userPiece);
 }
 
 bool TicTacToe::WinCheck()
@@ -200,8 +212,29 @@ bool TicTacToe::WinCheck()
 }
 
 
-void TicTacToe::AiMove(int AiPiece)
+int TicTacToe::ConvertCharCoordinateToIndex(char input)
 {
+   switch(input)
+   {
+      case 'a':
+      case 'A':
+	 return 0;
+	 break;
+      case 'b':
+      case 'B':
+	 return 1;
+	 break;
+      case 'c':
+      case 'C':
+	 return 2;
+	 break;
+      default:
+	 return -1;
+   }
+}
+void TicTacToe::AiMove(char AiPiece)
+{
+   cout << "AI MOVE" << endl;
    int HorizontalMoveCoord, VerticalMoveCoord;
    HorizontalMoveCoord=Puzzle::RandomNumber(3);
    VerticalMoveCoord=Puzzle::RandomNumber(3);
@@ -211,7 +244,8 @@ void TicTacToe::AiMove(int AiPiece)
    {
       if(gameBoard.at(HorizontalMoveCoord).at(VerticalMoveCoord)==' ')
       {
-	 gameBoard.at(HorizontalMoveCoord).at(VerticalMoveCoord)=AiPiece;
+	 MovePiece(HorizontalMoveCoord, VerticalMoveCoord, AiPiece);
+	 //gameBoard.at(HorizontalMoveCoord).at(VerticalMoveCoord)=AiPiece;
 	 moveSuccessful=true;
       }
       else
@@ -222,72 +256,58 @@ void TicTacToe::AiMove(int AiPiece)
    }
 }
 
-
 void TicTacToe::RunGame(){
 ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
-   int currentPlayer=1;
-   
+   int currentPlayer=1, inputX, inputY;
    BoardSetup();
-   ConnectFourMenu connectFourGameMenu;
-
-   cout << "Drop in column 1" << endl;
-   MovePiece(1,1,'X');
+   TicTacToeMenu ticTacToeGameMenu;
    while(PuzzleEnd==false)
    {
       cout << TicTacToeScreen << endl;
-      connectFourGameMenu.OutputMenu();
-      connectFourGameMenu.HandleInput(cin);
-      //=connectFourGameMenu.GetOption();
-      if(WinCheck())
+      SetCurrentPlayersChar(currentPlayer);
+      if(currentPlayer%2==0)
       {
-	 ///If currentPlayer is even, the AI has won, -1 player health, reset
-	 ///the game for another round until the player has won.
-	 if(currentPlayer%2==0)
-	 {
-	    cout << "The connect four champion has defeated you! Lose 1 health"
-		 << " point." << endl;
-	    //-1 Health
-	    //ResetGame();
-	    cout << "Get ready to duel her again!" << endl;
-	 }
-	 else
-	 {
-	    cout << "Congratulations adventurer! You have defeated the champion"
-		 << "! You are free to proceed into the next area!" << endl;
-	    PuzzleEnd=true;
-	 }
+	 AiMove(currentPlayerChar);
+	 currentPlayer++;
       }
-
-      //Placed for testing
-      PuzzleEnd=true;
-      ///increment the player
-      currentPlayer++;  
+      else
+      {
+	 ticTacToeGameMenu.OutputMenu();
+	 ticTacToeGameMenu.HandleInput(cin);
+	 
+         ///X is taken as a,b, or c, Y is taken in as an integer.
+	 inputX=ConvertCharCoordinateToIndex(ticTacToeGameMenu.GetCoordinates().x);
+	 inputY=ticTacToeGameMenu.GetCoordinates().y;
+	 
+	 cout << "InputX:" << inputX << "     inputY:" << inputY << "     currentPlayerChar:" << currentPlayerChar << endl;
+		    if(!IsSpotFilled(inputX,inputY-1))
+	    {
+	       MovePiece(inputX, inputY-1, currentPlayerChar);
+	       if(WinCheck())
+	       {
+		  ///If currentPlayer is even, the AI has won, -1 player health, reset
+		  ///the game for another round until the player has won.
+		  if(currentPlayer%2==0)
+		  {
+		     cout << "The connect four champion has defeated you! Lose 1 health"
+			  << " point." << endl;
+		     //-1 Health
+		     //ResetGame();***********************************************************************************************************************
+		     cout << "Get ready to duel her again!" << endl;
+		  }
+		  else
+		  {
+		     cout << TicTacToeScreen << endl;
+		     cout << "Congratulations adventurer! You have defeated the champion"
+			  << "! You are free to proceed into the next area!" << endl;
+		     PuzzleEnd=true;
+		  }
+	       }
+	       currentPlayer++;
+	    }
+	    else
+	       cout << "Sorry that spot is already taken!" << endl;
+      }
    }
 }
-
-// void TicTacToe::PromptUser(&screen)
-// {
-
-// }
-
-//char TicTacToe::UserInput(Menu &menu)
-//{
-//  return 'c';
-//}
-
-//bool TicTacToe::ValidMove(char input)
-//{
-//   return true;
-//}
-
-
-//bool TicTacToe::ValidCommand(char input)
-//{
-//   return true;
-//}
-
-// void TicTacToe::OutputGame(&screen)
-// {
-
-// }

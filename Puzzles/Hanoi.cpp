@@ -53,7 +53,7 @@ Hanoi::Hanoi()
    bottom--;
  
    menuOption1="Move disc on peg 1 to peg 2", menuOption2="Move disc on peg 2 to peg 1";
-   menuOption3="Move disc on peg 3 to peg 2", menuOption4="Move disc on peg 1 to peg 2";
+   menuOption3="Move disc on peg 3 to peg 2", menuOption4="Move disc on peg 1 to peg 3";
    menuOption5="Move disc on peg 2 to peg 3",menuOption6="Move disc on peg 3 to peg 1";
 
    PuzzleEnd=false;
@@ -102,8 +102,8 @@ void Hanoi::SetOptionsInMenu()
    HanoiGameMenu.AddOption('2', menuOption2);
    HanoiGameMenu.AddOption('3', menuOption3);
    HanoiGameMenu.AddOption('4', menuOption4);
-   HanoiGameMenu.AddOption('5', menuOption4);
-   HanoiGameMenu.AddOption('6', menuOption4);
+   HanoiGameMenu.AddOption('5', menuOption5);
+   HanoiGameMenu.AddOption('6', menuOption6);
 }
 
 ///Checks the state of Tower to see if the player has won the game,
