@@ -51,63 +51,59 @@ void ExploreState::Get()
 /// Helper function to switch rooms in the room tree.
 void ExploreState::SwitchRooms()
 {
-   Cutscene anim1 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim2 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim3 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim4 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim5 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim6 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim7 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   Cutscene anim8 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-   
+   Cutscene *anim;
+      
    char n = menu->GetOption();
    switch(n)
    {
       case 'w' :
-	 anim1 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim1.ExitUp();
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->ExitUp();
 	    
 	 if(!roomTree->Move('u'))
 	 {
 	    roomTree->NewRoom('u', new Room(imageImport->collection));
 	    roomTree->Move('u');
 	 }
-	 
-	 anim2 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim2.EnterDown();
+
+	 delete anim;
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->EnterDown();
 	 break;
 	 
       case 'a' :
-	 anim3 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim3.ExitLeft();
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->ExitLeft();
 	 
 	 if(!roomTree->Move('l'))
 	 {
 	    roomTree->NewRoom('l',new Room(imageImport->collection));
 	    roomTree->Move('l');
 	 }
-	 
-	 anim4 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim4.EnterRight();
+
+	 delete anim;
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->EnterRight();
 	 break;
 	 
       case 's' :
-	 anim5 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim5.ExitDown();
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->ExitDown();
 	 
 	 if(!roomTree->Move('d'))
 	 {
 	    roomTree->NewRoom('d',new Room(imageImport->collection));
 	    roomTree->Move('d');
 	 }
-
-	 anim6 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim6.EnterUp();
+	 
+	 delete anim;
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->EnterUp();
 	 break;
 	 
       case 'd' :
-	 anim7 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim7.ExitRight();
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->ExitRight();
 	 
 	 if(!roomTree->Move('r'))
 	 {
@@ -115,11 +111,14 @@ void ExploreState::SwitchRooms()
 	    roomTree->Move('r');
 	 }
 
-	 anim8 = Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomPtr);
-	 anim8.EnterLeft();
+	 delete anim;
+	 anim = new Cutscene(imageImport->collection['@'][0], roomTree->At()->GetImage(), *roomTree->At());
+	 anim->EnterLeft();
 	 break;
 	 
       default :
 	 break;
    };
+
+   delete anim;
 }

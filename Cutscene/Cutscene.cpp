@@ -315,16 +315,16 @@ void Cutscene::EnterLeft()
 	 MoveRight(img.screenY, img.screenX, 1);
       
    } else if(img.screenY > centerY) {
+      while(img.screenX < centerX)
+	 MoveRight(img.screenY, img.screenX, 1);
       while(img.screenY > centerY)
 	 MoveUp(img.screenY, img.screenX, 1);
-      while(img.screenX < centerX)
-	 MoveRight(img.screenY, img.screenX, 1);
       
    } else {
-      while(img.screenY < centerY)
-	 MoveDown(img.screenY, img.screenX, 1);
       while(img.screenX < centerX)
 	 MoveRight(img.screenY, img.screenX, 1);
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
 
@@ -367,16 +367,16 @@ void Cutscene::EnterUp()
 	 MoveDown(img.screenY, img.screenX, 1);
       
    } else if(img.screenX > centerX) {
-      while(img.screenX > centerX)
-	 MoveLeft(img.screenY, img.screenX, 1);
       while(img.screenY < centerY)
 	 MoveDown(img.screenY, img.screenX, 1);
+      while(img.screenX > centerX)
+	 MoveLeft(img.screenY, img.screenX, 1);
       
    } else {
+      while(img.screenY < centerY)
+	 MoveDown(img.screenY, img.screenX, 1);
       while(img.screenX < centerX)
 	 MoveRight(img.screenY, img.screenX, 1);
-      while(img.screenX < centerX)
-	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
 
