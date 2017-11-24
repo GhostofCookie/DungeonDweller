@@ -19,6 +19,7 @@
 ../DD_Art/Rooms/DD_Room_Thin3.txt 0
 ../DD_Art/Rooms/DD_Room_SquareVar3.txt 0
 ../DD_Art/Rooms/DD_Room_SquareSlantVar3.txt 0
+../DD_Art/Rooms/DD_Room_SquareVar4.txt 0
 
 ../DD_Art/Decor/DD_ExitUp.txt 1
 ../DD_Art/Decor/DD_ExitRight.txt 2
@@ -36,9 +37,11 @@
 ../DD_Art/Decor/DD_Carpet2.txt c
 ../DD_Art/Decor/DD_Carpet3.txt c
 
+../DD_Art/Decor/DD_FourWayCarpet.txt f
+
 ../DD_Art/Decor/DD_CarpetHoriz.txt s
 ../DD_Art/Decor/DD_CarpetHoriz2.txt s
-../DD_Art/Decor/DD_CarpetHoriz3.txt ?
+../DD_Art/Decor/DD_CarpetHoriz3.txt s
 
 ../DD_Art/Decor/DD_Pillar.txt p
 ../DD_Art/Decor/DD_Pillar2.txt p
