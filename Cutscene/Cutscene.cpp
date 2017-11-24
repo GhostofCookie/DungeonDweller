@@ -8,14 +8,12 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 {
    // initialize a screen for the image to lay on
    screen = Screen(33, 61);
-   leftSide = rightSide = Screen(33, 20);
+   leftSide = rightSide = Screen(33, 20, ' ');
 
    screen.outlineOn = false;
-   leftSide.outlineOn = false;
-   rightSide.outlineOn = false;
    
-   leftSide.Fill('|');
-   rightSide.Fill('|');
+   leftSide.Fill(' ');
+   rightSide.Fill(' ');
    
    img = ImportImg(image);
    room = ImportImg(r);
