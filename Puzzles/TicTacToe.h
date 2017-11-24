@@ -8,7 +8,7 @@
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
 #include "Puzzle.h"
-#include "../Menu/ConnectFourMenu.h"
+#include "../Menu/TicTacToeMenu.h"
 #include "../Screen/Screen.h"
 #include "../Image/DefaultImg.h"
 #include <iostream>
@@ -55,7 +55,7 @@ class TicTacToe: public virtual Puzzle
    bool WinCheck();
 
    ///Performs the selection for the npc opponent.
-   void AiMove(int AiPiece);
+   void AiMove(char AiPiece);
 
    ///Checks the entire grid to see if there is 3 of a kind in a horizontal
    ///position, returns true if it finds 3 of a kind, false otherwise.   
@@ -72,6 +72,12 @@ class TicTacToe: public virtual Puzzle
    ///Checks the entire grid to see if there is 3 of a kind in a left diagonal
    ///position, returns true if it finds 3 of a kind, false otherwise.  
    bool LeftDiagonalCheck();
+
+   ///Checks who's turn it is and sets CurrentPlayerChar to their
+   ///correct char.
+   void SetCurrentPlayersChar(int currentPlayer);
+
+   int ConvertCharCoordinateToIndex(char input);
    
    ///Vector to store the contents of the gameboard
    std::vector<vector<char>>gameBoard;
@@ -79,6 +85,8 @@ class TicTacToe: public virtual Puzzle
    ///Dimensions for the board
    int boardSize;
 
+   char currentPlayerChar;
+   
    ///returns true if character is filled, false otherwise
    bool IsSpotFilled(int inputX, int inputY);
 
