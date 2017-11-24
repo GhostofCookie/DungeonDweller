@@ -88,10 +88,14 @@ class ConnectFour: virtual public Puzzle
 
 ///Resets the game for another round in the event that the AI wins.
    void ResetGame();
+
+   void SetCurrentPlayerChar(int currentPlayer);
    
 ///The vector which stores the gameboards chars.
    std::vector<vector<char>>grid;
 
+   char currentPlayerChar;
+   
 ///xSize is the horizontal dimensions of the game board, ySize is the
 ///vertical dimensions of the gameboard vector
    int xSize, ySize;
