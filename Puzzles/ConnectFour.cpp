@@ -109,6 +109,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 
    while(currentSpot==' ')
    {
+      cout << "column " <<column-1 << " is height " <<grid.at(column-1).size() << "     Height subtracted is: " << height << endl;
       if(grid.at(column-1).at(ySize-height)!=' ')
       {
 	 cout << "SET AT HIEGHT:" << ySize-height << endl;
@@ -122,14 +123,15 @@ void ConnectFour::MovePiece(char userPiece, int column)
       {
 	 height--;
       }
+      cout << "!!!!!!!!!!!" << endl;
       ///If we have reached the bottom of the column and not found a piece, set
       ///the piece at the bottom of the column and break.
-      if(height==0 && (grid.at(column).at(height))==' ')
+      if(height==0 && (grid.at(column-1).at(ySize-1))==' ')
       {
 	 cout << "SET AT ZERO" << endl;
-	 ///Set the char in the vector grid
 	 grid.at(column-1).at(ySize-1)=userPiece;
-	 ///Set the char in the screen
+
+         ///Set the char in the screen
 	 ///Height and column are multiplied by 2 since the actual vector has
 	 /// 1/2 as many spots as the grid displayed on the screen does.
 	 ///Add 11 to the topBound to place it in the bottom slot in the grid.
@@ -164,10 +166,9 @@ void ConnectFour::RunGame()
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer=1, userInput;
+   ConnectFourMenu connectFourGameMenu;  
    
    BoardSetup();
-   ConnectFourMenu connectFourGameMenu;
-   
    while(PuzzleEnd==false)
    {
       cout << "CurrentPlayer:" << currentPlayer <<  endl;
@@ -187,6 +188,7 @@ void ConnectFour::RunGame()
       }
       if(WinCheck())
       {
+	 cout << ConnectFourScreen;
 	 ///If currentPlayer is even, the AI has won, -1 player health, reset
 	 ///the game for another round until the player has won.
 	 if(currentPlayer%2==0)
@@ -357,10 +359,10 @@ bool ConnectFour::RightDiagonalCheck()
    ///copyrightCount counts the number of '#' tokens in the diagonal line.
    int atCount=0, poundCount=0;
 
-   ///j will the be horizontal movement, i will be the vertical movement. 
+   /// i will be the vertical movement, j will the be horizontal movement
    for(int i=0; i<3; i++)
    {
-      for(int j=6; j<4; j--)
+      for(int j=3; j<6; j++)
       {
 	 for(int k=0; k<4; k++)
 	 {
@@ -409,32 +411,26 @@ bool ConnectFour::IsColumnFull(int input)
    {
       if(grid.at(input).at(i)=='@'|| grid.at(input).at(i)=='#')
 	 charCount++;
-      // cout << "AT I:" << grid.at(input).at(i);
-      //cout << "      CharCount:" << charCount << endl;
    }
    ///If the column is full, return true, else return false.
    if(charCount==ySize)
       return true;
    else
    {
-      cout << "RETURN FALSE" << endl;
       return false;
    }
 }
 
 ///Returns true if every space in the board has been filled with a character
 bool ConnectFour::IsBoardFull(){
-   int charCount=0;
+   int fullColumnCount=0;
    for(int i=0; i<xSize; i++)
    {
-      for(int j=0; j<ySize; j++)
-      {
-	 if((grid.at(i).at(j)=='@')||grid.at(i).at(j)=='#')
-	    charCount++;
-      }
+      if(IsColumnFull(i))
+	    fullColumnCount++;
    }
    ///If the entire grid is full of characters, return true, else return false.
-   if(charCount==xSize*ySize)
+   if(fullColumnCount==xSize-1)
       return true;
    return false;   
 }

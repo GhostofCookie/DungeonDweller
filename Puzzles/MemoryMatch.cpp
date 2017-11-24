@@ -39,25 +39,6 @@ MemoryMatch::~MemoryMatch()
 
 }
 
-void MemoryMatch::RunGame()
-{
-   cout << "Start" << endl;
-   SetOptionsInMenu();
-   BoardSetup();
-   SaveBoardToScreen();
-   while(PuzzleEnd==false)
-   {
-      cout << MemoryMatchScreen;
-      //MemoryMatchMenu.OutputMenu();
-      //MemoryMatchMenu.HandleInput(cin);
-      MovePiece(3,3,3,0);//Top left
-      WinCheck();
-      
-      PuzzleEnd=true;//to be removed
-   }
-	   
-}
-
 ///Sets the board up for the beginning of the game, placing them in screen
 void MemoryMatch::BoardSetup()
 {
@@ -318,4 +299,23 @@ void MemoryMatch::WinCheck()
 	    PuzzleEnd=true;
       }
    }
+}
+
+void MemoryMatch::RunGame()
+{
+   cout << "Start" << endl;
+   SetOptionsInMenu();
+   BoardSetup();
+   SaveBoardToScreen();
+   while(PuzzleEnd==false)
+   {
+      cout << MemoryMatchScreen;
+      //MemoryMatchMenu.OutputMenu();
+      //MemoryMatchMenu.HandleInput(cin);
+      MovePiece(3,3,3,0);//Top left
+      WinCheck();
+      
+      PuzzleEnd=true;//to be removed
+   }
+	   
 }
