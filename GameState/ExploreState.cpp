@@ -17,10 +17,15 @@ ExploreState::ExploreState()
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
+  int i = roomTree->At()->GetType();
+  char ch = static_cast<char>(i);
+  SetState(i);
    menu->AddOption('w',"Move Up");
    menu->AddOption('a',"Move Left");
    menu->AddOption('s',"Move Down");
    menu->AddOption('d',"Move Right");
+   menu->AddOption(currState,"Current State");
+   menu->AddOption(ch, "Current Room Type");
 }
 
 /// Gets the layout for the game menu and screen.
@@ -32,8 +37,9 @@ void ExploreState::Get()
    
    while(true)
    {
-      system("clear");
-      system("clear");
+     system("clear");
+     system("clear");
+
       // clear the screen
       screen->Erase();
       // align the current room to the screen and print
@@ -121,4 +127,23 @@ void ExploreState::SwitchRooms()
    };
 
    delete anim;
+}
+
+void ExploreState::SetState(int n)
+{
+  switch(n)
+    {
+    case 0:
+      currState = 'E';
+      break;
+    case 1:
+      currState = 'S';
+	break;
+    case 2:
+      currState = 'F';
+      break;
+    case 3:
+      currState = 'P';
+      break;
+    }
 }
