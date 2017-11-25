@@ -14,27 +14,27 @@ using namespace std;
 //*****************************************************************************
 Sword::Sword()
 {
-	baseDmg = 5;
-	remainingUses = 10;
-	itemName = nameGenerator("WeaponNames.txt") + " Sword";
+   baseDmg = 5;
+   remainingUses = 10;
+   itemName = NameGenerator("WeaponNames.txt") + " Sword";
 }
 
 //*****************************************************************************
 /// Use Sword Implementation
 //*****************************************************************************
-bool Sword::use(Character *target)
+bool Sword::Use(Character *target)
 {
-	if(remainingUses > 0) {
+   if(remainingUses > 0) {
 		
-		//Modifies the damage output by up to +- 20%
-		double modifier = static_cast<double>(random(0,40)-20) / 100);
-		int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
+      //Modifies the damage output by up to +- 20%
+      double modifier = static_cast<double>((Random(0,40)-20) / 100);
+      int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
 		
-		target->ChangeHealth(-damage);
-		--remainingUses;
-		return true;
-	}
-	return false;
+      target->ChangeHealth(-damage);
+      --remainingUses;
+      return true;
+   }
+   return false;
 }
 
 //*****************************************************************************
@@ -42,48 +42,48 @@ bool Sword::use(Character *target)
 //*****************************************************************************
 Bow::Bow()
 {
-	baseDmg = 10;
-	remainingUses = 5;
-	hitPercent = 70;
-	itemName = nameGenerator("WeaponNames.txt") + " Bow";
+   baseDmg = 10;
+   remainingUses = 5;
+   hitPercent = 70;
+   itemName = NameGenerator("WeaponNames.txt") + " Bow";
 }
 
 //*****************************************************************************
 /// Use Bow Implementation
 //*****************************************************************************
-bool Bow::use(Character *target)
+bool Bow::Use(Character *target)
 {
-	if(remainingUses > 0) {
-
-		// Checks for a miss
-		if(random(1,100) <= hitPercent) {
-
-			//Modifies the damage output by up to +- 50%
-			double modifier = static_cast<double>(random(0,100)-50) / 100);
-			int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
-			
-			target->ChangeHealth(-damage);
-			--remainingUses;
-			return true;
-		}
-	}
-	return false;
+   if(remainingUses > 0) {
+      
+      // Checks for a miss
+      if(Random(1,100) <= hitPercent) {
+	 
+	 //Modifies the damage output by up to +- 50%
+	 double modifier = static_cast<double>((Random(0,100)-50) / 100);
+	 int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
+      
+	 target->ChangeHealth(-damage);
+	 --remainingUses;
+	 return true;
+      }
+   }
+   return false;
 }
 
 //*****************************************************************************
 /// Allows reading of the accuracy
 //*****************************************************************************
-int Bow::accuracy() const
+int Bow::Accuracy() const
 {
-	return hitPercent;
+   return hitPercent;
 }
 
 //*****************************************************************************
 /// Allows reading and writing of accuracy
 //*****************************************************************************
-int & Bow::accuracy()
+int & Bow::Accuracy()
 {
-	return hitPercent;
+   return hitPercent;
 }
 
 //*****************************************************************************
@@ -91,23 +91,24 @@ int & Bow::accuracy()
 //*****************************************************************************
 Spell::Spell()
 {
-	baseDmg = 20;
-	remainingUses = 1;
-	itemName = nameGenerator("SpellNames.txt") + " Spell";
+   baseDmg = 20;
+   remainingUses = 1;
+   itemName = NameGenerator("SpellNames.txt") + " Spell";
 }
 
 //*****************************************************************************
 /// Use Spell Implementation
 //*****************************************************************************
-bool Spell::use(Character * target)
+bool Spell::Use(Character * target)
 {
-	if(remainingUses > 0) {
-		//Modifies the damage output by up to +- 75%
-		double modifier = static_cast<double>(random(0,150)-75) / 100);
-		int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
+   if(remainingUses > 0) {
+      //Modifies the damage output by up to +- 75%
+      double modifier = static_cast<double>((Random(0,150)-75) / 100);
+      int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
 
-		target->ChangeHealth(-damage);
-		--remainingUses;
-		return true;
-	}
+      target->ChangeHealth(-damage);
+      --remainingUses;
+      return true;
+   }
+   return false;
 }

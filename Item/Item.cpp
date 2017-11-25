@@ -19,7 +19,7 @@ using namespace std;
 //*****************************************************************************
 /// Item Factory
 //*****************************************************************************
-Item *Item::getItem(string itemType)
+Item *Item::GetItem(string itemType)
 {
    transform(itemType.begin(),itemType.end(),itemType.begin(),::toupper);
 
@@ -43,7 +43,7 @@ Item *Item::getItem(string itemType)
 //*****************************************************************************
 /// read or write to name
 //*****************************************************************************
-string &Item::name()
+string &Item::Name()
 {
    return itemName;
 }
@@ -51,12 +51,15 @@ string &Item::name()
 //*****************************************************************************
 /// read name
 //*****************************************************************************
-string Item::name() const
+string Item::Name() const
 {
    return itemName;
 }
 
-string Item::nameGenerator(string fileName)
+//******************************************************************************
+/// Creates names for Items
+//******************************************************************************
+string Item::NameGenerator(string fileName)
 {
    static vector<string> adjectives;
 
@@ -74,13 +77,13 @@ string Item::nameGenerator(string fileName)
       throw runtime_error(fileName + " is empty");
 	
    // Returns a random element of the vector
-   return adjectives[random(0,adjectives.size()-1)];
+   return adjectives[Random(0,adjectives.size()-1)];
 }
 
 //*****************************************************************************
 /// random number generator
 //*****************************************************************************
-int Item::random(unsigned int start,unsigned int end)
+int Item::Random(unsigned int start,unsigned int end)
 {
    static bool seeded = false;
    if(!seeded)

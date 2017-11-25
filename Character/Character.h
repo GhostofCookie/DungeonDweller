@@ -64,7 +64,7 @@ class Character
    ///Change the amount of gold a character has
    /// \param[in&] Gold, current amount of gold the character has
    /// \param[in] GoldMod, how much the current gold will be changed by
-   virtual int ChangeGold(int goldMod);
+   virtual void ChangeGold(int goldMod);
 
    ///Changes the characters health
    /// \param[in&] H, characters current health
