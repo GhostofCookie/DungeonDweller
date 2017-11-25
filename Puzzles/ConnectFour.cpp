@@ -409,7 +409,6 @@ bool ConnectFour::RightDiagonalCheck()
       {
 	 for(int k=0; k<4; k++)
 	 {
-	    cout << "i:" << i << "     j:" << j << "     k:" << k << endl;
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
 	    if(grid.at(j-k).at(i+k)=='@')
@@ -448,13 +447,12 @@ bool ConnectFour::RightDiagonalCheck()
 ///Function which checks if a column is full
 bool ConnectFour::IsColumnFull(int input)
 {
-   cout << "IS COLUMN FULL:" << input << " "<< endl;
-      for(int i=0; i<ySize; i++)
+   for(int i=0; i<ySize-1; i++)
    {
-      if(grid.at(input-1).at(i)==' ')
+      if(grid.at(input).at(i)==' ')
 	 return false;
    }
-      return true;
+   return true;
 }
 
 ///Returns true if every space in the board has been filled with a character

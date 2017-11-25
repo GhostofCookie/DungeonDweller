@@ -31,7 +31,7 @@ void CodeCracker:: RunGame()
       currentRiddle=UnusedRandomRiddleGenerator();
 ///Do riddle output, input
       int userinput;
-      if(ValidAnswer(userinput, currentRiddle)==false)
+      if(!ValidAnswer(userinput, currentRiddle))
 	 DeathCheck(); //************NEEDS TO BE IMPLEMENTED******************
       else
 	 WinCheck();

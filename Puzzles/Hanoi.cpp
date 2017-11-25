@@ -12,13 +12,25 @@
 // =============== (15)
 //screen is 101x33
 
+/// Default constructor for hanoi, sets height to: 4 and width to: 3 
 Hanoi::Hanoi()
 {
    BoardSetup();
    numberOfStacks=3;
    maxStackHeight=4;
    tower.resize(numberOfStacks);
-   ///Create default images for each of the disc to be drawn on the screen.
+   DiscSetup();
+   
+   PuzzleEnd=false;
+}
+
+Hanoi::~Hanoi()
+{
+}
+
+///Sets up the discs on the gameboard for the beginning of the game.    
+void Hanoi:: DiscSetup()
+{
    DefaultImg disc1(1,3,'=');
    DefaultImg disc2(1,7,'=');
    DefaultImg disc3(1,11,'=');
@@ -26,13 +38,22 @@ Hanoi::Hanoi()
 
    ///Draw to the game screen and then put the discs into the first stack to
    ///start the game.
-   int leftPeg=34, bottom=15;   
+   int bottom=15, leftPeg=34;
+   /*PushDiscOnLeftStack(bottom, disc4);
+   bottom--;
+   PushDiscOnLeftStack(bottom, disc3);
+   bottom--;
+   PushDiscOnLeftStack(bottom, disc2);
+   bottom--;
+   PushDiscOnLeftStack(bottom, disc1);
+   */
    disc4.AlignCenter(HanoiScreen);
    disc4.ShiftLeft(leftPeg);
    disc4.ShiftDown(HanoiScreen, bottom);
    disc4.Draw(HanoiScreen);
    tower.at(0).push(disc4);
    bottom--;
+   
    disc3.AlignCenter(HanoiScreen);
    disc3.ShiftLeft(leftPeg);
    disc3.ShiftDown(HanoiScreen, bottom);
@@ -50,17 +71,20 @@ Hanoi::Hanoi()
    disc1.ShiftDown(HanoiScreen, bottom);
    disc1.Draw(HanoiScreen);
    tower.at(0).push(disc1);
-   bottom--;
- 
-   menuOption1="Move disc on peg 1 to peg 2", menuOption2="Move disc on peg 2 to peg 1";
-   menuOption3="Move disc on peg 3 to peg 2", menuOption4="Move disc on peg 1 to peg 3";
-   menuOption5="Move disc on peg 2 to peg 3",menuOption6="Move disc on peg 3 to peg 1";
-
-   PuzzleEnd=false;
 }
 
-Hanoi::~Hanoi()
-{
+///**********************************************************************************************************************************Remove/Fix before submission
+///Helper function for discSetup, pushes a disc on the left stack at the
+///height specified by bottom.
+///\param[in] bottom, the height to place the disc at.
+///\param[in] disc, the disc you wish to push into the vector.   
+void Hanoi::PushDiscOnLeftStack(int bottom, DefaultImg disc){
+   int leftPeg=34;
+   disc.AlignCenter(HanoiScreen);
+   disc.ShiftLeft(leftPeg);
+   disc.ShiftDown(HanoiScreen, bottom);
+   disc.Draw(HanoiScreen);
+   tower.at(0).push(disc);
 }
 
 ///Sets up the screen with the appropriate game board.    
@@ -95,9 +119,16 @@ void Hanoi:: BoardSetup()
    Peg3.Draw(HanoiScreen);
 }
 
-///Setup the options in the HanoiMenu object.
+///Setup the options in the HanoiMenu object for the player to select.
 void Hanoi::SetOptionsInMenu()
 {
+   string menuOption1="Move disc on peg 1 to peg 2"
+      , menuOption2="Move disc on peg 2 to peg 1"
+      , menuOption3="Move disc on peg 3 to peg 2"
+      , menuOption4="Move disc on peg 1 to peg 3"
+      , menuOption5="Move disc on peg 2 to peg 3"
+      , menuOption6="Move disc on peg 3 to peg 1";
+   
    HanoiGameMenu.AddOption('1', menuOption1);
    HanoiGameMenu.AddOption('2', menuOption2);
    HanoiGameMenu.AddOption('3', menuOption3);
@@ -172,8 +203,10 @@ bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize) c
 	 return false;
 }
 
-///Moves the piece in the vector.stack and calls the function to move the images
-///on the screen
+///Moves the piece in the vector.stack and calls the helper function to move the
+///images on the screen
+///\param[in]sourceTower, the stack from which we move the disc image.
+///\param[in]targetTower, the stack to which we move the disc image.   
 void Hanoi::MovePiece(int sourceTower, int targetTower)
 {
    cout << "MOVE PIECE" << endl;
