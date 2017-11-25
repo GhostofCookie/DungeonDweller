@@ -1,19 +1,32 @@
-CC=g++
-CCFLAGS=-Wall -std=c++11 -g
-OBJS= Item.o Weapon.o MyWeapons.o MyConsumables.o
+## definitions
 
-%.o : %.cpp
-	$(CC) -c $(CCFLAGS) $<
+CC = g++ -std=c++11
+CCFLAGS = -Wall -g
+OBJS1 = MyConsumables.o Item.o MyWeapons.o Weapon.o ../Character/Character.h Items.o
+## targets and prerequisites
+.PHONY : all
+all : Items
 
-.prereq : $(OBJS:.o=.cpp) $(wildcard *.h) Makefile
+Items : $(OBJS1)
+	$(CC) $(CCFLAGS) $^ -o $@
+
+# default rule for compiling .cc to .o
+%.o: %.cpp                               ## next line must begin with a TAB
+	$(CC) -c $(CCFLAGS) $< 
+
+## generate the prerequistes and append to the desired file
+.prereq : $(OBJS1:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq
-	$(CC) $(CCFLAGS) $^ -o $@ -MM $(OBJS:.o=.cpp) >> ./.prereq
+	$(CC) $(CCFLAGS) -MM $(OBJS1:.o=.cpp) >> ./.prereq 
 
+## include the generated prerequisite file
 include .prereq
 
 .PHONY : clean
-clean:
-	rm -rf *~ *.o *.gcda *.gcno
+clean :                 ## next lines must begin with a TAB
+	rm -f *.o
+	rm -f *~ *# .#* *.gcno *.gcda
 
-clean-all: clean
-#	rm -rf mainTest
+.PHONY : clean-all
+clean-all : clean      ## next line must begin with a TAB
+	rm -f Items

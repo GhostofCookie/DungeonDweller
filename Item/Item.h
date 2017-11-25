@@ -18,7 +18,7 @@ class Item
   public:
 
    /// Virtual destructor
-   virtual ~Item();
+   virtual ~Item() {}
 
    /// Uses factory design pattern to create items
    /// \param[in] itemType The type of item to be created
