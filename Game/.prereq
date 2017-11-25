@@ -1,11 +1,9 @@
 DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../Screen/SlotScreen.h ../Screen/Screen.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/../Image/ImportImg.h \
- ../Image/../Image/Image.h ../Image/../Image/DefaultImg.h \
- ../Image/DefaultImg.h ../Image/ImportImg.h \
- ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
- ../ImageImporter/../Image/ImportImg.h ../Room/Room.h \
- ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
+ ../Image/ImportImg.h ../ImageImporter/ImageImporter.h \
+ ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
+ ../Room/Room.h ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
  ../Room/../Image/DefaultImg.h ../Room/../Image/ImportImg.h \
  ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
@@ -22,18 +20,28 @@ DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../GameState/../Menu/Menu.h ../GameState/../Menu/FightMenu.h \
  ../GameState/../Menu/ExploreMenu.h ../GameState/FightState.h \
  ../GameState/MainState.h ../GameState/PuzzleState.h \
+ ../GameState/../Puzzles/Puzzle.h ../GameState/../Puzzles/../Menu/Menu.h \
+ ../GameState/../Puzzles/../Screen/Screen.h \
+ ../GameState/../Puzzles/../Image/DefaultImg.h \
+ ../GameState/../Puzzles/Hanoi.h ../GameState/../Puzzles/Puzzle.h \
+ ../GameState/../Puzzles/../Menu/HanoiMenu.h \
+ ../GameState/../Puzzles/../Menu/MinigameMenu.h \
+ ../GameState/../Puzzles/../Menu/GameMenu.h \
+ ../GameState/../Puzzles/../Menu/Menu.h \
+ ../GameState/../Puzzles/CodeCracker.h \
+ ../GameState/../Puzzles/TicTacToe.h \
+ ../GameState/../Puzzles/../Menu/TicTacToeMenu.h \
+ ../GameState/../Puzzles/MemoryMatch.h \
+ ../GameState/../Puzzles/ConnectFour.h \
+ ../GameState/../Puzzles/../Menu/ConnectFourMenu.h \
  ../GameState/ExploreState.h ../GameState/../Cutscene/Cutscene.h \
- ../GameState/../RoomTree/RoomTree.h \
+ ../GameState/../RoomTree/RoomTree.h ../GameState/../Room/Room.h \
  ../GameState/../ImageImporter/ImageImporter.h \
  ../GameState/../Image/Image.h ../GameState/../Image/DefaultImg.h \
  ../GameState/../Image/ImportImg.h ../GameState/GameState.h \
- ../GameState/TradeState.h ../Puzzles/CodeCracker.h ../Puzzles/Puzzle.h \
- ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
- ../Puzzles/../Image/DefaultImg.h ../Puzzles/ConnectFour.h \
- ../Puzzles/../Menu/ConnectFourMenu.h ../Puzzles/../Menu/MinigameMenu.h \
- ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h \
- ../Puzzles/Hanoi.h ../Puzzles/../Menu/HanoiMenu.h \
- ../Puzzles/MemoryMatch.h ../Puzzles/Puzzle.h ../Puzzles/TicTacToe.h
+ ../GameState/TradeState.h ../Puzzles/CodeCracker.h \
+ ../Puzzles/ConnectFour.h ../Puzzles/Hanoi.h ../Puzzles/MemoryMatch.h \
+ ../Puzzles/Puzzle.h ../Puzzles/TicTacToe.h
 CharacterMenu.o: ../Menu/CharacterMenu.cpp ../Menu/CharacterMenu.h \
  ../Menu/GameMenu.h ../Menu/Menu.h
 ConnectFourMenu.o: ../Menu/ConnectFourMenu.cpp ../Menu/ConnectFourMenu.h \
@@ -60,45 +68,32 @@ TradeMenu.o: ../Menu/TradeMenu.cpp ../Menu/TradeMenu.h ../Menu/GameMenu.h \
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
 SlotScreen.o: ../Screen/SlotScreen.cpp ../Screen/SlotScreen.h \
  ../Screen/Screen.h
-Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Image/../Image/ImportImg.h ../Image/../Image/Image.h \
- ../Image/../Image/DefaultImg.h
+Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/../Image/ImportImg.h \
- ../Image/../Image/DefaultImg.h ../Image/../Image/Image.h
+ ../Image/../Screen/Screen.h
 DefaultImg.o: ../Image/DefaultImg.cpp ../Image/DefaultImg.h \
- ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Image/../Image/ImportImg.h ../Image/../Image/Image.h \
- ../Image/../Image/DefaultImg.h
+ ../Image/Image.h ../Image/../Screen/Screen.h
 ImageImporter.o: ../ImageImporter/ImageImporter.cpp \
  ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
  ../ImageImporter/../Image/../Screen/Screen.h \
- ../ImageImporter/../Image/../Image/ImportImg.h \
- ../ImageImporter/../Image/../Image/Image.h \
- ../ImageImporter/../Image/../Image/DefaultImg.h \
- ../ImageImporter/../Image/ImportImg.h
+ ../ImageImporter/../Image/ImportImg.h ../ImageImporter/../Image/Image.h
 Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
  ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
- ../Room/../Image/../Image/ImportImg.h ../Room/../Image/../Image/Image.h \
- ../Room/../Image/../Image/DefaultImg.h ../Room/../Image/DefaultImg.h \
+ ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
  ../Room/../Image/ImportImg.h
 RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
- ../RoomTree/../Room/../Image/../Image/ImportImg.h \
- ../RoomTree/../Room/../Image/../Image/Image.h \
- ../RoomTree/../Room/../Image/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
+ ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/ImportImg.h
 Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/../Screen/Screen.h \
- ../Cutscene/../Image/../Image/ImportImg.h \
- ../Cutscene/../Image/../Image/Image.h \
- ../Cutscene/../Image/../Image/DefaultImg.h \
- ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
- ../Cutscene/../Room/Room.h ../Cutscene/../Room/../Screen/Screen.h \
+ ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/Image.h \
+ ../Cutscene/../Image/ImportImg.h ../Cutscene/../Room/Room.h \
+ ../Cutscene/../Room/../Screen/Screen.h \
  ../Cutscene/../Room/../Image/Image.h \
  ../Cutscene/../Room/../Image/DefaultImg.h \
  ../Cutscene/../Room/../Image/ImportImg.h
