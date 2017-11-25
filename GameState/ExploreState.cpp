@@ -33,32 +33,9 @@ void ExploreState::Get()
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
    
-<<<<<<< HEAD
-   while(true)
-   {
-      // ensure the screen clears
-      system("clear");
-      system("clear");
- 
-      // clear the screen
-      screen->Erase();
-      // align the current room to the screen and print
-      (roomTree->At())->AlignCenter(*screen);
-      (roomTree->At())->Draw(*screen);
-      player.Draw(*screen);
-
-      // output the screen
-      cout << screen;
-      
-      // Print the menu and handle user input
-      menu->OutputMenu();
-      menu->HandleInput(cin);
-      SwitchRooms();
-   }
-=======
    system("clear");
    system("clear");
-   cout<<"***"<<((roomTree->At())->GetType())<<endl;
+   cout<<"***"<<((roomTree->At())->GetType())<<"***"<<currState<<endl;
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -72,7 +49,6 @@ void ExploreState::Get()
 
    menu->HandleInput(cin);
    SwitchRooms();
->>>>>>> 5508ea567b43db81a194d416655e2a767a95b200
 }
 
 /// Helper function to switch rooms in the room tree.
@@ -164,10 +140,10 @@ void ExploreState::SetState(int n)
 	 currState = 'E';
 	 break;
       case 1:
-	 currState = 'E';
+	 currState = 'S';
 	 break;
       case 2:
-	 currState = 'E';
+	 currState = 'F';
 	 break;
       case 3:
 	 currState = 'P';

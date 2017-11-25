@@ -2,8 +2,10 @@
 
 MemoryMenu::MemoryMenu()
 {
-   coordinates.x = ' ';
-   coordinates.y = 1;
+   coordinates.x1 = ' ';
+   coordinates.x2 = ' ';
+   coordinates.y1 = 1;
+   coordinates.y2 = 1;
    indexMap.clear();
    indexMap.erase('q');
    query = "Enter coordinates (e.g. A1)";
@@ -23,26 +25,31 @@ void MemoryMenu::SetOptions(int row, int col, int space)
 
 void MemoryMenu::HandleInput(istream & is)
 {
-   char x;
-   int y;
+   char x1,x2;
+   int y1,y2;
    cout << "-> ";
-   is>>x>>y;
+   is>>x1>>y1>>x2>>y2;
    is.clear();
    is.ignore(255,'\n');
-   if((tolower(x) >= 'a' && tolower(x) < 'e') && (y > 0 && y < 5))
+   if((tolower(x1) >= 'a' && tolower(x1) < 'e') && (y1 > 0 && y1 < 5) &&
+      (tolower(x2) >= 'a' && tolower(x2) < 'e') && (y2 > 0 && y2 < 5))
    {
-      coordinates.x = x;
-      coordinates.y = y;
-      query = "Enter coordinates (e.g. A1)";
+      coordinates.x1 = x1;
+      coordinates.y1 = y1;
+      coordinates.x2 = x2;
+      coordinates.y2 = y2;
+      query = "Enter two sets of coordinates (e.g. A1 C2)";
    }
    else 
    {
-      query = "Invalid coordinates. Please ensure that your query is between A1 and D4";
-      coordinates.x = ' ';
-      coordinates.y = 0;
+      query = "Invalid coordinates. Please ensure that your coordinates are between A1 and D4";
+      coordinates.x1 = ' ';
+      coordinates.x2 = ' ';
+      coordinates.y1 = 0;
+      coordinates.y2 = 0;
    }
    if(is.fail())
-      throw invalid_argument("Invalid input. please enterr coordinates in format A1.");
+      throw invalid_argument("Invalid input. please enter coordinates in format A1.");
 }
 
 MemoryMenu::Coord MemoryMenu::GetCoordinates() const
