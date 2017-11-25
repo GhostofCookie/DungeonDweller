@@ -56,7 +56,7 @@ void MemoryMatch::RunGame()
       cout << "@@@" << endl;
       MemoryMatchMenu.HandleInput(cin);
       ///Get input 1-4
-      SetInputs(inputX1, inputY1, inputX2, inputY2, MemoryMatchMenu);
+      SetInputs(inputX1, inputY1, inputX2, inputY2, &MemoryMatchMenu);
       cout << "SetInputs done" << endl;
       if(CheckInput(inputX1, inputY1, inputX2, inputY2))
       {
