@@ -6,6 +6,8 @@
 ///
 
 #include "MyConsumables.h"
+#include "../Character/Character.h"
+#include "../Character/Player.h"
 #include <typeinfo>
 using namespace std;
 

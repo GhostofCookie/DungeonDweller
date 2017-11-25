@@ -6,6 +6,7 @@
 ///
 
 #include "MyWeapons.h"
+#include "../Character/Character.h"
 using namespace std;
 
 //*****************************************************************************
