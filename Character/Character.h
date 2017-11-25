@@ -28,7 +28,7 @@ class Character
    ImportImg img;
    
    ///Vector of items the character has
-   vector<Item> inventory;
+   vector<Item*> inventory;
 
    ///Amount of gold player has
    int gold;
@@ -36,7 +36,6 @@ class Character
    ///Characters health
    int health;
 
-    
    ///Characters stamina
    int stamina;
    
@@ -55,11 +54,11 @@ class Character
    
    ///Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual void GetInventoryItems(Item *inventory);
+   virtual vector<Item*> GetInventoryItems();
 
    ///Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual void UseItem(Item *inventory);
+   virtual Item* UseItem(string item);
 
    ///Change the amount of gold a character has
    /// \param[in&] Gold, current amount of gold the character has
@@ -74,7 +73,11 @@ class Character
     ///Changes players stamina
     /// \param[in&] s, players current stamina
     /// \param[in] sMod, how the curent stamina will be modified
-    virtual void ChangeStamina(int sMod);
+   virtual void ChangeStamina(int sMod);
+
+   virtual void Draw(Screen &screen);
+
+   virtual ImportImg Img();
 
 }; 
 
