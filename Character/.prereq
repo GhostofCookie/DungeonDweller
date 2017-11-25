@@ -1,21 +1,29 @@
-Player.o: Player.cpp Player.h Character.h ../Item/Item.h \
- ../Item/../Character/Character.h ../Item/../Character/Player.h \
- ../Screen/Screen.h ../Image/Image.h ../Image/../Screen/Screen.h
-Npc.o: Npc.cpp Npc.h Character.h ../Item/Item.h \
- ../Item/../Character/Character.h ../Item/../Character/Player.h \
- ../Item/../Character/Character.h ../Screen/Screen.h ../Image/Image.h \
+Player.o: Player.cpp Player.h Character.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Screen/Screen.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h Npc.h
+Npc.o: Npc.cpp Npc.h Character.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Screen/Screen.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
+ Player.h
+Character.o: Character.cpp Character.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Screen/Screen.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h
+MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
-Character.o: Character.cpp Character.h ../Item/Item.h \
- ../Item/../Character/Character.h ../Item/../Character/Player.h \
- ../Item/../Character/Character.h ../Screen/Screen.h ../Image/Image.h \
- ../Image/../Screen/Screen.h
-mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h ../Item/Item.h \
- ../Item/../Character/Character.h ../Item/../Character/Player.h \
- ../Screen/Screen.h ../Image/Image.h ../Image/../Screen/Screen.h
+mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h \
+ ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
+ ../Screen/Screen.h ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h Npc.h
 PlayerTest.o: PlayerTest.cpp PlayerTest.h Player.h Character.h \
- ../Item/Item.h ../Item/../Character/Character.h \
- ../Item/../Character/Player.h ../Screen/Screen.h ../Image/Image.h \
+ ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
+ ../Screen/Screen.h ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h Npc.h
+Player.o: Player.cpp Player.h Character.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Screen/Screen.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h Npc.h
+MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
-Player.o: Player.cpp Player.h Character.h ../Item/Item.h \
- ../Item/../Character/Character.h ../Item/../Character/Player.h \
- ../Screen/Screen.h ../Image/Image.h ../Image/../Screen/Screen.h
