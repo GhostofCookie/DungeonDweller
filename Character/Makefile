@@ -1,19 +1,19 @@
 CC=g++
-CCFLAGS=-Wall -std=c++11 -g -lcppunit -ldl #-fprofile-arcs -ftest-coverage
-OBJS= Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportImg.o
-OBJS2= mainTest.o PlayerTest.o Player.o Npc.o ../Item/MyConsumables.o ../Image/ImportImg.o 
+CCFLAGS= -Wall -std=c++11 -g -lcppunit -ldl #-fprofile-arcs -ftest-coverage
+OBJS= main.o Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
+OBJS2= mainTest.o PlayerTest.o Character.o Player.o Npc.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
 
 .PHONY : all
-all: mainTest
+all: main mainTest
 
-#main : $(OBJS)
-#	$(CC) $(CCFLAGS) $^ -o $@ 
+main : $(OBJS)
+	$(CC) $(CCFLAGS) $^ -o $@ 
 
 mainTest : $(OBJS2)
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
 %.o : %.cpp
-	$(CC) -c -o $(CCFLAGS) $<
+	$(CC) -c $(CCFLAGS) $<
 
 .prereq : $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq
