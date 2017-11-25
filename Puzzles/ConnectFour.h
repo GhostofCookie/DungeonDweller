@@ -38,12 +38,15 @@ class ConnectFour: virtual public Puzzle
 ///\param[in]input, has been checked for syntax by input method
    bool ValidMove(int input);
 
+   bool IsInputOutOfScope(int input);
+
 ///Sends the menu class the options for the player to select.
    void SetOptionsInMenu();
 
 ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
 
+   void EndGamePrompt(int &currentPlayer);
 ///Assign the player selection to the board.
 ///\param[in] UserPiece, whichever token the player is using for the game
 ///\param[in] x, the X-coordinate (column) to drop the token in
@@ -87,7 +90,7 @@ class ConnectFour: virtual public Puzzle
    bool IsBoardFull(); 
 
 ///Resets the game for another round in the event that the AI wins.
-   void ResetGame();
+   void ResetGame(int &currentPlayer);
 
    void SetCurrentPlayerChar(int currentPlayer);
    

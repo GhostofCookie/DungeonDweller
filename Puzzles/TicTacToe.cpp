@@ -173,6 +173,28 @@ void TicTacToe::SetOptionsInMenu()
 
 }
 
+bool TicTacToe::IsInputValid(char inputX, int inputY)
+{
+   if(IsIntInputValid(inputX)&&IsIntInputValid(inputY))
+      return true;
+   else
+      return false;
+}
+
+bool TicTacToe::IsIntInputValid(int input)
+{
+   switch(input)
+   {
+      case 0:
+      case 1:
+      case 2:
+	 return true;
+	 break;
+      default:
+	 return false;
+   }
+}
+   
 bool TicTacToe::IsSpotFilled(int inputX, int inputY)
 {
    if(gameBoard.at(inputX).at(inputY)==' ')
@@ -277,13 +299,15 @@ void TicTacToe::RunGame(){
 	 ticTacToeGameMenu.HandleInput(cin);
 	 
          ///X is taken as a,b, or c, Y is taken in as an integer.
+	
+	 inputY=ticTacToeGameMenu.GetCoordinates().y-1;
 	 inputX=ConvertCharCoordinateToIndex(ticTacToeGameMenu.GetCoordinates().x);
-	 inputY=ticTacToeGameMenu.GetCoordinates().y;
-	 
 	 cout << "InputX:" << inputX << "     inputY:" << inputY << "     currentPlayerChar:" << currentPlayerChar << endl;
-		    if(!IsSpotFilled(inputX,inputY-1))
+	 if(IsInputValid(inputX, inputY))
+	 {	    
+	    if(!IsSpotFilled(inputX,inputY))
 	    {
-	       MovePiece(inputX, inputY-1, currentPlayerChar);
+	       MovePiece(inputX, inputY, currentPlayerChar);
 	       if(WinCheck())
 	       {
 		  ///If currentPlayer is even, the AI has won, -1 player health, reset
@@ -308,6 +332,7 @@ void TicTacToe::RunGame(){
 	    }
 	    else
 	       cout << "Sorry that spot is already taken!" << endl;
+	 }
       }
    }
 }
