@@ -6,6 +6,10 @@
 
 #include "Player.h"
 #include "../Image/ImportImg.h"
+#include "../Item/MyConsumables.h"
+#include "../Item/Item.h"
+#include "../Screen/Screen.h"
+#include "../Image/ImportImg.h"
 #include <algorithm>
 
 /// class to test functionality of the IntVector class

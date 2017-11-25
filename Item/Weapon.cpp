@@ -12,7 +12,7 @@ using namespace std;
 //*****************************************************************************
 /// read base damage
 //*****************************************************************************
-int Weapon::baseDamage() const
+int Weapon::BaseDamage() const
 {
 	return baseDmg;
 }
@@ -20,7 +20,7 @@ int Weapon::baseDamage() const
 //*****************************************************************************
 /// write base damage
 //*****************************************************************************
-int &Weapon::baseDamage()
+int &Weapon::BaseDamage()
 {
 	return baseDmg;
 }
@@ -28,7 +28,7 @@ int &Weapon::baseDamage()
 //*****************************************************************************
 /// read durability
 //*****************************************************************************
-int Weapon::durability() const
+int Weapon::Durability() const
 {
 	return remainingUses;
 }
@@ -36,7 +36,7 @@ int Weapon::durability() const
 //*****************************************************************************
 /// write durability
 //*****************************************************************************
-int &Weapon::durability()
+int &Weapon::Durability()
 {
 	return remainingUses;
 }

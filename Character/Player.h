@@ -59,9 +59,7 @@ public:
    
    ///Race of the player
    string race;
-   
-   ///Players stamina
-   int stamina;
+  
    
    ///Amoutn of keys player has
    int keys; 

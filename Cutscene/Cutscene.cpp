@@ -501,17 +501,94 @@ void Cutscene::FindCharacter(int &y, int &x, const char c, const Room &r)
 
 
 
-
-/// Function to animate an intro * hardcoded in every cutscene obj
-void Cutscene::GameIntro()
+/// Function to animate an outro * hardcoded in every cutscene obj
+void Cutscene::Intro()
 {
+   const int CHARLEN = 8;
 
+   Screen scr = Screen();
+   ImportImg title = ImportImg("../DD_Art/Credits/title.txt");
+
+   char play[CHARLEN] = {'[', 'P', ']', ' ', 'P', 'l', 'a', 'y'};
+   char quit[CHARLEN] = {'[', 'Q', ']', ' ', 'Q', 'u', 'i', 't'};
+   
+   title.AlignCenter(scr);
+   title.ShiftDown(scr, scr.GetRows()/2 + title.GetRows());
+
+   // This loop draws the title up the screen
+   int i = 0;
+   while(i++ < scr.GetRows()/2 + title.GetRows())
+   {
+      system("clear");
+      
+      title.Draw(scr);
+      cout << scr;
+
+      scr.Erase();
+      title.ShiftUp(1);
+
+      usleep(200000);
+   }
+
+   // initialize where the menu options begin to print
+   int playX = scr.GetCols()/2 - (CHARLEN * 2);
+   int quitX = scr.GetCols()/2 + CHARLEN;
+
+   // iterate through the char array printing each character one at a time
+   for(int i = 0; i < CHARLEN; i++)
+   {
+      system("clear");
+
+      title.Draw(scr);
+      scr.Set(scr.GetRows()-CHARLEN, playX++, play[i]);
+
+      cout << scr;
+      
+      usleep(200000);
+   }
+
+   // iterate through the char array printing each character one at a time
+   for(int i = 0; i < CHARLEN; i++)
+   {
+      system("clear");
+
+      title.Draw(scr);
+      scr.Set(scr.GetRows()-CHARLEN, quitX++, quit[i]);
+
+      cout << scr;
+      
+      usleep(200000);
+   }
 }
 
 
 
 /// Function to animate an outro * hardcoded in every cutscene obj
-void Cutscene::GameOutro()
+void Cutscene::Outro()
 {
+   const int CHARLEN = 8;
+   
+   Screen scr = Screen();
+   ImportImg credits = ImportImg("../DD_Art/Credits/credits.txt");
 
+   char play[CHARLEN] = {'[', 'P', ']', ' ', 'P', 'l', 'a', 'y'};
+   char quit[CHARLEN] = {'[', 'Q', ']', ' ', 'Q', 'u', 'i', 't'};
+   
+   credits.AlignCenter(scr);
+   credits.ShiftDown(scr, scr.GetRows()/2 + credits.GetRows());
+
+   // This loop draws the title up the screen
+   int i = 0;
+   while(i++ < scr.GetRows()/2 + credits.GetRows())
+   {
+      system("clear");
+      
+      credits.Draw(scr);
+      cout << scr;
+
+      scr.Erase();
+      credits.ShiftUp(1);
+
+      usleep(200000);
+   }
 }

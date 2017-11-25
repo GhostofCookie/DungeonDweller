@@ -23,8 +23,13 @@ int main()
     // create a cutscene that uses this image
    Cutscene cutscene = Cutscene(*img, room->GetImage(), room);
 
+
+
+   cutscene.Intro();
+   cutscene.Outro();
    
    // runs 4 different DYNAMIC cutscene tests
+   /*
    cutscene.EnterRight();
    cutscene.ExitUp();
    cutscene.EnterDown();
@@ -33,7 +38,8 @@ int main()
    cutscene.ExitDown();
    cutscene.EnterLeft();
    cutscene.ExitLeft();
-
+   */
+   
    // runs 4 different cutscene tests
    /*
    cutscene.ExitCenterToTop();
