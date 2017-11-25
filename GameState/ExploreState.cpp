@@ -10,11 +10,8 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-<<<<<<< HEAD
    roomPtr = new Room(import->collection, 0);
-=======
    roomPtr = new Room(import->collection,0);
->>>>>>> 8d0fa31a50d43eaf5c2920f5d98f57cb056f0b69
    roomTree = new RoomTree(roomPtr);
 }
 
@@ -39,7 +36,7 @@ void ExploreState::Get()
    //Remove in the future
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
-<<<<<<< HEAD
+
    
    while(true)
    {
