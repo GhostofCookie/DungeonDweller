@@ -58,9 +58,7 @@ class Screen
    /// Returns the width of the screen
    int GetCols() const;
    
-   /// Returns the center of the screen
-   int GetCenterPnt() const;
-   
+      
    /// Returns true if the number is even
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
