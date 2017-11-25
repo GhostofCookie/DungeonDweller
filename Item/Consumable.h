@@ -16,11 +16,11 @@ class Consumable : public Item
 public:
 	/// Returns the the actuall value of the consumable (for reading only)
 	/// \returns value of the consumable
-	int power() const;
+	int Power() const;
 
 	/// Returns the the actuall value of the consumable (for writing)
 	/// \returns a reference to value
-	int &power();
+	int &Power();
 protected:
 	/// The actuall value of the item(ex how much health it restores)
 	int value;

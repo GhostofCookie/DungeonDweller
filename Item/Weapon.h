@@ -16,19 +16,19 @@ class Weapon: public Item
 public:
 	/// Returns the base damage of the weapon (for reading only)
 	/// \returns base damage of the weapon
-	int baseDamage() const;
+	int BaseDamage() const;
 
 	/// Returns the base damage of the weapon (for writing)
 	/// \retrurns Reference to baseDmg
-	int &baseDamage();
+	int &BaseDamage();
 
 	/// Returns the number of times the weapon can be used (for reading only)
 	/// \returns number of remainingUses
-	int durability() const;
+	int Durability() const;
 
 	/// Returns the number of times the weapon can be used (for writing)
 	/// \returns a reference to remainingUses
-	int &durability();
+	int &Durability();
 
 protected:
 
