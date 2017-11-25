@@ -1,14 +1,19 @@
 #include "Room.h"
 #define ROOMTYPES 4
 
+
+
 /// Default Constructor
 /// \param[in] collection the images used to generate a room
-Room::Room(map<char, vector<ImportImg>> &collection, int t)
-   : type{t}
+Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
+   : type{t}, complete{c}
 {
-   //What type of room is generated e.g. treasure, puzzle, etc
+   // What type of room is generated e.g. treasure, puzzle, etc
    if(type < 0 || type > ROOMTYPES)
       type = RoomChance();
+   // If an enemy room or Puzzle room
+   if(type == 2 || type == 3)
+      complete = false;
    
 	
    // Find out how many rooms there are to pick from
@@ -69,6 +74,11 @@ string Room::GetImageFile() const { return room->GetImageFile(); }
 
 /// Function to return the type
 int Room::GetType() const { return type; }
+
+
+
+/// Function to return whether or not the room has an event to do
+bool Room::IsComplete() const { return complete; }
 
 
 

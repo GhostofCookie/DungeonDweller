@@ -155,7 +155,8 @@ void ExploreState::SetState(int n)
    switch(n)
    {
       case 0:
-	 currState = 'E';
+
+	    currState = 'E';
 	 break;
       case 1:
 	 currState = 'S';
@@ -164,7 +165,10 @@ void ExploreState::SetState(int n)
 	 currState = 'F';
 	 break;
       case 3:
-	 currState = 'P';
+	 if(!roomTree->At()->IsComplete())
+	    currState = 'P';
+	 else
+	    currState = 'E';
 	 break;
    }
 }
