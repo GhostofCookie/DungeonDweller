@@ -13,7 +13,7 @@ int main(){
    srand(time(NULL));
    Hanoi HanoiTest;
    ConnectFour ConnectFourTest;
-   TicTacToe ttt;
+   //TicTacToe ttt;
    MemoryMatch mmTest;
    CodeCracker cc;
    cout << "1:Hanoi     2:ConnectFour     3:TicTacToe     4:MemoryMatch      5:CodeCracker" <<endl;
@@ -27,7 +27,7 @@ int main(){
 	    ConnectFourTest.RunGame();
 	    break;
 	 case 3:
-	    ttt.RunGame();
+	   // ttt.RunGame();
 	    break;
 	 case 4:
 	    mmTest.RunGame();
