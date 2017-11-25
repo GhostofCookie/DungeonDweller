@@ -32,6 +32,7 @@ void ExploreState::Get()
    
    while(true)
    {
+      // ensure the screen clears
       system("clear");
       system("clear");
  
@@ -42,9 +43,11 @@ void ExploreState::Get()
       (roomTree->At())->Draw(*screen);
       player.Draw(*screen);
 
+      // output the screen
+      cout << screen;
+      
       // Print the menu and handle user input
       menu->OutputMenu();
-
       menu->HandleInput(cin);
       SwitchRooms();
    }
