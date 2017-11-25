@@ -29,10 +29,62 @@ ConnectFour::~ConnectFour()
 
 }
 
+
+void ConnectFour::RunGame()
+{
+   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int currentPlayer=1, userInput;
+   ConnectFourMenu connectFourGameMenu;  
+   
+   BoardSetup();
+   while(PuzzleEnd==false)
+   {
+      cout << "CurrentPlayer:" << currentPlayer <<  endl;
+      cout << ConnectFourScreen << endl;
+      SetCurrentPlayerChar(currentPlayer);
+      if(currentPlayer%2==0)
+      {
+	 PlayAI(currentPlayerChar);
+      }
+      else
+      {	 
+	 connectFourGameMenu.OutputMenu();
+	 connectFourGameMenu.HandleInput(cin);
+	 userInput=connectFourGameMenu.GetColumn();
+	 cout << "userInput:" << userInput << endl;
+	 
+	 if(ValidMove(userInput))
+	 {
+	    MovePiece(currentPlayerChar, userInput);
+	  
+	 }
+	 else
+	    cout << "Invalid Move, please try again" << endl;
+      }
+      if(WinCheck() || TieGameCheck(currentPlayer))
+	  EndGamePrompt(currentPlayer);
+       else
+	  currentPlayer++;
+   }
+}
+
 void ConnectFour::SetOptionsInMenu()
 {
 
 }
+
+bool ConnectFour::TieGameCheck(int &currentPlayerChar)
+{
+   if(IsBoardFull())
+   {
+      currentPlayerChar=-1;
+      return true;
+   }
+   else
+      return false;
+}
+
 
 ///Performs the AI players move
 void ConnectFour::PlayAI(char AiPiece)
@@ -181,50 +233,18 @@ void ConnectFour::EndGamePrompt(int &currentPlayer)
       ResetGame(currentPlayer);
       cout << "Get ready to duel her again!" << endl;
    }
+   else if(currentPlayer==-1)
+   {
+      cout << "There has been a tie, but unfortunately for you that doesn't"
+	   << " count as a win! Try harder this time!" << endl;
+      //-1 Health
+      ResetGame(currentPlayer);
+   }
    else
    {
       cout << "Congratulations adventurer! You have defeated the champion"
 	   << "! You are free to proceed into the next area!" << endl;
       PuzzleEnd=true;
-   }
-}
-
-void ConnectFour::RunGame()
-{
-   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
-   ///if it is even, it is the AI's turn.
-   int currentPlayer=1, userInput;
-   ConnectFourMenu connectFourGameMenu;  
-   
-   BoardSetup();
-   while(PuzzleEnd==false)
-   {
-      cout << "CurrentPlayer:" << currentPlayer <<  endl;
-      cout << ConnectFourScreen << endl;
-      SetCurrentPlayerChar(currentPlayer);
-      if(currentPlayer%2==0)
-      {
-	 PlayAI(currentPlayerChar);
-      }
-      else
-      {	 
-	 connectFourGameMenu.OutputMenu();
-	 connectFourGameMenu.HandleInput(cin);
-	 userInput=connectFourGameMenu.GetColumn();
-	 cout << "userInput:" << userInput << endl;
-	 
-	 if(ValidMove(userInput))
-	 {
-	    MovePiece(currentPlayerChar, userInput);
-	  
-	 }
-	 else
-	    cout << "Invalid Move, please try again" << endl;
-      }
-       if(WinCheck())
-	  EndGamePrompt(currentPlayer);
-       else
-	  currentPlayer++;
    }
 }
 
@@ -429,7 +449,6 @@ bool ConnectFour::RightDiagonalCheck()
 bool ConnectFour::IsColumnFull(int input)
 {
    cout << "IS COLUMN FULL:" << input << " "<< endl;
-   int charCount=0;
       for(int i=0; i<ySize; i++)
    {
       if(grid.at(input-1).at(i)==' ')
@@ -456,18 +475,14 @@ void ConnectFour::ResetGame(int &currentPlayer)
 {
    for(int i=0; i<xSize; i++)
    {
-      ///Empty the board of all pieces and fill it with empty spaces.
-      grid.at(i).clear();
-      grid.at(i).resize(ySize);
       for(int j=0; j<ySize; j++)
       {
 	 grid.at(i).at(j)=' ';
       }
-      ConnectFourScreen.Erase();
-      BoardSetup();
-      currentPlayer=1;
    }
-   
+   ConnectFourScreen.Erase();
+   BoardSetup();
+   currentPlayer=1;
 }
 
    

@@ -233,7 +233,6 @@ bool TicTacToe::WinCheck()
       return false;
 }
 
-
 int TicTacToe::ConvertCharCoordinateToIndex(char input)
 {
    switch(input)
@@ -254,6 +253,7 @@ int TicTacToe::ConvertCharCoordinateToIndex(char input)
 	 return -1;
    }
 }
+
 void TicTacToe::AiMove(char AiPiece)
 {
    cout << "AI MOVE" << endl;
@@ -336,3 +336,18 @@ void TicTacToe::RunGame(){
       }
    }
 }
+
+void TicTacToe::ResetGame(int &currentPlayer)
+{
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int j=0; j<boardSize; j++)
+      {
+	 gameBoard.at(i).at(j)=' ';
+      }
+   }
+   TicTacToeScreen.Erase();
+   BoardSetup();
+   currentPlayer=1;
+}
+

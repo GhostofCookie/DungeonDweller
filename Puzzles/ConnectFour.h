@@ -40,12 +40,11 @@ class ConnectFour: virtual public Puzzle
 
    bool IsInputOutOfScope(int input);
 
-///Sends the menu class the options for the player to select.
-   void SetOptionsInMenu();
-
 ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
 
+   void SetOptionsInMenu();
+   
    void EndGamePrompt(int &currentPlayer);
 ///Assign the player selection to the board.
 ///\param[in] UserPiece, whichever token the player is using for the game
@@ -82,25 +81,31 @@ class ConnectFour: virtual public Puzzle
 ///terminal
    Screen ConnectFourScreen;
 
-///Function which checks if a column is full, returns true if its full
-///\param[in]input, the column selected by the user to be checked for status
+   ///Function which checks if a column is full, returns true if its full
+   ///\param[in]input, the column selected by the user to be checked for status
    bool IsColumnFull(int input);
-
-///Returns true if every space in the board has been filled with a character 
+   
+   ///Returns true if every space in the board has been filled with a character 
    bool IsBoardFull(); 
 
-///Resets the game for another round in the event that the AI wins.
+   bool TieGameCheck(int &currentPlayer);
+      
+   ///Resets the game for another round in the event that the AI wins.
    void ResetGame(int &currentPlayer);
 
+   ///Sets the currenPlayerChar appropriately based on which parameters.
+   ///\param[in]currentPlayer, even number=ai, odd number=human player.
    void SetCurrentPlayerChar(int currentPlayer);
    
-///The vector which stores the gameboards chars.
+   ///The vector which stores the gameboards chars.
    std::vector<vector<char>>grid;
 
+   ///currentPlayerChar keeps track of which character to insert depending on
+   ///whos turn it is.
    char currentPlayerChar;
    
-///xSize is the horizontal dimensions of the game board, ySize is the
-///vertical dimensions of the gameboard vector
+   ///xSize is the horizontal dimensions of the game board, ySize is the
+   ///vertical dimensions of the gameboard vector
    int xSize, ySize;
 
 };

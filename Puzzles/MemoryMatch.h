@@ -9,6 +9,7 @@
 #define MEMORY_MATCH_H
 #include "Puzzle.h"
 #include <unistd.h>
+#include "../Menu/MemoryMenu.h"
 
 ///This class contains the mini-game/puzzle Memory Match
 class MemoryMatch: virtual public Puzzle

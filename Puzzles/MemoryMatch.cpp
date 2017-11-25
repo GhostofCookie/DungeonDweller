@@ -7,6 +7,7 @@
 
 MemoryMatch::MemoryMatch()
 {
+   MemoryMenu MemoryMatchMenu;
    boardSize=4;
    pairsOfCharsVector.resize(boardSize*boardSize/2);
    pairsOfCharsVector.at(0)='@';
