@@ -56,7 +56,7 @@ void MemoryMatch::RunGame()
       cout << "@@@" << endl;
       MemoryMatchMenu.HandleInput(cin);
       ///Get input 1-4
-      SetInputs(inputX1, inputY1, inputX2, inputY2, &MemoryMatchMenu);
+      SetInputs(inputX1, inputY1, inputX2, inputY2, MemoryMatchMenu);
       cout << "SetInputs done" << endl;
       if(CheckInput(inputX1, inputY1, inputX2, inputY2))
       {
@@ -91,7 +91,7 @@ int MemoryMatch:: ConvertCharToIndex(char input)
 }
    
 void MemoryMatch:: SetInputs(int &X1, int &Y1,int &X2,int &Y2,
-			     MemoryMenu menu)
+			     MemoryMenu &menu)
 {
    cout << "1" ;
    X1=ConvertCharToIndex(menu.GetCoordinates().x1);
