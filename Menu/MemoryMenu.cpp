@@ -42,7 +42,7 @@ void MemoryMenu::HandleInput(istream & is)
    }
    else 
    {
-      query = "Invalid coordinates. Please ensure that your coordinates are between A1 and D4";
+      query = "Invalid coordinates. Please enter coordinates between A1 and D4";
       coordinates.x1 = ' ';
       coordinates.x2 = ' ';
       coordinates.y1 = 0;
