@@ -11,6 +11,7 @@
 #include "../Menu/MainMenu.h"
 #include "../Menu/FightMenu.h"
 #include "../Menu/ExploreMenu.h"
+#include "../RoomTree/RoomTree.h"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
@@ -36,6 +37,9 @@ class GameState
   Menu *menu; ///< pointer to the menu.
   Screen *screen; ///< pointer to the screen;
   char currState; ///< defines which gamestate will be used.
+
+  /// allows access from different states to check whether room is complete
+  RoomTree *roomTree;
 };
 
 #endif

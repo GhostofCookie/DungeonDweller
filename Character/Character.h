@@ -10,8 +10,8 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "../Item/MyConsumables.h"
-#include "../Screen/Screen.h"
+//#include "../Item/MyConsumables.h"
+#include "../Item/Item.h"
 #include "../Image/ImportImg.h"
 #include <vector>
 
@@ -40,22 +40,22 @@ class Character
    /// Character constructor
    /// \param[in] g, starting amoutn of gold for the character
    /// \param[in] h, starting health for the character
-   //virtual Character() = 0;
+   //Character() = 0;
 
    /// Character deconstructor
    virtual ~Character(){}
 
    ///Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
-   virtual void FillInventory(const Item &item);
+   virtual void FillInventory(Item *item);
    
    ///Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual void GetInventoryItems(const Item &inventory);
+   virtual void GetInventoryItems(Item *inventory);
 
    ///Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual void UseItem(const Item &inventory);
+   virtual void UseItem(Item *inventory);
 
    ///Change the amount of gold a character has
    /// \param[in&] Gold, current amount of gold the character has

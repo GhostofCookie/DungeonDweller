@@ -15,6 +15,9 @@
 #include "../Item/MyConsumables.h"
 #include <vector>
 
+class Item;
+class MyConsumable;
+
 ///Derived class from Character which provides Npc attributes
 class Npc : public Character
 {

@@ -46,7 +46,7 @@ class Room
    ImportImg *room;
    /// The type of room that will be generated
    int type;
-	
+   
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
    int Rand(int n);
@@ -70,7 +70,7 @@ class Room
   public:
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles the image used as the room
-   Room(map<char, vector<ImportImg>> &imgFiles, int type = -1);
+   Room(map<char, vector<ImportImg>> &imgFiles, int type = -1, bool c = true);
    /// Copy Constructor
    /// \param[in] r the room being copied
    Room(Room &r);
@@ -83,6 +83,9 @@ class Room
    /// The points of each image's key character
    vector<Point> point; // stores the points to each key
 
+   /// To indicate if a room has any events that need to take place
+   bool complete;
+
    /// Function that returns the image object
    ImportImg GetImage() const;
    
@@ -91,7 +94,10 @@ class Room
    
    /// Function that returns the room's type
    int GetType() const;
-	
+
+   /// Function that returns the room's type
+   bool IsComplete() const;
+   
    /// Function to align to the center of the screen
    /// \param[in] screen the screen drawn on
    void AlignCenter(Screen &screen);
