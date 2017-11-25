@@ -11,7 +11,6 @@
 using namespace std;
 
 class Character;
-class Player;
 
 /// This class is an abstract base class to represent items in game
 class Item

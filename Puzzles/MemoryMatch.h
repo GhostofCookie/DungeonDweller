@@ -37,7 +37,7 @@ class MemoryMatch: virtual public Puzzle
    ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
 
-   void SetInputs(int &X1, int &Y1, int &X2,int &Y2, MemoryMenu menu);
+   void SetInputs(int &X1, int &Y1, int &X2,int &Y2, MemoryMenu &menu);
    
    ///Checks the semantics of the players selection
 
