@@ -1,7 +1,7 @@
 CC=g++
-CCFLAGS=-Wall -std=c++11 -g -lcppunit -ldl -fprofile-arcs -ftest-coverage
+CCFLAGS=-Wall -std=c++11 -g -lcppunit -ldl #-fprofile-arcs -ftest-coverage
 OBJS= Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportImg.o
-OBJS2= mainTest.o PlayerTest.o Player.o ../Item/MyConsumables.o ../Image/ImportImg.o 
+OBJS2= mainTest.o PlayerTest.o Player.o Npc.o ../Item/MyConsumables.o ../Image/ImportImg.o 
 
 .PHONY : all
 all: mainTest
@@ -13,7 +13,7 @@ mainTest : $(OBJS2)
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
 %.o : %.cpp
-	$(CC) -c $(CCFLAGS) $<
+	$(CC) -c -o $(CCFLAGS) $<
 
 .prereq : $(OBJS:.o=.cpp) $(OBJS2:.o=.cpp) $(wildcard *.h) Makefile
 	rm -f .prereq

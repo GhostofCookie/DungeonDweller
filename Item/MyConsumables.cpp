@@ -8,7 +8,7 @@
 #include "MyConsumables.h"
 #include "../Character/Character.h"
 #include "../Character/Player.h"
-#include <stdexept>
+#include <stdexcept>
 #include <typeinfo>
 using namespace std;
 
