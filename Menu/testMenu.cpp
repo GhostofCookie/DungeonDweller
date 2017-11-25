@@ -19,13 +19,13 @@ int main()
 {
   // TicTacToeMenu *menu = nullptr;
   // ConnectFourMenu * menu = new ConnectFourMenu();;
-//   Menu *menu = nullptr;
-   MemoryMenu *menu = nullptr;
+   Menu *menu = nullptr;
+//   MemoryMenu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-//   menu = new Menu();
+   menu = new MainMenu();
    screen = new Screen();
-   menu = new MemoryMenu();
+//   menu = new MemoryMenu();
    menu->AddOption('W', "Move Up");
    menu->AddOption('S', "Move Down");
    menu->AddOption('A', "Move Left");
@@ -37,8 +37,8 @@ int main()
       menu->OutputMenu();
       menu->HandleInput(cin);
 //      testFunction(menu->GetOption());
-      testCoord(menu->GetCoordinates().x1, menu->GetCoordinates().y1);
-      testCoord(menu->GetCoordinates().x2, menu->GetCoordinates().y2);
+      //    testCoord(menu->GetCoordinates().x1, menu->GetCoordinates().y1);
+      //testCoord(menu->GetCoordinates().x2, menu->GetCoordinates().y2);
 //      menu->GetColumn();
    }
 //   delete menu;

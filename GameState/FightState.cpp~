@@ -1,0 +1,19 @@
+
+
+/// This is the default constructor.
+FightState::FightState()
+{
+
+}
+
+/// Sets the layout of the game.
+void FightState::Set()
+{
+
+}
+
+/// Outpouts the layout of the game.
+void FightState::Get()
+{
+
+}

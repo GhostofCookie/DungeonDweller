@@ -43,14 +43,13 @@ void Menu::HandleInput(istream& is)
    is.clear();
    is.ignore(255,'\n');
 
-   auto it = indexMap.find(option);
+   auto it = indexMap.find(tolower(option));
    if(it != indexMap.end())
-      currOption = option;
+      currOption = tolower(option);
    else
    {
-      is.clear();
-      is.ignore(255,'\n');
-      // currOption='\n';
+      currOption='\n';
+      return;
    }
    if(option == 'q')
       QuitGame(0);
@@ -70,7 +69,7 @@ void Menu::AddOption(char command, string optionName)
 {
    auto it = indexMap.find(command);
    if(it->first != command)
-      indexMap[static_cast<int>(command)] = optionName;
+      indexMap[static_cast<int>(tolower(command))] = optionName;
    else return;
 }
 

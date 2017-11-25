@@ -18,28 +18,31 @@
 
 class GameState
 {
-  /// \class GameState GameState.h
-  /// \brief An abstract class, this class defines the state of the current 'state' of the game based 
-  /// on the current situation of the player character.
- public:
-  /// Default constructor
-  GameState(){}
-  /// Default destructor
-  virtual ~GameState(){}
-  /// Sets the layout of the game.
-  virtual void Set() = 0;
-  /// Outputs the set layout.
-  virtual void Get() = 0;
-  /// Returns the current state.
-  char GetState() const {return currState;}
+   /// \class GameState GameState.h
+   /// \brief An abstract class, this class defines the state of the current 'state' of the game based 
+   /// on the current situation of the player character.
+  public:
+   /// Default constructor
+   GameState(){}
+   /// Default destructor
+   virtual ~GameState(){}
+   /// Sets the layout of the game.
+   virtual void Set() = 0;
+   /// Outputs the set layout.
+   virtual void Get() = 0;
+   /// Returns the current state.
+   char GetState() const {return currState;}
 
- protected:
-  Menu *menu; ///< pointer to the menu.
-  Screen *screen; ///< pointer to the screen;
-  char currState; ///< defines which gamestate will be used.
+  protected:
+   ///< pointer to the menu.
+   Menu *menu;
+   ///< pointer to the screen;
+   Screen *screen;
+   ///< defines which gamestate will be used.
+   char currState;
+   /// allows access from different states to check whether room is complete
+   RoomTree *roomTree;
 
-  /// allows access from different states to check whether room is complete
-  RoomTree *roomTree;
 };
 
 #endif

@@ -36,8 +36,13 @@ class ExploreState : public GameState
    /// Gets the layout for the game menu and screen.
    void Get();
   private:
-   void SetState(int);
-   void SwitchRooms();
+   /// Helper function to set the current state of the game based on the current
+   /// room type.
+   /// \param[in] type Defines the type of room the player is in.
+   void SetState(int type);
+   /// Helper function to give input functionality
+   ///\param[in] option The current option chosen by the player.
+   void RunInput(char option);
    ImageImporter *import;
    Room *roomPtr;
   

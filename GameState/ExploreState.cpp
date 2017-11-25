@@ -38,8 +38,6 @@ void ExploreState::Set()
   menu->AddOption('d',"Move Right");
   if((roomTree->At())->GetType() == 1)
     menu->AddOption('t', "Trade");
-  //else if((roomTree->At())->GetType() != 1)
-  //  indexMap.erase('t');
 }
 
 /// Gets the layout for the game menu and screen.
@@ -66,16 +64,16 @@ void ExploreState::Get()
    // Print the menu and handle user input
    menu->OutputMenu();
    menu->HandleInput(cin);
-   SwitchRooms();
+
+   // Handle input from player
+   RunInput(menu->GetOption());
 }
 
-/// Helper function to switch rooms in the room tree.
-void ExploreState::SwitchRooms()
+/// Helper function to give input functionality
+void ExploreState::RunInput(char n)
 {
    Cutscene *anim;
       
-   char n = menu->GetOption();
-   cout << n << endl;
    switch(n)
    {
       case 'w' :
@@ -144,29 +142,34 @@ void ExploreState::SwitchRooms()
 	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->EnterLeft();
-	 break;	 
+	 break;
+      case 't':
+	 currState = 'S';
+	 return;
+	 break;
    };
 
    delete anim;
 }
 
+/// Helper function to set the current state of the game based on the current
+/// room type.
 void ExploreState::SetState(int n)
 {
    switch(n)
    {
       case 0:
-
-	    currState = 'E';
-	 break;
-      case 1:
-	 currState = 'S';
+	 currState = 'E';
 	 break;
       case 2:
-	 currState = 'F';
+	 //currState = 'F';
 	 break;
       case 3:
 	 if(!roomTree->At()->IsComplete())
+	 {
 	    currState = 'P';
+	    roomTree->At()->complete = true;
+	 }
 	 else
 	    currState = 'E';
 	 break;

@@ -9,8 +9,18 @@ MainMenu::MainMenu(int height)
 void MainMenu::SetOptions(int row, int col,int space)
 {
    map<int,string> optionsList = indexMap;
-   for(auto it = optionsList.begin(); it != optionsList.end(); it++)
-      Menu::SetOptions(3,(menuWidth-2)/2-it->second.length()/2);
+   auto it = optionsList.begin();
+   string temp;
+   while(it != optionsList.end())
+   {
+      temp = '['; temp += it->first; temp += ']'; temp += it->second;
+      for(unsigned int i = 0; i < temp.length(); i++)
+      {
+	 Set(row, (menuWidth-2)/2 + i - temp.length()/2, temp[i]);
+      }
+      row+=2;
+      ++it;
+   }
 }
 
 void MainMenu::HandleInput(istream & is)

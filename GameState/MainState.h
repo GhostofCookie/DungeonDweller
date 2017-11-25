@@ -6,6 +6,8 @@
 ///
 
 #include "GameState.h"
+#include "../Cutscene/Cutscene.h"
+#include "../Menu/MainMenu.h"
 
 #ifndef MAINSTATE_H
 #define MAINSTATE_H

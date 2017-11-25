@@ -2,9 +2,20 @@
 
 MainState::MainState()
 {
+   menu = new MainMenu();
 }
 
 void MainState::Set()
 {
-	menu->SetOptions();
+   menu->AddOption('P',"Play Game");
+   if(tolower(menu->GetOption()) == 'p')
+      currState = 'E';
+
+}
+void MainState::Get()
+{
+   // Cutscene anim;
+   //anim.Intro();
+   menu->OutputMenu();
+   menu->HandleInput(cin);
 }
