@@ -30,7 +30,7 @@ class GameState
   /// Outputs the set layout.
   virtual void Get() = 0;
   /// Returns the current state.
-//  char GetState() const {}
+  char GetState() const {return currState;}
 
  protected:
   Menu *menu; ///< pointer to the menu.
