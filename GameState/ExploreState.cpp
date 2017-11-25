@@ -10,6 +10,7 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
+   roomPtr = new Room(import->collection, 0);
    roomPtr = new Room(import->collection,0);
    roomTree = new RoomTree(roomPtr);
 }
@@ -35,6 +36,30 @@ void ExploreState::Get()
    //Remove in the future
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
+
+   
+   while(true)
+   {
+      // ensure the screen clears
+      system("clear");
+      system("clear");
+ 
+      // clear the screen
+      screen->Erase();
+      // align the current room to the screen and print
+      (roomTree->At())->AlignCenter(*screen);
+      (roomTree->At())->Draw(*screen);
+      player.Draw(*screen);
+
+      // output the screen
+      cout << screen;
+      
+      // Print the menu and handle user input
+      menu->OutputMenu();
+      menu->HandleInput(cin);
+      SwitchRooms();
+   }
+
    // ensure the screen clears
    system("clear");
    system("clear");
@@ -119,7 +144,7 @@ void ExploreState::SwitchRooms()
 			     *roomTree->At());
 	 anim->ExitRight();
 	 
-	 if(!roomTree->Move('D'))
+	 if(!roomTree->Move('R'))
 	 {
 	    roomTree->NewRoom('R',new Room(import->collection));
 	    roomTree->Move('R');
