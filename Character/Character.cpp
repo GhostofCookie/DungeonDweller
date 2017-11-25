@@ -40,3 +40,11 @@ void Character:: FillInventory(Item *item)
 {
    inventory.pushback(item);
 }
+
+void Character:: ChangeStamina(int sMod)
+{
+   if(stamina += sMod <= 0)
+      stamina = 0;
+   else
+      stamina += sMod;
+}

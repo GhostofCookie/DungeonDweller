@@ -8,6 +8,7 @@
 #include "MyConsumables.h"
 #include "../Character/Character.h"
 #include "../Character/Player.h"
+#include <stdexcept>
 #include <typeinfo>
 using namespace std;
 
@@ -49,11 +50,8 @@ Food::Food()
 //*****************************************************************************
 bool Food::use(Character *target)
 {
-   if(!used) {
-      if(typeid(target).name() != "Player")
-	 throw invalid_argument("target is not a player");
-      Player *newTarget = target;
-      newTarget->ChangeStamina(value);
+   if(!used) {     
+      target->ChangeStamina(value);
       used = true;
       return true;
    }

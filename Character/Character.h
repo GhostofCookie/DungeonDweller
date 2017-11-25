@@ -35,6 +35,10 @@ class Character
 
    ///Characters health
    int health;
+
+    
+   ///Characters stamina
+   int stamina;
    
    public:
    /// Character constructor
@@ -66,6 +70,11 @@ class Character
    /// \param[in&] H, characters current health
    /// \param[in] HMod, how the current health will be modified
    virtual void ChangeHealth(int hMod);
+
+    ///Changes players stamina
+    /// \param[in&] s, players current stamina
+    /// \param[in] sMod, how the curent stamina will be modified
+    virtual void ChangeStamina(int sMod);
 
 }; 
 

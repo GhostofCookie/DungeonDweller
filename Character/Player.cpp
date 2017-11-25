@@ -1,22 +1,26 @@
 #include "Player.h"
+#include "Npc.h"
 
 using namespace std;
 
 Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
-   : stamina{s}, keys{k}, name{n}, race{r}
+   : keys{k}, name{n}, race{r}
 {
    img = ImportImg(i);
    gold = g;
    health = h;
+   stamina = s;
 }
 
+/*
 void Player:: ChangeStamina(int sMod)
 {
    if(stamina += sMod <= 0)
       stamina = 0;
    else
       stamina += sMod;
-}
+      }
+*/
 
 void Player:: ChangeKeys(int keyMod)
 {
