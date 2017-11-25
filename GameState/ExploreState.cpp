@@ -37,7 +37,9 @@ void ExploreState::Set()
   menu->AddOption('s',"Move Down");
   menu->AddOption('d',"Move Right");
   if((roomTree->At())->GetType() == 1)
-    menu->AddOption('t', "Trade");
+     menu->AddOption('t', "Trade");
+  if((roomTree->At())->GetType() == 3 && !roomTree->At()->IsComplete())
+     menu->AddOption('p', "Solve Puzzle");
 }
 
 /// Gets the layout for the game menu and screen.
@@ -46,10 +48,6 @@ void ExploreState::Get()
    //Remove in the future
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
-   
-   // ensure the screen clears
-   // system("clear");
-   // system("clear");
  
    // clear the screen
    screen->Erase();
@@ -147,6 +145,15 @@ void ExploreState::RunInput(char n)
 	 currState = 'S';
 	 return;
 	 break;
+      case 'p':
+	 if(!roomTree->At()->IsComplete())
+	 {
+	    currState = 'P';
+	    roomTree->At()->complete = true;
+	 }
+	 else currState = 'E';
+	 return;
+	 break;
    };
 
    delete anim;
@@ -162,16 +169,9 @@ void ExploreState::SetState(int n)
 	 currState = 'E';
 	 break;
       case 2:
+	 usleep(300000);
 	 //currState = 'F';
 	 break;
-      case 3:
-	 if(!roomTree->At()->IsComplete())
-	 {
-	    currState = 'P';
-	    roomTree->At()->complete = true;
-	 }
-	 else
-	    currState = 'E';
-	 break;
+
    }
 }

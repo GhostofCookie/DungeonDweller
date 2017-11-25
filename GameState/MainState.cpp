@@ -14,8 +14,6 @@ void MainState::Set()
 }
 void MainState::Get()
 {
-   // Cutscene anim;
-   //anim.Intro();
-   menu->OutputMenu();
+   Cutscene anim; anim.Intro();
    menu->HandleInput(cin);
 }

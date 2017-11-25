@@ -14,6 +14,7 @@ int main()
    GameState *baseState = new ExploreState();
    while(true)
    {
+      system("clear");
       state->Set();
       switch(state->GetState())
       {
@@ -21,7 +22,6 @@ int main()
 	    state = baseState;
 	    break;
 	 case 'P':
-	    delete state;
 	    state = new PuzzleState();
 	    break;
 	 case 'F':
