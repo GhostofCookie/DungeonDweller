@@ -36,9 +36,15 @@ void ConnectFourMenu::HandleInput(istream & is)
     {
       query = "Invalid column number. Please enter a number from 1-7";
       column = 0;
+      is.clear();
+      is.ignore(255,'\n');
     }
   if(is.fail())
-    throw invalid_argument("Invalid input. please enter a signle number from 1-7.");
+  {
+     throw invalid_argument("Invalid input. please enter a signle number from 1-7.");
+     is.clear();
+     is.ignore(255,'\n');
+  }
 }
 
 int ConnectFourMenu::GetColumn() const
