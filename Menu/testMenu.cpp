@@ -17,14 +17,15 @@ void testFunction(char);
 void testCoord(char,int);
 int main()
 {
-  //   TicTacToeMenu *menu = nullptr;
-   ConnectFourMenu * menu = new ConnectFourMenu();;
+  // TicTacToeMenu *menu = nullptr;
+  // ConnectFourMenu * menu = new ConnectFourMenu();;
 //   Menu *menu = nullptr;
+   MemoryMenu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
 //   menu = new Menu();
    screen = new Screen();
-
+   menu = new MemoryMenu();
    menu->AddOption('W', "Move Up");
    menu->AddOption('S', "Move Down");
    menu->AddOption('A', "Move Left");
@@ -36,8 +37,8 @@ int main()
       menu->OutputMenu();
       menu->HandleInput(cin);
 //      testFunction(menu->GetOption());
-//      testCoord(menu->GetCoordinates().x, menu->GetCoordinates().y);
-      menu->GetColumn();
+      testCoord(menu->GetCoordinates().x, menu->GetCoordinates().y);
+//      menu->GetColumn();
    }
 //   delete menu;
 
