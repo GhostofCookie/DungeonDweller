@@ -2,10 +2,13 @@
 
 using namespace std;
 
-Npc:: Npc()
+Npc:: Npc(int g = 0, int h = 0, ImportImg img = ImportImg())
 {
-
+   img = ImportImg(i);
+   gold = g;
+   health = h;
 }
+
    
 
 Npc:: ~Npc()
@@ -13,8 +16,8 @@ Npc:: ~Npc()
    
 }
 
-void Npc:: AttackPlayer(Weapon damage, Player enemy)
+void Npc:: AttackPlayer(Player enemy)
 {
-   int healthMod = Weapon.baseDamage;
-   ChangeHealth(Player.health, healthMod);
+   // int healthMod = Weapon.baseDamage;
+   //ChangeHealth(Player.health, healthMod);
 }
