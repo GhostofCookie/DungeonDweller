@@ -1,7 +1,8 @@
- C#include "Cutscene.h"
+#include "Cutscene.h"
 #include <stdlib.h>
-#define HORIZSPEED 40000 //This is half the vert speed in microseconds.
+#define HORIZSPEED 25000 //This is half the vert speed in microseconds.
 #define VERTSPEED HORIZSPEED*2
+
 
 
 /// Default Constructor
@@ -10,6 +11,10 @@
 /// \param[in] tempRoom to gain temporary access to its exit points
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 {
+   // itinitialize the animated img and the background
+   img = ImportImg(image);
+   room = ImportImg(r);
+   
    // initialize a screen for the image to lay on
    screen = Screen(33, 61);
    leftSide = rightSide = Screen(33, 20, ' ');
@@ -17,14 +22,11 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
    screen.outlineOn = false;
    leftSide.Fill(' ');
    rightSide.Fill(' ');
-   
-   img = ImportImg(image);
-   room = ImportImg(r);
 
    /// set the center point to gain access later on
    room.AlignCenter(screen);
    room.ShiftUp(1);
-
+   
    // preset the room to be in the center for all animations
    img.AlignCenter(room);
    centerY = img.screenY;
@@ -32,10 +34,10 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 
    /// reserve and locate points for 4 exit locations per room
    point.reserve(4);
-   FindCharacter(point[0].y, point[0].x, '1', tempRoom);
-   FindCharacter(point[1].y, point[1].x, '2', tempRoom);
-   FindCharacter(point[2].y, point[2].x, '3', tempRoom);
-   FindCharacter(point[3].y, point[3].x, '4', tempRoom);
+   FindCharacter(point[0].y, point[0].x, '1', tempRoom); // up
+   FindCharacter(point[1].y, point[1].x, '2', tempRoom); // right
+   FindCharacter(point[2].y, point[2].x, '3', tempRoom); // down
+   FindCharacter(point[3].y, point[3].x, '4', tempRoom); // left
 }
 
 

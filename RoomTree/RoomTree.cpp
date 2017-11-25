@@ -108,6 +108,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 	 currNode->down->room = roomptr;
 	 currNode->down->RootDir = 'U';
 	 break;
+	 
       default:
 	 throw invalid_argument("invalid direction");
    }

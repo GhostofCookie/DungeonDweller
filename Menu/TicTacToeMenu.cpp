@@ -42,7 +42,7 @@ void TicTacToeMenu::HandleInput(istream & is)
       coordinates.y = 0;
     }
   if(is.fail())
-    throw invalid_argument("Invalid input. please enterr coordinates in format A1.");
+    throw invalid_argument("Invalid input. please enter coordinates in format A1.");
    
 }
 
