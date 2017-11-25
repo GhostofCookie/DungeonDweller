@@ -8,19 +8,29 @@ void GetState(char, GameState*);
 int main()
 {
    GameState *state = new ExploreState();
-  try{
+   GameState *baseState = new ExploreState();
+   try{
+      state = baseState;
      while(true)
      {
 	state->Set();
 	switch(state->GetState())
 	{
 	   case 'E':
-//	   delete state;
-	      state = new ExploreState();
+	      state = baseState;
 	      break;
 	   case 'P':
 //	   delete state;
 	      state = new PuzzleState();
+	      break;
+	      /*   case 'F':
+	      state = new FightState();
+	      break;
+	   case 'S':
+	   state = new TradeState();
+	   break;
+	      */
+	      
 	}
 	state->Set();
 	state->Get();

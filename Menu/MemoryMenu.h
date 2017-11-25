@@ -21,8 +21,8 @@ class MemoryMenu : public virtual MinigameMenu
    /// The coordinates of the location the player wishes to place their piece.
    struct Coord
    {
-      char x;
-      int y;
+      char x1,x2;
+      int y1,y2;
    };
    Coord coordinates;
    string query;

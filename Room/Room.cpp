@@ -3,10 +3,13 @@
 
 /// Default Constructor
 /// \param[in] collection the images used to generate a room
-Room::Room(map<char, vector<ImportImg>> &collection)
+Room::Room(map<char, vector<ImportImg>> &collection, int t)
+   : type{t}
 {
    //What type of room is generated e.g. treasure, puzzle, etc
-   type = RoomChance();
+   if(type < 0 || type > ROOMTYPES)
+      type = RoomChance();
+   
 	
    // Find out how many rooms there are to pick from
    // All rooms are located at '0' in the map
@@ -219,7 +222,7 @@ int Room::Rand(int n)
 int Room::RoomChance()
 {  
    bool selected = false;
-   vector<int> chance = {50, 10, 25, 5}; // weight
+   vector<int> chance = {57, 10, 18, 5}; // weight
    int roomType = 0;
 
    int outOf = 0; // total of the weights

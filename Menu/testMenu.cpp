@@ -37,7 +37,8 @@ int main()
       menu->OutputMenu();
       menu->HandleInput(cin);
 //      testFunction(menu->GetOption());
-      testCoord(menu->GetCoordinates().x, menu->GetCoordinates().y);
+      testCoord(menu->GetCoordinates().x1, menu->GetCoordinates().y1);
+      testCoord(menu->GetCoordinates().x2, menu->GetCoordinates().y2);
 //      menu->GetColumn();
    }
 //   delete menu;

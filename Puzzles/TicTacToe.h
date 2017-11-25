@@ -81,6 +81,8 @@ class TicTacToe: public virtual Puzzle
    ///correct char.
    void SetCurrentPlayersChar(int currentPlayer);
 
+   void ResetGame(int &currentPlayer);
+
    int ConvertCharCoordinateToIndex(char input);
    
    ///Vector to store the contents of the gameboard

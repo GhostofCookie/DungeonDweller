@@ -32,6 +32,7 @@ DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../GameState/../Puzzles/TicTacToe.h \
  ../GameState/../Puzzles/../Menu/TicTacToeMenu.h \
  ../GameState/../Puzzles/MemoryMatch.h \
+ ../GameState/../Puzzles/../Menu/MemoryMenu.h \
  ../GameState/../Puzzles/ConnectFour.h \
  ../GameState/../Puzzles/../Menu/ConnectFourMenu.h \
  ../GameState/ExploreState.h ../GameState/../Cutscene/Cutscene.h \
@@ -97,3 +98,28 @@ Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
  ../Cutscene/../Room/../Image/Image.h \
  ../Cutscene/../Room/../Image/DefaultImg.h \
  ../Cutscene/../Room/../Image/ImportImg.h
+ExploreState.o: ../GameState/ExploreState.cpp ../GameState/ExploreState.h \
+ ../GameState/GameState.h ../GameState/../Menu/Menu.h \
+ ../GameState/../Screen/Screen.h ../GameState/../Screen/SlotScreen.h \
+ ../GameState/../Screen/Screen.h ../GameState/../Menu/MainMenu.h \
+ ../GameState/../Menu/GameMenu.h ../GameState/../Menu/Menu.h \
+ ../GameState/../Menu/FightMenu.h ../GameState/../Menu/ExploreMenu.h \
+ ../GameState/../Cutscene/Cutscene.h \
+ ../GameState/../Cutscene/../Screen/Screen.h \
+ ../GameState/../Cutscene/../Image/Image.h \
+ ../GameState/../Cutscene/../Image/../Screen/Screen.h \
+ ../GameState/../Cutscene/../Image/DefaultImg.h \
+ ../GameState/../Cutscene/../Image/Image.h \
+ ../GameState/../Cutscene/../Image/ImportImg.h \
+ ../GameState/../Cutscene/../Room/Room.h \
+ ../GameState/../Cutscene/../Room/../Screen/Screen.h \
+ ../GameState/../Cutscene/../Room/../Image/Image.h \
+ ../GameState/../Cutscene/../Room/../Image/DefaultImg.h \
+ ../GameState/../Cutscene/../Room/../Image/ImportImg.h \
+ ../GameState/../RoomTree/RoomTree.h \
+ ../GameState/../RoomTree/../Room/Room.h ../GameState/../Room/Room.h \
+ ../GameState/../ImageImporter/ImageImporter.h \
+ ../GameState/../ImageImporter/../Image/Image.h \
+ ../GameState/../ImageImporter/../Image/ImportImg.h \
+ ../GameState/../Image/Image.h ../GameState/../Image/DefaultImg.h \
+ ../GameState/../Image/ImportImg.h

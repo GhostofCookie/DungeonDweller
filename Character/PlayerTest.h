@@ -5,6 +5,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 #include "Player.h"
+#include "../Image/ImportImg.h"
 #include <algorithm>
 
 /// class to test functionality of the IntVector class

@@ -139,6 +139,9 @@ void Menu::Set(int x, int y, char ch)
 /// specified by the constructor.
 void Menu::BuildMenu()
 {
+  for(int i = 0; i < menuHeight; i++)
+    for(int j = 0; j <menuWidth; j++)
+      Set(i,j,' ');
    SetOptions();
    // Builds the outline of the menu.
    for (int i = 0; i < menuHeight; i++)

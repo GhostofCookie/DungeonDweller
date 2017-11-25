@@ -12,10 +12,10 @@ void PlayerTest:: setUp()
 
 void PlayerTest:: TestKeys()
 {
-   T.ChangeKeys(key, keyMod);
+   T.ChangeKeys(keyMod);
 }
 
 void PlayerTest:: TestStamina()
 {
-   T.ChangeStamina(stamina, staminaMod);
+   T.ChangeStamina(staminaMod);
 }

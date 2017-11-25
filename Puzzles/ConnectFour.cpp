@@ -29,82 +29,44 @@ ConnectFour::~ConnectFour()
 
 }
 
-void ConnectFour::SetOptionsInMenu()
+
+void ConnectFour::RunGame()
 {
-
-}
-
-///Performs the AI players move
-void ConnectFour::PlayAI(char AiPiece)
-{
-   int columnChoice=Puzzle::RandomNumber(xSize);
-   bool moveSuccessful=false;
-
-   while(moveSuccessful==false)
+   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int currentPlayer=1, userInput;
+   ConnectFourMenu connectFourGameMenu;  
+   
+   BoardSetup();
+   while(PuzzleEnd==false)
    {
-      if(columnChoice==0)
-	 columnChoice++;
-      if(IsColumnFull(columnChoice))
+      cout << "CurrentPlayer:" << currentPlayer <<  endl;
+      cout << ConnectFourScreen << endl;
+      SetCurrentPlayerChar(currentPlayer);
+      if(currentPlayer%2==0)
       {
-	 columnChoice=Puzzle::RandomNumber(xSize);
+	 PlayAI(currentPlayerChar);
       }
       else
-      {
-	 MovePiece(AiPiece, columnChoice);
-	 moveSuccessful=true;
-      }
-   }
-
-}
-
-///Sets up the board with the ui for the connect four game
-void ConnectFour::BoardSetup()
-{
-   int horizontalBoardSize=15, verticalBoardSize=13, topBound=10, leftBound=43;
-   for(int i=0; i<verticalBoardSize; i++)
-   {
-      for(int j=0; j<horizontalBoardSize; j++)
-      {
-	 ///If i is odd, fill the entire row with '-'
-	 if(i%2==0)
-	 {
-	    ///topBound and leftBound should set the board centered inside
-	    ///the screen object.
-	    ConnectFourScreen.Set((topBound+i), (leftBound+j),'-');
-	 }
-	 ///If i is even, fill the row with squares to place tokens in later
-	 else
-	 {
-	    if(j%2!=0)
-	    {
-	       ///topBound and leftBound should set the board centered inside
-	       ///the screen object.  
-	       ConnectFourScreen.Set((topBound+i),(leftBound+j),' ');
-	    }
-	    else
-	    {
-	       ///topBound and leftBound should set the board centered inside
-	       ///the screen object.  
-	       ConnectFourScreen.Set((topBound+i),(leftBound+j),'|');
-	    }
-	 }
-      }
-   }
-}
-bool ConnectFour:: IsInputOutOfScope(int input)
-{
-   if(input<=7 && input>0)
-      return false;
-   else
-      return true;
-}
+      {	 
+	 connectFourGameMenu.OutputMenu();
+	 connectFourGameMenu.HandleInput(cin);
+	 userInput=connectFourGameMenu.GetColumn();
+	 cout << "userInput:" << userInput << endl;
 	 
-bool ConnectFour:: ValidMove(int input)
-{
-   if(IsColumnFull(input) || IsInputOutOfScope(input))
-      return false;
-   else
-      return true;
+	 if(ValidMove(userInput))
+	 {
+	    MovePiece(currentPlayerChar, userInput);
+	  
+	 }
+	 else
+	    cout << "Invalid Move, please try again" << endl;
+      }
+      if(WinCheck() || TieGameCheck(currentPlayer))
+	  EndGamePrompt(currentPlayer);
+       else
+	  currentPlayer++;
+   }
 }
 
 void ConnectFour::MovePiece(char userPiece, int column)
@@ -156,6 +118,96 @@ void ConnectFour::MovePiece(char userPiece, int column)
    }      
 }
 
+///Performs the AI players move
+void ConnectFour::PlayAI(char AiPiece)
+{
+   int columnChoice=Puzzle::RandomNumber(xSize);
+   bool moveSuccessful=false;
+
+   while(moveSuccessful==false)
+   {
+      if(columnChoice==0)
+	 columnChoice++;
+      if(IsColumnFull(columnChoice))
+      {
+	 columnChoice=Puzzle::RandomNumber(xSize);
+      }
+      else
+      {
+	 MovePiece(AiPiece, columnChoice);
+	 moveSuccessful=true;
+      }
+   }
+
+}
+
+bool ConnectFour:: ValidMove(int input)
+{
+   if(IsColumnFull(input) || IsInputOutOfScope(input))
+      return false;
+   else
+      return true;
+}
+
+void ConnectFour::SetOptionsInMenu()
+{
+
+}
+
+bool ConnectFour::TieGameCheck(int &currentPlayerChar)
+{
+   if(IsBoardFull())
+   {
+      currentPlayerChar=-1;
+      return true;
+   }
+   else
+      return false;
+}
+
+
+///Sets up the board with the ui for the connect four game
+void ConnectFour::BoardSetup()
+{
+   int horizontalBoardSize=15, verticalBoardSize=13, topBound=10, leftBound=43;
+   for(int i=0; i<verticalBoardSize; i++)
+   {
+      for(int j=0; j<horizontalBoardSize; j++)
+      {
+	 ///If i is odd, fill the entire row with '-'
+	 if(i%2==0)
+	 {
+	    ///topBound and leftBound should set the board centered inside
+	    ///the screen object.
+	    ConnectFourScreen.Set((topBound+i), (leftBound+j),'-');
+	 }
+	 ///If i is even, fill the row with squares to place tokens in later
+	 else
+	 {
+	    if(j%2!=0)
+	    {
+	       ///topBound and leftBound should set the board centered inside
+	       ///the screen object.  
+	       ConnectFourScreen.Set((topBound+i),(leftBound+j),' ');
+	    }
+	    else
+	    {
+	       ///topBound and leftBound should set the board centered inside
+	       ///the screen object.  
+	       ConnectFourScreen.Set((topBound+i),(leftBound+j),'|');
+	    }
+	 }
+      }
+   }
+}
+bool ConnectFour:: IsInputOutOfScope(int input)
+{
+   if(input<=7 && input>0)
+      return false;
+   else
+      return true;
+}
+
 void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 {
    if(currentPlayer%2==0)
@@ -181,50 +233,18 @@ void ConnectFour::EndGamePrompt(int &currentPlayer)
       ResetGame(currentPlayer);
       cout << "Get ready to duel her again!" << endl;
    }
+   else if(currentPlayer==-1)
+   {
+      cout << "There has been a tie, but unfortunately for you that doesn't"
+	   << " count as a win! Try harder this time!" << endl;
+      //-1 Health
+      ResetGame(currentPlayer);
+   }
    else
    {
       cout << "Congratulations adventurer! You have defeated the champion"
 	   << "! You are free to proceed into the next area!" << endl;
       PuzzleEnd=true;
-   }
-}
-
-void ConnectFour::RunGame()
-{
-   ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
-   ///if it is even, it is the AI's turn.
-   int currentPlayer=1, userInput;
-   ConnectFourMenu connectFourGameMenu;  
-   
-   BoardSetup();
-   while(PuzzleEnd==false)
-   {
-      cout << "CurrentPlayer:" << currentPlayer <<  endl;
-      cout << ConnectFourScreen << endl;
-      SetCurrentPlayerChar(currentPlayer);
-      if(currentPlayer%2==0)
-      {
-	 PlayAI(currentPlayerChar);
-      }
-      else
-      {	 
-	 connectFourGameMenu.OutputMenu();
-	 connectFourGameMenu.HandleInput(cin);
-	 userInput=connectFourGameMenu.GetColumn();
-	 cout << "userInput:" << userInput << endl;
-	 
-	 if(ValidMove(userInput))
-	 {
-	    MovePiece(currentPlayerChar, userInput);
-	  
-	 }
-	 else
-	    cout << "Invalid Move, please try again" << endl;
-      }
-       if(WinCheck())
-	  EndGamePrompt(currentPlayer);
-       else
-	  currentPlayer++;
    }
 }
 
@@ -389,7 +409,6 @@ bool ConnectFour::RightDiagonalCheck()
       {
 	 for(int k=0; k<4; k++)
 	 {
-	    cout << "i:" << i << "     j:" << j << "     k:" << k << endl;
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
 	    if(grid.at(j-k).at(i+k)=='@')
@@ -428,14 +447,12 @@ bool ConnectFour::RightDiagonalCheck()
 ///Function which checks if a column is full
 bool ConnectFour::IsColumnFull(int input)
 {
-   cout << "IS COLUMN FULL:" << input << " "<< endl;
-   int charCount=0;
-      for(int i=0; i<ySize; i++)
+   for(int i=0; i<ySize-1; i++)
    {
-      if(grid.at(input-1).at(i)==' ')
+      if(grid.at(input).at(i)==' ')
 	 return false;
    }
-      return true;
+   return true;
 }
 
 ///Returns true if every space in the board has been filled with a character
@@ -456,18 +473,14 @@ void ConnectFour::ResetGame(int &currentPlayer)
 {
    for(int i=0; i<xSize; i++)
    {
-      ///Empty the board of all pieces and fill it with empty spaces.
-      grid.at(i).clear();
-      grid.at(i).resize(ySize);
       for(int j=0; j<ySize; j++)
       {
 	 grid.at(i).at(j)=' ';
       }
-      ConnectFourScreen.Erase();
-      BoardSetup();
-      currentPlayer=1;
    }
-   
+   ConnectFourScreen.Erase();
+   BoardSetup();
+   currentPlayer=1;
 }
 
    

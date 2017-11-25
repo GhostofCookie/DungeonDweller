@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include "Character.h"
+#include "Player.h"
+#include "../Item/MyConsumables.h"
 #include <vector>
 
 ///Derived class from Character which provides Npc attributes
@@ -20,7 +22,7 @@ class Npc : public Character
 public:
    ///Npc constructor
    /// \param[in] h, the health of the created Npc
-   Npc();
+   Npc(int g = 0, int h = 0, ImportImg img = ImportImg());
     
    ///Deconstructor
    ~Npc();
@@ -28,7 +30,7 @@ public:
    ///Attack function for the Npc to attack the Player
    /// \param[in] damage, the base damage of the weapon
    /// \param[in] enamy, the player being attacked
-   void AttackPlayer(Weapon damage, Player enemy);
+   void AttackPlayer(Player enemy);
 };
 
 #endif /* Npc_hpp */

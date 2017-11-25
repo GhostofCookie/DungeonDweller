@@ -20,8 +20,8 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
  ../Puzzles/TicTacToe.h ../Puzzles/../Menu/TicTacToeMenu.h \
- ../Puzzles/MemoryMatch.h ../Puzzles/ConnectFour.h \
- ../Puzzles/../Menu/ConnectFourMenu.h
+ ../Puzzles/MemoryMatch.h ../Puzzles/../Menu/MemoryMenu.h \
+ ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h
 Menu.o: ../Menu/Menu.cpp ../Menu/Menu.h
 MainMenu.o: ../Menu/MainMenu.cpp ../Menu/MainMenu.h ../Menu/GameMenu.h \
  ../Menu/Menu.h
@@ -115,8 +115,8 @@ PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
  ../Puzzles/TicTacToe.h ../Puzzles/../Menu/TicTacToeMenu.h \
- ../Puzzles/MemoryMatch.h ../Puzzles/ConnectFour.h \
- ../Puzzles/../Menu/ConnectFourMenu.h
+ ../Puzzles/MemoryMatch.h ../Puzzles/../Menu/MemoryMenu.h \
+ ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h
 Puzzle.o: ../Puzzles/Puzzle.cpp ../Puzzles/Puzzle.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
@@ -130,7 +130,9 @@ ConnectFour.o: ../Puzzles/ConnectFour.cpp ../Puzzles/ConnectFour.h \
 MemoryMatch.o: ../Puzzles/MemoryMatch.cpp ../Puzzles/MemoryMatch.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
- ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h
+ ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/../Menu/MinigameMenu.h \
+ ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
 CodeCracker.o: ../Puzzles/CodeCracker.cpp ../Puzzles/CodeCracker.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \

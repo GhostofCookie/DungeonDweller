@@ -183,18 +183,12 @@ bool TicTacToe::IsInputValid(char inputX, int inputY)
 
 bool TicTacToe::IsIntInputValid(int input)
 {
-   switch(input)
-   {
-      case 0:
-      case 1:
-      case 2:
-	 return true;
-	 break;
-      default:
-	 return false;
-   }
+   if(input>=0 && input<3)
+      return true;
+   else
+      return false;
 }
-   
+
 bool TicTacToe::IsSpotFilled(int inputX, int inputY)
 {
    if(gameBoard.at(inputX).at(inputY)==' ')
@@ -233,27 +227,24 @@ bool TicTacToe::WinCheck()
       return false;
 }
 
-
 int TicTacToe::ConvertCharCoordinateToIndex(char input)
 {
    switch(input)
    {
-      case 'a':
-      case 'A':
+      case 'a': case 'A':
 	 return 0;
 	 break;
-      case 'b':
-      case 'B':
+      case 'b': case 'B':
 	 return 1;
 	 break;
-      case 'c':
-      case 'C':
+      case 'c': case 'C':
 	 return 2;
 	 break;
       default:
 	 return -1;
    }
 }
+
 void TicTacToe::AiMove(char AiPiece)
 {
    cout << "AI MOVE" << endl;
@@ -336,3 +327,18 @@ void TicTacToe::RunGame(){
       }
    }
 }
+
+void TicTacToe::ResetGame(int &currentPlayer)
+{
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int j=0; j<boardSize; j++)
+      {
+	 gameBoard.at(i).at(j)=' ';
+      }
+   }
+   TicTacToeScreen.Erase();
+   BoardSetup();
+   currentPlayer=1;
+}
+

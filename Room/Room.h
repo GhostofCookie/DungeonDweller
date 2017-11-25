@@ -70,7 +70,7 @@ class Room
   public:
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles the image used as the room
-   Room(map<char, vector<ImportImg>> &imgFiles);
+   Room(map<char, vector<ImportImg>> &imgFiles, int type = -1);
    /// Copy Constructor
    /// \param[in] r the room being copied
    Room(Room &r);

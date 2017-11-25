@@ -7,6 +7,7 @@
 
 MemoryMatch::MemoryMatch()
 {
+ 
    boardSize=4;
    pairsOfCharsVector.resize(boardSize*boardSize/2);
    pairsOfCharsVector.at(0)='@';
@@ -30,13 +31,94 @@ MemoryMatch::MemoryMatch()
 	 matchVector.at(i).at(j)=false;
 	 charTable.at(i).at(j)=' ';
       }
-   }
-      
+   }   
 }
 
 MemoryMatch::~MemoryMatch()
 {
 
+}
+
+void MemoryMatch::RunGame()
+{
+   MemoryMenu MemoryMatchMenu;
+   cout << "Start" << endl;
+   int inputX1, inputY1, inputX2, inputY2;
+   SetOptionsInMenu();
+   BoardSetup();
+   SaveBoardToScreen();
+   while(PuzzleEnd==false)
+   {
+      cout << "LOOP" << endl;
+      cout << MemoryMatchScreen;
+      cout << "!!!" << endl;
+      MemoryMatchMenu.OutputMenu();
+      cout << "@@@" << endl;
+      MemoryMatchMenu.HandleInput(cin);
+      ///Get input 1-4
+      SetInputs(inputX1, inputY1, inputX2, inputY2, &MemoryMatchMenu);
+      cout << "SetInputs done" << endl;
+      if(CheckInput(inputX1, inputY1, inputX2, inputY2))
+      {
+	 MovePiece(inputX1,inputY1,inputX2,inputY2);//Top left
+	 WinCheck();
+      }
+      else
+	 cout << "Invalid input, please try again!" << endl;
+   }   
+}
+
+int MemoryMatch:: ConvertCharToIndex(char input)
+{
+   switch(input)
+   {
+      case 'a': case 'A':
+	 return 0;
+	 break;
+      case 'b': case 'B':
+	 return 1;
+	 break;
+      case 'c': case 'C':
+	 return 2;
+	 break;
+      case 'd': case 'D':
+	 return 3;
+	 break;
+      default:
+	 return -1;
+	 break;
+   }
+}
+   
+void MemoryMatch:: SetInputs(int &X1, int &Y1,int &X2,int &Y2,
+			     MemoryMenu menu)
+{
+   cout << "1" ;
+   X1=ConvertCharToIndex(menu.GetCoordinates().x1);
+   cout << " 2 ";
+   Y1=menu.GetCoordinates().y1;
+   cout << "3 ";
+   X2=ConvertCharToIndex(menu.GetCoordinates().x2);
+   cout << " 4 ";
+   Y2=menu.GetCoordinates().y2;
+   cout << "5" << endl;
+}
+
+bool MemoryMatch:: IsInputValid(int input)
+{
+   if(input>3 || input<0)
+      return false;
+   else
+      return true;
+}
+
+bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
+{
+   cout << "CHECK INPUTS: " << x1 << y1 << x2 << y2 << endl;
+   if(IsInputValid(x1)||IsInputValid(y1)||IsInputValid(x2)||IsInputValid(y2))
+      return true;
+   else
+      return false;
 }
 
 ///Sets the board up for the beginning of the game, placing them in screen
@@ -217,7 +299,6 @@ void MemoryMatch::FlipTwoChars(int inputX, int inputY)
    MemoryMatchScreen.Set(((inputY*2)+1+topBound), ((inputX*2)+1+leftBound), symbol);
 }
 
-
 ///Flips two squares and outputs it for 3 seconds then flips it back.
 void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 {
@@ -289,6 +370,7 @@ bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 ///returns true when they have completed the puzzle.
 void MemoryMatch::WinCheck()
 {
+   cout << "WIN CHECK" << endl;
    for(int i=0; i<boardSize; i++)
    {
       for(int j=0; j<boardSize; j++)
@@ -299,23 +381,4 @@ void MemoryMatch::WinCheck()
 	    PuzzleEnd=true;
       }
    }
-}
-
-void MemoryMatch::RunGame()
-{
-   cout << "Start" << endl;
-   SetOptionsInMenu();
-   BoardSetup();
-   SaveBoardToScreen();
-   while(PuzzleEnd==false)
-   {
-      cout << MemoryMatchScreen;
-      //MemoryMatchMenu.OutputMenu();
-      //MemoryMatchMenu.HandleInput(cin);
-      MovePiece(3,3,3,0);//Top left
-      WinCheck();
-      
-      PuzzleEnd=true;//to be removed
-   }
-	   
 }

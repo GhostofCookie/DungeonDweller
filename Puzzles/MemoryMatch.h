@@ -9,6 +9,7 @@
 #define MEMORY_MATCH_H
 #include "Puzzle.h"
 #include <unistd.h>
+#include "../Menu/MemoryMenu.h"
 
 ///This class contains the mini-game/puzzle Memory Match
 class MemoryMatch: virtual public Puzzle
@@ -35,9 +36,15 @@ class MemoryMatch: virtual public Puzzle
 
    ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
+
+   void SetInputs(int &X1, int &Y1, int &X2,int &Y2, MemoryMenu &menu);
    
    ///Checks the semantics of the players selection
-  
+
+   bool CheckInput(int x1, int y1, int x2, int y2);
+
+   bool IsInputValid(int input);
+
    bool ValidMove(int inputX1, int inputY1, int inputX2, int inputY2);  
 
    ///Flips two cards and shows them to the user for a certain time, if they are
@@ -65,6 +72,8 @@ class MemoryMatch: virtual public Puzzle
    ///Flips the char stored at the inputted coordinates on chartable and sets
    ///them on the screen.
    void FlipTwoChars(int inputX, int inputY);
+
+   int ConvertCharToIndex(char input);
    
    ///Returns a random number between 0 and n-1 
    int RandomNumber(int n);

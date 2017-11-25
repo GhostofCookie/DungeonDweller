@@ -9,7 +9,7 @@
 /// \param[in] image the image to be animated
 /// \param[in] r the room to be animated in
 /// \param[in] tempRoom to gain temporary access to its exit points
-Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
+Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
 {
    // itinitialize the animated img and the background
    img = ImportImg(image);
@@ -34,10 +34,10 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room &tempRoom)
 
    /// reserve and locate points for 4 exit locations per room
    point.reserve(4);
-   FindCharacter(point[0].y, point[0].x, '1', tempRoom); // up
-   FindCharacter(point[1].y, point[1].x, '2', tempRoom); // right
-   FindCharacter(point[2].y, point[2].x, '3', tempRoom); // down
-   FindCharacter(point[3].y, point[3].x, '4', tempRoom); // left
+   FindCharacter(point[0].y, point[0].x, '1', *tempRoom); // up
+   FindCharacter(point[1].y, point[1].x, '2', *tempRoom); // right
+   FindCharacter(point[2].y, point[2].x, '3', *tempRoom); // down
+   FindCharacter(point[3].y, point[3].x, '4', *tempRoom); // left
 }
 
 
