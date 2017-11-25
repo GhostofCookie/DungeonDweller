@@ -13,10 +13,14 @@
 #include "Character.h"
 #include "Npc.h"
 #include "../Item/MyConsumables.h"
+#include "../Item/Item.h"
 #include "../Image/ImportImg.h"
 #include <vector>
 #include <string>
 using namespace std; 
+
+class Item;
+class MyConsumable;
 
 ///Derived class from Character which provides Player attributes
 class Player : public Character

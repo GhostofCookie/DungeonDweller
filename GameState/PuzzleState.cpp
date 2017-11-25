@@ -21,4 +21,7 @@ void PuzzleState::Get()
   
   (*it)->RunGame();
   currState = 'E';
+
+  // set the room to 'complete' since the puzzle is complete
+  (roomTree->At())->complete = true;
 }

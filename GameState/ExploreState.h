@@ -7,7 +7,6 @@
 #include "GameState.h"
 #include "../Menu/ExploreMenu.h"
 #include "../Cutscene/Cutscene.h"
-#include "../RoomTree/RoomTree.h"
 #include "../Room/Room.h"
 #include "../ImageImporter/ImageImporter.h"
 #include "../Image/Image.h"
@@ -19,6 +18,8 @@ using namespace std;
 
 #ifndef EXPLORESTATE_H
 #define EXPLORESTATE_H
+
+
 
 /// \class ExploreState ExploreState.h
 /// \brief This is defines the state of the game when the player character is
@@ -39,7 +40,7 @@ class ExploreState : public GameState
    void SwitchRooms();
    ImageImporter *import;
    Room *roomPtr;
-   RoomTree *roomTree;
+  
 
 };
 
