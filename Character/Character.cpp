@@ -1,14 +1,16 @@
 #include "Character.h"
 
-Character:: Character(int g, int h, ImportImg i)
-   : gold{g}, health{h} {img = ImportImg(i)}
+Character:: Character(){}
+// : gold{g}, health{h} {img = ImportImg(i)}
 
+/*
 Character:: ~Character()
 {
 
 }
+*/
 
-int Character:: ChangeGold(int &gold, int goldMod)
+int Character:: ChangeGold(int goldMod)
 {
  if(gold += goldMod <= 0)
     gold = 0;
@@ -16,7 +18,7 @@ int Character:: ChangeGold(int &gold, int goldMod)
     gold += goldMod;
 }
 
-void Character:: ChangeHealth(int& health, int hMod)
+void Character:: ChangeHealth(int hMod)
 {
  if(health += hMod <= 0)
     health = 0;
@@ -34,7 +36,7 @@ Item Character:: GetInventoryItems(Item *inventory)
 
 }
 
-void Character:: FillInventory(vector<*Item> &inventory, Item item)
+void Character:: FillInventory(Item item)
 {
    inventory.pushback(item);
 }

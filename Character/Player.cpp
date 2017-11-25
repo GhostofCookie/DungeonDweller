@@ -2,15 +2,15 @@
 
 using namespace std;
 
-Player:: Player(int s, int k, string n, string r)
-   : stamina{s}, keys{k}, name{n}, race{r} {}
-
-Player:: ~Player()
+Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
+   : stamina{s}, keys{k}, name{n}, race{r}
 {
-
+   img = ImportImg(i);
+   gold = g;
+   health = h;
 }
 
-void Player:: ChangeStamina(int& stamina, int sMod)
+void Player:: ChangeStamina(int sMod)
 {
    if(stamina += sMod <= 0)
       stamina = 0;
@@ -18,7 +18,7 @@ void Player:: ChangeStamina(int& stamina, int sMod)
       stamina += sMod;
 }
 
-void Player:: ChangeKeys(int& keys, int keyMod)
+void Player:: ChangeKeys(int keyMod)
 {
    if(keys += keyMod <= 0)
       keys = 0;
@@ -35,8 +35,8 @@ bool Player:: UseKey(int& keys)
    return keys;
 }
 
-void Player:: AttackNpc(Weapon damage, Npc enemy)
+void Player:: AttackNpc(Npc enemy)
 {
-   int healthMod = Weapon.baseDamage;
-   ChangeHealth(Npc.health, healthMod);
+   //int healthMod = Weapon.baseDamage;
+   //ChangeHealth(Npc.health, healthMod);
 }
