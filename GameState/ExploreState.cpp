@@ -144,7 +144,7 @@ void ExploreState::SwitchRooms()
 			     *roomTree->At());
 	 anim->ExitRight();
 	 
-	 if(!roomTree->Move('D'))
+	 if(!roomTree->Move('R'))
 	 {
 	    roomTree->NewRoom('R',new Room(import->collection));
 	    roomTree->Move('R');
