@@ -36,6 +36,8 @@ class MemoryMatch: virtual public Puzzle
 
    ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
+
+   void SetInputs(int &X1, int &Y1, int &X2,int &Y2, MemoryMenu menu);
    
    ///Checks the semantics of the players selection
 
@@ -70,6 +72,8 @@ class MemoryMatch: virtual public Puzzle
    ///Flips the char stored at the inputted coordinates on chartable and sets
    ///them on the screen.
    void FlipTwoChars(int inputX, int inputY);
+
+   int ConvertCharToIndex(char input);
    
    ///Returns a random number between 0 and n-1 
    int RandomNumber(int n);

@@ -15,11 +15,12 @@
 #include <iostream>
 using namespace std;
 
-///This class contains the mini-game/Puzzle Towers of Hanoi
+///This class contains the mini-game/Puzzle Towers of Hanoi, to be called from
+///the main dugeonDweller program using RunGame();
 class Hanoi: public virtual Puzzle
 {
   public:
-   /// Default constructor for hanoi, sets height to: and width to:
+   /// Default constructor for hanoi, sets height to: 4 and width to: 3
    Hanoi();
 
    ///Deconstructor
@@ -36,7 +37,7 @@ class Hanoi: public virtual Puzzle
    ///\param[in]targetStack, used for comparison against source stack
    bool ValidMove(const int sourceStack, const int targetStack) const;
 
-   ///Sends the menu class the options for the player to select.
+   ///Setup the options in the HanoiMenu object for the player to select. 
    void SetOptionsInMenu();
 
    ///Checks the state of Tower to see if the player has won the game,
@@ -48,7 +49,10 @@ class Hanoi: public virtual Puzzle
    /// \param[in] userSelection, the option of moves the player chose
    void LogicSwitch(const char userSelection);
 
-   ///Moves the disc from source tower to target tower.
+   ///Moves the piece in the vector.stack and calls the helper function to move the
+   ///images on the screen.
+   ///\param[in]sourceTower, the stack from which we move the disc image.
+   ///\param[in]targetTower, the stack to which we move the disc image.
    void MovePiece(int sourceTower, int targetTower);
    
    ///Function which clears the discs previous location from the screen object
@@ -58,6 +62,15 @@ class Hanoi: public virtual Puzzle
    ///\param[in] targetTower, the tower which you wish to have cleared on top.
    void ClearTopDisc(int targetTower);
 
+   ///Sets up the discs on the gameboard for the beginning of the game.
+   void DiscSetup();
+
+   ///Helper function for discSetup, pushes a disc on the left stack at the
+   ///height specified by bottom.
+   ///\param[in] bottom, the height to place the disc at.
+   ///\param[in] disc, the disc you wish to push into the vector.
+   void PushDiscOnLeftStack(int bottom, DefaultImg disc);
+   
    ///Sets up the screen with the appropriate game board.
    void BoardSetup();
 
@@ -81,8 +94,5 @@ class Hanoi: public virtual Puzzle
    
    /// GameMenu is used for handling input
    HanoiMenu HanoiGameMenu;
-   
-   string menuOption1, menuOption2, menuOption3,
-      menuOption4, menuOption5, menuOption6;
 };
 #endif
