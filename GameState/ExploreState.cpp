@@ -10,20 +10,23 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   roomPtr = new Room(import->collection);
+   roomPtr = new Room(import->collection,0);
    roomTree = new RoomTree(roomPtr);
 }
 
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
-   SetState((roomTree->At())->GetType());
-   menu->AddOption('w',"Move Up");
-   menu->AddOption('a',"Move Left");
-   menu->AddOption('s',"Move Down");
-   menu->AddOption('d',"Move Right");
-   if((roomTree->At())->GetType() == 1)
-      menu->AddOption('t', "Trade");
+  menu = new ExploreMenu();
+  SetState((roomTree->At())->GetType());
+  menu->AddOption('w',"Move Up");
+  menu->AddOption('a',"Move Left");
+  menu->AddOption('s',"Move Down");
+  menu->AddOption('d',"Move Right");
+  if((roomTree->At())->GetType() == 1)
+    menu->AddOption('t', "Trade");
+  //else if((roomTree->At())->GetType() != 1)
+  //  indexMap.erase('t');
 }
 
 /// Gets the layout for the game menu and screen.
@@ -32,46 +35,22 @@ void ExploreState::Get()
    //Remove in the future
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
-   
-<<<<<<< HEAD
-=======
-   while(true)
-   {
-      // ensure the screen clears
-      system("clear");
-      system("clear");
+   // ensure the screen clears
+   system("clear");
+   system("clear");
  
-      // clear the screen
-      screen->Erase();
-      // align the current room to the screen and print
-      (roomTree->At())->AlignCenter(*screen);
-      (roomTree->At())->Draw(*screen);
-      player.Draw(*screen);
-
-      // output the screen
-      cout << screen;
-      
-      // Print the menu and handle user input
-      menu->OutputMenu();
-      menu->HandleInput(cin);
-      SwitchRooms();
-   }
-
->>>>>>> 3c9b1bf6df261e4ec9c14599d528148d05af8416
-   system("clear");
-   system("clear");
-   cout<<"***"<<((roomTree->At())->GetType())<<"***"<<currState<<endl;
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
    player.Draw(*screen);
-   cout<<screen;
 
+   // output the screen
+   cout << screen;
+      
    // Print the menu and handle user input
    menu->OutputMenu();
-
    menu->HandleInput(cin);
    SwitchRooms();
 }
