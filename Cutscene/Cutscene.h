@@ -101,7 +101,9 @@ class Cutscene
    
   public:
    /// Constructor
-   Cutscene(ImportImg image, ImportImg r, Room *roomTemplate);
+   Cutscene(ImportImg image = ImportImg("../DD_Art/Player/DD_Player.txt"),
+	    ImportImg r = ImportImg("../DD_Art/Player/DD_Player.txt"),
+	    Room *roomTemplate = nullptr);
    /// Destructor
    ~Cutscene();
 

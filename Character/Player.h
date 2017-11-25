@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Character.h"
-//#include "Npc.h"
 #include "../Item/MyConsumables.h"
 #include "../Item/Item.h"
 #include "../Image/ImportImg.h"
@@ -34,10 +33,8 @@ public:
     /// \param[in] k, players keys
     /// \param[in] n, players name
     /// \param[in] r, players race
-   Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg());
+   Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
     
-   
- 
    ///Amount of keys the player has
    /// \param[in&] keys, current amount of keys the player has
    /// \param[in] keyMod, how the current amount of keys will be modified
@@ -46,11 +43,6 @@ public:
    ///Function to use a key
    /// \param[in] keys, uses a key if availible
    bool UseKey(int& keys);
-
-   ///Attack function for the player to attack the Npc
-   /// \param[in] damage, the base damage of the weapon
-   /// \param[in] enemy, the Npc being attacked
-   void AttackNpc(Npc enemy);
 
   private:
    

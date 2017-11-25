@@ -34,10 +34,13 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
 
    /// reserve and locate points for 4 exit locations per room
    point.reserve(4);
-   FindCharacter(point[0].y, point[0].x, '1', *tempRoom); // up
-   FindCharacter(point[1].y, point[1].x, '2', *tempRoom); // right
-   FindCharacter(point[2].y, point[2].x, '3', *tempRoom); // down
-   FindCharacter(point[3].y, point[3].x, '4', *tempRoom); // left
+   if(tempRoom != nullptr)
+   {
+      FindCharacter(point[0].y, point[0].x, '1', *tempRoom); // up
+      FindCharacter(point[1].y, point[1].x, '2', *tempRoom); // right
+      FindCharacter(point[2].y, point[2].x, '3', *tempRoom); // down
+      FindCharacter(point[3].y, point[3].x, '4', *tempRoom); // left
+   }
 }
 
 
@@ -565,14 +568,9 @@ void Cutscene::Intro()
 
 /// Function to animate an outro * hardcoded in every cutscene obj
 void Cutscene::Outro()
-{
-   const int CHARLEN = 8;
-   
+{  
    Screen scr = Screen();
    ImportImg credits = ImportImg("../DD_Art/Credits/credits.txt");
-
-   char play[CHARLEN] = {'[', 'P', ']', ' ', 'P', 'l', 'a', 'y'};
-   char quit[CHARLEN] = {'[', 'Q', ']', ' ', 'Q', 'u', 'i', 't'};
    
    credits.AlignCenter(scr);
    credits.ShiftDown(scr, scr.GetRows()/2 + credits.GetRows());

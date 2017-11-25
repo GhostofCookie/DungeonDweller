@@ -1,16 +1,5 @@
 #include "Character.h"
 
-/********
-Character:: Character(){}
-// : gold{g}, health{h} {img = ImportImg(i)}
-
-
-Character:: ~Character()
-{
-
-}
-*/
-
 void Character:: ChangeGold(int goldMod)
 {
  if(gold += goldMod <= 0)
@@ -27,19 +16,22 @@ void Character:: ChangeHealth(int hMod)
    health += hMod;
 }
 
-void Character:: UseItem(Item *inventory)
+Item* Character:: UseItem(string item)
 {
-
+   for(unsigned int i = 0; i < inventory.size(); i++)
+      if(inventory[i]->Name() == item)
+	 return inventory[i];
+   return nullptr;
 }
 
-void Character:: GetInventoryItems(Item *inventory)
+vector<Item*> Character:: GetInventoryItems()
 {
-
+   return inventory; 
 }
 
 void Character:: FillInventory(Item *item)
 {
-   //inventory.push_back(item);
+   inventory.push_back(item);
 }
 
 void Character:: ChangeStamina(int sMod)
@@ -48,4 +40,14 @@ void Character:: ChangeStamina(int sMod)
       stamina = 0;
    else
       stamina += sMod;
+}
+
+void Character:: Draw(Screen &screen)
+{
+   img.Draw(screen);
+}
+
+ImportImg Character:: Img()
+{
+   return img;
 }

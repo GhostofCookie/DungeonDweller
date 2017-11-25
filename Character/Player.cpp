@@ -4,23 +4,13 @@
 using namespace std;
 
 Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
-   : keys{k}, name{n}, race{r}
+   : name{n}, race{r}, keys{k}
 {
    img = ImportImg(i);
    gold = g;
    health = h;
    stamina = s;
 }
-
-/*
-void Player:: ChangeStamina(int sMod)
-{
-   if(stamina += sMod <= 0)
-      stamina = 0;
-   else
-      stamina += sMod;
-      }
-*/
 
 void Player:: ChangeKeys(int keyMod)
 {
@@ -39,8 +29,3 @@ bool Player:: UseKey(int& keys)
    return keys;
 }
 
-void Player:: AttackNpc(Npc enemy)
-{
-   //int healthMod = Weapon.baseDamage;
-   //ChangeHealth(Npc.health, healthMod);
-}
