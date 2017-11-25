@@ -60,9 +60,7 @@ void ExploreState::Get()
       SwitchRooms();
    }
 
-=======
    // ensure the screen clears
->>>>>>> 8d0fa31a50d43eaf5c2920f5d98f57cb056f0b69
    system("clear");
    system("clear");
  
