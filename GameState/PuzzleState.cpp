@@ -20,4 +20,5 @@ void PuzzleState::Get()
   auto it = puzzles.begin();
   
   (*it)->RunGame();
+  currState = 'E';
 }

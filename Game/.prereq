@@ -32,6 +32,7 @@ DungeonDweller.o: DungeonDweller.cpp ../Screen/Screen.h \
  ../GameState/../Puzzles/TicTacToe.h \
  ../GameState/../Puzzles/../Menu/TicTacToeMenu.h \
  ../GameState/../Puzzles/MemoryMatch.h \
+ ../GameState/../Puzzles/../Menu/MemoryMenu.h \
  ../GameState/../Puzzles/ConnectFour.h \
  ../GameState/../Puzzles/../Menu/ConnectFourMenu.h \
  ../GameState/ExploreState.h ../GameState/../Cutscene/Cutscene.h \

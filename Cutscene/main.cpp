@@ -21,7 +21,7 @@ int main()
    // create a quick room to demonstrate movements
    Room *room = new Room(import.collection);
     // create a cutscene that uses this image
-   Cutscene cutscene = Cutscene(*img, room->GetImage(), *room);
+   Cutscene cutscene = Cutscene(*img, room->GetImage(), room);
 
    
    // runs 4 different DYNAMIC cutscene tests

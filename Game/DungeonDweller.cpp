@@ -66,8 +66,12 @@ int main()
 {
    GameState *state = new ExploreState();
 
-   state->Set();
-   state->Get();
+   // temp game setup * prone to break
+   while(true)
+   {
+      state->Set();
+      state->Get();
+   }
    
    return 0;
 }
