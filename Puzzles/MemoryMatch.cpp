@@ -7,7 +7,7 @@
 
 MemoryMatch::MemoryMatch()
 {
-   MemoryMenu MemoryMatchMenu;
+ 
    boardSize=4;
    pairsOfCharsVector.resize(boardSize*boardSize/2);
    pairsOfCharsVector.at(0)='@';
@@ -31,13 +31,52 @@ MemoryMatch::MemoryMatch()
 	 matchVector.at(i).at(j)=false;
 	 charTable.at(i).at(j)=' ';
       }
-   }
-      
+   }   
 }
 
 MemoryMatch::~MemoryMatch()
 {
 
+}
+
+void MemoryMatch::RunGame()
+{
+   MemoryMenu MemoryMatchMenu;
+   cout << "Start" << endl;
+   int inputX1, inputY1, inputX2, inputY2;
+   SetOptionsInMenu();
+   BoardSetup();
+   SaveBoardToScreen();
+   while(PuzzleEnd==false)
+   {
+      cout << MemoryMatchScreen;
+      MemoryMatchMenu.OutputMenu();
+      MemoryMatchMenu.HandleInput(cin);
+      ///Get input 1-4
+      if(CheckInput(inputX1, inputY1, inputX2, inputY2))
+      {
+	 MovePiece(inputX1,inputY1,inputX2,inputY2);//Top left
+	 WinCheck();
+      }
+      else
+	 cout << "Invalid input, please try again!" << endl;
+   }   
+}
+
+bool MemoryMatch:: IsInputValid(int input)
+{
+   if(input>3 || input<0)
+      return false;
+   else
+      return true;
+}
+
+bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
+{
+   if(IsInputValid(x1)||IsInputValid(y1)||IsInputValid(x2)||IsInputValid(y2))
+      return true;
+   else
+      return false;
 }
 
 ///Sets the board up for the beginning of the game, placing them in screen
@@ -300,23 +339,4 @@ void MemoryMatch::WinCheck()
 	    PuzzleEnd=true;
       }
    }
-}
-
-void MemoryMatch::RunGame()
-{
-   cout << "Start" << endl;
-   SetOptionsInMenu();
-   BoardSetup();
-   SaveBoardToScreen();
-   while(PuzzleEnd==false)
-   {
-      cout << MemoryMatchScreen;
-      //MemoryMatchMenu.OutputMenu();
-      //MemoryMatchMenu.HandleInput(cin);
-      MovePiece(3,3,3,0);//Top left
-      WinCheck();
-      
-      PuzzleEnd=true;//to be removed
-   }
-	   
 }
