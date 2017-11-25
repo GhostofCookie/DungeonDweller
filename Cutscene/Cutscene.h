@@ -155,6 +155,12 @@ class Cutscene
    
    /// Function to save the animated image's current position
    void SaveCurrentPosition();
+
+   /// Function to animate an intro * hardcoded in every cutscene obj
+   void GameIntro();
+
+   /// Function to animate an outro * hardcoded in every cutscene obj
+   void GameOutro();
 };
 
 #endif

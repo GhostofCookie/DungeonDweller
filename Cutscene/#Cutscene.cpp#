@@ -505,7 +505,7 @@ void Cutscene::FindCharacter(int &y, int &x, const char c, const Room &r)
 /// Function to animate an intro * hardcoded in every cutscene obj
 void Cutscene::GameIntro()
 {
-
+   ImportImg title = ImportImg("");
 }
 
 
