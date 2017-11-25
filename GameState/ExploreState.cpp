@@ -10,20 +10,27 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
+<<<<<<< HEAD
    roomPtr = new Room(import->collection, 0);
+=======
+   roomPtr = new Room(import->collection,0);
+>>>>>>> 8d0fa31a50d43eaf5c2920f5d98f57cb056f0b69
    roomTree = new RoomTree(roomPtr);
 }
 
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
-   SetState((roomTree->At())->GetType());
-   menu->AddOption('w',"Move Up");
-   menu->AddOption('a',"Move Left");
-   menu->AddOption('s',"Move Down");
-   menu->AddOption('d',"Move Right");
-   if((roomTree->At())->GetType() == 1)
-      menu->AddOption('t', "Trade");
+  menu = new ExploreMenu();
+  SetState((roomTree->At())->GetType());
+  menu->AddOption('w',"Move Up");
+  menu->AddOption('a',"Move Left");
+  menu->AddOption('s',"Move Down");
+  menu->AddOption('d',"Move Right");
+  if((roomTree->At())->GetType() == 1)
+    menu->AddOption('t', "Trade");
+  //else if((roomTree->At())->GetType() != 1)
+  //  indexMap.erase('t');
 }
 
 /// Gets the layout for the game menu and screen.
@@ -32,6 +39,7 @@ void ExploreState::Get()
    //Remove in the future
    ImportImg player = ImportImg(import->collection['@'][0]);
    player.AlignCenter(*screen);
+<<<<<<< HEAD
    
    while(true)
    {
@@ -55,20 +63,24 @@ void ExploreState::Get()
       SwitchRooms();
    }
 
+=======
+   // ensure the screen clears
+>>>>>>> 8d0fa31a50d43eaf5c2920f5d98f57cb056f0b69
    system("clear");
    system("clear");
-   cout<<"***"<<((roomTree->At())->GetType())<<"***"<<currState<<endl;
+ 
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
    player.Draw(*screen);
-   cout<<screen;
 
+   // output the screen
+   cout << screen;
+      
    // Print the menu and handle user input
    menu->OutputMenu();
-
    menu->HandleInput(cin);
    SwitchRooms();
 }
