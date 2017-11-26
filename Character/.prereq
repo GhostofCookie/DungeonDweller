@@ -34,8 +34,12 @@ MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
 mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
- ../Screen/Screen.h
+ ../Screen/Screen.h CharacterTest.h
 PlayerTest.o: PlayerTest.cpp PlayerTest.h Player.h Character.h \
+ ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
+ ../Item/Item.h ../Screen/Screen.h
+CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
  ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
  ../Item/Item.h ../Screen/Screen.h

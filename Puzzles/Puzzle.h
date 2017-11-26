@@ -11,6 +11,7 @@
 #include "../Menu/Menu.h"
 #include "../Screen/Screen.h"
 #include "../Image/DefaultImg.h"
+#include "../Character/Character.h"
 #include <vector>
 
 ///This class represents an abstract base class for each mini-game/puzzle to
@@ -19,11 +20,12 @@ class Puzzle
 {
   public:
    int RandomNumber(int n) const;
+   
    ///Virtual Destructor
    virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
-   virtual void RunGame()=0;
+   virtual void RunGame(Character *player)=0;
 
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;

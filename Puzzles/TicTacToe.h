@@ -26,7 +26,7 @@ class TicTacToe: public virtual Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.   
-   virtual void RunGame();
+   virtual void RunGame(Character *player);
    
   private:
    ///ALL HANDLED BY THE MENU OBJECT?

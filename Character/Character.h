@@ -17,6 +17,7 @@
 
 
 using namespace std;
+
 class Item;
 
 
@@ -42,10 +43,6 @@ class Character
    int stamina;
    
    public:
-   /// Character constructor
-   /// \param[in] g, starting amoutn of gold for the character
-   /// \param[in] h, starting health for the character
-   // Character() = 0;
 
    /// Character deconstructor
    virtual ~Character(){}
@@ -72,9 +69,9 @@ class Character
    /// \param[in] HMod, how the current health will be modified
    virtual void ChangeHealth(int hMod);
 
-    /// Changes players stamina
-    /// \param[in&] s, players current stamina
-    /// \param[in] sMod, how the curent stamina will be modified
+   /// Changes players stamina
+   /// \param[in&] s, players current stamina
+   /// \param[in] sMod, how the curent stamina will be modified
    virtual void ChangeStamina(int sMod);
 
    /// Returns the stamina value
