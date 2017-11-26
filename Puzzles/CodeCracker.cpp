@@ -18,8 +18,10 @@ CodeCracker::~CodeCracker()
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
-void CodeCracker:: RunGame()
+void CodeCracker:: RunGame(Character *player)
 {
+   int userInput;
+   RiddleMenu GameMenu;
    cout << "Start" << endl;
    SetOptionsInMenu();
    ImportRiddles();
@@ -28,25 +30,32 @@ void CodeCracker:: RunGame()
    while(PuzzleEnd==false)
    {
       cout << "Loop" << endl;
-      currentRiddle=UnusedRandomRiddleGenerator();
-///Do riddle output, input
-      int userinput;
-      if(!ValidAnswer(userinput, currentRiddle))
-	 DeathCheck(); //************NEEDS TO BE IMPLEMENTED******************
-      else
+      currentRiddle=UnusedRandomRiddle();
+///Do riddle output
+      GameMenu.HandleInput(cin);
+      //userInput=GameMenu.GetInput()
+      if(ValidAnswer(userInput, currentRiddle))
+      {
+	 riddleCompletionCount++;
 	 WinCheck();
+      }
+      else
+      {
+	 //Decrement health
+	 DeathCheck();//************NEEDS TO BE IMPLEMENTED******************
       PuzzleEnd=true;//***********TO BE REMOVED**************
+      }
    }
 }
 ///Picks one of the unused riddles randomly and returns its index
-int CodeCracker::UnusedRandomRiddleGenerator()
+int CodeCracker::UnusedRandomRiddle()
 {
-   int randRiddle;
+   int randRiddle, totalUsedRiddles=usedRiddles.size();
    bool validRiddleFound=false;
    while(validRiddleFound==false)
    {
       randRiddle=Puzzle::RandomNumber(numberOfRiddles);
-      for(int i=0; i<usedRiddles.size(); i++)
+      for(int i=0; i<totalUsedRiddles; i++)
       {
 	 if(randRiddle==usedRiddles.at(i))
 	    return false;
@@ -74,7 +83,6 @@ bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
   if(input==answer.at(riddleIndex))
    {
-      riddleCompletionCount++;
       return true;
    }
    else
@@ -88,6 +96,11 @@ void CodeCracker::WinCheck()
       PuzzleEnd=true;
 }
 
+void CodeCracker::DecrementPlayerHealth(int amountToDecrement)
+{
+
+
+}
 ///Checks if the player is now dead
 void CodeCracker::DeathCheck()
 {
@@ -124,9 +137,9 @@ void CodeCracker::ImportRiddles()
 	 std::getline(in, questionString);
 	 std::getline(in, questionFormat);
 	 in >> qAnswer;
-	 cout << "Question:" << questionString << endl;
-	 cout << "Format:" << questionFormat << endl;
-	 cout << "Answer:" << qAnswer << endl;
+	 cout << "Question: " << questionString << endl;
+	 cout << "Format: " << questionFormat << endl;
+	 cout << "Answer: " << qAnswer << endl;
 	 question.at(i)=questionString;
 	 format.at(i)=questionFormat;
 	 answer.at(i)=qAnswer;

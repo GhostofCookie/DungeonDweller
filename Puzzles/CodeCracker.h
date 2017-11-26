@@ -8,6 +8,7 @@
 #ifndef  CODE_CRACKER_H
 #define CODE_CRACKER_H
 #include "Puzzle.h"
+#include "../Menu/RiddleMenu.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -25,7 +26,7 @@ class CodeCracker: public virtual Puzzle
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
-   void RunGame();
+   void RunGame(Character *player);
 
   private:
 //ALL HANDLED BY THE MENU OBJECT
@@ -58,8 +59,10 @@ class CodeCracker: public virtual Puzzle
 
    void SetOptionsInMenu();
 
+   void DecrementPlayerHealth(int amountToDecrement);
+
    ///Picks one of the unused riddles randomly and returns its index
-   int UnusedRandomRiddleGenerator();
+   int UnusedRandomRiddle();
 
    
 ///Vector to store the question strings read in from the file 

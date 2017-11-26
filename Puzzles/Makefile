@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g #-fprofile-arcs -ftest-coverage
-OBJS = Puzzle.o TicTacToe.o Hanoi.o ConnectFour.o CodeCracker.o PuzzleMain.o MemoryMatch.o ../Menu/HanoiMenu.o ../Menu/ConnectFourMenu.o ../Menu/TicTacToeMenu.o ../Menu/MemoryMenu.o ../Screen/Screen.o ../Image/DefaultImg.o ../Image/Image.o ../Menu/Menu.o ../Menu/Menu.o
+OBJS = Puzzle.o TicTacToe.o Hanoi.o ConnectFour.o CodeCracker.o ../Menu/RiddleMenu.o PuzzleMain.o MemoryMatch.o ../Menu/HanoiMenu.o ../Menu/ConnectFourMenu.o ../Menu/TicTacToeMenu.o ../Menu/MemoryMenu.o ../Screen/Screen.o ../Image/DefaultImg.o ../Image/Image.o ../Menu/Menu.o ../Menu/Menu.o
 .PHONY : all
 all : main
 

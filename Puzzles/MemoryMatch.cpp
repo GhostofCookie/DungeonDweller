@@ -39,7 +39,7 @@ MemoryMatch::~MemoryMatch()
 
 }
 
-void MemoryMatch::RunGame()
+void MemoryMatch::RunGame(Character *player)
 {
    MemoryMenu MemoryMatchMenu;
    cout << "Start" << endl;
