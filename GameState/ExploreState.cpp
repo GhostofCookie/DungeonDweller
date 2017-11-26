@@ -169,7 +169,21 @@ void ExploreState::SetState(int n)
 	 currState = 'E';
 	 break;
       case 2:
-	 usleep(300000);
+	 int i;
+	 screen->outlineOn = false;
+	 for(i = 0; i < 3; i++)
+	 {
+	    system("clear");
+	    screen->Erase();
+	    usleep(200000);
+	    if(i%2 == 0)
+	       screen->Fill('*');
+	    else
+	       screen->Fill(' ');
+	    cout<<screen;
+	    usleep(200000);
+	 }
+	 system("clear");
 	 //currState = 'F';
 	 break;
 
