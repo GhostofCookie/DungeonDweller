@@ -21,13 +21,14 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../Image/DefaultImg.h ../Image/ImportImg.h PuzzleState.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
- ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
+ ../Puzzles/../Character/Character.h ../Puzzles/Hanoi.h \
+ ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
- ../Puzzles/TicTacToe.h ../Puzzles/../Menu/TicTacToeMenu.h \
- ../Puzzles/MemoryMatch.h ../Puzzles/../Menu/MemoryMenu.h \
- ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h \
- TradeState.h FightState.h
+ ../Puzzles/../Menu/RiddleMenu.h ../Puzzles/TicTacToe.h \
+ ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/MemoryMatch.h \
+ ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/ConnectFour.h \
+ ../Puzzles/../Menu/ConnectFourMenu.h TradeState.h FightState.h
 Menu.o: ../Menu/Menu.cpp ../Menu/Menu.h
 MainMenu.o: ../Menu/MainMenu.cpp ../Menu/MainMenu.h ../Menu/GameMenu.h \
  ../Menu/Menu.h
@@ -107,13 +108,21 @@ Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
 Hanoi.o: ../Puzzles/Hanoi.cpp ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
- ../Puzzles/../Image/../Screen/Screen.h ../Puzzles/../Menu/HanoiMenu.h \
+ ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h ../Puzzles/../Menu/HanoiMenu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h
 TicTacToe.o: ../Puzzles/TicTacToe.cpp ../Puzzles/TicTacToe.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
  ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h \
  ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/../Menu/MinigameMenu.h \
  ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
 PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
@@ -132,32 +141,52 @@ PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
- ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
+ ../Puzzles/../Character/Character.h ../Puzzles/Hanoi.h \
+ ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
- ../Puzzles/TicTacToe.h ../Puzzles/../Menu/TicTacToeMenu.h \
- ../Puzzles/MemoryMatch.h ../Puzzles/../Menu/MemoryMenu.h \
- ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h
+ ../Puzzles/../Menu/RiddleMenu.h ../Puzzles/TicTacToe.h \
+ ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/MemoryMatch.h \
+ ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/ConnectFour.h \
+ ../Puzzles/../Menu/ConnectFourMenu.h
 Puzzle.o: ../Puzzles/Puzzle.cpp ../Puzzles/Puzzle.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
- ../Puzzles/../Image/../Screen/Screen.h
+ ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h
 ConnectFour.o: ../Puzzles/ConnectFour.cpp ../Puzzles/ConnectFour.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
  ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h \
  ../Puzzles/../Menu/ConnectFourMenu.h ../Puzzles/../Menu/MinigameMenu.h \
  ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
 MemoryMatch.o: ../Puzzles/MemoryMatch.cpp ../Puzzles/MemoryMatch.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
  ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
- ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/../Menu/MinigameMenu.h \
- ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h ../Puzzles/../Menu/MemoryMenu.h \
+ ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
+ ../Puzzles/../Menu/Menu.h
 CodeCracker.o: ../Puzzles/CodeCracker.cpp ../Puzzles/CodeCracker.h \
  ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
- ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h
+ ../Puzzles/../Image/Image.h ../Puzzles/../Image/../Screen/Screen.h \
+ ../Puzzles/../Character/Character.h \
+ ../Puzzles/../Character/../Item/Item.h \
+ ../Puzzles/../Character/../Image/ImportImg.h \
+ ../Puzzles/../Character/../Image/Image.h ../Puzzles/../Menu/RiddleMenu.h \
+ ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
+ ../Puzzles/../Menu/Menu.h
 MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
  ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
