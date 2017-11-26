@@ -8,6 +8,13 @@ void CharacterTest:: setUp()
    item = "Does not exist";
 }
 
+/*
+void CharacterTest:: tearDown()
+{
+   delete I;
+   }
+*/
+
 void CharacterTest:: TestFillInventory()
 {
    C.FillInventory(I);
