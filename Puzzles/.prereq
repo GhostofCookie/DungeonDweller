@@ -56,3 +56,25 @@ DefaultImg.o: ../Image/DefaultImg.cpp ../Image/DefaultImg.h \
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
 Menu.o: ../Menu/Menu.cpp ../Menu/Menu.h
 Menu.o: ../Menu/Menu.cpp ../Menu/Menu.h
+Character.o: ../Character/Character.cpp ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h
+Item.o: ../Item/Item.cpp ../Item/Item.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/MyConsumables.h ../Item/Consumable.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
+Weapon.o: ../Item/Weapon.cpp ../Item/Weapon.h ../Item/Item.h
+MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Image/ImportImg.h \
+ ../Item/../Character/../Image/Image.h \
+ ../Item/../Character/../Image/../Screen/Screen.h
+MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Image/ImportImg.h \
+ ../Item/../Character/../Image/Image.h \
+ ../Item/../Character/../Image/../Screen/Screen.h \
+ ../Item/../Character/Player.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/MyConsumables.h

@@ -33,7 +33,9 @@ void CodeCracker:: RunGame(Character *player)
       currentRiddle=UnusedRandomRiddle();
 ///Do riddle output
       GameMenu.HandleInput(cin);
-      //userInput=GameMenu.GetInput()
+      userInput=GameMenu.GetInput();
+      cout << "userInput:" << userInput << endl;
+	
       if(ValidAnswer(userInput, currentRiddle))
       {
 	 riddleCompletionCount++;

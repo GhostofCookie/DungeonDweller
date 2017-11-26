@@ -23,7 +23,7 @@ class MemoryMatch: virtual public Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
-   void RunGame();
+   void RunGame(Character *player);
 
   private:
    //ALL HANDLED BY THE MENU OBJECT
