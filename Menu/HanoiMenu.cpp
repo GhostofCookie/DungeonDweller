@@ -34,7 +34,7 @@ void HanoiMenu::SetOptions(int row,int col,int space)
 	 {
 	    Menu::Set(row + 2, ((width - 2) * value)/6 + i - temp.length()/2 + 1, temp[i]);
 	 }
-	 if(it->first == 113) Menu::Set(8, width/2 + i - it->second.length(),temp[i]);
+	 if(it->first == 113) Menu::Set(8, width/2 + i - it->second.length()/2,temp[i]);
       }
       if(it->first!='q')
 	value += 2;
