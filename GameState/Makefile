@@ -1,6 +1,6 @@
 CC = g++
 CCFLAGS = -Wall -std=c++11 -g #-fprofile-arcs -ftest-coverage #-lcppunit -ldl 
-OBJS = testExplore.o ../Menu/Menu.o ../Menu/MainMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/TradeMenu.o ../Menu/DialogueMenu.o ../Menu/CharacterMenu.o ../Menu/HanoiMenu.o ../Menu/MemoryMenu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/ConnectFourMenu.o ../Screen/Screen.o ExploreState.o ../RoomTree/RoomTree.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../ImageImporter/ImageImporter.o ../Room/Room.o ../Screen/SlotScreen.o ../Cutscene/Cutscene.o ../Puzzles/Hanoi.o ../Puzzles/TicTacToe.o PuzzleState.o ../Puzzles/Puzzle.o ../Puzzles/ConnectFour.o ../Puzzles/MemoryMatch.o ../Puzzles/CodeCracker.o MainState.o FightState.o TradeState.o
+OBJS = testExplore.o ../Menu/Menu.o ../Menu/MainMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/TradeMenu.o ../Menu/DialogueMenu.o ../Menu/CharacterMenu.o ../Menu/HanoiMenu.o ../Menu/MemoryMenu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/ConnectFourMenu.o ../Screen/Screen.o ExploreState.o ../RoomTree/RoomTree.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../ImageImporter/ImageImporter.o ../Room/Room.o ../Screen/SlotScreen.o ../Cutscene/Cutscene.o ../Puzzles/Hanoi.o ../Puzzles/TicTacToe.o PuzzleState.o ../Puzzles/Puzzle.o ../Puzzles/ConnectFour.o ../Puzzles/MemoryMatch.o ../Puzzles/CodeCracker.o MainState.o FightState.o TradeState.o ../Character/Character.o ../Character/Player.o ../Character/Npc.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o
 
 ## targets and prerequisites
 .PHONY : all
@@ -28,4 +28,4 @@ clean:
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f menuTest runTest
+	rm -f explore

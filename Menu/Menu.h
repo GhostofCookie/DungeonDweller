@@ -66,11 +66,6 @@ class Menu
   /// Display the multi-dimensional array.
   virtual void OutputMenu();
 
-  /// Helper function to quit the game. This may be removed in future.
-  /// \param[in] value This parameter serves to pass the function to the
-  /// options map.
-  void QuitGame(int value);
-
  private:
   /// Builds the menu based on the options and outline to the dimensions
   /// specified by the constructor.

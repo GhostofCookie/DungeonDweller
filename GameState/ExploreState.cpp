@@ -12,6 +12,9 @@ ExploreState::ExploreState()
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection,0);
    roomTree = new RoomTree(roomPtr);
+
+   // create the player
+   player = Player(30, 0, "Reid", "Human", 50, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 ExploreState::~ExploreState()
@@ -31,7 +34,7 @@ void ExploreState::Set()
       delete menu;
       menu = new ExploreMenu();
     }
-  SetState((roomTree->At())->GetType());
+
   menu->AddOption('w',"Move Up");
   menu->AddOption('a',"Move Left");
   menu->AddOption('s',"Move Down");
@@ -40,15 +43,16 @@ void ExploreState::Set()
      menu->AddOption('t', "Trade");
   if((roomTree->At())->GetType() == 3 && !roomTree->At()->IsComplete())
      menu->AddOption('p', "Solve Puzzle");
+  menu->AddOption('q', "Quit to Menu");
+
 }
 
 /// Gets the layout for the game menu and screen.
 void ExploreState::Get()
 {
-   //Remove in the future
-   ImportImg player = ImportImg(import->collection['@'][0]);
-   player.AlignCenter(*screen);
- 
+   player.Img().AlignCenter(*screen);
+   player.Draw(*screen);
+
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -57,11 +61,20 @@ void ExploreState::Get()
    player.Draw(*screen);
 
    // output the screen
+//   cout << player.
+   SetState((roomTree->At())->GetType());
+   cout<<currState<<endl;
    cout << screen;
-         
+          
    // Print the menu and handle user input
    menu->OutputMenu();
    menu->HandleInput(cin);
+   if(menu->GetOption() == 'q')
+   {
+      cout << "Are you sure you want to quit to main menu?";
+//      menu->HandleInput(cin);
+      //currState = 'M';
+   }
 
    // Handle input from player
    RunInput(menu->GetOption());
@@ -71,121 +84,143 @@ void ExploreState::Get()
 void ExploreState::RunInput(char n)
 {
    Cutscene *anim;
-      
-   switch(n)
+   if(n != '\0')
    {
-      case 'w' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->ExitUp();
+      switch(n)
+      {
+	 case 'w' :
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->ExitUp();
 	    
-	 if(!roomTree->Move('U'))
-	 {
-	    roomTree->NewRoom('U', new Room(import->collection));
-	    roomTree->Move('U');
-	 }
+	    if(!roomTree->Move('U'))
+	    {
+	       roomTree->NewRoom('U', new Room(import->collection));
+	       roomTree->Move('U');
+	    }
 
-	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->EnterDown();
-	 break;
+	    delete anim;
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->EnterDown();
+	    break;
 	 
-      case 'a' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->ExitLeft();
+	 case 'a' :
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->ExitLeft();
 	 
-	 if(!roomTree->Move('L'))
-	 {
-	    roomTree->NewRoom('L',new Room(import->collection));
-	    roomTree->Move('L');
-	 }
+	    if(!roomTree->Move('L'))
+	    {
+	       roomTree->NewRoom('L',new Room(import->collection));
+	       roomTree->Move('L');
+	    }
 
-	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->EnterRight();
-	 break;
+	    delete anim;
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->EnterRight();
+	    break;
 	 
-      case 's' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->ExitDown();
+	 case 's' :
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->ExitDown();
 	 
-	 if(!roomTree->Move('D'))
-	 {
-	    roomTree->NewRoom('D',new Room(import->collection));
-	    roomTree->Move('D');
-	 }
+	    if(!roomTree->Move('D'))
+	    {
+	       roomTree->NewRoom('D',new Room(import->collection));
+	       roomTree->Move('D');
+	    }
 	 
-	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->EnterUp();
-	 break;
+	    delete anim;
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->EnterUp();
+	    break;
 	 
-      case 'd' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->ExitRight();
+	 case 'd' :
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->ExitRight();
 	 
-	 if(!roomTree->Move('R'))
-	 {
-	    roomTree->NewRoom('R',new Room(import->collection));
-	    roomTree->Move('R');
-	 }
+	    if(!roomTree->Move('R'))
+	    {
+	       roomTree->NewRoom('R',new Room(import->collection));
+	       roomTree->Move('R');
+	    }
 
-	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
-			     roomTree->At());
-	 anim->EnterLeft();
-	 break;
-      case 't':
-	 currState = 'S';
-	 return;
-	 break;
-      case 'p':
-	 if(!roomTree->At()->IsComplete())
-	 {
-	    currState = 'P';
-	    roomTree->At()->complete = true;
-	 }
-	 else currState = 'E';
-	 return;
-	 break;
-   };
+	    delete anim;
+	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+				roomTree->At());
+	    anim->EnterLeft();
+	    break;
+	 case 't':
+	    currState = 'S';
+	    return;
+	    break;
+	 case 'p':
+	    if(!roomTree->At()->IsComplete())
+	    {
+	       currState = 'P';
+	       roomTree->At()->complete = true;
+	    }
+	    else currState = 'E';
+	    return;
+	    break;
+	 case 'q':
+	    currState = 'M';
+	    return;
+	    break;
+      };
 
-   delete anim;
+      delete anim;
+   }
 }
 
 /// Helper function to set the current state of the game based on the current
 /// room type.
 void ExploreState::SetState(int n)
 {
-   switch(n)
-   {
-      case 0:
-	 currState = 'E';
-	 break;
-      case 2:
-	 int i;
-	 screen->outlineOn = false;
-	 for(i = 0; i < 3; i++)
-	 {
-	    system("clear");
-	    screen->Erase();
-	    usleep(200000);
-	    if(i%2 == 0)
-	       screen->Fill('*');
-	    else
-	       screen->Fill(' ');
-	    cout<<screen;
-	    usleep(200000);
-	 }
-	 system("clear");
-	 //currState = 'F';
-	 break;
+   if(menu->GetOption() == 'q')
+      currState = 'M';
+   else
+      switch(n)
+      {
+	 case 0:
+	 case 1:
+	 case 3:
+	    currState = 'E';
+	    return;
+	    break;
+	 case 2:
+	    if(!roomTree->At()->IsComplete())
+	    {
+	       int i;
+	       screen->outlineOn = false;
+	       for(i = 0; i < 2; i++)
+	       {
+		  system("clear");
+		  screen->Erase();
+		  usleep(200000);
+		  if(i%2 == 0)
+		     screen->Fill('*');
+		  else
+		     screen->Fill(' ');
+		  cout<<screen;
+		  usleep(100000);
+
+	       }
+	    
+	       screen->outlineOn = true;
+	       roomTree->At()->complete = true;
+	    //currState = 'F';
+	    }
+	    else currState = 'E';
+	    break;
+	 case 113:
+	    currState = 'M';
+	    break;
 
    }
 }

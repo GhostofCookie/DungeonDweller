@@ -12,9 +12,17 @@
 #include "../Menu/FightMenu.h"
 #include "../Menu/ExploreMenu.h"
 #include "../RoomTree/RoomTree.h"
+#include "../Character/Character.h"
+#include "../Character/Character.h"
+#include "../Character/Player.h" 
+#include "../Character/Npc.h"
+#include "../Item/Item.h"
+#include "../Item/MyConsumables.h"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
+
+
 
 class GameState
 {
@@ -42,6 +50,8 @@ class GameState
    char currState;
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
+   /// The main character
+   Character player;
 
 };
 

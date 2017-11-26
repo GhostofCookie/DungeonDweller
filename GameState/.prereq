@@ -7,14 +7,19 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h MainState.h \
- ../Cutscene/Cutscene.h ../Cutscene/../Screen/Screen.h \
- ../Cutscene/../Image/Image.h ../Cutscene/../Image/DefaultImg.h \
- ../Cutscene/../Image/ImportImg.h ../Cutscene/../Room/Room.h \
- ExploreState.h ../Room/Room.h ../ImageImporter/ImageImporter.h \
- ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h \
- ../Image/Image.h ../Image/DefaultImg.h ../Image/ImportImg.h \
- PuzzleState.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h MainState.h ../Cutscene/Cutscene.h \
+ ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
+ ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
+ ../Cutscene/../Room/Room.h ExploreState.h ../Room/Room.h \
+ ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
+ ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h PuzzleState.h \
+ ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
  ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
  ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
@@ -56,7 +61,12 @@ ExploreState.o: ExploreState.cpp ExploreState.h GameState.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h ../Cutscene/Cutscene.h \
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h ../Room/Room.h \
@@ -115,15 +125,19 @@ PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h ../Puzzles/Puzzle.h \
- ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
- ../Puzzles/../Image/DefaultImg.h ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h \
- ../Puzzles/../Menu/HanoiMenu.h ../Puzzles/../Menu/MinigameMenu.h \
- ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h \
- ../Puzzles/CodeCracker.h ../Puzzles/TicTacToe.h \
- ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/MemoryMatch.h \
- ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/ConnectFour.h \
- ../Puzzles/../Menu/ConnectFourMenu.h
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
+ ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
+ ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
+ ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
+ ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
+ ../Puzzles/TicTacToe.h ../Puzzles/../Menu/TicTacToeMenu.h \
+ ../Puzzles/MemoryMatch.h ../Puzzles/../Menu/MemoryMenu.h \
+ ../Puzzles/ConnectFour.h ../Puzzles/../Menu/ConnectFourMenu.h
 Puzzle.o: ../Puzzles/Puzzle.cpp ../Puzzles/Puzzle.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
@@ -153,7 +167,12 @@ MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h ../Cutscene/Cutscene.h \
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h
@@ -166,7 +185,12 @@ FightState.o: FightState.cpp FightState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h
 TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
  ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
@@ -176,4 +200,39 @@ TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h
+Character.o: ../Character/Character.cpp ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h
+Player.o: ../Character/Player.cpp ../Character/Player.h \
+ ../Character/Character.h ../Character/../Item/Item.h \
+ ../Character/../Image/ImportImg.h ../Character/../Image/Image.h \
+ ../Character/../Image/../Screen/Screen.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h
+Npc.o: ../Character/Npc.cpp ../Character/Npc.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Player.h
+Item.o: ../Item/Item.cpp ../Item/Item.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/MyConsumables.h ../Item/Consumable.h
+MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Image/ImportImg.h \
+ ../Item/../Character/../Image/Image.h \
+ ../Item/../Character/../Image/../Screen/Screen.h \
+ ../Item/../Character/Player.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/MyConsumables.h
+MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Image/ImportImg.h \
+ ../Item/../Character/../Image/Image.h \
+ ../Item/../Character/../Image/../Screen/Screen.h

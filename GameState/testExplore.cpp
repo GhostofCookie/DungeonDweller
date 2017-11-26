@@ -30,7 +30,9 @@ int main()
 	 case 'S':
 	    state = new TradeState();
 	    break;
-	    
+	 case 'M':
+	    state = new MainState();
+	    break;	    
       }
       state->Set();
       state->Get();
