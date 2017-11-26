@@ -102,9 +102,9 @@ class MemoryMatch: virtual public Puzzle
 ///The vector which holds the char values of the table to be matched
    std::vector<vector<char>>charTable;
 
-   ///The vector which holds the integer value for the table, true being
-   ///matched, false being unmatched.
-   std::vector<vector<bool>>matchVector;
+   ///The vector which holds the integer value for the table, 1 being
+   ///matched, 0 being unmatched.
+   std::vector<vector<int>>matchVector;
 
    ///Vector containing symbols to be randomly inserted on the screen at start
    std::vector<char>pairsOfCharsVector;

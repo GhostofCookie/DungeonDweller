@@ -28,7 +28,7 @@ MemoryMatch::MemoryMatch()
 
       for(int j=0; j<boardSize; j++)
       {
-	 matchVector.at(i).at(j)=false;
+	 matchVector.at(i).at(j)=0;
 	 charTable.at(i).at(j)=' ';
       }
    }   
@@ -49,15 +49,12 @@ void MemoryMatch::RunGame()
    SaveBoardToScreen();
    while(PuzzleEnd==false)
    {
-      cout << "LOOP" << endl;
       cout << MemoryMatchScreen;
-      cout << "!!!" << endl;
       MemoryMatchMenu.OutputMenu();
-      cout << "@@@" << endl;
       MemoryMatchMenu.HandleInput(cin);
       ///Get input 1-4
       SetInputs(inputX1, inputY1, inputX2, inputY2, MemoryMatchMenu);
-      cout << "SetInputs done" << endl;
+      cout << "inputX1:" << inputX1 << "     inputY1:" << inputY1 << "     inputX2:" << inputX2 << "     inputY2:" << inputY2 << endl;
       if(CheckInput(inputX1, inputY1, inputX2, inputY2))
       {
 	 MovePiece(inputX1,inputY1,inputX2,inputY2);//Top left
@@ -93,15 +90,10 @@ int MemoryMatch:: ConvertCharToIndex(char input)
 void MemoryMatch:: SetInputs(int &X1, int &Y1,int &X2,int &Y2,
 			     MemoryMenu &menu)
 {
-   cout << "1" ;
    X1=ConvertCharToIndex(menu.GetCoordinates().x1);
-   cout << " 2 ";
-   Y1=menu.GetCoordinates().y1;
-   cout << "3 ";
+   Y1=menu.GetCoordinates().y1-1;
    X2=ConvertCharToIndex(menu.GetCoordinates().x2);
-   cout << " 4 ";
-   Y2=menu.GetCoordinates().y2;
-   cout << "5" << endl;
+   Y2=menu.GetCoordinates().y2-1;
 }
 
 bool MemoryMatch:: IsInputValid(int input)
@@ -114,8 +106,8 @@ bool MemoryMatch:: IsInputValid(int input)
 
 bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
 {
-   cout << "CHECK INPUTS: " << x1 << y1 << x2 << y2 << endl;
-   if(IsInputValid(x1)||IsInputValid(y1)||IsInputValid(x2)||IsInputValid(y2))
+   //cout << "CHECK INPUTS: " << "x1:" << x1 << " y1:" << y1 << " x2:" << x2 << " y2:" << y2 << endl;
+   if(IsInputValid(x1) && IsInputValid(y1) && IsInputValid(x2) && IsInputValid(y2))
       return true;
    else
       return false;
@@ -246,7 +238,7 @@ void MemoryMatch::SetOptionsInMenu()
 ///unmatched, false if they have previously been matched
 bool MemoryMatch::ValidMove(int X1, int Y1, int X2, int Y2)
 {
-   if(matchVector.at(X1).at(Y1)==true || matchVector.at(X1).at(Y1)==true)
+   if(matchVector.at(X1).at(Y1)==1 && matchVector.at(X1).at(Y1)==1)
       return false;
    else
       return true;
@@ -278,7 +270,7 @@ bool MemoryMatch:: IsOdd(int n)
 ///Returns true if char has a true value in the matchVector, false otherwise
 bool MemoryMatch:: IsCharAlreadyMatched(int inputX, int inputY)
 {
-   if(matchVector.at(inputX).at(inputY)==true)
+   if(matchVector.at(inputX).at(inputY)==1)
       return true;
    else
       return false;
@@ -335,18 +327,20 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 ///\param[in] inputY2, The Y-Coordinate of the second card to flip
 void MemoryMatch::MovePiece(int inputX1, int inputY1, int inputX2, int inputY2)
 {
-   if(MatchCheck(inputX1, inputY1, inputX2, inputY2)==true)
+   if(MatchCheck(inputX1, inputY1, inputX2, inputY2))
    {
+      cout << "Match!" << endl;
       //Flip the two spots on the board
       FlipTwoChars(inputX1, inputY1);
       FlipTwoChars(inputX2, inputY2);
 
       //Set the two values to true to show that they have been matched.
-      matchVector.at(inputX1).at(inputX2)=true;
-      matchVector.at(inputX2).at(inputY2)=true;
+      matchVector.at(inputX1).at(inputY1)=1;
+      matchVector.at(inputX2).at(inputY2)=1;
    }
    else
    {
+      cout << "Not a match!" << endl;
       ///Show the user the spots they tried for a brief period of time
       Peek(inputX1,inputY1,inputX2,inputY2);
    }     
@@ -370,15 +364,22 @@ bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 ///returns true when they have completed the puzzle.
 void MemoryMatch::WinCheck()
 {
+   int trueCount=0, temp;
    cout << "WIN CHECK" << endl;
+   cout << "MatchVector";
    for(int i=0; i<boardSize; i++)
    {
       for(int j=0; j<boardSize; j++)
       {
-	 if(matchVector.at(i).at(j)==false)
-	    PuzzleEnd=false;
-	 else
-	    PuzzleEnd=true;
+	 temp=matchVector.at(i).at(j);
+	 cout << " " << temp;
+	 if(temp==1);
+	 trueCount++;
       }
+   }
+   cout << endl << "trueCount:" << trueCount << endl;
+   if(trueCount==boardSize*boardSize)
+   {
+      PuzzleEnd=true;
    }
 }
