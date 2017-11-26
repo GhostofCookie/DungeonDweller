@@ -19,11 +19,12 @@ int main()
 {
   // TicTacToeMenu *menu = nullptr;
   // ConnectFourMenu * menu = new ConnectFourMenu();;
-   Menu *menu = nullptr;
+//   Menu *menu = nullptr;
 //   MemoryMenu *menu = nullptr;
+   RiddleMenu *menu = nullptr;
    Screen *screen = nullptr;
    map<int, string> options;
-   menu = new MainMenu();
+   menu = new RiddleMenu();
    screen = new Screen();
 //   menu = new MemoryMenu();
    menu->AddOption('W', "Move Up");
@@ -33,6 +34,11 @@ int main()
    
    while(true)
    {
+      if(menu->GetInput()==1)
+	 menu->SetQuery("Incorrect.");
+      else
+	 menu->SetQuery("How do you answer?");
+
       cout<<screen;
       menu->OutputMenu();
       menu->HandleInput(cin);

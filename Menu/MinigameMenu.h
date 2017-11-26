@@ -28,7 +28,12 @@ class MinigameMenu : public GameMenu
   /// This function handles the input for the menu options.
   /// \param[in,out] is The in-stream operator to read the input.
   virtual void HandleInput(istream &is) = 0;
-
+  /// Allows the query to be set.
+  void SetQuery(string q) {query = q;}
+  protected:
+  /// Sets the query of the game.
+  string query;
+  
 };
 
 #endif
