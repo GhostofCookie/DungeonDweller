@@ -22,7 +22,6 @@ Menu::Menu(int height, int width)
       for (int j = 0; j < menuWidth; j++)
 	 Set(i, j, ' ');
    }
-   AddOption('q',"Quit");
 }
 
 /// This is the destructor for the class. It is virtual.
@@ -51,8 +50,6 @@ void Menu::HandleInput(istream& is)
       currOption='\n';
       return;
    }
-   if(option == 'q')
-      QuitGame(0);
    if(is.fail())
    {
       throw invalid_argument("Invalid input. Please enter something more sensible.");
@@ -80,7 +77,7 @@ char Menu::GetOption() const
 /// A function to set the added options to the character array.
 /// \param[in] row Determines which row the options will start being set at.
 /// \param[in] col Determines which column the options will start from.
-/// \param[in] How mush space inbetween rows.
+/// \param[in] How much space inbetween rows.
 void Menu::SetOptions(int row,int col,int space)
 {
    auto it = indexMap.begin();
@@ -156,16 +153,4 @@ void Menu::BuildMenu()
    Set(menuHeight - 1, menuWidth - 1, '+');
    Set(0, menuWidth - 1, '+');
    Set(menuHeight - 1, 0, '+');
-}
-
-/// Helper function to quit the game.
-/// \param[in] value This parameter serves to pass the function to the
-/// options map.
-void Menu::QuitGame(int value)
-{
-   char ch;
-   cout<<"Are you sure you want to quit(y/n)? ";
-   cin>>ch;
-   if(ch=='y') exit(value);
-   else return;
 }
