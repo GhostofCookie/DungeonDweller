@@ -28,6 +28,49 @@ TicTacToe::~TicTacToe()
 
 }
 
+void TicTacToe::RunGame(){
+///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
+   ///if it is even, it is the AI's turn.
+   int currentPlayer=1, inputX, inputY;
+   BoardSetup();
+   TicTacToeMenu ticTacToeGameMenu;
+   while(PuzzleEnd==false)
+   {
+      cout << TicTacToeScreen << endl;
+      SetCurrentPlayersChar(currentPlayer);
+      if(currentPlayer%2==0)
+      {
+	 AiMove(currentPlayerChar);
+	 if(WinCheck() || TieGameCheck(currentPlayer))
+	    EndGamePrompt(currentPlayer);
+	 else
+	    currentPlayer++;
+      }
+      else
+      {
+	 ticTacToeGameMenu.OutputMenu();
+	 ticTacToeGameMenu.HandleInput(cin);
+	 
+	 ///X is taken as a,b, or c, Y is taken in as an integer.
+	
+	 inputY=ticTacToeGameMenu.GetCoordinates().y-1;
+	 inputX=ConvertCharCoordinateToIndex(ticTacToeGameMenu.GetCoordinates().x);
+	 cout << "InputX:" << inputX << "     inputY:" << inputY << "     currentPlayerChar:" << currentPlayerChar << endl;
+
+	 if(IsInputValid(inputX, inputY) && !IsSpotFilled(inputX,inputY))
+	 {	    
+	    MovePiece(inputX, inputY, currentPlayerChar);
+	    if(WinCheck() || TieGameCheck(currentPlayer))
+	       EndGamePrompt(currentPlayer);
+	    else
+	       currentPlayer++;
+	 }
+	 else
+	    cout << "Sorry that spot is already taken!" << endl;
+      }
+   }
+}
+
 ///Sets up the board with the ui for the  TicTacToe game
 void TicTacToe::BoardSetup()
 {
@@ -333,60 +376,18 @@ bool TicTacToe::TieGameCheck(int &currentPlayer)
    {
       for(int j=0; j<boardSize; j++)
       {
-	 if(gameBoard.at(i).at(j)!=' ');
+	 if(gameBoard.at(i).at(j)==' ');
 	 {
 	    cout << "TieCheck False" << endl;
 	    return false;
 	 }
       }
    }
+   cout << "TieCheck true" << endl;
    currentPlayer=-1;
    return true;
 }
    
-
-void TicTacToe::RunGame(){
-///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
-   ///if it is even, it is the AI's turn.
-   int currentPlayer=1, inputX, inputY;
-   BoardSetup();
-   TicTacToeMenu ticTacToeGameMenu;
-   while(PuzzleEnd==false)
-   {
-      cout << TicTacToeScreen << endl;
-      SetCurrentPlayersChar(currentPlayer);
-      if(currentPlayer%2==0)
-      {
-	 AiMove(currentPlayerChar);
-	 if(WinCheck() || TieGameCheck(currentPlayer))
-	    EndGamePrompt(currentPlayer);
-	 else
-	    currentPlayer++;
-      }
-      else
-      {
-	 ticTacToeGameMenu.OutputMenu();
-	 ticTacToeGameMenu.HandleInput(cin);
-	 
-	 ///X is taken as a,b, or c, Y is taken in as an integer.
-	
-	 inputY=ticTacToeGameMenu.GetCoordinates().y-1;
-	 inputX=ConvertCharCoordinateToIndex(ticTacToeGameMenu.GetCoordinates().x);
-	 cout << "InputX:" << inputX << "     inputY:" << inputY << "     currentPlayerChar:" << currentPlayerChar << endl;
-
-	 if(IsInputValid(inputX, inputY) && !IsSpotFilled(inputX,inputY))
-	 {	    
-	    MovePiece(inputX, inputY, currentPlayerChar);
-	    if(WinCheck())
-	       EndGamePrompt(currentPlayer);
-	    else
-	       currentPlayer++;
-	 }
-	 else
-	    cout << "Sorry that spot is already taken!" << endl;
-      }
-   }
-}
 
 void TicTacToe::ResetGame(int &currentPlayer)
 {
