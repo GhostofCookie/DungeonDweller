@@ -36,6 +36,7 @@ void TicTacToe::RunGame(){
    TicTacToeMenu ticTacToeGameMenu;
    while(PuzzleEnd==false)
    {
+      system("clear");
       cout << TicTacToeScreen << endl;
       SetCurrentPlayersChar(currentPlayer);
       if(currentPlayer%2==0)

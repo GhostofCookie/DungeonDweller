@@ -82,8 +82,12 @@ class MemoryMatch: virtual public Puzzle
 ///the game board
    void SaveBoardToScreen();
 
-   ///Causes a three second delay in the program process
-   void ThreeSecondDelay();
+   void PeekAtBoard(int lengthInSeconds);
+
+   void EndGamePrompt();
+   
+   ///Causes a "seconds" delay in the program process
+   void SecondDelay(int seconds);
 
    ///Flips two squares and outputs it for 3 seconds then flips it back.   
    void Peek(int inputX1, int inputY1, int inputX2, int inputY2);
