@@ -31,7 +31,7 @@ Hanoi::~Hanoi()
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won. 
-void Hanoi:: RunGame()
+void Hanoi:: RunGame(Character *player)
 {
    cout << "Start" << endl;
    char input;

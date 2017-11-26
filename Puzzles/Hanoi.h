@@ -28,7 +28,7 @@ class Hanoi: public virtual Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
-   void RunGame();
+   void RunGame(Character *player);
 
   private:
    ///Checks to see if the target stack has a larger disc than that of the

@@ -28,7 +28,7 @@ TicTacToe::~TicTacToe()
 
 }
 
-void TicTacToe::RunGame(){
+void TicTacToe::RunGame(Character *player){
 ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer=1, inputX, inputY;
