@@ -12,6 +12,9 @@ ExploreState::ExploreState()
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection,0);
    roomTree = new RoomTree(roomPtr);
+
+   // create the player
+   player = Player(30, 0, "Reid", "Human", 50, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 ExploreState::~ExploreState()
@@ -45,9 +48,8 @@ void ExploreState::Set()
 /// Gets the layout for the game menu and screen.
 void ExploreState::Get()
 {
-   //Remove in the future
-   ImportImg player = ImportImg(import->collection['@'][0]);
-   player.AlignCenter(*screen);
+   player.Img().AlignCenter(*screen);
+   player.Draw(*screen);
  
    // clear the screen
    screen->Erase();
@@ -57,6 +59,7 @@ void ExploreState::Get()
    player.Draw(*screen);
 
    // output the screen
+   cout << player.
    cout << screen;
          
    // Print the menu and handle user input
@@ -75,7 +78,7 @@ void ExploreState::RunInput(char n)
    switch(n)
    {
       case 'w' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->ExitUp();
 	    
@@ -86,13 +89,13 @@ void ExploreState::RunInput(char n)
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->EnterDown();
 	 break;
 	 
       case 'a' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->ExitLeft();
 	 
@@ -103,13 +106,13 @@ void ExploreState::RunInput(char n)
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->EnterRight();
 	 break;
 	 
       case 's' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->ExitDown();
 	 
@@ -120,13 +123,13 @@ void ExploreState::RunInput(char n)
 	 }
 	 
 	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->EnterUp();
 	 break;
 	 
       case 'd' :
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->ExitRight();
 	 
@@ -137,7 +140,7 @@ void ExploreState::RunInput(char n)
 	 }
 
 	 delete anim;
-	 anim = new Cutscene(import->collection['@'][0], roomTree->At()->GetImage(),
+	 anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
 			     roomTree->At());
 	 anim->EnterLeft();
 	 break;
