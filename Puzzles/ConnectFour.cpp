@@ -46,6 +46,9 @@ void ConnectFour::RunGame()
       if(currentPlayer%2==0)
       {
 	 PlayAI(currentPlayerChar);
+	 currentPlayer++;
+	 if(WinCheck() || TieGameCheck(currentPlayer))
+	    EndGamePrompt(currentPlayer);
       }
       else
       {	 
@@ -54,18 +57,18 @@ void ConnectFour::RunGame()
 	 userInput=connectFourGameMenu.GetColumn();
 	 cout << "userInput:" << userInput << endl;
 	 
-	 if(ValidMove(userInput))
+	 if(ValidMove(userInput) && !IsColumnFull(userInput))
 	 {
 	    MovePiece(currentPlayerChar, userInput);
-	  
+	    if(WinCheck() || TieGameCheck(currentPlayer))
+	       EndGamePrompt(currentPlayer);
+	    else
+	       currentPlayer++;
 	 }
 	 else
 	    cout << "Invalid Move, please try again" << endl;
       }
-      if(WinCheck() || TieGameCheck(currentPlayer))
-	  EndGamePrompt(currentPlayer);
-       else
-	  currentPlayer++;
+
    }
 }
 
@@ -81,7 +84,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
       cout << "column " <<column-1 << " is height " <<grid.at(column-1).size() << "     Height subtracted is: " << height << endl;
       if(grid.at(column-1).at(ySize-height)!=' ')
       {
-	 cout << "SET AT HIEGHT:" << ySize-height << endl;
+	 cout << "SET AT HEIGHT:" << ySize-height << endl;
 	 height++;
 	 grid.at(column-1).at(ySize-height)=userPiece;
 	 height--;
@@ -128,7 +131,7 @@ void ConnectFour::PlayAI(char AiPiece)
    {
       if(columnChoice==0)
 	 columnChoice++;
-      if(IsColumnFull(columnChoice))
+      if(!ValidMove(columnChoice))
       {
 	 columnChoice=Puzzle::RandomNumber(xSize);
       }
@@ -158,7 +161,7 @@ bool ConnectFour::TieGameCheck(int &currentPlayerChar)
 {
    if(IsBoardFull())
    {
-      currentPlayerChar=-1;
+      currentPlayerChar--;
       return true;
    }
    else
@@ -388,6 +391,8 @@ bool ConnectFour::LeftDiagonalCheck()
 	    if(atCount==4||poundCount==4)
 	       return true;
 	 }
+	 poundCount=0;
+	 atCount=0;
       }
    }
    return false;
@@ -409,9 +414,16 @@ bool ConnectFour::RightDiagonalCheck()
       {
 	 for(int k=0; k<4; k++)
 	 {
+	    ///If an empty space is found reset both counters since it is no longer a
+	    ///consecutive line
+	    if(grid.at(j-k).at(i+k)==' ')
+	    {
+	       poundCount=0;
+	       atCount=0;
+	    }
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
-	    if(grid.at(j-k).at(i+k)=='@')
+	    else if(grid.at(j-k).at(i+k)=='@')
 	    { 
 	       atCount++;
 	       poundCount=0;
@@ -423,20 +435,14 @@ bool ConnectFour::RightDiagonalCheck()
 	    {
 	       poundCount++;
 	       atCount=0;
-	    }
-	    ///If an empty space is found reset both counters since it is no longer a
-	    ///consecutive line
-	    else if(grid.at(j-k).at(i+k)==' ')
-	    {
-	       poundCount=0;
-	       atCount=0;
-	    }
-	    
+	    }	    
 	    ///If either count is at 4 then we have found four of a kind and a player
 	    ///has won so return true.
 	    if(atCount==4||poundCount==4)
 	       return true;
 	 }
+	 poundCount=0;
+	 atCount=0;
       }
    }
    cout << "END OF RD" << endl;
@@ -444,21 +450,11 @@ bool ConnectFour::RightDiagonalCheck()
       return false;
 }
 
-///Function which checks if a column is full
-bool ConnectFour::IsColumnFull(int input)
-{
-   for(int i=0; i<ySize-1; i++)
-   {
-      if(grid.at(input).at(i)==' ')
-	 return false;
-   }
-   return true;
-}
 
 ///Returns true if every space in the board has been filled with a character
 bool ConnectFour::IsBoardFull(){
    int fullColumnCount=0;
-   for(int i=0; i<xSize; i++)
+   for(int i=0; i<ySize; i++)
    {
       if(IsColumnFull(i))
 	    fullColumnCount++;
@@ -483,4 +479,26 @@ void ConnectFour::ResetGame(int &currentPlayer)
    currentPlayer=1;
 }
 
-   
+///Function which checks if a column is full
+bool ConnectFour::IsColumnFull(int input)
+{
+   for(int i=0; i<ySize; i++)
+   {
+      cout << "i=" << i << endl;
+      if(grid.at(input).at(i)==' ')
+	 return false;
+   }
+   return true;
+}
+   // cout << "IsFullLoop:";
+   // for(int i=0; i<ySize; i++)
+   // {
+   //    cout << i << endl;
+   //    if(grid.at(input).at(i)==' ')
+   //    {
+   // 	 cout << "END AT I=" << i << endl;
+   // 	 return false;
+   //    }
+   // }
+   // return true;
+//}

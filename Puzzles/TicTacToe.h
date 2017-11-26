@@ -51,9 +51,13 @@ class TicTacToe: public virtual Puzzle
    /// \param[in] inputY, the Y-coordinate of the selection.
    void MovePiece(int inputX, int inputY, char userPiece);
 
+   void EndGamePrompt(int &currentPlayer);
+      
    ///Checks to see if there have been any 3 tokens in a row in the grid vector.
    bool WinCheck();
 
+   bool TieGameCheck(int &currentPlayer);
+   
    ///Performs the selection for the npc opponent.
    void AiMove(char AiPiece);
 
