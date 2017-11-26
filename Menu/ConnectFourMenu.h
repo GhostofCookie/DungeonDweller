@@ -32,7 +32,6 @@ class ConnectFourMenu : public virtual MinigameMenu
    /// Returns the chosen column.
    int GetColumn() const;
  private:
-   string query;
    int column;
 
 };

@@ -1,13 +1,13 @@
-                                                                          
-                                 _ _                                      
-                               \{'-'}/                                    
-                                                                          
-                                                                          
-                        Thank you for playing!                            
-
-                                                                          
-                                                                          
-                                                                                                                                                    
-                                                                          
-                              Project By:                                 
-Tyler Swiy   Reid Paulhus   Gates Kempenar   Rylan Buekart   Tomas Riggaux
+                                                                           
+                                   _ _                                     
+                                 \{'-'}/                                   
+                                                                           
+                                                                           
+                          Thank you for playing!                           
+                                                                           
+                                                                           
+                                                                           
+===========================================================================
+                           CPSC 2720 Project by:                           
+Gates Kempenaar   Reid Paulhus   Rylan Bueckert   Tomas Rigaux   Tyler Swiy
+===========================================================================
