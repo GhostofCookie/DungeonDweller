@@ -16,17 +16,12 @@ int main()
    srand( (unsigned int) time(NULL));
    
    ImageImporter import = ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   ImportImg *img = new ImportImg(import.collection['@'][0]);
-
-   // create a quick room to demonstrate movements
-   Room *room = new Room(import.collection);
-    // create a cutscene that uses this image
-   // Cutscene cutscene = Cutscene(*img, room->GetImage(), room);
    Cutscene cutscene = Cutscene();
 
 
-   cutscene.Intro();
-   cutscene.Outro();
+   cutscene.MonsterEncounter();
+   //cutscene.Intro();
+   // cutscene.Outro();
    
    // runs 4 different DYNAMIC cutscene tests
    /*

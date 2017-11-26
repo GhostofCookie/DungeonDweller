@@ -588,3 +588,28 @@ void Cutscene::Outro()
       usleep(VERTSPEED * 2);
    }
 }
+
+
+
+/// Function to animate an encounter * hardcoded in every cutscene obj
+void Cutscene::MonsterEncounter()
+{  
+   Screen scr = Screen();
+   DefaultImg img = DefaultImg(31, 101, ' ');
+
+   img.AlignCenter(scr);
+   img.Draw(scr);
+   
+   for(int i = 0; i < scr.GetRows(); i++)
+   {
+      for(int j = 0; j < scr.GetCols(); j++)
+      {
+	 system("clear");
+	 
+	 scr.Set(i, j, '*');
+
+	 cout << scr;
+	 usleep(10);
+      }
+   }
+}
