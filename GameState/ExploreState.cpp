@@ -1,5 +1,6 @@
 #include "ExploreState.h"
 #include <stdlib.h>
+#include <iomanip>
 
 /// This is the the default constructor.
 ExploreState::ExploreState()
@@ -14,7 +15,7 @@ ExploreState::ExploreState()
    roomTree = new RoomTree(roomPtr);
 
    // create the player
-   player = Player(30, 0, "Reid", "Human", 50, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   player = Player(30, 0, "Reid", "Human", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 ExploreState::~ExploreState()
@@ -50,20 +51,23 @@ void ExploreState::Set()
 /// Gets the layout for the game menu and screen.
 void ExploreState::Get()
 {
-   player.Img().AlignCenter(*screen);
-   player.Draw(*screen);
-
+   char ch;
+   
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
+
+   player.Img().AlignCenter(*screen);
    player.Draw(*screen);
 
-   // output the screen
-//   cout << player.
    SetState((roomTree->At())->GetType());
-   cout<<currState<<endl;
+
+   // print the player's informaton and the screen
+   cout << setfill(' ') << "[$]Gold: " << player.GetGold();
+   cout << setw(43) << "[S]Stamina: " << player.GetStamina();
+   cout << setw(41) << right << "[+]Health: " << player.GetHealth() << right << endl;
    cout << screen;
           
    // Print the menu and handle user input
@@ -72,8 +76,9 @@ void ExploreState::Get()
    if(menu->GetOption() == 'q')
    {
       cout << "Are you sure you want to quit to main menu?";
-//      menu->HandleInput(cin);
-      //currState = 'M';
+      cin >> ch;
+      if(tolower(ch) == 'y')
+	 currState = 'M';
    }
 
    // Handle input from player
@@ -208,7 +213,7 @@ void ExploreState::SetState(int n)
 		  else
 		     screen->Fill(' ');
 		  cout<<screen;
-		  usleep(100000);
+		  usleep(200000);
 
 	       }
 	    

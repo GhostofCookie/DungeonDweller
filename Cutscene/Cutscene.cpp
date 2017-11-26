@@ -507,13 +507,11 @@ void Cutscene::FindCharacter(int &y, int &x, const char c, const Room &r)
 /// Function to animate an outro * hardcoded in every cutscene obj
 void Cutscene::Intro()
 {
-   const int CHARLEN = 8;
-
    Screen scr = Screen();
    ImportImg title = ImportImg("../DD_Art/Credits/title.txt");
 
-   char play[CHARLEN] = {'[', 'P', ']', ' ', 'P', 'l', 'a', 'y'};
-   char quit[CHARLEN] = {'[', 'Q', ']', ' ', 'Q', 'u', 'i', 't'};
+   string play = "[P] Play Game";
+   string quit = "[Q] Quit Game";
    
    title.AlignCenter(scr);
    title.ShiftDown(scr, scr.GetRows()/2 + title.GetRows());
@@ -534,33 +532,33 @@ void Cutscene::Intro()
    }
 
    // initialize where the menu options begin to print
-   int playX = scr.GetCols()/2 - (CHARLEN * 2);
-   int quitX = scr.GetCols()/2 + CHARLEN;
+   int playX = scr.GetCols()/2 - (play.length() * 2);
+   int quitX = scr.GetCols()/2 + quit.length();
 
    // iterate through the char array printing each character one at a time
-   for(int i = 0; i < CHARLEN; i++)
+   for(unsigned int i = 0; i < play.length(); i++)
    {
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-CHARLEN, playX++, play[i]);
+      scr.Set(scr.GetRows()-play.length()/2, playX++, play[i]);
 
       cout << scr;
       
-      usleep(200000);
+      usleep(100000);
    }
 
    // iterate through the char array printing each character one at a time
-   for(int i = 0; i < CHARLEN; i++)
+   for(unsigned int i = 0; i < quit.length(); i++)
    {
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-CHARLEN, quitX++, quit[i]);
+      scr.Set(scr.GetRows()-quit.length()/2, quitX++, quit[i]);
 
       cout << scr;
       
-      usleep(200000);
+      usleep(100000);
    }
 }
 
@@ -587,6 +585,6 @@ void Cutscene::Outro()
       scr.Erase();
       credits.ShiftUp(1);
 
-      usleep(200000);
+      usleep(VERTSPEED * 2);
    }
 }
