@@ -28,6 +28,28 @@ Hanoi::~Hanoi()
 {
 }
 
+
+///Method to run the game, serves as a 'main' for the mini-game, calling
+///functions from private until the player has won. 
+void Hanoi:: RunGame()
+{
+   cout << "Start" << endl;
+   char input;
+   SetOptionsInMenu();
+
+   while(PuzzleEnd==false)
+   {
+      system("clear");
+      cout << HanoiScreen;
+      HanoiGameMenu.OutputMenu();
+      HanoiGameMenu.HandleInput(cin);
+      input=HanoiGameMenu.GetOption();//returns a char
+      LogicSwitch(input);
+      WinCheck();
+   }
+   cout << "A noise creaks behind the wall and the door slides open." << endl;
+}
+
 ///Sets up the discs on the gameboard for the beginning of the game.    
 void Hanoi:: DiscSetup()
 {
@@ -277,27 +299,6 @@ void Hanoi::ClearTopDisc(int targetTower)
       HanoiScreen.Set(bottomStartPoint, startingPoint-i, ' ');
       HanoiScreen.Set(bottomStartPoint, startingPoint, '|');
    }
-}
-
-///Method to run the game, serves as a 'main' for the mini-game, calling
-///functions from private until the player has won. 
-void Hanoi:: RunGame()
-{
-   cout << "Start" << endl;
-   char input;
-   SetOptionsInMenu();
-
-   while(PuzzleEnd==false)
-   {
-      cout << HanoiScreen;
-      HanoiGameMenu.OutputMenu();
-      HanoiGameMenu.HandleInput(cin);
-      input=HanoiGameMenu.GetOption();//returns a char
-      LogicSwitch(input);
-      WinCheck();
-      cout << "Stack 1 Size:" << tower.at(0).size() << "                Stack 2 Size:" <<tower.at(1).size() << "               Stack 3 size: " << tower.at(2).size() << endl;
-   }
-   cout << "A noise creaks behind the wall and the door slides open." << endl;
 }
 
 ///Moves the piece the depending on which option the player selects

@@ -47,8 +47,10 @@ void MemoryMatch::RunGame()
    SetOptionsInMenu();
    BoardSetup();
    SaveBoardToScreen();
+   PeekAtBoard(6);
    while(PuzzleEnd==false)
    {
+      system("clear");
       cout << MemoryMatchScreen;
       MemoryMatchMenu.OutputMenu();
       MemoryMatchMenu.HandleInput(cin);
@@ -64,6 +66,14 @@ void MemoryMatch::RunGame()
 	 cout << "Invalid input, please try again!" << endl;
    }   
 }
+
+void MemoryMatch:: EndGamePrompt()
+{
+   cout << "Congratulations adventurer! You've solved the puzzle!" << endl;
+   cout << MemoryMatchScreen;
+   SecondDelay(6);
+}
+
 
 int MemoryMatch:: ConvertCharToIndex(char input)
 {
@@ -116,7 +126,7 @@ bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
 ///Sets the board up for the beginning of the game, placing them in screen
 void MemoryMatch::BoardSetup()
 {
-   cout << "Board Setup" << endl << endl;
+   cout << "Board Setup" << endl;
    int randomPairIndex;
    char randomPairToInsert;
    bool reSelect=true;
@@ -135,13 +145,10 @@ void MemoryMatch::BoardSetup()
 	 
 	 ///If we haven't used any pair yet. Insert right away
 	 if(usedPairs.empty())
-	 {
 	    reSelect=false;
-	 }///Else check if we have used it before, if yes, try another pair
+         ///Else check if we have used it before, if yes, try another pair
 	 else if(IsInUsedPairs(randomPairToInsert))
-	 {
-	    reSelect=true;
-	 }	 
+	    reSelect=true;	 
       }
       usedPairs.push_back(pairsOfCharsVector.at(randomPairIndex));
       RandomlyInsertIntoTable(pairsOfCharsVector.at(randomPairIndex));
@@ -156,10 +163,7 @@ bool MemoryMatch:: IsInUsedPairs(char symbol)
    for(int i=0; i<usedPairs.size(); i++)
    {
       if(symbol==usedPairs.at(i))
-      {
-	 cout << "used";
 	 return true;
-      }
    }
    return false;
 }
@@ -177,13 +181,10 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
       {
 	 randomXCoordinate=Puzzle::RandomNumber(boardSize);
 	 randomYCoordinate=Puzzle::RandomNumber(boardSize);
-	 
-	 cout << "Random X:" << randomXCoordinate << "  Random Y:" << randomYCoordinate << "    Symbol:"<< charTable.at(randomXCoordinate).at(randomYCoordinate)<<endl;													    
 	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)==' ')
 	 {
 	    charTable.at(randomXCoordinate).at(randomYCoordinate)=symbol;
 	    insertSuccess=true;
-	    cout << "insert Success" << endl;
 	 }
       }
       insertSuccess=false;
@@ -195,33 +196,24 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
 void MemoryMatch::SaveBoardToScreen()
 {
    cout << "SaveBoardToScreen" << endl;
+   ///topBound and leftBound should set the board centered inside
+   ///the screen object.
    int screenBoardSize=9, topBound=11, leftBound=45;
    for(int i=0; i<screenBoardSize; i++)
    {
       for(int j=0; j<screenBoardSize; j++)
-      {
+      {	 
 	 ///If i is odd, fill the entire row with '-'
 	 if(i%2==0)
-	 {
-	    ///topBound and leftBound should set the board centered inside
-	    ///the screen object.
 	    MemoryMatchScreen.Set((topBound+i), (leftBound+j),'-');
-	 }
-	 ///If i is even, fill the row with squares to place tokens in later
+
+         ///If i is even, fill the row with squares to place tokens in later
 	 else
 	 {
 	    if(j%2!=0)
-	    {
-	       ///topBound and leftBound should set the board centered inside
-	       ///the screen object.  
 	       MemoryMatchScreen.Set((topBound+i),(leftBound+j),' ');
-	    }
 	    else
-	    {
-	       ///topBound and leftBound should set the board centered inside
-	       ///the screen object.  
 	       MemoryMatchScreen.Set((topBound+i),(leftBound+j),'|');
-	    }
 	 }
       }
    }
@@ -238,16 +230,16 @@ void MemoryMatch::SetOptionsInMenu()
 ///unmatched, false if they have previously been matched
 bool MemoryMatch::ValidMove(int X1, int Y1, int X2, int Y2)
 {
-   if(matchVector.at(X1).at(Y1)==1 && matchVector.at(X1).at(Y1)==1)
+   if(matchVector.at(X1).at(Y1)==1 || matchVector.at(X2).at(Y2)==1)
       return false;
    else
       return true;
 }
 
 ///Causes a three second delay in the program process
-void MemoryMatch::ThreeSecondDelay()
+void MemoryMatch::SecondDelay(int seconds)
 {
-      usleep(3000000);
+      usleep(1000000*seconds);
 }
 
 ///Generates a random number between 0 and n-1
@@ -290,6 +282,31 @@ void MemoryMatch::FlipTwoChars(int inputX, int inputY)
    symbol=charTable.at(inputX).at(inputY);
    MemoryMatchScreen.Set(((inputY*2)+1+topBound), ((inputX*2)+1+leftBound), symbol);
 }
+///Flips two squares and outputs it for 3 seconds then flips it back.
+void MemoryMatch::PeekAtBoard(int lengthInSeconds)
+{
+   ///top left coordinate of the game board on the screen
+   int topBound=11, leftBound=45;
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int j=0; j<boardSize; j++)
+      {
+	 FlipTwoChars(i, j);
+      }
+   }
+   ///Output the game for three seconds
+   cout << MemoryMatchScreen << endl; 
+   SecondDelay(lengthInSeconds);
+   system("clear");
+   
+   for(int i=0; i<boardSize; i++)
+   {
+      for(int j=0; j<boardSize; j++)
+      {
+	 MemoryMatchScreen.Set(((j*2)+1+topBound), ((i*2)+1+leftBound), ' ');
+      }
+   }
+}
 
 ///Flips two squares and outputs it for 3 seconds then flips it back.
 void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
@@ -306,7 +323,7 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 
    ///Output the game for three seconds
    cout << MemoryMatchScreen << endl; 
-   ThreeSecondDelay();
+   SecondDelay(3);
 
    ///clear the first and second symbol off of the screen after 3 seconds, only
    ///if they have not previously been matched
@@ -354,6 +371,7 @@ void MemoryMatch::MovePiece(int inputX1, int inputY1, int inputX2, int inputY2)
 bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 {
    ///If the two chars are the same.
+   cout << "input1:" << charTable.at(inputX1).at(inputY1) << "  input2:" << charTable.at(inputX2).at(inputY2) << endl;
    if(charTable.at(inputX1).at(inputY1)==charTable.at(inputX2).at(inputY2))
       return true;
    else
@@ -364,22 +382,18 @@ bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 ///returns true when they have completed the puzzle.
 void MemoryMatch::WinCheck()
 {
-   int trueCount=0, temp;
-   cout << "WIN CHECK" << endl;
-   cout << "MatchVector";
+   int trueCount=0;
    for(int i=0; i<boardSize; i++)
    {
       for(int j=0; j<boardSize; j++)
       {
-	 temp=matchVector.at(i).at(j);
-	 cout << " " << temp;
-	 if(temp==1);
-	 trueCount++;
+	 if(matchVector.at(i).at(j)==1)
+	    trueCount++;
       }
    }
-   cout << endl << "trueCount:" << trueCount << endl;
    if(trueCount==boardSize*boardSize)
    {
       PuzzleEnd=true;
+      EndGamePrompt();
    }
 }

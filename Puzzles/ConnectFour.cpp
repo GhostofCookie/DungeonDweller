@@ -40,6 +40,7 @@ void ConnectFour::RunGame()
    BoardSetup();
    while(PuzzleEnd==false)
    {
+      system("clear");
       cout << "CurrentPlayer:" << currentPlayer <<  endl;
       cout << ConnectFourScreen << endl;
       SetCurrentPlayerChar(currentPlayer);
@@ -95,7 +96,6 @@ void ConnectFour::MovePiece(char userPiece, int column)
       {
 	 height--;
       }
-      cout << "!!!!!!!!!!!" << endl;
       ///If we have reached the bottom of the column and not found a piece, set
       ///the piece at the bottom of the column and break.
       if(height==0 && (grid.at(column-1).at(ySize-1))==' ')
@@ -146,7 +146,7 @@ void ConnectFour::PlayAI(char AiPiece)
 
 bool ConnectFour:: ValidMove(int input)
 {
-   if(IsColumnFull(input-1) || IsInputOutOfScope(input))
+   if(IsInputOutOfScope(input) || IsColumnFull(input-1))
       return false;
    else
       return true;
