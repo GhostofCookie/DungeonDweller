@@ -31,6 +31,8 @@ void CodeCracker:: RunGame(Character *player)
    {
       cout << "Loop" << endl;
       currentRiddle=UnusedRandomRiddle();
+      cout << "current Riddle:" << question.at(currentRiddle) << endl;
+      SetRiddleInMenu(currentRiddle);
 ///Do riddle output
       GameMenu.HandleInput(cin);
       userInput=GameMenu.GetInput();
@@ -54,7 +56,7 @@ void CodeCracker::SetRiddleInMenu(int riddleIndex)
 {
    cout << "riddle Index:" << riddleIndex << endl;
    string riddleText=question.at(riddleIndex);
-   SetQuery(riddleText);
+   //SetQuery(riddleText);
 
 }
 

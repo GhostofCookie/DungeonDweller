@@ -57,7 +57,7 @@ class CodeCracker: public virtual Puzzle
 ///Imports riddles from a text file and stores them in the vector.
    void ImportRiddles();
 
-   void setRiddleInMenu(int riddleIndex);
+   void SetRiddleInMenu(int riddleIndex);
      
    void SetOptionsInMenu();
 
