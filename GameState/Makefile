@@ -28,4 +28,4 @@ clean:
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f menuTest runTest
+	rm -f explore
