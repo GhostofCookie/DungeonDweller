@@ -29,7 +29,7 @@ void CharacterTest:: TestChangeGold()
 {
    C.ChangeGold(10);
    C.ChangeGold(-11);
-   int g = C.gold;
+   int g = C.GetGold();
    CPPUNIT_ASSERT(g == 0);
 }
 
@@ -37,12 +37,14 @@ void CharacterTest:: TestChangeHealth()
 {
    C.ChangeHealth(10);
    C.ChangeHealth(-11);
-   CPPUNIT_ASSERT(C.health == 0);
+   int h = C.GetHealth();
+   CPPUNIT_ASSERT(h == 0);
 }
 
 void CharacterTest:: TestChangeStamina()
 {
    C.ChangeStamina(10);
    C.ChangeStamina(-11);
-   CPPUNIT_ASSERT(C.stamina == 0);
+   int s = C.GetStamina();
+   CPPUNIT_ASSERT(s == 0);
 }

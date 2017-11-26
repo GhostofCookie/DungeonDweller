@@ -43,13 +43,6 @@ class Character
    int stamina;
    
    public:
-<<<<<<< HEAD
-=======
-   /// Character constructor
-   /// \param[in] g, starting amoutn of gold for the character
-   /// \param[in] h, starting health for the character
-   // Character() = 0;
->>>>>>> 507a94eb0088bfbbd55d3a89a60fabac38bdf02c
 
    /// Character deconstructor
    virtual ~Character(){}
@@ -76,15 +69,9 @@ class Character
    /// \param[in] HMod, how the current health will be modified
    virtual void ChangeHealth(int hMod);
 
-<<<<<<< HEAD
-   ///Changes players stamina
+   /// Changes players stamina
    /// \param[in&] s, players current stamina
    /// \param[in] sMod, how the curent stamina will be modified
-=======
-    /// Changes players stamina
-    /// \param[in&] s, players current stamina
-    /// \param[in] sMod, how the curent stamina will be modified
->>>>>>> 507a94eb0088bfbbd55d3a89a60fabac38bdf02c
    virtual void ChangeStamina(int sMod);
 
    /// Returns the stamina value

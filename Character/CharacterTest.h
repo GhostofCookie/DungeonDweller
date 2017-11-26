@@ -23,7 +23,6 @@ class CharacterTest : public CppUnit::TestFixture
    CPPUNIT_TEST(TestChangeGold);
    CPPUNIT_TEST(TestChangeHealth);
    CPPUNIT_TEST(TestChangeStamina);
-   //CPPUNIT_TEST(Test);
    CPPUNIT_TEST_SUITE_END();
 
   public:

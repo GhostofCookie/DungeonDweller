@@ -5,7 +5,7 @@ void Character:: ChangeGold(int goldMod)
  if(gold += goldMod <= 0)
     gold = 0;
  else
-    gold += goldMod;
+    gold += goldMod; 
 }
 
 void Character:: ChangeHealth(int hMod)
