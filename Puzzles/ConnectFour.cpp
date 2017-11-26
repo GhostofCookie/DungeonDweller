@@ -57,7 +57,7 @@ void ConnectFour::RunGame()
 	 userInput=connectFourGameMenu.GetColumn();
 	 cout << "userInput:" << userInput << endl;
 	 
-	 if(ValidMove(userInput) && !IsColumnFull(userInput))
+	 if(ValidMove(userInput))
 	 {
 	    MovePiece(currentPlayerChar, userInput);
 	    if(WinCheck() || TieGameCheck(currentPlayer))
@@ -146,7 +146,7 @@ void ConnectFour::PlayAI(char AiPiece)
 
 bool ConnectFour:: ValidMove(int input)
 {
-   if(IsColumnFull(input) || IsInputOutOfScope(input))
+   if(IsColumnFull(input-1) || IsInputOutOfScope(input))
       return false;
    else
       return true;
@@ -482,11 +482,16 @@ void ConnectFour::ResetGame(int &currentPlayer)
 ///Function which checks if a column is full
 bool ConnectFour::IsColumnFull(int input)
 {
+   cout << "iscolumnfull"<< endl;
    for(int i=0; i<ySize; i++)
    {
-      cout << "i=" << i << endl;
+      cout << "input=" << input << endl;
       if(grid.at(input).at(i)==' ')
+      {
+	 cout << "FALICY" << endl;
+   
 	 return false;
+      }
    }
    return true;
 }
