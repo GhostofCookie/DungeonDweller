@@ -17,19 +17,16 @@ class PlayerTest : public CppUnit::TestFixture
 {
    //test cases
    CPPUNIT_TEST_SUITE(PlayerTest);
-   CPPUNIT_TEST(TestStamina);
    CPPUNIT_TEST(TestKeys);
    CPPUNIT_TEST_SUITE_END();
 
   public:
    void setUp(); ///>override \c setUp to create variable
    void TestKeys();
-   void TestStamina();
    
   private:
    //values used for test cases
-   int key, keyMod;
-   int stamina, staminaMod;
+   int keyMod;
    Player T;
 };
 

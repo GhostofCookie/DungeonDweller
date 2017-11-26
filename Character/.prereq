@@ -39,6 +39,10 @@ PlayerTest.o: PlayerTest.cpp PlayerTest.h Player.h Character.h \
  ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
  ../Item/Item.h ../Screen/Screen.h
+CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
+ ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
+ ../Item/Item.h ../Screen/Screen.h
 Character.o: Character.cpp Character.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h
 Player.o: Player.cpp Player.h Character.h ../Item/Item.h \
