@@ -7,11 +7,11 @@
 #include "Character.h"
 #include "../Image/ImportImg.h"
 #include "../Item/MyConsumables.h"
-#include "../Item/Item.h"
 #include "../Screen/Screen.h"
 #include "../Image/ImportImg.h"
 #include <algorithm>
 
+class Item;
 /// class to test functionality of the IntVector class
 class CharacterTest : public CppUnit::TestFixture
 {
@@ -28,6 +28,7 @@ class CharacterTest : public CppUnit::TestFixture
   public:
    
    void setUp(); ///>override \c setUp to create variable
+   void tearDown();
    void TestFillInventory();
    void TestGetInventoryItems();
    void TestUseItem();
@@ -38,7 +39,6 @@ class CharacterTest : public CppUnit::TestFixture
   private:
    
    //values used for test cases
-   //int gold, health, stamina;
    Item *I;
    string item;
    vector<Item*> inv;

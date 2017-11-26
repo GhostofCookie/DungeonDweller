@@ -9,6 +9,7 @@
 using namespace std;
 
 int main(){
+   Character *Player=new Character;
    int input;
    srand(time(NULL));
    Hanoi HanoiTest;
@@ -21,19 +22,19 @@ int main(){
       switch(input)
       {
 	 case 1:
-	    HanoiTest.RunGame();
+	    HanoiTest.RunGame(Player);
 	    break;
 	 case 2:
-	    ConnectFourTest.RunGame();
+	    ConnectFourTest.RunGame(Player);
 	    break;
 	 case 3:
-	    ttt.RunGame();
+	    ttt.RunGame(Player);
 	    break;
 	 case 4:
-	    mmTest.RunGame();
+	    mmTest.RunGame(Player);
 	    break;
 	 case 5:
-	    cc.RunGame();
+	    cc.RunGame(Player);
 	    break;
       }
    return 0;

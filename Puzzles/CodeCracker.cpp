@@ -33,7 +33,9 @@ void CodeCracker:: RunGame(Character *player)
       currentRiddle=UnusedRandomRiddle();
 ///Do riddle output
       GameMenu.HandleInput(cin);
-      //userInput=GameMenu.GetInput()
+      userInput=GameMenu.GetInput();
+      cout << "userInput:" << userInput << endl;
+	
       if(ValidAnswer(userInput, currentRiddle))
       {
 	 riddleCompletionCount++;
@@ -47,6 +49,16 @@ void CodeCracker:: RunGame(Character *player)
       }
    }
 }
+
+void CodeCracker::SetRiddleInMenu(int riddleIndex)
+{
+   cout << "riddle Index:" << riddleIndex << endl;
+   string riddleText=question.at(riddleIndex);
+   SetQuery(riddleText);
+
+}
+
+
 ///Picks one of the unused riddles randomly and returns its index
 int CodeCracker::UnusedRandomRiddle()
 {
