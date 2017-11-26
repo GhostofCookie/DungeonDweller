@@ -163,6 +163,10 @@ class Cutscene
 
    /// Function to animate an outro * hardcoded in every cutscene obj
    void Outro();
+
+   /// Function to animate an encounter * hardcoded in every cutscene obj
+   void MonsterEncounter();
+			      
 };
 
 #endif

@@ -20,7 +20,9 @@ using namespace std;
 
 class Item;
 
-///Abstract base class of Npc's and Player's attributes
+
+/// \class Character Character.h
+/// \brief Abstract base class of Npc's and Player's attributes
 class Character
 {
    
@@ -28,54 +30,77 @@ class Character
    
    ImportImg img;
    
-   ///Vector of items the character has
+   /// Vector of items the character has
    vector<Item*> inventory;
 
-   ///Amount of gold player has
+   /// Amount of gold player has
    int gold;
 
-   ///Characters health
+   /// Characters health
    int health;
 
-   ///Characters stamina
+   /// Characters stamina
    int stamina;
    
    public:
+<<<<<<< HEAD
+=======
+   /// Character constructor
+   /// \param[in] g, starting amoutn of gold for the character
+   /// \param[in] h, starting health for the character
+   // Character() = 0;
+>>>>>>> 507a94eb0088bfbbd55d3a89a60fabac38bdf02c
 
    /// Character deconstructor
    virtual ~Character(){}
 
-   ///Function to fill the characters inventory
+   /// Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
    virtual void FillInventory(Item *item);
    
-   ///Shows a list of inventory items
+   /// Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
    virtual vector<Item*> GetInventoryItems();
 
-   ///Chooses the item to be used
+   /// Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
    virtual Item* UseItem(string item);
 
-   ///Change the amount of gold a character has
+   /// Change the amount of gold a character has
    /// \param[in&] Gold, current amount of gold the character has
    /// \param[in] GoldMod, how much the current gold will be changed by
    virtual void ChangeGold(int goldMod);
 
-   ///Changes the characters health
+   /// Changes the characters health
    /// \param[in&] H, characters current health
    /// \param[in] HMod, how the current health will be modified
    virtual void ChangeHealth(int hMod);
 
+<<<<<<< HEAD
    ///Changes players stamina
    /// \param[in&] s, players current stamina
    /// \param[in] sMod, how the curent stamina will be modified
+=======
+    /// Changes players stamina
+    /// \param[in&] s, players current stamina
+    /// \param[in] sMod, how the curent stamina will be modified
+>>>>>>> 507a94eb0088bfbbd55d3a89a60fabac38bdf02c
    virtual void ChangeStamina(int sMod);
 
-   virtual void Draw(Screen &screen);
+   /// Returns the stamina value
+   virtual int GetStamina() { return stamina; };
+   
+   /// Returns the gold value
+   virtual int GetGold() { return gold; };
+   
+   /// Returns the health value
+   virtual int GetHealth() { return health; };
 
+   /// Return the image
    virtual ImportImg Img();
 
+   /// Draw the player
+   virtual void Draw(Screen &screen);
 }; 
 
 #endif /* Character_hpp */
