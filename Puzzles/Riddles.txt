@@ -1,10 +1,21 @@
-3
-I have a bad of 17 red rocks and 17 blue rocks. I (blindly) remove two balls. If they are both the same colour I put a blue rock back in, if they are different colours I put a red rock back in. I repeat this until only one rock remains. What colour is the last rock?
-1:Blue, 2:Red.
+10
+I have a bag of 17 red rocks and 17 blue rocks. I (blindly) remove two balls. If they are both the same colour I put a blue rock back in, if they are different colours I put a red rock back in. I repeat this until only one rock remains. What colour is the last rock? 1:Blue, 2:Red.
 1
 Mr. Smith has 4 daughters. Each of his daughters has a brother. How many sons does Mr. Smith have?
-Answer in the form of an integer.
 1
 What number do you get when you multiply all of the numbers on a telephone's number pad?
-Answer in the form of an integer.
 0
+How many eggs can you put in an empty basket one foot in diameter?
+0
+If you can purchase 8 eggs for 26 cents, how many can you buy for a cent and a quarter?
+8
+How many multiples of 9 are there between 1 and 100?
+10
+If you have 6 black socks, 4 blue socks, 8 brown socks, and 2 red socks in your sock drawer, what is the minimum number of socks that you need to pull out in the dark to be sure you had a matching pair?
+5
+Complete the sequence: 1=3, 2=3, 3=5, 4=4, 5=4, 6=3, 7=5, 8=5, 9=4, 10=3, 11=?, 12=?
+6
+A frog fell into a hole that was 14½ feet deep. He could jump 3 feet, but he slid back a foot each time he jumped. How many jumps does it take him to get out of the hole?
+7
+Tom was asked how old he was. He replied "In 2 years I will be twice as old as I was five years ago.' How old is he ?
+12
