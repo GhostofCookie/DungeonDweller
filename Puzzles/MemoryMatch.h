@@ -24,7 +24,7 @@ class MemoryMatch: virtual public Puzzle
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
    ///\param[in] player, pointer to the player, used to decrement health.
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
    //ALL HANDLED BY THE MENU OBJECT
@@ -38,7 +38,7 @@ class MemoryMatch: virtual public Puzzle
    ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
 
-   void SetInputs(int &X1, int &Y1, int &X2,int &Y2, MemoryMenu &menu);
+   void SetInputs(int &X1, int &Y1, int &X2, int &Y2, MemoryMenu &menu);
    
    ///Checks the semantics of the players selection
 
@@ -106,17 +106,17 @@ class MemoryMatch: virtual public Puzzle
    Screen MemoryMatchScreen;
 
 ///The vector which holds the char values of the table to be matched
-   std::vector<vector<char>>charTable;
+   std :: vector < vector < char > > charTable;
 
    ///The vector which holds the integer value for the table, 1 being
    ///matched, 0 being unmatched.
-   std::vector<vector<int>>matchVector;
+   std :: vector < vector < int > > matchVector;
 
    ///Vector containing symbols to be randomly inserted on the screen at start
-   std::vector<char>pairsOfCharsVector;
+   std :: vector < char > pairsOfCharsVector;
 
    ///Vector containing all pairs that have already been matched up
-   std::vector<char>usedPairs;
+   std :: vector < char > usedPairs;
 
    ///dimensions for the gameboard
    int boardSize;

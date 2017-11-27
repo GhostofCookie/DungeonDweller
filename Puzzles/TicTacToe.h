@@ -90,7 +90,7 @@ class TicTacToe: public virtual Puzzle
    int ConvertCharCoordinateToIndex(char input);
    
    ///Vector to store the contents of the gameboard
-   std::vector<vector<char>>gameBoard;
+   std::vector < vector < char > > gameBoard;
 
    ///Dimensions for the board
    int boardSize;
