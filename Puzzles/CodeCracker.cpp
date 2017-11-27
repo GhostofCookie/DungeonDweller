@@ -25,7 +25,7 @@ void CodeCracker:: RunGame(Character *player)
    int userInput;
    RiddleMenu GameMenu;
    system("clear");
-   SetOptionsInMenu();
+   //SetOptionsInMenu();
    ImportRiddles();
    InitialPrompt(GameMenu);
    int currentRiddle;
@@ -86,7 +86,7 @@ void CodeCracker::MakeRiddleUsed(int riddleIndex)
 ///Picks one of the unused riddles randomly and returns its index
 int CodeCracker::UnusedRandomRiddle()
 {
-   int randRiddle, totalUsedRiddles=usedRiddles.size();  
+   int randRiddle;
    bool validRiddleFound=false;
    while(validRiddleFound==false)
    {
@@ -151,7 +151,6 @@ void CodeCracker::SetOptionsInMenu()
 void CodeCracker::ImportRiddles()
 {
    string line, questionString, questionFormat;
-   char number;
    int qAnswer=0;
 
    ifstream in;

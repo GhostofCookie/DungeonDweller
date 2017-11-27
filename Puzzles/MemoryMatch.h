@@ -22,7 +22,8 @@ class MemoryMatch: virtual public Puzzle
    virtual ~MemoryMatch();
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
-   ///functions from private until the player has won.  
+   ///functions from private until the player has won.
+   ///\param[in] player, pointer to the player, used to decrement health.
    void RunGame(Character *player);
 
   private:
@@ -73,6 +74,7 @@ class MemoryMatch: virtual public Puzzle
    ///them on the screen.
    void FlipTwoChars(int inputX, int inputY);
 
+   ///
    int ConvertCharToIndex(char input);
    
    ///Returns a random number between 0 and n-1 
