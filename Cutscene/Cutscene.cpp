@@ -593,23 +593,49 @@ void Cutscene::Outro()
 
 /// Function to animate an encounter * hardcoded in every cutscene obj
 void Cutscene::MonsterEncounter()
-{  
-   Screen scr = Screen();
-   DefaultImg img = DefaultImg(31, 101, ' ');
-
-   img.AlignCenter(scr);
-   img.Draw(scr);
+{
+   const int am = 3;
    
-   for(int i = 0; i < scr.GetRows(); i++)
-   {
-      for(int j = 0; j < scr.GetCols(); j++)
-      {
-	 system("clear");
-	 
-	 scr.Set(i, j, '*');
+   Screen scr = Screen();
 
-	 cout << scr;
-	 usleep(10);
+   
+   int left = 0, right = scr.GetCols()-1;
+   while(left <= right)
+   {
+      int j = scr.GetRows()-1;
+      for(int i = 0; i < scr.GetRows(); i++, j--)
+      {
+	 for(int k = 0; k < am; k++)
+	 {
+	    scr.Set(i, left + k, '*');
+	    scr.Set(j, right - k, '*');
+	 }
       }
+      system("clear");
+      cout << scr;
+      usleep(20000);
+      
+      left += am;
+      right -= am;
+   }
+
+   left = scr.GetCols()/2, right = scr.GetCols()/2;
+   while(left >= 0 - am)
+   {
+      int j = scr.GetRows()-1;
+      for(int i = 0; i < scr.GetRows(); i++, j--)
+      {
+	 for(int k = 0; k < am; k++)
+	 {
+	    scr.Set(i, left + k, ' ');
+	    scr.Set(j, right - k, ' ');
+	 }
+      }
+      system("clear");
+      cout << scr;
+      usleep(20000);
+      
+      left -= am;
+      right += am;
    }
 }

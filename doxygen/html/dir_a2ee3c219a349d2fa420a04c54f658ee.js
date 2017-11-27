@@ -7,6 +7,7 @@ var dir_a2ee3c219a349d2fa420a04c54f658ee =
     [ "Item.h", "Item_8h.html", [
       [ "Item", "classItem.html", "classItem" ]
     ] ],
+    [ "Items.cpp", "Items_8cpp.html", "Items_8cpp" ],
     [ "MyConsumables.cpp", "MyConsumables_8cpp.html", null ],
     [ "MyConsumables.h", "MyConsumables_8h.html", [
       [ "HealthPotion", "classHealthPotion.html", "classHealthPotion" ],

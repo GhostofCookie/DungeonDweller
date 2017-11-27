@@ -118,39 +118,73 @@ $(document).ready(function(){initNavTree('Character_8h_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//#include &quot;/home/kemg2720/Kodika/Item/Item.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCharacter.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCharacter.html">Character</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <span class="comment">// vector&lt;*Item&gt; inventory;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//#include &quot;../Item/MyConsumables.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Item/Item.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Image/ImportImg.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="classItem.html">Item</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">   25</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">health</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> istream Read(istream &amp;is);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> ostream Write(ostream &amp;os);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classCharacter.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCharacter.html">Character</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">   31</a></span>&#160;   <a class="code" href="classImportImg.html">ImportImg</a> <a class="code" href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">img</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classCharacter.html#ade4db4a453cc96bedbf3a385a10291fa">   34</a></span>&#160;   vector&lt;Item*&gt; <a class="code" href="classCharacter.html#ade4db4a453cc96bedbf3a385a10291fa">inventory</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">   37</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// virtual Item GetInventoryItems(Item  *inventory);</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="comment">//virtual Item UseItem(Item *inventory);</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">   40</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">health</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b">   43</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b">stamina</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> ChangeGold(<span class="keywordtype">int</span> &amp;gold, <span class="keywordtype">int</span> goldMod);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keywordtype">void</span> ChangeHealth(<span class="keywordtype">int</span>&amp; h, <span class="keywordtype">int</span> hMod);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> Attack();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Character_hpp */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class to provide input and output of Npc&amp;#39;s and Player. </div><div class="ttdef"><b>Definition:</b> Character.h:18</div></div>
-<div class="ttc" id="classCharacter_html_a69c649b8febd22729e6edafb27e69aeb"><div class="ttname"><a href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">Character::health</a></div><div class="ttdeci">int health</div><div class="ttdoc">Characters health. </div><div class="ttdef"><b>Definition:</b> Character.h:28</div></div>
-<div class="ttc" id="classCharacter_html_ab8dd866071dba429a35555e0c372e162"><div class="ttname"><a href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">Character::gold</a></div><div class="ttdeci">int gold</div><div class="ttdoc">Vector of items the character has. </div><div class="ttdef"><b>Definition:</b> Character.h:25</div></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2">   48</a></span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2">~Character</a>(){}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> FillInventory(<a class="code" href="classItem.html">Item</a> *item);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keyword">virtual</span> vector&lt;Item*&gt; GetInventoryItems();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classItem.html">Item</a>* UseItem(<span class="keywordtype">string</span> item);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> ChangeGold(<span class="keywordtype">int</span> goldMod);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> ChangeHealth(<span class="keywordtype">int</span> hMod);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> ChangeStamina(<span class="keywordtype">int</span> sMod);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classCharacter.html#a768bb1dcb73569fed0983bc63aab96ee">   78</a></span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#a768bb1dcb73569fed0983bc63aab96ee">GetStamina</a>() { <span class="keywordflow">return</span> stamina; };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classCharacter.html#ab5b7379cf9d7807d882cd86baad34c74">   81</a></span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#ab5b7379cf9d7807d882cd86baad34c74">GetGold</a>() { <span class="keywordflow">return</span> gold; };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classCharacter.html#a9b285268567ff7561973db87406e32cb">   84</a></span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classCharacter.html#a9b285268567ff7561973db87406e32cb">GetHealth</a>() { <span class="keywordflow">return</span> health; };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classImportImg.html">ImportImg</a> Img();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> Draw(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Character_hpp */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classCharacter_html_ade4db4a453cc96bedbf3a385a10291fa"><div class="ttname"><a href="classCharacter.html#ade4db4a453cc96bedbf3a385a10291fa">Character::inventory</a></div><div class="ttdeci">vector&lt; Item * &gt; inventory</div><div class="ttdoc">Vector of items the character has. </div><div class="ttdef"><b>Definition:</b> Character.h:34</div></div>
+<div class="ttc" id="classCharacter_html_a9b285268567ff7561973db87406e32cb"><div class="ttname"><a href="classCharacter.html#a9b285268567ff7561973db87406e32cb">Character::GetHealth</a></div><div class="ttdeci">virtual int GetHealth()</div><div class="ttdoc">Returns the health value. </div><div class="ttdef"><b>Definition:</b> Character.h:84</div></div>
+<div class="ttc" id="classImportImg_html"><div class="ttname"><a href="classImportImg.html">ImportImg</a></div><div class="ttdoc">The DefaultImg class represents a basic square image made of characters. </div><div class="ttdef"><b>Definition:</b> ImportImg.h:16</div></div>
+<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:26</div></div>
+<div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
+<div class="ttc" id="classCharacter_html_a0f17daa14530e07f0ca479c2dd97f38b"><div class="ttname"><a href="classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b">Character::stamina</a></div><div class="ttdeci">int stamina</div><div class="ttdoc">Characters stamina. </div><div class="ttdef"><b>Definition:</b> Character.h:43</div></div>
+<div class="ttc" id="classCharacter_html_ab5b7379cf9d7807d882cd86baad34c74"><div class="ttname"><a href="classCharacter.html#ab5b7379cf9d7807d882cd86baad34c74">Character::GetGold</a></div><div class="ttdeci">virtual int GetGold()</div><div class="ttdoc">Returns the gold value. </div><div class="ttdef"><b>Definition:</b> Character.h:81</div></div>
+<div class="ttc" id="classCharacter_html_a69c649b8febd22729e6edafb27e69aeb"><div class="ttname"><a href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">Character::health</a></div><div class="ttdeci">int health</div><div class="ttdoc">Characters health. </div><div class="ttdef"><b>Definition:</b> Character.h:40</div></div>
+<div class="ttc" id="classCharacter_html_a3a0a90b2a43858b259912f659b8e0eea"><div class="ttname"><a href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">Character::img</a></div><div class="ttdeci">ImportImg img</div><div class="ttdef"><b>Definition:</b> Character.h:31</div></div>
+<div class="ttc" id="classItem_html"><div class="ttname"><a href="classItem.html">Item</a></div><div class="ttdoc">This class is an abstract base class to represent items in game. </div><div class="ttdef"><b>Definition:</b> Item.h:16</div></div>
+<div class="ttc" id="classCharacter_html_ab8dd866071dba429a35555e0c372e162"><div class="ttname"><a href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">Character::gold</a></div><div class="ttdeci">int gold</div><div class="ttdoc">Amount of gold player has. </div><div class="ttdef"><b>Definition:</b> Character.h:37</div></div>
+<div class="ttc" id="classCharacter_html_a768bb1dcb73569fed0983bc63aab96ee"><div class="ttname"><a href="classCharacter.html#a768bb1dcb73569fed0983bc63aab96ee">Character::GetStamina</a></div><div class="ttdeci">virtual int GetStamina()</div><div class="ttdoc">Returns the stamina value. </div><div class="ttdef"><b>Definition:</b> Character.h:78</div></div>
+<div class="ttc" id="classCharacter_html_af3ec409c562122c4464e8a9d3be5f6d2"><div class="ttname"><a href="classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2">Character::~Character</a></div><div class="ttdeci">virtual ~Character()</div><div class="ttdoc">Character deconstructor. </div><div class="ttdef"><b>Definition:</b> Character.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

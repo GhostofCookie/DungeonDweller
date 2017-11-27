@@ -1,6 +1,7 @@
 var files =
 [
     [ "Character", "dir_4836d6e1a1f2b9de6cb88fa109ea7ca3.html", "dir_4836d6e1a1f2b9de6cb88fa109ea7ca3" ],
+    [ "Cutscene", "dir_38ad619c3ce597d5ddc63dd23285a715.html", "dir_38ad619c3ce597d5ddc63dd23285a715" ],
     [ "Game", "dir_c33286056d2acf479cd8641ef845fec1.html", "dir_c33286056d2acf479cd8641ef845fec1" ],
     [ "GameState", "dir_ad5ebf44828b4c656083035f2f9871fe.html", "dir_ad5ebf44828b4c656083035f2f9871fe" ],
     [ "Image", "dir_8827e7804939896a25945abd093dbc61.html", "dir_8827e7804939896a25945abd093dbc61" ],

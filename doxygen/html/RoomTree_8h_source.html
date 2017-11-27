@@ -118,56 +118,62 @@ $(document).ready(function(){initNavTree('RoomTree_8h_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../Room/Room.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRoomTree.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRoomTree.html">RoomTree</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <span class="comment">//Nested Class**************************************************************</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html">   18</a></span>&#160;<span class="comment"></span>   <span class="keyword">class </span><a class="code" href="classRoomTree_1_1Node.html">Node</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;     <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <a class="code" href="classRoomTree_1_1Node.html">Node</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">   25</a></span>&#160;      <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">left</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">   28</a></span>&#160;      <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">right</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a336e4def48d57a7f6a83c7f7f2a78a7f">   31</a></span>&#160;      <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#a336e4def48d57a7f6a83c7f7f2a78a7f">center</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#af9ac8d99a8290e915138b944f967da2c">   34</a></span>&#160;      <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#af9ac8d99a8290e915138b944f967da2c">parent</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">   37</a></span>&#160;      <a class="code" href="classRoom.html">Room</a>* <a class="code" href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">room</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   <span class="comment">//**************************************************************************</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <a class="code" href="classRoomTree.html">RoomTree</a>(<a class="code" href="classRoom.html">Room</a>* rootRoom);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   ~<a class="code" href="classRoomTree.html">RoomTree</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordtype">void</span> newRoom(<span class="keywordtype">char</span> dir, <a class="code" href="classRoom.html">Room</a>* roomptr);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">bool</span> move(<span class="keywordtype">char</span> dir);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   <span class="keyword">const</span> <a class="code" href="classRoom.html">Room</a>* at() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <a class="code" href="classRoom.html">Room</a>* at();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> deleteTree(<a class="code" href="classRoomTree_1_1Node.html">Node</a>* tempRoot);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">   75</a></span>&#160;   <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">root</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">   78</a></span>&#160;   <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">currNode</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classRoomTree_1_1Node_html_a4f39bdd1110291bf2e6eb14469f9b1e3"><div class="ttname"><a href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">RoomTree::Node::room</a></div><div class="ttdeci">Room * room</div><div class="ttdoc">Pointer to the room. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:37</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRoomTree.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRoomTree.html">RoomTree</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//Nested Class**************************************************************</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html">   19</a></span>&#160;<span class="comment"></span>    <span class="keyword">class </span><a class="code" href="classRoomTree_1_1Node.html">Node</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classRoomTree_1_1Node.html">Node</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">   26</a></span>&#160;        <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">left</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">   29</a></span>&#160;        <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">right</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a27ff1df50b7ec9d70240ddee99556432">   32</a></span>&#160;        <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#a27ff1df50b7ec9d70240ddee99556432">down</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a24e82297cf3fe584fbca68f790c51abf">   35</a></span>&#160;        <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree_1_1Node.html#a24e82297cf3fe584fbca68f790c51abf">up</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a3e006530059cc6994534d92e10b5fc72">   38</a></span>&#160;        <span class="keywordtype">char</span> <a class="code" href="classRoomTree_1_1Node.html#a3e006530059cc6994534d92e10b5fc72">RootDir</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">   41</a></span>&#160;        <a class="code" href="classRoom.html">Room</a>* <a class="code" href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">room</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//**************************************************************************</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classRoomTree.html">RoomTree</a>(<a class="code" href="classRoom.html">Room</a>* rootRoom);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    ~<a class="code" href="classRoomTree.html">RoomTree</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> NewRoom(<span class="keywordtype">char</span> dir,<a class="code" href="classRoom.html">Room</a>* roomptr);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> Move(<span class="keywordtype">char</span> dir);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <a class="code" href="classRoom.html">Room</a>* At() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classRoom.html">Room</a>* At();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> CurrentHeight() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> DeleteTree(<a class="code" href="classRoomTree_1_1Node.html">Node</a> *tempRoot);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">   82</a></span>&#160;    <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">root</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">   85</a></span>&#160;    <a class="code" href="classRoomTree_1_1Node.html">Node</a>* <a class="code" href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">currNode</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_a24e82297cf3fe584fbca68f790c51abf"><div class="ttname"><a href="classRoomTree_1_1Node.html#a24e82297cf3fe584fbca68f790c51abf">RoomTree::Node::up</a></div><div class="ttdeci">Node * up</div><div class="ttdoc">Pointer to parent node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:35</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_a4f39bdd1110291bf2e6eb14469f9b1e3"><div class="ttname"><a href="classRoomTree_1_1Node.html#a4f39bdd1110291bf2e6eb14469f9b1e3">RoomTree::Node::room</a></div><div class="ttdeci">Room * room</div><div class="ttdoc">Pointer to the room. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:41</div></div>
 <div class="ttc" id="classRoomTree_html"><div class="ttname"><a href="classRoomTree.html">RoomTree</a></div><div class="ttdoc">Class to represent the layout of rooms in a doubly linked tree-like format. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:15</div></div>
-<div class="ttc" id="classRoomTree_1_1Node_html_af9ac8d99a8290e915138b944f967da2c"><div class="ttname"><a href="classRoomTree_1_1Node.html#af9ac8d99a8290e915138b944f967da2c">RoomTree::Node::parent</a></div><div class="ttdeci">Node * parent</div><div class="ttdoc">Pointer to parent node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:34</div></div>
-<div class="ttc" id="classRoomTree_html_a3e7726e562748d38e587bb20ccde6451"><div class="ttname"><a href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">RoomTree::root</a></div><div class="ttdeci">Node * root</div><div class="ttdoc">Root or starting room of the dungeon. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:75</div></div>
-<div class="ttc" id="classRoomTree_1_1Node_html_af770714f2bca461a776bb53feb82650c"><div class="ttname"><a href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">RoomTree::Node::right</a></div><div class="ttdeci">Node * right</div><div class="ttdoc">Pointer to right child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:28</div></div>
-<div class="ttc" id="classRoomTree_1_1Node_html"><div class="ttname"><a href="classRoomTree_1_1Node.html">RoomTree::Node</a></div><div class="ttdoc">Class to represent nodes on the tree. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:18</div></div>
-<div class="ttc" id="classRoomTree_html_a1a16bf654348f42b373a3ccc742bb360"><div class="ttname"><a href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">RoomTree::currNode</a></div><div class="ttdeci">Node * currNode</div><div class="ttdoc">Node of the current room. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:78</div></div>
-<div class="ttc" id="classRoomTree_1_1Node_html_a336e4def48d57a7f6a83c7f7f2a78a7f"><div class="ttname"><a href="classRoomTree_1_1Node.html#a336e4def48d57a7f6a83c7f7f2a78a7f">RoomTree::Node::center</a></div><div class="ttdeci">Node * center</div><div class="ttdoc">Pointer to center child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:31</div></div>
-<div class="ttc" id="classRoomTree_1_1Node_html_a23c54a5e069e1339e1534f0a0632fc08"><div class="ttname"><a href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">RoomTree::Node::left</a></div><div class="ttdeci">Node * left</div><div class="ttdoc">Pointer to left child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:25</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_a3e006530059cc6994534d92e10b5fc72"><div class="ttname"><a href="classRoomTree_1_1Node.html#a3e006530059cc6994534d92e10b5fc72">RoomTree::Node::RootDir</a></div><div class="ttdeci">char RootDir</div><div class="ttdoc">Direction toward the root. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:38</div></div>
+<div class="ttc" id="classRoomTree_html_a3e7726e562748d38e587bb20ccde6451"><div class="ttname"><a href="classRoomTree.html#a3e7726e562748d38e587bb20ccde6451">RoomTree::root</a></div><div class="ttdeci">Node * root</div><div class="ttdoc">Root or starting room of the dungeon. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:82</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_af770714f2bca461a776bb53feb82650c"><div class="ttname"><a href="classRoomTree_1_1Node.html#af770714f2bca461a776bb53feb82650c">RoomTree::Node::right</a></div><div class="ttdeci">Node * right</div><div class="ttdoc">Pointer to right child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:29</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html"><div class="ttname"><a href="classRoomTree_1_1Node.html">RoomTree::Node</a></div><div class="ttdoc">Class to represent nodes on the tree. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:19</div></div>
+<div class="ttc" id="classRoomTree_html_a1a16bf654348f42b373a3ccc742bb360"><div class="ttname"><a href="classRoomTree.html#a1a16bf654348f42b373a3ccc742bb360">RoomTree::currNode</a></div><div class="ttdeci">Node * currNode</div><div class="ttdoc">Node of the current room. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:85</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_a27ff1df50b7ec9d70240ddee99556432"><div class="ttname"><a href="classRoomTree_1_1Node.html#a27ff1df50b7ec9d70240ddee99556432">RoomTree::Node::down</a></div><div class="ttdeci">Node * down</div><div class="ttdoc">Pointer to center child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:32</div></div>
+<div class="ttc" id="classRoomTree_1_1Node_html_a23c54a5e069e1339e1534f0a0632fc08"><div class="ttname"><a href="classRoomTree_1_1Node.html#a23c54a5e069e1339e1534f0a0632fc08">RoomTree::Node::left</a></div><div class="ttdeci">Node * left</div><div class="ttdoc">Pointer to left child node. </div><div class="ttdef"><b>Definition:</b> RoomTree.h:26</div></div>
 <div class="ttc" id="classRoom_html"><div class="ttname"><a href="classRoom.html">Room</a></div><div class="ttdef"><b>Definition:</b> Room.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

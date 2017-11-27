@@ -13,20 +13,43 @@ struct \hyperlink{structRoom_1_1Point}{Point}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classRoom_aea4edd64689b754ff3b7380893591f32}{Room} (map$<$ char, vector$<$ \hyperlink{classImportImg}{Import\-Img} $>$$>$ \&img\-Files)
-\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classRoom_a663dea7097ec22880177b341d183f17a}{Room} (map$<$ char, vector$<$ \hyperlink{classImportImg}{Import\-Img} $>$$>$ \&img\-Files, int \hyperlink{classRoom_a209eba22dbc85cb190906de3f0363e59}{type}=-\/1, bool c=true)
+\item 
+\hyperlink{classRoom_aca32b3fea56db79f0ef01521f567d680}{Room} (\hyperlink{classRoom}{Room} \&r)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classRoom_aad7d195b7a4eeefd332db96adcdb6b22}{Room} (const \hyperlink{classRoom}{Room} \&r)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classRoom_a67d5da09983cc53097807fd43ba5481a}{$\sim$\-Room} ()
 \begin{DoxyCompactList}\small\item\em Destroys the object. \end{DoxyCompactList}\item 
+\hyperlink{classImportImg}{Import\-Img} \hyperlink{classRoom_a6e60729ff6d267ad84e8e07da70362e7}{Get\-Image} () const 
+\begin{DoxyCompactList}\small\item\em Function that returns the image object. \end{DoxyCompactList}\item 
+string \hyperlink{classRoom_a8685389724a048cbc9c43d4fd6cd53a4}{Get\-Image\-File} () const 
+\begin{DoxyCompactList}\small\item\em Function that returns the room's image file path. \end{DoxyCompactList}\item 
+int \hyperlink{classRoom_a829c93b010d46928ac753085e406601a}{Get\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Function that returns the room's type. \end{DoxyCompactList}\item 
+bool \hyperlink{classRoom_aef86fed1de72475cfd2ef66f3959d3e8}{Is\-Complete} () const 
+\begin{DoxyCompactList}\small\item\em Function that returns the room's type. \end{DoxyCompactList}\item 
 void \hyperlink{classRoom_a17b89dc15eb31112aa41abc98e7ba74e}{Align\-Center} (\hyperlink{classScreen}{Screen} \&screen)
 \item 
 void \hyperlink{classRoom_a21704e4eb32706d1ae2b6f3f4587f9d5}{Align\-Left} (\hyperlink{classScreen}{Screen} \&screen)
 \item 
 void \hyperlink{classRoom_a6e36bef089855f1eacb6aaddad079330}{Align\-Right} (\hyperlink{classScreen}{Screen} \&screen)
 \item 
+void \hyperlink{classRoom_a9d74d1ee3da1e2327e218563c98f0902}{Align\-Top} (\hyperlink{classScreen}{Screen} \&screen)
+\item 
+void \hyperlink{classRoom_a29f7e9f30c27f1a0cb7b4df931d2ef53}{Align\-Bottom} (\hyperlink{classScreen}{Screen} \&screen)
+\item 
 void \hyperlink{classRoom_a22685a17cc047823ebbd551219377d6c}{Draw} (\hyperlink{classScreen}{Screen} \&screen)
 \item 
 void \hyperlink{classRoom_aa77030565e65008df509a60d4a01a668}{Draw} (\hyperlink{classScreen}{Screen} \&screen, int y, int x)
 \end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{structRoom_1_1Point}{Point} $>$ \hyperlink{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}{point}
+\begin{DoxyCompactList}\small\item\em The points of each image's key character. \end{DoxyCompactList}\item 
+bool \hyperlink{classRoom_a27ea6606438ab66c131e164eb19b5f5f}{complete}
+\begin{DoxyCompactList}\small\item\em To indicate if a room has any events that need to take place. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,29 +69,62 @@ void \hyperlink{classRoom_a3e33111e62068e4ae0fef5b17a1f1841}{Get\-Event\-Images}
 \hyperlink{classImportImg}{Import\-Img} $\ast$ \hyperlink{classRoom_a4d493bf25d07a6880b399adedd3a10e6}{room}
 \begin{DoxyCompactList}\small\item\em A finalized version of the room with data values included. \end{DoxyCompactList}\item 
 int \hyperlink{classRoom_a209eba22dbc85cb190906de3f0363e59}{type}
-\begin{DoxyCompactList}\small\item\em The type of room that will be generated. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{structRoom_1_1Point}{Point} $>$ \hyperlink{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}{point}
-\begin{DoxyCompactList}\small\item\em The points of each image's key character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The type of room that will be generated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The \hyperlink{classRoom}{Room} class defines random values that characterize a room's event. It also applies appropriate images onto a given room image 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classRoom_aea4edd64689b754ff3b7380893591f32}{\index{Room@{Room}!Room@{Room}}
+\hypertarget{classRoom_a663dea7097ec22880177b341d183f17a}{\index{Room@{Room}!Room@{Room}}
 \index{Room@{Room}!Room@{Room}}
 \subsubsection[{Room}]{\setlength{\rightskip}{0pt plus 5cm}Room\-::\-Room (
 \begin{DoxyParamCaption}
-\item[{map$<$ char, vector$<$ {\bf Import\-Img} $>$$>$ \&}]{img\-Files}
+\item[{map$<$ char, vector$<$ {\bf Import\-Img} $>$$>$ \&}]{collection, }
+\item[{int}]{t = {\ttfamily -\/1}, }
+\item[{bool}]{c = {\ttfamily true}}
 \end{DoxyParamCaption}
-)}}\label{classRoom_aea4edd64689b754ff3b7380893591f32}
-
-
-Default Constructor. 
-
+)}}\label{classRoom_a663dea7097ec22880177b341d183f17a}
 Constructs a \hyperlink{classRoom}{Room} object using the given image 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img\-Files} & the image used as the room \\
+\mbox{\tt in}  & {\em img\-Files} & the image used as the room\\
+\hline
+\end{DoxyParams}
+Default Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em collection} & the images used to generate a room \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoom_aca32b3fea56db79f0ef01521f567d680}{\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection[{Room}]{\setlength{\rightskip}{0pt plus 5cm}Room\-::\-Room (
+\begin{DoxyParamCaption}
+\item[{{\bf Room} \&}]{r}
+\end{DoxyParamCaption}
+)}}\label{classRoom_aca32b3fea56db79f0ef01521f567d680}
+
+
+Copy Constructor. 
+
+Copy Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em r} & the room being copied \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoom_aad7d195b7a4eeefd332db96adcdb6b22}{\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection[{Room}]{\setlength{\rightskip}{0pt plus 5cm}Room\-::\-Room (
+\begin{DoxyParamCaption}
+\item[{const {\bf Room} \&}]{r}
+\end{DoxyParamCaption}
+)}}\label{classRoom_aad7d195b7a4eeefd332db96adcdb6b22}
+
+
+Copy Constructor. 
+
+Copy Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em r} & the room being copied \\
 \hline
 \end{DoxyParams}
 \hypertarget{classRoom_a67d5da09983cc53097807fd43ba5481a}{\index{Room@{Room}!$\sim$\-Room@{$\sim$\-Room}}
@@ -85,6 +141,23 @@ Destroys the object.
 Destructor. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classRoom_a29f7e9f30c27f1a0cb7b4df931d2ef53}{\index{Room@{Room}!Align\-Bottom@{Align\-Bottom}}
+\index{Align\-Bottom@{Align\-Bottom}!Room@{Room}}
+\subsubsection[{Align\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Align\-Bottom (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{screen}
+\end{DoxyParamCaption}
+)}}\label{classRoom_a29f7e9f30c27f1a0cb7b4df931d2ef53}
+Function to align the room to the bottom of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & the screen drawn on\\
+\hline
+\end{DoxyParams}
+Function aligns the room to the bottom to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & The screen that is passed \\
+\hline
+\end{DoxyParams}
 \hypertarget{classRoom_a17b89dc15eb31112aa41abc98e7ba74e}{\index{Room@{Room}!Align\-Center@{Align\-Center}}
 \index{Align\-Center@{Align\-Center}!Room@{Room}}
 \subsubsection[{Align\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Align\-Center (
@@ -132,6 +205,23 @@ Function to align to the right of the screen
 \hline
 \end{DoxyParams}
 Function aligns the room to the center to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & The screen that is passed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoom_a9d74d1ee3da1e2327e218563c98f0902}{\index{Room@{Room}!Align\-Top@{Align\-Top}}
+\index{Align\-Top@{Align\-Top}!Room@{Room}}
+\subsubsection[{Align\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Align\-Top (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{screen}
+\end{DoxyParamCaption}
+)}}\label{classRoom_a9d74d1ee3da1e2327e218563c98f0902}
+Function to align to the top of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & the screen drawn on\\
+\hline
+\end{DoxyParams}
+Function aligns the room to the top to the screen 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em screen} & The screen that is passed \\
 \hline
@@ -192,7 +282,29 @@ Print event images to the room based on type
 \mbox{\tt in}  & {\em img\-Files} & the collection of images to use \\
 \hline
 \end{DoxyParams}
-\hypertarget{classRoom_a15f3f815f6d41e61e7e12465994fa185}{\index{Room@{Room}!Get\-Points@{Get\-Points}}
+\hypertarget{classRoom_a6e60729ff6d267ad84e8e07da70362e7}{\index{Room@{Room}!Get\-Image@{Get\-Image}}
+\index{Get\-Image@{Get\-Image}!Room@{Room}}
+\subsubsection[{Get\-Image}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} Room\-::\-Get\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRoom_a6e60729ff6d267ad84e8e07da70362e7}
+
+
+Function that returns the image object. 
+
+Function to return the image. \hypertarget{classRoom_a8685389724a048cbc9c43d4fd6cd53a4}{\index{Room@{Room}!Get\-Image\-File@{Get\-Image\-File}}
+\index{Get\-Image\-File@{Get\-Image\-File}!Room@{Room}}
+\subsubsection[{Get\-Image\-File}]{\setlength{\rightskip}{0pt plus 5cm}string Room\-::\-Get\-Image\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRoom_a8685389724a048cbc9c43d4fd6cd53a4}
+
+
+Function that returns the room's image file path. 
+
+Function to return the image file path. \hypertarget{classRoom_a15f3f815f6d41e61e7e12465994fa185}{\index{Room@{Room}!Get\-Points@{Get\-Points}}
 \index{Get\-Points@{Get\-Points}!Room@{Room}}
 \subsubsection[{Get\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Get\-Points (
 \begin{DoxyParamCaption}
@@ -220,7 +332,29 @@ Function decides which images need to be assigned to the room
 \mbox{\tt in}  & {\em collection,the} & set of images passed \\
 \hline
 \end{DoxyParams}
-\hypertarget{classRoom_aebcb2b6bf73c7a2592a1e5c5d02b40ce}{\index{Room@{Room}!Rand@{Rand}}
+\hypertarget{classRoom_a829c93b010d46928ac753085e406601a}{\index{Room@{Room}!Get\-Type@{Get\-Type}}
+\index{Get\-Type@{Get\-Type}!Room@{Room}}
+\subsubsection[{Get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}int Room\-::\-Get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRoom_a829c93b010d46928ac753085e406601a}
+
+
+Function that returns the room's type. 
+
+Function to return the type. \hypertarget{classRoom_aef86fed1de72475cfd2ef66f3959d3e8}{\index{Room@{Room}!Is\-Complete@{Is\-Complete}}
+\index{Is\-Complete@{Is\-Complete}!Room@{Room}}
+\subsubsection[{Is\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}bool Room\-::\-Is\-Complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRoom_aef86fed1de72475cfd2ef66f3959d3e8}
+
+
+Function that returns the room's type. 
+
+Function to return whether or not the room has an event to do. \hypertarget{classRoom_aebcb2b6bf73c7a2592a1e5c5d02b40ce}{\index{Room@{Room}!Rand@{Rand}}
 \index{Rand@{Rand}!Room@{Room}}
 \subsubsection[{Rand}]{\setlength{\rightskip}{0pt plus 5cm}int Room\-::\-Rand (
 \begin{DoxyParamCaption}
@@ -251,9 +385,16 @@ Function to choose a random type -\/ with weighting.
 Function generate a room\-Type using a basic random \# with weighting \%. 
 
 \subsection{Member Data Documentation}
+\hypertarget{classRoom_a27ea6606438ab66c131e164eb19b5f5f}{\index{Room@{Room}!complete@{complete}}
+\index{complete@{complete}!Room@{Room}}
+\subsubsection[{complete}]{\setlength{\rightskip}{0pt plus 5cm}bool Room\-::complete}}\label{classRoom_a27ea6606438ab66c131e164eb19b5f5f}
+
+
+To indicate if a room has any events that need to take place. 
+
 \hypertarget{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}{\index{Room@{Room}!point@{point}}
 \index{point@{point}!Room@{Room}}
-\subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Point}$>$ Room\-::point\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}
+\subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Point}$>$ Room\-::point}}\label{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}
 
 
 The points of each image's key character. 

@@ -33,3 +33,6 @@ class InventoryState : public GameState
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();
+};
+
+#endif

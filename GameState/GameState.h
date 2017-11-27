@@ -52,6 +52,8 @@ class GameState
    RoomTree *roomTree;
    /// The main character
    Character player;
+   /// Pointer to the player;
+   Character *character = &player;
 
 };
 

@@ -27,8 +27,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CharacterMenu_8cpp.html",
-"classFightMenu.html#a6d69cf9a19e7bae304d5a116285c1a51",
-"classRoomTree.html#abfad141f868410fa8c578d19f45eaa05"
+"classCodeCracker.html#ae7dc389e166286ca2271625154dde39c",
+"classMainMenu.html#ae7d51673d2212c49550307dff79f6aba",
+"classTicTacToe.html#a5182bf8f6a082e22e522b31bdd179df7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
