@@ -7,7 +7,7 @@
 #include "CodeCracker.h"
 
 CodeCracker::CodeCracker(){
-      riddleCompletionCount=0;
+   riddleCompletionCount=0;
    numberOfRiddles=0;
 }
 
@@ -27,55 +27,58 @@ void CodeCracker:: RunGame(Character *player)
    ImportRiddles();
 
    int currentRiddle;
+   //system("clear");
+   PuzzleEnd=false;
    while(PuzzleEnd==false)
-   {
-      cout << "Loop" << endl;
+   {     
       currentRiddle=UnusedRandomRiddle();
-      cout << "current Riddle:" << question.at(currentRiddle) << endl;
-      SetRiddleInMenu(currentRiddle);
+      cout << "current Riddle: " << question.at(currentRiddle) << endl;
+      SetRiddleInMenu(currentRiddle, GameMenu);
 ///Do riddle output
+      GameMenu.OutputMenu();
       GameMenu.HandleInput(cin);
       userInput=GameMenu.GetInput();
       cout << "userInput:" << userInput << endl;
 	
       if(ValidAnswer(userInput, currentRiddle))
       {
+	 MakeRiddleUsed(currentRiddle);
+	 cout << "correct" << endl;
 	 riddleCompletionCount++;
+	 cout << "Riddles Completed:" << riddleCompletionCount << endl;
 	 WinCheck();
       }
       else
       {
+	 cout << "wrong" << endl;
 	 //Decrement health
 	 DeathCheck();//************NEEDS TO BE IMPLEMENTED******************
-      PuzzleEnd=true;//***********TO BE REMOVED**************
       }
    }
 }
 
-void CodeCracker::SetRiddleInMenu(int riddleIndex)
+void CodeCracker::SetRiddleInMenu(int riddleIndex, RiddleMenu &menu)
 {
-   cout << "riddle Index:" << riddleIndex << endl;
    string riddleText=question.at(riddleIndex);
-   //SetQuery(riddleText);
+   menu.SetQuery(riddleText);
 
 }
 
+void CodeCracker::MakeRiddleUsed(int riddleIndex)
+{
+   usedRiddles.at(riddleIndex)=true;
+}
 
 ///Picks one of the unused riddles randomly and returns its index
 int CodeCracker::UnusedRandomRiddle()
 {
-   int randRiddle, totalUsedRiddles=usedRiddles.size();
+   int randRiddle, totalUsedRiddles=usedRiddles.size();  
    bool validRiddleFound=false;
    while(validRiddleFound==false)
    {
       randRiddle=Puzzle::RandomNumber(numberOfRiddles);
-      for(int i=0; i<totalUsedRiddles; i++)
-      {
-	 if(randRiddle==usedRiddles.at(i))
-	    return false;
-	 else
-	    return true;
-      }
+      if(!IsRiddleUsed(randRiddle))
+	 validRiddleFound=true;
    }
    return randRiddle;
 }
@@ -90,12 +93,18 @@ bool CodeCracker::ValidMove(char input)
    return false;
 }
 
-
+bool CodeCracker::IsRiddleUsed(int index)
+{
+   if(usedRiddles.at(index)==true)
+      return true;
+   else
+      return false;
+}
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
 bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
-  if(input==answer.at(riddleIndex))
+   if(input==answer.at(riddleIndex))
    {
       return true;
    }
@@ -143,20 +152,17 @@ void CodeCracker::ImportRiddles()
       cout << "Number of Riddles: " << numberOfRiddles << endl;
       std::getline(in,line);
       question.resize(numberOfRiddles);
-      format.resize(numberOfRiddles);
-      answer.resize(numberOfRiddles);
       usedRiddles.resize(numberOfRiddles);
+      answer.resize(numberOfRiddles);
       for(int i=0; i<numberOfRiddles; i++)
       {
 	 std::getline(in, questionString);
-	 std::getline(in, questionFormat);
 	 in >> qAnswer;
-	 cout << "Question: " << questionString << endl;
-	 cout << "Format: " << questionFormat << endl;
-	 cout << "Answer: " << qAnswer << endl;
+	 //cout << "Question: " << questionString << endl;
+	 //cout << "Answer: " << qAnswer << endl;
 	 question.at(i)=questionString;
-	 format.at(i)=questionFormat;
 	 answer.at(i)=qAnswer;
+	 usedRiddles.at(i)=false;
 	 std::getline(in,line);
       }
       in.close();	

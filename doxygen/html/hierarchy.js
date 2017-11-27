@@ -1,12 +1,17 @@
 var hierarchy =
 [
     [ "Character", "classCharacter.html", [
-      [ "Npc", "classNpc.html", null ]
+      [ "Npc", "classNpc.html", null ],
+      [ "Player", "classPlayer.html", null ]
     ] ],
+    [ "MemoryMenu::Coord", "structMemoryMenu_1_1Coord.html", null ],
+    [ "TicTacToeMenu::Coord", "structTicTacToeMenu_1_1Coord.html", null ],
+    [ "Cutscene", "classCutscene.html", null ],
     [ "GameState", "classGameState.html", [
       [ "DialogueState", "classDialogueState.html", null ],
       [ "ExploreState", "classExploreState.html", null ],
       [ "FightState", "classFightState.html", null ],
+      [ "InventoryState", "classInventoryState.html", null ],
       [ "MainState", "classMainState.html", null ],
       [ "PuzzleState", "classPuzzleState.html", null ],
       [ "TradeState", "classTradeState.html", null ]
@@ -45,8 +50,8 @@ var hierarchy =
       ] ]
     ] ],
     [ "RoomTree::Node", "classRoomTree_1_1Node.html", null ],
-    [ "Player", "classPlayer.html", null ],
     [ "Room::Point", "structRoom_1_1Point.html", null ],
+    [ "Cutscene::Point", "structCutscene_1_1Point.html", null ],
     [ "Puzzle", "classPuzzle.html", [
       [ "CodeCracker", "classCodeCracker.html", null ],
       [ "ConnectFour", "classConnectFour.html", null ],
@@ -60,6 +65,7 @@ var hierarchy =
       [ "SlotScreen", "classSlotScreen.html", null ]
     ] ],
     [ "TestFixture", null, [
+      [ "CharacterTest", "classCharacterTest.html", null ],
       [ "MenuTest", "classMenuTest.html", null ],
       [ "PlayerTest", "classPlayerTest.html", null ],
       [ "RoomTreeTest", "classRoomTreeTest.html", null ],

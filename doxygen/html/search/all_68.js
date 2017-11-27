@@ -17,5 +17,6 @@ var searchData=
   ['heightmin',['heightMin',['../classScreenTest.html#ae40c862539e810eecfc3bd07250dd630',1,'ScreenTest']]],
   ['heightnegative',['heightNegative',['../classScreenTest.html#a7bdca9dbaf4acbc80516502d91ad6a8e',1,'ScreenTest']]],
   ['hitpercent',['hitPercent',['../classBow.html#ab6156932e51ec7833d07a669e5e346ff',1,'Bow']]],
-  ['horizontalcheck',['HorizontalCheck',['../classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b',1,'ConnectFour::HorizontalCheck()'],['../classTicTacToe.html#afce358eabb849ae0dbf55818a7bdc56b',1,'TicTacToe::HorizontalCheck()']]]
+  ['horizontalcheck',['HorizontalCheck',['../classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b',1,'ConnectFour::HorizontalCheck()'],['../classTicTacToe.html#afce358eabb849ae0dbf55818a7bdc56b',1,'TicTacToe::HorizontalCheck()']]],
+  ['horizspeed',['HORIZSPEED',['../Cutscene_8cpp.html#ae2aed36ab368bb0d9504f569588c8539',1,'Cutscene.cpp']]]
 ];

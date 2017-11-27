@@ -19,14 +19,16 @@ Inheritance diagram for Default\-Img\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}{Default\-Img} (int h=3, int w=6, char c= '$\ast$')
+\hyperlink{classDefaultImg_a31bb4b35474265b11ea7a776343148bc}{Default\-Img} (int h=3, int w=6, char c= '\$')
 \item 
 \hyperlink{classDefaultImg_a98d6ecfaa4c02eba7b2c58ad0285521e}{Default\-Img} (const \hyperlink{classDefaultImg}{Default\-Img} \&img)
 \item 
 \hyperlink{classDefaultImg_ad4763b2a674e202d3ea99ceb179bad6a}{Default\-Img} (\hyperlink{classDefaultImg}{Default\-Img} \&img)
 \item 
 \hyperlink{classDefaultImg_ad3b823ee6222b08a4999802a0dc5ceec}{$\sim$\-Default\-Img} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classDefaultImg}{Default\-Img} \& \hyperlink{classDefaultImg_a953dc476a8f2683801ece30ec159617f}{operator=} (const \hyperlink{classDefaultImg}{Default\-Img} \&img)
+\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +41,7 @@ int \hyperlink{classDefaultImg_a563e191151451d5d3058ed646b8008ab}{\-\_\-height}
 \begin{DoxyCompactList}\small\item\em The height of the image. \end{DoxyCompactList}\item 
 int \hyperlink{classDefaultImg_a258f5ac708d83e06e924985dab85f221}{\-\_\-width}
 \begin{DoxyCompactList}\small\item\em The width of the image. \end{DoxyCompactList}\item 
-char \hyperlink{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}{ch}
+char \hyperlink{classDefaultImg_afbcc3729a432f94806aec1414689863a}{\-\_\-ch}
 \begin{DoxyCompactList}\small\item\em The character used to draw the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -56,15 +58,15 @@ Oct 20, 2017
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
+\hypertarget{classDefaultImg_a31bb4b35474265b11ea7a776343148bc}{\index{Default\-Img@{Default\-Img}!Default\-Img@{Default\-Img}}
 \index{Default\-Img@{Default\-Img}!DefaultImg@{Default\-Img}}
 \subsubsection[{Default\-Img}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Img\-::\-Default\-Img (
 \begin{DoxyParamCaption}
 \item[{int}]{h = {\ttfamily 3}, }
 \item[{int}]{w = {\ttfamily 6}, }
-\item[{char}]{c = {\ttfamily '$\ast$'}}
+\item[{char}]{c = {\ttfamily '\$'}}
 \end{DoxyParamCaption}
-)}}\label{classDefaultImg_a65e225ae4d43ce46b6661cb88dc5a9dc}
+)}}\label{classDefaultImg_a31bb4b35474265b11ea7a776343148bc}
 Constructs an \hyperlink{classImage}{Image} object from the given dimensions 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em h} & the height of the image, default to 3 \\
@@ -144,9 +146,28 @@ Function that creates the image by pushing back the vector.
 
 Reimplemented from \hyperlink{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{Image}.
 
+\hypertarget{classDefaultImg_a953dc476a8f2683801ece30ec159617f}{\index{Default\-Img@{Default\-Img}!operator=@{operator=}}
+\index{operator=@{operator=}!DefaultImg@{Default\-Img}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Default\-Img} \& Default\-Img\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Default\-Img} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classDefaultImg_a953dc476a8f2683801ece30ec159617f}
+Overloaded Assignment operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classDefaultImg_afbcc3729a432f94806aec1414689863a}{\index{Default\-Img@{Default\-Img}!\-\_\-ch@{\-\_\-ch}}
+\index{\-\_\-ch@{\-\_\-ch}!DefaultImg@{Default\-Img}}
+\subsubsection[{\-\_\-ch}]{\setlength{\rightskip}{0pt plus 5cm}char Default\-Img\-::\-\_\-ch\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_afbcc3729a432f94806aec1414689863a}
+
+
+The character used to draw the image. 
+
 \hypertarget{classDefaultImg_a563e191151451d5d3058ed646b8008ab}{\index{Default\-Img@{Default\-Img}!\-\_\-height@{\-\_\-height}}
 \index{\-\_\-height@{\-\_\-height}!DefaultImg@{Default\-Img}}
 \subsubsection[{\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}int Default\-Img\-::\-\_\-height\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_a563e191151451d5d3058ed646b8008ab}
@@ -160,13 +181,6 @@ The height of the image.
 
 
 The width of the image. 
-
-\hypertarget{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}{\index{Default\-Img@{Default\-Img}!ch@{ch}}
-\index{ch@{ch}!DefaultImg@{Default\-Img}}
-\subsubsection[{ch}]{\setlength{\rightskip}{0pt plus 5cm}char Default\-Img\-::ch\hspace{0.3cm}{\ttfamily [private]}}}\label{classDefaultImg_ac77e80e5517c44a6c6a7f7d50fe30bbc}
-
-
-The character used to draw the image. 
 
 
 

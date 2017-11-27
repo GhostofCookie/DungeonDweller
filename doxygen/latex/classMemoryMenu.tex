@@ -16,6 +16,11 @@ Inheritance diagram for Memory\-Menu\-:\begin{figure}[H]
 \includegraphics[height=4.000000cm]{classMemoryMenu}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMemoryMenu_1_1Coord}{Coord}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,9 +28,18 @@ Inheritance diagram for Memory\-Menu\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classMemoryMenu_a4f364ab881bd477e664ef77ceea105fe}{$\sim$\-Memory\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classMemoryMenu_a71fb82f5208c0f073fc54b6af0917f04}{Set\-Options} (map$<$ int, string $>$ options\-List, int row, int col)
+virtual void \hyperlink{classMemoryMenu_acde088f671d95d13f50b27ac345d2968}{Set\-Options} (int row, int col, int space)
 \item 
 virtual void \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Handle\-Input} (istream \&is)
+\item 
+\hyperlink{structMemoryMenu_1_1Coord}{Coord} \hyperlink{classMemoryMenu_afc417793ed520f9382f106d05cf26286}{Get\-Coordinates} () const 
+\begin{DoxyCompactList}\small\item\em This function returns the coordinates the player entered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMemoryMenu_1_1Coord}{Coord} \hyperlink{classMemoryMenu_aa29295841088ab4c667a88ae91a0dd45}{coordinates}
+\item 
+string \hyperlink{classMemoryMenu_af0e3a6658007f4782d181f19d39719f4}{query}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -59,6 +73,17 @@ This is the virtual destructor.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMemoryMenu_afc417793ed520f9382f106d05cf26286}{\index{Memory\-Menu@{Memory\-Menu}!Get\-Coordinates@{Get\-Coordinates}}
+\index{Get\-Coordinates@{Get\-Coordinates}!MemoryMenu@{Memory\-Menu}}
+\subsubsection[{Get\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\-Menu\-::\-Coord} Memory\-Menu\-::\-Get\-Coordinates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMemoryMenu_afc417793ed520f9382f106d05cf26286}
+
+
+This function returns the coordinates the player entered. 
+
 \hypertarget{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{\index{Memory\-Menu@{Memory\-Menu}!Handle\-Input@{Handle\-Input}}
 \index{Handle\-Input@{Handle\-Input}!MemoryMenu@{Memory\-Menu}}
 \subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Menu\-::\-Handle\-Input (
@@ -75,15 +100,15 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}.
 
-\hypertarget{classMemoryMenu_a71fb82f5208c0f073fc54b6af0917f04}{\index{Memory\-Menu@{Memory\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classMemoryMenu_acde088f671d95d13f50b27ac345d2968}{\index{Memory\-Menu@{Memory\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!MemoryMenu@{Memory\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{map$<$ int, string $>$}]{options\-List, }
 \item[{int}]{row, }
-\item[{int}]{col}
+\item[{int}]{col, }
+\item[{int}]{space}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMenu_a71fb82f5208c0f073fc54b6af0917f04}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMenu_acde088f671d95d13f50b27ac345d2968}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Options\-List} & A map of all the options for the current menu. Each option has a unique key to make input easier. \\
@@ -91,6 +116,19 @@ This function sets the specific options for the \hyperlink{classMenu}{Menu} type
 \mbox{\tt in}  & {\em type} & This denotes the type of menu to display. \\
 \hline
 \end{DoxyParams}
+
+
+Implements \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMemoryMenu_aa29295841088ab4c667a88ae91a0dd45}{\index{Memory\-Menu@{Memory\-Menu}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!MemoryMenu@{Memory\-Menu}}
+\subsubsection[{coordinates}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord} Memory\-Menu\-::coordinates\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMenu_aa29295841088ab4c667a88ae91a0dd45}
+\hypertarget{classMemoryMenu_af0e3a6658007f4782d181f19d39719f4}{\index{Memory\-Menu@{Memory\-Menu}!query@{query}}
+\index{query@{query}!MemoryMenu@{Memory\-Menu}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}string Memory\-Menu\-::query\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMenu_af0e3a6658007f4782d181f19d39719f4}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

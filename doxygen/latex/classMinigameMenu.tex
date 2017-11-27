@@ -26,7 +26,14 @@ virtual \hyperlink{classMinigameMenu_a6b8621ca44319d6b2759766bdca9cbf9}{$\sim$\-
 virtual void \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Set\-Options} (int row, int col, int space)=0
 \item 
 virtual void \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Handle\-Input} (istream \&is)=0
-\end{DoxyCompactItemize}
+\item 
+void \hyperlink{classMinigameMenu_a875e8a60a910f28e245c998772d043e4}{Set\-Query} (string q)
+\begin{DoxyCompactList}\small\item\em Allows the query to be set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classMinigameMenu_a5c36c7797c89ff8d0e6646800b0de38a}{query}
+\begin{DoxyCompactList}\small\item\em Sets the query of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -77,7 +84,7 @@ Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Men
 
 
 
-Implemented in \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a8f85bae3166bf122c5800aab41c87d54}{Hanoi\-Menu}, \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Memory\-Menu}, \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Riddle\-Menu}, and \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Tic\-Tac\-Toe\-Menu}.
+Implemented in \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Memory\-Menu}, \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a8f85bae3166bf122c5800aab41c87d54}{Hanoi\-Menu}, and \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Riddle\-Menu}.
 
 \hypertarget{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{\index{Minigame\-Menu@{Minigame\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!MinigameMenu@{Minigame\-Menu}}
@@ -103,7 +110,28 @@ Implements \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Men
 
 
 
-Implemented in \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}, and \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}.
+Implemented in \hyperlink{classMemoryMenu_acde088f671d95d13f50b27ac345d2968}{Memory\-Menu}, \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, and \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}.
+
+\hypertarget{classMinigameMenu_a875e8a60a910f28e245c998772d043e4}{\index{Minigame\-Menu@{Minigame\-Menu}!Set\-Query@{Set\-Query}}
+\index{Set\-Query@{Set\-Query}!MinigameMenu@{Minigame\-Menu}}
+\subsubsection[{Set\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void Minigame\-Menu\-::\-Set\-Query (
+\begin{DoxyParamCaption}
+\item[{string}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMinigameMenu_a875e8a60a910f28e245c998772d043e4}
+
+
+Allows the query to be set. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMinigameMenu_a5c36c7797c89ff8d0e6646800b0de38a}{\index{Minigame\-Menu@{Minigame\-Menu}!query@{query}}
+\index{query@{query}!MinigameMenu@{Minigame\-Menu}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}string Minigame\-Menu\-::query\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMinigameMenu_a5c36c7797c89ff8d0e6646800b0de38a}
+
+
+Sets the query of the game. 
 
 
 

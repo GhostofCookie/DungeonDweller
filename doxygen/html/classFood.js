@@ -1,5 +1,5 @@
 var classFood =
 [
     [ "Food", "classFood.html#a75d4d7f76fd495cc8133302ca9fdc485", null ],
-    [ "use", "classFood.html#a545771c5cb1d9d74ab05d393ed216fa4", null ]
+    [ "Use", "classFood.html#a03ce09da13a4d8b9bb7a789a3ede42be", null ]
 ];

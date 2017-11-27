@@ -42,7 +42,8 @@ class CodeCracker: public virtual Puzzle
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
    bool ValidAnswer(int input, int riddleIndex);
-   
+
+   bool IsRiddleUsed(int index);
 ///Checks if the player has successfully answered 3 riddles.
    void WinCheck();
 
@@ -57,11 +58,13 @@ class CodeCracker: public virtual Puzzle
 ///Imports riddles from a text file and stores them in the vector.
    void ImportRiddles();
 
-   void SetRiddleInMenu(int riddleIndex);
+   void SetRiddleInMenu(int riddleIndex, RiddleMenu &menu);
      
    void SetOptionsInMenu();
 
    void DecrementPlayerHealth(int amountToDecrement);
+
+   void MakeRiddleUsed(int currentRiddle);
 
    ///Picks one of the unused riddles randomly and returns its index
    int UnusedRandomRiddle();
@@ -70,15 +73,12 @@ class CodeCracker: public virtual Puzzle
 ///Vector to store the question strings read in from the file 
    std::vector<string>question;
 
-///Vector to store the descriptions on how to answer each question, in order.
-   std::vector<string>format;//Descriptions of how to answer questions
-
 ///Vector to store the questions answers read in from the file, in order
    std::vector<int>answer;
 
    ///Stores the indexes of all used riddle strings so that they aren't asked
    ///twice.
-   std::vector<int>usedRiddles;
+   std::vector<bool>usedRiddles;
 
    ///Total riddles compeleted
    int riddleCompletionCount;

@@ -18,10 +18,12 @@ Class to represent nodes on the tree.
 \begin{DoxyCompactList}\small\item\em Pointer to left child node. \end{DoxyCompactList}\item 
 \hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_1_1Node_af770714f2bca461a776bb53feb82650c}{right}
 \begin{DoxyCompactList}\small\item\em Pointer to right child node. \end{DoxyCompactList}\item 
-\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_1_1Node_a336e4def48d57a7f6a83c7f7f2a78a7f}{center}
+\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_1_1Node_a27ff1df50b7ec9d70240ddee99556432}{down}
 \begin{DoxyCompactList}\small\item\em Pointer to center child node. \end{DoxyCompactList}\item 
-\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_1_1Node_af9ac8d99a8290e915138b944f967da2c}{parent}
+\hyperlink{classRoomTree_1_1Node}{Node} $\ast$ \hyperlink{classRoomTree_1_1Node_a24e82297cf3fe584fbca68f790c51abf}{up}
 \begin{DoxyCompactList}\small\item\em Pointer to parent node. \end{DoxyCompactList}\item 
+char \hyperlink{classRoomTree_1_1Node_a3e006530059cc6994534d92e10b5fc72}{Root\-Dir}
+\begin{DoxyCompactList}\small\item\em Direction toward the root. \end{DoxyCompactList}\item 
 \hyperlink{classRoom}{Room} $\ast$ \hyperlink{classRoomTree_1_1Node_a4f39bdd1110291bf2e6eb14469f9b1e3}{room}
 \begin{DoxyCompactList}\small\item\em Pointer to the room. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -44,9 +46,9 @@ Class to represent nodes on the tree.
 \hyperlink{classRoomTree_1_1Node}{Node} constructor. 
 
 \subsection{Member Data Documentation}
-\hypertarget{classRoomTree_1_1Node_a336e4def48d57a7f6a83c7f7f2a78a7f}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!center@{center}}
-\index{center@{center}!RoomTree::Node@{Room\-Tree\-::\-Node}}
-\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::\-Node\-::center}}\label{classRoomTree_1_1Node_a336e4def48d57a7f6a83c7f7f2a78a7f}
+\hypertarget{classRoomTree_1_1Node_a27ff1df50b7ec9d70240ddee99556432}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!down@{down}}
+\index{down@{down}!RoomTree::Node@{Room\-Tree\-::\-Node}}
+\subsubsection[{down}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::\-Node\-::down}}\label{classRoomTree_1_1Node_a27ff1df50b7ec9d70240ddee99556432}
 
 
 Pointer to center child node. 
@@ -57,13 +59,6 @@ Pointer to center child node.
 
 
 Pointer to left child node. 
-
-\hypertarget{classRoomTree_1_1Node_af9ac8d99a8290e915138b944f967da2c}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!parent@{parent}}
-\index{parent@{parent}!RoomTree::Node@{Room\-Tree\-::\-Node}}
-\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::\-Node\-::parent}}\label{classRoomTree_1_1Node_af9ac8d99a8290e915138b944f967da2c}
-
-
-Pointer to parent node. 
 
 \hypertarget{classRoomTree_1_1Node_af770714f2bca461a776bb53feb82650c}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!right@{right}}
 \index{right@{right}!RoomTree::Node@{Room\-Tree\-::\-Node}}
@@ -78,6 +73,20 @@ Pointer to right child node.
 
 
 Pointer to the room. 
+
+\hypertarget{classRoomTree_1_1Node_a3e006530059cc6994534d92e10b5fc72}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!Root\-Dir@{Root\-Dir}}
+\index{Root\-Dir@{Root\-Dir}!RoomTree::Node@{Room\-Tree\-::\-Node}}
+\subsubsection[{Root\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}char Room\-Tree\-::\-Node\-::\-Root\-Dir}}\label{classRoomTree_1_1Node_a3e006530059cc6994534d92e10b5fc72}
+
+
+Direction toward the root. 
+
+\hypertarget{classRoomTree_1_1Node_a24e82297cf3fe584fbca68f790c51abf}{\index{Room\-Tree\-::\-Node@{Room\-Tree\-::\-Node}!up@{up}}
+\index{up@{up}!RoomTree::Node@{Room\-Tree\-::\-Node}}
+\subsubsection[{up}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Room\-Tree\-::\-Node\-::up}}\label{classRoomTree_1_1Node_a24e82297cf3fe584fbca68f790c51abf}
+
+
+Pointer to parent node. 
 
 
 

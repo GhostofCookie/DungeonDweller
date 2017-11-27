@@ -116,64 +116,77 @@ $(document).ready(function(){initNavTree('CodeCracker_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef  CODE_CRACKER_H</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CODE_CRACKER_H</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Puzzle_8h.html">Puzzle.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classCodeCracker.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCodeCracker.html">CodeCracker</a>: <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <a class="code" href="classCodeCracker.html">CodeCracker</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classCodeCracker.html">CodeCracker</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keywordtype">void</span> RunGame();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//ALL HANDLED BY THE MENU OBJECT</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//void PromptUser(&amp;screen);</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//char UserInput(Menu &amp;menu);</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//bool ValidCommand(char input);</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   <span class="keywordtype">bool</span> ValidMove(<span class="keywordtype">char</span> input);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="keywordtype">bool</span> ValidAnswer(<span class="keyword">const</span> <span class="keywordtype">char</span> input);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <span class="keywordtype">void</span> WinCheck();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <span class="keywordtype">void</span> DeathCheck();<span class="comment">//Will need to take some kind of character variable/object</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordtype">void</span> ImportRiddles();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> SetOptionsInMenu();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">   57</a></span>&#160;std::vector&lt;string&gt;<a class="code" href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">question</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">   60</a></span>&#160;std::vector&lt;string&gt;<a class="code" href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">format</a>;<span class="comment">//Descriptions of how to answer questions</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">   63</a></span>&#160;std::vector&lt;int&gt;<a class="code" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">answer</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">   65</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">riddleCompletionCount</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">   67</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">numberOfRiddles</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../Menu/RiddleMenu.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCodeCracker.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCodeCracker.html">CodeCracker</a>: <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <a class="code" href="classCodeCracker.html">CodeCracker</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classCodeCracker.html">CodeCracker</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keywordtype">void</span> RunGame(<a class="code" href="classCharacter.html">Character</a> *player);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//ALL HANDLED BY THE MENU OBJECT</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//void PromptUser(&amp;screen);</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//char UserInput(Menu &amp;menu);</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//bool ValidCommand(char input);</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   <span class="keywordtype">bool</span> ValidMove(<span class="keywordtype">char</span> input);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordtype">bool</span> ValidAnswer(<span class="keywordtype">int</span> input, <span class="keywordtype">int</span> riddleIndex);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keywordtype">void</span> WinCheck();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   <span class="keywordtype">void</span> DeathCheck();<span class="comment">//Will need to take some kind of character variable/object</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keywordtype">void</span> OutputRiddle(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keywordtype">void</span> ImportRiddles();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keywordtype">void</span> SetRiddleInMenu(<span class="keywordtype">int</span> riddleIndex);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;     </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">void</span> SetOptionsInMenu();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   <span class="keywordtype">void</span> DecrementPlayerHealth(<span class="keywordtype">int</span> amountToDecrement);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keywordtype">int</span> UnusedRandomRiddle();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classCodeCracker.html#ab497c5b666243b85ec3c754590ee7450">   69</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classCodeCracker.html#ab497c5b666243b85ec3c754590ee7450">riddleCorrect</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">   71</a></span>&#160;   std::vector&lt;string&gt;<a class="code" href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">question</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">   74</a></span>&#160;   std::vector&lt;string&gt;<a class="code" href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">format</a>;<span class="comment">//Descriptions of how to answer questions</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="ttc" id="classCodeCracker_html_a30671a1b282dc98361938283fbafcf6e"><div class="ttname"><a href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">CodeCracker::numberOfRiddles</a></div><div class="ttdeci">int numberOfRiddles</div><div class="ttdef"><b>Definition:</b> CodeCracker.h:67</div></div>
-<div class="ttc" id="classCodeCracker_html_a6ab76d405fa6a989fdd10c7641f6bc4e"><div class="ttname"><a href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">CodeCracker::format</a></div><div class="ttdeci">std::vector&lt; string &gt; format</div><div class="ttdoc">Vector to store the descriptions on how to answer each question, in order. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:60</div></div>
-<div class="ttc" id="classCodeCracker_html_a2084c27e05ec80c44263cb2f9a54d8c4"><div class="ttname"><a href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">CodeCracker::answer</a></div><div class="ttdeci">std::vector&lt; int &gt; answer</div><div class="ttdoc">Vector to store the questions answers read in from the file, in order. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:63</div></div>
-<div class="ttc" id="classCodeCracker_html_aca60d7cc01bda0ec6782984e46b9b357"><div class="ttname"><a href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">CodeCracker::riddleCompletionCount</a></div><div class="ttdeci">int riddleCompletionCount</div><div class="ttdef"><b>Definition:</b> CodeCracker.h:65</div></div>
-<div class="ttc" id="classCodeCracker_html_ab497c5b666243b85ec3c754590ee7450"><div class="ttname"><a href="classCodeCracker.html#ab497c5b666243b85ec3c754590ee7450">CodeCracker::riddleCorrect</a></div><div class="ttdeci">bool riddleCorrect</div><div class="ttdef"><b>Definition:</b> CodeCracker.h:69</div></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">   77</a></span>&#160;   std::vector&lt;int&gt;<a class="code" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">answer</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a9b54be5b85162c25c8e42ce1e865882a">   81</a></span>&#160;   std::vector&lt;int&gt;<a class="code" href="classCodeCracker.html#a9b54be5b85162c25c8e42ce1e865882a">usedRiddles</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">   84</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">riddleCompletionCount</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">   87</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">numberOfRiddles</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="ttc" id="classCodeCracker_html_a9b54be5b85162c25c8e42ce1e865882a"><div class="ttname"><a href="classCodeCracker.html#a9b54be5b85162c25c8e42ce1e865882a">CodeCracker::usedRiddles</a></div><div class="ttdeci">std::vector&lt; int &gt; usedRiddles</div><div class="ttdef"><b>Definition:</b> CodeCracker.h:81</div></div>
+<div class="ttc" id="classCodeCracker_html_a30671a1b282dc98361938283fbafcf6e"><div class="ttname"><a href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">CodeCracker::numberOfRiddles</a></div><div class="ttdeci">int numberOfRiddles</div><div class="ttdoc">Total number of riddles imported into the game. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:87</div></div>
+<div class="ttc" id="classCodeCracker_html_a6ab76d405fa6a989fdd10c7641f6bc4e"><div class="ttname"><a href="classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e">CodeCracker::format</a></div><div class="ttdeci">std::vector&lt; string &gt; format</div><div class="ttdoc">Vector to store the descriptions on how to answer each question, in order. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:74</div></div>
+<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:26</div></div>
+<div class="ttc" id="classCodeCracker_html_a2084c27e05ec80c44263cb2f9a54d8c4"><div class="ttname"><a href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">CodeCracker::answer</a></div><div class="ttdeci">std::vector&lt; int &gt; answer</div><div class="ttdoc">Vector to store the questions answers read in from the file, in order. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:77</div></div>
+<div class="ttc" id="classCodeCracker_html_aca60d7cc01bda0ec6782984e46b9b357"><div class="ttname"><a href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">CodeCracker::riddleCompletionCount</a></div><div class="ttdeci">int riddleCompletionCount</div><div class="ttdoc">Total riddles compeleted. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:84</div></div>
 <div class="ttc" id="Puzzle_8h_html"><div class="ttname"><a href="Puzzle_8h.html">Puzzle.h</a></div></div>
-<div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:18</div></div>
-<div class="ttc" id="classCodeCracker_html_ae578bd328ef64ed314b19e5940247f2c"><div class="ttname"><a href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">CodeCracker::question</a></div><div class="ttdeci">std::vector&lt; string &gt; question</div><div class="ttdoc">Vector to store the question strings read in from the file. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:57</div></div>
-<div class="ttc" id="classCodeCracker_html"><div class="ttname"><a href="classCodeCracker.html">CodeCracker</a></div><div class="ttdoc">This class contains the mini-game/puzzle Code Cracker. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:17</div></div>
+<div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:19</div></div>
+<div class="ttc" id="classCodeCracker_html_ae578bd328ef64ed314b19e5940247f2c"><div class="ttname"><a href="classCodeCracker.html#ae578bd328ef64ed314b19e5940247f2c">CodeCracker::question</a></div><div class="ttdeci">std::vector&lt; string &gt; question</div><div class="ttdoc">Vector to store the question strings read in from the file. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:71</div></div>
+<div class="ttc" id="classCodeCracker_html"><div class="ttname"><a href="classCodeCracker.html">CodeCracker</a></div><div class="ttdoc">This class contains the mini-game/puzzle Code Cracker. </div><div class="ttdef"><b>Definition:</b> CodeCracker.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

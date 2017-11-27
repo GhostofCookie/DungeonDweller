@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['name',['name',['../classItem.html#ad39021b642fa436b3c0b898314de012c',1,'Item::name()'],['../classItem.html#aefdaa767e00c0fcfe2801a5e3e4e951d',1,'Item::name() const ']]],
-  ['namegenerator',['nameGenerator',['../classItem.html#a3e8d2ce6b8192a4b2ca5ede6a25a49a4',1,'Item']]],
+  ['name',['Name',['../classItem.html#a90ce604a697cdd06ed15c1176f269bcf',1,'Item::Name()'],['../classItem.html#abbe83003b27f50b343ebfb4b89d73a9b',1,'Item::Name() const ']]],
+  ['namegenerator',['NameGenerator',['../classItem.html#ac97e1c78a4ea877d9c07774f07dd5fa4',1,'Item']]],
   ['newoutlinech',['NewOutlineCh',['../classScreen.html#a27dcfac6e64ab72059d0801dd9714d7a',1,'Screen']]],
-  ['newroom',['newRoom',['../classRoomTree.html#a198fd76507d341091eff6f9cb367d551',1,'RoomTree']]],
+  ['newroom',['NewRoom',['../classRoomTree.html#a8c2d8a4f8e8d33c3bffa8ecbb1124a60',1,'RoomTree']]],
   ['node',['Node',['../classRoomTree_1_1Node.html#ab3c68ffc2f8dd40c8bf94e0b047766cb',1,'RoomTree::Node']]],
-  ['npc',['Npc',['../classNpc.html#a692a6b5565b561bf0bbfe664bd37fdb7',1,'Npc']]]
+  ['npc',['Npc',['../classNpc.html#ad8de4e512338f57a56f490c60293118b',1,'Npc']]]
 ];
