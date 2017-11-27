@@ -1,0 +1,614 @@
+\hypertarget{classCutscene}{\section{Cutscene Class Reference}
+\label{classCutscene}\index{Cutscene@{Cutscene}}
+}
+
+
+This class runs cutscenes that improve the quality of room transitions.  
+
+
+
+
+{\ttfamily \#include $<$Cutscene.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCutscene_1_1Point}{Point}
+\begin{DoxyCompactList}\small\item\em Struct to contain the points of all 4 exits in a room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCutscene_aed118d443c7a13d7bac403875d4c9924}{Cutscene} (\hyperlink{classImportImg}{Import\-Img} image=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}), Import\-Img r=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}), Room $\ast$room\-Template=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCutscene_a87f27f6e952b056528f7974e075e737b}{$\sim$\-Cutscene} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_afa9eb952cbdf82068a57dc9cf0bf18af}{Enter\-Top\-To\-Center} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a169e1c53a82b22a8a38cf652b81fddec}{Enter\-Bottom\-To\-Center} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a2475a1d172b3d60e9c6c0d51032a34f7}{Enter\-Left\-To\-Center} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a2b8b64265f23d6f8c27a226cd200175d}{Enter\-Right\-To\-Center} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_ac6fd256f1045eca8b4c7c7f6f43e23ea}{Exit\-Center\-To\-Top} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_acece444d79bd4eacfee58dfb883ce8d2}{Exit\-Center\-To\-Bottom} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a240a35626eb9cb2b6eb77d120eb55827}{Exit\-Center\-To\-Left} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_add9a905183c22afd95680b3912902786}{Exit\-Center\-To\-Right} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image this direction. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a9d00e9b0347ad1402cf248be2bcc54fc}{Exit\-Left} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image to the left. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a52b632ccd15f2ecd889e1b8459a79014}{Exit\-Right} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image to the right. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_ae429c590578f37aca1d19d11e77e0b82}{Exit\-Up} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image to the top. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_afec50ab0b3730e1f1e2c1e78e2369012}{Exit\-Down} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image to the left. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a2d6e392b1db205cfbd723058f14f59c1}{Enter\-Left} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image from the left. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_abbaa7bd2dbc23156535a9e7e88963e2e}{Enter\-Right} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image from the right. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_aa6ad0c95cba437bb00beabd62e38cd57}{Enter\-Up} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image from the top. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_ad04e97591b314ad3808acc28d31c63d5}{Enter\-Down} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an image from the bottom. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_aa8d16210b44e11bf95363327461c28ed}{Save\-Current\-Position} ()
+\begin{DoxyCompactList}\small\item\em Function to save the animated image's current position. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_aeb7422fbe04520b9bcdceebc9c69b1b5}{Intro} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an intro $\ast$ hardcoded in every cutscene obj. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a6af4b8c23f0934cc2909221c850e0d2a}{Outro} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an outro $\ast$ hardcoded in every cutscene obj. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_aa67a9025d464aff2e5814cbb0f5bf07e}{Monster\-Encounter} ()
+\begin{DoxyCompactList}\small\item\em Function to animate an encounter $\ast$ hardcoded in every cutscene obj. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCutscene_af0548c4b14e868b8eb59515121b1c757}{Clear\-Screen} ()
+\begin{DoxyCompactList}\small\item\em Helper function that returns many spaces. \end{DoxyCompactList}\item 
+void \hyperlink{classCutscene_a38e4c31b0d1e8723aaf577c2f0216bc4}{Find\-Character} (int \&y, int \&x, const char c, const \hyperlink{classRoom}{Room} \&r)
+\item 
+void \hyperlink{classCutscene_a7ae1d36607d67eeb7b10fb5701973d91}{Move\-Up} (const int origin\-Y, const int origin\-X, const int count)
+\item 
+void \hyperlink{classCutscene_a364c29bfc80a52b805d1520a84b9edd2}{Move\-Down} (const int origin\-Y, const int origin\-X, const int count)
+\item 
+void \hyperlink{classCutscene_a8aa2ccd4bece690fa40e97373754ea0f}{Move\-Left} (const int origin\-Y, const int origin\-X, const int count)
+\item 
+void \hyperlink{classCutscene_a0f9e3e375f124e35337bf48cfb0febc7}{Move\-Right} (const int origin\-Y, const int origin\-X, const int count)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classScreen}{Screen} \hyperlink{classCutscene_a70df90fafe45f9a661d9e05ac4dd2a22}{screen}
+\begin{DoxyCompactList}\small\item\em screen to draw the cutscene on \end{DoxyCompactList}\item 
+\hyperlink{classScreen}{Screen} \hyperlink{classCutscene_aac25c81316f03b3c3caf0bdf735926bc}{left\-Side}
+\begin{DoxyCompactList}\small\item\em screen to create the left-\/side space \end{DoxyCompactList}\item 
+\hyperlink{classScreen}{Screen} \hyperlink{classCutscene_ac8cc850025b847d951e74418b757d62c}{right\-Side}
+\begin{DoxyCompactList}\small\item\em screen to create the right-\/side space \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_a70148f85e3ef15175751eeb5e92fb870}{center\-X} = 0
+\begin{DoxyCompactList}\small\item\em x coordinate to keep track of the center A\-L\-W\-A\-Y\-S \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_a471290d79d01f029ad56bdfa7472ce40}{center\-Y} = 0
+\begin{DoxyCompactList}\small\item\em y coordinate to keep track of the center A\-L\-W\-A\-Y\-S \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_a1d5c331a4d60a28f84eaa987f2a2fb4f}{saved\-X} = 0
+\begin{DoxyCompactList}\small\item\em variable to keep track of a position for animating \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_af8166fd7fdf29fe8f86cadd29363fd78}{saved\-Y} = 0
+\begin{DoxyCompactList}\small\item\em variable to keep track of a position for animating \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_a829a69db5263fd8e0915a9b905c386d0}{found\-X} = 0
+\begin{DoxyCompactList}\small\item\em temporary variable to keep track of a character found \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_ac77c836201afb1a31547c6c930e323d4}{found\-Y} = 0
+\begin{DoxyCompactList}\small\item\em temporary variable to keep track of character found \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{structCutscene_1_1Point}{Point} $>$ \hyperlink{classCutscene_a7438465af0e7bc51d52ca5aaefc97e3b}{point}
+\begin{DoxyCompactList}\small\item\em container to store the 4 directions of the given room \end{DoxyCompactList}\item 
+\hyperlink{classImportImg}{Import\-Img} \hyperlink{classCutscene_ae40582568add2f44e099d4a8978f41d4}{img}
+\begin{DoxyCompactList}\small\item\em the animated image \end{DoxyCompactList}\item 
+\hyperlink{classImportImg}{Import\-Img} \hyperlink{classCutscene_a033c0715f32be9730d3692e57fe17096}{room}
+\begin{DoxyCompactList}\small\item\em the room to be animated in \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class runs cutscenes that improve the quality of room transitions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCutscene_aed118d443c7a13d7bac403875d4c9924}{\index{Cutscene@{Cutscene}!Cutscene@{Cutscene}}
+\index{Cutscene@{Cutscene}!Cutscene@{Cutscene}}
+\subsubsection[{Cutscene}]{\setlength{\rightskip}{0pt plus 5cm}Cutscene\-::\-Cutscene (
+\begin{DoxyParamCaption}
+\item[{{\bf Import\-Img}}]{image = {\ttfamily {\bf Import\-Img}(\char`\"{}../DD\-\_\-Art/{\bf Player}/DD\-\_\-Player.txt\char`\"{})}, }
+\item[{{\bf Import\-Img}}]{r = {\ttfamily {\bf Import\-Img}(\char`\"{}../DD\-\_\-Art/{\bf Player}/DD\-\_\-Player.txt\char`\"{})}, }
+\item[{{\bf Room} $\ast$}]{temp\-Room = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_aed118d443c7a13d7bac403875d4c9924}
+
+
+Constructor. 
+
+Default Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em image} & the image to be animated \\
+\hline
+\mbox{\tt in}  & {\em r} & the room to be animated in \\
+\hline
+\mbox{\tt in}  & {\em temp\-Room} & to gain temporary access to its exit points \\
+\hline
+\end{DoxyParams}
+set the center point to gain access later on
+
+reserve and locate points for 4 exit locations per room \hypertarget{classCutscene_a87f27f6e952b056528f7974e075e737b}{\index{Cutscene@{Cutscene}!$\sim$\-Cutscene@{$\sim$\-Cutscene}}
+\index{$\sim$\-Cutscene@{$\sim$\-Cutscene}!Cutscene@{Cutscene}}
+\subsubsection[{$\sim$\-Cutscene}]{\setlength{\rightskip}{0pt plus 5cm}Cutscene\-::$\sim$\-Cutscene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a87f27f6e952b056528f7974e075e737b}
+
+
+Destructor. 
+
+Deconstructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCutscene_af0548c4b14e868b8eb59515121b1c757}{\index{Cutscene@{Cutscene}!Clear\-Screen@{Clear\-Screen}}
+\index{Clear\-Screen@{Clear\-Screen}!Cutscene@{Cutscene}}
+\subsubsection[{Clear\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Clear\-Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classCutscene_af0548c4b14e868b8eb59515121b1c757}
+
+
+Helper function that returns many spaces. 
+
+\hypertarget{classCutscene_a169e1c53a82b22a8a38cf652b81fddec}{\index{Cutscene@{Cutscene}!Enter\-Bottom\-To\-Center@{Enter\-Bottom\-To\-Center}}
+\index{Enter\-Bottom\-To\-Center@{Enter\-Bottom\-To\-Center}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Bottom\-To\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Bottom\-To\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a169e1c53a82b22a8a38cf652b81fddec}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_ad04e97591b314ad3808acc28d31c63d5}{\index{Cutscene@{Cutscene}!Enter\-Down@{Enter\-Down}}
+\index{Enter\-Down@{Enter\-Down}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_ad04e97591b314ad3808acc28d31c63d5}
+
+
+Function to animate an image from the bottom. 
+
+Function To animate this direction. \hypertarget{classCutscene_a2d6e392b1db205cfbd723058f14f59c1}{\index{Cutscene@{Cutscene}!Enter\-Left@{Enter\-Left}}
+\index{Enter\-Left@{Enter\-Left}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a2d6e392b1db205cfbd723058f14f59c1}
+
+
+Function to animate an image from the left. 
+
+Function To animate this direction. \hypertarget{classCutscene_a2475a1d172b3d60e9c6c0d51032a34f7}{\index{Cutscene@{Cutscene}!Enter\-Left\-To\-Center@{Enter\-Left\-To\-Center}}
+\index{Enter\-Left\-To\-Center@{Enter\-Left\-To\-Center}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Left\-To\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Left\-To\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a2475a1d172b3d60e9c6c0d51032a34f7}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_abbaa7bd2dbc23156535a9e7e88963e2e}{\index{Cutscene@{Cutscene}!Enter\-Right@{Enter\-Right}}
+\index{Enter\-Right@{Enter\-Right}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_abbaa7bd2dbc23156535a9e7e88963e2e}
+
+
+Function to animate an image from the right. 
+
+Function To animate this direction. \hypertarget{classCutscene_a2b8b64265f23d6f8c27a226cd200175d}{\index{Cutscene@{Cutscene}!Enter\-Right\-To\-Center@{Enter\-Right\-To\-Center}}
+\index{Enter\-Right\-To\-Center@{Enter\-Right\-To\-Center}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Right\-To\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Right\-To\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a2b8b64265f23d6f8c27a226cd200175d}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_afa9eb952cbdf82068a57dc9cf0bf18af}{\index{Cutscene@{Cutscene}!Enter\-Top\-To\-Center@{Enter\-Top\-To\-Center}}
+\index{Enter\-Top\-To\-Center@{Enter\-Top\-To\-Center}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Top\-To\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Top\-To\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_afa9eb952cbdf82068a57dc9cf0bf18af}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_aa6ad0c95cba437bb00beabd62e38cd57}{\index{Cutscene@{Cutscene}!Enter\-Up@{Enter\-Up}}
+\index{Enter\-Up@{Enter\-Up}!Cutscene@{Cutscene}}
+\subsubsection[{Enter\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Enter\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_aa6ad0c95cba437bb00beabd62e38cd57}
+
+
+Function to animate an image from the top. 
+
+Function To animate this direction. \hypertarget{classCutscene_acece444d79bd4eacfee58dfb883ce8d2}{\index{Cutscene@{Cutscene}!Exit\-Center\-To\-Bottom@{Exit\-Center\-To\-Bottom}}
+\index{Exit\-Center\-To\-Bottom@{Exit\-Center\-To\-Bottom}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Center\-To\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Center\-To\-Bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_acece444d79bd4eacfee58dfb883ce8d2}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_a240a35626eb9cb2b6eb77d120eb55827}{\index{Cutscene@{Cutscene}!Exit\-Center\-To\-Left@{Exit\-Center\-To\-Left}}
+\index{Exit\-Center\-To\-Left@{Exit\-Center\-To\-Left}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Center\-To\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Center\-To\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a240a35626eb9cb2b6eb77d120eb55827}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_add9a905183c22afd95680b3912902786}{\index{Cutscene@{Cutscene}!Exit\-Center\-To\-Right@{Exit\-Center\-To\-Right}}
+\index{Exit\-Center\-To\-Right@{Exit\-Center\-To\-Right}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Center\-To\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Center\-To\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_add9a905183c22afd95680b3912902786}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_ac6fd256f1045eca8b4c7c7f6f43e23ea}{\index{Cutscene@{Cutscene}!Exit\-Center\-To\-Top@{Exit\-Center\-To\-Top}}
+\index{Exit\-Center\-To\-Top@{Exit\-Center\-To\-Top}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Center\-To\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Center\-To\-Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_ac6fd256f1045eca8b4c7c7f6f43e23ea}
+
+
+Function to animate an image this direction. 
+
+Function To animate this direction. \hypertarget{classCutscene_afec50ab0b3730e1f1e2c1e78e2369012}{\index{Cutscene@{Cutscene}!Exit\-Down@{Exit\-Down}}
+\index{Exit\-Down@{Exit\-Down}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_afec50ab0b3730e1f1e2c1e78e2369012}
+
+
+Function to animate an image to the left. 
+
+Function To animate this direction. \hypertarget{classCutscene_a9d00e9b0347ad1402cf248be2bcc54fc}{\index{Cutscene@{Cutscene}!Exit\-Left@{Exit\-Left}}
+\index{Exit\-Left@{Exit\-Left}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a9d00e9b0347ad1402cf248be2bcc54fc}
+
+
+Function to animate an image to the left. 
+
+Function To animate this direction. \hypertarget{classCutscene_a52b632ccd15f2ecd889e1b8459a79014}{\index{Cutscene@{Cutscene}!Exit\-Right@{Exit\-Right}}
+\index{Exit\-Right@{Exit\-Right}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a52b632ccd15f2ecd889e1b8459a79014}
+
+
+Function to animate an image to the right. 
+
+Function To animate this direction. \hypertarget{classCutscene_ae429c590578f37aca1d19d11e77e0b82}{\index{Cutscene@{Cutscene}!Exit\-Up@{Exit\-Up}}
+\index{Exit\-Up@{Exit\-Up}!Cutscene@{Cutscene}}
+\subsubsection[{Exit\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Exit\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_ae429c590578f37aca1d19d11e77e0b82}
+
+
+Function to animate an image to the top. 
+
+Function To animate this direction. \hypertarget{classCutscene_a38e4c31b0d1e8723aaf577c2f0216bc4}{\index{Cutscene@{Cutscene}!Find\-Character@{Find\-Character}}
+\index{Find\-Character@{Find\-Character}!Cutscene@{Cutscene}}
+\subsubsection[{Find\-Character}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Find\-Character (
+\begin{DoxyParamCaption}
+\item[{int \&}]{y, }
+\item[{int \&}]{x, }
+\item[{const char}]{c, }
+\item[{const {\bf Room} \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a38e4c31b0d1e8723aaf577c2f0216bc4}
+Helper function that returns the location of a character Helper function to shift an image up and handle output 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate to save \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate to save \\
+\hline
+\mbox{\tt in}  & {\em c} & the character to look for \\
+\hline
+\mbox{\tt in}  & {\em r} & the room to gain access to its points\\
+\hline
+\end{DoxyParams}
+Function To animate this direction 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & the y coordinate to be set \\
+\hline
+\mbox{\tt in}  & {\em x} & the x coordinate to be set \\
+\hline
+\mbox{\tt in}  & {\em c} & the character to find \\
+\hline
+\mbox{\tt in}  & {\em r} & the room to access its points \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCutscene_aeb7422fbe04520b9bcdceebc9c69b1b5}{\index{Cutscene@{Cutscene}!Intro@{Intro}}
+\index{Intro@{Intro}!Cutscene@{Cutscene}}
+\subsubsection[{Intro}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Intro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_aeb7422fbe04520b9bcdceebc9c69b1b5}
+
+
+Function to animate an intro $\ast$ hardcoded in every cutscene obj. 
+
+Function to animate an outro $\ast$ hardcoded in every cutscene obj. \hypertarget{classCutscene_aa67a9025d464aff2e5814cbb0f5bf07e}{\index{Cutscene@{Cutscene}!Monster\-Encounter@{Monster\-Encounter}}
+\index{Monster\-Encounter@{Monster\-Encounter}!Cutscene@{Cutscene}}
+\subsubsection[{Monster\-Encounter}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Monster\-Encounter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_aa67a9025d464aff2e5814cbb0f5bf07e}
+
+
+Function to animate an encounter $\ast$ hardcoded in every cutscene obj. 
+
+\hypertarget{classCutscene_a364c29bfc80a52b805d1520a84b9edd2}{\index{Cutscene@{Cutscene}!Move\-Down@{Move\-Down}}
+\index{Move\-Down@{Move\-Down}!Cutscene@{Cutscene}}
+\subsubsection[{Move\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Move\-Down (
+\begin{DoxyParamCaption}
+\item[{const int}]{origin\-Y, }
+\item[{const int}]{origin\-X, }
+\item[{const int}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a364c29bfc80a52b805d1520a84b9edd2}
+Helper function to shift an image down and handle output Helper function to shift an image up and handle output 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & the x coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em count} & the amount to move by\\
+\hline
+\end{DoxyParams}
+Function to move an image down on the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & \\
+\hline
+\mbox{\tt in}  & {\em d} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCutscene_a8aa2ccd4bece690fa40e97373754ea0f}{\index{Cutscene@{Cutscene}!Move\-Left@{Move\-Left}}
+\index{Move\-Left@{Move\-Left}!Cutscene@{Cutscene}}
+\subsubsection[{Move\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Move\-Left (
+\begin{DoxyParamCaption}
+\item[{const int}]{origin\-Y, }
+\item[{const int}]{origin\-X, }
+\item[{const int}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a8aa2ccd4bece690fa40e97373754ea0f}
+Helper function to shift an image left and handle output Helper function to shift an image up and handle output 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & the x coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em count} & the amount to move by\\
+\hline
+\end{DoxyParams}
+Function to move an image left on the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & \\
+\hline
+\mbox{\tt in}  & {\em d} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCutscene_a0f9e3e375f124e35337bf48cfb0febc7}{\index{Cutscene@{Cutscene}!Move\-Right@{Move\-Right}}
+\index{Move\-Right@{Move\-Right}!Cutscene@{Cutscene}}
+\subsubsection[{Move\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Move\-Right (
+\begin{DoxyParamCaption}
+\item[{const int}]{origin\-Y, }
+\item[{const int}]{origin\-X, }
+\item[{const int}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a0f9e3e375f124e35337bf48cfb0febc7}
+Helper function to shift an image right and handle output Helper function to shift an image up and handle output 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & the x coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em count} & the amount to move by\\
+\hline
+\end{DoxyParams}
+Function to move an image right on the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & \\
+\hline
+\mbox{\tt in}  & {\em d} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCutscene_a7ae1d36607d67eeb7b10fb5701973d91}{\index{Cutscene@{Cutscene}!Move\-Up@{Move\-Up}}
+\index{Move\-Up@{Move\-Up}!Cutscene@{Cutscene}}
+\subsubsection[{Move\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Move\-Up (
+\begin{DoxyParamCaption}
+\item[{const int}]{origin\-Y, }
+\item[{const int}]{origin\-X, }
+\item[{const int}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a7ae1d36607d67eeb7b10fb5701973d91}
+Helper function to shift an image up and handle output 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & the y coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & the x coordinate to begin from \\
+\hline
+\mbox{\tt in}  & {\em count} & the amount to move by\\
+\hline
+\end{DoxyParams}
+Function to move an image up on the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em origin\-Y} & \\
+\hline
+\mbox{\tt in}  & {\em origin\-X} & \\
+\hline
+\mbox{\tt in}  & {\em d} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCutscene_a6af4b8c23f0934cc2909221c850e0d2a}{\index{Cutscene@{Cutscene}!Outro@{Outro}}
+\index{Outro@{Outro}!Cutscene@{Cutscene}}
+\subsubsection[{Outro}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Outro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_a6af4b8c23f0934cc2909221c850e0d2a}
+
+
+Function to animate an outro $\ast$ hardcoded in every cutscene obj. 
+
+\hypertarget{classCutscene_aa8d16210b44e11bf95363327461c28ed}{\index{Cutscene@{Cutscene}!Save\-Current\-Position@{Save\-Current\-Position}}
+\index{Save\-Current\-Position@{Save\-Current\-Position}!Cutscene@{Cutscene}}
+\subsubsection[{Save\-Current\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void Cutscene\-::\-Save\-Current\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCutscene_aa8d16210b44e11bf95363327461c28ed}
+
+
+Function to save the animated image's current position. 
+
+Function to save the animated image's current coodinate. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classCutscene_a70148f85e3ef15175751eeb5e92fb870}{\index{Cutscene@{Cutscene}!center\-X@{center\-X}}
+\index{center\-X@{center\-X}!Cutscene@{Cutscene}}
+\subsubsection[{center\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::center\-X = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a70148f85e3ef15175751eeb5e92fb870}
+
+
+x coordinate to keep track of the center A\-L\-W\-A\-Y\-S 
+
+\hypertarget{classCutscene_a471290d79d01f029ad56bdfa7472ce40}{\index{Cutscene@{Cutscene}!center\-Y@{center\-Y}}
+\index{center\-Y@{center\-Y}!Cutscene@{Cutscene}}
+\subsubsection[{center\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::center\-Y = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a471290d79d01f029ad56bdfa7472ce40}
+
+
+y coordinate to keep track of the center A\-L\-W\-A\-Y\-S 
+
+\hypertarget{classCutscene_a829a69db5263fd8e0915a9b905c386d0}{\index{Cutscene@{Cutscene}!found\-X@{found\-X}}
+\index{found\-X@{found\-X}!Cutscene@{Cutscene}}
+\subsubsection[{found\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::found\-X = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a829a69db5263fd8e0915a9b905c386d0}
+
+
+temporary variable to keep track of a character found 
+
+\hypertarget{classCutscene_ac77c836201afb1a31547c6c930e323d4}{\index{Cutscene@{Cutscene}!found\-Y@{found\-Y}}
+\index{found\-Y@{found\-Y}!Cutscene@{Cutscene}}
+\subsubsection[{found\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::found\-Y = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_ac77c836201afb1a31547c6c930e323d4}
+
+
+temporary variable to keep track of character found 
+
+\hypertarget{classCutscene_ae40582568add2f44e099d4a8978f41d4}{\index{Cutscene@{Cutscene}!img@{img}}
+\index{img@{img}!Cutscene@{Cutscene}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} Cutscene\-::img\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_ae40582568add2f44e099d4a8978f41d4}
+
+
+the animated image 
+
+\hypertarget{classCutscene_aac25c81316f03b3c3caf0bdf735926bc}{\index{Cutscene@{Cutscene}!left\-Side@{left\-Side}}
+\index{left\-Side@{left\-Side}!Cutscene@{Cutscene}}
+\subsubsection[{left\-Side}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Cutscene\-::left\-Side\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_aac25c81316f03b3c3caf0bdf735926bc}
+
+
+screen to create the left-\/side space 
+
+\hypertarget{classCutscene_a7438465af0e7bc51d52ca5aaefc97e3b}{\index{Cutscene@{Cutscene}!point@{point}}
+\index{point@{point}!Cutscene@{Cutscene}}
+\subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Point}$>$ Cutscene\-::point\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a7438465af0e7bc51d52ca5aaefc97e3b}
+
+
+container to store the 4 directions of the given room 
+
+\hypertarget{classCutscene_ac8cc850025b847d951e74418b757d62c}{\index{Cutscene@{Cutscene}!right\-Side@{right\-Side}}
+\index{right\-Side@{right\-Side}!Cutscene@{Cutscene}}
+\subsubsection[{right\-Side}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Cutscene\-::right\-Side\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_ac8cc850025b847d951e74418b757d62c}
+
+
+screen to create the right-\/side space 
+
+\hypertarget{classCutscene_a033c0715f32be9730d3692e57fe17096}{\index{Cutscene@{Cutscene}!room@{room}}
+\index{room@{room}!Cutscene@{Cutscene}}
+\subsubsection[{room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} Cutscene\-::room\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a033c0715f32be9730d3692e57fe17096}
+
+
+the room to be animated in 
+
+\hypertarget{classCutscene_a1d5c331a4d60a28f84eaa987f2a2fb4f}{\index{Cutscene@{Cutscene}!saved\-X@{saved\-X}}
+\index{saved\-X@{saved\-X}!Cutscene@{Cutscene}}
+\subsubsection[{saved\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::saved\-X = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a1d5c331a4d60a28f84eaa987f2a2fb4f}
+
+
+variable to keep track of a position for animating 
+
+\hypertarget{classCutscene_af8166fd7fdf29fe8f86cadd29363fd78}{\index{Cutscene@{Cutscene}!saved\-Y@{saved\-Y}}
+\index{saved\-Y@{saved\-Y}!Cutscene@{Cutscene}}
+\subsubsection[{saved\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::saved\-Y = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_af8166fd7fdf29fe8f86cadd29363fd78}
+
+
+variable to keep track of a position for animating 
+
+\hypertarget{classCutscene_a70df90fafe45f9a661d9e05ac4dd2a22}{\index{Cutscene@{Cutscene}!screen@{screen}}
+\index{screen@{screen}!Cutscene@{Cutscene}}
+\subsubsection[{screen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Cutscene\-::screen\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_a70df90fafe45f9a661d9e05ac4dd2a22}
+
+
+screen to draw the cutscene on 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/rigt2720/\-Kodika/\-Cutscene/\hyperlink{Cutscene_8h}{Cutscene.\-h}\item 
+/home/rigt2720/\-Kodika/\-Cutscene/\hyperlink{Cutscene_8cpp}{Cutscene.\-cpp}\end{DoxyCompactItemize}

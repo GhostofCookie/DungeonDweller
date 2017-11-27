@@ -6,6 +6,7 @@ var classRoomTreeTest =
     [ "CPPUNIT_TEST_SUITE", "classRoomTreeTest.html#a38df4c66be0d341a6d12fda7fdd1d6a4", null ],
     [ "CPPUNIT_TEST_SUITE_END", "classRoomTreeTest.html#a22c287ede74b7fc2591ceee86d10d85a", null ],
     [ "setUp", "classRoomTreeTest.html#ae70ed88d72b79d6615705caf5a635aca", null ],
+    [ "tearDown", "classRoomTreeTest.html#afa7584edb8a8267c922160e4d7c9d037", null ],
     [ "testAt", "classRoomTreeTest.html#a7999cf9d9149ade6f39fbb7be601805e", null ],
     [ "testMove", "classRoomTreeTest.html#aab3dedfa3aaa0bfab811a8d0d8c8b7e0", null ],
     [ "testNewRoom", "classRoomTreeTest.html#a1f342a990eb4b60cfae96dac1dbbedee", null ],

@@ -16,7 +16,7 @@ Sword::Sword()
 {
    baseDmg = 5;
    remainingUses = 10;
-   itemName = NameGenerator("WeaponNames.txt") + " Sword";
+   itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
 }
 
 //*****************************************************************************

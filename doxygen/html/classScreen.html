@@ -145,9 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a223cd8821b2b8006c61545ff41aa0091"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a223cd8821b2b8006c61545ff41aa0091">GetCols</a> () const </td></tr>
 <tr class="memdesc:a223cd8821b2b8006c61545ff41aa0091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the screen.  <a href="#a223cd8821b2b8006c61545ff41aa0091">More...</a><br/></td></tr>
 <tr class="separator:a223cd8821b2b8006c61545ff41aa0091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95daa612c5ec6a8018b89cfc2d785e27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a95daa612c5ec6a8018b89cfc2d785e27">GetCenterPnt</a> () const </td></tr>
-<tr class="memdesc:a95daa612c5ec6a8018b89cfc2d785e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the center of the screen.  <a href="#a95daa612c5ec6a8018b89cfc2d785e27">More...</a><br/></td></tr>
-<tr class="separator:a95daa612c5ec6a8018b89cfc2d785e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7a18ec4e53fb371293e9ebcc23b7e2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b">IsEven</a> (const int &amp;num) const </td></tr>
 <tr class="separator:af7a18ec4e53fb371293e9ebcc23b7e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27dcfac6e64ab72059d0801dd9714d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a27dcfac6e64ab72059d0801dd9714d7a">NewOutlineCh</a> (char ch)</td></tr>
@@ -170,6 +167,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e2c21a6e63390eb3d8b46ee85af05d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#a7e2c21a6e63390eb3d8b46ee85af05d2">Erase</a> ()</td></tr>
 <tr class="memdesc:a7e2c21a6e63390eb3d8b46ee85af05d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function erases the contents of the screen and resets.  <a href="#a7e2c21a6e63390eb3d8b46ee85af05d2">More...</a><br/></td></tr>
 <tr class="separator:a7e2c21a6e63390eb3d8b46ee85af05d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2db1ce1cd4beb8fec5f022bfbeb0c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreen.html#af2db1ce1cd4beb8fec5f022bfbeb0c31">MultiPrint</a> (const vector&lt; <a class="el" href="classScreen.html">Screen</a> &gt; &amp;screens)</td></tr>
+<tr class="memdesc:af2db1ce1cd4beb8fec5f022bfbeb0c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to print multiple screens beside each other.  <a href="#af2db1ce1cd4beb8fec5f022bfbeb0c31">More...</a><br/></td></tr>
+<tr class="separator:af2db1ce1cd4beb8fec5f022bfbeb0c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -389,23 +389,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a95daa612c5ec6a8018b89cfc2d785e27"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Screen::GetCenterPnt </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the center of the screen. </p>
-
-</div>
-</div>
 <a class="anchor" id="a223cd8821b2b8006c61545ff41aa0091"></a>
 <div class="memitem">
 <div class="memproto">
@@ -511,6 +494,25 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="af2db1ce1cd4beb8fec5f022bfbeb0c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Screen::MultiPrint </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="classScreen.html">Screen</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>screens</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to print multiple screens beside each other. </p>
+<p>Function to prints as many screens as you want side by side. </p>
 
 </div>
 </div>

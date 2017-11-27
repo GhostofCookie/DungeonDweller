@@ -1,4 +1,7 @@
 #include "Character.h"
+Character::Character()
+{
+}
 
 void Character:: ChangeGold(int goldMod)
 {

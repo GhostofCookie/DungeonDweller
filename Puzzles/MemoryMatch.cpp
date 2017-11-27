@@ -47,6 +47,7 @@ void MemoryMatch::RunGame(Character *player)
    SetOptionsInMenu();
    BoardSetup();
    SaveBoardToScreen();
+   system("clear");
    PeekAtBoard(6);
    while(PuzzleEnd==false)
    {
@@ -71,7 +72,7 @@ void MemoryMatch:: EndGamePrompt()
 {
    cout << "Congratulations adventurer! You've solved the puzzle!" << endl;
    cout << MemoryMatchScreen;
-   SecondDelay(6);
+   Puzzle::SecondDelay(6);
 }
 
 
@@ -160,7 +161,8 @@ void MemoryMatch::BoardSetup()
 ///Checks if the symbol has been used in the random board already
 bool MemoryMatch:: IsInUsedPairs(char symbol)
 {
-   for(int i=0; i<usedPairs.size(); i++)
+   int size=usedPairs.size();;
+   for(int i=0; i<size; i++)
    {
       if(symbol==usedPairs.at(i))
 	 return true;
@@ -237,11 +239,6 @@ bool MemoryMatch::ValidMove(int X1, int Y1, int X2, int Y2)
 }
 
 ///Causes a three second delay in the program process
-void MemoryMatch::SecondDelay(int seconds)
-{
-      usleep(1000000*seconds);
-}
-
 ///Generates a random number between 0 and n-1
 int MemoryMatch::RandomNumber(int n)
 {
@@ -296,7 +293,7 @@ void MemoryMatch::PeekAtBoard(int lengthInSeconds)
    }
    ///Output the game for three seconds
    cout << MemoryMatchScreen << endl; 
-   SecondDelay(lengthInSeconds);
+   Puzzle::SecondDelay(lengthInSeconds);
    system("clear");
    
    for(int i=0; i<boardSize; i++)
@@ -323,7 +320,7 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 
    ///Output the game for three seconds
    cout << MemoryMatchScreen << endl; 
-   SecondDelay(3);
+   Puzzle::SecondDelay(3);
 
    ///clear the first and second symbol off of the screen after 3 seconds, only
    ///if they have not previously been matched

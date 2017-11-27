@@ -118,18 +118,32 @@ $(document).ready(function(){initNavTree('MemoryMenu_8h_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classMemoryMenu.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMemoryMenu.html">MemoryMenu</a> : <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="classMinigameMenu.html">MinigameMenu</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <a class="code" href="classMemoryMenu.html">MemoryMenu</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classMemoryMenu.html">MemoryMenu</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOptions(map&lt;int,string&gt; optionsList, <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleInput(istream &amp;is);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structMemoryMenu_1_1Coord.html">   22</a></span>&#160;   <span class="keyword">struct </span><a class="code" href="structMemoryMenu_1_1Coord.html">Coord</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structMemoryMenu_1_1Coord.html#a672b3842f9e422b25d4db1f55b3ed219">   24</a></span>&#160;      <span class="keywordtype">char</span> x1,<a class="code" href="structMemoryMenu_1_1Coord.html#a672b3842f9e422b25d4db1f55b3ed219">x2</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structMemoryMenu_1_1Coord.html#a6bc07dd964c2d5b87f2c0bf7fd66eee1">   25</a></span>&#160;      <span class="keywordtype">int</span> y1,<a class="code" href="structMemoryMenu_1_1Coord.html#a6bc07dd964c2d5b87f2c0bf7fd66eee1">y2</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;   };</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classMemoryMenu.html#aa29295841088ab4c667a88ae91a0dd45">   27</a></span>&#160;   <a class="code" href="structMemoryMenu_1_1Coord.html">Coord</a> <a class="code" href="classMemoryMenu.html#aa29295841088ab4c667a88ae91a0dd45">coordinates</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classMemoryMenu.html#af0e3a6658007f4782d181f19d39719f4">   28</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classMemoryMenu.html#af0e3a6658007f4782d181f19d39719f4">query</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <a class="code" href="classMemoryMenu.html">MemoryMenu</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classMemoryMenu.html">MemoryMenu</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOptions(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <span class="keywordtype">int</span> space);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleInput(istream &amp;is);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <a class="code" href="structMemoryMenu_1_1Coord.html">Coord</a> GetCoordinates() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classMemoryMenu_html"><div class="ttname"><a href="classMemoryMenu.html">MemoryMenu</a></div><div class="ttdoc">This is the menu class for the Memory match minigame. </div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:17</div></div>
+<div class="ttc" id="structMemoryMenu_1_1Coord_html"><div class="ttname"><a href="structMemoryMenu_1_1Coord.html">MemoryMenu::Coord</a></div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:22</div></div>
+<div class="ttc" id="classMemoryMenu_html_af0e3a6658007f4782d181f19d39719f4"><div class="ttname"><a href="classMemoryMenu.html#af0e3a6658007f4782d181f19d39719f4">MemoryMenu::query</a></div><div class="ttdeci">string query</div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:28</div></div>
+<div class="ttc" id="structMemoryMenu_1_1Coord_html_a672b3842f9e422b25d4db1f55b3ed219"><div class="ttname"><a href="structMemoryMenu_1_1Coord.html#a672b3842f9e422b25d4db1f55b3ed219">MemoryMenu::Coord::x2</a></div><div class="ttdeci">char x2</div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:24</div></div>
 <div class="ttc" id="classMinigameMenu_html"><div class="ttname"><a href="classMinigameMenu.html">MinigameMenu</a></div><div class="ttdoc">An abstract class, this is the base class for the all the in-game puzzle/minigame menu classes...</div><div class="ttdef"><b>Definition:</b> MinigameMenu.h:16</div></div>
+<div class="ttc" id="structMemoryMenu_1_1Coord_html_a6bc07dd964c2d5b87f2c0bf7fd66eee1"><div class="ttname"><a href="structMemoryMenu_1_1Coord.html#a6bc07dd964c2d5b87f2c0bf7fd66eee1">MemoryMenu::Coord::y2</a></div><div class="ttdeci">int y2</div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:25</div></div>
 <div class="ttc" id="MinigameMenu_8h_html"><div class="ttname"><a href="MinigameMenu_8h.html">MinigameMenu.h</a></div></div>
+<div class="ttc" id="classMemoryMenu_html_aa29295841088ab4c667a88ae91a0dd45"><div class="ttname"><a href="classMemoryMenu.html#aa29295841088ab4c667a88ae91a0dd45">MemoryMenu::coordinates</a></div><div class="ttdeci">Coord coordinates</div><div class="ttdef"><b>Definition:</b> MemoryMenu.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

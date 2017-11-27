@@ -52,13 +52,11 @@ void ExploreMenu::HandleInput(istream &is)
    is.ignore(255,'\n');
 
    auto it = indexMap.find(tolower(option));
-   if(it != indexMap.end())
+   if(it != indexMap.end() && tolower(option) == it->first)
       currOption = tolower(option);
    else
    {
       currOption='\n';
-//      is.clear();
-//      is.ignore(255,'\n');
       return;
    }
    if(is.fail())

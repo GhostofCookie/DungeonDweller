@@ -23,23 +23,31 @@ Inheritance diagram for Code\-Cracker\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for hanoi, reads in riddles from .txt files. \end{DoxyCompactList}\item 
 virtual \hyperlink{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{$\sim$\-Code\-Cracker} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{Run\-Game} ()
+void \hyperlink{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}{Valid\-Move} (char input)
 \item 
-bool \hyperlink{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}{Valid\-Answer} (const char input)
+bool \hyperlink{classCodeCracker_aeddf29fcc2034f0acb41d41e0f755a3c}{Valid\-Answer} (int input, int riddle\-Index)
 \item 
 void \hyperlink{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{Win\-Check} ()
 \begin{DoxyCompactList}\small\item\em Checks if the player has successfully answered 3 riddles. \end{DoxyCompactList}\item 
 void \hyperlink{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}{Death\-Check} ()
 \begin{DoxyCompactList}\small\item\em Checks if the player is now dead. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}{Output\-Riddle} (int index)
+\item 
 void \hyperlink{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{Import\-Riddles} ()
 \begin{DoxyCompactList}\small\item\em Imports riddles from a text file and stores them in the vector. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}{Set\-Riddle\-In\-Menu} (int riddle\-Index)
+\item 
 void \hyperlink{classCodeCracker_acbbd890be17cec27b879eb369de82017}{Set\-Options\-In\-Menu} ()
-\end{DoxyCompactItemize}
+\item 
+void \hyperlink{classCodeCracker_a076c2199e775591298674b0f20ed437e}{Decrement\-Player\-Health} (int amount\-To\-Decrement)
+\item 
+int \hyperlink{classCodeCracker_a55bebba723a92d780659f016e9e394e4}{Unused\-Random\-Riddle} ()
+\begin{DoxyCompactList}\small\item\em Picks one of the unused riddles randomly and returns its index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,12 +57,12 @@ std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_a6ab76d405fa6a989fdd10c7
 \begin{DoxyCompactList}\small\item\em Vector to store the descriptions on how to answer each question, in order. \end{DoxyCompactList}\item 
 std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}{answer}
 \begin{DoxyCompactList}\small\item\em Vector to store the questions answers read in from the file, in order. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}{used\-Riddles}
+\item 
 int \hyperlink{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}{riddle\-Completion\-Count}
-\item 
+\begin{DoxyCompactList}\small\item\em Total riddles compeleted. \end{DoxyCompactList}\item 
 int \hyperlink{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{number\-Of\-Riddles}
-\item 
-bool \hyperlink{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}{riddle\-Correct}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Total number of riddles imported into the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -79,7 +87,7 @@ Tyler Siwy
 \begin{DoxyDate}{Date}
 Oct 20, 2017 
 \end{DoxyDate}
-Read in the riddle question string Read in the answer format Read in the anwer \hypertarget{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{\index{Code\-Cracker@{Code\-Cracker}!$\sim$\-Code\-Cracker@{$\sim$\-Code\-Cracker}}
+\hypertarget{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{\index{Code\-Cracker@{Code\-Cracker}!$\sim$\-Code\-Cracker@{$\sim$\-Code\-Cracker}}
 \index{$\sim$\-Code\-Cracker@{$\sim$\-Code\-Cracker}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{$\sim$\-Code\-Cracker}]{\setlength{\rightskip}{0pt plus 5cm}Code\-Cracker\-::$\sim$\-Code\-Cracker (
 \begin{DoxyParamCaption}
@@ -104,6 +112,13 @@ Deconstructor.
 
 Checks if the player is now dead. 
 
+\hypertarget{classCodeCracker_a076c2199e775591298674b0f20ed437e}{\index{Code\-Cracker@{Code\-Cracker}!Decrement\-Player\-Health@{Decrement\-Player\-Health}}
+\index{Decrement\-Player\-Health@{Decrement\-Player\-Health}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Decrement\-Player\-Health}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Decrement\-Player\-Health (
+\begin{DoxyParamCaption}
+\item[{int}]{amount\-To\-Decrement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a076c2199e775591298674b0f20ed437e}
 \hypertarget{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{\index{Code\-Cracker@{Code\-Cracker}!Import\-Riddles@{Import\-Riddles}}
 \index{Import\-Riddles@{Import\-Riddles}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Import\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Import\-Riddles (
@@ -115,20 +130,23 @@ Checks if the player is now dead.
 
 Imports riddles from a text file and stores them in the vector. 
 
-\hypertarget{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
+\hypertarget{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}{\index{Code\-Cracker@{Code\-Cracker}!Output\-Riddle@{Output\-Riddle}}
+\index{Output\-Riddle@{Output\-Riddle}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Output\-Riddle}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Output\-Riddle (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}
+Outputs the selected riddle, limiting the characters to a set length and moving them down to the next line if the string is longer than they limit. \hypertarget{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Run\-Game (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a4f2aaaf60b31cf33cc0d70622665be45}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. Do riddle
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. Do riddle output 
 
-if riddle was completed successfully
-
-Decrement player health If player has died Puzzle\-End=true;
-
-Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
+Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
 \hypertarget{classCodeCracker_acbbd890be17cec27b879eb369de82017}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
 \index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!CodeCracker@{Code\-Cracker}}
@@ -146,13 +164,32 @@ Displays the screen containing the gameboard
 
 Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 
-\hypertarget{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}{\index{Code\-Cracker@{Code\-Cracker}!Valid\-Answer@{Valid\-Answer}}
+\hypertarget{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Riddle\-In\-Menu@{Set\-Riddle\-In\-Menu}}
+\index{Set\-Riddle\-In\-Menu@{Set\-Riddle\-In\-Menu}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Set\-Riddle\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Set\-Riddle\-In\-Menu (
+\begin{DoxyParamCaption}
+\item[{int}]{riddle\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}
+\hypertarget{classCodeCracker_a55bebba723a92d780659f016e9e394e4}{\index{Code\-Cracker@{Code\-Cracker}!Unused\-Random\-Riddle@{Unused\-Random\-Riddle}}
+\index{Unused\-Random\-Riddle@{Unused\-Random\-Riddle}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Unused\-Random\-Riddle}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::\-Unused\-Random\-Riddle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a55bebba723a92d780659f016e9e394e4}
+
+
+Picks one of the unused riddles randomly and returns its index. 
+
+\hypertarget{classCodeCracker_aeddf29fcc2034f0acb41d41e0f755a3c}{\index{Code\-Cracker@{Code\-Cracker}!Valid\-Answer@{Valid\-Answer}}
 \index{Valid\-Answer@{Valid\-Answer}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Valid\-Answer}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::\-Valid\-Answer (
 \begin{DoxyParamCaption}
-\item[{const char}]{input}
+\item[{int}]{input, }
+\item[{int}]{riddle\-Index}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ae1f112c18049c0ecc3e52bfcf1398ccd}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_aeddf29fcc2034f0acb41d41e0f755a3c}
 Checks to see if the user input is one of the accepted answers. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Input,an} & answer to the riddle in the form of the char. \\
@@ -201,6 +238,10 @@ Vector to store the descriptions on how to answer each question, in order.
 \hypertarget{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{\index{Code\-Cracker@{Code\-Cracker}!number\-Of\-Riddles@{number\-Of\-Riddles}}
 \index{number\-Of\-Riddles@{number\-Of\-Riddles}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{number\-Of\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::number\-Of\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}
+
+
+Total number of riddles imported into the game. 
+
 \hypertarget{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}{\index{Code\-Cracker@{Code\-Cracker}!question@{question}}
 \index{question@{question}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{question}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$string$>$ Code\-Cracker\-::question\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}
@@ -211,10 +252,14 @@ Vector to store the question strings read in from the file.
 \hypertarget{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}{\index{Code\-Cracker@{Code\-Cracker}!riddle\-Completion\-Count@{riddle\-Completion\-Count}}
 \index{riddle\-Completion\-Count@{riddle\-Completion\-Count}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{riddle\-Completion\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::riddle\-Completion\-Count\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}
-\hypertarget{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}{\index{Code\-Cracker@{Code\-Cracker}!riddle\-Correct@{riddle\-Correct}}
-\index{riddle\-Correct@{riddle\-Correct}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{riddle\-Correct}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::riddle\-Correct\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ab497c5b666243b85ec3c754590ee7450}
 
+
+Total riddles compeleted. 
+
+\hypertarget{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}{\index{Code\-Cracker@{Code\-Cracker}!used\-Riddles@{used\-Riddles}}
+\index{used\-Riddles@{used\-Riddles}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{used\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ Code\-Cracker\-::used\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}
+Stores the indexes of all used riddle strings so that they aren't asked twice. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

@@ -8,10 +8,12 @@ CharacterMenu::~CharacterMenu()
 {
 }
 
-void CharacterMenu::SetOptions(map<int,string> optionsList, string type)
+void CharacterMenu::SetOptions(int row, int col, int space)
 {
+   Menu::SetOptions(row,col,space);
 }
 
 void CharacterMenu::HandleInput(istream & is)
 {
+   Menu::HandleInput(is);
 }

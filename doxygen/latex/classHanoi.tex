@@ -3,11 +3,6 @@
 }
 
 
-This class contains the mini-\/game/\-Puzzle Towers of \hyperlink{classHanoi}{Hanoi}.  
-
-
-
-
 {\ttfamily \#include $<$Hanoi.\-h$>$}
 
 Inheritance diagram for Hanoi\-:\begin{figure}[H]
@@ -20,58 +15,52 @@ Inheritance diagram for Hanoi\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classHanoi_a2af453ec21277f20edc002be08f22346}{Hanoi} ()
-\begin{DoxyCompactList}\small\item\em Default constructor for hanoi, sets height to\-: and width to\-: \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for hanoi, sets height to\-: 4 and width to\-: 3. \end{DoxyCompactList}\item 
 \hyperlink{classHanoi_a59760291bfeda65330ff53c429a4e55b}{$\sim$\-Hanoi} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classHanoi_a2032169272e11d26ce253e2b264b9f31}{Run\-Game} ()
+void \hyperlink{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classHanoi_a30dc9940db3589121396850f52ea7730}{Valid\-Move} (const int current\-Stack, const int new\-Stack) const 
+bool \hyperlink{classHanoi_a509e940edaa6135c5b883c93c901e38f}{Valid\-Move} (const int source\-Stack, const int target\-Stack) const 
 \item 
 void \hyperlink{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}{Set\-Options\-In\-Menu} ()
-\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Setup the options in the \hyperlink{classHanoiMenu}{Hanoi\-Menu} object for the player to select. \end{DoxyCompactList}\item 
 void \hyperlink{classHanoi_aefbb40fc625506daa131076206e85b69}{Win\-Check} ()
 \item 
-void \hyperlink{classHanoi_a99b377a6ff0a2fc7d94d4fef0701345f}{Move\-Piece} (int user\-Selection)
+void \hyperlink{classHanoi_ac2a9f2762281242491b736caae5baea9}{Logic\-Switch} (const char user\-Selection)
 \item 
-int \hyperlink{classHanoi_a8ec34fb3a3682f6a8dcc1007e013ded0}{Which\-Disc\-From\-Size} (int size)
+void \hyperlink{classHanoi_ace4cf62c16bc617ac158171a94b9b6a1}{Move\-Piece} (int source\-Tower, int target\-Tower)
 \item 
-void \hyperlink{classHanoi_ad37d25d89cfdb3504d8f0702d0fff930}{Clear\-Screen\-Of\-Old\-Disc} (int size\-Of\-Disc, int target\-Tower, int y\-Coordinate)
+void \hyperlink{classHanoi_af46c88d825078b8255128c53f717cf8d}{Clear\-Top\-Disc} (int target\-Tower)
+\item 
+void \hyperlink{classHanoi_a95845d40d6b0594cc69612c6421333a2}{Disc\-Setup} ()
+\begin{DoxyCompactList}\small\item\em Sets up the discs on the gameboard for the beginning of the game. \end{DoxyCompactList}\item 
+void \hyperlink{classHanoi_a47fdd8cbbb4b12ea2941c639868236bc}{Push\-Disc\-On\-Left\-Stack} (int bottom, \hyperlink{classDefaultImg}{Default\-Img} disc)
 \item 
 void \hyperlink{classHanoi_a5dc7aab5bfe9d0b9d83ba75be22412e2}{Board\-Setup} ()
+\begin{DoxyCompactList}\small\item\em Sets up the screen with the appropriate game board. \end{DoxyCompactList}\item 
+void \hyperlink{classHanoi_a7ed013f980f79fb4d4bd5efbc0fef633}{Draw\-Disc\-On\-Target\-Stack} (int source\-Stack, int target\-Stack)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::vector$<$ stack$<$ \hyperlink{classDefaultImg}{Default\-Img} $>$ $>$ \hyperlink{classHanoi_afe67c656c8ce8c7006e8b7f23fbe9ae9}{tower}
-\item 
+\begin{DoxyCompactList}\small\item\em The vector which holds each towers' default\-Img. \end{DoxyCompactList}\item 
 int \hyperlink{classHanoi_abcdaa5a4b56f9c3916bf49e054e1cf8c}{number\-Of\-Stacks}
 \item 
 int \hyperlink{classHanoi_a826f3bc786cb5c7b6499508d0b8bc9b4}{max\-Stack\-Height}
 \begin{DoxyCompactList}\small\item\em Maintains the height of the stacks in the game. \end{DoxyCompactList}\item 
-bool \hyperlink{classHanoi_aff7a10d6c208cb15d315436b91017bed}{Game\-End}
-\begin{DoxyCompactList}\small\item\em Used for the loop to see if the game has ended yet. \end{DoxyCompactList}\item 
 \hyperlink{classScreen}{Screen} \hyperlink{classHanoi_a1b9bfd6a0428f772d78b66a5a3268c4c}{Hanoi\-Screen}
 \begin{DoxyCompactList}\small\item\em Hanoi\-Screen stores and outputs the contents of the game to the terminal. \end{DoxyCompactList}\item 
 \hyperlink{classHanoiMenu}{Hanoi\-Menu} \hyperlink{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}{Hanoi\-Game\-Menu}
-\begin{DoxyCompactList}\small\item\em \hyperlink{classGameMenu}{Game\-Menu} is used for handling input. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classDefaultImg}{Default\-Img} $>$ \hyperlink{classHanoi_a67a8288cd0c9a1acc3e5201621505afa}{discs\-Vector}
-\item 
-string \hyperlink{classHanoi_a9f971c51b287b61d8a919c26780e3f66}{menu\-Option1}
-\begin{DoxyCompactList}\small\item\em Menu\-Option strings are used for outputting options to the user. \end{DoxyCompactList}\item 
-string \hyperlink{classHanoi_ac9345e1760d1367ee05ecdf2e15d3d69}{menu\-Option2}
-\item 
-string \hyperlink{classHanoi_a94c22f2842c5473df08839fc9d4e860f}{menu\-Option3}
-\item 
-string \hyperlink{classHanoi_a3c6ac9ab6b2941ab955a2bc2c58cf93a}{menu\-Option4}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGameMenu}{Game\-Menu} is used for handling input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-This class contains the mini-\/game/\-Puzzle Towers of \hyperlink{classHanoi}{Hanoi}. 
+This class contains the mini-\/game/\-Puzzle Towers of \hyperlink{classHanoi}{Hanoi}, to be called from the main dugeon\-Dweller program using \hyperlink{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{Run\-Game()}; 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classHanoi_a2af453ec21277f20edc002be08f22346}{\index{Hanoi@{Hanoi}!Hanoi@{Hanoi}}
@@ -83,7 +72,7 @@ This class contains the mini-\/game/\-Puzzle Towers of \hyperlink{classHanoi}{Ha
 )}}\label{classHanoi_a2af453ec21277f20edc002be08f22346}
 
 
-Default constructor for hanoi, sets height to\-: and width to\-: 
+Default constructor for hanoi, sets height to\-: 4 and width to\-: 3. 
 
 \begin{DoxyAuthor}{Author}
 Tyler Siwy 
@@ -91,15 +80,7 @@ Tyler Siwy
 \begin{DoxyDate}{Date}
 Oct 20, 2017 
 \end{DoxyDate}
-Create default images for each of the disc to be drawn on the screen.
-
-Put the discs into the first stack to start the game
-
-Push the discs on in descending order since it's a stack.
-
-Down one line for the next disc
-
-Move two to left since the next disc is 4 chars larger. \hypertarget{classHanoi_a59760291bfeda65330ff53c429a4e55b}{\index{Hanoi@{Hanoi}!$\sim$\-Hanoi@{$\sim$\-Hanoi}}
+\hypertarget{classHanoi_a59760291bfeda65330ff53c429a4e55b}{\index{Hanoi@{Hanoi}!$\sim$\-Hanoi@{$\sim$\-Hanoi}}
 \index{$\sim$\-Hanoi@{$\sim$\-Hanoi}!Hanoi@{Hanoi}}
 \subsubsection[{$\sim$\-Hanoi}]{\setlength{\rightskip}{0pt plus 5cm}Hanoi\-::$\sim$\-Hanoi (
 \begin{DoxyParamCaption}
@@ -120,57 +101,117 @@ Deconstructor.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a5dc7aab5bfe9d0b9d83ba75be22412e2}
-\hypertarget{classHanoi_ad37d25d89cfdb3504d8f0702d0fff930}{\index{Hanoi@{Hanoi}!Clear\-Screen\-Of\-Old\-Disc@{Clear\-Screen\-Of\-Old\-Disc}}
-\index{Clear\-Screen\-Of\-Old\-Disc@{Clear\-Screen\-Of\-Old\-Disc}!Hanoi@{Hanoi}}
-\subsubsection[{Clear\-Screen\-Of\-Old\-Disc}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Clear\-Screen\-Of\-Old\-Disc (
-\begin{DoxyParamCaption}
-\item[{int}]{size\-Of\-Disc, }
-\item[{int}]{target\-Tower, }
-\item[{int}]{y\-Coordinate}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_ad37d25d89cfdb3504d8f0702d0fff930}
-Function which clears the discs previous location from the screen object You cannot use the erase function in the screen class because you would have to re-\/draw everything afterwards and the nature of a stack does not give you access to elements not on top. 18 is the center of the first tower, take away half the disc size to start in the right spot, add the interator as we move through the line.
 
-18 is the center of the second tower, take away half the disc size to start in the right spot, add the interator as we move through the line.
 
-84 is the center of the third tower, take away half the disc size to start in the right spot, add the interator as we move through the line. \hypertarget{classHanoi_a99b377a6ff0a2fc7d94d4fef0701345f}{\index{Hanoi@{Hanoi}!Move\-Piece@{Move\-Piece}}
-\index{Move\-Piece@{Move\-Piece}!Hanoi@{Hanoi}}
-\subsubsection[{Move\-Piece}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Move\-Piece (
+Sets up the screen with the appropriate game board. 
+
+\hypertarget{classHanoi_af46c88d825078b8255128c53f717cf8d}{\index{Hanoi@{Hanoi}!Clear\-Top\-Disc@{Clear\-Top\-Disc}}
+\index{Clear\-Top\-Disc@{Clear\-Top\-Disc}!Hanoi@{Hanoi}}
+\subsubsection[{Clear\-Top\-Disc}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Clear\-Top\-Disc (
 \begin{DoxyParamCaption}
-\item[{int}]{user\-Selection}
+\item[{int}]{target\-Tower}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a99b377a6ff0a2fc7d94d4fef0701345f}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_af46c88d825078b8255128c53f717cf8d}
+Function which clears the discs previous location from the screen object You cannot use the erase function in the screen class because you would have to re-\/draw everything afterwards and the nature of a stack does not give you access to elements not on top. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em target\-Tower,the} & tower which you wish to have cleared on top. \\
+\hline
+\end{DoxyParams}
+Start at 1 always so that the smallest discs get cleared since starting at 0 wouldn't clear anything for the top disc. \hypertarget{classHanoi_a95845d40d6b0594cc69612c6421333a2}{\index{Hanoi@{Hanoi}!Disc\-Setup@{Disc\-Setup}}
+\index{Disc\-Setup@{Disc\-Setup}!Hanoi@{Hanoi}}
+\subsubsection[{Disc\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Disc\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a95845d40d6b0594cc69612c6421333a2}
+
+
+Sets up the discs on the gameboard for the beginning of the game. 
+
+Draw to the game screen and then put the discs into the first stack to start the game. \hypertarget{classHanoi_a7ed013f980f79fb4d4bd5efbc0fef633}{\index{Hanoi@{Hanoi}!Draw\-Disc\-On\-Target\-Stack@{Draw\-Disc\-On\-Target\-Stack}}
+\index{Draw\-Disc\-On\-Target\-Stack@{Draw\-Disc\-On\-Target\-Stack}!Hanoi@{Hanoi}}
+\subsubsection[{Draw\-Disc\-On\-Target\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Draw\-Disc\-On\-Target\-Stack (
+\begin{DoxyParamCaption}
+\item[{int}]{source\-Stack, }
+\item[{int}]{target\-Stack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a7ed013f980f79fb4d4bd5efbc0fef633}
+Moves the disc on the screen from the sourcestack to the targetstack 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em source\-Stack,the} & tower to copy the disc from \\
+\hline
+\mbox{\tt in}  & {\em target\-Stack,the} & tower to copy the disc to \\
+\hline
+\end{DoxyParams}
+Add the height of any discs stored on that stack
+
+Add the height of any discs stored on that stack
+
+Add the height of any discs stored on that stack \hypertarget{classHanoi_ac2a9f2762281242491b736caae5baea9}{\index{Hanoi@{Hanoi}!Logic\-Switch@{Logic\-Switch}}
+\index{Logic\-Switch@{Logic\-Switch}!Hanoi@{Hanoi}}
+\subsubsection[{Logic\-Switch}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Logic\-Switch (
+\begin{DoxyParamCaption}
+\item[{const char}]{user\-Selection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_ac2a9f2762281242491b736caae5baea9}
 Moves the piece the depending on which option the player selects 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em user\-Selection,the} & option of moves the player chose \\
 \hline
 \end{DoxyParams}
-If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.
+\hypertarget{classHanoi_ace4cf62c16bc617ac158171a94b9b6a1}{\index{Hanoi@{Hanoi}!Move\-Piece@{Move\-Piece}}
+\index{Move\-Piece@{Move\-Piece}!Hanoi@{Hanoi}}
+\subsubsection[{Move\-Piece}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Move\-Piece (
+\begin{DoxyParamCaption}
+\item[{int}]{source\-Tower, }
+\item[{int}]{target\-Tower}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_ace4cf62c16bc617ac158171a94b9b6a1}
+Moves the piece in the vector.\-stack and calls the helper function to move the images on the screen. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & stack from which we move the disc image. \\
+\hline
+\mbox{\tt in}  & {\em the} & stack to which we move the disc image.\\
+\hline
+\end{DoxyParams}
+Moves the piece in the vector.\-stack and calls the helper function to move the images on the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & stack from which we move the disc image. \\
+\hline
+\mbox{\tt in}  & {\em the} & stack to which we move the disc image. \\
+\hline
+\end{DoxyParams}
+target\-Stack\-Top\-Size is the size of the top disc on the target stack, used for a comparison to see if the player is making a valid move.
 
-Check if the move is a valid, if yes, move it over and pop it from its old location.
+If the target tower is empty, the target tower has a top disc size of 0, otherwise find the size of the top disc and set it to new\-Stack\-Top
 
-Push the right size disc from the vector of discs based on the size passed into Which\-Disc\-From\-Size, size is top\-Of\-Stack
+Check if the move is a valid, if yes, move it over and pop it from its old location. current\-Disc\-Size is the size of the disc which we are going to move
 
-If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.
-
-Check if the move is a valid, if yes, move it over and pop it from its old location.
-
-If the target tower is empty, the disc should go in spot 0, otherwise place it at the top.
-
-Check if the move is a valid, if yes, move it over and pop it from its old location.
-
-If the tower is empty, the disc should go in spot 0, otherwise place it at the top.
-
-Check if the move is a valid, if yes, move it over and pop it from its old location. \hypertarget{classHanoi_a2032169272e11d26ce253e2b264b9f31}{\index{Hanoi@{Hanoi}!Run\-Game@{Run\-Game}}
+Push the right size disc from the vector of discs based on the size passed into Which\-Disc\-From\-Size, size is top\-Of\-Stack \hypertarget{classHanoi_a47fdd8cbbb4b12ea2941c639868236bc}{\index{Hanoi@{Hanoi}!Push\-Disc\-On\-Left\-Stack@{Push\-Disc\-On\-Left\-Stack}}
+\index{Push\-Disc\-On\-Left\-Stack@{Push\-Disc\-On\-Left\-Stack}!Hanoi@{Hanoi}}
+\subsubsection[{Push\-Disc\-On\-Left\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Push\-Disc\-On\-Left\-Stack (
+\begin{DoxyParamCaption}
+\item[{int}]{bottom, }
+\item[{{\bf Default\-Img}}]{disc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a47fdd8cbbb4b12ea2941c639868236bc}
+Helper function for disc\-Setup, pushes a disc on the left stack at the height specified by bottom. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bottom,the} & height to place the disc at. \\
+\hline
+\mbox{\tt in}  & {\em disc,the} & disc you wish to push into the vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{\index{Hanoi@{Hanoi}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!Hanoi@{Hanoi}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Run\-Game (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classHanoi_a2032169272e11d26ce253e2b264b9f31}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}
 Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
 
-Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
+Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
 \hypertarget{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}{\index{Hanoi@{Hanoi}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
 \index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!Hanoi@{Hanoi}}
@@ -181,57 +222,39 @@ Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}
 
 
-Sends the menu class the options for the player to select. 
+Setup the options in the \hyperlink{classHanoiMenu}{Hanoi\-Menu} object for the player to select. 
 
-Setup the options in the \hyperlink{classHanoiMenu}{Hanoi\-Menu} object. 
+
 
 Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 
-\hypertarget{classHanoi_a30dc9940db3589121396850f52ea7730}{\index{Hanoi@{Hanoi}!Valid\-Move@{Valid\-Move}}
+\hypertarget{classHanoi_a509e940edaa6135c5b883c93c901e38f}{\index{Hanoi@{Hanoi}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!Hanoi@{Hanoi}}
 \subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Hanoi\-::\-Valid\-Move (
 \begin{DoxyParamCaption}
-\item[{const int}]{current\-Stack, }
-\item[{const int}]{new\-Stack}
+\item[{const int}]{target\-Stack\-Top\-Size, }
+\item[{const int}]{current\-Top\-Size}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a30dc9940db3589121396850f52ea7730}
-Checks the semantics of the user choice to make sure they aren't doing something that would break the game with their input. 
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a509e940edaa6135c5b883c93c901e38f}
+Checks to see if the target stack has a larger disc than that of the source stack, returns false if target is smaller than source. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em has} & been checked for syntax by input method \\
+\mbox{\tt in}  & {\em used} & for comparison against target stack \\
+\hline
+\mbox{\tt in}  & {\em used} & for comparison against source stack \\
 \hline
 \end{DoxyParams}
-If the disc on the current stack is smaller than the disc on the new stack it is considered a valid move, so return true, otherwise return false. \hypertarget{classHanoi_a8ec34fb3a3682f6a8dcc1007e013ded0}{\index{Hanoi@{Hanoi}!Which\-Disc\-From\-Size@{Which\-Disc\-From\-Size}}
-\index{Which\-Disc\-From\-Size@{Which\-Disc\-From\-Size}!Hanoi@{Hanoi}}
-\subsubsection[{Which\-Disc\-From\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Hanoi\-::\-Which\-Disc\-From\-Size (
-\begin{DoxyParamCaption}
-\item[{int}]{size}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a8ec34fb3a3682f6a8dcc1007e013ded0}
-Which\-Disc\-From\-Size returns an index to wich disc in discs\-Vector the size is referenced with 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em the} & size of disc we wouild like to know the location of \\
-\hline
-\end{DoxyParams}
-\hypertarget{classHanoi_aefbb40fc625506daa131076206e85b69}{\index{Hanoi@{Hanoi}!Win\-Check@{Win\-Check}}
+If the disc on the current stack is smaller than the disc on the new stack it is considered a valid move, so return true, otherwise return false. \hypertarget{classHanoi_aefbb40fc625506daa131076206e85b69}{\index{Hanoi@{Hanoi}!Win\-Check@{Win\-Check}}
 \index{Win\-Check@{Win\-Check}!Hanoi@{Hanoi}}
 \subsubsection[{Win\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Win\-Check (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_aefbb40fc625506daa131076206e85b69}
-Checks the state of Tower to see if the player has won the game, sets Game\-End to true when they have completed the puzzle. If the user has managed to successfully move all discs to the last peg then its size should be 4. 
+Checks the state of Tower to see if the player has won the game, sets Puzzle\-End to true when they have completed the puzzle by getting all discs to the fourth peg.
+
+Checks the state of Tower to see if the player has won the game, sets Game\-End to true when they have completed the puzzle by getting all discs to the fourth peg. If the user has managed to successfully move all discs to the last peg then its size should be 4. 
 
 \subsection{Member Data Documentation}
-\hypertarget{classHanoi_a67a8288cd0c9a1acc3e5201621505afa}{\index{Hanoi@{Hanoi}!discs\-Vector@{discs\-Vector}}
-\index{discs\-Vector@{discs\-Vector}!Hanoi@{Hanoi}}
-\subsubsection[{discs\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Default\-Img}$>$ Hanoi\-::discs\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a67a8288cd0c9a1acc3e5201621505afa}
-A vector to store the size of all the discs in the game, stored in ascending order of size of discs. 0=3,1=7,2=11,3=15 \hypertarget{classHanoi_aff7a10d6c208cb15d315436b91017bed}{\index{Hanoi@{Hanoi}!Game\-End@{Game\-End}}
-\index{Game\-End@{Game\-End}!Hanoi@{Hanoi}}
-\subsubsection[{Game\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool Hanoi\-::\-Game\-End\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_aff7a10d6c208cb15d315436b91017bed}
-
-
-Used for the loop to see if the game has ended yet. 
-
 \hypertarget{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}{\index{Hanoi@{Hanoi}!Hanoi\-Game\-Menu@{Hanoi\-Game\-Menu}}
 \index{Hanoi\-Game\-Menu@{Hanoi\-Game\-Menu}!Hanoi@{Hanoi}}
 \subsubsection[{Hanoi\-Game\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hanoi\-Menu} Hanoi\-::\-Hanoi\-Game\-Menu\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}
@@ -253,29 +276,17 @@ Hanoi\-Screen stores and outputs the contents of the game to the terminal.
 
 Maintains the height of the stacks in the game. 
 
-\hypertarget{classHanoi_a9f971c51b287b61d8a919c26780e3f66}{\index{Hanoi@{Hanoi}!menu\-Option1@{menu\-Option1}}
-\index{menu\-Option1@{menu\-Option1}!Hanoi@{Hanoi}}
-\subsubsection[{menu\-Option1}]{\setlength{\rightskip}{0pt plus 5cm}string Hanoi\-::menu\-Option1\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a9f971c51b287b61d8a919c26780e3f66}
-
-
-Menu\-Option strings are used for outputting options to the user. 
-
-\hypertarget{classHanoi_ac9345e1760d1367ee05ecdf2e15d3d69}{\index{Hanoi@{Hanoi}!menu\-Option2@{menu\-Option2}}
-\index{menu\-Option2@{menu\-Option2}!Hanoi@{Hanoi}}
-\subsubsection[{menu\-Option2}]{\setlength{\rightskip}{0pt plus 5cm}string Hanoi\-::menu\-Option2\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_ac9345e1760d1367ee05ecdf2e15d3d69}
-\hypertarget{classHanoi_a94c22f2842c5473df08839fc9d4e860f}{\index{Hanoi@{Hanoi}!menu\-Option3@{menu\-Option3}}
-\index{menu\-Option3@{menu\-Option3}!Hanoi@{Hanoi}}
-\subsubsection[{menu\-Option3}]{\setlength{\rightskip}{0pt plus 5cm}string Hanoi\-::menu\-Option3\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a94c22f2842c5473df08839fc9d4e860f}
-\hypertarget{classHanoi_a3c6ac9ab6b2941ab955a2bc2c58cf93a}{\index{Hanoi@{Hanoi}!menu\-Option4@{menu\-Option4}}
-\index{menu\-Option4@{menu\-Option4}!Hanoi@{Hanoi}}
-\subsubsection[{menu\-Option4}]{\setlength{\rightskip}{0pt plus 5cm}string Hanoi\-::menu\-Option4\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a3c6ac9ab6b2941ab955a2bc2c58cf93a}
 \hypertarget{classHanoi_abcdaa5a4b56f9c3916bf49e054e1cf8c}{\index{Hanoi@{Hanoi}!number\-Of\-Stacks@{number\-Of\-Stacks}}
 \index{number\-Of\-Stacks@{number\-Of\-Stacks}!Hanoi@{Hanoi}}
 \subsubsection[{number\-Of\-Stacks}]{\setlength{\rightskip}{0pt plus 5cm}int Hanoi\-::number\-Of\-Stacks\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_abcdaa5a4b56f9c3916bf49e054e1cf8c}
 Number of stacks in the game X-\/coordinate size in the tower vector \hypertarget{classHanoi_afe67c656c8ce8c7006e8b7f23fbe9ae9}{\index{Hanoi@{Hanoi}!tower@{tower}}
 \index{tower@{tower}!Hanoi@{Hanoi}}
 \subsubsection[{tower}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$stack$<${\bf Default\-Img}$>$ $>$ Hanoi\-::tower\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_afe67c656c8ce8c7006e8b7f23fbe9ae9}
-The vector which holds each towers' contents. Contents are stored as integers. 
+
+
+The vector which holds each towers' default\-Img. 
+
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

@@ -3,7 +3,7 @@
 }
 
 
-Abstract base class to provide input and output of \hyperlink{classNpc}{Npc}'s and \hyperlink{classPlayer}{Player}.  
+Abstract base class of \hyperlink{classNpc}{Npc}'s and \hyperlink{classPlayer}{Player}'s attributes.  
 
 
 
@@ -19,67 +19,84 @@ Inheritance diagram for Character\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual istream \hyperlink{classCharacter_a21de96f408a3db5e0734012c27587c8c}{Read} (istream \&is)
+virtual \hyperlink{classCharacter_af3ec409c562122c4464e8a9d3be5f6d2}{$\sim$\-Character} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCharacter}{Character} deconstructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCharacter_a546635f47f379e4eed59d85d31d85c86}{Fill\-Inventory} (\hyperlink{classItem}{Item} $\ast$item)
 \item 
-virtual ostream \hyperlink{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}{Write} (ostream \&os)
+virtual vector$<$ \hyperlink{classItem}{Item} $\ast$ $>$ \hyperlink{classCharacter_a21e35b07fd2bddd94de754f5b8027fcc}{Get\-Inventory\-Items} ()
 \item 
-virtual int \hyperlink{classCharacter_a250678a82a39b73cc3c622b9e88a7877}{Change\-Gold} (int \&\hyperlink{classCharacter_ab8dd866071dba429a35555e0c372e162}{gold}, int gold\-Mod)
+virtual \hyperlink{classItem}{Item} $\ast$ \hyperlink{classCharacter_ad13bd70e837024c6f185675d07d28f30}{Use\-Item} (string item)
 \item 
-void \hyperlink{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}{Change\-Health} (int \&h, int h\-Mod)
+virtual void \hyperlink{classCharacter_a5d8e04c875df744a3ea1ca426f8c0e12}{Change\-Gold} (int gold\-Mod)
 \item 
-int \hyperlink{classCharacter_afaa737ad669c882598bb65f5f6c57376}{Attack} ()
-\begin{DoxyCompactList}\small\item\em Attack function for the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classCharacter_af0c41714e3a2cb65268fa721846a4939}{Change\-Health} (int h\-Mod)
+\item 
+virtual void \hyperlink{classCharacter_a50324e5ccb52512dfc69b3775d85c3dc}{Change\-Stamina} (int s\-Mod)
+\item 
+virtual int \hyperlink{classCharacter_a768bb1dcb73569fed0983bc63aab96ee}{Get\-Stamina} ()
+\begin{DoxyCompactList}\small\item\em Returns the stamina value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classCharacter_ab5b7379cf9d7807d882cd86baad34c74}{Get\-Gold} ()
+\begin{DoxyCompactList}\small\item\em Returns the gold value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classCharacter_a9b285268567ff7561973db87406e32cb}{Get\-Health} ()
+\begin{DoxyCompactList}\small\item\em Returns the health value. \end{DoxyCompactList}\item 
+virtual \hyperlink{classImportImg}{Import\-Img} \hyperlink{classCharacter_a755c751849b867d7b42e9f87e1bfde6e}{Img} ()
+\begin{DoxyCompactList}\small\item\em Return the image. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCharacter_a2194329f9956a07b9e3dc021da93358e}{Draw} (\hyperlink{classScreen}{Screen} \&screen)
+\begin{DoxyCompactList}\small\item\em Draw the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classCharacter_ab8dd866071dba429a35555e0c372e162}{gold}
+\hyperlink{classImportImg}{Import\-Img} \hyperlink{classCharacter_a3a0a90b2a43858b259912f659b8e0eea}{img}
+\item 
+vector$<$ \hyperlink{classItem}{Item} $\ast$ $>$ \hyperlink{classCharacter_ade4db4a453cc96bedbf3a385a10291fa}{inventory}
 \begin{DoxyCompactList}\small\item\em Vector of items the character has. \end{DoxyCompactList}\item 
+int \hyperlink{classCharacter_ab8dd866071dba429a35555e0c372e162}{gold}
+\begin{DoxyCompactList}\small\item\em Amount of gold player has. \end{DoxyCompactList}\item 
 int \hyperlink{classCharacter_a69c649b8febd22729e6edafb27e69aeb}{health}
-\begin{DoxyCompactList}\small\item\em Characters health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Characters health. \end{DoxyCompactList}\item 
+int \hyperlink{classCharacter_a0f17daa14530e07f0ca479c2dd97f38b}{stamina}
+\begin{DoxyCompactList}\small\item\em Characters stamina. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Abstract base class to provide input and output of \hyperlink{classNpc}{Npc}'s and \hyperlink{classPlayer}{Player}. 
+Abstract base class of \hyperlink{classNpc}{Npc}'s and \hyperlink{classPlayer}{Player}'s attributes. 
 
-\subsection{Member Function Documentation}
-\hypertarget{classCharacter_afaa737ad669c882598bb65f5f6c57376}{\index{Character@{Character}!Attack@{Attack}}
-\index{Attack@{Attack}!Character@{Character}}
-\subsubsection[{Attack}]{\setlength{\rightskip}{0pt plus 5cm}int Character\-::\-Attack (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCharacter_af3ec409c562122c4464e8a9d3be5f6d2}{\index{Character@{Character}!$\sim$\-Character@{$\sim$\-Character}}
+\index{$\sim$\-Character@{$\sim$\-Character}!Character@{Character}}
+\subsubsection[{$\sim$\-Character}]{\setlength{\rightskip}{0pt plus 5cm}virtual Character\-::$\sim$\-Character (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classCharacter_afaa737ad669c882598bb65f5f6c57376}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCharacter_af3ec409c562122c4464e8a9d3be5f6d2}
 
 
-Attack function for the character. 
+\hyperlink{classCharacter}{Character} deconstructor. 
 
-\hypertarget{classCharacter_a250678a82a39b73cc3c622b9e88a7877}{\index{Character@{Character}!Change\-Gold@{Change\-Gold}}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCharacter_a5d8e04c875df744a3ea1ca426f8c0e12}{\index{Character@{Character}!Change\-Gold@{Change\-Gold}}
 \index{Change\-Gold@{Change\-Gold}!Character@{Character}}
-\subsubsection[{Change\-Gold}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Character\-::\-Change\-Gold (
+\subsubsection[{Change\-Gold}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Change\-Gold (
 \begin{DoxyParamCaption}
-\item[{int \&}]{gold, }
 \item[{int}]{gold\-Mod}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a250678a82a39b73cc3c622b9e88a7877}
-Shows a list of inventory items 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a5d8e04c875df744a3ea1ca426f8c0e12}
+Change the amount of gold a character has 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items Chooses the item to be used \\
-\hline
-\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items Change the amount of gold a character has \\
-\hline
  & {\em in\&\mbox{]}} & Gold, current amount of gold the character has \\
 \hline
 \mbox{\tt in}  & {\em Gold\-Mod,how} & much the current gold will be changed by \\
 \hline
 \end{DoxyParams}
-\hypertarget{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}{\index{Character@{Character}!Change\-Health@{Change\-Health}}
+\hypertarget{classCharacter_af0c41714e3a2cb65268fa721846a4939}{\index{Character@{Character}!Change\-Health@{Change\-Health}}
 \index{Change\-Health@{Change\-Health}!Character@{Character}}
 \subsubsection[{Change\-Health}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Change\-Health (
 \begin{DoxyParamCaption}
-\item[{int \&}]{h, }
 \item[{int}]{h\-Mod}
 \end{DoxyParamCaption}
-)}}\label{classCharacter_a39bd3a1eca5362f69aea167bda1b336e}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_af0c41714e3a2cb65268fa721846a4939}
 Changes the characters health 
 \begin{DoxyParams}[1]{Parameters}
  & {\em in\&\mbox{]}} & H, characters current health \\
@@ -87,28 +104,109 @@ Changes the characters health
 \mbox{\tt in}  & {\em H\-Mod,how} & the current health will be modified \\
 \hline
 \end{DoxyParams}
-\hypertarget{classCharacter_a21de96f408a3db5e0734012c27587c8c}{\index{Character@{Character}!Read@{Read}}
-\index{Read@{Read}!Character@{Character}}
-\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}virtual istream Character\-::\-Read (
+\hypertarget{classCharacter_a50324e5ccb52512dfc69b3775d85c3dc}{\index{Character@{Character}!Change\-Stamina@{Change\-Stamina}}
+\index{Change\-Stamina@{Change\-Stamina}!Character@{Character}}
+\subsubsection[{Change\-Stamina}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Change\-Stamina (
 \begin{DoxyParamCaption}
-\item[{istream \&}]{is}
+\item[{int}]{s\-Mod}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a21de96f408a3db5e0734012c27587c8c}
-Reads information in for the character 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a50324e5ccb52512dfc69b3775d85c3dc}
+Changes players stamina 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em is} & the input stream \\
+ & {\em in\&\mbox{]}} & s, players current stamina \\
+\hline
+\mbox{\tt in}  & {\em s\-Mod,how} & the curent stamina will be modified \\
 \hline
 \end{DoxyParams}
-\hypertarget{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}{\index{Character@{Character}!Write@{Write}}
-\index{Write@{Write}!Character@{Character}}
-\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}virtual ostream Character\-::\-Write (
+\hypertarget{classCharacter_a2194329f9956a07b9e3dc021da93358e}{\index{Character@{Character}!Draw@{Draw}}
+\index{Draw@{Draw}!Character@{Character}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Draw (
 \begin{DoxyParamCaption}
-\item[{ostream \&}]{os}
+\item[{{\bf Screen} \&}]{screen}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_ab1af9d183d124e11e46d4b2868f846dc}
-Writes the character object to the screen 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a2194329f9956a07b9e3dc021da93358e}
+
+
+Draw the player. 
+
+\hypertarget{classCharacter_a546635f47f379e4eed59d85d31d85c86}{\index{Character@{Character}!Fill\-Inventory@{Fill\-Inventory}}
+\index{Fill\-Inventory@{Fill\-Inventory}!Character@{Character}}
+\subsubsection[{Fill\-Inventory}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-::\-Fill\-Inventory (
+\begin{DoxyParamCaption}
+\item[{{\bf Item} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a546635f47f379e4eed59d85d31d85c86}
+Function to fill the characters inventory 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt out}  & {\em os} & the output stream for printing on the screen \\
+\mbox{\tt in}  & {\em inventory,the} & vector that stores the items in inventory \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCharacter_ab5b7379cf9d7807d882cd86baad34c74}{\index{Character@{Character}!Get\-Gold@{Get\-Gold}}
+\index{Get\-Gold@{Get\-Gold}!Character@{Character}}
+\subsubsection[{Get\-Gold}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Character\-::\-Get\-Gold (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCharacter_ab5b7379cf9d7807d882cd86baad34c74}
+
+
+Returns the gold value. 
+
+\hypertarget{classCharacter_a9b285268567ff7561973db87406e32cb}{\index{Character@{Character}!Get\-Health@{Get\-Health}}
+\index{Get\-Health@{Get\-Health}!Character@{Character}}
+\subsubsection[{Get\-Health}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Character\-::\-Get\-Health (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCharacter_a9b285268567ff7561973db87406e32cb}
+
+
+Returns the health value. 
+
+\hypertarget{classCharacter_a21e35b07fd2bddd94de754f5b8027fcc}{\index{Character@{Character}!Get\-Inventory\-Items@{Get\-Inventory\-Items}}
+\index{Get\-Inventory\-Items@{Get\-Inventory\-Items}!Character@{Character}}
+\subsubsection[{Get\-Inventory\-Items}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Item} $\ast$ $>$ Character\-::\-Get\-Inventory\-Items (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a21e35b07fd2bddd94de754f5b8027fcc}
+Shows a list of inventory items 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCharacter_a768bb1dcb73569fed0983bc63aab96ee}{\index{Character@{Character}!Get\-Stamina@{Get\-Stamina}}
+\index{Get\-Stamina@{Get\-Stamina}!Character@{Character}}
+\subsubsection[{Get\-Stamina}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Character\-::\-Get\-Stamina (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCharacter_a768bb1dcb73569fed0983bc63aab96ee}
+
+
+Returns the stamina value. 
+
+\hypertarget{classCharacter_a755c751849b867d7b42e9f87e1bfde6e}{\index{Character@{Character}!Img@{Img}}
+\index{Img@{Img}!Character@{Character}}
+\subsubsection[{Img}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} Character\-::\-Img (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_a755c751849b867d7b42e9f87e1bfde6e}
+
+
+Return the image. 
+
+\hypertarget{classCharacter_ad13bd70e837024c6f185675d07d28f30}{\index{Character@{Character}!Use\-Item@{Use\-Item}}
+\index{Use\-Item@{Use\-Item}!Character@{Character}}
+\subsubsection[{Use\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item} $\ast$ Character\-::\-Use\-Item (
+\begin{DoxyParamCaption}
+\item[{string}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacter_ad13bd70e837024c6f185675d07d28f30}
+Chooses the item to be used 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Inventory,a} & pointer to a vector of inventory items \\
 \hline
 \end{DoxyParams}
 
@@ -119,17 +217,35 @@ Writes the character object to the screen
 \subsubsection[{gold}]{\setlength{\rightskip}{0pt plus 5cm}int Character\-::gold\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_ab8dd866071dba429a35555e0c372e162}
 
 
-Vector of items the character has. 
+Amount of gold player has. 
 
-Amount of gold player has \hypertarget{classCharacter_a69c649b8febd22729e6edafb27e69aeb}{\index{Character@{Character}!health@{health}}
+\hypertarget{classCharacter_a69c649b8febd22729e6edafb27e69aeb}{\index{Character@{Character}!health@{health}}
 \index{health@{health}!Character@{Character}}
 \subsubsection[{health}]{\setlength{\rightskip}{0pt plus 5cm}int Character\-::health\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_a69c649b8febd22729e6edafb27e69aeb}
 
 
 Characters health. 
 
+\hypertarget{classCharacter_a3a0a90b2a43858b259912f659b8e0eea}{\index{Character@{Character}!img@{img}}
+\index{img@{img}!Character@{Character}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} Character\-::img\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_a3a0a90b2a43858b259912f659b8e0eea}
+\hypertarget{classCharacter_ade4db4a453cc96bedbf3a385a10291fa}{\index{Character@{Character}!inventory@{inventory}}
+\index{inventory@{inventory}!Character@{Character}}
+\subsubsection[{inventory}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Item}$\ast$$>$ Character\-::inventory\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_ade4db4a453cc96bedbf3a385a10291fa}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+Vector of items the character has. 
+
+\hypertarget{classCharacter_a0f17daa14530e07f0ca479c2dd97f38b}{\index{Character@{Character}!stamina@{stamina}}
+\index{stamina@{stamina}!Character@{Character}}
+\subsubsection[{stamina}]{\setlength{\rightskip}{0pt plus 5cm}int Character\-::stamina\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCharacter_a0f17daa14530e07f0ca479c2dd97f38b}
+
+
+Characters stamina. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/rigt2720/\-Kodika/\-Character/\hyperlink{Character_8h}{Character.\-h}\end{DoxyCompactItemize}
+/home/rigt2720/\-Kodika/\-Character/\hyperlink{Character_8h}{Character.\-h}\item 
+/home/rigt2720/\-Kodika/\-Character/\hyperlink{Character_8cpp}{Character.\-cpp}\end{DoxyCompactItemize}

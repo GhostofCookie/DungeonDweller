@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('classCharacter.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class to provide input and output of <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a>'s and <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a>.  
+<p>Abstract base class of <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a>'s and <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a>'s attributes.  
  <a href="classCharacter.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Character_8h_source.html">Character.h</a>&gt;</code></p>
@@ -126,53 +126,64 @@ Inheritance diagram for Character:</div>
   <img src="classCharacter.png" usemap="#Character_map" alt=""/>
   <map id="Character_map" name="Character_map">
 <area href="classNpc.html" title="Derived class from Character which provides Npc attributes. " alt="Npc" shape="rect" coords="0,56,69,80"/>
+<area href="classPlayer.html" title="Derived class from Character which provides Player attributes. " alt="Player" shape="rect" coords="79,56,148,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21de96f408a3db5e0734012c27587c8c"><td class="memItemLeft" align="right" valign="top">virtual istream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a21de96f408a3db5e0734012c27587c8c">Read</a> (istream &amp;is)</td></tr>
-<tr class="separator:a21de96f408a3db5e0734012c27587c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1af9d183d124e11e46d4b2868f846dc"><td class="memItemLeft" align="right" valign="top">virtual ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab1af9d183d124e11e46d4b2868f846dc">Write</a> (ostream &amp;os)</td></tr>
-<tr class="separator:ab1af9d183d124e11e46d4b2868f846dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250678a82a39b73cc3c622b9e88a7877"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a250678a82a39b73cc3c622b9e88a7877">ChangeGold</a> (int &amp;<a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a>, int goldMod)</td></tr>
-<tr class="separator:a250678a82a39b73cc3c622b9e88a7877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bd3a1eca5362f69aea167bda1b336e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a39bd3a1eca5362f69aea167bda1b336e">ChangeHealth</a> (int &amp;h, int hMod)</td></tr>
-<tr class="separator:a39bd3a1eca5362f69aea167bda1b336e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa737ad669c882598bb65f5f6c57376"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#afaa737ad669c882598bb65f5f6c57376">Attack</a> ()</td></tr>
-<tr class="memdesc:afaa737ad669c882598bb65f5f6c57376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attack function for the character.  <a href="#afaa737ad669c882598bb65f5f6c57376">More...</a><br/></td></tr>
-<tr class="separator:afaa737ad669c882598bb65f5f6c57376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ec409c562122c4464e8a9d3be5f6d2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2">~Character</a> ()</td></tr>
+<tr class="memdesc:af3ec409c562122c4464e8a9d3be5f6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. ">Character</a> deconstructor.  <a href="#af3ec409c562122c4464e8a9d3be5f6d2">More...</a><br/></td></tr>
+<tr class="separator:af3ec409c562122c4464e8a9d3be5f6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546635f47f379e4eed59d85d31d85c86"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a546635f47f379e4eed59d85d31d85c86">FillInventory</a> (<a class="el" href="classItem.html">Item</a> *item)</td></tr>
+<tr class="separator:a546635f47f379e4eed59d85d31d85c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e35b07fd2bddd94de754f5b8027fcc"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classItem.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a21e35b07fd2bddd94de754f5b8027fcc">GetInventoryItems</a> ()</td></tr>
+<tr class="separator:a21e35b07fd2bddd94de754f5b8027fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13bd70e837024c6f185675d07d28f30"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ad13bd70e837024c6f185675d07d28f30">UseItem</a> (string item)</td></tr>
+<tr class="separator:ad13bd70e837024c6f185675d07d28f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8e04c875df744a3ea1ca426f8c0e12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a5d8e04c875df744a3ea1ca426f8c0e12">ChangeGold</a> (int goldMod)</td></tr>
+<tr class="separator:a5d8e04c875df744a3ea1ca426f8c0e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c41714e3a2cb65268fa721846a4939"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af0c41714e3a2cb65268fa721846a4939">ChangeHealth</a> (int hMod)</td></tr>
+<tr class="separator:af0c41714e3a2cb65268fa721846a4939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50324e5ccb52512dfc69b3775d85c3dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a50324e5ccb52512dfc69b3775d85c3dc">ChangeStamina</a> (int sMod)</td></tr>
+<tr class="separator:a50324e5ccb52512dfc69b3775d85c3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768bb1dcb73569fed0983bc63aab96ee"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a768bb1dcb73569fed0983bc63aab96ee">GetStamina</a> ()</td></tr>
+<tr class="memdesc:a768bb1dcb73569fed0983bc63aab96ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stamina value.  <a href="#a768bb1dcb73569fed0983bc63aab96ee">More...</a><br/></td></tr>
+<tr class="separator:a768bb1dcb73569fed0983bc63aab96ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b7379cf9d7807d882cd86baad34c74"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab5b7379cf9d7807d882cd86baad34c74">GetGold</a> ()</td></tr>
+<tr class="memdesc:ab5b7379cf9d7807d882cd86baad34c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the gold value.  <a href="#ab5b7379cf9d7807d882cd86baad34c74">More...</a><br/></td></tr>
+<tr class="separator:ab5b7379cf9d7807d882cd86baad34c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b285268567ff7561973db87406e32cb"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a9b285268567ff7561973db87406e32cb">GetHealth</a> ()</td></tr>
+<tr class="memdesc:a9b285268567ff7561973db87406e32cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the health value.  <a href="#a9b285268567ff7561973db87406e32cb">More...</a><br/></td></tr>
+<tr class="separator:a9b285268567ff7561973db87406e32cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755c751849b867d7b42e9f87e1bfde6e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classImportImg.html">ImportImg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a755c751849b867d7b42e9f87e1bfde6e">Img</a> ()</td></tr>
+<tr class="memdesc:a755c751849b867d7b42e9f87e1bfde6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the image.  <a href="#a755c751849b867d7b42e9f87e1bfde6e">More...</a><br/></td></tr>
+<tr class="separator:a755c751849b867d7b42e9f87e1bfde6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2194329f9956a07b9e3dc021da93358e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a2194329f9956a07b9e3dc021da93358e">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;screen)</td></tr>
+<tr class="memdesc:a2194329f9956a07b9e3dc021da93358e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the player.  <a href="#a2194329f9956a07b9e3dc021da93358e">More...</a><br/></td></tr>
+<tr class="separator:a2194329f9956a07b9e3dc021da93358e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a3a0a90b2a43858b259912f659b8e0eea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classImportImg.html">ImportImg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">img</a></td></tr>
+<tr class="separator:a3a0a90b2a43858b259912f659b8e0eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4db4a453cc96bedbf3a385a10291fa"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classItem.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ade4db4a453cc96bedbf3a385a10291fa">inventory</a></td></tr>
+<tr class="memdesc:ade4db4a453cc96bedbf3a385a10291fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of items the character has.  <a href="#ade4db4a453cc96bedbf3a385a10291fa">More...</a><br/></td></tr>
+<tr class="separator:ade4db4a453cc96bedbf3a385a10291fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8dd866071dba429a35555e0c372e162"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a></td></tr>
-<tr class="memdesc:ab8dd866071dba429a35555e0c372e162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of items the character has.  <a href="#ab8dd866071dba429a35555e0c372e162">More...</a><br/></td></tr>
+<tr class="memdesc:ab8dd866071dba429a35555e0c372e162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of gold player has.  <a href="#ab8dd866071dba429a35555e0c372e162">More...</a><br/></td></tr>
 <tr class="separator:ab8dd866071dba429a35555e0c372e162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69c649b8febd22729e6edafb27e69aeb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">health</a></td></tr>
 <tr class="memdesc:a69c649b8febd22729e6edafb27e69aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Characters health.  <a href="#a69c649b8febd22729e6edafb27e69aeb">More...</a><br/></td></tr>
 <tr class="separator:a69c649b8febd22729e6edafb27e69aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f17daa14530e07f0ca479c2dd97f38b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b">stamina</a></td></tr>
+<tr class="memdesc:a0f17daa14530e07f0ca479c2dd97f38b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Characters stamina.  <a href="#a0f17daa14530e07f0ca479c2dd97f38b">More...</a><br/></td></tr>
+<tr class="separator:a0f17daa14530e07f0ca479c2dd97f38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base class to provide input and output of <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a>'s and <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a>. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afaa737ad669c882598bb65f5f6c57376"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Character::Attack </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attack function for the character. </p>
-
-</div>
-</div>
-<a class="anchor" id="a250678a82a39b73cc3c622b9e88a7877"></a>
+<div class="textblock"><p>Abstract base class of <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a>'s and <a class="el" href="classPlayer.html" title="Derived class from Character which provides Player attributes. ">Player</a>'s attributes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af3ec409c562122c4464e8a9d3be5f6d2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -180,21 +191,37 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual int Character::ChangeGold </td>
+          <td class="memname">virtual Character::~Character </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>gold</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. ">Character</a> deconstructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5d8e04c875df744a3ea1ca426f8c0e12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Character::ChangeGold </td>
+          <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>goldMod</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>goldMod</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -203,11 +230,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Shows a list of inventory items </p>
+<p>Change the amount of gold a character has </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">Inventory,a</td><td>pointer to a vector of inventory items Chooses the item to be used </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Inventory,a</td><td>pointer to a vector of inventory items Change the amount of gold a character has </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>Gold, current amount of gold the character has </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">GoldMod,how</td><td>much the current gold will be changed by </td></tr>
   </table>
@@ -216,28 +241,26 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a39bd3a1eca5362f69aea167bda1b336e"></a>
+<a class="anchor" id="af0c41714e3a2cb65268fa721846a4939"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Character::ChangeHealth </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>hMod</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>hMod</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Changes the characters health </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -250,7 +273,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a21de96f408a3db5e0734012c27587c8c"></a>
+<a class="anchor" id="a50324e5ccb52512dfc69b3775d85c3dc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -258,10 +281,10 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual istream Character::Read </td>
+          <td class="memname">void Character::ChangeStamina </td>
           <td>(</td>
-          <td class="paramtype">istream &amp;&#160;</td>
-          <td class="paramname"><em>is</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sMod</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -271,17 +294,18 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reads information in for the character </p>
+<p>Changes players stamina </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">is</td><td>the input stream </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">in&amp;]</td><td>s, players current stamina </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sMod,how</td><td>the curent stamina will be modified </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ab1af9d183d124e11e46d4b2868f846dc"></a>
+<a class="anchor" id="a2194329f9956a07b9e3dc021da93358e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -289,10 +313,10 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual ostream Character::Write </td>
+          <td class="memname">void Character::Draw </td>
           <td>(</td>
-          <td class="paramtype">ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classScreen.html">Screen</a> &amp;&#160;</td>
+          <td class="paramname"><em>screen</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -302,10 +326,197 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Writes the character object to the screen </p>
+
+<p>Draw the player. </p>
+
+</div>
+</div>
+<a class="anchor" id="a546635f47f379e4eed59d85d31d85c86"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Character::FillInventory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classItem.html">Item</a> *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Function to fill the characters inventory </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">os</td><td>the output stream for printing on the screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inventory,the</td><td>vector that stores the items in inventory </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab5b7379cf9d7807d882cd86baad34c74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Character::GetGold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the gold value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b285268567ff7561973db87406e32cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Character::GetHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the health value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a21e35b07fd2bddd94de754f5b8027fcc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classItem.html">Item</a> * &gt; Character::GetInventoryItems </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Shows a list of inventory items </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Inventory,a</td><td>pointer to a vector of inventory items </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a768bb1dcb73569fed0983bc63aab96ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int Character::GetStamina </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the stamina value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a755c751849b867d7b42e9f87e1bfde6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classImportImg.html">ImportImg</a> Character::Img </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the image. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad13bd70e837024c6f185675d07d28f30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classItem.html">Item</a> * Character::UseItem </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Chooses the item to be used </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Inventory,a</td><td>pointer to a vector of inventory items </td></tr>
   </table>
   </dd>
 </dl>
@@ -331,8 +542,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Vector of items the character has. </p>
-<p>Amount of gold player has </p>
+<p>Amount of gold player has. </p>
 
 </div>
 </div>
@@ -358,8 +568,73 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a3a0a90b2a43858b259912f659b8e0eea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classImportImg.html">ImportImg</a> Character::img</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade4db4a453cc96bedbf3a385a10291fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classItem.html">Item</a>*&gt; Character::inventory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vector of items the character has. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0f17daa14530e07f0ca479c2dd97f38b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Character::stamina</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Characters stamina. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/rigt2720/Kodika/Character/<a class="el" href="Character_8h_source.html">Character.h</a></li>
+<li>/home/rigt2720/Kodika/Character/<a class="el" href="Character_8cpp.html">Character.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

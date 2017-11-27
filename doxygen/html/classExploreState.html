@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('classExploreState.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classExploreState-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ExploreState Class Reference</div>  </div>
@@ -133,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac10ad3cee219e8233a2c279392b70d52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#ac10ad3cee219e8233a2c279392b70d52">ExploreState</a> ()</td></tr>
 <tr class="memdesc:ac10ad3cee219e8233a2c279392b70d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the the default constructor.  <a href="#ac10ad3cee219e8233a2c279392b70d52">More...</a><br/></td></tr>
 <tr class="separator:ac10ad3cee219e8233a2c279392b70d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713fbeb296e929346e07ffe63c1af580"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a713fbeb296e929346e07ffe63c1af580">~ExploreState</a> ()</td></tr>
+<tr class="memdesc:a713fbeb296e929346e07ffe63c1af580"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the default destructor.  <a href="#a713fbeb296e929346e07ffe63c1af580">More...</a><br/></td></tr>
+<tr class="separator:a713fbeb296e929346e07ffe63c1af580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb38f9fca513b87d914d077a0f2652b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a8fb38f9fca513b87d914d077a0f2652b">Set</a> ()</td></tr>
 <tr class="memdesc:a8fb38f9fca513b87d914d077a0f2652b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout for the game menu and screen.  <a href="#a8fb38f9fca513b87d914d077a0f2652b">More...</a><br/></td></tr>
 <tr class="separator:a8fb38f9fca513b87d914d077a0f2652b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,19 +148,51 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c">GameState</a> ()</td></tr>
 <tr class="memdesc:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a4fa0a2bf50315c4a35a3890a0adcee5c">More...</a><br/></td></tr>
 <tr class="separator:a4fa0a2bf50315c4a35a3890a0adcee5c inherit pub_methods_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517ef6eaba96896259fcefd0c66afc9e inherit pub_methods_classGameState"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a517ef6eaba96896259fcefd0c66afc9e">~GameState</a> ()</td></tr>
+<tr class="memdesc:a517ef6eaba96896259fcefd0c66afc9e inherit pub_methods_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a517ef6eaba96896259fcefd0c66afc9e">More...</a><br/></td></tr>
+<tr class="separator:a517ef6eaba96896259fcefd0c66afc9e inherit pub_methods_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d734fcbd886d8a0ce8e3191e770b3a inherit pub_methods_classGameState"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a80d734fcbd886d8a0ce8e3191e770b3a">GetState</a> () const </td></tr>
+<tr class="memdesc:a80d734fcbd886d8a0ce8e3191e770b3a inherit pub_methods_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current state.  <a href="#a80d734fcbd886d8a0ce8e3191e770b3a">More...</a><br/></td></tr>
+<tr class="separator:a80d734fcbd886d8a0ce8e3191e770b3a inherit pub_methods_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9c80dca4776d933ed892763d3f4bcad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a9c80dca4776d933ed892763d3f4bcad7">SetState</a> (int type)</td></tr>
+<tr class="separator:a9c80dca4776d933ed892763d3f4bcad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd0a8ff2ca053a68f57f1eb73c3e4b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a8cd0a8ff2ca053a68f57f1eb73c3e4b9">RunInput</a> (char option)</td></tr>
+<tr class="memdesc:a8cd0a8ff2ca053a68f57f1eb73c3e4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to give input functionality.  <a href="#a8cd0a8ff2ca053a68f57f1eb73c3e4b9">More...</a><br/></td></tr>
+<tr class="separator:a8cd0a8ff2ca053a68f57f1eb73c3e4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa9bd4b4504c72ae70c440c401f1a60aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classImageImporter.html">ImageImporter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#aa9bd4b4504c72ae70c440c401f1a60aa">import</a></td></tr>
+<tr class="separator:aa9bd4b4504c72ae70c440c401f1a60aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7863a120d0a1ad5b1ff6d1c77f60cea1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoom.html">Room</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">roomPtr</a></td></tr>
+<tr class="separator:a7863a120d0a1ad5b1ff6d1c77f60cea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classGameState"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGameState')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGameState.html">GameState</a></td></tr>
 <tr class="memitem:aebc12d6e90edfbe51a571858f6288f93 inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMenu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#aebc12d6e90edfbe51a571858f6288f93">menu</a></td></tr>
-<tr class="memdesc:aebc12d6e90edfbe51a571858f6288f93 inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the menu.  <a href="#aebc12d6e90edfbe51a571858f6288f93">More...</a><br/></td></tr>
+<tr class="memdesc:aebc12d6e90edfbe51a571858f6288f93 inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; pointer to the menu.  <a href="#aebc12d6e90edfbe51a571858f6288f93">More...</a><br/></td></tr>
 <tr class="separator:aebc12d6e90edfbe51a571858f6288f93 inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877c0c626d54802e54e876a56dc6603b inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreen.html">Screen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a877c0c626d54802e54e876a56dc6603b">screen</a></td></tr>
+<tr class="memdesc:a877c0c626d54802e54e876a56dc6603b inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines which gamestate will be used.  <a href="#a877c0c626d54802e54e876a56dc6603b">More...</a><br/></td></tr>
+<tr class="separator:a877c0c626d54802e54e876a56dc6603b inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541915faaaac7068797345cce53deb9c inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a541915faaaac7068797345cce53deb9c">currState</a></td></tr>
+<tr class="separator:a541915faaaac7068797345cce53deb9c inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf694139ba8388f8258eeffdb75f0c3b inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoomTree.html">RoomTree</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#acf694139ba8388f8258eeffdb75f0c3b">roomTree</a></td></tr>
+<tr class="memdesc:acf694139ba8388f8258eeffdb75f0c3b inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows access from different states to check whether room is complete  <a href="#acf694139ba8388f8258eeffdb75f0c3b">More...</a><br/></td></tr>
+<tr class="separator:acf694139ba8388f8258eeffdb75f0c3b inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a951449392cb8f339fe07a7b38e3cb5 inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5">player</a></td></tr>
+<tr class="memdesc:a4a951449392cb8f339fe07a7b38e3cb5 inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main character.  <a href="#a4a951449392cb8f339fe07a7b38e3cb5">More...</a><br/></td></tr>
+<tr class="separator:a4a951449392cb8f339fe07a7b38e3cb5 inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925d16440517e4133b4b720b4276be58 inherit pro_attribs_classGameState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a925d16440517e4133b4b720b4276be58">character</a> = &amp;<a class="el" href="classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5">player</a></td></tr>
+<tr class="memdesc:a925d16440517e4133b4b720b4276be58 inherit pro_attribs_classGameState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the player;.  <a href="#a925d16440517e4133b4b720b4276be58">More...</a><br/></td></tr>
+<tr class="separator:a925d16440517e4133b4b720b4276be58 inherit pro_attribs_classGameState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is defines the state of the game when the player character is exploring rooms. Derived from <a class="el" href="classGameState.html" title="An abstract class, this class defines the state of the current &#39;state&#39; of the game based on the curre...">GameState</a>. </p>
-<dl class="section date"><dt>Date</dt><dd>21/10/2017 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Tomas Rigaux</dd></dl>
-<p>This is the state of the game when a player is exploring. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac10ad3cee219e8233a2c279392b70d52"></a>
 <div class="memitem">
@@ -171,6 +208,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is the the default constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a713fbeb296e929346e07ffe63c1af580"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExploreState::~ExploreState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the default destructor. </p>
 
 </div>
 </div>
@@ -202,6 +256,39 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8cd0a8ff2ca053a68f57f1eb73c3e4b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExploreState::RunInput </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function to give input functionality. </p>
+<p>Helper function to give input functionality </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">option</td><td>The current option chosen by the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a8fb38f9fca513b87d914d077a0f2652b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -229,8 +316,82 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a9c80dca4776d933ed892763d3f4bcad7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExploreState::SetState </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Helper function to set the current state of the game based on the current room type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Defines the type of room the player is in.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Helper function to set the current state of the game based on the current room type. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa9bd4b4504c72ae70c440c401f1a60aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classImageImporter.html">ImageImporter</a>* ExploreState::import</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7863a120d0a1ad5b1ff6d1c77f60cea1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRoom.html">Room</a>* ExploreState::roomPtr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/rigt2720/Kodika/GameState/<a class="el" href="ExploreState_8h_source.html">ExploreState.h</a></li>
+<li>/home/rigt2720/Kodika/GameState/<a class="el" href="ExploreState_8cpp.html">ExploreState.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

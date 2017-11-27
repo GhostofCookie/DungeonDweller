@@ -7,8 +7,10 @@
 #include "CodeCracker.h"
 
 CodeCracker::CodeCracker(){
-      riddleCompletionCount=0;
+   riddleCompletionCount=0;
    numberOfRiddles=0;
+   correctPrompt="That answer is correct!";
+   incorrectPrompt="Wrong! *The puzzler smacks you on the head with his staff* -1 Health"; 
 }
 
 ///Deconstructor
@@ -22,46 +24,75 @@ void CodeCracker:: RunGame(Character *player)
 {
    int userInput;
    RiddleMenu GameMenu;
-   cout << "Start" << endl;
-   SetOptionsInMenu();
+   system("clear");
+   //SetOptionsInMenu();
    ImportRiddles();
-
+   InitialPrompt(GameMenu);
    int currentRiddle;
+   PuzzleEnd=false;
    while(PuzzleEnd==false)
    {
-      cout << "Loop" << endl;
+      system("clear");
       currentRiddle=UnusedRandomRiddle();
+      cout << "current Riddle: " << question.at(currentRiddle) << endl;
+      SetRiddleInMenu(currentRiddle, GameMenu);
 ///Do riddle output
+      GameMenu.OutputMenu();
       GameMenu.HandleInput(cin);
-      //userInput=GameMenu.GetInput()
+      userInput=GameMenu.GetInput();
+      cout << "userInput:" << userInput << endl;
+	
       if(ValidAnswer(userInput, currentRiddle))
       {
+	 MakeRiddleUsed(currentRiddle);
+	 cout << "correct" << endl;
+	 GameMenu.SetQuery(correctPrompt);
+	 GameMenu.OutputMenu();
+	 Puzzle::SecondDelay(3);
 	 riddleCompletionCount++;
+	 cout << "Riddles Completed:" << riddleCompletionCount << endl;
 	 WinCheck();
       }
       else
       {
-	 //Decrement health
-	 DeathCheck();//************NEEDS TO BE IMPLEMENTED******************
-      PuzzleEnd=true;//***********TO BE REMOVED**************
+	 GameMenu.SetQuery(incorrectPrompt);
+	 GameMenu.OutputMenu();
+	 SecondDelay(3);
+	 player->ChangeHealth(-5);
+	 DeathCheck(player);
       }
    }
 }
+void CodeCracker::InitialPrompt(RiddleMenu &menu)
+{
+   string initialPrompt= "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
+   menu.SetQuery(initialPrompt);
+   menu.OutputMenu();
+   Puzzle::SecondDelay(6);
+}
+
+void CodeCracker::SetRiddleInMenu(int riddleIndex, RiddleMenu &menu)
+{
+   string riddleText=question.at(riddleIndex);
+   menu.SetQuery(riddleText);
+
+}
+
+void CodeCracker::MakeRiddleUsed(int riddleIndex)
+{
+   usedRiddles.at(riddleIndex)=true;
+}
+
 ///Picks one of the unused riddles randomly and returns its index
 int CodeCracker::UnusedRandomRiddle()
 {
-   int randRiddle, totalUsedRiddles=usedRiddles.size();
+   int randRiddle;
    bool validRiddleFound=false;
    while(validRiddleFound==false)
    {
       randRiddle=Puzzle::RandomNumber(numberOfRiddles);
-      for(int i=0; i<totalUsedRiddles; i++)
-      {
-	 if(randRiddle==usedRiddles.at(i))
-	    return false;
-	 else
-	    return true;
-      }
+      if(!IsRiddleUsed(randRiddle))
+	 validRiddleFound=true;
    }
    return randRiddle;
 }
@@ -76,12 +107,18 @@ bool CodeCracker::ValidMove(char input)
    return false;
 }
 
-
+bool CodeCracker::IsRiddleUsed(int index)
+{
+   if(usedRiddles.at(index)==true)
+      return true;
+   else
+      return false;
+}
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
 bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
-  if(input==answer.at(riddleIndex))
+   if(input==answer.at(riddleIndex))
    {
       return true;
    }
@@ -96,14 +133,11 @@ void CodeCracker::WinCheck()
       PuzzleEnd=true;
 }
 
-void CodeCracker::DecrementPlayerHealth(int amountToDecrement)
-{
-
-
-}
 ///Checks if the player is now dead
-void CodeCracker::DeathCheck()
+void CodeCracker::DeathCheck(Character *player)
 {
+   if(player->GetHealth()==0)
+      PuzzleEnd=true;
 }//Will need to take some kind of character variable/object
 
 /// Displays the screen containing the gameboard
@@ -117,7 +151,6 @@ void CodeCracker::SetOptionsInMenu()
 void CodeCracker::ImportRiddles()
 {
    string line, questionString, questionFormat;
-   char number;
    int qAnswer=0;
 
    ifstream in;
@@ -126,23 +159,17 @@ void CodeCracker::ImportRiddles()
    if(in)
    {
       in >> numberOfRiddles;
-      cout << "Number of Riddles: " << numberOfRiddles << endl;
       std::getline(in,line);
       question.resize(numberOfRiddles);
-      format.resize(numberOfRiddles);
-      answer.resize(numberOfRiddles);
       usedRiddles.resize(numberOfRiddles);
+      answer.resize(numberOfRiddles);
       for(int i=0; i<numberOfRiddles; i++)
       {
 	 std::getline(in, questionString);
-	 std::getline(in, questionFormat);
 	 in >> qAnswer;
-	 cout << "Question: " << questionString << endl;
-	 cout << "Format: " << questionFormat << endl;
-	 cout << "Answer: " << qAnswer << endl;
 	 question.at(i)=questionString;
-	 format.at(i)=questionFormat;
 	 answer.at(i)=qAnswer;
+	 usedRiddles.at(i)=false;
 	 std::getline(in,line);
       }
       in.close();	

@@ -22,10 +22,10 @@ class CharacterMenu : public GameMenu
    /// This is the virtual destructor.
    virtual ~CharacterMenu();
    /// This function sets the specific options for the Menu type.
-   /// \param[in] OptionsList A map of all the options for the current menu.
-   /// Each option has a unique key to make input easier.
-   /// \param[in] type This denotes the type of menu to display.
-   virtual void SetOptions(map<int,string> optionsList, string type);
+   /// \param[in] row The row to start setting the options.
+   /// \param[in] col The column to start aetting options.
+   /// \param[in] space the space in-between options.
+   virtual void SetOptions(int row, int col, int space);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);

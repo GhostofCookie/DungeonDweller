@@ -13,6 +13,7 @@
 #include "../Image/DefaultImg.h"
 #include "../Character/Character.h"
 #include <vector>
+#include <unistd.h>
 
 ///This class represents an abstract base class for each mini-game/puzzle to
 ///derive from.
@@ -27,6 +28,7 @@ class Puzzle
    ///functions from private until the player has won.                          
    virtual void RunGame(Character *player)=0;
 
+   void SecondDelay(int seconds);
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;
   private:

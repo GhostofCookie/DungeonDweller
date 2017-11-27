@@ -9,5 +9,5 @@
                                                                            
 ===========================================================================
                            CPSC 2720 Project by:                           
-Gates Kempenaar   Reid Paulhus   Rylan Bueckert   Tomas Rigaux   Tyler Swiy
+Gates Kempenaar   Reid Paulhus   Rylan Bueckert   Tomas Rigaux   Tyler Siwy
 ===========================================================================

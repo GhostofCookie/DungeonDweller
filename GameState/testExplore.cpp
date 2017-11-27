@@ -4,6 +4,7 @@
 #include "PuzzleState.h"
 #include "TradeState.h"
 #include "FightState.h"
+#include "InventoryState.h"
 using namespace std;
 
 void GetState(char, GameState*);
@@ -32,11 +33,16 @@ int main()
 	    break;
 	 case 'M':
 	    state = new MainState();
-	    break;	    
+	    break;
+	 case 'I':
+	    state = new InventoryState();
+	    break;
       }
       state->Set();
       state->Get();
    }
+   delete state;
+   delete baseState;
    return 0;
 }
 

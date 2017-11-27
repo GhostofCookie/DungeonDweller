@@ -108,10 +108,10 @@ $(document).ready(function(){initNavTree('classMenu.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMenu-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Menu Class Reference</div>  </div>
@@ -151,8 +151,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a831387f51358cfb88cd018e1777bc980"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a831387f51358cfb88cd018e1777bc980">~Menu</a> ()</td></tr>
 <tr class="memdesc:a831387f51358cfb88cd018e1777bc980"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the destructor for the class. It is virtual.  <a href="#a831387f51358cfb88cd018e1777bc980">More...</a><br/></td></tr>
 <tr class="separator:a831387f51358cfb88cd018e1777bc980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cf7c25cc9c1b45664a2f68da25b9373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a3cf7c25cc9c1b45664a2f68da25b9373">AddOption</a> (char command, string optionName, void(*f)(int)=0)</td></tr>
-<tr class="separator:a3cf7c25cc9c1b45664a2f68da25b9373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e91b24974d0c9d3d29bd0ac424d0059"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a0e91b24974d0c9d3d29bd0ac424d0059">AddOption</a> (char command, string optionName)</td></tr>
+<tr class="separator:a0e91b24974d0c9d3d29bd0ac424d0059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c50ffc3f34b7ff02bfc7a1e1de3dab"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a67c50ffc3f34b7ff02bfc7a1e1de3dab">GetOption</a> () const </td></tr>
+<tr class="separator:a67c50ffc3f34b7ff02bfc7a1e1de3dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc31e14c9ed4dd2fb5dc4319738bafba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#acc31e14c9ed4dd2fb5dc4319738bafba">SetOptions</a> (int row=3, int col=3, int space=2)</td></tr>
 <tr class="separator:acc31e14c9ed4dd2fb5dc4319738bafba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebc8f6c5b80202603b45da16dc978706"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#aebc8f6c5b80202603b45da16dc978706">HandleInput</a> (istream &amp;is)</td></tr>
@@ -161,11 +163,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4665a914fe24a8b11d8d6c95792184b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the multi-dimensional array.  <a href="#a4665a914fe24a8b11d8d6c95792184b3">More...</a><br/></td></tr>
 <tr class="separator:a4665a914fe24a8b11d8d6c95792184b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8acabbf165ce6e169f67389ee54c988d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a8acabbf165ce6e169f67389ee54c988d">QuitGame</a> (int value)</td></tr>
-<tr class="separator:a8acabbf165ce6e169f67389ee54c988d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa13913062e78fbd036ca698e0c0c5038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#aa13913062e78fbd036ca698e0c0c5038">Set</a> (int x, int y, char ch)</td></tr>
@@ -173,21 +170,24 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a8cabd1390fcc59aba53b79788915c792"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a8cabd1390fcc59aba53b79788915c792">currOption</a></td></tr>
+<tr class="separator:a8cabd1390fcc59aba53b79788915c792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18566c84b43074d03f0ad3cacd748aae"><td class="memItemLeft" align="right" valign="top">map&lt; int, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a18566c84b43074d03f0ad3cacd748aae">indexMap</a></td></tr>
 <tr class="separator:a18566c84b43074d03f0ad3cacd748aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1482795732b18033b8cc3214b4c87176"><td class="memItemLeft" align="right" valign="top">map&lt; char, void(*)(int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a1482795732b18033b8cc3214b4c87176">optionMap</a></td></tr>
-<tr class="separator:a1482795732b18033b8cc3214b4c87176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9364e391e91acd266444a2604cb838e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#ad9364e391e91acd266444a2604cb838e">menuHeight</a></td></tr>
 <tr class="separator:ad9364e391e91acd266444a2604cb838e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c90eda61cd9071dcafda04569dfdd67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a5c90eda61cd9071dcafda04569dfdd67">menuWidth</a></td></tr>
 <tr class="separator:a5c90eda61cd9071dcafda04569dfdd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fdd29d716c7fb985f038ddde93794a0"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a6fdd29d716c7fb985f038ddde93794a0">menu_Array</a></td></tr>
-<tr class="separator:a6fdd29d716c7fb985f038ddde93794a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aaae232bbb2e874c2abb18b470259ab33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#aaae232bbb2e874c2abb18b470259ab33">BuildMenu</a> ()</td></tr>
 <tr class="separator:aaae232bbb2e874c2abb18b470259ab33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6fdd29d716c7fb985f038ddde93794a0"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a6fdd29d716c7fb985f038ddde93794a0">menu_Array</a></td></tr>
+<tr class="separator:a6fdd29d716c7fb985f038ddde93794a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the base class for all menus for the main game. </p>
@@ -252,7 +252,7 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3cf7c25cc9c1b45664a2f68da25b9373"></a>
+<a class="anchor" id="a0e91b24974d0c9d3d29bd0ac424d0059"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -266,13 +266,7 @@ Private Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>optionName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(int)&#160;</td>
-          <td class="paramname"><em>f</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>optionName</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -286,7 +280,15 @@ Private Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>The character for the user to input. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">optionName</td><td>The name to display for the user. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">f(int)</td><td>The is the function which adds functionality to the option and command. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f(int)</td><td>The is the function which adds functionality to the option and command.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds an option with a character for the user to call, a name to display, and function to run. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>The character for the user to input. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">optionName</td><td>The name to display for the user. </td></tr>
   </table>
   </dd>
 </dl>
@@ -314,6 +316,23 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Builds the menu based on the options and outline to the dimensions specified by the constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a67c50ffc3f34b7ff02bfc7a1e1de3dab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Menu::GetOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the option chosen by the user/player. </p>
+<dl class="section return"><dt>Returns</dt><dd>currOption </dd></dl>
 
 </div>
 </div>
@@ -346,7 +365,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classCharacterMenu.html#a9530ef35d34be27d09f740563dbe59ea">CharacterMenu</a>, <a class="el" href="classConnectFourMenu.html#a2af0c62dd776dd0e3d8c212f71eb3219">ConnectFourMenu</a>, <a class="el" href="classDialogueMenu.html#af682f751ddb1f30c679a19dcf6703856">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#aa75a9fcba679d683855d3188f1fc3505">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a8f85bae3166bf122c5800aab41c87d54">HanoiMenu</a>, <a class="el" href="classMemoryMenu.html#afbe9762ac2e61c6eba82df18aa9aea73">MemoryMenu</a>, <a class="el" href="classRiddleMenu.html#aef67f984c1aad0b8240e03b43ccbe615">RiddleMenu</a>, <a class="el" href="classTicTacToeMenu.html#a11191814019309260bb4270c03891e5e">TicTacToeMenu</a>, <a class="el" href="classGameMenu.html#a02ba09feedece5773f44ba865ccffb42">GameMenu</a>, <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>, <a class="el" href="classTradeMenu.html#a367004a0b1ceccd4517de8dea1e1d210">TradeMenu</a>, <a class="el" href="classFightMenu.html#a6d69cf9a19e7bae304d5a116285c1a51">FightMenu</a>, and <a class="el" href="classMainMenu.html#a85703c73c1bcc9be2144b1cbe413328e">MainMenu</a>.</p>
+<p>Reimplemented in <a class="el" href="classMemoryMenu.html#afbe9762ac2e61c6eba82df18aa9aea73">MemoryMenu</a>, <a class="el" href="classTicTacToeMenu.html#a11191814019309260bb4270c03891e5e">TicTacToeMenu</a>, <a class="el" href="classCharacterMenu.html#a9530ef35d34be27d09f740563dbe59ea">CharacterMenu</a>, <a class="el" href="classConnectFourMenu.html#a2af0c62dd776dd0e3d8c212f71eb3219">ConnectFourMenu</a>, <a class="el" href="classDialogueMenu.html#af682f751ddb1f30c679a19dcf6703856">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#aa75a9fcba679d683855d3188f1fc3505">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a8f85bae3166bf122c5800aab41c87d54">HanoiMenu</a>, <a class="el" href="classRiddleMenu.html#aef67f984c1aad0b8240e03b43ccbe615">RiddleMenu</a>, <a class="el" href="classGameMenu.html#a02ba09feedece5773f44ba865ccffb42">GameMenu</a>, <a class="el" href="classMinigameMenu.html#a3f854c4eefb0f3110cd085b3cfe56460">MinigameMenu</a>, <a class="el" href="classTradeMenu.html#a367004a0b1ceccd4517de8dea1e1d210">TradeMenu</a>, <a class="el" href="classFightMenu.html#a6d69cf9a19e7bae304d5a116285c1a51">FightMenu</a>, and <a class="el" href="classMainMenu.html#a85703c73c1bcc9be2144b1cbe413328e">MainMenu</a>.</p>
 
 </div>
 </div>
@@ -372,44 +391,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Display the multi-dimensional array. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8acabbf165ce6e169f67389ee54c988d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Menu::QuitGame </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Helper function to quit the game. This may be removed in future. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>This parameter serves to pass the function to the options map.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Helper function to quit the game. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>This parameter serves to pass the function to the options map. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -504,16 +485,45 @@ Private Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>Determines which row the options will start being set at. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Determines which column the options will start from. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">How</td><td>mush space inbetween rows. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">How</td><td>mush space inbetween rows.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>A function to set the added options to the character array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>Determines which row the options will start being set at. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Determines which column the options will start from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">How</td><td>much space inbetween rows. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classConnectFourMenu.html#a6a826d0810795584cfb4b601d5cd5df2">ConnectFourMenu</a>, <a class="el" href="classDialogueMenu.html#a0d9ad90b84f6b104b673be1ff66185c2">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a01fdbb56ef495290e825ec9a57ecd2b6">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a0280d0e443642407fda5903346be1a39">HanoiMenu</a>, <a class="el" href="classRiddleMenu.html#a2d103283c58744ffa0e77e62a24e7ccb">RiddleMenu</a>, <a class="el" href="classTicTacToeMenu.html#ab736aba3ecb23a6b28cde04729556088">TicTacToeMenu</a>, <a class="el" href="classGameMenu.html#ac32ff465c5a4f30979e8851fa21cb230">GameMenu</a>, <a class="el" href="classMinigameMenu.html#abde3ae319bf1660a8626c6f765e054a8">MinigameMenu</a>, <a class="el" href="classTradeMenu.html#aaf93d0a5ee2574d2926bd22de278fb17">TradeMenu</a>, <a class="el" href="classFightMenu.html#a22b8ce181d2f327bd8839315c4843cf5">FightMenu</a>, and <a class="el" href="classMainMenu.html#a44ab04810a68d7ddf3843464573b7967">MainMenu</a>.</p>
+<p>Reimplemented in <a class="el" href="classMemoryMenu.html#acde088f671d95d13f50b27ac345d2968">MemoryMenu</a>, <a class="el" href="classTicTacToeMenu.html#ab736aba3ecb23a6b28cde04729556088">TicTacToeMenu</a>, <a class="el" href="classCharacterMenu.html#a01c004bd0932adc6b6a63dde5890cffa">CharacterMenu</a>, <a class="el" href="classConnectFourMenu.html#a6a826d0810795584cfb4b601d5cd5df2">ConnectFourMenu</a>, <a class="el" href="classDialogueMenu.html#a0d9ad90b84f6b104b673be1ff66185c2">DialogueMenu</a>, <a class="el" href="classExploreMenu.html#a01fdbb56ef495290e825ec9a57ecd2b6">ExploreMenu</a>, <a class="el" href="classHanoiMenu.html#a0280d0e443642407fda5903346be1a39">HanoiMenu</a>, <a class="el" href="classRiddleMenu.html#a2d103283c58744ffa0e77e62a24e7ccb">RiddleMenu</a>, <a class="el" href="classGameMenu.html#ac32ff465c5a4f30979e8851fa21cb230">GameMenu</a>, <a class="el" href="classMinigameMenu.html#abde3ae319bf1660a8626c6f765e054a8">MinigameMenu</a>, <a class="el" href="classTradeMenu.html#aaf93d0a5ee2574d2926bd22de278fb17">TradeMenu</a>, <a class="el" href="classFightMenu.html#a22b8ce181d2f327bd8839315c4843cf5">FightMenu</a>, and <a class="el" href="classMainMenu.html#a44ab04810a68d7ddf3843464573b7967">MainMenu</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8cabd1390fcc59aba53b79788915c792"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Menu::currOption</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a18566c84b43074d03f0ad3cacd748aae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -547,7 +557,7 @@ Private Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -583,26 +593,6 @@ Private Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int Menu::menuWidth</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1482795732b18033b8cc3214b4c87176"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">map&lt;char, void (*)(int)&gt; Menu::optionMap</td>
         </tr>
       </table>
   </td>

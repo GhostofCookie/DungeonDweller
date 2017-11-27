@@ -125,12 +125,13 @@ Inheritance diagram for GameState:</div>
  <div class="center">
   <img src="classGameState.png" usemap="#GameState_map" alt=""/>
   <map id="GameState_map" name="GameState_map">
-<area href="classDialogueState.html" title="This is the state of the game when the player character is engaged in dialogue with an NPC..." alt="DialogueState" shape="rect" coords="0,56,90,80"/>
-<area href="classExploreState.html" title="This is defines the state of the game when the player character is exploring rooms. Derived from GameState. " alt="ExploreState" shape="rect" coords="100,56,190,80"/>
-<area href="classFightState.html" title="This is the state of the game when the player character is engaged in combat. Derived from GameState..." alt="FightState" shape="rect" coords="200,56,290,80"/>
-<area href="classMainState.html" title="This is the state of the game when the game is either not yet started or the game has ended..." alt="MainState" shape="rect" coords="300,56,390,80"/>
-<area href="classPuzzleState.html" title="This is the state of the game when the player is interacting with a puzzle/minigame. Derived from GameState. " alt="PuzzleState" shape="rect" coords="400,56,490,80"/>
-<area href="classTradeState.html" title="Sets the state of the game when a player is &#39;trading&#39; with an NPC. Derived from GameState. " alt="TradeState" shape="rect" coords="500,56,590,80"/>
+<area href="classDialogueState.html" title="This is the state of the game when the player character is engaged in dialogue with an NPC..." alt="DialogueState" shape="rect" coords="0,56,93,80"/>
+<area href="classExploreState.html" title="This is defines the state of the game when the player character is exploring rooms. Derived from GameState. " alt="ExploreState" shape="rect" coords="103,56,196,80"/>
+<area href="classFightState.html" title="This is the state of the game when the player character is engaged in combat. Derived from GameState..." alt="FightState" shape="rect" coords="206,56,299,80"/>
+<area href="classInventoryState.html" alt="InventoryState" shape="rect" coords="309,56,402,80"/>
+<area href="classMainState.html" title="This is the state of the game when the game is either not yet started or the game has ended..." alt="MainState" shape="rect" coords="412,56,505,80"/>
+<area href="classPuzzleState.html" title="This is the state of the game when the player is interacting with a puzzle/minigame. Derived from GameState. " alt="PuzzleState" shape="rect" coords="515,56,608,80"/>
+<area href="classTradeState.html" title="Sets the state of the game when a player is &#39;trading&#39; with an NPC. Derived from GameState. " alt="TradeState" shape="rect" coords="618,56,711,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -139,28 +140,48 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4fa0a2bf50315c4a35a3890a0adcee5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c">GameState</a> ()</td></tr>
 <tr class="memdesc:a4fa0a2bf50315c4a35a3890a0adcee5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a4fa0a2bf50315c4a35a3890a0adcee5c">More...</a><br/></td></tr>
 <tr class="separator:a4fa0a2bf50315c4a35a3890a0adcee5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a517ef6eaba96896259fcefd0c66afc9e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a517ef6eaba96896259fcefd0c66afc9e">~GameState</a> ()</td></tr>
+<tr class="memdesc:a517ef6eaba96896259fcefd0c66afc9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a517ef6eaba96896259fcefd0c66afc9e">More...</a><br/></td></tr>
+<tr class="separator:a517ef6eaba96896259fcefd0c66afc9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22e9a43999f99b784a35fab85cd9208"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#af22e9a43999f99b784a35fab85cd9208">Set</a> ()=0</td></tr>
 <tr class="memdesc:af22e9a43999f99b784a35fab85cd9208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout of the game.  <a href="#af22e9a43999f99b784a35fab85cd9208">More...</a><br/></td></tr>
 <tr class="separator:af22e9a43999f99b784a35fab85cd9208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4283cb3aa5637d4815d64272843a0625"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4283cb3aa5637d4815d64272843a0625">Get</a> ()=0</td></tr>
 <tr class="memdesc:a4283cb3aa5637d4815d64272843a0625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the set layout.  <a href="#a4283cb3aa5637d4815d64272843a0625">More...</a><br/></td></tr>
 <tr class="separator:a4283cb3aa5637d4815d64272843a0625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d734fcbd886d8a0ce8e3191e770b3a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a80d734fcbd886d8a0ce8e3191e770b3a">GetState</a> () const </td></tr>
+<tr class="memdesc:a80d734fcbd886d8a0ce8e3191e770b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current state.  <a href="#a80d734fcbd886d8a0ce8e3191e770b3a">More...</a><br/></td></tr>
+<tr class="separator:a80d734fcbd886d8a0ce8e3191e770b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aebc12d6e90edfbe51a571858f6288f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMenu.html">Menu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#aebc12d6e90edfbe51a571858f6288f93">menu</a></td></tr>
-<tr class="memdesc:aebc12d6e90edfbe51a571858f6288f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the menu.  <a href="#aebc12d6e90edfbe51a571858f6288f93">More...</a><br/></td></tr>
+<tr class="memdesc:aebc12d6e90edfbe51a571858f6288f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; pointer to the menu.  <a href="#aebc12d6e90edfbe51a571858f6288f93">More...</a><br/></td></tr>
 <tr class="separator:aebc12d6e90edfbe51a571858f6288f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877c0c626d54802e54e876a56dc6603b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreen.html">Screen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a877c0c626d54802e54e876a56dc6603b">screen</a></td></tr>
+<tr class="memdesc:a877c0c626d54802e54e876a56dc6603b"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines which gamestate will be used.  <a href="#a877c0c626d54802e54e876a56dc6603b">More...</a><br/></td></tr>
+<tr class="separator:a877c0c626d54802e54e876a56dc6603b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541915faaaac7068797345cce53deb9c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a541915faaaac7068797345cce53deb9c">currState</a></td></tr>
+<tr class="separator:a541915faaaac7068797345cce53deb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf694139ba8388f8258eeffdb75f0c3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRoomTree.html">RoomTree</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#acf694139ba8388f8258eeffdb75f0c3b">roomTree</a></td></tr>
+<tr class="memdesc:acf694139ba8388f8258eeffdb75f0c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows access from different states to check whether room is complete  <a href="#acf694139ba8388f8258eeffdb75f0c3b">More...</a><br/></td></tr>
+<tr class="separator:acf694139ba8388f8258eeffdb75f0c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a951449392cb8f339fe07a7b38e3cb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5">player</a></td></tr>
+<tr class="memdesc:a4a951449392cb8f339fe07a7b38e3cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main character.  <a href="#a4a951449392cb8f339fe07a7b38e3cb5">More...</a><br/></td></tr>
+<tr class="separator:a4a951449392cb8f339fe07a7b38e3cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925d16440517e4133b4b720b4276be58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameState.html#a925d16440517e4133b4b720b4276be58">character</a> = &amp;<a class="el" href="classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5">player</a></td></tr>
+<tr class="memdesc:a925d16440517e4133b4b720b4276be58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the player;.  <a href="#a925d16440517e4133b4b720b4276be58">More...</a><br/></td></tr>
+<tr class="separator:a925d16440517e4133b4b720b4276be58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract class, this class defines the state of the current 'state' of the game based on the current situation of the player character. </p>
-<dl class="section date"><dt>Date</dt><dd>21/10/2017 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Tomas Rigaux</dd></dl>
-<p>This class defines the current state of the game, based on the current location and actions of the player character. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4fa0a2bf50315c4a35a3890a0adcee5c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">GameState::GameState </td>
@@ -169,9 +190,39 @@ Protected Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
+
+</div>
+</div>
+<a class="anchor" id="a517ef6eaba96896259fcefd0c66afc9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GameState::~GameState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
 
 </div>
 </div>
@@ -199,7 +250,32 @@ Protected Attributes</h2></td></tr>
 
 <p>Outputs the set layout. </p>
 
-<p>Implemented in <a class="el" href="classDialogueState.html#ab2f436b23d15e13cda1d756b8d47a982">DialogueState</a>, <a class="el" href="classMainState.html#a23233e859905d025cfc031a12977a844">MainState</a>, <a class="el" href="classPuzzleState.html#ac9f6dd77d6471165d9eb2c18bd051dd1">PuzzleState</a>, <a class="el" href="classTradeState.html#a6479e704b1063281721200a0beac6bc1">TradeState</a>, <a class="el" href="classExploreState.html#ace76d7a24bcb85f6f0a0fe0d0e763e21">ExploreState</a>, and <a class="el" href="classFightState.html#afeff88d0e0c0fa25049e2152190429ed">FightState</a>.</p>
+<p>Implemented in <a class="el" href="classExploreState.html#ace76d7a24bcb85f6f0a0fe0d0e763e21">ExploreState</a>, <a class="el" href="classInventoryState.html#a9358c4937e5bfe24017ac8985d56ed06">InventoryState</a>, <a class="el" href="classPuzzleState.html#ac9f6dd77d6471165d9eb2c18bd051dd1">PuzzleState</a>, <a class="el" href="classMainState.html#a23233e859905d025cfc031a12977a844">MainState</a>, <a class="el" href="classDialogueState.html#ab2f436b23d15e13cda1d756b8d47a982">DialogueState</a>, <a class="el" href="classTradeState.html#a6479e704b1063281721200a0beac6bc1">TradeState</a>, and <a class="el" href="classFightState.html#afeff88d0e0c0fa25049e2152190429ed">FightState</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80d734fcbd886d8a0ce8e3191e770b3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char GameState::GetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current state. </p>
 
 </div>
 </div>
@@ -226,11 +302,53 @@ Protected Attributes</h2></td></tr>
 
 <p>Sets the layout of the game. </p>
 
-<p>Implemented in <a class="el" href="classDialogueState.html#a203e463dc924a2492db74b749b81b9f1">DialogueState</a>, <a class="el" href="classMainState.html#ac01eced9d617c8c8f5382a9aa96adb45">MainState</a>, <a class="el" href="classPuzzleState.html#a966b0f168ff5499f247c9ab519b524ab">PuzzleState</a>, <a class="el" href="classTradeState.html#af0d9fdcd649c1e74620dc77a4b8f92f9">TradeState</a>, <a class="el" href="classExploreState.html#a8fb38f9fca513b87d914d077a0f2652b">ExploreState</a>, and <a class="el" href="classFightState.html#a853f6d2a9caf7343b8d75165e44bf5c1">FightState</a>.</p>
+<p>Implemented in <a class="el" href="classExploreState.html#a8fb38f9fca513b87d914d077a0f2652b">ExploreState</a>, <a class="el" href="classInventoryState.html#a47936e9d5683d344e87f3da176e97e4b">InventoryState</a>, <a class="el" href="classPuzzleState.html#a966b0f168ff5499f247c9ab519b524ab">PuzzleState</a>, <a class="el" href="classMainState.html#ac01eced9d617c8c8f5382a9aa96adb45">MainState</a>, <a class="el" href="classDialogueState.html#a203e463dc924a2492db74b749b81b9f1">DialogueState</a>, <a class="el" href="classTradeState.html#af0d9fdcd649c1e74620dc77a4b8f92f9">TradeState</a>, and <a class="el" href="classFightState.html#a853f6d2a9caf7343b8d75165e44bf5c1">FightState</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a925d16440517e4133b4b720b4276be58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCharacter.html">Character</a>* GameState::character = &amp;<a class="el" href="classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5">player</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to the player;. </p>
+
+</div>
+</div>
+<a class="anchor" id="a541915faaaac7068797345cce53deb9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char GameState::currState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aebc12d6e90edfbe51a571858f6288f93"></a>
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +367,74 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>pointer to the menu. </p>
+<p>&lt; pointer to the menu. </p>
+<p>pointer to the screen; </p>
+
+</div>
+</div>
+<a class="anchor" id="a4a951449392cb8f339fe07a7b38e3cb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCharacter.html">Character</a> GameState::player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The main character. </p>
+
+</div>
+</div>
+<a class="anchor" id="acf694139ba8388f8258eeffdb75f0c3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRoomTree.html">RoomTree</a>* GameState::roomTree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>allows access from different states to check whether room is complete </p>
+
+</div>
+</div>
+<a class="anchor" id="a877c0c626d54802e54e876a56dc6603b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScreen.html">Screen</a>* GameState::screen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines which gamestate will be used. </p>
 
 </div>
 </div>

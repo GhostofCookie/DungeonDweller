@@ -23,7 +23,9 @@ Inheritance diagram for Menu\-:\begin{figure}[H]
 \item 
 virtual \hyperlink{classMenu_a831387f51358cfb88cd018e1777bc980}{$\sim$\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the destructor for the class. It is virtual. \end{DoxyCompactList}\item 
-void \hyperlink{classMenu_a3cf7c25cc9c1b45664a2f68da25b9373}{Add\-Option} (char command, string option\-Name, void($\ast$f)(int)=0)
+void \hyperlink{classMenu_a0e91b24974d0c9d3d29bd0ac424d0059}{Add\-Option} (char command, string option\-Name)
+\item 
+char \hyperlink{classMenu_a67c50ffc3f34b7ff02bfc7a1e1de3dab}{Get\-Option} () const 
 \item 
 virtual void \hyperlink{classMenu_acc31e14c9ed4dd2fb5dc4319738bafba}{Set\-Options} (int row=3, int col=3, int space=2)
 \item 
@@ -31,11 +33,6 @@ virtual void \hyperlink{classMenu_aebc8f6c5b80202603b45da16dc978706}{Handle\-Inp
 \item 
 virtual void \hyperlink{classMenu_a4665a914fe24a8b11d8d6c95792184b3}{Output\-Menu} ()
 \begin{DoxyCompactList}\small\item\em Display the multi-\/dimensional array. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \hyperlink{classMenu_a8acabbf165ce6e169f67389ee54c988d}{Quit\-Game} (int value)
-\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,20 +41,23 @@ void \hyperlink{classMenu_aa13913062e78fbd036ca698e0c0c5038}{Set} (int x, int y,
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-map$<$ int, string $>$ \hyperlink{classMenu_a18566c84b43074d03f0ad3cacd748aae}{index\-Map}
+char \hyperlink{classMenu_a8cabd1390fcc59aba53b79788915c792}{curr\-Option}
 \item 
-map$<$ char, void($\ast$)(int)$>$ \hyperlink{classMenu_a1482795732b18033b8cc3214b4c87176}{option\-Map}
+map$<$ int, string $>$ \hyperlink{classMenu_a18566c84b43074d03f0ad3cacd748aae}{index\-Map}
 \item 
 int \hyperlink{classMenu_ad9364e391e91acd266444a2604cb838e}{menu\-Height}
 \item 
 int \hyperlink{classMenu_a5c90eda61cd9071dcafda04569dfdd67}{menu\-Width}
-\item 
-char $\ast$$\ast$ \hyperlink{classMenu_a6fdd29d716c7fb985f038ddde93794a0}{menu\-\_\-\-Array}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMenu_aaae232bbb2e874c2abb18b470259ab33}{Build\-Menu} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{classMenu_a6fdd29d716c7fb985f038ddde93794a0}{menu\-\_\-\-Array}
 \end{DoxyCompactItemize}
 
 
@@ -94,22 +94,28 @@ This is the destructor for the class. It is virtual.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classMenu_a3cf7c25cc9c1b45664a2f68da25b9373}{\index{Menu@{Menu}!Add\-Option@{Add\-Option}}
+\hypertarget{classMenu_a0e91b24974d0c9d3d29bd0ac424d0059}{\index{Menu@{Menu}!Add\-Option@{Add\-Option}}
 \index{Add\-Option@{Add\-Option}!Menu@{Menu}}
 \subsubsection[{Add\-Option}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\-::\-Add\-Option (
 \begin{DoxyParamCaption}
 \item[{char}]{command, }
-\item[{string}]{option\-Name, }
-\item[{void($\ast$)(int)}]{f = {\ttfamily 0}}
+\item[{string}]{option\-Name}
 \end{DoxyParamCaption}
-)}}\label{classMenu_a3cf7c25cc9c1b45664a2f68da25b9373}
+)}}\label{classMenu_a0e91b24974d0c9d3d29bd0ac424d0059}
 Adds an option with a character for the user to call, a name to display, and function to run. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em command} & The character for the user to input. \\
 \hline
 \mbox{\tt in}  & {\em option\-Name} & The name to display for the user. \\
 \hline
-\mbox{\tt in}  & {\em f(int)} & The is the function which adds functionality to the option and command. \\
+\mbox{\tt in}  & {\em f(int)} & The is the function which adds functionality to the option and command.\\
+\hline
+\end{DoxyParams}
+Adds an option with a character for the user to call, a name to display, and function to run. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em command} & The character for the user to input. \\
+\hline
+\mbox{\tt in}  & {\em option\-Name} & The name to display for the user. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classMenu_aaae232bbb2e874c2abb18b470259ab33}{\index{Menu@{Menu}!Build\-Menu@{Build\-Menu}}
@@ -119,7 +125,17 @@ Adds an option with a character for the user to call, a name to display, and fun
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_aaae232bbb2e874c2abb18b470259ab33}
-Builds the menu based on the options and outline to the dimensions specified by the constructor. \hypertarget{classMenu_aebc8f6c5b80202603b45da16dc978706}{\index{Menu@{Menu}!Handle\-Input@{Handle\-Input}}
+Builds the menu based on the options and outline to the dimensions specified by the constructor. \hypertarget{classMenu_a67c50ffc3f34b7ff02bfc7a1e1de3dab}{\index{Menu@{Menu}!Get\-Option@{Get\-Option}}
+\index{Get\-Option@{Get\-Option}!Menu@{Menu}}
+\subsubsection[{Get\-Option}]{\setlength{\rightskip}{0pt plus 5cm}char Menu\-::\-Get\-Option (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMenu_a67c50ffc3f34b7ff02bfc7a1e1de3dab}
+Returns the option chosen by the user/player. \begin{DoxyReturn}{Returns}
+curr\-Option 
+\end{DoxyReturn}
+\hypertarget{classMenu_aebc8f6c5b80202603b45da16dc978706}{\index{Menu@{Menu}!Handle\-Input@{Handle\-Input}}
 \index{Handle\-Input@{Handle\-Input}!Menu@{Menu}}
 \subsubsection[{Handle\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\-::\-Handle\-Input (
 \begin{DoxyParamCaption}
@@ -133,7 +149,7 @@ Handles the user input, and runs an option from the menu.
 \end{DoxyParams}
 
 
-Reimplemented in \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea}{Character\-Menu}, \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Connect\-Four\-Menu}, \hyperlink{classDialogueMenu_af682f751ddb1f30c679a19dcf6703856}{Dialogue\-Menu}, \hyperlink{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{Explore\-Menu}, \hyperlink{classHanoiMenu_a8f85bae3166bf122c5800aab41c87d54}{Hanoi\-Menu}, \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Memory\-Menu}, \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Riddle\-Menu}, \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}, \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}, \hyperlink{classTradeMenu_a367004a0b1ceccd4517de8dea1e1d210}{Trade\-Menu}, \hyperlink{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}{Fight\-Menu}, and \hyperlink{classMainMenu_a85703c73c1bcc9be2144b1cbe413328e}{Main\-Menu}.
+Reimplemented in \hyperlink{classMemoryMenu_afbe9762ac2e61c6eba82df18aa9aea73}{Memory\-Menu}, \hyperlink{classTicTacToeMenu_a11191814019309260bb4270c03891e5e}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea}{Character\-Menu}, \hyperlink{classConnectFourMenu_a2af0c62dd776dd0e3d8c212f71eb3219}{Connect\-Four\-Menu}, \hyperlink{classDialogueMenu_af682f751ddb1f30c679a19dcf6703856}{Dialogue\-Menu}, \hyperlink{classExploreMenu_aa75a9fcba679d683855d3188f1fc3505}{Explore\-Menu}, \hyperlink{classHanoiMenu_a8f85bae3166bf122c5800aab41c87d54}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_aef67f984c1aad0b8240e03b43ccbe615}{Riddle\-Menu}, \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}, \hyperlink{classMinigameMenu_a3f854c4eefb0f3110cd085b3cfe56460}{Minigame\-Menu}, \hyperlink{classTradeMenu_a367004a0b1ceccd4517de8dea1e1d210}{Trade\-Menu}, \hyperlink{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}{Fight\-Menu}, and \hyperlink{classMainMenu_a85703c73c1bcc9be2144b1cbe413328e}{Main\-Menu}.
 
 \hypertarget{classMenu_a4665a914fe24a8b11d8d6c95792184b3}{\index{Menu@{Menu}!Output\-Menu@{Output\-Menu}}
 \index{Output\-Menu@{Output\-Menu}!Menu@{Menu}}
@@ -146,23 +162,6 @@ Reimplemented in \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea
 
 Display the multi-\/dimensional array. 
 
-\hypertarget{classMenu_a8acabbf165ce6e169f67389ee54c988d}{\index{Menu@{Menu}!Quit\-Game@{Quit\-Game}}
-\index{Quit\-Game@{Quit\-Game}!Menu@{Menu}}
-\subsubsection[{Quit\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\-::\-Quit\-Game (
-\begin{DoxyParamCaption}
-\item[{int}]{value}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classMenu_a8acabbf165ce6e169f67389ee54c988d}
-Helper function to quit the game. This may be removed in future. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em value} & This parameter serves to pass the function to the options map.\\
-\hline
-\end{DoxyParams}
-Helper function to quit the game. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em value} & This parameter serves to pass the function to the options map. \\
-\hline
-\end{DoxyParams}
 \hypertarget{classMenu_aa13913062e78fbd036ca698e0c0c5038}{\index{Menu@{Menu}!Set@{Set}}
 \index{Set@{Set}!Menu@{Menu}}
 \subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\-::\-Set (
@@ -196,31 +195,40 @@ A function to set the added options to the character array.
 \hline
 \mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
 \hline
-\mbox{\tt in}  & {\em How} & mush space inbetween rows. \\
+\mbox{\tt in}  & {\em How} & mush space inbetween rows.\\
+\hline
+\end{DoxyParams}
+A function to set the added options to the character array. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\
+\hline
+\mbox{\tt in}  & {\em col} & Determines which column the options will start from. \\
+\hline
+\mbox{\tt in}  & {\em How} & much space inbetween rows. \\
 \hline
 \end{DoxyParams}
 
 
-Reimplemented in \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}{Dialogue\-Menu}, \hyperlink{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}{Explore\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}, \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Menu}, \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}, \hyperlink{classTradeMenu_aaf93d0a5ee2574d2926bd22de278fb17}{Trade\-Menu}, \hyperlink{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}{Fight\-Menu}, and \hyperlink{classMainMenu_a44ab04810a68d7ddf3843464573b7967}{Main\-Menu}.
+Reimplemented in \hyperlink{classMemoryMenu_acde088f671d95d13f50b27ac345d2968}{Memory\-Menu}, \hyperlink{classTicTacToeMenu_ab736aba3ecb23a6b28cde04729556088}{Tic\-Tac\-Toe\-Menu}, \hyperlink{classCharacterMenu_a01c004bd0932adc6b6a63dde5890cffa}{Character\-Menu}, \hyperlink{classConnectFourMenu_a6a826d0810795584cfb4b601d5cd5df2}{Connect\-Four\-Menu}, \hyperlink{classDialogueMenu_a0d9ad90b84f6b104b673be1ff66185c2}{Dialogue\-Menu}, \hyperlink{classExploreMenu_a01fdbb56ef495290e825ec9a57ecd2b6}{Explore\-Menu}, \hyperlink{classHanoiMenu_a0280d0e443642407fda5903346be1a39}{Hanoi\-Menu}, \hyperlink{classRiddleMenu_a2d103283c58744ffa0e77e62a24e7ccb}{Riddle\-Menu}, \hyperlink{classGameMenu_ac32ff465c5a4f30979e8851fa21cb230}{Game\-Menu}, \hyperlink{classMinigameMenu_abde3ae319bf1660a8626c6f765e054a8}{Minigame\-Menu}, \hyperlink{classTradeMenu_aaf93d0a5ee2574d2926bd22de278fb17}{Trade\-Menu}, \hyperlink{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}{Fight\-Menu}, and \hyperlink{classMainMenu_a44ab04810a68d7ddf3843464573b7967}{Main\-Menu}.
 
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classMenu_a8cabd1390fcc59aba53b79788915c792}{\index{Menu@{Menu}!curr\-Option@{curr\-Option}}
+\index{curr\-Option@{curr\-Option}!Menu@{Menu}}
+\subsubsection[{curr\-Option}]{\setlength{\rightskip}{0pt plus 5cm}char Menu\-::curr\-Option\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_a8cabd1390fcc59aba53b79788915c792}
 \hypertarget{classMenu_a18566c84b43074d03f0ad3cacd748aae}{\index{Menu@{Menu}!index\-Map@{index\-Map}}
 \index{index\-Map@{index\-Map}!Menu@{Menu}}
 \subsubsection[{index\-Map}]{\setlength{\rightskip}{0pt plus 5cm}map$<$int,string$>$ Menu\-::index\-Map\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_a18566c84b43074d03f0ad3cacd748aae}
 \hypertarget{classMenu_a6fdd29d716c7fb985f038ddde93794a0}{\index{Menu@{Menu}!menu\-\_\-\-Array@{menu\-\_\-\-Array}}
 \index{menu\-\_\-\-Array@{menu\-\_\-\-Array}!Menu@{Menu}}
-\subsubsection[{menu\-\_\-\-Array}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Menu\-::menu\-\_\-\-Array\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_a6fdd29d716c7fb985f038ddde93794a0}
+\subsubsection[{menu\-\_\-\-Array}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Menu\-::menu\-\_\-\-Array\hspace{0.3cm}{\ttfamily [private]}}}\label{classMenu_a6fdd29d716c7fb985f038ddde93794a0}
 \hypertarget{classMenu_ad9364e391e91acd266444a2604cb838e}{\index{Menu@{Menu}!menu\-Height@{menu\-Height}}
 \index{menu\-Height@{menu\-Height}!Menu@{Menu}}
 \subsubsection[{menu\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int Menu\-::menu\-Height\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_ad9364e391e91acd266444a2604cb838e}
 \hypertarget{classMenu_a5c90eda61cd9071dcafda04569dfdd67}{\index{Menu@{Menu}!menu\-Width@{menu\-Width}}
 \index{menu\-Width@{menu\-Width}!Menu@{Menu}}
 \subsubsection[{menu\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int Menu\-::menu\-Width\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_a5c90eda61cd9071dcafda04569dfdd67}
-\hypertarget{classMenu_a1482795732b18033b8cc3214b4c87176}{\index{Menu@{Menu}!option\-Map@{option\-Map}}
-\index{option\-Map@{option\-Map}!Menu@{Menu}}
-\subsubsection[{option\-Map}]{\setlength{\rightskip}{0pt plus 5cm}map$<$char, void ($\ast$)(int)$>$ Menu\-::option\-Map\hspace{0.3cm}{\ttfamily [protected]}}}\label{classMenu_a1482795732b18033b8cc3214b4c87176}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

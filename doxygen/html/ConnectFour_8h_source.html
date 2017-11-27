@@ -112,107 +112,115 @@ $(document).ready(function(){initNavTree('ConnectFour_8h_source.html','');});
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// connect_four.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span><span class="comment">//  </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef  CONNECT_FOUR_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONNECT_FOUR_H</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Puzzle_8h.html">Puzzle.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Menu/ConnectFourMenu.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Screen/Screen.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Image/DefaultImg.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classConnectFour.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConnectFour.html">ConnectFour</a>: <span class="keyword">virtual</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   <a class="code" href="classConnectFour.html#a9d7a0db424f22513386fa60ed2d5b575">ConnectFour</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classConnectFour.html#ae7d414d7f7f694fd427bfeaef80bd1f9">~ConnectFour</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">RunGame</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//void PromptUser(&amp;screen);//Prompts user for input</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//char UserInput(&amp;menu);//Gets user input</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//bool ValidCommand(char input);//Checks formatting</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a1cbd5ba040359e265c85a27407528915">ValidMove</a>(<span class="keywordtype">int</span> input);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">SetOptionsInMenu</a>();</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef  CONNECT_FOUR_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CONNECT_FOUR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Puzzle_8h.html">Puzzle.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Menu/ConnectFourMenu.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Screen/Screen.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Image/DefaultImg.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classConnectFour.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConnectFour.html">ConnectFour</a>: <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classPuzzle.html">Puzzle</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <a class="code" href="classConnectFour.html#a9d7a0db424f22513386fa60ed2d5b575">ConnectFour</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <span class="keyword">virtual</span> <a class="code" href="classConnectFour.html#ae7d414d7f7f694fd427bfeaef80bd1f9">~ConnectFour</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a3b578d1126bc575fa23b8811f121c8be">RunGame</a>(<a class="code" href="classCharacter.html">Character</a> *player);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a6bde7d38a9493ea5475a0a941f4c96df">MovePiece</a>(<span class="keywordtype">char</span> userPiece, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b">PlayAI</a>(<span class="keywordtype">char</span> AiPiece);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a1cbd5ba040359e265c85a27407528915">ValidMove</a>(<span class="keywordtype">int</span> input);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">BoardSetup</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a6bde7d38a9493ea5475a0a941f4c96df">MovePiece</a>(<span class="keywordtype">char</span> userPiece, <span class="keywordtype">int</span> column);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#aeec5d9114f72805796129ebd6e94c6d8">OutputGame</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a4f7dd5550d9ba548c542d887822cc1f0">WinCheck</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a5e33120d5b6a49e8eacd976de8be9c7c">IsInputOutOfScope</a>(<span class="keywordtype">int</span> input);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a4f7dd5550d9ba548c542d887822cc1f0">WinCheck</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b">HorizontalCheck</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#afe5fd24730a5d1295c1bb20fc2e6c1a8">VerticalCheck</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b">HorizontalCheck</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#afe5fd24730a5d1295c1bb20fc2e6c1a8">VerticalCheck</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#acacb2e213d7c4f6dec2cf2f9d3c370f9">LeftDiagonalCheck</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#ac49d716bde974c19aab3e47e66d94073">RightDiagonalCheck</a>();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#ac49d716bde974c19aab3e47e66d94073">RightDiagonalCheck</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a26d75c9c50d6424df11de765086edc8a">IsColumnFull</a>(<span class="keywordtype">int</span> input);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#acacb2e213d7c4f6dec2cf2f9d3c370f9">LeftDiagonalCheck</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b">PlayAI</a>(<span class="keywordtype">char</span> AiPiece);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6">IsBoardFull</a>(); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a6f356156a6c23ee1f5838cd96b3b84bc">TieGameCheck</a>(<span class="keywordtype">int</span> &amp;currentPlayer);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">   80</a></span>&#160;   <a class="code" href="classScreen.html">Screen</a> <a class="code" href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">ConnectFourScreen</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a26d75c9c50d6424df11de765086edc8a">IsColumnFull</a>(<span class="keywordtype">int</span> input);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6">IsBoardFull</a>(); </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#aa563db9c04480dc44a37df28d07c776c">ResetGame</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">   93</a></span>&#160;   std::vector&lt;vector&lt;char&gt;&gt;<a class="code" href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">grid</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">BoardSetup</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">SetOptionsInMenu</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#ac408488231f5104f4047978d877f145c">EndGamePrompt</a>(<span class="keywordtype">int</span> &amp;currentPlayer);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#aaf17855d2cec2d71c07614af530a00bf">ResetGame</a>(<span class="keywordtype">int</span> &amp;currentPlayer);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classConnectFour.html#a8f74f9d22c247508e868222c27136641">SetCurrentPlayerChar</a>(<span class="keywordtype">int</span> currentPlayer);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">   97</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63">xSize</a>, <a class="code" href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">ySize</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor"></span> </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">   97</a></span>&#160;   <a class="code" href="classScreen.html">Screen</a> <a class="code" href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">ConnectFourScreen</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">  100</a></span>&#160;   std::vector&lt;vector&lt;char&gt;&gt;<a class="code" href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">grid</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classConnectFour.html#adc938d715dbe28efc1db3b4a1dc866cb">  104</a></span>&#160;   <span class="keywordtype">char</span> <a class="code" href="classConnectFour.html#adc938d715dbe28efc1db3b4a1dc866cb">currentPlayerChar</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">  108</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63">xSize</a>, <a class="code" href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">ySize</a>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span> </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="ttc" id="classConnectFour_html_a408b2a0222e08488c258e4225ba5b8f6"><div class="ttname"><a href="classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6">ConnectFour::IsBoardFull</a></div><div class="ttdeci">bool IsBoardFull()</div><div class="ttdoc">Returns true if every space in the board has been filled with a character. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:413</div></div>
-<div class="ttc" id="classConnectFour_html_aa563db9c04480dc44a37df28d07c776c"><div class="ttname"><a href="classConnectFour.html#aa563db9c04480dc44a37df28d07c776c">ConnectFour::ResetGame</a></div><div class="ttdeci">void ResetGame()</div><div class="ttdoc">Resets the game for another round in the event that the AI wins. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:429</div></div>
-<div class="ttc" id="classConnectFour_html_ac49d716bde974c19aab3e47e66d94073"><div class="ttname"><a href="classConnectFour.html#ac49d716bde974c19aab3e47e66d94073">ConnectFour::RightDiagonalCheck</a></div><div class="ttdeci">bool RightDiagonalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:345</div></div>
-<div class="ttc" id="classConnectFour_html_a618f3caa7db76bc8b4832a2338967a5b"><div class="ttname"><a href="classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b">ConnectFour::PlayAI</a></div><div class="ttdeci">void PlayAI(char AiPiece)</div><div class="ttdoc">Performs the AI players move. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:38</div></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="ttc" id="classConnectFour_html_a408b2a0222e08488c258e4225ba5b8f6"><div class="ttname"><a href="classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6">ConnectFour::IsBoardFull</a></div><div class="ttdeci">bool IsBoardFull()</div><div class="ttdoc">Returns true if every space in the board has been filled with a character. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:455</div></div>
+<div class="ttc" id="classConnectFour_html_adc938d715dbe28efc1db3b4a1dc866cb"><div class="ttname"><a href="classConnectFour.html#adc938d715dbe28efc1db3b4a1dc866cb">ConnectFour::currentPlayerChar</a></div><div class="ttdeci">char currentPlayerChar</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:104</div></div>
+<div class="ttc" id="classConnectFour_html_ac49d716bde974c19aab3e47e66d94073"><div class="ttname"><a href="classConnectFour.html#ac49d716bde974c19aab3e47e66d94073">ConnectFour::RightDiagonalCheck</a></div><div class="ttdeci">bool RightDiagonalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:403</div></div>
+<div class="ttc" id="classConnectFour_html_a3b578d1126bc575fa23b8811f121c8be"><div class="ttname"><a href="classConnectFour.html#a3b578d1126bc575fa23b8811f121c8be">ConnectFour::RunGame</a></div><div class="ttdeci">void RunGame(Character *player)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:33</div></div>
+<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:26</div></div>
+<div class="ttc" id="classConnectFour_html_a618f3caa7db76bc8b4832a2338967a5b"><div class="ttname"><a href="classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b">ConnectFour::PlayAI</a></div><div class="ttdeci">void PlayAI(char AiPiece)</div><div class="ttdoc">Performs the AI players move. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:125</div></div>
 <div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
-<div class="ttc" id="classConnectFour_html_a6bde7d38a9493ea5475a0a941f4c96df"><div class="ttname"><a href="classConnectFour.html#a6bde7d38a9493ea5475a0a941f4c96df">ConnectFour::MovePiece</a></div><div class="ttdeci">void MovePiece(char userPiece, int column)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:101</div></div>
+<div class="ttc" id="classConnectFour_html_a6bde7d38a9493ea5475a0a941f4c96df"><div class="ttname"><a href="classConnectFour.html#a6bde7d38a9493ea5475a0a941f4c96df">ConnectFour::MovePiece</a></div><div class="ttdeci">void MovePiece(char userPiece, int column)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:76</div></div>
+<div class="ttc" id="classConnectFour_html_a5e33120d5b6a49e8eacd976de8be9c7c"><div class="ttname"><a href="classConnectFour.html#a5e33120d5b6a49e8eacd976de8be9c7c">ConnectFour::IsInputOutOfScope</a></div><div class="ttdeci">bool IsInputOutOfScope(int input)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:206</div></div>
 <div class="ttc" id="classConnectFour_html_ae7d414d7f7f694fd427bfeaef80bd1f9"><div class="ttname"><a href="classConnectFour.html#ae7d414d7f7f694fd427bfeaef80bd1f9">ConnectFour::~ConnectFour</a></div><div class="ttdeci">virtual ~ConnectFour()</div><div class="ttdoc">De-constructor. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:27</div></div>
 <div class="ttc" id="classConnectFour_html_a9d7a0db424f22513386fa60ed2d5b575"><div class="ttname"><a href="classConnectFour.html#a9d7a0db424f22513386fa60ed2d5b575">ConnectFour::ConnectFour</a></div><div class="ttdeci">ConnectFour()</div><div class="ttdoc">Default constructor for ConnectFour, sets heigh to : and width to: </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:10</div></div>
-<div class="ttc" id="classConnectFour_html_acd39fbfa19a81ab05e7aae3ac51e9ed8"><div class="ttname"><a href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">ConnectFour::ySize</a></div><div class="ttdeci">int ySize</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:97</div></div>
-<div class="ttc" id="classConnectFour_html_a26d75c9c50d6424df11de765086edc8a"><div class="ttname"><a href="classConnectFour.html#a26d75c9c50d6424df11de765086edc8a">ConnectFour::IsColumnFull</a></div><div class="ttdeci">bool IsColumnFull(int input)</div><div class="ttdoc">Function which checks if a column is full. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:395</div></div>
-<div class="ttc" id="classConnectFour_html_ad453f2707d1ae7bb87cdd2d46010d951"><div class="ttname"><a href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">ConnectFour::BoardSetup</a></div><div class="ttdeci">void BoardSetup()</div><div class="ttdoc">Sets the board up for the beginning of the game, placing them in screen. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:59</div></div>
-<div class="ttc" id="classConnectFour_html_acacb2e213d7c4f6dec2cf2f9d3c370f9"><div class="ttname"><a href="classConnectFour.html#acacb2e213d7c4f6dec2cf2f9d3c370f9">ConnectFour::LeftDiagonalCheck</a></div><div class="ttdeci">bool LeftDiagonalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:298</div></div>
-<div class="ttc" id="classConnectFour_html_a7548207e4c83260233e8d3668ae3e7e2"><div class="ttname"><a href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">ConnectFour::ConnectFourScreen</a></div><div class="ttdeci">Screen ConnectFourScreen</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:80</div></div>
-<div class="ttc" id="classConnectFour_html_aad3b75c20b82a21fcbe648e7ee134a4b"><div class="ttname"><a href="classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b">ConnectFour::HorizontalCheck</a></div><div class="ttdeci">bool HorizontalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:256</div></div>
+<div class="ttc" id="classConnectFour_html_acd39fbfa19a81ab05e7aae3ac51e9ed8"><div class="ttname"><a href="classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8">ConnectFour::ySize</a></div><div class="ttdeci">int ySize</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:108</div></div>
+<div class="ttc" id="classConnectFour_html_a26d75c9c50d6424df11de765086edc8a"><div class="ttname"><a href="classConnectFour.html#a26d75c9c50d6424df11de765086edc8a">ConnectFour::IsColumnFull</a></div><div class="ttdeci">bool IsColumnFull(int input)</div><div class="ttdoc">Function which checks if a column is full. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:483</div></div>
+<div class="ttc" id="classConnectFour_html_a8f74f9d22c247508e868222c27136641"><div class="ttname"><a href="classConnectFour.html#a8f74f9d22c247508e868222c27136641">ConnectFour::SetCurrentPlayerChar</a></div><div class="ttdeci">void SetCurrentPlayerChar(int currentPlayer)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:214</div></div>
+<div class="ttc" id="classConnectFour_html_ad453f2707d1ae7bb87cdd2d46010d951"><div class="ttname"><a href="classConnectFour.html#ad453f2707d1ae7bb87cdd2d46010d951">ConnectFour::BoardSetup</a></div><div class="ttdeci">void BoardSetup()</div><div class="ttdoc">Sets the board up for the beginning of the game, placing them in screen. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:173</div></div>
+<div class="ttc" id="classConnectFour_html_a6f356156a6c23ee1f5838cd96b3b84bc"><div class="ttname"><a href="classConnectFour.html#a6f356156a6c23ee1f5838cd96b3b84bc">ConnectFour::TieGameCheck</a></div><div class="ttdeci">bool TieGameCheck(int &amp;currentPlayer)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:160</div></div>
+<div class="ttc" id="classConnectFour_html_acacb2e213d7c4f6dec2cf2f9d3c370f9"><div class="ttname"><a href="classConnectFour.html#acacb2e213d7c4f6dec2cf2f9d3c370f9">ConnectFour::LeftDiagonalCheck</a></div><div class="ttdeci">bool LeftDiagonalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:354</div></div>
+<div class="ttc" id="classConnectFour_html_a7548207e4c83260233e8d3668ae3e7e2"><div class="ttname"><a href="classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2">ConnectFour::ConnectFourScreen</a></div><div class="ttdeci">Screen ConnectFourScreen</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:97</div></div>
+<div class="ttc" id="classConnectFour_html_aad3b75c20b82a21fcbe648e7ee134a4b"><div class="ttname"><a href="classConnectFour.html#aad3b75c20b82a21fcbe648e7ee134a4b">ConnectFour::HorizontalCheck</a></div><div class="ttdeci">bool HorizontalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:307</div></div>
 <div class="ttc" id="Puzzle_8h_html"><div class="ttname"><a href="Puzzle_8h.html">Puzzle.h</a></div></div>
-<div class="ttc" id="classConnectFour_html_a1cbd5ba040359e265c85a27407528915"><div class="ttname"><a href="classConnectFour.html#a1cbd5ba040359e265c85a27407528915">ConnectFour::ValidMove</a></div><div class="ttdeci">bool ValidMove(int input)</div><div class="ttdoc">ALL HANDLED BY THE MENU OBJECT? </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:93</div></div>
-<div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:18</div></div>
-<div class="ttc" id="classConnectFour_html_a1e58549ad7980f6a1311c92f5e67e62c"><div class="ttname"><a href="classConnectFour.html#a1e58549ad7980f6a1311c92f5e67e62c">ConnectFour::RunGame</a></div><div class="ttdeci">void RunGame()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:152</div></div>
-<div class="ttc" id="classConnectFour_html_afe5fd24730a5d1295c1bb20fc2e6c1a8"><div class="ttname"><a href="classConnectFour.html#afe5fd24730a5d1295c1bb20fc2e6c1a8">ConnectFour::VerticalCheck</a></div><div class="ttdeci">bool VerticalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:215</div></div>
-<div class="ttc" id="classConnectFour_html_aeec5d9114f72805796129ebd6e94c6d8"><div class="ttname"><a href="classConnectFour.html#aeec5d9114f72805796129ebd6e94c6d8">ConnectFour::OutputGame</a></div><div class="ttdeci">void OutputGame()</div></div>
-<div class="ttc" id="classConnectFour_html_add9742cf2d2ffd9524d454762dbd3154"><div class="ttname"><a href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">ConnectFour::grid</a></div><div class="ttdeci">std::vector&lt; vector&lt; char &gt; &gt; grid</div><div class="ttdoc">The vector which stores the gameboards chars. </div><div class="ttdef"><b>Definition:</b> ConnectFour.h:93</div></div>
-<div class="ttc" id="classConnectFour_html_a4f7dd5550d9ba548c542d887822cc1f0"><div class="ttname"><a href="classConnectFour.html#a4f7dd5550d9ba548c542d887822cc1f0">ConnectFour::WinCheck</a></div><div class="ttdeci">bool WinCheck()</div><div class="ttdoc">Checks to see if there have been any 4 tokens in a row in the grid vector. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:204</div></div>
-<div class="ttc" id="classConnectFour_html_a9ebcc46eaaac1805eab8b90925f83a63"><div class="ttname"><a href="classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63">ConnectFour::xSize</a></div><div class="ttdeci">int xSize</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:97</div></div>
-<div class="ttc" id="classConnectFour_html_a58bd5328672a5c6d95fde740a4131eeb"><div class="ttname"><a href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour::SetOptionsInMenu</a></div><div class="ttdeci">void SetOptionsInMenu()</div><div class="ttdoc">Sends the menu class the options for the player to select. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:32</div></div>
-<div class="ttc" id="classConnectFour_html"><div class="ttname"><a href="classConnectFour.html">ConnectFour</a></div><div class="ttdoc">This class contains the mini-game/puzzle Connect Four. </div><div class="ttdef"><b>Definition:</b> ConnectFour.h:18</div></div>
+<div class="ttc" id="classConnectFour_html_a1cbd5ba040359e265c85a27407528915"><div class="ttname"><a href="classConnectFour.html#a1cbd5ba040359e265c85a27407528915">ConnectFour::ValidMove</a></div><div class="ttdeci">bool ValidMove(int input)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:147</div></div>
+<div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:19</div></div>
+<div class="ttc" id="classConnectFour_html_aaf17855d2cec2d71c07614af530a00bf"><div class="ttname"><a href="classConnectFour.html#aaf17855d2cec2d71c07614af530a00bf">ConnectFour::ResetGame</a></div><div class="ttdeci">void ResetGame(int &amp;currentPlayer)</div><div class="ttdoc">Resets the game for another round in the event that the AI wins. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:468</div></div>
+<div class="ttc" id="classConnectFour_html_afe5fd24730a5d1295c1bb20fc2e6c1a8"><div class="ttname"><a href="classConnectFour.html#afe5fd24730a5d1295c1bb20fc2e6c1a8">ConnectFour::VerticalCheck</a></div><div class="ttdeci">bool VerticalCheck()</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:266</div></div>
+<div class="ttc" id="classConnectFour_html_ac408488231f5104f4047978d877f145c"><div class="ttname"><a href="classConnectFour.html#ac408488231f5104f4047978d877f145c">ConnectFour::EndGamePrompt</a></div><div class="ttdeci">void EndGamePrompt(int &amp;currentPlayer)</div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:228</div></div>
+<div class="ttc" id="classConnectFour_html_add9742cf2d2ffd9524d454762dbd3154"><div class="ttname"><a href="classConnectFour.html#add9742cf2d2ffd9524d454762dbd3154">ConnectFour::grid</a></div><div class="ttdeci">std::vector&lt; vector&lt; char &gt; &gt; grid</div><div class="ttdoc">The vector which stores the gameboards chars. </div><div class="ttdef"><b>Definition:</b> ConnectFour.h:100</div></div>
+<div class="ttc" id="classConnectFour_html_a4f7dd5550d9ba548c542d887822cc1f0"><div class="ttname"><a href="classConnectFour.html#a4f7dd5550d9ba548c542d887822cc1f0">ConnectFour::WinCheck</a></div><div class="ttdeci">bool WinCheck()</div><div class="ttdoc">Checks to see if there have been any 4 tokens in a row in the grid vector. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:255</div></div>
+<div class="ttc" id="classConnectFour_html_a9ebcc46eaaac1805eab8b90925f83a63"><div class="ttname"><a href="classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63">ConnectFour::xSize</a></div><div class="ttdeci">int xSize</div><div class="ttdef"><b>Definition:</b> ConnectFour.h:108</div></div>
+<div class="ttc" id="classConnectFour_html_a58bd5328672a5c6d95fde740a4131eeb"><div class="ttname"><a href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour::SetOptionsInMenu</a></div><div class="ttdeci">void SetOptionsInMenu()</div><div class="ttdoc">Sets the error messages in the menu. </div><div class="ttdef"><b>Definition:</b> ConnectFour.cpp:155</div></div>
+<div class="ttc" id="classConnectFour_html"><div class="ttname"><a href="classConnectFour.html">ConnectFour</a></div><div class="ttdoc">This class contains the mini-game/puzzle Connect Four. </div><div class="ttdef"><b>Definition:</b> ConnectFour.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -138,8 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7dc389e166286ca2271625154dde39c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#ae7dc389e166286ca2271625154dde39c">~CodeCracker</a> ()</td></tr>
 <tr class="memdesc:ae7dc389e166286ca2271625154dde39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor.  <a href="#ae7dc389e166286ca2271625154dde39c">More...</a><br/></td></tr>
 <tr class="separator:ae7dc389e166286ca2271625154dde39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2aaaf60b31cf33cc0d70622665be45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a4f2aaaf60b31cf33cc0d70622665be45">RunGame</a> ()</td></tr>
-<tr class="separator:a4f2aaaf60b31cf33cc0d70622665be45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663fb6edb8141efd3b1760e46ea9f4e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a663fb6edb8141efd3b1760e46ea9f4e9">RunGame</a> (<a class="el" href="classCharacter.html">Character</a> *player)</td></tr>
+<tr class="separator:a663fb6edb8141efd3b1760e46ea9f4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
 <tr class="memitem:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ad0be5c887460d0b386bf5d97264f0c24">RandomNumber</a> (int n) const </td></tr>
 <tr class="separator:ad0be5c887460d0b386bf5d97264f0c24 inherit pub_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,19 +151,28 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a793271a6ea1d8affad8fdddbbd692f7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a793271a6ea1d8affad8fdddbbd692f7a">ValidMove</a> (char input)</td></tr>
 <tr class="separator:a793271a6ea1d8affad8fdddbbd692f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f112c18049c0ecc3e52bfcf1398ccd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#ae1f112c18049c0ecc3e52bfcf1398ccd">ValidAnswer</a> (const char input)</td></tr>
-<tr class="separator:ae1f112c18049c0ecc3e52bfcf1398ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddf29fcc2034f0acb41d41e0f755a3c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#aeddf29fcc2034f0acb41d41e0f755a3c">ValidAnswer</a> (int input, int riddleIndex)</td></tr>
+<tr class="separator:aeddf29fcc2034f0acb41d41e0f755a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3177ddb9deb208ac462d55970b112626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a3177ddb9deb208ac462d55970b112626">WinCheck</a> ()</td></tr>
 <tr class="memdesc:a3177ddb9deb208ac462d55970b112626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the player has successfully answered 3 riddles.  <a href="#a3177ddb9deb208ac462d55970b112626">More...</a><br/></td></tr>
 <tr class="separator:a3177ddb9deb208ac462d55970b112626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fd7f74660bef36842fc8293b3d5ed31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a9fd7f74660bef36842fc8293b3d5ed31">DeathCheck</a> ()</td></tr>
 <tr class="memdesc:a9fd7f74660bef36842fc8293b3d5ed31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the player is now dead.  <a href="#a9fd7f74660bef36842fc8293b3d5ed31">More...</a><br/></td></tr>
 <tr class="separator:a9fd7f74660bef36842fc8293b3d5ed31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a6f156f051feca5691b8a4c4f44310"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a02a6f156f051feca5691b8a4c4f44310">OutputRiddle</a> (int index)</td></tr>
+<tr class="separator:a02a6f156f051feca5691b8a4c4f44310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ef45a98032d321c825e7a2c5439a33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a13ef45a98032d321c825e7a2c5439a33">ImportRiddles</a> ()</td></tr>
 <tr class="memdesc:a13ef45a98032d321c825e7a2c5439a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports riddles from a text file and stores them in the vector.  <a href="#a13ef45a98032d321c825e7a2c5439a33">More...</a><br/></td></tr>
 <tr class="separator:a13ef45a98032d321c825e7a2c5439a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177a635a52ceb27eb1165b32cc0a3b73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a177a635a52ceb27eb1165b32cc0a3b73">SetRiddleInMenu</a> (int riddleIndex)</td></tr>
+<tr class="separator:a177a635a52ceb27eb1165b32cc0a3b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbbd890be17cec27b879eb369de82017"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#acbbd890be17cec27b879eb369de82017">SetOptionsInMenu</a> ()</td></tr>
 <tr class="separator:acbbd890be17cec27b879eb369de82017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076c2199e775591298674b0f20ed437e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a076c2199e775591298674b0f20ed437e">DecrementPlayerHealth</a> (int amountToDecrement)</td></tr>
+<tr class="separator:a076c2199e775591298674b0f20ed437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55bebba723a92d780659f016e9e394e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a55bebba723a92d780659f016e9e394e4">UnusedRandomRiddle</a> ()</td></tr>
+<tr class="memdesc:a55bebba723a92d780659f016e9e394e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picks one of the unused riddles randomly and returns its index.  <a href="#a55bebba723a92d780659f016e9e394e4">More...</a><br/></td></tr>
+<tr class="separator:a55bebba723a92d780659f016e9e394e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -176,12 +185,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2084c27e05ec80c44263cb2f9a54d8c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a2084c27e05ec80c44263cb2f9a54d8c4">answer</a></td></tr>
 <tr class="memdesc:a2084c27e05ec80c44263cb2f9a54d8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector to store the questions answers read in from the file, in order.  <a href="#a2084c27e05ec80c44263cb2f9a54d8c4">More...</a><br/></td></tr>
 <tr class="separator:a2084c27e05ec80c44263cb2f9a54d8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b54be5b85162c25c8e42ce1e865882a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a9b54be5b85162c25c8e42ce1e865882a">usedRiddles</a></td></tr>
+<tr class="separator:a9b54be5b85162c25c8e42ce1e865882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca60d7cc01bda0ec6782984e46b9b357"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#aca60d7cc01bda0ec6782984e46b9b357">riddleCompletionCount</a></td></tr>
+<tr class="memdesc:aca60d7cc01bda0ec6782984e46b9b357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total riddles compeleted.  <a href="#aca60d7cc01bda0ec6782984e46b9b357">More...</a><br/></td></tr>
 <tr class="separator:aca60d7cc01bda0ec6782984e46b9b357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30671a1b282dc98361938283fbafcf6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#a30671a1b282dc98361938283fbafcf6e">numberOfRiddles</a></td></tr>
+<tr class="memdesc:a30671a1b282dc98361938283fbafcf6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of riddles imported into the game.  <a href="#a30671a1b282dc98361938283fbafcf6e">More...</a><br/></td></tr>
 <tr class="separator:a30671a1b282dc98361938283fbafcf6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab497c5b666243b85ec3c754590ee7450"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCodeCracker.html#ab497c5b666243b85ec3c754590ee7450">riddleCorrect</a></td></tr>
-<tr class="separator:ab497c5b666243b85ec3c754590ee7450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -209,7 +220,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Default constructor for hanoi, reads in riddles from .txt files. </p>
 <dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Oct 20, 2017 </dd></dl>
-<p>Read in the riddle question string Read in the answer format Read in the anwer </p>
 
 </div>
 </div>
@@ -264,6 +274,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a076c2199e775591298674b0f20ed437e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeCracker::DecrementPlayerHealth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amountToDecrement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a13ef45a98032d321c825e7a2c5439a33"></a>
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +323,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4f2aaaf60b31cf33cc0d70622665be45"></a>
+<a class="anchor" id="a02a6f156f051feca5691b8a4c4f44310"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeCracker::OutputRiddle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Outputs the selected riddle, limiting the characters to a set length and moving them down to the next line if the string is longer than they limit. </p>
+
+</div>
+</div>
+<a class="anchor" id="a663fb6edb8141efd3b1760e46ea9f4e9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -299,7 +358,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void CodeCracker::RunGame </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classCharacter.html">Character</a> *&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -310,11 +370,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
-<p>Do riddle</p>
-<p>if riddle was completed successfully</p>
-<p>Decrement player health If player has died PuzzleEnd=true;</p>
+<p>Do riddle output </p>
 
-<p>Implements <a class="el" href="classPuzzle.html#ac92d0a3389cc806c0334aa224b72fa78">Puzzle</a>.</p>
+<p>Implements <a class="el" href="classPuzzle.html#a134875b96b18d9963d2b018fd14e7ab9">Puzzle</a>.</p>
 
 </div>
 </div>
@@ -350,7 +408,56 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae1f112c18049c0ecc3e52bfcf1398ccd"></a>
+<a class="anchor" id="a177a635a52ceb27eb1165b32cc0a3b73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CodeCracker::SetRiddleInMenu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>riddleIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55bebba723a92d780659f016e9e394e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CodeCracker::UnusedRandomRiddle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Picks one of the unused riddles randomly and returns its index. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeddf29fcc2034f0acb41d41e0f755a3c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -360,9 +467,19 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool CodeCracker::ValidAnswer </td>
           <td>(</td>
-          <td class="paramtype">const char&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>riddleIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -500,6 +617,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of riddles imported into the game. </p>
+
 </div>
 </div>
 <a class="anchor" id="ae578bd328ef64ed314b19e5940247f2c"></a>
@@ -542,9 +661,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total riddles compeleted. </p>
+
 </div>
 </div>
-<a class="anchor" id="ab497c5b666243b85ec3c754590ee7450"></a>
+<a class="anchor" id="a9b54be5b85162c25c8e42ce1e865882a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -552,7 +673,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool CodeCracker::riddleCorrect</td>
+          <td class="memname">std::vector&lt;int&gt; CodeCracker::usedRiddles</td>
         </tr>
       </table>
   </td>
@@ -561,6 +682,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Stores the indexes of all used riddle strings so that they aren't asked twice. </p>
 
 </div>
 </div>

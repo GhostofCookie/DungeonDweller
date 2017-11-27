@@ -20,6 +20,8 @@ class MainState : public GameState
   public:
    /// Default constructor
    MainState();
+   /// Default destructor
+   ~MainState();
    /// Sets the layout of the game.
    void Set();
    /// Outputs the set layout.
