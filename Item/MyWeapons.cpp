@@ -16,7 +16,8 @@ Sword::Sword()
 {
    baseDmg = 5;
    remainingUses = 10;
-   itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
+   itemName = NameGenerator("../Item/WeaponNames.txt");
+//   itemName += " Sword";
 }
 
 //*****************************************************************************
@@ -45,7 +46,7 @@ Bow::Bow()
    baseDmg = 10;
    remainingUses = 5;
    hitPercent = 70;
-   itemName = NameGenerator("WeaponNames.txt") + " Bow";
+   itemName = NameGenerator("../Item/WeaponNames.txt") + " Bow";
 }
 
 //*****************************************************************************
@@ -93,7 +94,7 @@ Spell::Spell()
 {
    baseDmg = 20;
    remainingUses = 1;
-   itemName = NameGenerator("SpellNames.txt") + " Spell";
+   itemName = NameGenerator("../Item/SpellNames.txt") + " Spell";
 }
 
 //*****************************************************************************
