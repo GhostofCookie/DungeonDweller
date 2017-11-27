@@ -28,7 +28,8 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../Puzzles/../Menu/RiddleMenu.h ../Puzzles/TicTacToe.h \
  ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/MemoryMatch.h \
  ../Puzzles/../Menu/MemoryMenu.h ../Puzzles/ConnectFour.h \
- ../Puzzles/../Menu/ConnectFourMenu.h TradeState.h FightState.h
+ ../Puzzles/../Menu/ConnectFourMenu.h TradeState.h FightState.h \
+ InventoryState.h
 Menu.o: ../Menu/Menu.cpp ../Menu/Menu.h
 MainMenu.o: ../Menu/MainMenu.cpp ../Menu/MainMenu.h ../Menu/GameMenu.h \
  ../Menu/Menu.h
@@ -265,3 +266,24 @@ MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h
+InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
+ ../Menu/Menu.h ../Screen/Screen.h ../Screen/SlotScreen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
+ ../RoomTree/../Room/../Image/Image.h \
+ ../RoomTree/../Room/../Image/../Screen/Screen.h \
+ ../RoomTree/../Room/../Image/DefaultImg.h \
+ ../RoomTree/../Room/../Image/Image.h \
+ ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/Player.h ../Character/Character.h \
+ ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
+ ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
+ ../Item/MyConsumables.h ../Cutscene/Cutscene.h \
+ ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
+ ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
+ ../Cutscene/../Room/Room.h ../Room/Room.h \
+ ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
+ ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h ../Menu/CharacterMenu.h
