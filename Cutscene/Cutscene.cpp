@@ -587,6 +587,8 @@ void Cutscene::Outro()
 
       usleep(VERTSPEED * 2);
    }
+
+   usleep(3000000);
 }
 
 
@@ -598,7 +600,7 @@ void Cutscene::MonsterEncounter()
    
    Screen scr = Screen();
 
-   
+   // fill from the ends into the center
    int left = 0, right = scr.GetCols()-1;
    while(left <= right)
    {
@@ -619,6 +621,7 @@ void Cutscene::MonsterEncounter()
       right -= am;
    }
 
+   // erase from the middle out
    left = scr.GetCols()/2, right = scr.GetCols()/2;
    while(left >= 0 - am)
    {
