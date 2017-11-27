@@ -5,6 +5,12 @@ MainState::MainState()
    menu = new MainMenu();
 }
 
+MainState::~MainState()
+{
+   delete screen;
+   delete menu;
+}
+
 void MainState::Set()
 {
    menu->AddOption('P',"Play Game");

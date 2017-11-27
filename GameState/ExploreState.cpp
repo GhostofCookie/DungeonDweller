@@ -20,39 +20,39 @@ ExploreState::ExploreState()
 
 ExploreState::~ExploreState()
 {
-  delete menu;
-  delete screen;
-  delete roomPtr;
-  delete roomTree;
-  delete import;
+   delete menu;
+   delete screen;
+   delete roomPtr;
+   delete roomTree;
+   delete import;
+   delete character;
 }
 
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
 {
-  if(menu != nullptr)
-    {
+   if(menu != nullptr)
+   {
       delete menu;
       menu = new ExploreMenu();
-    }
+   }
 
-  menu->AddOption('w',"Move Up");
-  menu->AddOption('a',"Move Left");
-  menu->AddOption('s',"Move Down");
-  menu->AddOption('d',"Move Right");
-  if((roomTree->At())->GetType() == 1)
-     menu->AddOption('t', "Trade");
-  if((roomTree->At())->GetType() == 3 && !roomTree->At()->IsComplete())
-     menu->AddOption('p', "Solve Puzzle");
-  menu->AddOption('q', "Quit to Menu");
+   menu->AddOption('w',"Move Up");
+   menu->AddOption('a',"Move Left");
+   menu->AddOption('s',"Move Down");
+   menu->AddOption('d',"Move Right");
+   menu->AddOption('i',"Inventory");
+   if((roomTree->At())->GetType() == 1)
+      menu->AddOption('t', "Trade");
+   if((roomTree->At())->GetType() == 3 && !roomTree->At()->IsComplete())
+      menu->AddOption('p', "Solve Puzzle");
+   menu->AddOption('q', "Quit to Menu");
 
 }
 
 /// Gets the layout for the game menu and screen.
 void ExploreState::Get()
 {
-   char ch;
-   
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -73,13 +73,7 @@ void ExploreState::Get()
    // Print the menu and handle user input
    menu->OutputMenu();
    menu->HandleInput(cin);
-   if(menu->GetOption() == 'q')
-   {
-      cout << "Are you sure you want to quit to main menu?";
-      cin >> ch;
-      if(tolower(ch) == 'y')
-	 currState = 'M';
-   }
+
 
    // Handle input from player
    RunInput(menu->GetOption());
@@ -174,9 +168,22 @@ void ExploreState::RunInput(char n)
 	    return;
 	    break;
 	 case 'q':
-	    currState = 'M';
+	    char ch;
+	    cout << "Are you sure you want to quit to main menu?";
+	    cin >> ch;
+	    if(tolower(ch) == 'y')
+	       currState = 'M';
+	    else
+	       currState = 'E';
 	    return;
 	    break;
+	 case 'i':
+	    currState = 'I';
+	    return;
+	    break;
+	 default:
+	    currState = 'E';
+	    return;
       };
 
       delete anim;
@@ -187,7 +194,7 @@ void ExploreState::RunInput(char n)
 /// room type.
 void ExploreState::SetState(int n)
 {
-   if(menu->GetOption() == 'q')
+   if(n == 113)
       currState = 'M';
    else
       switch(n)
@@ -219,13 +226,12 @@ void ExploreState::SetState(int n)
 	    
 	       screen->outlineOn = true;
 	       roomTree->At()->complete = true;
-	    //currState = 'F';
+	       //currState = 'F';
 	    }
 	    else currState = 'E';
 	    break;
-	 case 113:
-	    currState = 'M';
-	    break;
-
-   }
+	 default:
+	    currState = 'E';
+	    return;
+      }
 }
