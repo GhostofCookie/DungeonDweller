@@ -13,6 +13,7 @@ int main()
 {
    GameState *state = new MainState();
    GameState *baseState = new ExploreState();
+
    while(true)
    {
       system("clear");
@@ -37,10 +38,13 @@ int main()
 	 case 'I':
 	    state = new InventoryState();
 	    break;
+	 default:
+	    state = new MainState();
       }
       state->Set();
       state->Get();
    }
+   
    delete state;
    delete baseState;
    return 0;
