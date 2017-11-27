@@ -286,4 +286,6 @@ InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
  ../Cutscene/../Room/Room.h ../Room/Room.h \
  ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
  ../ImageImporter/../Image/ImportImg.h ../Image/Image.h \
- ../Image/DefaultImg.h ../Image/ImportImg.h ../Menu/CharacterMenu.h
+ ../Image/DefaultImg.h ../Image/ImportImg.h ../Menu/CharacterMenu.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/MyWeapons.h ../Item/Weapon.h
+Weapon.o: ../Item/Weapon.cpp ../Item/Weapon.h ../Item/Item.h

@@ -23,20 +23,18 @@ Inheritance diagram for Connect\-Four\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classConnectFour}{Connect\-Four}, sets heigh to \-: and width to\-: \end{DoxyCompactList}\item 
 virtual \hyperlink{classConnectFour_ae7d414d7f7f694fd427bfeaef80bd1f9}{$\sim$\-Connect\-Four} ()
 \begin{DoxyCompactList}\small\item\em De-\/constructor. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}{Run\-Game} ()
+void \hyperlink{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classConnectFour_a1cbd5ba040359e265c85a27407528915}{Valid\-Move} (int input)
-\begin{DoxyCompactList}\small\item\em A\-L\-L H\-A\-N\-D\-L\-E\-D B\-Y T\-H\-E M\-E\-N\-U O\-B\-J\-E\-C\-T? \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{Set\-Options\-In\-Menu} ()
-\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}{Board\-Setup} ()
-\begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game, placing them in screen. \end{DoxyCompactList}\item 
 void \hyperlink{classConnectFour_a6bde7d38a9493ea5475a0a941f4c96df}{Move\-Piece} (char user\-Piece, int column)
 \item 
-void \hyperlink{classConnectFour_aeec5d9114f72805796129ebd6e94c6d8}{Output\-Game} ()
+void \hyperlink{classConnectFour_a618f3caa7db76bc8b4832a2338967a5b}{Play\-A\-I} (char Ai\-Piece)
+\begin{DoxyCompactList}\small\item\em Performs the A\-I players move. \end{DoxyCompactList}\item 
+bool \hyperlink{classConnectFour_a1cbd5ba040359e265c85a27407528915}{Valid\-Move} (int input)
+\item 
+bool \hyperlink{classConnectFour_a5e33120d5b6a49e8eacd976de8be9c7c}{Is\-Input\-Out\-Of\-Scope} (int input)
 \item 
 bool \hyperlink{classConnectFour_a4f7dd5550d9ba548c542d887822cc1f0}{Win\-Check} ()
 \begin{DoxyCompactList}\small\item\em Checks to see if there have been any 4 tokens in a row in the grid vector. \end{DoxyCompactList}\item 
@@ -44,18 +42,26 @@ bool \hyperlink{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{Horizontal\-
 \item 
 bool \hyperlink{classConnectFour_afe5fd24730a5d1295c1bb20fc2e6c1a8}{Vertical\-Check} ()
 \item 
-bool \hyperlink{classConnectFour_ac49d716bde974c19aab3e47e66d94073}{Right\-Diagonal\-Check} ()
-\item 
 bool \hyperlink{classConnectFour_acacb2e213d7c4f6dec2cf2f9d3c370f9}{Left\-Diagonal\-Check} ()
 \item 
-void \hyperlink{classConnectFour_a618f3caa7db76bc8b4832a2338967a5b}{Play\-A\-I} (char Ai\-Piece)
-\begin{DoxyCompactList}\small\item\em Performs the A\-I players move. \end{DoxyCompactList}\item 
+bool \hyperlink{classConnectFour_ac49d716bde974c19aab3e47e66d94073}{Right\-Diagonal\-Check} ()
+\item 
 bool \hyperlink{classConnectFour_a26d75c9c50d6424df11de765086edc8a}{Is\-Column\-Full} (int input)
 \begin{DoxyCompactList}\small\item\em Function which checks if a column is full. \end{DoxyCompactList}\item 
 bool \hyperlink{classConnectFour_a408b2a0222e08488c258e4225ba5b8f6}{Is\-Board\-Full} ()
 \begin{DoxyCompactList}\small\item\em Returns true if every space in the board has been filled with a character. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{Reset\-Game} ()
-\begin{DoxyCompactList}\small\item\em Resets the game for another round in the event that the A\-I wins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{classConnectFour_a6f356156a6c23ee1f5838cd96b3b84bc}{Tie\-Game\-Check} (int \&current\-Player)
+\item 
+void \hyperlink{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}{Board\-Setup} ()
+\begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game, placing them in screen. \end{DoxyCompactList}\item 
+void \hyperlink{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{Set\-Options\-In\-Menu} ()
+\begin{DoxyCompactList}\small\item\em Sets the error messages in the menu. \end{DoxyCompactList}\item 
+void \hyperlink{classConnectFour_ac408488231f5104f4047978d877f145c}{End\-Game\-Prompt} (int \&current\-Player)
+\item 
+void \hyperlink{classConnectFour_aaf17855d2cec2d71c07614af530a00bf}{Reset\-Game} (int \&current\-Player)
+\begin{DoxyCompactList}\small\item\em Resets the game for another round in the event that the A\-I wins. \end{DoxyCompactList}\item 
+void \hyperlink{classConnectFour_a8f74f9d22c247508e868222c27136641}{Set\-Current\-Player\-Char} (int current\-Player)
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,10 +69,13 @@ void \hyperlink{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{Reset\-Game}
 \item 
 std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}{grid}
 \begin{DoxyCompactList}\small\item\em The vector which stores the gameboards chars. \end{DoxyCompactList}\item 
+char \hyperlink{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{current\-Player\-Char}
+\item 
 int \hyperlink{classConnectFour_a9ebcc46eaaac1805eab8b90925f83a63}{x\-Size}
 \item 
 int \hyperlink{classConnectFour_acd39fbfa19a81ab05e7aae3ac51e9ed8}{y\-Size}
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -131,7 +140,19 @@ If i is even, fill the row with squares to place tokens in later
 
 top\-Bound and left\-Bound should set the board centered inside the screen object.
 
-top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{\index{Connect\-Four@{Connect\-Four}!Horizontal\-Check@{Horizontal\-Check}}
+top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classConnectFour_ac408488231f5104f4047978d877f145c}{\index{Connect\-Four@{Connect\-Four}!End\-Game\-Prompt@{End\-Game\-Prompt}}
+\index{End\-Game\-Prompt@{End\-Game\-Prompt}!ConnectFour@{Connect\-Four}}
+\subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-End\-Game\-Prompt (
+\begin{DoxyParamCaption}
+\item[{int \&}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_ac408488231f5104f4047978d877f145c}
+Prompts the player and handles the end of the game appropriately. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\-Player,assigned} & to be human for new game.\\
+\hline
+\end{DoxyParams}
+If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won. \hypertarget{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{\index{Connect\-Four@{Connect\-Four}!Horizontal\-Check@{Horizontal\-Check}}
 \index{Horizontal\-Check@{Horizontal\-Check}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Horizontal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Horizontal\-Check (
 \begin{DoxyParamCaption}
@@ -173,9 +194,19 @@ Function which checks if a column is full, returns true if its full
 \mbox{\tt in}  & {\em the} & column selected by the user to be checked for status \\
 \hline
 \end{DoxyParams}
-Changing the value to -\/1 since vectors are zero relative
-
-If the column is full, return true, else return false. \hypertarget{classConnectFour_acacb2e213d7c4f6dec2cf2f9d3c370f9}{\index{Connect\-Four@{Connect\-Four}!Left\-Diagonal\-Check@{Left\-Diagonal\-Check}}
+\hypertarget{classConnectFour_a5e33120d5b6a49e8eacd976de8be9c7c}{\index{Connect\-Four@{Connect\-Four}!Is\-Input\-Out\-Of\-Scope@{Is\-Input\-Out\-Of\-Scope}}
+\index{Is\-Input\-Out\-Of\-Scope@{Is\-Input\-Out\-Of\-Scope}!ConnectFour@{Connect\-Four}}
+\subsubsection[{Is\-Input\-Out\-Of\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Is\-Input\-Out\-Of\-Scope (
+\begin{DoxyParamCaption}
+\item[{int}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a5e33120d5b6a49e8eacd976de8be9c7c}
+Checks to see if the players input is larger than the game board. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em The} & input to be checked, returns false if input out of bounds. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classConnectFour_acacb2e213d7c4f6dec2cf2f9d3c370f9}{\index{Connect\-Four@{Connect\-Four}!Left\-Diagonal\-Check@{Left\-Diagonal\-Check}}
 \index{Left\-Diagonal\-Check@{Left\-Diagonal\-Check}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Left\-Diagonal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Left\-Diagonal\-Check (
 \begin{DoxyParamCaption}
@@ -211,41 +242,13 @@ Assign the player selection to the board.
 \mbox{\tt in}  & {\em x,the} & X-\/coordinate (column) to drop the token in \\
 \hline
 \end{DoxyParams}
-If there are no pieces here, keep moving down through the column
-
-Else we have found a characters piece, place on top of it and break
-
-Height needs to be incremented since we want to place one space above the char that we just found in the grid.
-
-Set the char in the vector grid
-
-Set the char in the screen Height and column are multiplied by 2 since the actual vector has 1/2 as many spots as the grid displayed on the screen does.
-
-Break the loop
-
 If we have reached the bottom of the column and not found a piece, set the piece at the bottom of the column and break.
-
-Set the char in the vector grid
 
 Set the char in the screen
 
-Height and column are multiplied by 2 since the actual vector has
+Height and column are multiplied by 2 since the actual vector has 1/2 as many spots as the grid displayed on the screen does. Add 11 to the top\-Bound to place it in the bottom slot in the grid.
 
-1/2 as many spots as the grid displayed on the screen does. Add 11 to the top\-Bound to place it in the bottom slot in the grid.
-
-Break the loop \hypertarget{classConnectFour_aeec5d9114f72805796129ebd6e94c6d8}{\index{Connect\-Four@{Connect\-Four}!Output\-Game@{Output\-Game}}
-\index{Output\-Game@{Output\-Game}!ConnectFour@{Connect\-Four}}
-\subsubsection[{Output\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Output\-Game (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_aeec5d9114f72805796129ebd6e94c6d8}
-Displays the screen containing the gameboard 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Cf\-Screen,the} & screen object used for displaying the mini-\/game \\
-\hline
-\end{DoxyParams}
-\hypertarget{classConnectFour_a618f3caa7db76bc8b4832a2338967a5b}{\index{Connect\-Four@{Connect\-Four}!Play\-A\-I@{Play\-A\-I}}
+Break the loop \hypertarget{classConnectFour_a618f3caa7db76bc8b4832a2338967a5b}{\index{Connect\-Four@{Connect\-Four}!Play\-A\-I@{Play\-A\-I}}
 \index{Play\-A\-I@{Play\-A\-I}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Play\-A\-I}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Play\-A\-I (
 \begin{DoxyParamCaption}
@@ -256,18 +259,23 @@ Displays the screen containing the gameboard
 
 Performs the A\-I players move. 
 
-\hypertarget{classConnectFour_aa563db9c04480dc44a37df28d07c776c}{\index{Connect\-Four@{Connect\-Four}!Reset\-Game@{Reset\-Game}}
+The function which initiates the computers turn. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Ai\-Piece,the} & current user piece. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classConnectFour_aaf17855d2cec2d71c07614af530a00bf}{\index{Connect\-Four@{Connect\-Four}!Reset\-Game@{Reset\-Game}}
 \index{Reset\-Game@{Reset\-Game}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Reset\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Reset\-Game (
 \begin{DoxyParamCaption}
-{}
+\item[{int \&}]{current\-Player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_aa563db9c04480dc44a37df28d07c776c}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_aaf17855d2cec2d71c07614af530a00bf}
 
 
 Resets the game for another round in the event that the A\-I wins. 
 
-Empty the board of all pieces and fill it with empty spaces. \hypertarget{classConnectFour_ac49d716bde974c19aab3e47e66d94073}{\index{Connect\-Four@{Connect\-Four}!Right\-Diagonal\-Check@{Right\-Diagonal\-Check}}
+\hypertarget{classConnectFour_ac49d716bde974c19aab3e47e66d94073}{\index{Connect\-Four@{Connect\-Four}!Right\-Diagonal\-Check@{Right\-Diagonal\-Check}}
 \index{Right\-Diagonal\-Check@{Right\-Diagonal\-Check}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Right\-Diagonal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Right\-Diagonal\-Check (
 \begin{DoxyParamCaption}
@@ -278,31 +286,39 @@ Checks the entire grid to see if there's 4 of a kind in the right diagonal posit
 
 Checks the entire grid to see if there is 4 of a kind in the right diagonal positions, returns true if it finds 4 of a kind, false otherwise. at\-Count counts the number of '@' tokens in the diagonal line. copyright\-Count counts the number of '\#' tokens in the diagonal line.
 
-j will the be horizontal movement, i will be the vertical movement.
+i will be the vertical movement, j will the be horizontal movement
+
+If an empty space is found reset both counters since it is no longer a consecutive line
 
 If an '@' token is found, reset the count for copyright since it is not consecutive anymore.
 
 If a '\#' token is found, reset the count for at since it is not consecutive anymore.
 
-If an empty space is found reset both counters since it is no longer a consecutive line
-
 If either count is at 4 then we have found four of a kind and a player has won so return true.
 
-If no 4 of a kind has been found, return false. \hypertarget{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}{\index{Connect\-Four@{Connect\-Four}!Run\-Game@{Run\-Game}}
+If no 4 of a kind has been found, return false. \hypertarget{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}{\index{Connect\-Four@{Connect\-Four}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Run\-Game (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFour_a1e58549ad7980f6a1311c92f5e67e62c}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. current\-Player keeps track of whos turn it is, if it's odd, it is the user, if it is even, it is the A\-I's turn.
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. current\-Player keeps track of whos turn it is, if it's odd, it is the user, if it is even, it is the A\-I's turn. 
 
-If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won.
+Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
-increment the player 
-
-Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
-
+\hypertarget{classConnectFour_a8f74f9d22c247508e868222c27136641}{\index{Connect\-Four@{Connect\-Four}!Set\-Current\-Player\-Char@{Set\-Current\-Player\-Char}}
+\index{Set\-Current\-Player\-Char@{Set\-Current\-Player\-Char}!ConnectFour@{Connect\-Four}}
+\subsubsection[{Set\-Current\-Player\-Char}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Set\-Current\-Player\-Char (
+\begin{DoxyParamCaption}
+\item[{int}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a8f74f9d22c247508e868222c27136641}
+Sets the curren\-Player\-Char appropriately based on which parameters. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em even} & number=ai, odd number=human player. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{\index{Connect\-Four@{Connect\-Four}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
 \index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Set\-Options\-In\-Menu (
@@ -312,12 +328,24 @@ Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
 )\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}
 
 
-Sends the menu class the options for the player to select. 
+Sets the error messages in the menu. 
 
 
 
 Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 
+\hypertarget{classConnectFour_a6f356156a6c23ee1f5838cd96b3b84bc}{\index{Connect\-Four@{Connect\-Four}!Tie\-Game\-Check@{Tie\-Game\-Check}}
+\index{Tie\-Game\-Check@{Tie\-Game\-Check}!ConnectFour@{Connect\-Four}}
+\subsubsection[{Tie\-Game\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Tie\-Game\-Check (
+\begin{DoxyParamCaption}
+\item[{int \&}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a6f356156a6c23ee1f5838cd96b3b84bc}
+Checks to see if no player has won the game, returns true if there's a tie. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em used} & to reset the player char for another round. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classConnectFour_a1cbd5ba040359e265c85a27407528915}{\index{Connect\-Four@{Connect\-Four}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Valid\-Move (
@@ -325,10 +353,6 @@ Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 \item[{int}]{input}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a1cbd5ba040359e265c85a27407528915}
-
-
-A\-L\-L H\-A\-N\-D\-L\-E\-D B\-Y T\-H\-E M\-E\-N\-U O\-B\-J\-E\-C\-T? 
-
 Checks the semantics of the user choice to make sure they aren't doing something that would break the game with their input. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em has} & been checked for syntax by input method \\
@@ -366,7 +390,10 @@ Checks to see if there have been any 4 tokens in a row in the grid vector.
 \hypertarget{classConnectFour_a7548207e4c83260233e8d3668ae3e7e2}{\index{Connect\-Four@{Connect\-Four}!Connect\-Four\-Screen@{Connect\-Four\-Screen}}
 \index{Connect\-Four\-Screen@{Connect\-Four\-Screen}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Connect\-Four\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Connect\-Four\-::\-Connect\-Four\-Screen\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a7548207e4c83260233e8d3668ae3e7e2}
-Connect\-Four\-Screen stores and outputs the contents of the game to the terminal \hypertarget{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
+Connect\-Four\-Screen stores and outputs the contents of the game to the terminal \hypertarget{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{\index{Connect\-Four@{Connect\-Four}!current\-Player\-Char@{current\-Player\-Char}}
+\index{current\-Player\-Char@{current\-Player\-Char}!ConnectFour@{Connect\-Four}}
+\subsubsection[{current\-Player\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Connect\-Four\-::current\-Player\-Char\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}
+current\-Player\-Char keeps track of which character to insert depending on whos turn it is. \hypertarget{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
 \index{grid@{grid}!ConnectFour@{Connect\-Four}}
 \subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$char$>$ $>$ Connect\-Four\-::grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}
 

@@ -134,37 +134,51 @@ $(document).ready(function(){initNavTree('Screen_8h_source.html','');});
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keyword">virtual</span> ~<a class="code" href="classScreen.html">Screen</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classScreen.html#a6f906b745f406576d9f7aeaec330c9d6">   40</a></span>&#160;   <span class="keywordtype">bool</span> outlineOn = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">   42</a></span>&#160;   <span class="keywordtype">char</span> <a class="code" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">outlineCh</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keywordtype">void</span> Initialize(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="keywordtype">void</span> Resize(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordtype">int</span> GetRows() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordtype">int</span> GetCols() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <span class="keywordtype">int</span> GetCenterPnt() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <span class="keywordtype">bool</span> IsEven(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;num) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordtype">void</span> NewOutlineCh(<span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <span class="keywordtype">void</span> DrawBorder(<span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <span class="keywordtype">void</span> DrawBorder();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordtype">void</span> Fill();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <span class="keywordtype">void</span> Fill(<span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   <span class="comment">// (rows are numbered from 0 from the top, and columns are numbered 0 from the left)</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <span class="comment">// If the location is invalid, simply ignore the request</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"></span>   <span class="keywordtype">void</span> Set(<span class="keywordtype">int</span> y, <span class="keywordtype">int</span> x, <span class="keywordtype">char</span> ch);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   <span class="keywordtype">void</span> Erase();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   <span class="keyword">friend</span> ostream&amp; <a class="code" href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator &lt;&lt;</a>(ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classScreen.html">Screen</a> *s);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <span class="keyword">friend</span> ostream&amp; <a class="code" href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator &lt;&lt;</a>(ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classScreen.html">Screen</a> &amp;s);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Screen_h */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">   43</a></span>&#160;   <span class="keywordtype">char</span> <a class="code" href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">outlineCh</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <span class="keywordtype">void</span> Initialize(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keywordtype">void</span> Resize(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordtype">int</span> GetRows() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">int</span> GetCols() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   <span class="keywordtype">bool</span> IsEven(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;num) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <span class="keywordtype">void</span> NewOutlineCh(<span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordtype">void</span> DrawBorder(<span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="keywordtype">void</span> DrawBorder();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <span class="keywordtype">void</span> Fill();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="keywordtype">void</span> Fill(<span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   <span class="comment">// (rows are numbered from 0 from the top, and columns are numbered 0 from the left)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   <span class="comment">// If the location is invalid, simply ignore the request</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span>   <span class="keywordtype">void</span> Set(<span class="keywordtype">int</span> y, <span class="keywordtype">int</span> x, <span class="keywordtype">char</span> ch);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   <span class="keywordtype">void</span> Erase();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   <span class="keywordtype">void</span> MultiPrint(<span class="keyword">const</span> vector&lt;Screen&gt; &amp;screens);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   <span class="keyword">friend</span> ostream&amp; <a class="code" href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator &lt;&lt;</a>(ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classScreen.html">Screen</a> *s);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   <span class="keyword">friend</span> ostream&amp; <a class="code" href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator &lt;&lt;</a>(ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classScreen.html">Screen</a> &amp;s);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Screen_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
-<div class="ttc" id="classScreen_html_a0b59df2bfafff7a121286a5ea40503b6"><div class="ttname"><a href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">Screen::outlineCh</a></div><div class="ttdeci">char outlineCh</div><div class="ttdoc">the character used to draw the screen border </div><div class="ttdef"><b>Definition:</b> Screen.h:42</div></div>
-<div class="ttc" id="Screen_8cpp_html_adb701ccee14124fb66506086b5a34199"><div class="ttname"><a href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;os, const Screen &amp;s)</div><div class="ttdef"><b>Definition:</b> Screen.cpp:151</div></div>
+<div class="ttc" id="classScreen_html_a0b59df2bfafff7a121286a5ea40503b6"><div class="ttname"><a href="classScreen.html#a0b59df2bfafff7a121286a5ea40503b6">Screen::outlineCh</a></div><div class="ttdeci">char outlineCh</div><div class="ttdoc">the character used to draw the screen border </div><div class="ttdef"><b>Definition:</b> Screen.h:43</div></div>
+<div class="ttc" id="Screen_8cpp_html_adb701ccee14124fb66506086b5a34199"><div class="ttname"><a href="Screen_8cpp.html#adb701ccee14124fb66506086b5a34199">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;os, const Screen &amp;s)</div><div class="ttdef"><b>Definition:</b> Screen.cpp:169</div></div>
 <div class="ttc" id="classScreen_html_a7349f56b4976f03dc9977dc613a8bbab"><div class="ttname"><a href="classScreen.html#a7349f56b4976f03dc9977dc613a8bbab">Screen::Window</a></div><div class="ttdeci">vector&lt; vector&lt; char &gt; &gt; Window</div><div class="ttdoc">2D vector representing the screen object </div><div class="ttdef"><b>Definition:</b> Screen.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

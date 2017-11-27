@@ -26,7 +26,11 @@ Inheritance diagram for Import\-Img\-:\begin{figure}[H]
 \hyperlink{classImportImg_adfc26e250764e4388d9aee048a22a673}{Import\-Img} (const \hyperlink{classImportImg}{Import\-Img} \&img)
 \item 
 \hyperlink{classImportImg_a5b0782a45e30d935067919e69169e809}{$\sim$\-Import\-Img} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classImportImg}{Import\-Img} \& \hyperlink{classImportImg_a3e162a2db0984d25d682c48108729da0}{operator=} (const \hyperlink{classImportImg}{Import\-Img} \&img)
+\item 
+string \hyperlink{classImportImg_ac6a2aaa21ea7cc5b439b292e809d3111}{Get\-Image\-File} ()
+\begin{DoxyCompactList}\small\item\em Function that returns the import image's file path. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -136,7 +140,18 @@ Function that creates an image based on the file name.
 
 Reimplemented from \hyperlink{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{Image}.
 
-\hypertarget{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}{\index{Import\-Img@{Import\-Img}!Import@{Import}}
+\hypertarget{classImportImg_ac6a2aaa21ea7cc5b439b292e809d3111}{\index{Import\-Img@{Import\-Img}!Get\-Image\-File@{Get\-Image\-File}}
+\index{Get\-Image\-File@{Get\-Image\-File}!ImportImg@{Import\-Img}}
+\subsubsection[{Get\-Image\-File}]{\setlength{\rightskip}{0pt plus 5cm}string Import\-Img\-::\-Get\-Image\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classImportImg_ac6a2aaa21ea7cc5b439b292e809d3111}
+
+
+Function that returns the import image's file path. 
+
+Function that returns the file path. \hypertarget{classImportImg_a20bf0509a73e9c08e89518a2ea9a868a}{\index{Import\-Img@{Import\-Img}!Import@{Import}}
 \index{Import@{Import}!ImportImg@{Import\-Img}}
 \subsubsection[{Import}]{\setlength{\rightskip}{0pt plus 5cm}void Import\-Img\-::\-Import (
 \begin{DoxyParamCaption}
@@ -156,6 +171,23 @@ Function that imports from a file
 \mbox{\tt in}  & {\em file} & the file to be opened \\
 \hline
 \mbox{\tt in}  & {\em the} & image in string form (can be used for later) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImportImg_a3e162a2db0984d25d682c48108729da0}{\index{Import\-Img@{Import\-Img}!operator=@{operator=}}
+\index{operator=@{operator=}!ImportImg@{Import\-Img}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img} \& Import\-Img\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Import\-Img} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classImportImg_a3e162a2db0984d25d682c48108729da0}
+Overloaded Assignment operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to copy from\\
+\hline
+\end{DoxyParams}
+Overloaded assignment operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to be copied from \\
 \hline
 \end{DoxyParams}
 

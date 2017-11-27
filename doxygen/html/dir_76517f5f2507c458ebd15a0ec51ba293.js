@@ -33,7 +33,8 @@ var dir_76517f5f2507c458ebd15a0ec51ba293 =
     ] ],
     [ "MemoryMenu.cpp", "MemoryMenu_8cpp.html", null ],
     [ "MemoryMenu.h", "MemoryMenu_8h.html", [
-      [ "MemoryMenu", "classMemoryMenu.html", "classMemoryMenu" ]
+      [ "MemoryMenu", "classMemoryMenu.html", "classMemoryMenu" ],
+      [ "Coord", "structMemoryMenu_1_1Coord.html", "structMemoryMenu_1_1Coord" ]
     ] ],
     [ "Menu.cpp", "Menu_8cpp.html", null ],
     [ "Menu.h", "Menu_8h.html", [
@@ -54,7 +55,8 @@ var dir_76517f5f2507c458ebd15a0ec51ba293 =
     [ "testMenu.cpp", "testMenu_8cpp.html", "testMenu_8cpp" ],
     [ "TicTacToeMenu.cpp", "TicTacToeMenu_8cpp.html", null ],
     [ "TicTacToeMenu.h", "TicTacToeMenu_8h.html", [
-      [ "TicTacToeMenu", "classTicTacToeMenu.html", "classTicTacToeMenu" ]
+      [ "TicTacToeMenu", "classTicTacToeMenu.html", "classTicTacToeMenu" ],
+      [ "Coord", "structTicTacToeMenu_1_1Coord.html", "structTicTacToeMenu_1_1Coord" ]
     ] ],
     [ "TradeMenu.cpp", "TradeMenu_8cpp.html", null ],
     [ "TradeMenu.h", "TradeMenu_8h.html", [

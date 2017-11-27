@@ -23,7 +23,7 @@ Inheritance diagram for Tic\-Tac\-Toe\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classTicTacToe}{Tic\-Tac\-Toe}, sets height to 3 and width to 3. \end{DoxyCompactList}\item 
 virtual \hyperlink{classTicTacToe_a5e9c4ed3279034d5530cc7b94a3e10e5}{$\sim$\-Tic\-Tac\-Toe} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classTicTacToe_a811356ea0290bf50ca522c79bead1e05}{Run\-Game} ()
+virtual void \hyperlink{classTicTacToe_acf4f00b2f56781f0c41a4d51cfe03268}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -36,9 +36,13 @@ void \hyperlink{classTicTacToe_a5fd34a83c96edbcf3c3c5a0930d513fb}{Set\-Options\-
 \begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
 void \hyperlink{classTicTacToe_afb236f340525d12a81667a340440b210}{Move\-Piece} (int input\-X, int input\-Y, char user\-Piece)
 \item 
+void \hyperlink{classTicTacToe_a1cd5593db7859cb3788a96a0069d42d7}{End\-Game\-Prompt} (int \&current\-Player)
+\item 
 bool \hyperlink{classTicTacToe_afe8f0ecd818f9f6b8418b7e597ff56a7}{Win\-Check} ()
 \begin{DoxyCompactList}\small\item\em Checks to see if there have been any 3 tokens in a row in the grid vector. \end{DoxyCompactList}\item 
-void \hyperlink{classTicTacToe_a27e5e7df0e76940c43f5c9fd83da5b75}{Ai\-Move} (int Ai\-Piece)
+bool \hyperlink{classTicTacToe_a8134bdddf731a29f61f42273e23f1abf}{Tie\-Game\-Check} (int \&current\-Player)
+\item 
+void \hyperlink{classTicTacToe_a457647024a551cb3d574d47a9ca85091}{Ai\-Move} (char Ai\-Piece)
 \begin{DoxyCompactList}\small\item\em Performs the selection for the npc opponent. \end{DoxyCompactList}\item 
 bool \hyperlink{classTicTacToe_afce358eabb849ae0dbf55818a7bdc56b}{Horizontal\-Check} ()
 \item 
@@ -48,6 +52,18 @@ bool \hyperlink{classTicTacToe_a3b96d4252e042b2e85bb0bc9a501bc0c}{Right\-Diagona
 \item 
 bool \hyperlink{classTicTacToe_ad65a6d8382d7a59c68a6778caea91d78}{Left\-Diagonal\-Check} ()
 \item 
+bool \hyperlink{classTicTacToe_a6c8bc2be4b6fc3f462905252c70b5183}{Is\-Input\-Valid} (char input\-X, int input\-Y)
+\item 
+bool \hyperlink{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}{Is\-Int\-Input\-Valid} (int input\-Y)
+\item 
+void \hyperlink{classTicTacToe_a3c05c5ac2c16a02a6a3c3b2021fdde74}{Set\-Current\-Players\-Char} (int current\-Player)
+\item 
+void \hyperlink{classTicTacToe_a740fc2c6b0526442ead17835c473f93e}{Reset\-Game} (int \&current\-Player)
+\item 
+int \hyperlink{classTicTacToe_a40ab96fced3061640200f5e7b83e0415}{Convert\-Char\-Coordinate\-To\-Index} (char input)
+\item 
+bool \hyperlink{classTicTacToe_a7b1ba09a855c9a3f71e3e06b3e76a992}{Is\-Spot\-Filled} (int input\-X, int input\-Y)
+\begin{DoxyCompactList}\small\item\em returns true if character is filled, false otherwise \end{DoxyCompactList}\item 
 bool \hyperlink{classTicTacToe_a7bb5521e85c2a1d4c61ab405d03a62c5}{Is\-Board\-Full} ()
 \begin{DoxyCompactList}\small\item\em Returns true if every space in the board has been filled with a character. \end{DoxyCompactList}\item 
 void \hyperlink{classTicTacToe_a36b58f33246558d0b7b34412b641cff6}{Reset\-Game} ()
@@ -59,6 +75,8 @@ std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classTicTacToe_a9e4321945ff09
 \begin{DoxyCompactList}\small\item\em Vector to store the contents of the gameboard. \end{DoxyCompactList}\item 
 int \hyperlink{classTicTacToe_a0aab68285cb8b8f5ce6159ed5cfc8bbd}{board\-Size}
 \begin{DoxyCompactList}\small\item\em Dimensions for the board. \end{DoxyCompactList}\item 
+char \hyperlink{classTicTacToe_a914627e3dd8100c387e98c4a022b1457}{current\-Player\-Char}
+\item 
 \hyperlink{classScreen}{Screen} \hyperlink{classTicTacToe_a6749582a8480be3cbae920f8f2cca8ce}{Tic\-Tac\-Toe\-Screen}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -99,13 +117,13 @@ Deconstructor.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classTicTacToe_a27e5e7df0e76940c43f5c9fd83da5b75}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Ai\-Move@{Ai\-Move}}
+\hypertarget{classTicTacToe_a457647024a551cb3d574d47a9ca85091}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Ai\-Move@{Ai\-Move}}
 \index{Ai\-Move@{Ai\-Move}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Ai\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Ai\-Move (
 \begin{DoxyParamCaption}
-\item[{int}]{Ai\-Piece}
+\item[{char}]{Ai\-Piece}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a27e5e7df0e76940c43f5c9fd83da5b75}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a457647024a551cb3d574d47a9ca85091}
 
 
 Performs the selection for the npc opponent. 
@@ -127,7 +145,21 @@ top\-Bound and left\-Bound should set the board centered inside the screen objec
 
 top\-Bound and left\-Bound should set the board centered inside the screen object.
 
-top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classTicTacToe_afce358eabb849ae0dbf55818a7bdc56b}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Horizontal\-Check@{Horizontal\-Check}}
+top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classTicTacToe_a40ab96fced3061640200f5e7b83e0415}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Convert\-Char\-Coordinate\-To\-Index@{Convert\-Char\-Coordinate\-To\-Index}}
+\index{Convert\-Char\-Coordinate\-To\-Index@{Convert\-Char\-Coordinate\-To\-Index}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Convert\-Char\-Coordinate\-To\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Tic\-Tac\-Toe\-::\-Convert\-Char\-Coordinate\-To\-Index (
+\begin{DoxyParamCaption}
+\item[{char}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a40ab96fced3061640200f5e7b83e0415}
+\hypertarget{classTicTacToe_a1cd5593db7859cb3788a96a0069d42d7}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!End\-Game\-Prompt@{End\-Game\-Prompt}}
+\index{End\-Game\-Prompt@{End\-Game\-Prompt}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-End\-Game\-Prompt (
+\begin{DoxyParamCaption}
+\item[{int \&}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a1cd5593db7859cb3788a96a0069d42d7}
+If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won. \hypertarget{classTicTacToe_afce358eabb849ae0dbf55818a7bdc56b}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Horizontal\-Check@{Horizontal\-Check}}
 \index{Horizontal\-Check@{Horizontal\-Check}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Horizontal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Horizontal\-Check (
 \begin{DoxyParamCaption}
@@ -146,6 +178,33 @@ Checks the entire grid to see if there is 3 of a kind in the horizontal position
 
 
 Returns true if every space in the board has been filled with a character. 
+
+\hypertarget{classTicTacToe_a6c8bc2be4b6fc3f462905252c70b5183}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Input\-Valid@{Is\-Input\-Valid}}
+\index{Is\-Input\-Valid@{Is\-Input\-Valid}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Is\-Input\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Is\-Input\-Valid (
+\begin{DoxyParamCaption}
+\item[{char}]{input\-X, }
+\item[{int}]{input\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a6c8bc2be4b6fc3f462905252c70b5183}
+\hypertarget{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Int\-Input\-Valid@{Is\-Int\-Input\-Valid}}
+\index{Is\-Int\-Input\-Valid@{Is\-Int\-Input\-Valid}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Is\-Int\-Input\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Is\-Int\-Input\-Valid (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}
+\hypertarget{classTicTacToe_a7b1ba09a855c9a3f71e3e06b3e76a992}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Spot\-Filled@{Is\-Spot\-Filled}}
+\index{Is\-Spot\-Filled@{Is\-Spot\-Filled}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Is\-Spot\-Filled}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Is\-Spot\-Filled (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-X, }
+\item[{int}]{input\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a7b1ba09a855c9a3f71e3e06b3e76a992}
+
+
+returns true if character is filled, false otherwise 
 
 \hypertarget{classTicTacToe_ad65a6d8382d7a59c68a6778caea91d78}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Left\-Diagonal\-Check@{Left\-Diagonal\-Check}}
 \index{Left\-Diagonal\-Check@{Left\-Diagonal\-Check}!TicTacToe@{Tic\-Tac\-Toe}}
@@ -172,6 +231,13 @@ Displays the screen containing the gameboard
 \mbox{\tt in}  & {\em input\-Y,the} & Y-\/coordinate of the selection. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classTicTacToe_a740fc2c6b0526442ead17835c473f93e}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Reset\-Game@{Reset\-Game}}
+\index{Reset\-Game@{Reset\-Game}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Reset\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Reset\-Game (
+\begin{DoxyParamCaption}
+\item[{int \&}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a740fc2c6b0526442ead17835c473f93e}
 \hypertarget{classTicTacToe_a36b58f33246558d0b7b34412b641cff6}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Reset\-Game@{Reset\-Game}}
 \index{Reset\-Game@{Reset\-Game}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Reset\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Reset\-Game (
@@ -192,24 +258,29 @@ Resets the game for another round in the event that the A\-I wins.
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a3b96d4252e042b2e85bb0bc9a501bc0c}
 Checks the entire grid to see if there's 3 of a kind in a right diagonal position, returns true if it finds 3 of a kind, false otherwise.
 
-Checks the entire grid to see if there is 3 of a kind in the right diagonal position, returns true if it finds 3 of a kind, false otherwise. \hypertarget{classTicTacToe_a811356ea0290bf50ca522c79bead1e05}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Run\-Game@{Run\-Game}}
+Checks the entire grid to see if there is 3 of a kind in the right diagonal position, returns true if it finds 3 of a kind, false otherwise. \hypertarget{classTicTacToe_acf4f00b2f56781f0c41a4d51cfe03268}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Run\-Game (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToe_a811356ea0290bf50ca522c79bead1e05}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTicTacToe_acf4f00b2f56781f0c41a4d51cfe03268}
 Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. current\-Player keeps track of whos turn it is, if it's odd, it is the user,
 
 if it is even, it is the A\-I's turn.
 
-If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won.
+X is taken as a,b, or c, Y is taken in as an integer. 
 
-increment the player 
+Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
-Implements \hyperlink{classPuzzle_ac92d0a3389cc806c0334aa224b72fa78}{Puzzle}.
-
-\hypertarget{classTicTacToe_a5fd34a83c96edbcf3c3c5a0930d513fb}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
+\hypertarget{classTicTacToe_a3c05c5ac2c16a02a6a3c3b2021fdde74}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Set\-Current\-Players\-Char@{Set\-Current\-Players\-Char}}
+\index{Set\-Current\-Players\-Char@{Set\-Current\-Players\-Char}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Set\-Current\-Players\-Char}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Set\-Current\-Players\-Char (
+\begin{DoxyParamCaption}
+\item[{int}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a3c05c5ac2c16a02a6a3c3b2021fdde74}
+Checks who's turn it is and sets Current\-Player\-Char to their correct char. \hypertarget{classTicTacToe_a5fd34a83c96edbcf3c3c5a0930d513fb}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
 \index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Set\-Options\-In\-Menu (
 \begin{DoxyParamCaption}
@@ -224,6 +295,13 @@ Sends the menu class the options for the player to select.
 
 Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 
+\hypertarget{classTicTacToe_a8134bdddf731a29f61f42273e23f1abf}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Tie\-Game\-Check@{Tie\-Game\-Check}}
+\index{Tie\-Game\-Check@{Tie\-Game\-Check}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{Tie\-Game\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Tie\-Game\-Check (
+\begin{DoxyParamCaption}
+\item[{int \&}]{current\-Player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a8134bdddf731a29f61f42273e23f1abf}
 \hypertarget{classTicTacToe_ab3e52a3c1bb9fefe08f4c4641f8a70f8}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Valid\-Move (
@@ -273,6 +351,9 @@ Checks to see if there have been any 3 tokens in a row in the grid vector.
 
 Dimensions for the board. 
 
+\hypertarget{classTicTacToe_a914627e3dd8100c387e98c4a022b1457}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!current\-Player\-Char@{current\-Player\-Char}}
+\index{current\-Player\-Char@{current\-Player\-Char}!TicTacToe@{Tic\-Tac\-Toe}}
+\subsubsection[{current\-Player\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Tic\-Tac\-Toe\-::current\-Player\-Char\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a914627e3dd8100c387e98c4a022b1457}
 \hypertarget{classTicTacToe_a9e4321945ff098996c42cc56936445b9}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!game\-Board@{game\-Board}}
 \index{game\-Board@{game\-Board}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{game\-Board}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$char$>$ $>$ Tic\-Tac\-Toe\-::game\-Board\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a9e4321945ff098996c42cc56936445b9}

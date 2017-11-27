@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('classNpc.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. ">Character</a> which provides <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a> attributes.  
+<p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. ">Character</a> which provides <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a> attributes.  
  <a href="classNpc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Npc_8h_source.html">Npc.h</a>&gt;</code></p>
@@ -124,46 +124,71 @@ Inheritance diagram for Npc:</div>
  <div class="center">
   <img src="classNpc.png" usemap="#Npc_map" alt=""/>
   <map id="Npc_map" name="Npc_map">
-<area href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. " alt="Character" shape="rect" coords="0,0,69,24"/>
+<area href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. " alt="Character" shape="rect" coords="0,0,69,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a692a6b5565b561bf0bbfe664bd37fdb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNpc.html#a692a6b5565b561bf0bbfe664bd37fdb7">Npc</a> (int h)</td></tr>
-<tr class="separator:a692a6b5565b561bf0bbfe664bd37fdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8de4e512338f57a56f490c60293118b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNpc.html#ad8de4e512338f57a56f490c60293118b">Npc</a> (int s=0, int g=0, int h=0, <a class="el" href="classImportImg.html">ImportImg</a> <a class="el" href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">img</a>=<a class="el" href="classImportImg.html">ImportImg</a>(&quot;../DD_Art/<a class="el" href="classPlayer.html">Player</a>/DD_NPCEnemy.txt&quot;))</td></tr>
+<tr class="separator:ad8de4e512338f57a56f490c60293118b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2249c5155af3d692e51ff610064e81fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNpc.html#a2249c5155af3d692e51ff610064e81fe">~Npc</a> ()</td></tr>
 <tr class="memdesc:a2249c5155af3d692e51ff610064e81fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor.  <a href="#a2249c5155af3d692e51ff610064e81fe">More...</a><br/></td></tr>
 <tr class="separator:a2249c5155af3d692e51ff610064e81fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharacter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharacter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCharacter.html">Character</a></td></tr>
-<tr class="memitem:a21de96f408a3db5e0734012c27587c8c inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual istream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a21de96f408a3db5e0734012c27587c8c">Read</a> (istream &amp;is)</td></tr>
-<tr class="separator:a21de96f408a3db5e0734012c27587c8c inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1af9d183d124e11e46d4b2868f846dc inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab1af9d183d124e11e46d4b2868f846dc">Write</a> (ostream &amp;os)</td></tr>
-<tr class="separator:ab1af9d183d124e11e46d4b2868f846dc inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250678a82a39b73cc3c622b9e88a7877 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a250678a82a39b73cc3c622b9e88a7877">ChangeGold</a> (int &amp;<a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a>, int goldMod)</td></tr>
-<tr class="separator:a250678a82a39b73cc3c622b9e88a7877 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bd3a1eca5362f69aea167bda1b336e inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a39bd3a1eca5362f69aea167bda1b336e">ChangeHealth</a> (int &amp;h, int hMod)</td></tr>
-<tr class="separator:a39bd3a1eca5362f69aea167bda1b336e inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa737ad669c882598bb65f5f6c57376 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#afaa737ad669c882598bb65f5f6c57376">Attack</a> ()</td></tr>
-<tr class="memdesc:afaa737ad669c882598bb65f5f6c57376 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attack function for the character.  <a href="#afaa737ad669c882598bb65f5f6c57376">More...</a><br/></td></tr>
-<tr class="separator:afaa737ad669c882598bb65f5f6c57376 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ec409c562122c4464e8a9d3be5f6d2 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2">~Character</a> ()</td></tr>
+<tr class="memdesc:af3ec409c562122c4464e8a9d3be5f6d2 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. ">Character</a> deconstructor.  <a href="#af3ec409c562122c4464e8a9d3be5f6d2">More...</a><br/></td></tr>
+<tr class="separator:af3ec409c562122c4464e8a9d3be5f6d2 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546635f47f379e4eed59d85d31d85c86 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a546635f47f379e4eed59d85d31d85c86">FillInventory</a> (<a class="el" href="classItem.html">Item</a> *item)</td></tr>
+<tr class="separator:a546635f47f379e4eed59d85d31d85c86 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e35b07fd2bddd94de754f5b8027fcc inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="classItem.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a21e35b07fd2bddd94de754f5b8027fcc">GetInventoryItems</a> ()</td></tr>
+<tr class="separator:a21e35b07fd2bddd94de754f5b8027fcc inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13bd70e837024c6f185675d07d28f30 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classItem.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ad13bd70e837024c6f185675d07d28f30">UseItem</a> (string item)</td></tr>
+<tr class="separator:ad13bd70e837024c6f185675d07d28f30 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8e04c875df744a3ea1ca426f8c0e12 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a5d8e04c875df744a3ea1ca426f8c0e12">ChangeGold</a> (int goldMod)</td></tr>
+<tr class="separator:a5d8e04c875df744a3ea1ca426f8c0e12 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c41714e3a2cb65268fa721846a4939 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af0c41714e3a2cb65268fa721846a4939">ChangeHealth</a> (int hMod)</td></tr>
+<tr class="separator:af0c41714e3a2cb65268fa721846a4939 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50324e5ccb52512dfc69b3775d85c3dc inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a50324e5ccb52512dfc69b3775d85c3dc">ChangeStamina</a> (int sMod)</td></tr>
+<tr class="separator:a50324e5ccb52512dfc69b3775d85c3dc inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768bb1dcb73569fed0983bc63aab96ee inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a768bb1dcb73569fed0983bc63aab96ee">GetStamina</a> ()</td></tr>
+<tr class="memdesc:a768bb1dcb73569fed0983bc63aab96ee inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stamina value.  <a href="#a768bb1dcb73569fed0983bc63aab96ee">More...</a><br/></td></tr>
+<tr class="separator:a768bb1dcb73569fed0983bc63aab96ee inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b7379cf9d7807d882cd86baad34c74 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab5b7379cf9d7807d882cd86baad34c74">GetGold</a> ()</td></tr>
+<tr class="memdesc:ab5b7379cf9d7807d882cd86baad34c74 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the gold value.  <a href="#ab5b7379cf9d7807d882cd86baad34c74">More...</a><br/></td></tr>
+<tr class="separator:ab5b7379cf9d7807d882cd86baad34c74 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b285268567ff7561973db87406e32cb inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a9b285268567ff7561973db87406e32cb">GetHealth</a> ()</td></tr>
+<tr class="memdesc:a9b285268567ff7561973db87406e32cb inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the health value.  <a href="#a9b285268567ff7561973db87406e32cb">More...</a><br/></td></tr>
+<tr class="separator:a9b285268567ff7561973db87406e32cb inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755c751849b867d7b42e9f87e1bfde6e inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classImportImg.html">ImportImg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a755c751849b867d7b42e9f87e1bfde6e">Img</a> ()</td></tr>
+<tr class="memdesc:a755c751849b867d7b42e9f87e1bfde6e inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the image.  <a href="#a755c751849b867d7b42e9f87e1bfde6e">More...</a><br/></td></tr>
+<tr class="separator:a755c751849b867d7b42e9f87e1bfde6e inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2194329f9956a07b9e3dc021da93358e inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a2194329f9956a07b9e3dc021da93358e">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;screen)</td></tr>
+<tr class="memdesc:a2194329f9956a07b9e3dc021da93358e inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the player.  <a href="#a2194329f9956a07b9e3dc021da93358e">More...</a><br/></td></tr>
+<tr class="separator:a2194329f9956a07b9e3dc021da93358e inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classCharacter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCharacter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classCharacter.html">Character</a></td></tr>
+<tr class="memitem:a3a0a90b2a43858b259912f659b8e0eea inherit pro_attribs_classCharacter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classImportImg.html">ImportImg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a3a0a90b2a43858b259912f659b8e0eea">img</a></td></tr>
+<tr class="separator:a3a0a90b2a43858b259912f659b8e0eea inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4db4a453cc96bedbf3a385a10291fa inherit pro_attribs_classCharacter"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classItem.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ade4db4a453cc96bedbf3a385a10291fa">inventory</a></td></tr>
+<tr class="memdesc:ade4db4a453cc96bedbf3a385a10291fa inherit pro_attribs_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of items the character has.  <a href="#ade4db4a453cc96bedbf3a385a10291fa">More...</a><br/></td></tr>
+<tr class="separator:ade4db4a453cc96bedbf3a385a10291fa inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8dd866071dba429a35555e0c372e162 inherit pro_attribs_classCharacter"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ab8dd866071dba429a35555e0c372e162">gold</a></td></tr>
-<tr class="memdesc:ab8dd866071dba429a35555e0c372e162 inherit pro_attribs_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of items the character has.  <a href="#ab8dd866071dba429a35555e0c372e162">More...</a><br/></td></tr>
+<tr class="memdesc:ab8dd866071dba429a35555e0c372e162 inherit pro_attribs_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of gold player has.  <a href="#ab8dd866071dba429a35555e0c372e162">More...</a><br/></td></tr>
 <tr class="separator:ab8dd866071dba429a35555e0c372e162 inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69c649b8febd22729e6edafb27e69aeb inherit pro_attribs_classCharacter"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a69c649b8febd22729e6edafb27e69aeb">health</a></td></tr>
 <tr class="memdesc:a69c649b8febd22729e6edafb27e69aeb inherit pro_attribs_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Characters health.  <a href="#a69c649b8febd22729e6edafb27e69aeb">More...</a><br/></td></tr>
 <tr class="separator:a69c649b8febd22729e6edafb27e69aeb inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f17daa14530e07f0ca479c2dd97f38b inherit pro_attribs_classCharacter"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b">stamina</a></td></tr>
+<tr class="memdesc:a0f17daa14530e07f0ca479c2dd97f38b inherit pro_attribs_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Characters stamina.  <a href="#a0f17daa14530e07f0ca479c2dd97f38b">More...</a><br/></td></tr>
+<tr class="separator:a0f17daa14530e07f0ca479c2dd97f38b inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class to provide input and output of Npc&#39;s and Player. ">Character</a> which provides <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a> attributes. </p>
-<dl class="section author"><dt>Author</dt><dd>Gates Kempenaar </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Oct 25, 2017 </dd></dl>
+<div class="textblock"><p>Derived class from <a class="el" href="classCharacter.html" title="Abstract base class of Npc&#39;s and Player&#39;s attributes. ">Character</a> which provides <a class="el" href="classNpc.html" title="Derived class from Character which provides Npc attributes. ">Npc</a> attributes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a692a6b5565b561bf0bbfe664bd37fdb7"></a>
+<a class="anchor" id="ad8de4e512338f57a56f490c60293118b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -171,8 +196,30 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">Npc::Npc </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h</em></td><td>)</td>
+          <td class="paramname"><em>s</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classImportImg.html">ImportImg</a>&#160;</td>
+          <td class="paramname"><em>img</em> = <code><a class="el" href="classImportImg.html">ImportImg</a>(&quot;../DD_Art/<a class="el" href="classPlayer.html">Player</a>/DD_NPCEnemy.txt&quot;)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -141,39 +141,66 @@ $(document).ready(function(){initNavTree('Room_8h_source.html','');});
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">// character stored</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structRoom_1_1Point.html#aa27da949fd69ddedd3b9a2c3e20626dc">   38</a></span>&#160;      <span class="keywordtype">char</span> <a class="code" href="structRoom_1_1Point.html#aa27da949fd69ddedd3b9a2c3e20626dc">ch</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="comment">// Public to allow user to use all the image functions from the room object</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">   44</a></span>&#160;   <a class="code" href="classImportImg.html">ImportImg</a> *<a class="code" href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">room</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">   46</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">type</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">   48</a></span>&#160;   vector&lt;Point&gt; <a class="code" href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">point</a>; <span class="comment">// stores the points to each key</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="comment">// Public to allow user to use all the image functions from the room object</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">   46</a></span>&#160;   <a class="code" href="classImportImg.html">ImportImg</a> *<a class="code" href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">room</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">   48</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">type</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   <span class="keywordtype">int</span> Rand(<span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordtype">int</span> RoomChance();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <span class="keywordtype">void</span> GetRoom(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">void</span> GetPoints();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">void</span> GetEventImages(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   <a class="code" href="classRoom.html">Room</a>(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   ~<a class="code" href="classRoom.html">Room</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <span class="keywordtype">void</span> AlignCenter(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;   <span class="keywordtype">void</span> AlignLeft(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordtype">void</span> AlignRight(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   <span class="keywordtype">void</span> Draw(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <span class="keywordtype">void</span> Draw(<a class="code" href="classScreen.html">Screen</a> &amp;screen, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> x);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Room_h */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="classRoom_html_a209eba22dbc85cb190906de3f0363e59"><div class="ttname"><a href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">Room::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">The type of room that will be generated. </div><div class="ttdef"><b>Definition:</b> Room.h:46</div></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keywordtype">int</span> RoomChance();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">void</span> GetRoom(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">void</span> GetPoints();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keywordtype">void</span> GetEventImages(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   <a class="code" href="classRoom.html">Room</a>(map&lt;<span class="keywordtype">char</span>, vector&lt;ImportImg&gt;&gt; &amp;imgFiles, <span class="keywordtype">int</span> type = -1, <span class="keywordtype">bool</span> c = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   <a class="code" href="classRoom.html">Room</a>(<a class="code" href="classRoom.html">Room</a> &amp;r);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <a class="code" href="classRoom.html">Room</a>(<span class="keyword">const</span> <a class="code" href="classRoom.html">Room</a> &amp;r);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   ~<a class="code" href="classRoom.html">Room</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">   84</a></span>&#160;   vector&lt;Point&gt; <a class="code" href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">point</a>; <span class="comment">// stores the points to each key</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classRoom.html#a27ea6606438ab66c131e164eb19b5f5f">   87</a></span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classRoom.html#a27ea6606438ab66c131e164eb19b5f5f">complete</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <a class="code" href="classImportImg.html">ImportImg</a> GetImage() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="keywordtype">string</span> GetImageFile() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   <span class="keywordtype">int</span> GetType() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   <span class="keywordtype">bool</span> IsComplete() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   <span class="keywordtype">void</span> AlignCenter(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   <span class="keywordtype">void</span> AlignLeft(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   <span class="keywordtype">void</span> AlignRight(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;   <span class="keywordtype">void</span> AlignTop(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   <span class="keywordtype">void</span> AlignBottom(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;   <span class="keywordtype">void</span> Draw(<a class="code" href="classScreen.html">Screen</a> &amp;screen);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;   </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;   <span class="keywordtype">void</span> Draw(<a class="code" href="classScreen.html">Screen</a> &amp;screen, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> x);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Room_h */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classRoom_html_a209eba22dbc85cb190906de3f0363e59"><div class="ttname"><a href="classRoom.html#a209eba22dbc85cb190906de3f0363e59">Room::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">The type of room that will be generated. </div><div class="ttdef"><b>Definition:</b> Room.h:48</div></div>
 <div class="ttc" id="classImportImg_html"><div class="ttname"><a href="classImportImg.html">ImportImg</a></div><div class="ttdoc">The DefaultImg class represents a basic square image made of characters. </div><div class="ttdef"><b>Definition:</b> ImportImg.h:16</div></div>
 <div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
-<div class="ttc" id="classRoom_html_aa5729228bac2fa43e1317655ec6dc5b7"><div class="ttname"><a href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">Room::point</a></div><div class="ttdeci">vector&lt; Point &gt; point</div><div class="ttdoc">The points of each image&amp;#39;s key character. </div><div class="ttdef"><b>Definition:</b> Room.h:48</div></div>
+<div class="ttc" id="classRoom_html_a27ea6606438ab66c131e164eb19b5f5f"><div class="ttname"><a href="classRoom.html#a27ea6606438ab66c131e164eb19b5f5f">Room::complete</a></div><div class="ttdeci">bool complete</div><div class="ttdoc">To indicate if a room has any events that need to take place. </div><div class="ttdef"><b>Definition:</b> Room.h:87</div></div>
+<div class="ttc" id="classRoom_html_aa5729228bac2fa43e1317655ec6dc5b7"><div class="ttname"><a href="classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7">Room::point</a></div><div class="ttdeci">vector&lt; Point &gt; point</div><div class="ttdoc">The points of each image&amp;#39;s key character. </div><div class="ttdef"><b>Definition:</b> Room.h:84</div></div>
 <div class="ttc" id="structRoom_1_1Point_html"><div class="ttname"><a href="structRoom_1_1Point.html">Room::Point</a></div><div class="ttdoc">A struct used to contain the location of characters from a room. </div><div class="ttdef"><b>Definition:</b> Room.h:31</div></div>
 <div class="ttc" id="structRoom_1_1Point_html_aa27da949fd69ddedd3b9a2c3e20626dc"><div class="ttname"><a href="structRoom_1_1Point.html#aa27da949fd69ddedd3b9a2c3e20626dc">Room::Point::ch</a></div><div class="ttdeci">char ch</div><div class="ttdef"><b>Definition:</b> Room.h:38</div></div>
-<div class="ttc" id="classRoom_html_a4d493bf25d07a6880b399adedd3a10e6"><div class="ttname"><a href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">Room::room</a></div><div class="ttdeci">ImportImg * room</div><div class="ttdoc">A finalized version of the room with data values included. </div><div class="ttdef"><b>Definition:</b> Room.h:44</div></div>
+<div class="ttc" id="classRoom_html_a4d493bf25d07a6880b399adedd3a10e6"><div class="ttname"><a href="classRoom.html#a4d493bf25d07a6880b399adedd3a10e6">Room::room</a></div><div class="ttdeci">ImportImg * room</div><div class="ttdoc">A finalized version of the room with data values included. </div><div class="ttdef"><b>Definition:</b> Room.h:46</div></div>
 <div class="ttc" id="classRoom_html"><div class="ttname"><a href="classRoom.html">Room</a></div><div class="ttdef"><b>Definition:</b> Room.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['use',['use',['../classItem.html#a790283e2fb63df00eb61a95bb9921051',1,'Item::use()'],['../classHealthPotion.html#a5e1fc49fe1d5440f56baddfe219c31fe',1,'HealthPotion::use()'],['../classFood.html#a545771c5cb1d9d74ab05d393ed216fa4',1,'Food::use()'],['../classSword.html#ac9613c1b3c9a3b748c6e36b1285924b9',1,'Sword::use()'],['../classBow.html#a19250cbc06d6bd21f83be645e880fd76',1,'Bow::use()'],['../classSpell.html#ae59f9a3082d49559fae99ee05014988b',1,'Spell::use()']]],
+  ['unusedrandomriddle',['UnusedRandomRiddle',['../classCodeCracker.html#a55bebba723a92d780659f016e9e394e4',1,'CodeCracker']]],
+  ['use',['Use',['../classItem.html#abd3f52dd7fa25d497f2070e95d44ac03',1,'Item::Use()'],['../classHealthPotion.html#a6fee598a4d80425364c72da18b883615',1,'HealthPotion::Use()'],['../classFood.html#a03ce09da13a4d8b9bb7a789a3ede42be',1,'Food::Use()'],['../classSword.html#a95e6215b5a27b6d2edc5c59e2a2a408b',1,'Sword::Use()'],['../classBow.html#a07d98049b83e0f21ccbef29c7294bde7',1,'Bow::Use()'],['../classSpell.html#a22680a625dce4f3a85421c4763930b57',1,'Spell::Use()']]],
+  ['useitem',['UseItem',['../classCharacter.html#ad13bd70e837024c6f185675d07d28f30',1,'Character']]],
   ['usekey',['UseKey',['../classPlayer.html#af839bdc1524d571568ea31a34f44f3ab',1,'Player']]]
 ];

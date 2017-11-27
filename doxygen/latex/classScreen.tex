@@ -26,8 +26,6 @@ int \hyperlink{classScreen_aa12cc4ea36f5d2ac98b3c7334616acbc}{Get\-Rows} () cons
 \begin{DoxyCompactList}\small\item\em Returns the height of the screen. \end{DoxyCompactList}\item 
 int \hyperlink{classScreen_a223cd8821b2b8006c61545ff41aa0091}{Get\-Cols} () const 
 \begin{DoxyCompactList}\small\item\em Returns the width of the screen. \end{DoxyCompactList}\item 
-int \hyperlink{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{Get\-Center\-Pnt} () const 
-\begin{DoxyCompactList}\small\item\em Returns the center of the screen. \end{DoxyCompactList}\item 
 bool \hyperlink{classScreen_af7a18ec4e53fb371293e9ebcc23b7e2b}{Is\-Even} (const int \&num) const 
 \item 
 void \hyperlink{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{New\-Outline\-Ch} (char ch)
@@ -43,7 +41,9 @@ void \hyperlink{classScreen_aeeebb297b5f39c2b25ee026df8fec9ac}{Fill} (char ch)
 void \hyperlink{classScreen_ab035671163a5cabee7611c7c456b1c56}{Set} (int y, int x, char ch)
 \begin{DoxyCompactList}\small\item\em Sets the characters at the given location to the given character. \end{DoxyCompactList}\item 
 void \hyperlink{classScreen_a7e2c21a6e63390eb3d8b46ee85af05d2}{Erase} ()
-\begin{DoxyCompactList}\small\item\em This function erases the contents of the screen and resets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function erases the contents of the screen and resets. \end{DoxyCompactList}\item 
+void \hyperlink{classScreen_af2db1ce1cd4beb8fec5f022bfbeb0c31}{Multi\-Print} (const vector$<$ \hyperlink{classScreen}{Screen} $>$ \&screens)
+\begin{DoxyCompactList}\small\item\em Function to print multiple screens beside each other. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -180,17 +180,6 @@ Function that fills the innards of the screen
 \mbox{\tt in}  & {\em ch} & the character used to fill with \\
 \hline
 \end{DoxyParams}
-\hypertarget{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}{\index{Screen@{Screen}!Get\-Center\-Pnt@{Get\-Center\-Pnt}}
-\index{Get\-Center\-Pnt@{Get\-Center\-Pnt}!Screen@{Screen}}
-\subsubsection[{Get\-Center\-Pnt}]{\setlength{\rightskip}{0pt plus 5cm}int Screen\-::\-Get\-Center\-Pnt (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}}\label{classScreen_a95daa612c5ec6a8018b89cfc2d785e27}
-
-
-Returns the center of the screen. 
-
 \hypertarget{classScreen_a223cd8821b2b8006c61545ff41aa0091}{\index{Screen@{Screen}!Get\-Cols@{Get\-Cols}}
 \index{Get\-Cols@{Get\-Cols}!Screen@{Screen}}
 \subsubsection[{Get\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}int Screen\-::\-Get\-Cols (
@@ -252,7 +241,18 @@ Function that returns T\-R\-U\-E if a number is even
 \mbox{\tt in}  & {\em num} & the number to be checked \\
 \hline
 \end{DoxyParams}
-\hypertarget{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{\index{Screen@{Screen}!New\-Outline\-Ch@{New\-Outline\-Ch}}
+\hypertarget{classScreen_af2db1ce1cd4beb8fec5f022bfbeb0c31}{\index{Screen@{Screen}!Multi\-Print@{Multi\-Print}}
+\index{Multi\-Print@{Multi\-Print}!Screen@{Screen}}
+\subsubsection[{Multi\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-Multi\-Print (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Screen} $>$ \&}]{screens}
+\end{DoxyParamCaption}
+)}}\label{classScreen_af2db1ce1cd4beb8fec5f022bfbeb0c31}
+
+
+Function to print multiple screens beside each other. 
+
+Function to prints as many screens as you want side by side. \hypertarget{classScreen_a27dcfac6e64ab72059d0801dd9714d7a}{\index{Screen@{Screen}!New\-Outline\-Ch@{New\-Outline\-Ch}}
 \index{New\-Outline\-Ch@{New\-Outline\-Ch}!Screen@{Screen}}
 \subsubsection[{New\-Outline\-Ch}]{\setlength{\rightskip}{0pt plus 5cm}void Screen\-::\-New\-Outline\-Ch (
 \begin{DoxyParamCaption}

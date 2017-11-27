@@ -118,45 +118,49 @@ $(document).ready(function(){initNavTree('Player_8h_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define Player_h</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//#include &quot;Character.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// : public Character</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPlayer.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayer.html">Player</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <a class="code" href="classPlayer.html">Player</a>(<span class="keywordtype">int</span> s = 0, <span class="keywordtype">int</span> k = 0, <span class="keywordtype">string</span> n = <span class="stringliteral">&quot; &quot;</span>, <span class="keywordtype">string</span> r = <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ~<a class="code" href="classPlayer.html">Player</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> ChangeStamina(<span class="keywordtype">int</span>&amp; s, <span class="keywordtype">int</span> sMod);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keywordtype">void</span> ChangeKeys(<span class="keywordtype">int</span>&amp; keys, <span class="keywordtype">int</span> keyMod);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <span class="keywordtype">bool</span> UseKey(<span class="keywordtype">int</span>&amp; keys);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Character_8h.html">Character.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Item/MyConsumables.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Item/Item.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../Image/ImportImg.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span><a class="code" href="classItem.html">Item</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span>MyConsumable;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span><a class="code" href="classNpc.html">Npc</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classPlayer.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayer.html">Player</a> : <span class="keyword">public</span> <a class="code" href="classCharacter.html">Character</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <a class="code" href="classPlayer.html">Player</a>(<span class="keywordtype">int</span> s = 0, <span class="keywordtype">int</span> k = 0, <span class="keywordtype">string</span> n = <span class="stringliteral">&quot; &quot;</span>, <span class="keywordtype">string</span> r = <span class="stringliteral">&quot; &quot;</span>, <span class="keywordtype">int</span> g = 0, <span class="keywordtype">int</span> h = 0, <a class="code" href="classImportImg.html">ImportImg</a> img = <a class="code" href="classImportImg.html">ImportImg</a>(<span class="stringliteral">&quot;../DD_Art/Player/DD_Player.txt&quot;</span>));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keywordtype">void</span> ChangeKeys(<span class="keywordtype">int</span> keyMod);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordtype">bool</span> UseKey(<span class="keywordtype">int</span>&amp; keys);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">   50</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">   53</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">   56</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">race</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classPlayer.html#a3642fc1d242a769a2ea76dc0b1662a20">   59</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classPlayer.html#a3642fc1d242a769a2ea76dc0b1662a20">stamina</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">   62</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">keys</a>; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Player_hpp */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="classPlayer_html_a5130cb6c4233cd7ad1212af0d1790e58"><div class="ttname"><a href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">Player::race</a></div><div class="ttdeci">string race</div><div class="ttdoc">Race of the player. </div><div class="ttdef"><b>Definition:</b> Player.h:56</div></div>
-<div class="ttc" id="classPlayer_html_ac46baa685ca2a266178f03b9e9877e65"><div class="ttname"><a href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">Player::keys</a></div><div class="ttdeci">int keys</div><div class="ttdoc">Amoutn of keys player has. </div><div class="ttdef"><b>Definition:</b> Player.h:62</div></div>
-<div class="ttc" id="classPlayer_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">Name of the player. </div><div class="ttdef"><b>Definition:</b> Player.h:53</div></div>
-<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Derived class from Character which provides Player attributes. </div><div class="ttdef"><b>Definition:</b> Player.h:20</div></div>
-<div class="ttc" id="classPlayer_html_a3642fc1d242a769a2ea76dc0b1662a20"><div class="ttname"><a href="classPlayer.html#a3642fc1d242a769a2ea76dc0b1662a20">Player::stamina</a></div><div class="ttdeci">int stamina</div><div class="ttdoc">Players stamina. </div><div class="ttdef"><b>Definition:</b> Player.h:59</div></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">   53</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">race</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">   57</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">keys</a>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Player_hpp */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classImportImg_html"><div class="ttname"><a href="classImportImg.html">ImportImg</a></div><div class="ttdoc">The DefaultImg class represents a basic square image made of characters. </div><div class="ttdef"><b>Definition:</b> ImportImg.h:16</div></div>
+<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:26</div></div>
+<div class="ttc" id="classPlayer_html_a5130cb6c4233cd7ad1212af0d1790e58"><div class="ttname"><a href="classPlayer.html#a5130cb6c4233cd7ad1212af0d1790e58">Player::race</a></div><div class="ttdeci">string race</div><div class="ttdoc">Race of the player. </div><div class="ttdef"><b>Definition:</b> Player.h:53</div></div>
+<div class="ttc" id="classPlayer_html_ac46baa685ca2a266178f03b9e9877e65"><div class="ttname"><a href="classPlayer.html#ac46baa685ca2a266178f03b9e9877e65">Player::keys</a></div><div class="ttdeci">int keys</div><div class="ttdoc">Amoutn of keys player has. </div><div class="ttdef"><b>Definition:</b> Player.h:57</div></div>
+<div class="ttc" id="classNpc_html"><div class="ttname"><a href="classNpc.html">Npc</a></div><div class="ttdoc">Derived class from Character which provides Npc attributes. </div><div class="ttdef"><b>Definition:</b> Npc.h:22</div></div>
+<div class="ttc" id="classItem_html"><div class="ttname"><a href="classItem.html">Item</a></div><div class="ttdoc">This class is an abstract base class to represent items in game. </div><div class="ttdef"><b>Definition:</b> Item.h:16</div></div>
+<div class="ttc" id="Character_8h_html"><div class="ttname"><a href="Character_8h.html">Character.h</a></div></div>
+<div class="ttc" id="classPlayer_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="classPlayer.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">Name of the player. </div><div class="ttdef"><b>Definition:</b> Player.h:50</div></div>
+<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Derived class from Character which provides Player attributes. </div><div class="ttdef"><b>Definition:</b> Player.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

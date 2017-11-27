@@ -27,9 +27,7 @@ Inheritance diagram for Image\-:\begin{figure}[H]
 \item 
 virtual \hyperlink{classImage_a0294f63700543e11c0f0da85601c7ae5}{$\sim$\-Image} ()
 \begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classImage_abfcde35c430b0dae18df1c09b62700f0}{operator=} (\hyperlink{classImage}{Image} \&img)
-\item 
-virtual void \hyperlink{classImage_a4da7f72e4063bd0764caa635c0e0aaae}{operator=} (const \hyperlink{classImage}{Image} \&img)
+virtual \hyperlink{classImage}{Image} \& \hyperlink{classImage_a645773587ffefda3891bfc7f6cc541bb}{operator=} (const \hyperlink{classImage}{Image} \&img)
 \item 
 virtual void \hyperlink{classImage_a057cb6b10590608656ff2a7aa159f515}{Draw} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
@@ -63,6 +61,10 @@ void \hyperlink{classImage_abbb7cdfe276a373ad9b50d5be641eeef}{Align\-Right} (\hy
 \item 
 void \hyperlink{classImage_a691da8aebb2d92b7471da96a19e0fc22}{Align\-Center} (\hyperlink{classScreen}{Screen} \&scr)
 \item 
+void \hyperlink{classImage_a5048f1f5a975185d24a08247dbce1568}{Align\-Top} (\hyperlink{classScreen}{Screen} \&scr)
+\item 
+void \hyperlink{classImage_adfd7cfe672b8950fa7cfcff8022169b0}{Align\-Bottom} (\hyperlink{classScreen}{Screen} \&scr)
+\item 
 void \hyperlink{classImage_a863eee8dfbe927d73fba705844eb3117}{Align\-Left} (\hyperlink{classImage}{Image} \&img)
 \item 
 void \hyperlink{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}{Align\-Right} (\hyperlink{classImage}{Image} \&img)
@@ -70,6 +72,10 @@ void \hyperlink{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}{Align\-Right} (\hy
 void \hyperlink{classImage_a7471581b8a028a79fd87d741ae825e23}{Align\-Center} (\hyperlink{classImage}{Image} \&img)
 \item 
 void \hyperlink{classImage_a4607fa422c54fb4bf0412edd47214b40}{Align\-Center} (\hyperlink{classImage}{Image} \&img, int x, int y)
+\item 
+void \hyperlink{classImage_a12f3de115677e508268f5b7d3485b483}{Align\-Top} (\hyperlink{classImage}{Image} \&img)
+\item 
+void \hyperlink{classImage_a1bb0179923b51be9159fbd74b6f4f91f}{Align\-Bottom} (\hyperlink{classImage}{Image} \&img)
 \item 
 void \hyperlink{classImage_aed099dcc3c5113b7171daa35460df948}{Shift\-Down} (\hyperlink{classScreen}{Screen} \&scr, int num)
 \item 
@@ -191,6 +197,40 @@ Virtual Destructor.
 Destructor. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classImage_adfd7cfe672b8950fa7cfcff8022169b0}{\index{Image@{Image}!Align\-Bottom@{Align\-Bottom}}
+\index{Align\-Bottom@{Align\-Bottom}!Image@{Image}}
+\subsubsection[{Align\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Bottom (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{screen}
+\end{DoxyParamCaption}
+)}}\label{classImage_adfd7cfe672b8950fa7cfcff8022169b0}
+Helper function to align the image to the bottom 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scr} & the screen to draw to\\
+\hline
+\end{DoxyParams}
+Align the image to the bottom of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & used to align with \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a1bb0179923b51be9159fbd74b6f4f91f}{\index{Image@{Image}!Align\-Bottom@{Align\-Bottom}}
+\index{Align\-Bottom@{Align\-Bottom}!Image@{Image}}
+\subsubsection[{Align\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Bottom (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classImage_a1bb0179923b51be9159fbd74b6f4f91f}
+Helper function to align the image to the bottom 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to draw to\\
+\hline
+\end{DoxyParams}
+Align the image to the bottom of the image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & used to align with \\
+\hline
+\end{DoxyParams}
 \hypertarget{classImage_a691da8aebb2d92b7471da96a19e0fc22}{\index{Image@{Image}!Align\-Center@{Align\-Center}}
 \index{Align\-Center@{Align\-Center}!Image@{Image}}
 \subsubsection[{Align\-Center}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Center (
@@ -215,9 +255,9 @@ Align the image to the center of the screen
 \item[{{\bf Image} \&}]{img}
 \end{DoxyParamCaption}
 )}}\label{classImage_a7471581b8a028a79fd87d741ae825e23}
-Helper function to align the image center 
+Helper function to align the image to the center 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the screen to align to\\
+\mbox{\tt in}  & {\em img} & the image to align to\\
 \hline
 \end{DoxyParams}
 Align the image to the center of the given image 
@@ -234,9 +274,9 @@ Align the image to the center of the given image
 \item[{int}]{y}
 \end{DoxyParamCaption}
 )}}\label{classImage_a4607fa422c54fb4bf0412edd47214b40}
-Helper function to align the image left 
+Helper function to align the image center 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the screen to align to\\
+\mbox{\tt in}  & {\em img} & the image to align to\\
 \hline
 \end{DoxyParams}
 Align the image to the center of the given image 
@@ -308,12 +348,46 @@ Align the image to the right of the screen
 )}}\label{classImage_a171b44f5d1ac53bfa9984a87c9786dd1}
 Helper function to align the image right 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the screen to align to\\
+\mbox{\tt in}  & {\em img} & the image to align to\\
 \hline
 \end{DoxyParams}
 Align the image to the right of the given image 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em image} & checks to ensure the bounds aren't exceeded \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a5048f1f5a975185d24a08247dbce1568}{\index{Image@{Image}!Align\-Top@{Align\-Top}}
+\index{Align\-Top@{Align\-Top}!Image@{Image}}
+\subsubsection[{Align\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Top (
+\begin{DoxyParamCaption}
+\item[{{\bf Screen} \&}]{screen}
+\end{DoxyParamCaption}
+)}}\label{classImage_a5048f1f5a975185d24a08247dbce1568}
+Helper function to align the image to the top 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em scr} & the screen to draw to\\
+\hline
+\end{DoxyParams}
+Align the image to the top of the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & used to align with \\
+\hline
+\end{DoxyParams}
+\hypertarget{classImage_a12f3de115677e508268f5b7d3485b483}{\index{Image@{Image}!Align\-Top@{Align\-Top}}
+\index{Align\-Top@{Align\-Top}!Image@{Image}}
+\subsubsection[{Align\-Top}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::\-Align\-Top (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classImage_a12f3de115677e508268f5b7d3485b483}
+Helper function to align the image to the top 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the image to align to\\
+\hline
+\end{DoxyParams}
+Align the image to the top of the image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & used to align with \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_a6bb7dff9e4c4c31b2d63d7b0a330ef89}{\index{Image@{Image}!Create@{Create}}
@@ -531,38 +605,21 @@ Function returns true if a number is even
 \mbox{\tt in}  & {\em num} & the number to be checked \\
 \hline
 \end{DoxyParams}
-\hypertarget{classImage_abfcde35c430b0dae18df1c09b62700f0}{\index{Image@{Image}!operator=@{operator=}}
+\hypertarget{classImage_a645773587ffefda3891bfc7f6cc541bb}{\index{Image@{Image}!operator=@{operator=}}
 \index{operator=@{operator=}!Image@{Image}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::operator= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} \& Image\-::operator= (
 \begin{DoxyParamCaption}
-\item[{{\bf Image} \&}]{image}
+\item[{const {\bf Image} \&}]{img}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_abfcde35c430b0dae18df1c09b62700f0}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a645773587ffefda3891bfc7f6cc541bb}
 Overloaded '=' operator 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em img} & the image being copied\\
 \hline
 \end{DoxyParams}
-Overloaded assignemnt operator 
+Overloaded assignment operator 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em image} & the image to be compied from \\
-\hline
-\end{DoxyParams}
-\hypertarget{classImage_a4da7f72e4063bd0764caa635c0e0aaae}{\index{Image@{Image}!operator=@{operator=}}
-\index{operator=@{operator=}!Image@{Image}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void Image\-::operator= (
-\begin{DoxyParamCaption}
-\item[{const {\bf Image} \&}]{image}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classImage_a4da7f72e4063bd0764caa635c0e0aaae}
-Overloaded '=' operator 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img} & the image being copied\\
-\hline
-\end{DoxyParams}
-Overloaded assignemnt operator 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em image} & the image to be compied from \\
+\mbox{\tt in}  & {\em img} & the image to copy \\
 \hline
 \end{DoxyParams}
 \hypertarget{classImage_a4fbbffe74cd76d884f1e2a96d0bb6c09}{\index{Image@{Image}!Set@{Set}}

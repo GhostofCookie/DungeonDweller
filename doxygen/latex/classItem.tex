@@ -21,20 +21,20 @@ Inheritance diagram for Item\-:\begin{figure}[H]
 \item 
 virtual \hyperlink{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{$\sim$\-Item} ()
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-\hyperlink{classItem}{Item} $\ast$ \hyperlink{classItem_aa0110e08655e85befca5bc462700e127}{get\-Item} (string item\-Type)
+\hyperlink{classItem}{Item} $\ast$ \hyperlink{classItem_a7b17a8ea512b73fff57327dbf64e64fc}{Get\-Item} (string item\-Type)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classItem}{Item} Factory. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classItem_a790283e2fb63df00eb61a95bb9921051}{use} (\hyperlink{classCharacter}{Character} $\ast$target)=0
+virtual bool \hyperlink{classItem_abd3f52dd7fa25d497f2070e95d44ac03}{Use} (\hyperlink{classCharacter}{Character} $\ast$target)=0
 \item 
-string \& \hyperlink{classItem_ad39021b642fa436b3c0b898314de012c}{name} ()
+string \& \hyperlink{classItem_a90ce604a697cdd06ed15c1176f269bcf}{Name} ()
 \begin{DoxyCompactList}\small\item\em read or write to name \end{DoxyCompactList}\item 
-string \hyperlink{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{name} () const 
+string \hyperlink{classItem_abbe83003b27f50b343ebfb4b89d73a9b}{Name} () const 
 \begin{DoxyCompactList}\small\item\em read name \end{DoxyCompactList}\item 
-string \hyperlink{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}{name\-Generator} (string file\-Name)
-\end{DoxyCompactItemize}
+string \hyperlink{classItem_ac97e1c78a4ea877d9c07774f07dd5fa4}{Name\-Generator} (string file\-Name)
+\begin{DoxyCompactList}\small\item\em Creates names for Items. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classItem_ad60b9683d09792d206d9557527f10d05}{random} (unsigned int start, unsigned int end)
+int \hyperlink{classItem_a06cbecc4adca069c237a334998679942}{Random} (unsigned int start, unsigned int end)
 \begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -53,7 +53,7 @@ This class is an abstract base class to represent items in game.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}
 
 
 Virtual destructor. 
@@ -61,13 +61,13 @@ Virtual destructor.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classItem_aa0110e08655e85befca5bc462700e127}{\index{Item@{Item}!get\-Item@{get\-Item}}
-\index{get\-Item@{get\-Item}!Item@{Item}}
-\subsubsection[{get\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item} $\ast$ Item\-::get\-Item (
+\hypertarget{classItem_a7b17a8ea512b73fff57327dbf64e64fc}{\index{Item@{Item}!Get\-Item@{Get\-Item}}
+\index{Get\-Item@{Get\-Item}!Item@{Item}}
+\subsubsection[{Get\-Item}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Item} $\ast$ Item\-::\-Get\-Item (
 \begin{DoxyParamCaption}
 \item[{string}]{item\-Type}
 \end{DoxyParamCaption}
-)}}\label{classItem_aa0110e08655e85befca5bc462700e127}
+)}}\label{classItem_a7b17a8ea512b73fff57327dbf64e64fc}
 
 
 \hyperlink{classItem}{Item} Factory. 
@@ -85,13 +85,13 @@ Pointer to created item
 {\em invalid\-\_\-argument} & Thrown if type does not exist or is not allowed \\
 \hline
 \end{DoxyExceptions}
-\hypertarget{classItem_ad39021b642fa436b3c0b898314de012c}{\index{Item@{Item}!name@{name}}
-\index{name@{name}!Item@{Item}}
-\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Item\-::name (
+\hypertarget{classItem_a90ce604a697cdd06ed15c1176f269bcf}{\index{Item@{Item}!Name@{Name}}
+\index{Name@{Name}!Item@{Item}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Item\-::\-Name (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classItem_ad39021b642fa436b3c0b898314de012c}
+)}}\label{classItem_a90ce604a697cdd06ed15c1176f269bcf}
 
 
 read or write to name 
@@ -99,13 +99,13 @@ read or write to name
 Allows access to the items name \begin{DoxyReturn}{Returns}
 Reference to the name of the item 
 \end{DoxyReturn}
-\hypertarget{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}{\index{Item@{Item}!name@{name}}
-\index{name@{name}!Item@{Item}}
-\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::name (
+\hypertarget{classItem_abbe83003b27f50b343ebfb4b89d73a9b}{\index{Item@{Item}!Name@{Name}}
+\index{Name@{Name}!Item@{Item}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::\-Name (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classItem_aefdaa767e00c0fcfe2801a5e3e4e951d}
+) const}}\label{classItem_abbe83003b27f50b343ebfb4b89d73a9b}
 
 
 read name 
@@ -113,13 +113,17 @@ read name
 Gives the name of the item without allowing chages \begin{DoxyReturn}{Returns}
 Name of the item 
 \end{DoxyReturn}
-\hypertarget{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}{\index{Item@{Item}!name\-Generator@{name\-Generator}}
-\index{name\-Generator@{name\-Generator}!Item@{Item}}
-\subsubsection[{name\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::name\-Generator (
+\hypertarget{classItem_ac97e1c78a4ea877d9c07774f07dd5fa4}{\index{Item@{Item}!Name\-Generator@{Name\-Generator}}
+\index{Name\-Generator@{Name\-Generator}!Item@{Item}}
+\subsubsection[{Name\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}string Item\-::\-Name\-Generator (
 \begin{DoxyParamCaption}
 \item[{string}]{file\-Name}
 \end{DoxyParamCaption}
-)}}\label{classItem_a3e8d2ce6b8192a4b2ca5ede6a25a49a4}
+)}}\label{classItem_ac97e1c78a4ea877d9c07774f07dd5fa4}
+
+
+Creates names for Items. 
+
 Generates adjectives to add to \hyperlink{classItem}{Item} names 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em file\-Name} & the file that the names comme from \\
@@ -133,14 +137,14 @@ Adjective generated and to be used
 {\em runtime\-\_\-error} & Thrown if source file has no names \\
 \hline
 \end{DoxyExceptions}
-\hypertarget{classItem_ad60b9683d09792d206d9557527f10d05}{\index{Item@{Item}!random@{random}}
-\index{random@{random}!Item@{Item}}
-\subsubsection[{random}]{\setlength{\rightskip}{0pt plus 5cm}int Item\-::random (
+\hypertarget{classItem_a06cbecc4adca069c237a334998679942}{\index{Item@{Item}!Random@{Random}}
+\index{Random@{Random}!Item@{Item}}
+\subsubsection[{Random}]{\setlength{\rightskip}{0pt plus 5cm}int Item\-::\-Random (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{start, }
 \item[{unsigned int}]{end}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classItem_ad60b9683d09792d206d9557527f10d05}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classItem_a06cbecc4adca069c237a334998679942}
 
 
 random number generator 
@@ -148,13 +152,13 @@ random number generator
 Helper function to generate random positive numbers \begin{DoxyReturn}{Returns}
 Random number between start and end 
 \end{DoxyReturn}
-\hypertarget{classItem_a790283e2fb63df00eb61a95bb9921051}{\index{Item@{Item}!use@{use}}
-\index{use@{use}!Item@{Item}}
-\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Item\-::use (
+\hypertarget{classItem_abd3f52dd7fa25d497f2070e95d44ac03}{\index{Item@{Item}!Use@{Use}}
+\index{Use@{Use}!Item@{Item}}
+\subsubsection[{Use}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Item\-::\-Use (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{target}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classItem_a790283e2fb63df00eb61a95bb9921051}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classItem_abd3f52dd7fa25d497f2070e95d44ac03}
 Pure Virtual funtion that forces all subclasses to define how to use themselves 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em target} & The \hyperlink{classCharacter}{Character} the item is being used on \\
@@ -165,7 +169,7 @@ true if use was successfull
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classSpell_ae59f9a3082d49559fae99ee05014988b}{Spell}, \hyperlink{classFood_a545771c5cb1d9d74ab05d393ed216fa4}{Food}, \hyperlink{classBow_a19250cbc06d6bd21f83be645e880fd76}{Bow}, \hyperlink{classHealthPotion_a5e1fc49fe1d5440f56baddfe219c31fe}{Health\-Potion}, and \hyperlink{classSword_ac9613c1b3c9a3b748c6e36b1285924b9}{Sword}.
+Implemented in \hyperlink{classSpell_a22680a625dce4f3a85421c4763930b57}{Spell}, \hyperlink{classFood_a03ce09da13a4d8b9bb7a789a3ede42be}{Food}, \hyperlink{classBow_a07d98049b83e0f21ccbef29c7294bde7}{Bow}, \hyperlink{classHealthPotion_a6fee598a4d80425364c72da18b883615}{Health\-Potion}, and \hyperlink{classSword_a95e6215b5a27b6d2edc5c59e2a2a408b}{Sword}.
 
 
 
