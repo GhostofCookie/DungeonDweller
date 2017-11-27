@@ -42,8 +42,8 @@ class Character
    /// Characters stamina
    int stamina;
    
-   public:
-
+  public:
+   
    /// Character deconstructor
    virtual ~Character(){}
 

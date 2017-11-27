@@ -44,16 +44,14 @@ public:
    /// \param[in] keys, uses a key if availible
    bool UseKey(int& keys);
 
-  private:
-   
+  private: 
    ///Name of the player
    string name;
    
    ///Race of the player
    string race;
   
-   
-   ///Amoutn of keys player has
+   ///Amount of keys player has
    int keys; 
 };
 

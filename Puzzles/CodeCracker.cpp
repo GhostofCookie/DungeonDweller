@@ -9,6 +9,8 @@
 CodeCracker::CodeCracker(){
    riddleCompletionCount=0;
    numberOfRiddles=0;
+   correctPrompt="That answer is correct!";
+   incorrectPrompt="Wrong! *The puzzler smacks you on the head with his staff* -1 Health"; 
 }
 
 ///Deconstructor
@@ -22,15 +24,15 @@ void CodeCracker:: RunGame(Character *player)
 {
    int userInput;
    RiddleMenu GameMenu;
-   cout << "Start" << endl;
+   system("clear");
    SetOptionsInMenu();
    ImportRiddles();
-
+   InitialPrompt(GameMenu);
    int currentRiddle;
-   //system("clear");
    PuzzleEnd=false;
    while(PuzzleEnd==false)
-   {     
+   {
+      system("clear");
       currentRiddle=UnusedRandomRiddle();
       cout << "current Riddle: " << question.at(currentRiddle) << endl;
       SetRiddleInMenu(currentRiddle, GameMenu);
@@ -44,17 +46,29 @@ void CodeCracker:: RunGame(Character *player)
       {
 	 MakeRiddleUsed(currentRiddle);
 	 cout << "correct" << endl;
+	 GameMenu.SetQuery(correctPrompt);
+	 GameMenu.OutputMenu();
+	 Puzzle::SecondDelay(3);
 	 riddleCompletionCount++;
 	 cout << "Riddles Completed:" << riddleCompletionCount << endl;
 	 WinCheck();
       }
       else
       {
-	 cout << "wrong" << endl;
-	 //Decrement health
-	 DeathCheck();//************NEEDS TO BE IMPLEMENTED******************
+	 GameMenu.SetQuery(incorrectPrompt);
+	 GameMenu.OutputMenu();
+	 SecondDelay(3);
+	 player->ChangeHealth(-5);
+	 DeathCheck(player);
       }
    }
+}
+void CodeCracker::InitialPrompt(RiddleMenu &menu)
+{
+   string initialPrompt= "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
+   menu.SetQuery(initialPrompt);
+   menu.OutputMenu();
+   Puzzle::SecondDelay(6);
 }
 
 void CodeCracker::SetRiddleInMenu(int riddleIndex, RiddleMenu &menu)
@@ -119,14 +133,11 @@ void CodeCracker::WinCheck()
       PuzzleEnd=true;
 }
 
-void CodeCracker::DecrementPlayerHealth(int amountToDecrement)
-{
-
-
-}
 ///Checks if the player is now dead
-void CodeCracker::DeathCheck()
+void CodeCracker::DeathCheck(Character *player)
 {
+   if(player->GetHealth()==0)
+      PuzzleEnd=true;
 }//Will need to take some kind of character variable/object
 
 /// Displays the screen containing the gameboard
@@ -149,7 +160,6 @@ void CodeCracker::ImportRiddles()
    if(in)
    {
       in >> numberOfRiddles;
-      cout << "Number of Riddles: " << numberOfRiddles << endl;
       std::getline(in,line);
       question.resize(numberOfRiddles);
       usedRiddles.resize(numberOfRiddles);
@@ -158,8 +168,6 @@ void CodeCracker::ImportRiddles()
       {
 	 std::getline(in, questionString);
 	 in >> qAnswer;
-	 //cout << "Question: " << questionString << endl;
-	 //cout << "Answer: " << qAnswer << endl;
 	 question.at(i)=questionString;
 	 answer.at(i)=qAnswer;
 	 usedRiddles.at(i)=false;
