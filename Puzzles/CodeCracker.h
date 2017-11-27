@@ -47,9 +47,10 @@ class CodeCracker: public virtual Puzzle
 ///Checks if the player has successfully answered 3 riddles.
    void WinCheck();
 
+   void InitialPrompt(RiddleMenu &menu);
 ///Checks if the player is now dead
-   void DeathCheck();//Will need to take some kind of character variable/object
-
+   void DeathCheck(Character *player);//Will need to take some kind of character variable/object
+   
    ///Outputs the selected riddle, limiting the characters to a set length
    ///and moving them down to the next line if the string is longer than they
    ///limit.
@@ -61,8 +62,6 @@ class CodeCracker: public virtual Puzzle
    void SetRiddleInMenu(int riddleIndex, RiddleMenu &menu);
      
    void SetOptionsInMenu();
-
-   void DecrementPlayerHealth(int amountToDecrement);
 
    void MakeRiddleUsed(int currentRiddle);
 
@@ -86,7 +85,7 @@ class CodeCracker: public virtual Puzzle
    ///Total number of riddles imported into the game
    int numberOfRiddles;
 
-
+   string incorrectPrompt, correctPrompt;
 };
 #endif
 

@@ -7,3 +7,8 @@ int Puzzle::RandomNumber(int n) const
    return n;
 }
    
+void Puzzle::SecondDelay(int seconds)
+{
+   usleep(1000000*seconds);
+}
+
