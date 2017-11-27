@@ -157,7 +157,7 @@ void CodeCracker::ImportRiddles()
    int qAnswer=0;
 
    ifstream in;
-   in.open("Riddles.txt");
+   in.open("../Puzzles/Riddles.txt");
 
    if(in)
    {
