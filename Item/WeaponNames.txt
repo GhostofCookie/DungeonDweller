@@ -12,3 +12,12 @@ Wooden
 Worn
 Nerf
 Swordy
+Dull
+Broken
+Long
+Short
+Glowing
+Radioactive
+Laser
+Golden
+Steel
