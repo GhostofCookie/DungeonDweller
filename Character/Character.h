@@ -25,10 +25,6 @@ class Item;
 /// \brief Abstract base class of Npc's and Player's attributes
 class Character
 {
-   Character();
-   
-   ~Character();
-
   protected:
    
    ImportImg img;
@@ -46,6 +42,9 @@ class Character
    int stamina;
    
   public:
+   
+   /// Character constructor
+   Character();
    
    /// Character deconstructor
    virtual ~Character(){}
