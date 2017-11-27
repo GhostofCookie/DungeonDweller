@@ -47,8 +47,8 @@ RoomTree::~RoomTree()
 //*****************************************************************************
 void RoomTree::DeleteTree(Node *tempRoot)
 {
-   if(!tempRoot) { //if this node exists
-
+   if(!tempRoot) //if this node exists
+   {
       if('U' != tempRoot->RootDir) //delete up child if its not the parent node
 	 DeleteTree(tempRoot->up);
 
@@ -72,7 +72,8 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 {
    dir = toupper(dir);
 
-   switch(dir) {
+   switch(dir)
+   {
       case 'U':
 	 if(currNode->up)
 	    throw invalid_argument("room occupied");
@@ -121,7 +122,8 @@ bool RoomTree::Move(char dir)
 {
    dir = toupper(dir);
 
-   switch(dir) {
+   switch(dir)
+   {
       case 'L':
 	 if(!(currNode->left))
 	    return false;
@@ -175,7 +177,8 @@ unsigned int RoomTree::CurrentHeight() const
    unsigned int i;
    
    for(i = 1; findNode->RootDir != '\0'; ++i)
-      switch(findNode->RootDir) {
+      switch(findNode->RootDir)
+      {
 	 case 'U':
 	    findNode = findNode->up;
 	    break;

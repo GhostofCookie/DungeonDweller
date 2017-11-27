@@ -27,7 +27,8 @@ HealthPotion::HealthPotion()
 //*****************************************************************************
 bool HealthPotion::Use(Character *target)
 {
-   if(!used) {
+   if(!used)
+   {
       target->ChangeHealth(value);
       used = true;
       return true;
@@ -50,7 +51,8 @@ Food::Food()
 //*****************************************************************************
 bool Food::Use(Character *target)
 {
-   if(!used) {     
+   if(!used)
+   {     
       target->ChangeStamina(value);
       used = true;
       return true;

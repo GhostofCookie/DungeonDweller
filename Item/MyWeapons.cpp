@@ -7,6 +7,7 @@
 
 #include "MyWeapons.h"
 #include "../Character/Character.h"
+#include <string>
 using namespace std;
 
 //*****************************************************************************
@@ -16,8 +17,7 @@ Sword::Sword()
 {
    baseDmg = 5;
    remainingUses = 10;
-   itemName = NameGenerator("../Item/WeaponNames.txt");
-//   itemName += " Sword";
+   itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
 }
 
 //*****************************************************************************
@@ -25,8 +25,8 @@ Sword::Sword()
 //*****************************************************************************
 bool Sword::Use(Character *target)
 {
-   if(remainingUses > 0) {
-		
+   if(remainingUses > 0)
+   {		
       //Modifies the damage output by up to +- 20%
       double modifier = static_cast<double>((Random(0,40)-20) / 100);
       int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
@@ -57,8 +57,8 @@ bool Bow::Use(Character *target)
    if(remainingUses > 0) {
       
       // Checks for a miss
-      if(Random(1,100) <= hitPercent) {
-	 
+      if(Random(1,100) <= hitPercent)
+      {	 
 	 //Modifies the damage output by up to +- 50%
 	 double modifier = static_cast<double>((Random(0,100)-50) / 100);
 	 int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
@@ -102,7 +102,8 @@ Spell::Spell()
 //*****************************************************************************
 bool Spell::Use(Character * target)
 {
-   if(remainingUses > 0) {
+   if(remainingUses > 0)
+   {
       //Modifies the damage output by up to +- 75%
       double modifier = static_cast<double>((Random(0,150)-75) / 100);
       int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);

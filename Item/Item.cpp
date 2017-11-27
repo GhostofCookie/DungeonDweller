@@ -61,16 +61,20 @@ string Item::Name() const
 //******************************************************************************
 string Item::NameGenerator(string fileName)
 {
-   static vector<string> adjectives;
+   vector<string> adjectives;
 
    ifstream fin;
    fin.open(fileName);
    if(fin.fail())
       throw invalid_argument("Could not open " + fileName);
    string tempName;
-   while(!fin.eof()) {
+   while(!fin.eof())
+   {
       getline(fin,tempName);
-      adjectives.push_back(tempName);
+      if(tempName[tempName.length() - 1] == '\r')
+	 tempName = tempName.substr(0,tempName.size() - 1);
+      if(tempName != "")
+	 adjectives.push_back(tempName);
    }
    fin.close();
    if(adjectives.size() < 1)
@@ -87,12 +91,13 @@ int Item::Random(unsigned int start,unsigned int end)
 {
    static bool seeded = false;
    if(!seeded)
+   {
       srand(time(NULL));
-   
+      seeded = true;
+   }
    // Makes sure end is not less than start
    if(start > end)
       swap(start,end);
 
-   return rand()%(end-start+1)+start;
    return rand()%(end-start+1)+start;
 }
