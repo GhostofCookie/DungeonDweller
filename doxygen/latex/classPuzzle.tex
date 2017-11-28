@@ -20,16 +20,16 @@ virtual \hyperlink{classPuzzle_a4319df1536a07cd1aaf23b27aeb53579}{$\sim$\-Puzzle
 \begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)=0
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPuzzle_ac25f8ddec23bc739d3e3ca8738316d8a}{Second\-Delay} (int seconds) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{Puzzle\-End}
 \begin{DoxyCompactList}\small\item\em Remains false until the mini-\/game/puzzle is ready to be terminated. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Set\-Options\-In\-Menu} ()=0
-\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -74,27 +74,19 @@ Method to run the game, serves as a 'main' for the mini-\/game, calling function
 
 Implemented in \hyperlink{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{Hanoi}, \hyperlink{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{Code\-Cracker}, \hyperlink{classTicTacToe_acf4f00b2f56781f0c41a4d51cfe03268}{Tic\-Tac\-Toe}, \hyperlink{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}{Connect\-Four}, and \hyperlink{classMemoryMatch_a090950f764dee0b982ea254075d3667c}{Memory\-Match}.
 
-\hypertarget{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{\index{Puzzle@{Puzzle}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
-\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!Puzzle@{Puzzle}}
-\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Puzzle\-::\-Set\-Options\-In\-Menu (
+\hypertarget{classPuzzle_ac25f8ddec23bc739d3e3ca8738316d8a}{\index{Puzzle@{Puzzle}!Second\-Delay@{Second\-Delay}}
+\index{Second\-Delay@{Second\-Delay}!Puzzle@{Puzzle}}
+\subsubsection[{Second\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}void Puzzle\-::\-Second\-Delay (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{seconds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}}\label{classPuzzle_adc90364342151caf536c4a34f2ca71d3}
-
-
-Sends the menu class the options for the player to select. 
-
-Does the appropriate action to the space selected by the user depending on which puzzle derived class it is being used in. 
-
-Implemented in \hyperlink{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{Connect\-Four}, \hyperlink{classCodeCracker_acbbd890be17cec27b879eb369de82017}{Code\-Cracker}, \hyperlink{classTicTacToe_a5fd34a83c96edbcf3c3c5a0930d513fb}{Tic\-Tac\-Toe}, \hyperlink{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}{Hanoi}, and \hyperlink{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{Memory\-Match}.
-
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPuzzle_ac25f8ddec23bc739d3e3ca8738316d8a}
 
 
 \subsection{Member Data Documentation}
 \hypertarget{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}{\index{Puzzle@{Puzzle}!Puzzle\-End@{Puzzle\-End}}
 \index{Puzzle\-End@{Puzzle\-End}!Puzzle@{Puzzle}}
-\subsubsection[{Puzzle\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool Puzzle\-::\-Puzzle\-End}}\label{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}
+\subsubsection[{Puzzle\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool Puzzle\-::\-Puzzle\-End\hspace{0.3cm}{\ttfamily [protected]}}}\label{classPuzzle_a965ad54e9f7340c3cad944fc82c61a2b}
 
 
 Remains false until the mini-\/game/puzzle is ready to be terminated. 

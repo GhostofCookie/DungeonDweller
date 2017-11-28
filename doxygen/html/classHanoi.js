@@ -13,6 +13,7 @@ var classHanoi =
     [ "SetOptionsInMenu", "classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a", null ],
     [ "ValidMove", "classHanoi.html#a509e940edaa6135c5b883c93c901e38f", null ],
     [ "WinCheck", "classHanoi.html#aefbb40fc625506daa131076206e85b69", null ],
+    [ "endGamePrompt", "classHanoi.html#a43513810a88b1c43a61dc26838ce6446", null ],
     [ "HanoiGameMenu", "classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49", null ],
     [ "HanoiScreen", "classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c", null ],
     [ "maxStackHeight", "classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4", null ],

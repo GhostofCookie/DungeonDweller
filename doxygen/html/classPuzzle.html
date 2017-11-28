@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Dungeon Dwellers: Puzzle Class Reference</title>
+<title>Dungeon Dweller: Puzzle Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,9 +31,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Dungeon Dwellers
+   <div id="projectname">Dungeon Dweller
    </div>
-   <div id="projectbrief">Insert a brief game description here.</div>
+   <div id="projectbrief">An ASCII based dungeon crawler. Fun for al ages and majors.</div>
   </td>
  </tr>
  </tbody>
@@ -108,8 +108,8 @@ $(document).ready(function(){initNavTree('classPuzzle.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classPuzzle-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Puzzle Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -141,17 +141,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a134875b96b18d9963d2b018fd14e7ab9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a134875b96b18d9963d2b018fd14e7ab9">RunGame</a> (<a class="el" href="classCharacter.html">Character</a> *player)=0</td></tr>
 <tr class="separator:a134875b96b18d9963d2b018fd14e7ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac25f8ddec23bc739d3e3ca8738316d8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ac25f8ddec23bc739d3e3ca8738316d8a">SecondDelay</a> (int seconds) const </td></tr>
+<tr class="separator:ac25f8ddec23bc739d3e3ca8738316d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
 <tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated.  <a href="#a965ad54e9f7340c3cad944fc82c61a2b">More...</a><br/></td></tr>
 <tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:adc90364342151caf536c4a34f2ca71d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#adc90364342151caf536c4a34f2ca71d3">SetOptionsInMenu</a> ()=0</td></tr>
-<tr class="memdesc:adc90364342151caf536c4a34f2ca71d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the menu class the options for the player to select.  <a href="#adc90364342151caf536c4a34f2ca71d3">More...</a><br/></td></tr>
-<tr class="separator:adc90364342151caf536c4a34f2ca71d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Tyler Siwy </dd></dl>
@@ -227,7 +226,7 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adc90364342151caf536c4a34f2ca71d3"></a>
+<a class="anchor" id="ac25f8ddec23bc739d3e3ca8738316d8a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -235,23 +234,19 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Puzzle::SetOptionsInMenu </td>
+          <td class="memname">void Puzzle::SecondDelay </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seconds</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Sends the menu class the options for the player to select. </p>
-<p>Does the appropriate action to the space selected by the user depending on which puzzle derived class it is being used in. </p>
-
-<p>Implemented in <a class="el" href="classConnectFour.html#a58bd5328672a5c6d95fde740a4131eeb">ConnectFour</a>, <a class="el" href="classCodeCracker.html#acbbd890be17cec27b879eb369de82017">CodeCracker</a>, <a class="el" href="classTicTacToe.html#a5fd34a83c96edbcf3c3c5a0930d513fb">TicTacToe</a>, <a class="el" href="classHanoi.html#a4dd4c6028ade2b265ce98e48c3f2fb2a">Hanoi</a>, and <a class="el" href="classMemoryMatch.html#a62548d6cf028d372c08cc01a0693edb2">MemoryMatch</a>.</p>
 
 </div>
 </div>
@@ -259,11 +254,19 @@ Private Member Functions</h2></td></tr>
 <a class="anchor" id="a965ad54e9f7340c3cad944fc82c61a2b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Puzzle::PuzzleEnd</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Remains false until the mini-game/puzzle is ready to be terminated. </p>

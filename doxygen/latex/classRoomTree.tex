@@ -19,24 +19,28 @@ class \hyperlink{classRoomTree_1_1Node}{Node}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classRoomTree_a2ea4adb06c7a1913d21ebaa6548a0167}{Room\-Tree} (\hyperlink{classRoom}{Room} $\ast$root\-Room)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classRoomTree}{Room\-Tree} Constructor. \end{DoxyCompactList}\item 
+\item 
 \hyperlink{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{$\sim$\-Room\-Tree} ()
 \begin{DoxyCompactList}\small\item\em \hyperlink{classRoomTree}{Room\-Tree} Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classRoomTree_a8c2d8a4f8e8d33c3bffa8ecbb1124a60}{New\-Room} (char dir, \hyperlink{classRoom}{Room} $\ast$roomptr)
-\begin{DoxyCompactList}\small\item\em Inserts a new room at child (throws exeption if already occupied) \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classRoomTree_a537e9612b7ff7b399259589c2f0f8419}{Move} (char dir)
-\begin{DoxyCompactList}\small\item\em Moves current position through the tree. \end{DoxyCompactList}\item 
-const \hyperlink{classRoom}{Room} $\ast$ \hyperlink{classRoomTree_a151ca8b3555d4ddc46bfac760cb5977a}{At} () const 
-\begin{DoxyCompactList}\small\item\em Gives a const pointer to the room currently at for accessing. \end{DoxyCompactList}\item 
+\item 
+\hyperlink{classRoom}{Room} const $\ast$ \hyperlink{classRoomTree_ae51faf0e1636e9825171c447565b5d2e}{At} () const 
+\item 
 \hyperlink{classRoom}{Room} $\ast$ \hyperlink{classRoomTree_ae0864011915cbaa34cd4bc53d0bf512b}{At} ()
-\begin{DoxyCompactList}\small\item\em Gives a pointer to the room currently at. \end{DoxyCompactList}\item 
+\item 
 unsigned int \hyperlink{classRoomTree_a326bc29bec9bb483ddb49dd0ee2a70b7}{Current\-Height} () const 
-\begin{DoxyCompactList}\small\item\em Gives the height of the tree at the current node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classRoomTree_aa425bed3ba13167f3a8b39fac3d6ac87}{Total\-Nodes} () const 
+\begin{DoxyCompactList}\small\item\em Gives the total Nodes in the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classRoomTree_a5e41efccc87a1c8f6826f9368121732e}{Delete\-Tree} (\hyperlink{classRoomTree_1_1Node}{Node} $\ast$temp\-Root)
-\begin{DoxyCompactList}\small\item\em Helper function to assist in deleting the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classRoomTree_a0bd9fa6eed05e9fc478959a23ffef364}{Nodes\-In\-Branch} (\hyperlink{classRoomTree_1_1Node}{Node} $\ast$temp\-Root) const 
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,11 +61,12 @@ Class to represent the layout of rooms in a doubly linked tree-\/like format.
 \item[{{\bf Room} $\ast$}]{root\-Room}
 \end{DoxyParamCaption}
 )}}\label{classRoomTree_a2ea4adb06c7a1913d21ebaa6548a0167}
-
-
-\hyperlink{classRoomTree}{Room\-Tree} Constructor. 
-
-\hyperlink{classRoomTree}{Room\-Tree} Construtor. \hypertarget{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{\index{Room\-Tree@{Room\-Tree}!$\sim$\-Room\-Tree@{$\sim$\-Room\-Tree}}
+\hyperlink{classRoomTree}{Room\-Tree} Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em root\-Room} & Pointer to the room that will be at the root of the tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoomTree_a1bd0bf9ba15d59e29127f762a3cdf036}{\index{Room\-Tree@{Room\-Tree}!$\sim$\-Room\-Tree@{$\sim$\-Room\-Tree}}
 \index{$\sim$\-Room\-Tree@{$\sim$\-Room\-Tree}!RoomTree@{Room\-Tree}}
 \subsubsection[{$\sim$\-Room\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}Room\-Tree\-::$\sim$\-Room\-Tree (
 \begin{DoxyParamCaption}
@@ -75,18 +80,14 @@ Class to represent the layout of rooms in a doubly linked tree-\/like format.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classRoomTree_a151ca8b3555d4ddc46bfac760cb5977a}{\index{Room\-Tree@{Room\-Tree}!At@{At}}
+\hypertarget{classRoomTree_ae51faf0e1636e9825171c447565b5d2e}{\index{Room\-Tree@{Room\-Tree}!At@{At}}
 \index{At@{At}!RoomTree@{Room\-Tree}}
-\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Room} $\ast$ Room\-Tree\-::\-At (
+\subsubsection[{At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Room} const $\ast$ Room\-Tree\-::\-At (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classRoomTree_a151ca8b3555d4ddc46bfac760cb5977a}
-
-
-Gives a const pointer to the room currently at for accessing. 
-
-Gives a const pointer to the room currently at for accessing \begin{DoxyReturn}{Returns}
+) const}}\label{classRoomTree_ae51faf0e1636e9825171c447565b5d2e}
+Gives a const pointer to the room currently at for accessing only \begin{DoxyReturn}{Returns}
 A const pointer to current room 
 \end{DoxyReturn}
 \hypertarget{classRoomTree_ae0864011915cbaa34cd4bc53d0bf512b}{\index{Room\-Tree@{Room\-Tree}!At@{At}}
@@ -96,11 +97,7 @@ A const pointer to current room
 {}
 \end{DoxyParamCaption}
 )}}\label{classRoomTree_ae0864011915cbaa34cd4bc53d0bf512b}
-
-
-Gives a pointer to the room currently at. 
-
-Gives a pointer to current room \begin{DoxyReturn}{Returns}
+Gives a pointer to current room and allows changes \begin{DoxyReturn}{Returns}
 Pointer to current room 
 \end{DoxyReturn}
 \hypertarget{classRoomTree_a326bc29bec9bb483ddb49dd0ee2a70b7}{\index{Room\-Tree@{Room\-Tree}!Current\-Height@{Current\-Height}}
@@ -110,10 +107,6 @@ Pointer to current room
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classRoomTree_a326bc29bec9bb483ddb49dd0ee2a70b7}
-
-
-Gives the height of the tree at the current node. 
-
 Gives the height of the tree at the current room \begin{DoxyReturn}{Returns}
 the height of the current node 
 \end{DoxyReturn}
@@ -124,10 +117,6 @@ the height of the current node
 \item[{{\bf Node} $\ast$}]{temp\-Root}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoomTree_a5e41efccc87a1c8f6826f9368121732e}
-
-
-Helper function to assist in deleting the tree. 
-
 Helper function to assist in deleting the tree 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em temp\-Root} & The root of the tree to be deleted \\
@@ -140,10 +129,6 @@ Helper function to assist in deleting the tree
 \item[{char}]{dir}
 \end{DoxyParamCaption}
 )}}\label{classRoomTree_a537e9612b7ff7b399259589c2f0f8419}
-
-
-Moves current position through the tree. 
-
 Moves through the tree 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em dir} & Direction to move(left(l) right(r) up(u) or down(d)) \\
@@ -165,10 +150,6 @@ True if move was successfull, false otherwise
 \item[{{\bf Room} $\ast$}]{roomptr}
 \end{DoxyParamCaption}
 )}}\label{classRoomTree_a8c2d8a4f8e8d33c3bffa8ecbb1124a60}
-
-
-Inserts a new room at child (throws exeption if already occupied) 
-
 Inserts a new room at child (throws exeption if already occupied) 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em dir} & Direction of the new child (left(l) right(r) up(u) or down(d) \\
@@ -179,6 +160,29 @@ Inserts a new room at child (throws exeption if already occupied)
 {\em invalid\-\_\-argument} & Thrown if the direction is invalid or space is occupied \\
 \hline
 \end{DoxyExceptions}
+\hypertarget{classRoomTree_a0bd9fa6eed05e9fc478959a23ffef364}{\index{Room\-Tree@{Room\-Tree}!Nodes\-In\-Branch@{Nodes\-In\-Branch}}
+\index{Nodes\-In\-Branch@{Nodes\-In\-Branch}!RoomTree@{Room\-Tree}}
+\subsubsection[{Nodes\-In\-Branch}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Room\-Tree\-::\-Nodes\-In\-Branch (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$}]{temp\-Root}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoomTree_a0bd9fa6eed05e9fc478959a23ffef364}
+Helper function to cout nodes in the tree 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em temp\-Root} & The root of the tree to be counted \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoomTree_aa425bed3ba13167f3a8b39fac3d6ac87}{\index{Room\-Tree@{Room\-Tree}!Total\-Nodes@{Total\-Nodes}}
+\index{Total\-Nodes@{Total\-Nodes}!RoomTree@{Room\-Tree}}
+\subsubsection[{Total\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Room\-Tree\-::\-Total\-Nodes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRoomTree_aa425bed3ba13167f3a8b39fac3d6ac87}
+
+
+Gives the total Nodes in the tree. 
+
 
 
 \subsection{Member Data Documentation}

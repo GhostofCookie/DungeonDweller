@@ -17,7 +17,8 @@ var classCharacterTest =
     [ "TestGetInventoryItems", "classCharacterTest.html#a0fae073fe364d5bb09e1488505f2f247", null ],
     [ "TestUseItem", "classCharacterTest.html#a6510093a5bfccb8d325e00e0a15a81c2", null ],
     [ "C", "classCharacterTest.html#a2afd29afdeb90cbac6ac18a71ef7e23a", null ],
-    [ "I", "classCharacterTest.html#ae1a2e151fc3a843b36e3ae24b7661fb4", null ],
+    [ "I", "classCharacterTest.html#a2a5e0fd6dd04bf1265ac5b1fad798a79", null ],
+    [ "II", "classCharacterTest.html#a168ed4a5b98f8048326d22f2486457a6", null ],
     [ "inv", "classCharacterTest.html#a23af9da0d443fb16273ed269b8a91e8b", null ],
     [ "item", "classCharacterTest.html#aee8b109b66e2f22ba5de6abaaba47160", null ]
 ];

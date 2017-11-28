@@ -15,10 +15,8 @@ ExploreState::ExploreState()
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection, 0);
    roomTree = new RoomTree(roomPtr);
-   player = new Player(30, 1, "dicks", "balls", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   currState = 'E';
 }
-
-
 
 /// Deconstructor
 ExploreState::~ExploreState()
@@ -30,8 +28,6 @@ ExploreState::~ExploreState()
    delete import;
    delete player;
 }
-
-
 
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
@@ -54,8 +50,6 @@ void ExploreState::Set()
    menu->AddOption('q', "Quit to Menu");
 
 }
-
-
 
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
@@ -92,8 +86,6 @@ void ExploreState::Get()
       RunInput(menu->GetOption());
    }   
 }
-
-
 
 /// Helper function to give input functionality
 /// \param[in] n the menu option to set
@@ -239,8 +231,6 @@ void ExploreState::RunInput(char n)
       delete anim;
    }
 }
-
-
 
 /// Helper function to set the current state of the game based on the current
 /// room type.

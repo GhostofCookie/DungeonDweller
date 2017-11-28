@@ -12,7 +12,7 @@ var searchData=
   ['hanoitest_2ecpp',['HanoiTest.cpp',['../HanoiTest_8cpp.html',1,'']]],
   ['health',['health',['../classCharacter.html#a69c649b8febd22729e6edafb27e69aeb',1,'Character']]],
   ['healthpotion',['HealthPotion',['../classHealthPotion.html',1,'HealthPotion'],['../classHealthPotion.html#a99e942956f7f1e07dd13c46daae08713',1,'HealthPotion::HealthPotion()']]],
-  ['height',['height',['../classImage.html#a51df43db420c9c0b57536cb2dd36de5c',1,'Image::height()'],['../classScreen.html#a55405920693276db8fbdbf3a903b8d2f',1,'Screen::height()'],['../classSlotScreen.html#a332d1b2fc1c48b2c455cc276bf638891',1,'SlotScreen::height()']]],
+  ['height',['height',['../classImage.html#a51df43db420c9c0b57536cb2dd36de5c',1,'Image::height()'],['../classScreen.html#a55405920693276db8fbdbf3a903b8d2f',1,'Screen::height()']]],
   ['heightmax',['heightMax',['../classScreenTest.html#a6a160dcd61b42aaa5b59fe7c0336f65d',1,'ScreenTest']]],
   ['heightmin',['heightMin',['../classScreenTest.html#ae40c862539e810eecfc3bd07250dd630',1,'ScreenTest']]],
   ['heightnegative',['heightNegative',['../classScreenTest.html#a7bdca9dbaf4acbc80516502d91ad6a8e',1,'ScreenTest']]],

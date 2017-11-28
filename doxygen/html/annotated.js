@@ -45,7 +45,6 @@ var annotated =
     [ "RoomTreeTest", "classRoomTreeTest.html", "classRoomTreeTest" ],
     [ "Screen", "classScreen.html", "classScreen" ],
     [ "ScreenTest", "classScreenTest.html", "classScreenTest" ],
-    [ "SlotScreen", "classSlotScreen.html", "classSlotScreen" ],
     [ "Spell", "classSpell.html", "classSpell" ],
     [ "Sword", "classSword.html", "classSword" ],
     [ "TicTacToe", "classTicTacToe.html", "classTicTacToe" ],

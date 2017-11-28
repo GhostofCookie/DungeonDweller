@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['deathcheck',['DeathCheck',['../classCodeCracker.html#a9fd7f74660bef36842fc8293b3d5ed31',1,'CodeCracker']]],
-  ['decrementplayerhealth',['DecrementPlayerHealth',['../classCodeCracker.html#a076c2199e775591298674b0f20ed437e',1,'CodeCracker']]],
+  ['deathcheck',['DeathCheck',['../classCodeCracker.html#aa3e32b1d98fe1935315d02c832877e33',1,'CodeCracker']]],
   ['defaultimg',['DefaultImg',['../classDefaultImg.html#a31bb4b35474265b11ea7a776343148bc',1,'DefaultImg::DefaultImg(int h=3, int w=6, char c= &apos;$&apos;)'],['../classDefaultImg.html#a98d6ecfaa4c02eba7b2c58ad0285521e',1,'DefaultImg::DefaultImg(const DefaultImg &amp;img)'],['../classDefaultImg.html#ad4763b2a674e202d3ea99ceb179bad6a',1,'DefaultImg::DefaultImg(DefaultImg &amp;img)']]],
   ['deletetree',['DeleteTree',['../classRoomTree.html#a5e41efccc87a1c8f6826f9368121732e',1,'RoomTree']]],
   ['dialoguemenu',['DialogueMenu',['../classDialogueMenu.html#a062e15c446d9a559a20bfdc19fb190c5',1,'DialogueMenu']]],

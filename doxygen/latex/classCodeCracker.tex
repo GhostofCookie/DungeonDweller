@@ -23,46 +23,48 @@ Inheritance diagram for Code\-Cracker\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for hanoi, reads in riddles from .txt files. \end{DoxyCompactList}\item 
 virtual \hyperlink{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{$\sim$\-Code\-Cracker} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
+virtual void \hyperlink{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}{Valid\-Move} (char input)
-\item 
 bool \hyperlink{classCodeCracker_aeddf29fcc2034f0acb41d41e0f755a3c}{Valid\-Answer} (int input, int riddle\-Index)
+\item 
+bool \hyperlink{classCodeCracker_a5540b8495c5f97f92cdb9b56a6005e6a}{Is\-Riddle\-Used} (int index)
 \item 
 void \hyperlink{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{Win\-Check} ()
 \begin{DoxyCompactList}\small\item\em Checks if the player has successfully answered 3 riddles. \end{DoxyCompactList}\item 
-void \hyperlink{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}{Death\-Check} ()
-\begin{DoxyCompactList}\small\item\em Checks if the player is now dead. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{Initial\-Prompt} (\hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
+\item 
+void \hyperlink{classCodeCracker_aa3e32b1d98fe1935315d02c832877e33}{Death\-Check} (\hyperlink{classCharacter}{Character} $\ast$player)
+\item 
 void \hyperlink{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}{Output\-Riddle} (int index)
 \item 
 void \hyperlink{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{Import\-Riddles} ()
-\begin{DoxyCompactList}\small\item\em Imports riddles from a text file and stores them in the vector. \end{DoxyCompactList}\item 
-void \hyperlink{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}{Set\-Riddle\-In\-Menu} (int riddle\-Index)
+\begin{DoxyCompactList}\small\item\em Imports riddles from a text file and stores them in the riddles vector. \end{DoxyCompactList}\item 
+void \hyperlink{classCodeCracker_a98c0c73ba7bc17e56a8a913ada09955f}{Set\-Riddle\-In\-Menu} (int riddle\-Index, \hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
 \item 
-void \hyperlink{classCodeCracker_acbbd890be17cec27b879eb369de82017}{Set\-Options\-In\-Menu} ()
-\item 
-void \hyperlink{classCodeCracker_a076c2199e775591298674b0f20ed437e}{Decrement\-Player\-Health} (int amount\-To\-Decrement)
+void \hyperlink{classCodeCracker_a23587f975c42657b90e78d00cf93bd38}{Make\-Riddle\-Used} (int current\-Riddle)
 \item 
 int \hyperlink{classCodeCracker_a55bebba723a92d780659f016e9e394e4}{Unused\-Random\-Riddle} ()
 \begin{DoxyCompactList}\small\item\em Picks one of the unused riddles randomly and returns its index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}{question}
+std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_a63753bcf7954495c7964715758e0fea9}{question}
 \begin{DoxyCompactList}\small\item\em Vector to store the question strings read in from the file. \end{DoxyCompactList}\item 
-std\-::vector$<$ string $>$ \hyperlink{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}{format}
-\begin{DoxyCompactList}\small\item\em Vector to store the descriptions on how to answer each question, in order. \end{DoxyCompactList}\item 
-std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}{answer}
+std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a536d437eb93888574fb5f8f0c556c528}{answer}
 \begin{DoxyCompactList}\small\item\em Vector to store the questions answers read in from the file, in order. \end{DoxyCompactList}\item 
-std\-::vector$<$ int $>$ \hyperlink{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}{used\-Riddles}
+std\-::vector$<$ bool $>$ \hyperlink{classCodeCracker_ab5121bae8b22dc3fcf3f8995c1a9a425}{used\-Riddles}
 \item 
 int \hyperlink{classCodeCracker_aca60d7cc01bda0ec6782984e46b9b357}{riddle\-Completion\-Count}
 \begin{DoxyCompactList}\small\item\em Total riddles compeleted. \end{DoxyCompactList}\item 
 int \hyperlink{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{number\-Of\-Riddles}
-\begin{DoxyCompactList}\small\item\em Total number of riddles imported into the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Total number of riddles imported into the game. \end{DoxyCompactList}\item 
+string \hyperlink{classCodeCracker_a89ef12be75881a80ed411daf64bb425c}{incorrect\-Prompt}
+\item 
+string \hyperlink{classCodeCracker_a04985dac2f5fe286fa82679217cfe506}{correct\-Prompt}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -80,6 +82,8 @@ This class contains the mini-\/game/puzzle Code Cracker.
 
 
 Default constructor for hanoi, reads in riddles from .txt files. 
+
+Constructor.
 
 \begin{DoxyAuthor}{Author}
 Tyler Siwy 
@@ -101,24 +105,18 @@ Deconstructor.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}{\index{Code\-Cracker@{Code\-Cracker}!Death\-Check@{Death\-Check}}
+\hypertarget{classCodeCracker_aa3e32b1d98fe1935315d02c832877e33}{\index{Code\-Cracker@{Code\-Cracker}!Death\-Check@{Death\-Check}}
 \index{Death\-Check@{Death\-Check}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Death\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Death\-Check (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a9fd7f74660bef36842fc8293b3d5ed31}
-
-
-Checks if the player is now dead. 
-
-\hypertarget{classCodeCracker_a076c2199e775591298674b0f20ed437e}{\index{Code\-Cracker@{Code\-Cracker}!Decrement\-Player\-Health@{Decrement\-Player\-Health}}
-\index{Decrement\-Player\-Health@{Decrement\-Player\-Health}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{Decrement\-Player\-Health}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Decrement\-Player\-Health (
-\begin{DoxyParamCaption}
-\item[{int}]{amount\-To\-Decrement}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a076c2199e775591298674b0f20ed437e}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_aa3e32b1d98fe1935315d02c832877e33}
+Checks if the player is now dead and ends the game if yes 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em player,a} & pointer to the players character passed from main. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{\index{Code\-Cracker@{Code\-Cracker}!Import\-Riddles@{Import\-Riddles}}
 \index{Import\-Riddles@{Import\-Riddles}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Import\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Import\-Riddles (
@@ -128,8 +126,44 @@ Checks if the player is now dead.
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}
 
 
-Imports riddles from a text file and stores them in the vector. 
+Imports riddles from a text file and stores them in the riddles vector. 
 
+Imports riddles from a text file and stores them in the vector. \hypertarget{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{\index{Code\-Cracker@{Code\-Cracker}!Initial\-Prompt@{Initial\-Prompt}}
+\index{Initial\-Prompt@{Initial\-Prompt}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Initial\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Initial\-Prompt (
+\begin{DoxyParamCaption}
+\item[{{\bf Riddle\-Menu} \&}]{menu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}
+Outputs the initial message to the player 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em menu,the} & menu object to be set and then outputted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCodeCracker_a5540b8495c5f97f92cdb9b56a6005e6a}{\index{Code\-Cracker@{Code\-Cracker}!Is\-Riddle\-Used@{Is\-Riddle\-Used}}
+\index{Is\-Riddle\-Used@{Is\-Riddle\-Used}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Is\-Riddle\-Used}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::\-Is\-Riddle\-Used (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a5540b8495c5f97f92cdb9b56a6005e6a}
+Checks if the riddle has already been used so that the player doesn't do the same one twice, returns true if it has been used already. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index,location} & of the riddle in the riddle vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCodeCracker_a23587f975c42657b90e78d00cf93bd38}{\index{Code\-Cracker@{Code\-Cracker}!Make\-Riddle\-Used@{Make\-Riddle\-Used}}
+\index{Make\-Riddle\-Used@{Make\-Riddle\-Used}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{Make\-Riddle\-Used}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Make\-Riddle\-Used (
+\begin{DoxyParamCaption}
+\item[{int}]{current\-Riddle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a23587f975c42657b90e78d00cf93bd38}
+Sets a riddles index to false in the membership table used\-Riddles. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & riddle to switch the truth value for \\
+\hline
+\end{DoxyParams}
 \hypertarget{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}{\index{Code\-Cracker@{Code\-Cracker}!Output\-Riddle@{Output\-Riddle}}
 \index{Output\-Riddle@{Output\-Riddle}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Output\-Riddle}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Output\-Riddle (
@@ -137,40 +171,42 @@ Imports riddles from a text file and stores them in the vector.
 \item[{int}]{index}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}
-Outputs the selected riddle, limiting the characters to a set length and moving them down to the next line if the string is longer than they limit. \hypertarget{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
+Outputs the selected riddle, limiting the characters to a set length and moving them down to the next line if the string is longer than they limit. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & location of the riddle to output. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Run\-Game (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. Do riddle output 
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em player,a} & pointer to the players character for changing stats.\\
+\hline
+\end{DoxyParams}
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
 
 Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
-\hypertarget{classCodeCracker_acbbd890be17cec27b879eb369de82017}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
-\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Set\-Options\-In\-Menu (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classCodeCracker_acbbd890be17cec27b879eb369de82017}
-Displays the screen containing the gameboard 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em Cf\-Screen,the} & screen object used for displaying the mini-\/game \\
-\hline
-\end{DoxyParams}
-
-
-Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
-
-\hypertarget{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Riddle\-In\-Menu@{Set\-Riddle\-In\-Menu}}
+\hypertarget{classCodeCracker_a98c0c73ba7bc17e56a8a913ada09955f}{\index{Code\-Cracker@{Code\-Cracker}!Set\-Riddle\-In\-Menu@{Set\-Riddle\-In\-Menu}}
 \index{Set\-Riddle\-In\-Menu@{Set\-Riddle\-In\-Menu}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Set\-Riddle\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Set\-Riddle\-In\-Menu (
 \begin{DoxyParamCaption}
-\item[{int}]{riddle\-Index}
+\item[{int}]{riddle\-Index, }
+\item[{{\bf Riddle\-Menu} \&}]{menu}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a177a635a52ceb27eb1165b32cc0a3b73}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a98c0c73ba7bc17e56a8a913ada09955f}
+Sets a riddle in the games menu so that it can be outputted to the user. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & location of the riddle in the riddle vector. \\
+\hline
+\mbox{\tt in}  & {\em the} & menu object to be saved to and then outputted. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classCodeCracker_a55bebba723a92d780659f016e9e394e4}{\index{Code\-Cracker@{Code\-Cracker}!Unused\-Random\-Riddle@{Unused\-Random\-Riddle}}
 \index{Unused\-Random\-Riddle@{Unused\-Random\-Riddle}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Unused\-Random\-Riddle}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::\-Unused\-Random\-Riddle (
@@ -194,17 +230,7 @@ Checks to see if the user input is one of the accepted answers.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em Input,an} & answer to the riddle in the form of the char. \\
 \hline
-\end{DoxyParams}
-\hypertarget{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}{\index{Code\-Cracker@{Code\-Cracker}!Valid\-Move@{Valid\-Move}}
-\index{Valid\-Move@{Valid\-Move}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Code\-Cracker\-::\-Valid\-Move (
-\begin{DoxyParamCaption}
-\item[{char}]{input}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a793271a6ea1d8affad8fdddbbd692f7a}
-Checks the semantics of the user choice to make sure they aren't doing something that would break the game with their input. 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em has} & been checked for syntax by input method \\
+\mbox{\tt in}  & {\em riddle\-Index,location} & of the puzzles answer in riddle vector \\
 \hline
 \end{DoxyParams}
 \hypertarget{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{\index{Code\-Cracker@{Code\-Cracker}!Win\-Check@{Win\-Check}}
@@ -218,33 +244,32 @@ Checks the semantics of the user choice to make sure they aren't doing something
 
 Checks if the player has successfully answered 3 riddles. 
 
-
+Checks if the player has successfully answered 3 riddles and sets Puzzl\-End to true if they have. 
 
 \subsection{Member Data Documentation}
-\hypertarget{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}{\index{Code\-Cracker@{Code\-Cracker}!answer@{answer}}
+\hypertarget{classCodeCracker_a536d437eb93888574fb5f8f0c556c528}{\index{Code\-Cracker@{Code\-Cracker}!answer@{answer}}
 \index{answer@{answer}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{answer}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ Code\-Cracker\-::answer\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a2084c27e05ec80c44263cb2f9a54d8c4}
+\subsubsection[{answer}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ int $>$ Code\-Cracker\-::answer\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a536d437eb93888574fb5f8f0c556c528}
 
 
 Vector to store the questions answers read in from the file, in order. 
 
-\hypertarget{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}{\index{Code\-Cracker@{Code\-Cracker}!format@{format}}
-\index{format@{format}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$string$>$ Code\-Cracker\-::format\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a6ab76d405fa6a989fdd10c7641f6bc4e}
-
-
-Vector to store the descriptions on how to answer each question, in order. 
-
-\hypertarget{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{\index{Code\-Cracker@{Code\-Cracker}!number\-Of\-Riddles@{number\-Of\-Riddles}}
+\hypertarget{classCodeCracker_a04985dac2f5fe286fa82679217cfe506}{\index{Code\-Cracker@{Code\-Cracker}!correct\-Prompt@{correct\-Prompt}}
+\index{correct\-Prompt@{correct\-Prompt}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{correct\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}string Code\-Cracker\-::correct\-Prompt\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a04985dac2f5fe286fa82679217cfe506}
+\hypertarget{classCodeCracker_a89ef12be75881a80ed411daf64bb425c}{\index{Code\-Cracker@{Code\-Cracker}!incorrect\-Prompt@{incorrect\-Prompt}}
+\index{incorrect\-Prompt@{incorrect\-Prompt}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{incorrect\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}string Code\-Cracker\-::incorrect\-Prompt\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a89ef12be75881a80ed411daf64bb425c}
+incorrect\-Prompt is the message to be displayed to the user in the case where they get a question wrong, correct\-Prompt is for when they get the question correct. \hypertarget{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}{\index{Code\-Cracker@{Code\-Cracker}!number\-Of\-Riddles@{number\-Of\-Riddles}}
 \index{number\-Of\-Riddles@{number\-Of\-Riddles}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{number\-Of\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}int Code\-Cracker\-::number\-Of\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a30671a1b282dc98361938283fbafcf6e}
 
 
 Total number of riddles imported into the game. 
 
-\hypertarget{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}{\index{Code\-Cracker@{Code\-Cracker}!question@{question}}
+\hypertarget{classCodeCracker_a63753bcf7954495c7964715758e0fea9}{\index{Code\-Cracker@{Code\-Cracker}!question@{question}}
 \index{question@{question}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{question}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$string$>$ Code\-Cracker\-::question\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ae578bd328ef64ed314b19e5940247f2c}
+\subsubsection[{question}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ string $>$ Code\-Cracker\-::question\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a63753bcf7954495c7964715758e0fea9}
 
 
 Vector to store the question strings read in from the file. 
@@ -256,9 +281,9 @@ Vector to store the question strings read in from the file.
 
 Total riddles compeleted. 
 
-\hypertarget{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}{\index{Code\-Cracker@{Code\-Cracker}!used\-Riddles@{used\-Riddles}}
+\hypertarget{classCodeCracker_ab5121bae8b22dc3fcf3f8995c1a9a425}{\index{Code\-Cracker@{Code\-Cracker}!used\-Riddles@{used\-Riddles}}
 \index{used\-Riddles@{used\-Riddles}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{used\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ Code\-Cracker\-::used\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a9b54be5b85162c25c8e42ce1e865882a}
+\subsubsection[{used\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ bool $>$ Code\-Cracker\-::used\-Riddles\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_ab5121bae8b22dc3fcf3f8995c1a9a425}
 Stores the indexes of all used riddle strings so that they aren't asked twice. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

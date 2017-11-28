@@ -8,6 +8,6 @@ int main() {
   Spell testSpell;
   Food testFood;
   HealthPotion testPotion;
-   cout<<testSword.Name()<<endl<<testBow.Name()<<endl<<testSpell.Name()<<endl<<testFood.Name()<<endl<<testPotion.Name()<<endl;
+   cout<<testSword.Name()<<endl <<testBow.Name()<<endl<<testSpell.Name()<<endl<<testFood.Name()<<endl<<testPotion.Name()<<endl;
    return 0;
 }

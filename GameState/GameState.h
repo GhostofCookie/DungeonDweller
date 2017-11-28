@@ -16,10 +16,7 @@
 #include "../Character/Player.h" 
 #include "../Character/Npc.h"
 #include "../Item/MyConsumables.h"
-<<<<<<< HEAD
-=======
 #include "../Item/Item.h"
->>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
 
@@ -44,24 +41,13 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
-<<<<<<< HEAD
-<<<<<<< HEAD
-   Item *item = new Sword();
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
+
    /// Creates the player
-      
-   
+     
+   Item *item;
    /// Returns the current player.
    Character& GetPlayer() const { return *player; }
 
-<<<<<<< HEAD
->>>>>>> a24eda0dfda4bfbf941e69339e74c698eb0f5c67
->>>>>>> 9e6554324c03366f14ab3fd65972e49be98efe48
-=======
->>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
   protected:
    ///< pointer to the menu.
    Menu *menu;
