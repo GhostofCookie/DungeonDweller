@@ -4,7 +4,7 @@ OBJS= main.o Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportI
 OBJS2= mainTest.o PlayerTest.o CharacterTest.o Character.o Player.o Npc.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
 
 .PHONY : all
-all: main mainTest
+all: main #mainTest
 
 main : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@ 
@@ -26,4 +26,4 @@ clean:
 	rm -rf *~ *.o *.gcda *.gcno
 
 clean-all: clean
-	rm -rf mainTest main
+	rm -rf main #mainTest

@@ -7,7 +7,6 @@
 
 #include "../Menu/Menu.h"
 #include "../Screen/Screen.h"
-#include "../Screen/SlotScreen.h"
 #include "../Menu/MainMenu.h"
 #include "../Menu/FightMenu.h"
 #include "../Menu/ExploreMenu.h"
@@ -40,6 +39,8 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
+   /// Returns the current player.
+   Character& GetPlayer() const { return *player; }
 
   protected:
    ///< pointer to the menu.
@@ -51,9 +52,9 @@ class GameState
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
    /// The main character
-   Character player;
+   Character *player;
    /// Pointer to the player;
-   Character *character = &player;
+   Character *character = player;
 
 };
 

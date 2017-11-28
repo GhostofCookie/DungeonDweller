@@ -25,8 +25,9 @@ void MainState::Get()
    menu->HandleInput(cin);
    if(tolower(menu->GetOption()) == 'q')
    {
-      cout<<"Are you sure you want to quit?";
+      cout<<"Are you sure you want to quit (y/n)? ";
       menu->HandleInput(cin);
+      anim.Outro();
       exit(0);
    }
 }
