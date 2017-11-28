@@ -14,6 +14,7 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
 
 Player:: Player(Player &p)
 {
+   name = p.GetName();
    race = p.GetRace();
    keys = p.GetKeys();
    gold = p.GetGold();
@@ -23,6 +24,7 @@ Player:: Player(Player &p)
 
 Player:: Player(const Player &p)
 {
+   name = p.GetName();
    race = p.GetRace();
    keys = p.GetKeys();
    gold = p.GetGold();
@@ -32,6 +34,7 @@ Player:: Player(const Player &p)
 
 Player& Player:: operator=(const Player &p)
 {
+   name = p.GetName();
    race = p.GetRace();
    keys = p.GetKeys();
    gold = p.GetGold();

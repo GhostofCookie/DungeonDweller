@@ -21,6 +21,7 @@ void MainState::Set()
    menu->AddOption('q', "Quit Game");
 
 }
+
 void MainState::Get()
 {
    Cutscene anim; anim.Intro();
@@ -77,15 +78,13 @@ void MainState::CreatePlayer()
    do
    {
       loadouts[i].Print();
-      cout << "[c] Choose" << endl;
-      cout << "[n] Next" << endl;
+      cout << "[C] Choose" << endl;
+      cout << "[N] Next" << endl;
       cout << ">:";
       cin >> ans;
-      
+      tolower(ans);
       if(ans == 'c')
-      {
 	 player = new Player(loadouts[i]);
-      }
       else
       {
 	 if(i > 3)
@@ -94,6 +93,7 @@ void MainState::CreatePlayer()
 	    i++;
       }
       system("clear");
+      
    }while(ans == 'n');
    
    currState = 'E';
