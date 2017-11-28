@@ -44,6 +44,15 @@ public:
    /// \param[in] keys, uses a key if availible
    bool UseKey(int& keys);
 
+   /// Shows the amount of keys
+   int GetKeys() {return keys;};
+
+   /// Shows players race
+   string GetRace() {return race;};
+
+   /// Prints all player stats
+   void Print();
+   
   private: 
    ///Name of the player
    string name;

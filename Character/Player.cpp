@@ -29,3 +29,11 @@ bool Player:: UseKey(int& keys)
    return keys;
 }
 
+void Player:: Print()
+{
+   cout << "Name: " << name << endl;
+   cout << "Race: " << race << endl;
+   cout << "Stamina: " << stamina << endl;
+   cout << "Health: " << health << endl;
+   cout << "Gold: " << gold << endl;
+}

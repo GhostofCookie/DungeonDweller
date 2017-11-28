@@ -40,7 +40,11 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
-
+   /// Creates the player
+   virtual void CreatePlayer() = 0;
+   /// Creates an Npc
+   virtual void CreateNpc() = 0;
+   
   protected:
    ///< pointer to the menu.
    Menu *menu;
@@ -51,9 +55,11 @@ class GameState
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
    /// The main character
-   Character player;
+   Player player;
    /// Pointer to the player;
    Character *character = &player;
+   ///Any Npc that needs to be created
+   Npc npc;
 
 };
 
