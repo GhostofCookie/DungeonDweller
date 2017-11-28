@@ -10,3 +10,11 @@ RoomTree.o: RoomTree.cpp RoomTree.h ../Room/Room.h \
  ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
  ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
  ../Room/../Image/Image.h ../Room/../Image/ImportImg.h
+Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
+ ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
+ ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
+ ../Room/../Image/ImportImg.h
+Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
+Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
+ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
+ ../Image/../Screen/Screen.h
