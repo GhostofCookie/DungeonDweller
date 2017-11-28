@@ -1,5 +1,6 @@
 #include "MainState.h"
 #include <vector>
+#include <stdlib.h>
 
 MainState::MainState()
 {
@@ -71,25 +72,29 @@ void MainState::CreatePlayer()
    loadouts.push_back(mage);
    loadouts.push_back(comp);
 
-   menu->AddOption('c', "Choose race");
-   menu->AddOption('n', "Next race");
-   
-   while(menu->GetOption() != 'c')
+   char ans;
+   int i = 0;
+   do
    {
-      int i = 0;
-
       loadouts[i].Print();
-      //menu->AddOption('c', "Choose race");
-      //menu->AddOption('n', "Next race");
-      if(menu->GetOption() == 'c')
+      cout << "[c] Choose" << endl;
+      cout << "[n] Next" << endl;
+      cout << ">:";
+      cin >> ans;
+      
+      if(ans == 'c')
       {
 	 player = new Player(loadouts[i]);
-	 currState = 'E';
-	 break;
       }
       else
-	 if(i+1 == 5)
+      {
+	 if(i > 3)
 	    i = 0;
-      i++;
-   }
+	 else
+	    i++;
+      }
+      system("clear");
+   }while(ans == 'n');
+   
+   currState = 'E';
 }

@@ -15,9 +15,7 @@ ExploreState::ExploreState()
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection, 0);
    roomTree = new RoomTree(roomPtr);
-
-   // create the player
-   player = new Player(5, 1, "Reid", "Human", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   player = new Player(5, 1, "dicks", "balls", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 
