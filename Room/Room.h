@@ -98,7 +98,7 @@ class Room
    bool complete;
 
    /// Function that returns the image object
-   ImportImg GetImage() const;
+   ImportImg& GetImage() const;
    
    /// Function that returns the room's image file path
    string GetImageFile() const;
@@ -136,6 +136,14 @@ class Room
    /// \param[in] screen the screen drawn on
    void Draw(Screen &screen, int y, int x);
 
+    /// Function to draw to the screen
+   /// \param[in] img the img drawn on
+   void Draw(ImportImg &img);
+
+    /// Function to draw to the screen
+   /// \param[in] img the img drawn on
+   void Draw(ImportImg &img, int y, int x);
+   
    /// Function to return the npc
    Character& GetNpc() { return npc; }
 };

@@ -61,7 +61,7 @@ void ExploreState::Set()
 void ExploreState::Get()
 {
    ImportImg r = ImportImg(player->Img());
-   
+
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -73,7 +73,7 @@ void ExploreState::Get()
 
    // draw the npc to the screen if there is one
    if((roomTree->At())->GetType() > 0)
-       (roomTree->At())->GetNpc().Img().Draw(*screen);
+      (roomTree->At())->GetNpc().Img().Draw(roomTree->At()->GetImage());
 
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
@@ -82,6 +82,7 @@ void ExploreState::Get()
    cout << setw(28) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
 
+   
    SetState((roomTree->At())->GetType());
    if(currState != 'M')
    {
@@ -90,7 +91,8 @@ void ExploreState::Get()
       menu->HandleInput(cin);
       // Handle input from player
       RunInput(menu->GetOption());
-   }   
+   }
+   
 }
 
 
@@ -247,7 +249,8 @@ void ExploreState::RunInput(char n)
 /// \param[in] n the state to set
 void ExploreState::SetState(int n)
 {
-   Cutscene c;
+   Cutscene c = Cutscene(player->Img(), roomTree->At()->GetImage(),
+			 roomTree->At());
    
    // quit the game
    if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
@@ -274,9 +277,12 @@ void ExploreState::SetState(int n)
 	       c.MonsterEncounter();	    
 	       roomTree->At()->complete = true;
 	       // sets the monster to dead and sets him to a location
+	       Room temp = Room(*roomTree->At());
 	       roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
-	       roomTree->At()->GetNpc().Img().AlignCenter(*screen);
+	       // roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
+	       roomTree->At()->GetNpc().Img().AlignCenter(roomTree->At()->GetImage());
 	       roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
+	       roomTree->At()->GetNpc().Img().Draw((roomTree->At())->GetImage());
 	       //currState = 'F';
 	    }
 	    else currState = 'E';

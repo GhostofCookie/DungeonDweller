@@ -14,7 +14,8 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
    // itinitialize the animated img and the background
    img = ImportImg(image);
    room = ImportImg(r);
-   npc = ImportImg(tempRoom->GetNpc().Img());
+   //Label LocationNorth   if(c != nullptr)
+   //npc = new ImportImg(c->Img());
    
    // initialize a screen for the image to lay on
    screen = Screen(33, 61);
@@ -74,7 +75,8 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      npc.Draw(screen);
+
+      // npc->Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -103,7 +105,8 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      npc.Draw(screen);
+      
+      //npc->Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -132,7 +135,8 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      npc.Draw(screen);
+
+      //npc->Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
@@ -161,7 +165,8 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      npc.Draw(screen);
+
+      //npc->Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
@@ -225,7 +230,7 @@ void Cutscene::ExitCenterToBottom()
 /// Function To animate this direction
 void Cutscene::ExitCenterToLeft()
 {
-   MoveLeft(img.screenY, img.screenX, room.GetCols()/2 + img.GetCols()/2);
+   MoveLeft(img.screenY, img.screenX, room.GetCols() / 2 + img.GetCols() / 2);
 }
 
 
@@ -233,7 +238,7 @@ void Cutscene::ExitCenterToLeft()
 /// Function To animate this direction
 void Cutscene::ExitCenterToRight()
 {
-   MoveRight(img.screenY, img.screenX, room.GetCols()/2 + img.GetCols()/2);
+   MoveRight(img.screenY, img.screenX, room.GetCols() / 2 + img.GetCols() / 2);
 }
 
 
@@ -242,7 +247,7 @@ void Cutscene::ExitCenterToRight()
 void Cutscene::ExitLeft()
 {
    // adjust for character centering
-   foundY = point[3].y - img.GetRows()/2;
+   foundY = point[3].y - img.GetRows() / 2;
    foundX = point[3].x - img.GetCols();
 
    // if exiting down the center
@@ -272,7 +277,7 @@ void Cutscene::ExitLeft()
 void Cutscene::ExitRight()
 {
    // adjust for character centering
-   foundY = point[1].y - img.GetRows()/2;
+   foundY = point[1].y - img.GetRows() / 2;
    foundX = point[1].x + img.GetCols();
 
    // if exiting down the center
@@ -303,7 +308,7 @@ void Cutscene::ExitUp()
 {
    // adjust for character centering
    foundY = point[0].y - img.GetRows();
-   foundX = point[0].x - img.GetCols()/2;
+   foundX = point[0].x - img.GetCols() / 2;
 
    // if exiting down the center
    if(img.screenX == foundX) {
@@ -333,7 +338,7 @@ void Cutscene::ExitDown()
 {
    // adjust for character centering
    foundY = point[2].y + img.GetRows();
-   foundX = point[2].x - img.GetCols()/2;
+   foundX = point[2].x - img.GetCols() / 2;
 
    // if exiting down the center
    if(img.screenX == foundX) {
@@ -362,7 +367,7 @@ void Cutscene::ExitDown()
 void Cutscene::EnterLeft()
 {
    // adjust for character centering
-   img.screenY = point[3].y - img.GetRows()/2;
+   img.screenY = point[3].y - img.GetRows() / 2;
    img.screenX = point[3].x - img.GetCols();
 
    // if entering from the center
@@ -392,7 +397,7 @@ void Cutscene::EnterLeft()
 void Cutscene::EnterRight()
 {
    // adjust for character centering
-   img.screenY = point[1].y - img.GetRows()/2;
+   img.screenY = point[1].y - img.GetRows() / 2;
    img.screenX = point[1].x - img.GetCols();
 
    // if entering from the center
@@ -423,7 +428,7 @@ void Cutscene::EnterUp()
 {
    // adjust for character centering
    img.screenY = point[0].y - img.GetRows();
-   img.screenX = point[0].x - img.GetCols()/2;
+   img.screenX = point[0].x - img.GetCols() / 2;
 
    // if entering from the center
    if(img.screenX == centerX) {
@@ -453,7 +458,7 @@ void Cutscene::EnterDown()
 {
    // adjust for character centering
    img.screenY = point[2].y + img.GetRows();
-   img.screenX = point[2].x - img.GetCols()/2;
+   img.screenX = point[2].x - img.GetCols() / 2;
 
    // if entering from the center
    if(img.screenX == centerX) {
@@ -519,11 +524,11 @@ void Cutscene::Intro()
    string quit = "[Q] Quit Game";
    
    title.AlignCenter(scr);
-   title.ShiftDown(scr, scr.GetRows()/2 + title.GetRows());
+   title.ShiftDown(scr, scr.GetRows() / 2 + title.GetRows());
 
    // This loop draws the title up the screen
    int i = 0;
-   while(i++ < scr.GetRows()/2 + title.GetRows())
+   while(i++ < scr.GetRows() / 2 + title.GetRows())
    {
       system("clear");
       
@@ -537,8 +542,8 @@ void Cutscene::Intro()
    }
 
    // initialize where the menu options begin to print
-   int playX = scr.GetCols()/2 - (play.length() * 2);
-   int quitX = scr.GetCols()/2 + quit.length();
+   int playX = scr.GetCols() / 2 - (play.length() * 2);
+   int quitX = scr.GetCols() / 2 + quit.length();
 
    // iterate through the char array printing each character one at a time
    for(unsigned int i = 0; i < play.length(); i++)
@@ -546,7 +551,7 @@ void Cutscene::Intro()
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-play.length()/2, playX++, play[i]);
+      scr.Set(scr.GetRows()-play.length() / 2, playX++, play[i]);
 
       cout << scr;
       
@@ -559,7 +564,7 @@ void Cutscene::Intro()
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-quit.length()/2, quitX++, quit[i]);
+      scr.Set(scr.GetRows()-quit.length() / 2, quitX++, quit[i]);
 
       cout << scr;
       
@@ -576,11 +581,11 @@ void Cutscene::Outro()
    ImportImg credits = ImportImg("../DD_Art/Credits/credits.txt");
    
    credits.AlignCenter(scr);
-   credits.ShiftDown(scr, scr.GetRows()/2 + credits.GetRows());
+   credits.ShiftDown(scr, scr.GetRows() / 2 + credits.GetRows());
 
    // This loop draws the title up the screen
    int i = 0;
-   while(i++ < scr.GetRows()/2 + credits.GetRows())
+   while(i++ < scr.GetRows() / 2 + credits.GetRows())
    {
       system("clear");
       
@@ -606,10 +611,10 @@ void Cutscene::MonsterEncounter()
    Screen scr = Screen();
 
    // fill from the ends into the center
-   int left = 0, right = scr.GetCols()-1;
+   int left = 0, right = scr.GetCols() - 1;
    while(left <= right)
    {
-      int j = scr.GetRows()-1;
+      int j = scr.GetRows() - 1;
       for(int i = 0; i < scr.GetRows(); i++, j--)
       {
 	 for(int k = 0; k < am; k++)
@@ -627,10 +632,10 @@ void Cutscene::MonsterEncounter()
    }
 
    // erase from the middle out
-   left = scr.GetCols()/2, right = scr.GetCols()/2;
+   left = scr.GetCols() / 2, right = scr.GetCols() / 2;
    while(left >= 0 - am)
    {
-      int j = scr.GetRows()-1;
+      int j = scr.GetRows() - 1;
       for(int i = 0; i < scr.GetRows(); i++, j--)
       {
 	 for(int k = 0; k < am; k++)
