@@ -17,7 +17,7 @@ int main()
    while(true)
    {
       system("clear");
-      state->Set();
+      //state->Set();
       switch(state->GetState())
       {
 	 case 'E':

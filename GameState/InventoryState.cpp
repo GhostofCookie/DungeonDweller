@@ -35,6 +35,7 @@ void InventoryState::Set()
 /// Gets the layout for the game menu and screen.
 void InventoryState::Get()
 {
+<<<<<<< HEAD
   // Item *item = new Sword();
 //   item = item->GetItem("SWORD");
    //  player.FillInventory(item);
@@ -44,6 +45,8 @@ void InventoryState::Get()
       //     cout<<*it<<endl;
    //     ++it;
            //  }
+=======
+>>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
    Item *item = new Sword();
    item = item->GetItem("SWORD");
    player->FillInventory(item);
@@ -55,4 +58,24 @@ void InventoryState::Get()
    }
    menu->OutputMenu();
    menu->HandleInput(cin);
+   
+   switch(menu->GetOption())
+     {
+     case 'q':
+       currState = 'E';
+       return;
+       break;
+     case 'u':
+       // Use the item
+       break;
+     case 'e':
+       // Equip the item
+       break;
+     case 'i':
+       // Show the items information exclusively
+       break;
+     default:
+       return;
+       break;
+     }
 }

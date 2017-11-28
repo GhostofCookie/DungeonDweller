@@ -120,7 +120,11 @@ void ExploreState::RunInput(char n)
 	    anim->EnterDown();
 
 	    // lower the stamina for moving
+<<<<<<< HEAD
 	    player->ChangeStamina(1);
+=======
+	    player.ChangeStamina(-1);
+>>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
 	    break;
 
 	    // Move Left
@@ -142,7 +146,11 @@ void ExploreState::RunInput(char n)
 	    anim->EnterRight();
 
 	    // lower the stamina for moving
+<<<<<<< HEAD
 	    player->ChangeStamina(1);
+=======
+	    player.ChangeStamina(-1);
+>>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
 	    break;
 
 	    // Move Down
@@ -164,7 +172,11 @@ void ExploreState::RunInput(char n)
 	    anim->EnterUp();
 
 	    // lower the stamina for moving
+<<<<<<< HEAD
 	    player->ChangeStamina(1);
+=======
+	    player.ChangeStamina(-1);
+>>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
 	    break;
 
 	    // Move Right
@@ -186,7 +198,11 @@ void ExploreState::RunInput(char n)
 	    anim->EnterLeft();
 
 	    // lower the stamina for moving
+<<<<<<< HEAD
 	    player->ChangeStamina(1);
+=======
+	    player.ChangeStamina(-1);
+>>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
 	    break;
 
 	    // Trade Option
@@ -203,6 +219,7 @@ void ExploreState::RunInput(char n)
 	       roomTree->At()->complete = true;
 	    }
 	    else currState = 'E';
+	    return;
 	    break;
 
 	    // Quit the game
@@ -211,7 +228,10 @@ void ExploreState::RunInput(char n)
 	    cout << "Are you sure you want to quit to main menu?";
 	    cin >> ch;
 	    if(tolower(ch) == 'y')
+	      {
 	       currState = 'M';
+	       return;
+	      }
 	    else
 	       currState = 'E';
 	    break;
@@ -224,6 +244,7 @@ void ExploreState::RunInput(char n)
 	    
 	 default:
 	    currState = 'E';
+	    return;
 	    break;
       };
 
@@ -246,8 +267,9 @@ void ExploreState::SetState(int n)
    
    if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
    {
-      c.Outro();
+     //  Insert defeat anim here
       currState = 'M';
+      return;
       
    } else {
       switch(n)
@@ -256,7 +278,6 @@ void ExploreState::SetState(int n)
 	 case 1:
 	 case 3:
 	    currState = 'E';
-	    return;
 	    break;
 
 	    // fight state
