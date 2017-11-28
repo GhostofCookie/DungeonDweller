@@ -34,10 +34,14 @@ public:
     /// \param[in] n, players name
     /// \param[in] r, players race
    Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
-   
+
+   /// Const copy constructor
    Player(const Player&);
+
+   /// Copy constructor
    Player(Player&);
 
+   /// Assignment operator overloader for copy constructor
    Player& operator=(const Player &p);
 
 
@@ -58,6 +62,7 @@ public:
 
    /// Shows players name
    string GetName() const {return name;};
+   
    /// Prints all player stats
    void Print();
    
