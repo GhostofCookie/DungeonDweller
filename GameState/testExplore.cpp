@@ -13,14 +13,18 @@ int main()
 {
    GameState *state = new MainState();
    GameState *baseState = new ExploreState();
+
    while(true)
    {
       system("clear");
-      //state->Set();
+      state->Set();
       switch(state->GetState())
       {
 	 case 'E':
-	    state = baseState;
+	    if(baseState->GetPlayer().GetStamina() <= 0 || baseState->GetPlayer().GetHealth() <= 0)
+	       baseState = new ExploreState();
+	    else
+	       state = baseState;
 	    break;
 	 case 'P':
 	    state = new PuzzleState();
@@ -37,10 +41,13 @@ int main()
 	 case 'I':
 	    state = new InventoryState();
 	    break;
+	 default:
+	    state = new MainState();
       }
       state->Set();
       state->Get();
    }
+   
    delete state;
    delete baseState;
    return 0;

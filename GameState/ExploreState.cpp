@@ -13,11 +13,11 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   roomPtr = new Room(import->collection,0);
+   roomPtr = new Room(import->collection, 0);
    roomTree = new RoomTree(roomPtr);
 
    // create the player
-   player = Player(5, 1, "Reid", "Human", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   player = new Player(5, 1, "Reid", "Human", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 
@@ -31,6 +31,7 @@ ExploreState::~ExploreState()
    delete roomTree;
    delete import;
    delete character;
+   delete player;
 }
 
 
@@ -62,30 +63,32 @@ void ExploreState::Set()
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
+   ImportImg r = ImportImg(player->Img());
+   
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
 
-   player.Img().AlignCenter(*screen);
-   player.Draw(*screen);
-
-   SetState((roomTree->At())->GetType());
+   r.AlignCenter(*screen);
+   r.Draw(*screen);
 
    // print the player's informaton and the screen
-   cout << setfill(' ') << "[$]Gold: " << player.GetGold();
-   cout << setw(43) << "[S]Stamina: " << player.GetStamina();
-   cout << setw(41) << right << "[+]Health: " << player.GetHealth() << right << endl;
+   cout << setfill(' ') << "[$]Gold: " << player->GetGold();
+   cout << setw(43) << "[S]Stamina: " << player->GetStamina();
+   cout << setw(41) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
-          
-   // Print the menu and handle user input
-   menu->OutputMenu();
-   menu->HandleInput(cin);
 
-
-   // Handle input from player
-   RunInput(menu->GetOption());
+   SetState((roomTree->At())->GetType());
+   if(currState != 'M')
+   {
+      // Print the menu and handle user input
+      menu->OutputMenu();
+      menu->HandleInput(cin);
+      // Handle input from player
+      RunInput(menu->GetOption());
+   }   
 }
 
 
@@ -95,13 +98,14 @@ void ExploreState::Get()
 void ExploreState::RunInput(char n)
 {
    Cutscene *anim;
+   
    if(n != '\0')
    {
       switch(n)
       {
 	 // Move up
 	 case 'w' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitUp();
 
@@ -113,17 +117,17 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterDown();
 
 	    // lower the stamina for moving
-	    player.ChangeStamina(-1);
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Left
 	 case 'a' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitLeft();
 
@@ -135,17 +139,17 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterRight();
 
 	    // lower the stamina for moving
-	    player.ChangeStamina(-1);
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Down
 	 case 's' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitDown();
 
@@ -157,17 +161,17 @@ void ExploreState::RunInput(char n)
 	    }
 	 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterUp();
 
 	    // lower the stamina for moving
-	    player.ChangeStamina(-1);
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Right
 	 case 'd' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitRight();
 
@@ -179,12 +183,12 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterLeft();
 
 	    // lower the stamina for moving
-	    player.ChangeStamina(-1);
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Trade Option
@@ -244,11 +248,11 @@ void ExploreState::SetState(int n)
    Cutscene c;
    
    // quit the game
-   cout << player.GetHealth() << ", " << player.GetStamina() << endl;
-   usleep(1000000);
-   if(n == 113 || player.GetHealth() <= 0 || player.GetStamina() <= 0)
+   if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
    {
-     //  Insert defeat anim here
+      //  Insert defeat anim here
+      cout << "You have run out of stamina" << endl;
+      usleep(3000000);
       currState = 'M';
       return;
       
@@ -266,7 +270,6 @@ void ExploreState::SetState(int n)
 	    if(!roomTree->At()->IsComplete())
 	    {
 	       c.MonsterEncounter();	    
-	       screen->outlineOn = true;
 	       roomTree->At()->complete = true;
 	       //currState = 'F';
 	    }

@@ -43,9 +43,6 @@ class TicTacToe: public virtual Puzzle
    ///Sets the board up for the beginning of the game, placing the grid
    void BoardSetup();
 
-   ///Sends the menu class the options for the player to select.
-   void SetOptionsInMenu();
-
    /// Displays the screen containing the gameboard
    /// \param[in] inputX, the X-coordinate of the selection.
    /// \param[in] inputY, the Y-coordinate of the selection.

@@ -1,5 +1,5 @@
 //
-// code_cracker.h
+// CodeCracker.h
 //
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
@@ -18,14 +18,15 @@ using namespace std;
 class CodeCracker: public virtual Puzzle
 {
   public:
-///Default constructor for hanoi, reads in riddles from .txt files
+   ///Default constructor for hanoi, reads in riddles from .txt files
    CodeCracker();
 
-///Deconstructor
+   ///Deconstructor
    virtual ~CodeCracker();
 
-///Method to run the game, serves as a 'main' for the mini-game, calling
-///functions from private until the player has won.
+   ///Method to run the game, serves as a 'main' for the mini-game, calling
+   ///functions from private until the player has won.
+   ///\param[in] player, a pointer to the players character for changing stats.
    virtual void RunGame(Character *player);
 
   private:
@@ -54,7 +55,7 @@ class CodeCracker: public virtual Puzzle
    
    ///Checks if the player is now dead and ends the game if yes
    ///\param[in] player, a pointer to the players character passed from main.
-   void DeathCheck(Character *player);//Will need to take some kind of character variable/object
+   void DeathCheck(Character *player);
    
    ///Outputs the selected riddle, limiting the characters to a set length
    ///and moving them down to the next line if the string is longer than they
@@ -70,9 +71,6 @@ class CodeCracker: public virtual Puzzle
    ///\param[in]menu, the menu object to be saved to and then outputted.
    void SetRiddleInMenu(int riddleIndex, RiddleMenu &menu);
 
-   ///Gets the menu ready to start the first iteration.
-   void SetOptionsInMenu();
-
    ///Sets a riddles index to false in the membership table usedRiddles.
    ///\param[in]currentRiddle, the riddle to switch the truth value for
    void MakeRiddleUsed(int currentRiddle);
@@ -81,15 +79,15 @@ class CodeCracker: public virtual Puzzle
    int UnusedRandomRiddle();
 
    
-///Vector to store the question strings read in from the file 
-   std::vector<string>question;
+   ///Vector to store the question strings read in from the file 
+   std::vector < string > question;
 
-///Vector to store the questions answers read in from the file, in order
-   std::vector<int>answer;
+   ///Vector to store the questions answers read in from the file, in order
+   std::vector < int > answer;
 
    ///Stores the indexes of all used riddle strings so that they aren't asked
    ///twice.
-   std::vector<bool>usedRiddles;
+   std::vector < bool > usedRiddles;
 
    ///Total riddles compeleted
    int riddleCompletionCount;

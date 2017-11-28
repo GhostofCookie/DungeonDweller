@@ -145,7 +145,7 @@ void Image::DrawBorder(char ch)
 {
    for(int i = 0; i < height; i++)
       for(int j = 0; j < width; j++)
-	 if(i == 0 || i == height-1 || j == 0 || j == width-1)
+	 if(i == 0 || i == height - 1 || j == 0 || j == width - 1)
 	    Set(i, j, ch);
 }
 
@@ -218,7 +218,7 @@ void Image::FlipHoriz()
    for(unsigned int i = 0; i < Img.size(); ++i)
    {
       vector<char> _temp;
-      for(unsigned int j = imgSize-1; j != 1; --j)
+      for(unsigned int j = imgSize - 1; j != 1; --j)
 	 _temp.push_back(Img[i][j]);
 
       temp.push_back(_temp);
@@ -236,7 +236,7 @@ void Image::FlipVert()
    vector<vector<char>> temp;
    int imgSize = static_cast<int>(Img.size());
 	
-   for(int i = imgSize-1; i != -1; --i)
+   for(int i = imgSize - 1; i != -1; --i)
    {
       vector<char> _temp;
       for(unsigned int j = 0; j < Img[i].size(); ++j)
@@ -255,10 +255,10 @@ void Image::FlipVert()
 /// \param[in] screen checks to ensure the bounds aren't exceeded
 void Image::AlignCenter(Screen &screen)
 {
-   int scrX = screen.GetCols()/2;
-   int scrY = screen.GetRows()/2;
-   int imgX = width/2;
-   int imgY = height/2;
+   int scrX = screen.GetCols() / 2;
+   int scrY = screen.GetRows() / 2;
+   int imgX = width / 2;
+   int imgY = height / 2;
 	
    // Relys on it being odd for centering perfection
    SetOrigin(screen, scrY - imgY, scrX - imgX);
@@ -271,10 +271,10 @@ void Image::AlignCenter(Screen &screen)
 void Image::AlignCenter(Image &img)
 {
    // in this situation the screen is represented by the image
-   int scrX = img.GetCols()/2;
-   int scrY = img.GetRows()/2;
-   int imgX = width/2;
-   int imgY = height/2;
+   int scrX = img.GetCols() / 2;
+   int scrY = img.GetRows() / 2;
+   int imgX = width / 2;
+   int imgY = height / 2;
 
    // Relys on it being odd for centering perfection
    SetOrigin(img, scrY - imgY, scrX - imgX);
@@ -291,8 +291,8 @@ void Image::AlignCenter(Image &img, int x, int y)
    // in this situation the screen is represented by the image
    int scrX = x;
    int scrY = y;
-   int imgX = width/2;
-   int imgY = height/2;
+   int imgX = width / 2;
+   int imgY = height / 2;
 
    // Relys on it being odd for centering perfection
    SetOrigin(img, scrY - imgY, scrX - imgX);
@@ -312,7 +312,7 @@ void Image::AlignLeft(Image &img) { screenX = 1; }
 void Image::AlignRight(Image &img)
 {
    //uses the image's width and screen's width to find the right side
-   screenX = static_cast<int>(img.GetCols()-Img[0].size()-1);
+   screenX = static_cast<int>(img.GetCols() - Img[0].size() - 1);
 }
 
 
@@ -329,7 +329,7 @@ void Image::AlignLeft(Screen &screen) { screenX = 1; };
 void Image::AlignRight(Screen &screen)
 {
    // uses the image's width and screen's width to find the right side
-   screenX = static_cast<int>(screen.GetCols()-Img[0].size()-1);
+   screenX = static_cast<int>(screen.GetCols() - Img[0].size() - 1);
 }
 
 
@@ -351,14 +351,14 @@ void Image::AlignTop(Image &img) { screenY = img.screenY-1; };
 /// Align the image to the bottom of the screen
 /// \param[in] screen used to align with
 // Ensures it draws one character from the border
-void Image::AlignBottom(Screen &screen) { screenY = static_cast<int>(screen.GetRows() - Img.size()-1); };
+void Image::AlignBottom(Screen &screen) { screenY = static_cast<int>(screen.GetRows() - Img.size() - 1); };
 
 
 
 /// Align the image to the bottom of the image
 /// \param[in] img used to align with
 // Ensures it draws one character from the border
-void Image::AlignBottom(Image &img) { screenY = static_cast<int>(img.GetRows() - Img.size()-1); };
+void Image::AlignBottom(Image &img) { screenY = static_cast<int>(img.GetRows() - Img.size() - 1); };
 
 
 

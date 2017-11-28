@@ -6,7 +6,6 @@
 #include <vector>
 //Screen headers
 #include "Screen.h"
-#include "SlotScreen.h"
 //Image headers
 #include "../ImageImporter/ImageImporter.h"
 #include "../Image/Image.h"

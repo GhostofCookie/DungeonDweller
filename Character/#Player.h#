@@ -44,15 +44,6 @@ public:
    /// \param[in] keys, uses a key if availible
    bool UseKey(int& keys);
 
-   /// Shows the amount of keys
-   int GetKeys() {return keys;};
-
-   /// Shows players race
-   string GetRace() {return race;};
-
-   /// Prints all player stats
-   void Print();
-   
   private: 
    ///Name of the player
    string name;
@@ -63,5 +54,17 @@ public:
    ///Amount of keys player has
    int keys; 
 };
-
+p={0x8400,0x8421,0x9c63,0xbde7,0xbdff,0xffff}
+   i={0x01,0,0,0x10,0x21,0x82,0xe8,0x8e,0x28}
+      t=0::a::
+   for n=64,1,-1 do
+	    f=n+t%1
+	       q=f/64
+	       r=f*f/28
+	       y=50+sin(q+.1)*r
+	       c=n-t
+	       fillp(p[flr(c%#p)+1])
+	       circfill(64,y,r,i[flr(c/#p)%#i+1])
+	       end
+	       t+=.2
 #endif /* Player_hpp */
