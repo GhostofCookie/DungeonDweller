@@ -9,33 +9,29 @@
 #include <vector>
 using namespace std;
 
-//*****************************************************************************
-/// read base damage
-//*****************************************************************************
+/// Returns the base damage of the weapon (for reading only)
+/// \returns base damage of the weapon
 int Weapon::BaseDamage() const
 {
 	return baseDmg;
 }
 
-//*****************************************************************************
-/// write base damage
-//*****************************************************************************
+/// Returns the base damage of the weapon (for writing)
+/// \retrurns Reference to baseDmg
 int &Weapon::BaseDamage()
 {
 	return baseDmg;
 }
 
-//*****************************************************************************
-/// read durability
-//*****************************************************************************
+/// Returns the number of times the weapon can be used (for reading only)
+/// \returns number of remainingUses
 int Weapon::Durability() const
 {
 	return remainingUses;
 }
 
-//*****************************************************************************
-/// write durability
-//*****************************************************************************
+/// Returns the number of times the weapon can be used (for writing)
+/// \returns a reference to remainingUses
 int &Weapon::Durability()
 {
 	return remainingUses;
