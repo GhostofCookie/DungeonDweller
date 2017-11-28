@@ -47,6 +47,9 @@
 ../DD_Art/Decor/DD_Pillar2.txt p
 
 ../DD_Art/Player/DD_Player.txt @
-../DD_Art/Player/DD_NPCShop.txt @
-../DD_Art/Player/DD_NPCEnemy.txt @
-../DD_Art/Player/DD_NPCPuzzle.txt @
+
+../DD_Art/Player/DD_NPCShop.txt n
+../DD_Art/Player/DD_NPCPuzzle.txt n
+
+../DD_Art/Player/DD_NPCEnemy.txt m
+../DD_Art/Player/DD_NPCEnemyDead.txt m

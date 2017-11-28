@@ -12,7 +12,6 @@
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include "Screen.h"
-#include "SlotScreen.h"
 #include <stdexcept>
 
 //************************************************************************

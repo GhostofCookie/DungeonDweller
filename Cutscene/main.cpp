@@ -6,6 +6,7 @@
 #include "../Image/Image.h"
 #include "../Image/ImportImg.h"
 #include "../Room/Room.h"
+#include "../Character/Character.h"
 using namespace std;
 
 
@@ -14,9 +15,9 @@ using namespace std;
 int main()
 {
    srand( (unsigned int) time(NULL));
-   
    ImageImporter import = ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   Cutscene cutscene = Cutscene();
+   Room *room = new Room(import.collection);
+   Cutscene cutscene = Cutscene(import.collection['@'][0], room->GetImage(), room);
 
 
    cutscene.MonsterEncounter();
@@ -24,7 +25,7 @@ int main()
    // cutscene.Outro();
    
    // runs 4 different DYNAMIC cutscene tests
-   /*
+   
    cutscene.EnterRight();
    cutscene.ExitUp();
    cutscene.EnterDown();
@@ -33,7 +34,7 @@ int main()
    cutscene.ExitDown();
    cutscene.EnterLeft();
    cutscene.ExitLeft();
-   */
+   
    
    // runs 4 different cutscene tests
    /*

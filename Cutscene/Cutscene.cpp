@@ -14,6 +14,7 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
    // itinitialize the animated img and the background
    img = ImportImg(image);
    room = ImportImg(r);
+   npc = ImportImg(tempRoom->GetNpc().Img());
    
    // initialize a screen for the image to lay on
    screen = Screen(33, 61);
@@ -73,6 +74,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
+      npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -101,6 +103,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
+      npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -129,6 +132,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
+      npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
@@ -157,6 +161,7 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
+      npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);

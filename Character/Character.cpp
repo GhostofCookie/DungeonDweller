@@ -75,8 +75,3 @@ void Character:: Draw(Screen &screen)
 {
    img.Draw(screen);
 }
-
-ImportImg Character:: Img()
-{
-   return img;
-}
