@@ -34,7 +34,13 @@ public:
     /// \param[in] n, players name
     /// \param[in] r, players race
    Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
-    
+   
+   Player(const Player&);
+   Player(Player&);
+
+   Player& operator=(const Player &p);
+
+
    ///Amount of keys the player has
    /// \param[in&] keys, current amount of keys the player has
    /// \param[in] keyMod, how the current amount of keys will be modified
@@ -45,10 +51,10 @@ public:
    bool UseKey(int& keys);
 
    /// Shows the amount of keys
-   int GetKeys() {return keys;};
+   int GetKeys() const {return keys;};
 
    /// Shows players race
-   string GetRace() {return race;};
+   string GetRace() const {return race;};
 
    /// Prints all player stats
    void Print();

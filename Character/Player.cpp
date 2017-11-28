@@ -12,6 +12,35 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
    stamina = s;
 }
 
+Player:: Player(Player &p)
+{
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();   
+}
+
+Player:: Player(const Player &p)
+{
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Player& Player:: operator=(const Player &p)
+{
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+
+   return *this;
+}
+
 void Player:: ChangeKeys(int keyMod)
 {
    if(keys += keyMod <= 0)

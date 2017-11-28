@@ -5,6 +5,30 @@ Character::Character()
 
 
 
+Character:: Character(Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Character:: Character(const Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Character& Character:: operator=(const Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+
+   return *this;
+}
+
+
 void Character:: ChangeGold(int goldMod)
 {
  if(gold += goldMod <= 0)

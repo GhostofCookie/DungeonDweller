@@ -50,6 +50,11 @@ class Character
    /// Character deconstructor
    virtual ~Character(){}
 
+   Character(const Character&);
+   Character(Character&);
+
+   Character& operator=(const Character &p);
+
    /// Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
    virtual void FillInventory(Item *item);
@@ -78,13 +83,13 @@ class Character
    virtual void ChangeStamina(int sMod);
 
    /// Returns the stamina value
-   virtual int GetStamina() { return stamina; };
+   virtual int GetStamina() const { return stamina; };
    
    /// Returns the gold value
-   virtual int GetGold() { return gold; };
+   virtual int GetGold() const { return gold; };
    
    /// Returns the health value
-   virtual int GetHealth() { return health; };
+   virtual int GetHealth() const { return health; };
 
    /// Return the image
    virtual ImportImg Img();
