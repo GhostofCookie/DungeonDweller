@@ -25,13 +25,14 @@ void MainState::Set()
 
 void MainState::Get()
 {
-  //Cutscene anim;// anim.Intro();
+   Cutscene anim;
+   anim.Intro();
    menu->HandleInput(cin);
    if(tolower(menu->GetOption()) == 'q')
    {
       cout<<"Are you sure you want to quit (y/n)? ";
       menu->HandleInput(cin);
-      // anim.Outro();
+      anim.Outro();
       exit(0);
    }
 }

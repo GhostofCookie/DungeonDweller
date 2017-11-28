@@ -19,9 +19,8 @@ int main()
    Room *room = new Room(import.collection);
    Cutscene cutscene = Cutscene(import.collection['@'][0], room->GetImage(), room);
 
-
-   cutscene.MonsterEncounter();
-   //cutscene.Intro();
+   //cutscene.MonsterEncounter();
+   cutscene.Intro();
    // cutscene.Outro();
    
    // runs 4 different DYNAMIC cutscene tests
@@ -34,7 +33,7 @@ int main()
    cutscene.ExitDown();
    cutscene.EnterLeft();
    cutscene.ExitLeft();
-   
+  
    
    // runs 4 different cutscene tests
    /*

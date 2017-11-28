@@ -60,6 +60,8 @@ class Cutscene
    ImportImg room;
    /// the npc to be in the room
    ImportImg npc;
+   /// the type of room
+   int type = 0;
 
    /// Helper function that returns many spaces
    void ClearScreen() { for(int i = 0; i < 50; i++) cout << endl; };
@@ -104,7 +106,7 @@ class Cutscene
   public:
    /// Constructor
    Cutscene(ImportImg image = ImportImg("../DD_Art/Player/DD_Player.txt"),
-	    ImportImg r = ImportImg("../DD_Art/Player/DD_Player.txt"),
+	    ImportImg r = ImportImg("../DD_Art/Rooms/DD_Square.txt"),
 	    Room *roomTemplate = nullptr);
    /// Destructor
    ~Cutscene();
