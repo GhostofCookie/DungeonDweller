@@ -14,6 +14,8 @@ class RoomTreeTest : public CppUnit::TestFixture
    CPPUNIT_TEST(testMove);
    CPPUNIT_TEST(testNewRoom);
    CPPUNIT_TEST(testAt);
+   CPPUNIT_TEST(testCurrentHeight);
+   CPPUNIT_TEST(testTotalNodes);
    CPPUNIT_TEST_SUITE_END();
 
   public:
@@ -31,6 +33,12 @@ class RoomTreeTest : public CppUnit::TestFixture
 
    /// Tests the at Function
    void testAt();
+
+   /// Tests the CurrentHeight function
+   void testCurrentHeight();
+
+   /// Tests the TotalNodes function
+   void testTotalNodes();
 
   private:
 	  RoomTree *Tree1;

@@ -37,12 +37,12 @@ void MainState::CreatePlayer()
 {
    cout << "Hello! Welcome to the dungeon." << endl;
    cout << "You are going to need a character to get through this place, what do you want your name to be?" << endl;
-   cout << ">:"
+   cout << ">:";
    string name;
    cin >> name;
    cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
 
-   vector<Player> loadOuts;
+   vector<Player> loadouts;
    Player ranger(40, 1, name, "Ranger", 20, 50);
    Sword *sword;
    ranger.FillInventory(sword);
@@ -70,17 +70,20 @@ void MainState::CreatePlayer()
    loadouts.push_back(warrior);
    loadouts.push_back(mage);
    loadouts.push_back(comp);
+
+   menu->AddOption('c', "Choose race");
+   menu->AddOption('n', "Next race");
    
-   while(menu->GetOption != 'c')
+   while(menu->GetOption() != 'c')
    {
       int i = 0;
 
-      loadout[i].Print();
-      menu->AddOption('c', "Choose race");
-      menu->AddOption('n', "Next race");
+      loadouts[i].Print();
+      //menu->AddOption('c', "Choose race");
+      //menu->AddOption('n', "Next race");
       if(menu->GetOption() == 'c')
       {
-	 player = loadout[i];
+	 player = new Player(loadouts[i]);
 	 currState = 'E';
 	 break;
       }

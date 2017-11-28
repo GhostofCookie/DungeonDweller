@@ -19,7 +19,7 @@ void PuzzleState::Get()
   random_shuffle(puzzles.begin(), puzzles.end());
   auto it = puzzles.begin();
   
-  (*it)->RunGame(character);
+  (*it)->RunGame(player);
   currState = 'E';
   
 }

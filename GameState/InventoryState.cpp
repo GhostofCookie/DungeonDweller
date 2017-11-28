@@ -10,6 +10,7 @@
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
 
+
 /// This is the the default constructor.
 InventoryState::InventoryState()
 {

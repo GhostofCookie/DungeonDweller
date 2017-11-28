@@ -15,8 +15,10 @@
 #include "../Character/Character.h"
 #include "../Character/Player.h" 
 #include "../Character/Npc.h"
-#include "../Item/Item.h"
 #include "../Item/MyConsumables.h"
+#include "../Item/Item.h"
+#include "../Item/Weapon.h"
+#include "../Item/MyWeapons.h"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
@@ -39,17 +41,12 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
-<<<<<<< HEAD
    /// Creates the player
-   virtual void CreatePlayer() = 0;
-   /// Creates an Npc
-   virtual void CreateNpc() = 0;
+      
    
-=======
    /// Returns the current player.
    Character& GetPlayer() const { return *player; }
 
->>>>>>> a24eda0dfda4bfbf941e69339e74c698eb0f5c67
   protected:
    ///< pointer to the menu.
    Menu *menu;
@@ -59,19 +56,10 @@ class GameState
    char currState;
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
-   /// The main character
-<<<<<<< HEAD
-   Player player;
-   /// Pointer to the player;
-   Character *character = &player;
    ///Any Npc that needs to be created
    Npc npc;
-=======
-   Character *player;
-   /// Pointer to the player;
-   Character *character = player;
->>>>>>> a24eda0dfda4bfbf941e69339e74c698eb0f5c67
-
+   
+   Player *player;
 };
 
 #endif

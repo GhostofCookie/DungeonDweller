@@ -30,7 +30,6 @@ ExploreState::~ExploreState()
    delete roomPtr;
    delete roomTree;
    delete import;
-   delete character;
    delete player;
 }
 
@@ -75,9 +74,10 @@ void ExploreState::Get()
    r.Draw(*screen);
 
    // print the player's informaton and the screen
-   cout << setfill(' ') << "[$]Gold: " << player->GetGold();
-   cout << setw(43) << "[S]Stamina: " << player->GetStamina();
-   cout << setw(41) << right << "[+]Health: " << player->GetHealth() << right << endl;
+   cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
+   cout << setw(20) << "[$]Gold: " << player->GetGold();
+   cout << setw(20) << "[S]Stamina: " << player->GetStamina();
+   cout << setw(20) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
 
    SetState((roomTree->At())->GetType());
