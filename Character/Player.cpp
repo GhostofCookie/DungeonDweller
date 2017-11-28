@@ -36,4 +36,7 @@ void Player:: Print()
    cout << "Stamina: " << stamina << endl;
    cout << "Health: " << health << endl;
    cout << "Gold: " << gold << endl;
+
+   for(unsigned int i = 0; i < inventory.size(); i++)
+      cout << inventory[i]->Name();
 }
