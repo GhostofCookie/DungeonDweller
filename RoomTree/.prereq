@@ -1,19 +1,55 @@
 RoomTreeTester.o: RoomTreeTester.cpp RoomTreeTest.h RoomTree.h \
  ../Room/Room.h ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
  ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
- ../Room/../Image/Image.h ../Room/../Image/ImportImg.h
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h \
+ ../Room/../Character/Character.h ../Room/../Character/../Item/Item.h \
+ ../Room/../Character/../Image/ImportImg.h ../Room/../Character/Player.h \
+ ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/MyConsumables.h \
+ ../Room/../Character/../Item/Consumable.h \
+ ../Room/../Character/../Item/Item.h ../Room/../Character/Npc.h \
+ ../Room/../Item/Item.h ../Room/../Item/MyConsumables.h \
+ ../Room/../Item/MyWeapons.h ../Room/../Item/Weapon.h \
+ ../Room/../Item/Item.h
 RoomTreeTest.o: RoomTreeTest.cpp RoomTree.h ../Room/Room.h \
  ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
  ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
- ../Room/../Image/Image.h ../Room/../Image/ImportImg.h RoomTreeTest.h
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h \
+ ../Room/../Character/Character.h ../Room/../Character/../Item/Item.h \
+ ../Room/../Character/../Image/ImportImg.h ../Room/../Character/Player.h \
+ ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/MyConsumables.h \
+ ../Room/../Character/../Item/Consumable.h \
+ ../Room/../Character/../Item/Item.h ../Room/../Character/Npc.h \
+ ../Room/../Item/Item.h ../Room/../Item/MyConsumables.h \
+ ../Room/../Item/MyWeapons.h ../Room/../Item/Weapon.h \
+ ../Room/../Item/Item.h RoomTreeTest.h
 RoomTree.o: RoomTree.cpp RoomTree.h ../Room/Room.h \
  ../Room/../Screen/Screen.h ../Room/../Image/Image.h \
  ../Room/../Image/../Screen/Screen.h ../Room/../Image/DefaultImg.h \
- ../Room/../Image/Image.h ../Room/../Image/ImportImg.h
+ ../Room/../Image/Image.h ../Room/../Image/ImportImg.h \
+ ../Room/../Character/Character.h ../Room/../Character/../Item/Item.h \
+ ../Room/../Character/../Image/ImportImg.h ../Room/../Character/Player.h \
+ ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/MyConsumables.h \
+ ../Room/../Character/../Item/Consumable.h \
+ ../Room/../Character/../Item/Item.h ../Room/../Character/Npc.h \
+ ../Room/../Item/Item.h ../Room/../Item/MyConsumables.h \
+ ../Room/../Item/MyWeapons.h ../Room/../Item/Weapon.h \
+ ../Room/../Item/Item.h
 Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
  ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
  ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
- ../Room/../Image/ImportImg.h
+ ../Room/../Image/ImportImg.h ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/Item.h \
+ ../Room/../Character/../Image/ImportImg.h ../Room/../Character/Player.h \
+ ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/MyConsumables.h \
+ ../Room/../Character/../Item/Consumable.h \
+ ../Room/../Character/../Item/Item.h ../Room/../Character/Npc.h \
+ ../Room/../Item/Item.h ../Room/../Item/MyConsumables.h \
+ ../Room/../Item/MyWeapons.h ../Room/../Item/Weapon.h \
+ ../Room/../Item/Item.h
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
