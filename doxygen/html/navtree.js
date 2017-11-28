@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Dungeon Dwellers", "index.html", [
+  [ "Dungeon Dweller", "index.html", [
     [ "[DIRECTORY STRUCTURE]", "md__home_rigt2720_Kodika_README.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
@@ -27,9 +27,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CharacterMenu_8cpp.html",
-"classCodeCracker.html#ae7dc389e166286ca2271625154dde39c",
-"classMainMenu.html#ae7d51673d2212c49550307dff79f6aba",
-"classTicTacToe.html#a5182bf8f6a082e22e522b31bdd179df7"
+"classCodeCracker.html#aa3e32b1d98fe1935315d02c832877e33",
+"classItem.html#ac97e1c78a4ea877d9c07774f07dd5fa4",
+"classSpell.html#a22680a625dce4f3a85421c4763930b57"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

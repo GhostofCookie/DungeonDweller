@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['pairsofcharsvector',['pairsOfCharsVector',['../classMemoryMatch.html#a80336b0b989152fed590a6fa755197bc',1,'MemoryMatch']]],
+  ['pairsofcharsvector',['pairsOfCharsVector',['../classMemoryMatch.html#a377424818fa6730a40795ced32e201de',1,'MemoryMatch']]],
   ['peek',['Peek',['../classMemoryMatch.html#ae78665422f8d46d0c4639916f494845c',1,'MemoryMatch']]],
   ['peekatboard',['PeekAtBoard',['../classMemoryMatch.html#a56bf6c64798545d880f6d061464ae5a2',1,'MemoryMatch']]],
-  ['pictures',['pictures',['../classSlotScreen.html#adff0222578ff70c1362880d2a8bede80',1,'SlotScreen']]],
   ['playai',['PlayAI',['../classConnectFour.html#a618f3caa7db76bc8b4832a2338967a5b',1,'ConnectFour']]],
-  ['player',['Player',['../classPlayer.html',1,'Player'],['../classGameState.html#a4a951449392cb8f339fe07a7b38e3cb5',1,'GameState::player()'],['../classPlayer.html#a36d6f55c7bc6d95cf23d2439b9da19bb',1,'Player::Player()']]],
+  ['player',['Player',['../classPlayer.html',1,'Player'],['../classGameState.html#a580b319e1866f1bb79328c7d09581bdf',1,'GameState::player()'],['../classPlayer.html#a36d6f55c7bc6d95cf23d2439b9da19bb',1,'Player::Player(int s=0, int k=0, string n=&quot; &quot;, string r=&quot; &quot;, int g=0, int h=0, ImportImg img=ImportImg(&quot;../DD_Art/Player/DD_Player.txt&quot;))'],['../classPlayer.html#a8826850c4f8a2871819713ef61148836',1,'Player::Player(const Player &amp;)'],['../classPlayer.html#ad2d305f9af724e761a491b7a85a020e0',1,'Player::Player(Player &amp;)']]],
   ['player_2ecpp',['Player.cpp',['../Player_8cpp.html',1,'']]],
   ['player_2eh',['Player.h',['../Player_8h.html',1,'']]],
   ['playertest',['PlayerTest',['../classPlayerTest.html',1,'']]],
@@ -14,7 +13,8 @@ var searchData=
   ['point',['Point',['../structCutscene_1_1Point.html',1,'Cutscene']]],
   ['point',['point',['../classCutscene.html#a7438465af0e7bc51d52ca5aaefc97e3b',1,'Cutscene::point()'],['../classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7',1,'Room::point()']]],
   ['point',['Point',['../structRoom_1_1Point.html',1,'Room']]],
-  ['power',['Power',['../classConsumable.html#a5cc8fd73435230310fc270f47f445beb',1,'Consumable::Power() const '],['../classConsumable.html#a3ad6ae447a841241c122c616613962e5',1,'Consumable::Power()']]],
+  ['power',['Power',['../classConsumable.html#a5cc8fd73435230310fc270f47f445beb',1,'Consumable::Power() const '],['../classConsumable.html#a5d6c224100e14b1e04e5986f378b9f8b',1,'Consumable::Power()']]],
+  ['print',['Print',['../classPlayer.html#a526ecf9587b1a537e48b5fca4d2997eb',1,'Player']]],
   ['pushdisconleftstack',['PushDiscOnLeftStack',['../classHanoi.html#a47fdd8cbbb4b12ea2941c639868236bc',1,'Hanoi']]],
   ['puzzle',['Puzzle',['../classPuzzle.html',1,'']]],
   ['puzzle_2ecpp',['Puzzle.cpp',['../Puzzle_8cpp.html',1,'']]],

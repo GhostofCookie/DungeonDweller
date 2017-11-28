@@ -18,7 +18,7 @@ Inheritance diagram for Hanoi\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for hanoi, sets height to\-: 4 and width to\-: 3. \end{DoxyCompactList}\item 
 \hyperlink{classHanoi_a59760291bfeda65330ff53c429a4e55b}{$\sim$\-Hanoi} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
+virtual void \hyperlink{classHanoi_a294a2a533b7f3305391aa880f7a0eb36}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -52,6 +52,8 @@ int \hyperlink{classHanoi_abcdaa5a4b56f9c3916bf49e054e1cf8c}{number\-Of\-Stacks}
 \item 
 int \hyperlink{classHanoi_a826f3bc786cb5c7b6499508d0b8bc9b4}{max\-Stack\-Height}
 \begin{DoxyCompactList}\small\item\em Maintains the height of the stacks in the game. \end{DoxyCompactList}\item 
+string \hyperlink{classHanoi_a43513810a88b1c43a61dc26838ce6446}{end\-Game\-Prompt}
+\item 
 \hyperlink{classScreen}{Screen} \hyperlink{classHanoi_a1b9bfd6a0428f772d78b66a5a3268c4c}{Hanoi\-Screen}
 \begin{DoxyCompactList}\small\item\em Hanoi\-Screen stores and outputs the contents of the game to the terminal. \end{DoxyCompactList}\item 
 \hyperlink{classHanoiMenu}{Hanoi\-Menu} \hyperlink{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}{Hanoi\-Game\-Menu}
@@ -159,7 +161,17 @@ Moves the piece the depending on which option the player selects
 \mbox{\tt in}  & {\em user\-Selection,the} & option of moves the player chose \\
 \hline
 \end{DoxyParams}
-\hypertarget{classHanoi_ace4cf62c16bc617ac158171a94b9b6a1}{\index{Hanoi@{Hanoi}!Move\-Piece@{Move\-Piece}}
+Move peg 1 to peg 2
+
+Move peg 2 to peg 1
+
+Move disk on peg 3 to peg 2
+
+Move peg 1 to peg 3
+
+Move peg 2 to peg 3
+
+Move peg 3 to peg 1 \hypertarget{classHanoi_ace4cf62c16bc617ac158171a94b9b6a1}{\index{Hanoi@{Hanoi}!Move\-Piece@{Move\-Piece}}
 \index{Move\-Piece@{Move\-Piece}!Hanoi@{Hanoi}}
 \subsubsection[{Move\-Piece}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Move\-Piece (
 \begin{DoxyParamCaption}
@@ -219,14 +231,10 @@ Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a4dd4c6028ade2b265ce98e48c3f2fb2a}
 
 
 Setup the options in the \hyperlink{classHanoiMenu}{Hanoi\-Menu} object for the player to select. 
-
-
-
-Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 
 \hypertarget{classHanoi_a509e940edaa6135c5b883c93c901e38f}{\index{Hanoi@{Hanoi}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!Hanoi@{Hanoi}}
@@ -255,6 +263,9 @@ Checks the state of Tower to see if the player has won the game, sets Puzzle\-En
 Checks the state of Tower to see if the player has won the game, sets Game\-End to true when they have completed the puzzle by getting all discs to the fourth peg. If the user has managed to successfully move all discs to the last peg then its size should be 4. 
 
 \subsection{Member Data Documentation}
+\hypertarget{classHanoi_a43513810a88b1c43a61dc26838ce6446}{\index{Hanoi@{Hanoi}!end\-Game\-Prompt@{end\-Game\-Prompt}}
+\index{end\-Game\-Prompt@{end\-Game\-Prompt}!Hanoi@{Hanoi}}
+\subsubsection[{end\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}string Hanoi\-::end\-Game\-Prompt\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a43513810a88b1c43a61dc26838ce6446}
 \hypertarget{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}{\index{Hanoi@{Hanoi}!Hanoi\-Game\-Menu@{Hanoi\-Game\-Menu}}
 \index{Hanoi\-Game\-Menu@{Hanoi\-Game\-Menu}!Hanoi@{Hanoi}}
 \subsubsection[{Hanoi\-Game\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hanoi\-Menu} Hanoi\-::\-Hanoi\-Game\-Menu\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a7d73005d59c4f2134ffd564964ab3f49}

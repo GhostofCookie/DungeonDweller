@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Dungeon Dwellers: TicTacToe Class Reference</title>
+<title>Dungeon Dweller: TicTacToe Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,9 +31,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="KodikaLogo.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Dungeon Dwellers
+   <div id="projectname">Dungeon Dweller
    </div>
-   <div id="projectbrief">Insert a brief game description here.</div>
+   <div id="projectbrief">An ASCII based dungeon crawler. Fun for al ages and majors.</div>
   </td>
  </tr>
  </tbody>
@@ -155,13 +155,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a5a03afaffde20d826472e7a8e27995e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a5a03afaffde20d826472e7a8e27995e4">BoardSetup</a> ()</td></tr>
 <tr class="memdesc:a5a03afaffde20d826472e7a8e27995e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the board up for the beginning of the game, placing the grid.  <a href="#a5a03afaffde20d826472e7a8e27995e4">More...</a><br/></td></tr>
 <tr class="separator:a5a03afaffde20d826472e7a8e27995e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd34a83c96edbcf3c3c5a0930d513fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a5fd34a83c96edbcf3c3c5a0930d513fb">SetOptionsInMenu</a> ()</td></tr>
-<tr class="memdesc:a5fd34a83c96edbcf3c3c5a0930d513fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the menu class the options for the player to select.  <a href="#a5fd34a83c96edbcf3c3c5a0930d513fb">More...</a><br/></td></tr>
-<tr class="separator:a5fd34a83c96edbcf3c3c5a0930d513fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb236f340525d12a81667a340440b210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#afb236f340525d12a81667a340440b210">MovePiece</a> (int inputX, int inputY, char userPiece)</td></tr>
 <tr class="separator:afb236f340525d12a81667a340440b210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cd5593db7859cb3788a96a0069d42d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a1cd5593db7859cb3788a96a0069d42d7">EndGamePrompt</a> (int &amp;currentPlayer)</td></tr>
-<tr class="separator:a1cd5593db7859cb3788a96a0069d42d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608d3101cab7340fcc2d0ea5061c37ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a608d3101cab7340fcc2d0ea5061c37ea">EndGamePrompt</a> (int &amp;currentPlayer, <a class="el" href="classTicTacToeMenu.html">TicTacToeMenu</a> menu, <a class="el" href="classCharacter.html">Character</a> *player)</td></tr>
+<tr class="separator:a608d3101cab7340fcc2d0ea5061c37ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8f0ecd818f9f6b8418b7e597ff56a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#afe8f0ecd818f9f6b8418b7e597ff56a7">WinCheck</a> ()</td></tr>
 <tr class="memdesc:afe8f0ecd818f9f6b8418b7e597ff56a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if there have been any 3 tokens in a row in the grid vector.  <a href="#afe8f0ecd818f9f6b8418b7e597ff56a7">More...</a><br/></td></tr>
 <tr class="separator:afe8f0ecd818f9f6b8418b7e597ff56a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +197,9 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a9e4321945ff098996c42cc56936445b9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a9e4321945ff098996c42cc56936445b9">gameBoard</a></td></tr>
-<tr class="memdesc:a9e4321945ff098996c42cc56936445b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector to store the contents of the gameboard.  <a href="#a9e4321945ff098996c42cc56936445b9">More...</a><br/></td></tr>
-<tr class="separator:a9e4321945ff098996c42cc56936445b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cd1b3760908be79d5fa311c2d17761"><td class="memItemLeft" align="right" valign="top">std::vector&lt; vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a56cd1b3760908be79d5fa311c2d17761">gameBoard</a></td></tr>
+<tr class="memdesc:a56cd1b3760908be79d5fa311c2d17761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector to store the contents of the gameboard.  <a href="#a56cd1b3760908be79d5fa311c2d17761">More...</a><br/></td></tr>
+<tr class="separator:a56cd1b3760908be79d5fa311c2d17761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aab68285cb8b8f5ce6159ed5cfc8bbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a0aab68285cb8b8f5ce6159ed5cfc8bbd">boardSize</a></td></tr>
 <tr class="memdesc:a0aab68285cb8b8f5ce6159ed5cfc8bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensions for the board.  <a href="#a0aab68285cb8b8f5ce6159ed5cfc8bbd">More...</a><br/></td></tr>
 <tr class="separator:a0aab68285cb8b8f5ce6159ed5cfc8bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,10 +210,13 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
-<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
-<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated.  <a href="#a965ad54e9f7340c3cad944fc82c61a2b">More...</a><br/></td></tr>
-<tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b inherit pub_attribs_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
+<tr class="memitem:ac25f8ddec23bc739d3e3ca8738316d8a inherit pro_methods_classPuzzle"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#ac25f8ddec23bc739d3e3ca8738316d8a">SecondDelay</a> (int seconds) const </td></tr>
+<tr class="separator:ac25f8ddec23bc739d3e3ca8738316d8a inherit pro_methods_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classPuzzle"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classPuzzle')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classPuzzle.html">Puzzle</a></td></tr>
+<tr class="memitem:a965ad54e9f7340c3cad944fc82c61a2b inherit pro_attribs_classPuzzle"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b">PuzzleEnd</a></td></tr>
+<tr class="memdesc:a965ad54e9f7340c3cad944fc82c61a2b inherit pro_attribs_classPuzzle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remains false until the mini-game/puzzle is ready to be terminated.  <a href="#a965ad54e9f7340c3cad944fc82c61a2b">More...</a><br/></td></tr>
+<tr class="separator:a965ad54e9f7340c3cad944fc82c61a2b inherit pro_attribs_classPuzzle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class contains the mini-game/puzzle Tic Tac Toe. </p>
@@ -347,7 +347,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1cd5593db7859cb3788a96a0069d42d7"></a>
+<a class="anchor" id="a608d3101cab7340fcc2d0ea5061c37ea"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -358,8 +358,24 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void TicTacToe::EndGamePrompt </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>currentPlayer</em></td><td>)</td>
+          <td class="paramname"><em>currentPlayer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classTicTacToeMenu.html">TicTacToeMenu</a>&#160;</td>
+          <td class="paramname"><em>menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCharacter.html">Character</a> *&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -685,8 +701,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Method to run the game, serves as a 'main' for the mini-game, calling functions from private until the player has won. </p>
-<p>currentPlayer keeps track of whos turn it is, if it's odd, it is the user,</p>
-<p>if it is even, it is the AI's turn.</p>
+<p>currentPlayer keeps track of whos turn it is, if it's odd, it is the user, if it is even, it is the AI's turn.</p>
 <p>X is taken as a,b, or c, Y is taken in as an integer. </p>
 
 <p>Implements <a class="el" href="classPuzzle.html#a134875b96b18d9963d2b018fd14e7ab9">Puzzle</a>.</p>
@@ -715,33 +730,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Checks who's turn it is and sets CurrentPlayerChar to their correct char. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5fd34a83c96edbcf3c3c5a0930d513fb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TicTacToe::SetOptionsInMenu </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sends the menu class the options for the player to select. </p>
-
-<p>Implements <a class="el" href="classPuzzle.html#adc90364342151caf536c4a34f2ca71d3">Puzzle</a>.</p>
 
 </div>
 </div>
@@ -906,7 +894,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9e4321945ff098996c42cc56936445b9"></a>
+<a class="anchor" id="a56cd1b3760908be79d5fa311c2d17761"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -914,7 +902,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;vector&lt;char&gt; &gt; TicTacToe::gameBoard</td>
+          <td class="memname">std::vector&lt; vector &lt; char &gt; &gt; TicTacToe::gameBoard</td>
         </tr>
       </table>
   </td>

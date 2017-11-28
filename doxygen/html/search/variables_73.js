@@ -6,6 +6,5 @@ var searchData=
   ['screen2',['screen2',['../classScreenTest.html#a7953fa476ae723c712ca44ea5336dd8b',1,'ScreenTest']]],
   ['screenx',['screenX',['../classImage.html#a0488098c125477f82fc6ca8e14cc170f',1,'Image']]],
   ['screeny',['screenY',['../classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b',1,'Image']]],
-  ['slotcount',['slotCount',['../classSlotScreen.html#adc177088622711869c8ddec331058a78',1,'SlotScreen']]],
   ['stamina',['stamina',['../classCharacter.html#a0f17daa14530e07f0ca479c2dd97f38b',1,'Character']]]
 ];

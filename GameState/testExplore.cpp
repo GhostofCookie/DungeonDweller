@@ -14,7 +14,7 @@ int main()
    GameState *state = new MainState();
    GameState *baseState = new ExploreState();
 
-   while(true)
+   while(true) 
    {
       system("clear");
       state->Set();

@@ -5,6 +5,7 @@
 MainState::MainState()
 {
    menu = new MainMenu();
+   currState = 'M';
 }
 
 MainState::~MainState()
@@ -24,13 +25,13 @@ void MainState::Set()
 
 void MainState::Get()
 {
-   Cutscene anim; anim.Intro();
+  //Cutscene anim;// anim.Intro();
    menu->HandleInput(cin);
    if(tolower(menu->GetOption()) == 'q')
    {
       cout<<"Are you sure you want to quit (y/n)? ";
       menu->HandleInput(cin);
-      anim.Outro();
+      // anim.Outro();
       exit(0);
    }
 }
@@ -46,22 +47,22 @@ void MainState::CreatePlayer()
 
    vector<Player> loadouts;
    Player ranger(40, 1, name, "Ranger", 20, 50);
-   Sword *sword;
+   Sword *sword = new Sword;
    ranger.FillInventory(sword);
    
    Player hunter(50, 1, name, "Hunter", 20, 40);
-   Bow *bow;
+   Bow *bow = new Bow;
    hunter.FillInventory(bow);
    
    Player warrior(20, 2, name, "Warrior", 20, 70);
-   Bow *bowW;
-   Sword *swordW;
+   Bow *bowW = new Bow;
+   Sword *swordW = new Sword;
    hunter.FillInventory(bowW);
    hunter.FillInventory(swordW);
    
    Player mage(40, 5, name, "Mage", 40, 30);
-   Spell *spell;
-   Spell *spellM;
+   Spell *spell = new Spell;
+   Spell *spellM = new Spell;
    mage.FillInventory(spell);
    mage.FillInventory(spellM);
 
@@ -82,8 +83,7 @@ void MainState::CreatePlayer()
       cout << "[N] Next" << endl;
       cout << ">:";
       cin >> ans;
-      tolower(ans);
-      if(ans == 'c')
+      if(tolower(ans) == 'c')
 	 player = new Player(loadouts[i]);
       else
       {

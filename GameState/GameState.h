@@ -41,9 +41,10 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
+
    /// Creates the player
-      
-   
+     
+   Item *item;
    /// Returns the current player.
    Character& GetPlayer() const { return *player; }
 

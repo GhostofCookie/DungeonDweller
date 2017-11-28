@@ -22,20 +22,20 @@ Inheritance diagram for Item\-:\begin{figure}[H]
 virtual \hyperlink{classItem_a33cc9c0bc556b5a33a9d0d58d37c602b}{$\sim$\-Item} ()
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 \hyperlink{classItem}{Item} $\ast$ \hyperlink{classItem_a7b17a8ea512b73fff57327dbf64e64fc}{Get\-Item} (string item\-Type)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classItem}{Item} Factory. \end{DoxyCompactList}\item 
+\item 
 virtual bool \hyperlink{classItem_abd3f52dd7fa25d497f2070e95d44ac03}{Use} (\hyperlink{classCharacter}{Character} $\ast$target)=0
 \item 
 string \& \hyperlink{classItem_a90ce604a697cdd06ed15c1176f269bcf}{Name} ()
-\begin{DoxyCompactList}\small\item\em read or write to name \end{DoxyCompactList}\item 
+\item 
 string \hyperlink{classItem_abbe83003b27f50b343ebfb4b89d73a9b}{Name} () const 
-\begin{DoxyCompactList}\small\item\em read name \end{DoxyCompactList}\item 
+\item 
 string \hyperlink{classItem_ac97e1c78a4ea877d9c07774f07dd5fa4}{Name\-Generator} (string file\-Name)
-\begin{DoxyCompactList}\small\item\em Creates names for Items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classItem_a06cbecc4adca069c237a334998679942}{Random} (unsigned int start, unsigned int end)
-\begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,10 +68,6 @@ Virtual destructor.
 \item[{string}]{item\-Type}
 \end{DoxyParamCaption}
 )}}\label{classItem_a7b17a8ea512b73fff57327dbf64e64fc}
-
-
-\hyperlink{classItem}{Item} Factory. 
-
 Uses factory design pattern to create items 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em item\-Type} & The type of item to be created \\
@@ -92,10 +88,6 @@ Pointer to created item
 {}
 \end{DoxyParamCaption}
 )}}\label{classItem_a90ce604a697cdd06ed15c1176f269bcf}
-
-
-read or write to name 
-
 Allows access to the items name \begin{DoxyReturn}{Returns}
 Reference to the name of the item 
 \end{DoxyReturn}
@@ -106,10 +98,6 @@ Reference to the name of the item
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classItem_abbe83003b27f50b343ebfb4b89d73a9b}
-
-
-read name 
-
 Gives the name of the item without allowing chages \begin{DoxyReturn}{Returns}
 Name of the item 
 \end{DoxyReturn}
@@ -120,10 +108,6 @@ Name of the item
 \item[{string}]{file\-Name}
 \end{DoxyParamCaption}
 )}}\label{classItem_ac97e1c78a4ea877d9c07774f07dd5fa4}
-
-
-Creates names for Items. 
-
 Generates adjectives to add to \hyperlink{classItem}{Item} names 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em file\-Name} & the file that the names comme from \\
@@ -145,10 +129,6 @@ Adjective generated and to be used
 \item[{unsigned int}]{end}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classItem_a06cbecc4adca069c237a334998679942}
-
-
-random number generator 
-
 Helper function to generate random positive numbers \begin{DoxyReturn}{Returns}
 Random number between start and end 
 \end{DoxyReturn}
