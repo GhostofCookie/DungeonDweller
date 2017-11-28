@@ -151,24 +151,24 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
    {
 	 //NPC Shop
       case 1 :
-	 npc.Img() = ImportImg(collection['@'][0]);
+	 npc.Img() = ImportImg(collection['n'][0]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
 	 //NPC Enemy	 
       case 2 :
-	 npc.Img() = ImportImg(collection['@'][0]);
+	 npc.Img() = ImportImg(collection['m'][0]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
 	 //NPC Puzzle
       case 3 :
-	 npc.Img() = ImportImg(collection['@'][0]);
+	 npc.Img() = ImportImg(collection['n'][1]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
       default:
-	 npc.Img() = ImportImg(collection['@'][0]);
+	 npc.Img() = ImportImg(collection['m'][0]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
 

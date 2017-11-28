@@ -58,6 +58,8 @@ class Cutscene
    ImportImg img;
    /// the room to be animated in
    ImportImg room;
+   /// the npc to be in the room
+   ImportImg npc;
 
    /// Helper function that returns many spaces
    void ClearScreen() { for(int i = 0; i < 50; i++) cout << endl; };

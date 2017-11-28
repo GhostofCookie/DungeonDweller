@@ -273,7 +273,10 @@ void ExploreState::SetState(int n)
 	    {
 	       c.MonsterEncounter();	    
 	       roomTree->At()->complete = true;
+	       // sets the monster to dead and sets him to a location
 	       roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
+	       roomTree->At()->GetNpc().Img().AlignCenter(*screen);
+	       roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
 	       //currState = 'F';
 	    }
 	    else currState = 'E';
