@@ -56,6 +56,8 @@ public:
    /// Shows players race
    string GetRace() const {return race;};
 
+   /// Shows players name
+   string GetName() const {return name;};
    /// Prints all player stats
    void Print();
    
