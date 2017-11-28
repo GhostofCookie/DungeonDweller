@@ -14,7 +14,7 @@
 #include "../Character/Character.h"
 #include <vector>
 #include <unistd.h>
-
+#include <stdexcept>
 ///This class represents an abstract base class for each mini-game/puzzle to
 ///derive from.
 class Puzzle

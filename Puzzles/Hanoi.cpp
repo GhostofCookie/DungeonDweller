@@ -34,6 +34,8 @@ Hanoi::~Hanoi()
 ///functions from private until the player has won. 
 void Hanoi:: RunGame(Character *player)
 {
+   if(player==NULL)
+      throw invalid_argument("Player pointer passed to minigame is invalid"); 
    char input;
    SetOptionsInMenu();
 
@@ -63,14 +65,6 @@ void Hanoi:: DiscSetup()
    ///Draw to the game screen and then put the discs into the first stack to
    ///start the game.
    int bottom = 15, leftPeg= 34;
-   /*PushDiscOnLeftStack(bottom, disc4);
-   bottom--;
-   PushDiscOnLeftStack(bottom, disc3);
-   bottom--;
-   PushDiscOnLeftStack(bottom, disc2);
-   bottom--;
-   PushDiscOnLeftStack(bottom, disc1);
-   */
    disc4.AlignCenter(HanoiScreen);
    disc4.ShiftLeft(leftPeg);
    disc4.ShiftDown(HanoiScreen, bottom);
@@ -296,6 +290,14 @@ void Hanoi::ClearTopDisc(int targetTower)
    }
 }
 
+///Outputs an appropriate error message of the user tries to move a disc
+///from an empty stack
+void Hanoi::EmptyPrompt()
+{
+   cout << "Disc is empty, please try again." << endl;
+   SecondDelay(3);
+}
+
 ///Moves the piece the depending on which option the player selects
 /// \param[in] userSelection, the option of moves the player chose  
 void Hanoi::LogicSwitch(char userSelection)
@@ -305,10 +307,7 @@ void Hanoi::LogicSwitch(char userSelection)
       case '1':
 	 ///Move peg 1 to peg 2
 	 if(tower.at(0).empty())
-	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
+	    EmptyPrompt();
 	 else
 	 {
 	    MovePiece(0,1);//(source,target)
@@ -317,10 +316,7 @@ void Hanoi::LogicSwitch(char userSelection)
       case '2':
 	 ///Move peg 2 to peg 1
 	 if(tower.at(1).empty())
-	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
+	    EmptyPrompt();
 	 else
 	 {
 	    MovePiece(1,0);
@@ -329,11 +325,8 @@ void Hanoi::LogicSwitch(char userSelection)
       case '3':
 	 ///Move disk on peg 3 to peg 2
 	 if(tower.at(2).empty())
-	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
-	    else
+	    EmptyPrompt();
+	 else
 	 {
 	    MovePiece(2,1);
 	 }
@@ -341,11 +334,8 @@ void Hanoi::LogicSwitch(char userSelection)
       case '4':
 	 ///Move peg 1 to peg 3
 	 if(tower.at(0).empty())
-	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
-	    else
+	    EmptyPrompt();
+	 else
 	 {
 	    MovePiece(0,2);
 	 }
@@ -353,11 +343,8 @@ void Hanoi::LogicSwitch(char userSelection)
       case '5':
 	 ///Move peg 2 to peg 3
 	 if(tower.at(1).empty())
-	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
-	    else
+	    EmptyPrompt();
+	 else
 	 {
 	    MovePiece(1,2);
 	 }
@@ -365,18 +352,11 @@ void Hanoi::LogicSwitch(char userSelection)
       case '6':
 	 ///Move peg 3 to peg 1
 	 if(tower.at(2).empty())
+	    EmptyPrompt();
+	 else
 	 {
-	    cout << "That peg is empty, please try another" << endl;
-	    SecondDelay(3);
-	 }
-	    else
-	    {
 	    MovePiece(2,0);
 	 }
-	 break;
-      default:
-       	 cout << "Invalid input, please try again." << endl;
-	 SecondDelay(3);
 	 break;
    }
 }
