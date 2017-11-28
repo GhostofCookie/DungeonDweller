@@ -43,7 +43,7 @@ void TicTacToe::RunGame(Character *player){
       {
 	 AiMove(currentPlayerChar);
 	 if(WinCheck() || TieGameCheck(currentPlayer))
-	    EndGamePrompt(currentPlayer);
+	    EndGamePrompt(currentPlayer, ticTacToeGameMenu, player);
 	 else
 	    currentPlayer++;
       }
@@ -59,7 +59,7 @@ void TicTacToe::RunGame(Character *player){
 	 {	    
 	    MovePiece(inputX, inputY, currentPlayerChar);
 	    if(WinCheck() || TieGameCheck(currentPlayer))
-	       EndGamePrompt(currentPlayer);
+	       EndGamePrompt(currentPlayer, ticTacToeGameMenu, player);
 	    else
 	       currentPlayer++;
 	 }
@@ -315,32 +315,37 @@ void TicTacToe::AiMove(char AiPiece)
    }
 }
 
-void TicTacToe::EndGamePrompt(int &currentPlayer)
+void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character *player)
 {
    ///If currentPlayer is even, the AI has won, -1 player health, reset
    ///the game for another round until the player has won.
    if(currentPlayer % 2 == 0)
    {
+      system("clear");
       cout << TicTacToeScreen;
-      
-      cout << "The Tic Tac Toe champion has defeated you! Lose 1 health"
-	   << " point." << endl;
-      //-1 Health
+      menu.SetQuery("The Tic Tac Toe champion has defeated you! -5 HP.");
+      menu.OutputMenu();
+      SecondDelay(4);
+      player->ChangeHealth(-5);
       ResetGame(currentPlayer);
       cout << "Get ready to duel her again!" << endl;
    }
    else if(currentPlayer % 2 == -1)
    {
+      system("clear");
       cout << TicTacToeScreen << endl;
-      cout << "Unfortunately there has been a tie, this counts as a loss in my"
-	   << "books, so get ready to play again!" << endl;
+      menu.SetQuery("There has been a tie, so get ready to play again!");
+      menu.OutputMenu();
+      SecondDelay(4);
       ResetGame(currentPlayer);
    }
    else
    {
       cout << TicTacToeScreen << endl;
-      cout << "Congratulations adventurer! You have defeated the champion"
-	   << "! You are free to proceed into the next area!" << endl;
+      menu.SetQuery("Congratulations adventurer! You have defeated the champion! +10 GP");
+      menu.OutputMenu();
+      SecondDelay(5);
+      player->ChangeGold(10);
       PuzzleEnd = true;
    }
 }
