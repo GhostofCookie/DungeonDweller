@@ -67,7 +67,7 @@ void ExploreState::Get()
 
    // draw the npc to the screen if there is one
    if((roomTree->At())->GetType() > 0)
-      (roomTree->At())->GetNpc().Img().Draw(roomTree->At()->GetImage());
+      (roomTree->At())->GetNpc().Img().Draw(*screen);
 
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
@@ -239,7 +239,7 @@ void ExploreState::RunInput(char n)
 /// \param[in] n the state to set
 void ExploreState::SetState(int n)
 {
-   Cutscene c = Cutscene(player->Img(), roomTree->At()->GetImage(),
+   Cutscene c = Cutscene(player->Img(), (roomTree->At()->GetImage()),
 			 roomTree->At());
    
    // quit the game
@@ -270,9 +270,9 @@ void ExploreState::SetState(int n)
 	       Room temp = Room(*roomTree->At());
 	       roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
 	       // roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
-	       roomTree->At()->GetNpc().Img().AlignCenter(roomTree->At()->GetImage());
+	       roomTree->At()->GetNpc().Img().AlignCenter(*screen);
 	       roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
-	       roomTree->At()->GetNpc().Img().Draw((roomTree->At())->GetImage());
+	       roomTree->At()->GetNpc().Img().Draw(*screen);
 	       //currState = 'F';
 	    }
 	    else currState = 'E';

@@ -25,7 +25,7 @@ Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
    // Decides on one of the rooms in that set
    int num = Rand(roomCount);
    room = new ImportImg(collection['0'][num]);
-   npc.Img() = ImportImg(collection['@'][0]);
+//   npc.Img() = ImportImg(collection['@'][0]);
 	
    //Insert the appropriate images to fill the room
    GetRoom(collection);
@@ -67,7 +67,7 @@ Room::~Room()
 
 
 /// Function to return the image
-ImportImg& Room::GetImage() const { return *room; }
+ImportImg Room::GetImage() const { return *room; }
 
 
 

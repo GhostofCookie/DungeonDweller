@@ -11,12 +11,11 @@
 /// \param[in] tempRoom to gain temporary access to its exit points
 Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
 {
-   // itinitialize the animated img and the background
+   // initialize the animated img and the background
    img = ImportImg(image);
    room = ImportImg(r);
-   //Label LocationNorth   if(c != nullptr)
-   //npc = new ImportImg(c->Img());
-   
+   npc = ImportImg(image);
+
    // initialize a screen for the image to lay on
    screen = Screen(33, 61);
    leftSide = rightSide = Screen(33, 20, ' ');
@@ -35,13 +34,14 @@ Cutscene::Cutscene(ImportImg image, ImportImg r, Room *tempRoom)
    centerX = img.screenX;
 
    /// reserve and locate points for 4 exit locations per room
-   point.reserve(4);
    if(tempRoom != nullptr)
    {
+      point.reserve(4);
       FindCharacter(point[0].y, point[0].x, '1', *tempRoom); // up
       FindCharacter(point[1].y, point[1].x, '2', *tempRoom); // right
       FindCharacter(point[2].y, point[2].x, '3', *tempRoom); // down
       FindCharacter(point[3].y, point[3].x, '4', *tempRoom); // left
+      type = tempRoom->GetType();
    }
 }
 
@@ -75,8 +75,8 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-
-      // npc->Draw(screen);
+      if(type > 0)
+	 npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -105,8 +105,8 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      
-      //npc->Draw(screen);
+      if(type > 0)
+	 npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
@@ -135,8 +135,8 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-
-      //npc->Draw(screen);
+      if(type > 0)
+	 npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
@@ -165,8 +165,8 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-
-      //npc->Draw(screen);
+      if(type > 0)
+	 npc.Draw(screen);
       
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
@@ -551,7 +551,7 @@ void Cutscene::Intro()
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-play.length() / 2, playX++, play[i]);
+      scr.Set(scr.GetRows() - play.length() / 2, playX++, play[i]);
 
       cout << scr;
       
@@ -564,7 +564,7 @@ void Cutscene::Intro()
       system("clear");
 
       title.Draw(scr);
-      scr.Set(scr.GetRows()-quit.length() / 2, quitX++, quit[i]);
+      scr.Set(scr.GetRows() - quit.length() / 2, quitX++, quit[i]);
 
       cout << scr;
       

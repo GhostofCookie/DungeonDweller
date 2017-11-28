@@ -59,7 +59,6 @@ void RoomTree::DeleteTree(Node *tempRoot)
    }
 }
 
-
 /// Inserts a new room at child (throws exeption if already occupied)
 /// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
 /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
@@ -77,7 +76,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 	 currNode->up->room = roomptr;
 	 currNode->up->RootDir = 'D';
 	 break;
-
+	 
       case 'L':
 	 if(currNode->left)
 	    throw invalid_argument("room occupied");
