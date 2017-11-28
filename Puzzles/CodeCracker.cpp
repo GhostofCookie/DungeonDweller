@@ -1,5 +1,5 @@
 //
-// code_cracker.h
+// CodeCracker.h
 //
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
@@ -8,10 +8,10 @@
 
 ///Constructor
 CodeCracker::CodeCracker(){
-   riddleCompletionCount=0;
-   numberOfRiddles=0;
-   correctPrompt="That answer is correct!";
-   incorrectPrompt="Wrong! *The puzzler smacks you on the head with his staff* -1 Health"; 
+   riddleCompletionCount = 0;
+   numberOfRiddles = 0;
+   correctPrompt = "That answer is correct!";
+   incorrectPrompt = "Wrong! *The puzzler smacks you on the head with his staff* -1 Health"; 
 }
 
 ///Deconstructor
@@ -31,25 +31,25 @@ void CodeCracker:: RunGame(Character *player)
 
    InitialPrompt(GameMenu);
 
-   PuzzleEnd=false;
-   while(PuzzleEnd==false)
+   PuzzleEnd = false;
+   while(PuzzleEnd == false)
    {
       system("clear");
-      currentRiddle=UnusedRandomRiddle();
+      currentRiddle = UnusedRandomRiddle();
 
       cout << "current Riddle: " << question.at(currentRiddle) << endl;
       SetRiddleInMenu(currentRiddle, GameMenu);
       GameMenu.OutputMenu();
       GameMenu.HandleInput(cin);
       
-      userInput=GameMenu.GetInput();
+      userInput = GameMenu.GetInput();
 
       if(ValidAnswer(userInput, currentRiddle))
       {
 	 MakeRiddleUsed(currentRiddle);
 	 GameMenu.SetQuery(correctPrompt);
 	 GameMenu.OutputMenu();
-	 Puzzle::SecondDelay(3);
+ 	 Puzzle::SecondDelay(3);
 	 riddleCompletionCount++;
 	 WinCheck();
       }
@@ -63,7 +63,7 @@ void CodeCracker:: RunGame(Character *player)
       }
    }
 }
-
+//**************************************************************************************************
 ///Checks the semantics of the user choice to make sure they aren't doing
 ///something that would break the game with their input.
 ///\param[in]input, has been checked for syntax by input method  
@@ -75,9 +75,10 @@ bool CodeCracker::ValidMove(char input)
 
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
+///\param[in] riddleIndex, location of the puzzles answer in riddle vector 
 bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
-   if(input==answer.at(riddleIndex))
+   if(input == answer.at(riddleIndex))
    {
       return true;
    }
@@ -85,10 +86,12 @@ bool CodeCracker::ValidAnswer(int input, int riddleIndex)
       return false;
 }
 
-
+///Checks if the riddle has already been used so that the player doesn't do
+///the same one twice, returns true if it has been used already.
+///\param[in] index, location of the riddle in the riddle vector 
 bool CodeCracker::IsRiddleUsed(int index)
 {
-   if(usedRiddles.at(index)==true)
+   if(usedRiddles.at(index) == true)
       return true;
    else
       return false;
@@ -98,13 +101,15 @@ bool CodeCracker::IsRiddleUsed(int index)
 ///Checks if the player has successfully answered 3 riddles.
 void CodeCracker::WinCheck()
 {
-   if(riddleCompletionCount==3)
-      PuzzleEnd=true;
+   if(riddleCompletionCount == 3)
+      PuzzleEnd = true;
 }
 
+///Outputs the initial message to the player
+///\param[in] menu, the menu object to be set and then outputted.  
 void CodeCracker::InitialPrompt(RiddleMenu &menu)
 {
-   string initialPrompt= "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
+   string initialPrompt = "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
    menu.SetQuery(initialPrompt);
    menu.OutputMenu();
    Puzzle::SecondDelay(6);
@@ -112,49 +117,43 @@ void CodeCracker::InitialPrompt(RiddleMenu &menu)
 
 void CodeCracker::SetRiddleInMenu(int riddleIndex, RiddleMenu &menu)
 {
-   string riddleText=question.at(riddleIndex);
+   string riddleText = question.at(riddleIndex);
    menu.SetQuery(riddleText);
 
 }
 
 void CodeCracker::MakeRiddleUsed(int riddleIndex)
 {
-   usedRiddles.at(riddleIndex)=true;
+   usedRiddles.at(riddleIndex) = true;
 }
 
 ///Picks one of the unused riddles randomly and returns its index
 int CodeCracker::UnusedRandomRiddle()
 {
    int randRiddle;
-   bool validRiddleFound=false;
-   while(validRiddleFound==false)
+   bool validRiddleFound = false;
+   while(validRiddleFound == false)
    {
-      randRiddle=Puzzle::RandomNumber(numberOfRiddles);      if(!IsRiddleUsed(randRiddle))
-	 validRiddleFound=true;
+      randRiddle = Puzzle::RandomNumber(numberOfRiddles);
+      if(!IsRiddleUsed(randRiddle))
+	 validRiddleFound = true;
    }
    return randRiddle;
 }
 
-///Checks if the player is now dead
+///Checks if the player is now dead and ends the game if yes
+///\param[in] player, a pointer to the players character passed from main. 
 void CodeCracker::DeathCheck(Character *player)
 {
-   if(player->GetHealth()==0)
-      PuzzleEnd=true;
-}//Will need to take some kind of character variable/object
-
-/// Displays the screen containing the gameboard
-/// \param[in] CfScreen, the screen object used for displaying the mini-game 
-
-void CodeCracker::SetOptionsInMenu()
-{
-  
+   if(player->GetHealth() == 0)
+      PuzzleEnd = true;
 }
 
 ///Imports riddles from a text file and stores them in the vector.
 void CodeCracker::ImportRiddles()
 {
    string line, questionString, questionFormat;
-   int qAnswer=0;
+   int qAnswer = 0;
 
    ifstream in;
    in.open("../Puzzles/Riddles.txt");
@@ -166,13 +165,13 @@ void CodeCracker::ImportRiddles()
       question.resize(numberOfRiddles);
       usedRiddles.resize(numberOfRiddles);
       answer.resize(numberOfRiddles);
-      for(int i=0; i<numberOfRiddles; i++)
+      for(int i = 0; i < numberOfRiddles; i++)
       {
 	 std::getline(in, questionString);
 	 in >> qAnswer;
-	 question.at(i)=questionString;
-	 answer.at(i)=qAnswer;
-	 usedRiddles.at(i)=false;
+	 question.at(i) = questionString;
+	 answer.at(i) = qAnswer;
+	 usedRiddles.at(i) = false;
 	 std::getline(in,line);
       }
       in.close();	
