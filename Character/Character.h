@@ -92,7 +92,7 @@ class Character
    virtual int GetHealth() const { return health; };
 
    /// Return the image
-   virtual ImportImg Img();
+   virtual ImportImg& Img() { return img; };
 
    /// Draw the player
    virtual void Draw(Screen &screen);

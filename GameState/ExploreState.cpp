@@ -15,7 +15,7 @@ ExploreState::ExploreState()
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection, 0);
    roomTree = new RoomTree(roomPtr);
-   player = new Player(5, 1, "dicks", "balls", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   player = new Player(30, 1, "dicks", "balls", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
 }
 
 
@@ -71,11 +71,15 @@ void ExploreState::Get()
    r.AlignCenter(*screen);
    r.Draw(*screen);
 
+   // draw the npc to the screen if there is one
+   if((roomTree->At())->GetType() > 0)
+       (roomTree->At())->GetNpc().Img().Draw(*screen);
+
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
-   cout << setw(20) << "[$]Gold: " << player->GetGold();
-   cout << setw(20) << "[S]Stamina: " << player->GetStamina();
-   cout << setw(20) << right << "[+]Health: " << player->GetHealth() << right << endl;
+   cout << setw(28) << "[$]Gold: " << player->GetGold();
+   cout << setw(28) << "[S]Stamina: " << player->GetStamina();
+   cout << setw(28) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
 
    SetState((roomTree->At())->GetType());
@@ -269,6 +273,7 @@ void ExploreState::SetState(int n)
 	    {
 	       c.MonsterEncounter();	    
 	       roomTree->At()->complete = true;
+	       roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
 	       //currState = 'F';
 	    }
 	    else currState = 'E';

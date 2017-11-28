@@ -20,7 +20,16 @@
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
+//Character Headers
+#include "../Character/Character.h"
+#include "../Character/Player.h"
+#include "../Character/Npc.h"
+//Item Header
+#include "../Item/Item.h"
+#include "../Item/MyConsumables.h"
+#include "../Item/MyWeapons.h"
 using namespace std;
+
 
 
 /// The Room class defines random values that characterize a room's event.
@@ -43,9 +52,11 @@ class Room
   private:
    /// A finalized version of the room with data values included
    // Public to allow user to use all the image functions from the room object
-   ImportImg *room;
+   ImportImg *room = nullptr;
    /// The type of room that will be generated
    int type;
+   /// An NPC that can be displayed in a room
+   Character npc;
    
    /// Helper function to output a random value from 0 - n
    /// \param[in] n the range of the random number generated
@@ -124,5 +135,8 @@ class Room
    /// Function to draw to the screen
    /// \param[in] screen the screen drawn on
    void Draw(Screen &screen, int y, int x);
+
+   /// Function to return the npc
+   Character& GetNpc() { return npc; }
 };
 #endif /* Room_h */

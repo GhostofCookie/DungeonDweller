@@ -6,6 +6,7 @@
 #include "../Image/Image.h"
 #include "../Image/ImportImg.h"
 #include "../Room/Room.h"
+#include "../Character/Character.h"
 using namespace std;
 
 
