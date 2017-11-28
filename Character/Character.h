@@ -50,9 +50,13 @@ class Character
    /// Character deconstructor
    virtual ~Character(){}
 
+   /// Const copy constructor
    Character(const Character&);
-   Character(Character&);
 
+   /// Copy constructor
+   Character(Character&);
+   
+   /// Assignment operator overloader for copy constructor
    Character& operator=(const Character &p);
 
    /// Function to fill the characters inventory
