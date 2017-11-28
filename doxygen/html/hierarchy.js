@@ -61,9 +61,7 @@ var hierarchy =
     ] ],
     [ "Room", "classRoom.html", null ],
     [ "RoomTree", "classRoomTree.html", null ],
-    [ "Screen", "classScreen.html", [
-      [ "SlotScreen", "classSlotScreen.html", null ]
-    ] ],
+    [ "Screen", "classScreen.html", null ],
     [ "TestFixture", null, [
       [ "CharacterTest", "classCharacterTest.html", null ],
       [ "MenuTest", "classMenuTest.html", null ],

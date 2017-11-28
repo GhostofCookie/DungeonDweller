@@ -23,7 +23,7 @@ Inheritance diagram for Connect\-Four\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classConnectFour}{Connect\-Four}, sets heigh to \-: and width to\-: \end{DoxyCompactList}\item 
 virtual \hyperlink{classConnectFour_ae7d414d7f7f694fd427bfeaef80bd1f9}{$\sim$\-Connect\-Four} ()
 \begin{DoxyCompactList}\small\item\em De-\/constructor. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
+virtual void \hyperlink{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -54,9 +54,7 @@ bool \hyperlink{classConnectFour_a6f356156a6c23ee1f5838cd96b3b84bc}{Tie\-Game\-C
 \item 
 void \hyperlink{classConnectFour_ad453f2707d1ae7bb87cdd2d46010d951}{Board\-Setup} ()
 \begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game, placing them in screen. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{Set\-Options\-In\-Menu} ()
-\begin{DoxyCompactList}\small\item\em Sets the error messages in the menu. \end{DoxyCompactList}\item 
-void \hyperlink{classConnectFour_ac408488231f5104f4047978d877f145c}{End\-Game\-Prompt} (int \&current\-Player)
+void \hyperlink{classConnectFour_a735502158808aaa23f0a2d38ac3f841f}{End\-Game\-Prompt} (int \&current\-Player, \hyperlink{classConnectFourMenu}{Connect\-Four\-Menu} \&menu, \hyperlink{classCharacter}{Character} $\ast$player)
 \item 
 void \hyperlink{classConnectFour_aaf17855d2cec2d71c07614af530a00bf}{Reset\-Game} (int \&current\-Player)
 \begin{DoxyCompactList}\small\item\em Resets the game for another round in the event that the A\-I wins. \end{DoxyCompactList}\item 
@@ -67,7 +65,7 @@ void \hyperlink{classConnectFour_a8f74f9d22c247508e868222c27136641}{Set\-Current
 \item 
 \hyperlink{classScreen}{Screen} \hyperlink{classConnectFour_a7548207e4c83260233e8d3668ae3e7e2}{Connect\-Four\-Screen}
 \item 
-std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}{grid}
+std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}{grid}
 \begin{DoxyCompactList}\small\item\em The vector which stores the gameboards chars. \end{DoxyCompactList}\item 
 char \hyperlink{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{current\-Player\-Char}
 \item 
@@ -140,16 +138,20 @@ If i is even, fill the row with squares to place tokens in later
 
 top\-Bound and left\-Bound should set the board centered inside the screen object.
 
-top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classConnectFour_ac408488231f5104f4047978d877f145c}{\index{Connect\-Four@{Connect\-Four}!End\-Game\-Prompt@{End\-Game\-Prompt}}
+top\-Bound and left\-Bound should set the board centered inside the screen object. \hypertarget{classConnectFour_a735502158808aaa23f0a2d38ac3f841f}{\index{Connect\-Four@{Connect\-Four}!End\-Game\-Prompt@{End\-Game\-Prompt}}
 \index{End\-Game\-Prompt@{End\-Game\-Prompt}!ConnectFour@{Connect\-Four}}
 \subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-End\-Game\-Prompt (
 \begin{DoxyParamCaption}
-\item[{int \&}]{current\-Player}
+\item[{int \&}]{current\-Player, }
+\item[{{\bf Connect\-Four\-Menu} \&}]{menu, }
+\item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_ac408488231f5104f4047978d877f145c}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a735502158808aaa23f0a2d38ac3f841f}
 Prompts the player and handles the end of the game appropriately. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em current\-Player,assigned} & to be human for new game.\\
+\mbox{\tt in}  & {\em current\-Player,assigned} & to be human for new game. \mbox{[}in\mbox{]} menu, the menu used to output stuffs \\
+\hline
+\mbox{\tt in}  & {\em player,a} & pointer to the player usd to modify stats\\
 \hline
 \end{DoxyParams}
 If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won. \hypertarget{classConnectFour_aad3b75c20b82a21fcbe648e7ee134a4b}{\index{Connect\-Four@{Connect\-Four}!Horizontal\-Check@{Horizontal\-Check}}
@@ -242,6 +244,8 @@ Assign the player selection to the board.
 \mbox{\tt in}  & {\em x,the} & X-\/coordinate (column) to drop the token in \\
 \hline
 \end{DoxyParams}
+Break the loop
+
 If we have reached the bottom of the column and not found a piece, set the piece at the bottom of the column and break.
 
 Set the char in the screen
@@ -319,21 +323,6 @@ Sets the curren\-Player\-Char appropriately based on which parameters.
 \mbox{\tt in}  & {\em even} & number=ai, odd number=human player. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}{\index{Connect\-Four@{Connect\-Four}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
-\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!ConnectFour@{Connect\-Four}}
-\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Connect\-Four\-::\-Set\-Options\-In\-Menu (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classConnectFour_a58bd5328672a5c6d95fde740a4131eeb}
-
-
-Sets the error messages in the menu. 
-
-
-
-Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
-
 \hypertarget{classConnectFour_a6f356156a6c23ee1f5838cd96b3b84bc}{\index{Connect\-Four@{Connect\-Four}!Tie\-Game\-Check@{Tie\-Game\-Check}}
 \index{Tie\-Game\-Check@{Tie\-Game\-Check}!ConnectFour@{Connect\-Four}}
 \subsubsection[{Tie\-Game\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\-Four\-::\-Tie\-Game\-Check (
@@ -393,9 +382,9 @@ Checks to see if there have been any 4 tokens in a row in the grid vector.
 Connect\-Four\-Screen stores and outputs the contents of the game to the terminal \hypertarget{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{\index{Connect\-Four@{Connect\-Four}!current\-Player\-Char@{current\-Player\-Char}}
 \index{current\-Player\-Char@{current\-Player\-Char}!ConnectFour@{Connect\-Four}}
 \subsubsection[{current\-Player\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Connect\-Four\-::current\-Player\-Char\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}
-current\-Player\-Char keeps track of which character to insert depending on whos turn it is. \hypertarget{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
+current\-Player\-Char keeps track of which character to insert depending on whos turn it is. \hypertarget{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
 \index{grid@{grid}!ConnectFour@{Connect\-Four}}
-\subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$char$>$ $>$ Connect\-Four\-::grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_add9742cf2d2ffd9524d454762dbd3154}
+\subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ vector $<$ char $>$ $>$ Connect\-Four\-::grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}
 
 
 The vector which stores the gameboards chars. 

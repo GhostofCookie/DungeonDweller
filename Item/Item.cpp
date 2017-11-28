@@ -16,9 +16,10 @@
 #include <fstream>
 using namespace std;
 
-//*****************************************************************************
-/// Item Factory
-//*****************************************************************************
+/// Uses factory design pattern to create items
+/// \param[in] itemType The type of item to be created
+/// \return Pointer to created item
+/// \exception invalid_argument Thrown if type does not exist or is not allowed
 Item *Item::GetItem(string itemType)
 {
    transform(itemType.begin(),itemType.end(),itemType.begin(),::toupper);
@@ -40,37 +41,41 @@ Item *Item::GetItem(string itemType)
    return newItem;
 }
 
-//*****************************************************************************
-/// read or write to name
-//*****************************************************************************
+/// Allows access to the items name
+/// \return Reference to the name of the item
 string &Item::Name()
 {
    return itemName;
 }
 
-//*****************************************************************************
-/// read name
-//*****************************************************************************
+/// Gives the name of the item without allowing chages
+/// \return Name of the item
 string Item::Name() const
 {
    return itemName;
 }
 
-//******************************************************************************
-/// Creates names for Items
-//******************************************************************************
+/// Generates adjectives to add to Item names
+/// \param[in] fileName the file that the names comme from
+/// \returns Adjective generated and to be used
+/// \exception runtime_error Thrown if source file has no names
 string Item::NameGenerator(string fileName)
 {
-   static vector<string> adjectives;
+   vector<string> adjectives;
 
    ifstream fin;
    fin.open(fileName);
    if(fin.fail())
       throw invalid_argument("Could not open " + fileName);
    string tempName;
-   while(!fin.eof()) {
+   while(!fin.eof())
+   {
       getline(fin,tempName);
-      adjectives.push_back(tempName);
+	  if(tempName.length() > 0)
+		  if(tempName[tempName.length() - 1] == '\r')
+			  tempName = tempName.substr(0,tempName.size() - 1);
+      if(tempName != "") // Remove any empty lines
+	 adjectives.push_back(tempName);
    }
    fin.close();
    if(adjectives.size() < 1)
@@ -80,19 +85,19 @@ string Item::NameGenerator(string fileName)
    return adjectives[Random(0,adjectives.size()-1)];
 }
 
-//*****************************************************************************
-/// random number generator
-//*****************************************************************************
+/// Helper function to generate random positive numbers
+/// \return Random number between start and end
 int Item::Random(unsigned int start,unsigned int end)
 {
    static bool seeded = false;
    if(!seeded)
+   {
       srand(time(NULL));
-   
+      seeded = true;
+   }
    // Makes sure end is not less than start
    if(start > end)
       swap(start,end);
 
-   return rand()%(end-start+1)+start;
    return rand()%(end-start+1)+start;
 }

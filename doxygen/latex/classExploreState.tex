@@ -33,7 +33,7 @@ void \hyperlink{classExploreState_ace76d7a24bcb85f6f0a0fe0d0e763e21}{Get} ()
 void \hyperlink{classExploreState_a9c80dca4776d933ed892763d3f4bcad7}{Set\-State} (int type)
 \item 
 void \hyperlink{classExploreState_a8cd0a8ff2ca053a68f57f1eb73c3e4b9}{Run\-Input} (char option)
-\begin{DoxyCompactList}\small\item\em Helper function to give input functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,7 +70,7 @@ This is the the default constructor.
 
 This is the default destructor. 
 
-
+Deconstructor. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classExploreState_ace76d7a24bcb85f6f0a0fe0d0e763e21}{\index{Explore\-State@{Explore\-State}!Get@{Get}}
@@ -84,7 +84,7 @@ This is the default destructor.
 
 Gets the layout for the game menu and screen. 
 
-
+Prints the layout of the screen, character info, and the menu. 
 
 Implements \hyperlink{classGameState_a4283cb3aa5637d4815d64272843a0625}{Game\-State}.
 
@@ -92,16 +92,17 @@ Implements \hyperlink{classGameState_a4283cb3aa5637d4815d64272843a0625}{Game\-St
 \index{Run\-Input@{Run\-Input}!ExploreState@{Explore\-State}}
 \subsubsection[{Run\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Explore\-State\-::\-Run\-Input (
 \begin{DoxyParamCaption}
-\item[{char}]{option}
+\item[{char}]{n}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classExploreState_a8cd0a8ff2ca053a68f57f1eb73c3e4b9}
-
-
-Helper function to give input functionality. 
-
 Helper function to give input functionality 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em option} & The current option chosen by the player. \\
+\mbox{\tt in}  & {\em option} & The current option chosen by the player.\\
+\hline
+\end{DoxyParams}
+Helper function to give input functionality 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & the menu option to set \\
 \hline
 \end{DoxyParams}
 \hypertarget{classExploreState_a8fb38f9fca513b87d914d077a0f2652b}{\index{Explore\-State@{Explore\-State}!Set@{Set}}
@@ -132,6 +133,11 @@ Helper function to set the current state of the game based on the current room t
 \hline
 \end{DoxyParams}
 Helper function to set the current state of the game based on the current room type. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & the state to set \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Data Documentation}
 \hypertarget{classExploreState_aa9bd4b4504c72ae70c440c401f1a60aa}{\index{Explore\-State@{Explore\-State}!import@{import}}

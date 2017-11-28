@@ -15,6 +15,7 @@ var classRoom =
     [ "GetEventImages", "classRoom.html#a3e33111e62068e4ae0fef5b17a1f1841", null ],
     [ "GetImage", "classRoom.html#a6e60729ff6d267ad84e8e07da70362e7", null ],
     [ "GetImageFile", "classRoom.html#a8685389724a048cbc9c43d4fd6cd53a4", null ],
+    [ "GetNpc", "classRoom.html#ae7e1baeb8c813666d5359f41f9f50378", null ],
     [ "GetPoints", "classRoom.html#a15f3f815f6d41e61e7e12465994fa185", null ],
     [ "GetRoom", "classRoom.html#ad791cbeff004df5ae7c8655f85e540ae", null ],
     [ "GetType", "classRoom.html#a829c93b010d46928ac753085e406601a", null ],
@@ -22,6 +23,7 @@ var classRoom =
     [ "Rand", "classRoom.html#aebcb2b6bf73c7a2592a1e5c5d02b40ce", null ],
     [ "RoomChance", "classRoom.html#aa44d19f37e62cbf130727c7aa3be0757", null ],
     [ "complete", "classRoom.html#a27ea6606438ab66c131e164eb19b5f5f", null ],
+    [ "npc", "classRoom.html#af71bf7f7e63180da0359dc28be358a46", null ],
     [ "point", "classRoom.html#aa5729228bac2fa43e1317655ec6dc5b7", null ],
     [ "room", "classRoom.html#a4d493bf25d07a6880b399adedd3a10e6", null ],
     [ "type", "classRoom.html#a209eba22dbc85cb190906de3f0363e59", null ]

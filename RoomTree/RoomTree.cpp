@@ -10,9 +10,7 @@
 #include <cctype>
 using namespace std;
 
-//*****************************************************************************
 /// Node constructor
-//*****************************************************************************
 RoomTree::Node::Node()
 {
    left = nullptr;
@@ -22,9 +20,8 @@ RoomTree::Node::Node()
    RootDir = '\0';
 }
 
-//*****************************************************************************
-/// RoomTree Construtor
-//*****************************************************************************
+/// RoomTree Constructor
+/// \param[in] rootRoom Pointer to the room that will be at the root of the tree
 RoomTree::RoomTree(Room* rootRoom)
 {
    root = new Node;
@@ -32,9 +29,7 @@ RoomTree::RoomTree(Room* rootRoom)
    currNode = root;
 }
 
-//*****************************************************************************
 /// RoomTree Destructor
-//*****************************************************************************
 RoomTree::~RoomTree()
 {
    DeleteTree(root);
@@ -42,13 +37,12 @@ RoomTree::~RoomTree()
    currNode = nullptr;
 }
 
-//*****************************************************************************
 /// Helper function to assist in deleting the tree
-//*****************************************************************************
+/// \param[in] tempRoot The root of the tree to be deleted
 void RoomTree::DeleteTree(Node *tempRoot)
 {
-   if(!tempRoot) { //if this node exists
-
+   if(!tempRoot) //if this node exists
+   {
       if('U' != tempRoot->RootDir) //delete up child if its not the parent node
 	 DeleteTree(tempRoot->up);
 
@@ -65,14 +59,16 @@ void RoomTree::DeleteTree(Node *tempRoot)
    }
 }
 
-//*****************************************************************************
+
 /// Inserts a new room at child (throws exeption if already occupied)
-//*****************************************************************************
+/// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
+/// \exception invalid_argument Thrown if the direction is invalid or space is occupied
 void RoomTree::NewRoom(char dir,Room* roomptr)
 {
    dir = toupper(dir);
 
-   switch(dir) {
+   switch(dir)
+   {
       case 'U':
 	 if(currNode->up)
 	    throw invalid_argument("room occupied");
@@ -114,14 +110,16 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
    }
 }
 
-//*****************************************************************************
-/// Moves current position through the tree
-//*****************************************************************************
+/// Moves through the tree
+/// \param[in] dir Direction to move(left(l) right(r) up(u) or down(d))
+/// \return True if move was successfull, false otherwise
+/// \exception invalid_argument Thrown if the direction is invalid
 bool RoomTree::Move(char dir)
 {
    dir = toupper(dir);
 
-   switch(dir) {
+   switch(dir)
+   {
       case 'L':
 	 if(!(currNode->left))
 	    return false;
@@ -148,25 +146,22 @@ bool RoomTree::Move(char dir)
    return true;
 }
 
-//*****************************************************************************
-/// Gives a const pointer to the room currently at for accessing
-//*****************************************************************************
-const Room* RoomTree::At() const
+/// Gives a const pointer to the room currently at for accessing only
+/// \return A const pointer to current room
+Room const *RoomTree::At() const
 {
    return currNode->room;
 }
 
-//*****************************************************************************
-/// Gives a pointer to the room currently at
-//*****************************************************************************
-Room* RoomTree::At()
+/// Gives a pointer to current room and allows changes
+/// \return Pointer to current room
+Room *RoomTree::At()
 {
    return currNode->room;
 }
 
-//*****************************************************************************
-/// Gives the height of the tree at the current node
-//*****************************************************************************
+/// Gives the height of the tree at the current room
+/// \returns the height of the current node
 unsigned int RoomTree::CurrentHeight() const
 {
    if(!currNode)
@@ -175,7 +170,8 @@ unsigned int RoomTree::CurrentHeight() const
    unsigned int i;
    
    for(i = 1; findNode->RootDir != '\0'; ++i)
-      switch(findNode->RootDir) {
+      switch(findNode->RootDir)
+      {
 	 case 'U':
 	    findNode = findNode->up;
 	    break;
@@ -193,4 +189,44 @@ unsigned int RoomTree::CurrentHeight() const
 	    break;
       }
    return i;
+}
+
+/// Gives the total Nodes in the tree
+unsigned int RoomTree::TotalNodes() const
+{
+	return NodesInBranch(root);
+}
+
+/// Helper function to cout nodes in the tree
+/// \param[in] tempRoot The root of the tree to be counted
+unsigned int RoomTree::NodesInBranch(Node * tempRoot) const
+{
+	if(tempRoot)
+	{
+		switch(tempRoot->RootDir)
+		{
+			case 'U':
+				return NodesInBranch(tempRoot->left)
+					+ NodesInBranch(tempRoot->down)
+					+ NodesInBranch(tempRoot->right);
+				break;
+			case 'L':
+				return NodesInBranch(tempRoot->up)
+					+ NodesInBranch(tempRoot->down)
+					+ NodesInBranch(tempRoot->right);
+				break;
+			case 'R':
+				return NodesInBranch(tempRoot->left)
+					+ NodesInBranch(tempRoot->down)
+					+ NodesInBranch(tempRoot->up);
+				break;
+			case 'D':
+				return NodesInBranch(tempRoot->left)
+					+ NodesInBranch(tempRoot->up)
+					+ NodesInBranch(tempRoot->right);
+				break;
+		}
+	}
+	else
+		return 1;
 }

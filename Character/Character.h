@@ -25,9 +25,7 @@ class Item;
 /// \brief Abstract base class of Npc's and Player's attributes
 class Character
 {
-   
   protected:
-   
    ImportImg img;
    
    /// Vector of items the character has
@@ -41,11 +39,25 @@ class Character
 
    /// Characters stamina
    int stamina;
-   
-   public:
 
+
+   
+  public:
+   
+   /// Character constructor
+   Character();
+   
    /// Character deconstructor
    virtual ~Character(){}
+
+   /// Const copy constructor
+   Character(const Character&);
+
+   /// Copy constructor
+   Character(Character&);
+   
+   /// Assignment operator overloader for copy constructor
+   Character& operator=(const Character &p);
 
    /// Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
@@ -75,16 +87,16 @@ class Character
    virtual void ChangeStamina(int sMod);
 
    /// Returns the stamina value
-   virtual int GetStamina() { return stamina; };
+   virtual int GetStamina() const { return stamina; };
    
    /// Returns the gold value
-   virtual int GetGold() { return gold; };
+   virtual int GetGold() const { return gold; };
    
    /// Returns the health value
-   virtual int GetHealth() { return health; };
+   virtual int GetHealth() const { return health; };
 
    /// Return the image
-   virtual ImportImg Img();
+   virtual ImportImg& Img() { return img; };
 
    /// Draw the player
    virtual void Draw(Screen &screen);

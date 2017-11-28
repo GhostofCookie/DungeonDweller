@@ -16,7 +16,6 @@ var searchData=
   ['fliptwochars',['FlipTwoChars',['../classMemoryMatch.html#a9ea522ae206345fc5a6d730ed7ff4adc',1,'MemoryMatch']]],
   ['flipvert',['FlipVert',['../classImage.html#a94fe8fd85b9ef3461c2576d29ebd3a86',1,'Image']]],
   ['food',['Food',['../classFood.html',1,'Food'],['../classFood.html#a75d4d7f76fd495cc8133302ca9fdc485',1,'Food::Food()']]],
-  ['format',['format',['../classCodeCracker.html#a6ab76d405fa6a989fdd10c7641f6bc4e',1,'CodeCracker']]],
   ['foundx',['foundX',['../classCutscene.html#a829a69db5263fd8e0915a9b905c386d0',1,'Cutscene']]],
   ['foundy',['foundY',['../classCutscene.html#ac77c836201afb1a31547c6c930e323d4',1,'Cutscene']]]
 ];

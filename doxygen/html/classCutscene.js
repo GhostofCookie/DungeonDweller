@@ -35,6 +35,7 @@ var classCutscene =
     [ "foundY", "classCutscene.html#ac77c836201afb1a31547c6c930e323d4", null ],
     [ "img", "classCutscene.html#ae40582568add2f44e099d4a8978f41d4", null ],
     [ "leftSide", "classCutscene.html#aac25c81316f03b3c3caf0bdf735926bc", null ],
+    [ "npc", "classCutscene.html#a85778dff65358df7ddf7a77edeae9b7a", null ],
     [ "point", "classCutscene.html#a7438465af0e7bc51d52ca5aaefc97e3b", null ],
     [ "rightSide", "classCutscene.html#ac8cc850025b847d951e74418b757d62c", null ],
     [ "room", "classCutscene.html#a033c0715f32be9730d3692e57fe17096", null ],

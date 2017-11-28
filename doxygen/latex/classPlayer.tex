@@ -21,10 +21,24 @@ Inheritance diagram for Player\-:\begin{figure}[H]
 \item 
 \hyperlink{classPlayer_a36d6f55c7bc6d95cf23d2439b9da19bb}{Player} (int s=0, int k=0, string n=\char`\"{} \char`\"{}, string r=\char`\"{} \char`\"{}, int g=0, int h=0, \hyperlink{classImportImg}{Import\-Img} \hyperlink{classCharacter_a3a0a90b2a43858b259912f659b8e0eea}{img}=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}))
 \item 
+\hyperlink{classPlayer_a8826850c4f8a2871819713ef61148836}{Player} (const \hyperlink{classPlayer}{Player} \&)
+\item 
+\hyperlink{classPlayer_ad2d305f9af724e761a491b7a85a020e0}{Player} (\hyperlink{classPlayer}{Player} \&)
+\item 
+\hyperlink{classPlayer}{Player} \& \hyperlink{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}{operator=} (const \hyperlink{classPlayer}{Player} \&p)
+\item 
 void \hyperlink{classPlayer_af2f60260add77e68519783dec5400a9f}{Change\-Keys} (int key\-Mod)
 \item 
 bool \hyperlink{classPlayer_af839bdc1524d571568ea31a34f44f3ab}{Use\-Key} (int \&\hyperlink{classPlayer_ac46baa685ca2a266178f03b9e9877e65}{keys})
-\end{DoxyCompactItemize}
+\item 
+int \hyperlink{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}{Get\-Keys} () const 
+\begin{DoxyCompactList}\small\item\em Shows the amount of keys. \end{DoxyCompactList}\item 
+string \hyperlink{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}{Get\-Race} () const 
+\begin{DoxyCompactList}\small\item\em Shows players race. \end{DoxyCompactList}\item 
+string \hyperlink{classPlayer_a5645669a3ad13ea99d194b85601e79ec}{Get\-Name} () const 
+\begin{DoxyCompactList}\small\item\em Shows players name. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a526ecf9587b1a537e48b5fca4d2997eb}{Print} ()
+\begin{DoxyCompactList}\small\item\em Prints all player stats. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,7 +47,7 @@ string \hyperlink{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{name}
 string \hyperlink{classPlayer_a5130cb6c4233cd7ad1212af0d1790e58}{race}
 \begin{DoxyCompactList}\small\item\em Race of the player. \end{DoxyCompactList}\item 
 int \hyperlink{classPlayer_ac46baa685ca2a266178f03b9e9877e65}{keys}
-\begin{DoxyCompactList}\small\item\em Amoutn of keys player has. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Amount of keys player has. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -65,6 +79,20 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 \mbox{\tt in}  & {\em r,players} & race \\
 \hline
 \end{DoxyParams}
+\hypertarget{classPlayer_a8826850c4f8a2871819713ef61148836}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
+\begin{DoxyParamCaption}
+\item[{const {\bf Player} \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_a8826850c4f8a2871819713ef61148836}
+\hypertarget{classPlayer_ad2d305f9af724e761a491b7a85a020e0}{\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_ad2d305f9af724e761a491b7a85a020e0}
 
 
 \subsection{Member Function Documentation}
@@ -82,6 +110,57 @@ Amount of keys the player has
 \mbox{\tt in}  & {\em key\-Mod,how} & the current amount of keys will be modified \\
 \hline
 \end{DoxyParams}
+\hypertarget{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}{\index{Player@{Player}!Get\-Keys@{Get\-Keys}}
+\index{Get\-Keys@{Get\-Keys}!Player@{Player}}
+\subsubsection[{Get\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Get\-Keys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}
+
+
+Shows the amount of keys. 
+
+\hypertarget{classPlayer_a5645669a3ad13ea99d194b85601e79ec}{\index{Player@{Player}!Get\-Name@{Get\-Name}}
+\index{Get\-Name@{Get\-Name}!Player@{Player}}
+\subsubsection[{Get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Player\-::\-Get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a5645669a3ad13ea99d194b85601e79ec}
+
+
+Shows players name. 
+
+\hypertarget{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}{\index{Player@{Player}!Get\-Race@{Get\-Race}}
+\index{Get\-Race@{Get\-Race}!Player@{Player}}
+\subsubsection[{Get\-Race}]{\setlength{\rightskip}{0pt plus 5cm}string Player\-::\-Get\-Race (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}
+
+
+Shows players race. 
+
+\hypertarget{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}{\index{Player@{Player}!operator=@{operator=}}
+\index{operator=@{operator=}!Player@{Player}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} \& Player\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Player} \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}
+\hypertarget{classPlayer_a526ecf9587b1a537e48b5fca4d2997eb}{\index{Player@{Player}!Print@{Print}}
+\index{Print@{Print}!Player@{Player}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_a526ecf9587b1a537e48b5fca4d2997eb}
+
+
+Prints all player stats. 
+
 \hypertarget{classPlayer_af839bdc1524d571568ea31a34f44f3ab}{\index{Player@{Player}!Use\-Key@{Use\-Key}}
 \index{Use\-Key@{Use\-Key}!Player@{Player}}
 \subsubsection[{Use\-Key}]{\setlength{\rightskip}{0pt plus 5cm}bool Player\-::\-Use\-Key (
@@ -102,7 +181,7 @@ Function to use a key
 \subsubsection[{keys}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::keys\hspace{0.3cm}{\ttfamily [private]}}}\label{classPlayer_ac46baa685ca2a266178f03b9e9877e65}
 
 
-Amoutn of keys player has. 
+Amount of keys player has. 
 
 \hypertarget{classPlayer_acf0355128a99ee20ad9931b760fb2de1}{\index{Player@{Player}!name@{name}}
 \index{name@{name}!Player@{Player}}

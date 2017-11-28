@@ -42,7 +42,9 @@ void \hyperlink{classRoom_a29f7e9f30c27f1a0cb7b4df931d2ef53}{Align\-Bottom} (\hy
 void \hyperlink{classRoom_a22685a17cc047823ebbd551219377d6c}{Draw} (\hyperlink{classScreen}{Screen} \&screen)
 \item 
 void \hyperlink{classRoom_aa77030565e65008df509a60d4a01a668}{Draw} (\hyperlink{classScreen}{Screen} \&screen, int y, int x)
-\end{DoxyCompactItemize}
+\item 
+\hyperlink{classCharacter}{Character} \& \hyperlink{classRoom_ae7e1baeb8c813666d5359f41f9f50378}{Get\-Npc} ()
+\begin{DoxyCompactList}\small\item\em Function to return the npc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,14 +64,16 @@ void \hyperlink{classRoom_ad791cbeff004df5ae7c8655f85e540ae}{Get\-Room} (map$<$ 
 void \hyperlink{classRoom_a15f3f815f6d41e61e7e12465994fa185}{Get\-Points} ()
 \begin{DoxyCompactList}\small\item\em Locates the key characters used to print other images to the room. \end{DoxyCompactList}\item 
 void \hyperlink{classRoom_a3e33111e62068e4ae0fef5b17a1f1841}{Get\-Event\-Images} (map$<$ char, vector$<$ \hyperlink{classImportImg}{Import\-Img} $>$$>$ \&img\-Files)
-\begin{DoxyCompactList}\small\item\em Helper function to determine what to draw in the room based on type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classImportImg}{Import\-Img} $\ast$ \hyperlink{classRoom_a4d493bf25d07a6880b399adedd3a10e6}{room}
+\hyperlink{classImportImg}{Import\-Img} $\ast$ \hyperlink{classRoom_a4d493bf25d07a6880b399adedd3a10e6}{room} = nullptr
 \begin{DoxyCompactList}\small\item\em A finalized version of the room with data values included. \end{DoxyCompactList}\item 
 int \hyperlink{classRoom_a209eba22dbc85cb190906de3f0363e59}{type}
-\begin{DoxyCompactList}\small\item\em The type of room that will be generated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The type of room that will be generated. \end{DoxyCompactList}\item 
+\hyperlink{classCharacter}{Character} \hyperlink{classRoom_af71bf7f7e63180da0359dc28be358a46}{npc}
+\begin{DoxyCompactList}\small\item\em An N\-P\-C that can be displayed in a room. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -270,16 +274,17 @@ Function aligns the room to the center to the screen
 \index{Get\-Event\-Images@{Get\-Event\-Images}!Room@{Room}}
 \subsubsection[{Get\-Event\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Get\-Event\-Images (
 \begin{DoxyParamCaption}
-\item[{map$<$ char, vector$<$ {\bf Import\-Img} $>$$>$ \&}]{img\-Files}
+\item[{map$<$ char, vector$<$ {\bf Import\-Img} $>$$>$ \&}]{collection}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoom_a3e33111e62068e4ae0fef5b17a1f1841}
-
-
-Helper function to determine what to draw in the room based on type. 
-
 Print event images to the room based on type 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em img\-Files} & the collection of images to use \\
+\mbox{\tt in}  & {\em img\-Files} & the collection of images to use\\
+\hline
+\end{DoxyParams}
+Helper function to determine what to draw in the room based on type 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em collection} & the images being passed \\
 \hline
 \end{DoxyParams}
 \hypertarget{classRoom_a6e60729ff6d267ad84e8e07da70362e7}{\index{Room@{Room}!Get\-Image@{Get\-Image}}
@@ -304,7 +309,18 @@ Function to return the image. \hypertarget{classRoom_a8685389724a048cbc9c43d4fd6
 
 Function that returns the room's image file path. 
 
-Function to return the image file path. \hypertarget{classRoom_a15f3f815f6d41e61e7e12465994fa185}{\index{Room@{Room}!Get\-Points@{Get\-Points}}
+Function to return the image file path. \hypertarget{classRoom_ae7e1baeb8c813666d5359f41f9f50378}{\index{Room@{Room}!Get\-Npc@{Get\-Npc}}
+\index{Get\-Npc@{Get\-Npc}!Room@{Room}}
+\subsubsection[{Get\-Npc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Character}\& Room\-::\-Get\-Npc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRoom_ae7e1baeb8c813666d5359f41f9f50378}
+
+
+Function to return the npc. 
+
+\hypertarget{classRoom_a15f3f815f6d41e61e7e12465994fa185}{\index{Room@{Room}!Get\-Points@{Get\-Points}}
 \index{Get\-Points@{Get\-Points}!Room@{Room}}
 \subsubsection[{Get\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Get\-Points (
 \begin{DoxyParamCaption}
@@ -392,6 +408,13 @@ Function generate a room\-Type using a basic random \# with weighting \%.
 
 To indicate if a room has any events that need to take place. 
 
+\hypertarget{classRoom_af71bf7f7e63180da0359dc28be358a46}{\index{Room@{Room}!npc@{npc}}
+\index{npc@{npc}!Room@{Room}}
+\subsubsection[{npc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Character} Room\-::npc\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoom_af71bf7f7e63180da0359dc28be358a46}
+
+
+An N\-P\-C that can be displayed in a room. 
+
 \hypertarget{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}{\index{Room@{Room}!point@{point}}
 \index{point@{point}!Room@{Room}}
 \subsubsection[{point}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Point}$>$ Room\-::point}}\label{classRoom_aa5729228bac2fa43e1317655ec6dc5b7}
@@ -401,7 +424,7 @@ The points of each image's key character.
 
 \hypertarget{classRoom_a4d493bf25d07a6880b399adedd3a10e6}{\index{Room@{Room}!room@{room}}
 \index{room@{room}!Room@{Room}}
-\subsubsection[{room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img}$\ast$ Room\-::room\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoom_a4d493bf25d07a6880b399adedd3a10e6}
+\subsubsection[{room}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Import\-Img}$\ast$ Room\-::room = nullptr\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoom_a4d493bf25d07a6880b399adedd3a10e6}
 
 
 A finalized version of the room with data values included. 

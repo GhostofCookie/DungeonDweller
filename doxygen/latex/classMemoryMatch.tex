@@ -20,22 +20,20 @@ Inheritance diagram for Memory\-Match\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}{Memory\-Match} ()
-\begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: and width to\-: \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: 4 and width to\-: 4. \end{DoxyCompactList}\item 
 virtual \hyperlink{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{$\sim$\-Memory\-Match} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{classMemoryMatch_a090950f764dee0b982ea254075d3667c}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
+virtual void \hyperlink{classMemoryMatch_a090950f764dee0b982ea254075d3667c}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{Set\-Options\-In\-Menu} ()
-\begin{DoxyCompactList}\small\item\em Sends the menu class the options for the player to select. \end{DoxyCompactList}\item 
 void \hyperlink{classMemoryMatch_a1e3b9172bdd0fb69f0360bb28acee65c}{Board\-Setup} ()
 \begin{DoxyCompactList}\small\item\em Sets the board up for the beginning of the game, placing them in screen. \end{DoxyCompactList}\item 
-void \hyperlink{classMemoryMatch_a026870bd184e56fc576c1ec85f64b487}{Set\-Inputs} (int \&X1, int \&Y1, int \&X2, int \&Y2, \hyperlink{classMemoryMenu}{Memory\-Menu} \&menu)
+void \hyperlink{classMemoryMatch_afe732c2f2aef27e10742604aa0b6b474}{Set\-Inputs} (int \&x1, int \&y1, int \&x2, int \&y2, \hyperlink{classMemoryMenu}{Memory\-Menu} \&menu)
 \item 
 bool \hyperlink{classMemoryMatch_a64f64d28f47e59f3303addf70ca136e2}{Check\-Input} (int x1, int y1, int x2, int y2)
-\begin{DoxyCompactList}\small\item\em Checks the semantics of the players selection. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classMemoryMatch_a8d0683346a26c1d00c818e9b75b5a412}{Is\-Input\-Valid} (int input)
 \item 
 bool \hyperlink{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}{Valid\-Move} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
@@ -47,41 +45,41 @@ bool \hyperlink{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}{Match\-Check
 void \hyperlink{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}{Win\-Check} ()
 \item 
 void \hyperlink{classMemoryMatch_a61158d799b281be3607860233899b405}{Randomly\-Insert\-Into\-Table} (char symbol)
-\begin{DoxyCompactList}\small\item\em randomly puts pairs into the table \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classMemoryMatch_a9ea522ae206345fc5a6d730ed7ff4adc}{Flip\-Two\-Chars} (int input\-X, int input\-Y)
 \item 
 int \hyperlink{classMemoryMatch_ae684d58439ac7d7ca9e6dcd8b1c1f977}{Convert\-Char\-To\-Index} (char input)
 \item 
 int \hyperlink{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}{Random\-Number} (int n)
-\begin{DoxyCompactList}\small\item\em Returns a random number between 0 and n-\/1. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classMemoryMatch_a6d4c54b56ee4f5b4df36b7767e07ebd5}{Save\-Board\-To\-Screen} ()
 \item 
 void \hyperlink{classMemoryMatch_a56bf6c64798545d880f6d061464ae5a2}{Peek\-At\-Board} (int length\-In\-Seconds)
-\begin{DoxyCompactList}\small\item\em Flips two squares and outputs it for 3 seconds then flips it back. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classMemoryMatch_a5a3232cd99dddddc6af5d5dc050087f7}{End\-Game\-Prompt} ()
 \item 
 void \hyperlink{classMemoryMatch_acfc3d904747668225bd52a508d9dcae6}{Second\-Delay} (int seconds)
-\begin{DoxyCompactList}\small\item\em Causes a \char`\"{}seconds\char`\"{} delay in the program process. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}{Peek} (int input\-X1, int input\-Y1, int input\-X2, int input\-Y2)
-\begin{DoxyCompactList}\small\item\em Flips two squares and outputs it for 3 seconds then flips it back. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classMemoryMatch_a2cdc3fbc35524564a651e3cc1d5d03df}{Is\-Odd} (int n)
-\begin{DoxyCompactList}\small\item\em Returns true if n is odd, false if even. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}{Is\-In\-Used\-Pairs} (char symbol)
-\begin{DoxyCompactList}\small\item\em Checks if the symbol has been used in the random board already. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classMemoryMatch_acf4047dc2a34d4045a6a240253cb5600}{Is\-Char\-Already\-Matched} (int input\-X, int input\-Y)
-\begin{DoxyCompactList}\small\item\em Returns true if char has a true value in the match\-Vector, false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classScreen}{Screen} \hyperlink{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}{Memory\-Match\-Screen}
-\item 
-std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}{char\-Table}
+\begin{DoxyCompactList}\small\item\em The screen for the game to be outputted with. \end{DoxyCompactList}\item 
+std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classMemoryMatch_a06ea18368c12d6b067ff18b389ba86c4}{char\-Table}
 \begin{DoxyCompactList}\small\item\em The vector which holds the char values of the table to be matched. \end{DoxyCompactList}\item 
-std\-::vector$<$ vector$<$ int $>$ $>$ \hyperlink{classMemoryMatch_a87ee5474b348c72d91a359e1bbbe2e10}{match\-Vector}
+std\-::vector$<$ vector$<$ int $>$ $>$ \hyperlink{classMemoryMatch_a4e49279d32294d1f464751956868b7aa}{match\-Vector}
 \item 
-std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{pairs\-Of\-Chars\-Vector}
+std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_a377424818fa6730a40795ced32e201de}{pairs\-Of\-Chars\-Vector}
 \begin{DoxyCompactList}\small\item\em Vector containing symbols to be randomly inserted on the screen at start. \end{DoxyCompactList}\item 
-std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}{used\-Pairs}
+std\-::vector$<$ char $>$ \hyperlink{classMemoryMatch_a0398b30f4ef488ab7b3e1b10b2ecb75c}{used\-Pairs}
 \begin{DoxyCompactList}\small\item\em Vector containing all pairs that have already been matched up. \end{DoxyCompactList}\item 
 int \hyperlink{classMemoryMatch_aae0a9e51558d70e671fa64aa246de499}{board\-Size}
 \begin{DoxyCompactList}\small\item\em dimensions for the gameboard \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -109,9 +107,9 @@ Oct 20, 2017
 )}}\label{classMemoryMatch_a7221a0b7d33bf079df51c1f7f52aa2dd}
 
 
-Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: and width to\-: 
+Default constructor for \hyperlink{classMemoryMatch}{Memory\-Match}, sets height to\-: 4 and width to\-: 4. 
 
-memory\-\_\-match.\-cpp \begin{DoxyAuthor}{Author}
+\hyperlink{MemoryMatch_8cpp}{Memory\-Match.\-cpp} \begin{DoxyAuthor}{Author}
 Tyler Siwy C\-P\-S\-C 2720-\/\-Howard Cheng-\/\-Dungeon Dweller 
 \end{DoxyAuthor}
 \hypertarget{classMemoryMatch_a1b2cf5418b2b26e21b4fd12d880e79b7}{\index{Memory\-Match@{Memory\-Match}!$\sim$\-Memory\-Match@{$\sim$\-Memory\-Match}}
@@ -159,10 +157,17 @@ Else check if we have used it before, if yes, try another pair \hypertarget{clas
 \item[{int}]{y2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a64f64d28f47e59f3303addf70ca136e2}
-
-
-Checks the semantics of the players selection. 
-
+Checks to make sure all coordinates are within the bounds of the game board using Is\-Input\-Valid helper function. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & first x-\/coordinate to check. \\
+\hline
+\mbox{\tt in}  & {\em the} & first y-\/coordinate to check. \\
+\hline
+\mbox{\tt in}  & {\em the} & second x-\/coordinate to check. \\
+\hline
+\mbox{\tt in}  & {\em the} & second y-\/coordinate to check. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_ae684d58439ac7d7ca9e6dcd8b1c1f977}{\index{Memory\-Match@{Memory\-Match}!Convert\-Char\-To\-Index@{Convert\-Char\-To\-Index}}
 \index{Convert\-Char\-To\-Index@{Convert\-Char\-To\-Index}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Convert\-Char\-To\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Memory\-Match\-::\-Convert\-Char\-To\-Index (
@@ -170,6 +175,11 @@ Checks the semantics of the players selection.
 \item[{char}]{input}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ae684d58439ac7d7ca9e6dcd8b1c1f977}
+Takes the char input given by the user and returns the associated index for its location within the vector as an int. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & character to convert to an integer index. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_a5a3232cd99dddddc6af5d5dc050087f7}{\index{Memory\-Match@{Memory\-Match}!End\-Game\-Prompt@{End\-Game\-Prompt}}
 \index{End\-Game\-Prompt@{End\-Game\-Prompt}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-End\-Game\-Prompt (
@@ -177,7 +187,7 @@ Checks the semantics of the players selection.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a5a3232cd99dddddc6af5d5dc050087f7}
-\hypertarget{classMemoryMatch_a9ea522ae206345fc5a6d730ed7ff4adc}{\index{Memory\-Match@{Memory\-Match}!Flip\-Two\-Chars@{Flip\-Two\-Chars}}
+Outputs a conclusion message to the user and then shows the puzzle results for 6 seconds before ending the game. \hypertarget{classMemoryMatch_a9ea522ae206345fc5a6d730ed7ff4adc}{\index{Memory\-Match@{Memory\-Match}!Flip\-Two\-Chars@{Flip\-Two\-Chars}}
 \index{Flip\-Two\-Chars@{Flip\-Two\-Chars}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Flip\-Two\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Flip\-Two\-Chars (
 \begin{DoxyParamCaption}
@@ -185,7 +195,21 @@ Checks the semantics of the players selection.
 \item[{int}]{input\-Y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a9ea522ae206345fc5a6d730ed7ff4adc}
-Flips the char stored at the inputted coordinates on chartable and sets them on the screen. top left coordinate of the game board on the screen
+Flips the char stored at the inputted coordinates on chartable and sets them on the screen. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & x-\/coordinate to flip. \\
+\hline
+\mbox{\tt in}  & {\em the} & y-\/cordinate to flip.\\
+\hline
+\end{DoxyParams}
+Flips the char stored at the inputted coordinates on chartable and sets them on the screen. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X,The} & X-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y,The} & Y-\/\-Coordinate of the first card to flip \\
+\hline
+\end{DoxyParams}
+top left coordinate of the game board on the screen
 
 Symbol to be displayed
 
@@ -197,10 +221,13 @@ Display the first symbol \hypertarget{classMemoryMatch_acf4047dc2a34d4045a6a2402
 \item[{int}]{input\-Y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_acf4047dc2a34d4045a6a240253cb5600}
-
-
-Returns true if char has a true value in the match\-Vector, false otherwise. 
-
+Returns true if char has a true value in the match\-Vector, false otherwise 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X,The} & X-\/\-Coordinate of the first card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-Y,The} & Y-\/\-Coordinate of the first card to check \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_a8d0683346a26c1d00c818e9b75b5a412}{\index{Memory\-Match@{Memory\-Match}!Is\-Input\-Valid@{Is\-Input\-Valid}}
 \index{Is\-Input\-Valid@{Is\-Input\-Valid}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Is\-Input\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Is\-Input\-Valid (
@@ -208,6 +235,11 @@ Returns true if char has a true value in the match\-Vector, false otherwise.
 \item[{int}]{input}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a8d0683346a26c1d00c818e9b75b5a412}
+Is\-Input\-Valid checks to see if the input in within the bounds of the gameboard. Returns true if its valid. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is} & checked to see if it is within the bounds of the game. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}{\index{Memory\-Match@{Memory\-Match}!Is\-In\-Used\-Pairs@{Is\-In\-Used\-Pairs}}
 \index{Is\-In\-Used\-Pairs@{Is\-In\-Used\-Pairs}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Is\-In\-Used\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Is\-In\-Used\-Pairs (
@@ -215,10 +247,11 @@ Returns true if char has a true value in the match\-Vector, false otherwise.
 \item[{char}]{symbol}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a7f3998ff0f59a063a493156c2d00eca2}
-
-
-Checks if the symbol has been used in the random board already. 
-
+Checks if a char is in the used pairs vector and returns true if its found 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & symbol to be checked. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_a2cdc3fbc35524564a651e3cc1d5d03df}{\index{Memory\-Match@{Memory\-Match}!Is\-Odd@{Is\-Odd}}
 \index{Is\-Odd@{Is\-Odd}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Is\-Odd}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Is\-Odd (
@@ -226,10 +259,11 @@ Checks if the symbol has been used in the random board already.
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a2cdc3fbc35524564a651e3cc1d5d03df}
-
-
 Returns true if n is odd, false if even. 
-
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an} & integer n, checks if it is odd. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}{\index{Memory\-Match@{Memory\-Match}!Match\-Check@{Match\-Check}}
 \index{Match\-Check@{Match\-Check}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Match\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Match\-Check (
@@ -240,6 +274,17 @@ Returns true if n is odd, false if even.
 \item[{int}]{input\-Y2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a7a83e4a378bb74a729d495d9a8896248}
+Checks if the two cards selected are a match, returns true if yes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to check\\
+\hline
+\end{DoxyParams}
 Checks if the two cards selected are a match, returns true if yes. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to flip \\
@@ -263,6 +308,17 @@ If the two chars are the same. \hypertarget{classMemoryMatch_a68e81f3e7ed13385f4
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a68e81f3e7ed13385f430da0bc938d7e9}
 Flips two cards and shows them to the user for a certain time, if they are a match, it leaves them face-\/up, otherwise flip them back down. 
 \begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to move \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to move \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to move \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to move\\
+\hline
+\end{DoxyParams}
+Flips two cards and shows them to the user for a certain time, if they are a match, it leaves them face-\/up, otherwise flip them back down. 
+\begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to flip \\
 \hline
 \mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to flip \\
@@ -282,10 +338,17 @@ Show the user the spots they tried for a brief period of time \hypertarget{class
 \item[{int}]{input\-Y2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ae78665422f8d46d0c4639916f494845c}
-
-
 Flips two squares and outputs it for 3 seconds then flips it back. 
-
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to flip \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to flip \\
+\hline
+\end{DoxyParams}
 top left coordinate of the game board on the screen
 
 Flip the two selected chars, first check if they have been previously matched, if so, do nothing to them. Otherwise, flip.
@@ -301,10 +364,11 @@ Output the game again now that it has been cleared of the users guess. \hypertar
 \item[{int}]{length\-In\-Seconds}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a56bf6c64798545d880f6d061464ae5a2}
-
-
-Flips two squares and outputs it for 3 seconds then flips it back. 
-
+Flips two squares and outputs it for the inputted amount of seconds and then flips them back over to hide them from the user. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & number of seconds you want to flip for \\
+\hline
+\end{DoxyParams}
 top left coordinate of the game board on the screen
 
 Output the game for three seconds \hypertarget{classMemoryMatch_a61158d799b281be3607860233899b405}{\index{Memory\-Match@{Memory\-Match}!Randomly\-Insert\-Into\-Table@{Randomly\-Insert\-Into\-Table}}
@@ -314,10 +378,11 @@ Output the game for three seconds \hypertarget{classMemoryMatch_a61158d799b281be
 \item[{char}]{symbol}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a61158d799b281be3607860233899b405}
-
-
-randomly puts pairs into the table 
-
+randomly puts char into the table twice. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & symbol to be inserted into the screen \\
+\hline
+\end{DoxyParams}
 Happens twice since it's a pair
 
 Keep repeating until an acceptable location is found, randomly. \hypertarget{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}{\index{Memory\-Match@{Memory\-Match}!Random\-Number@{Random\-Number}}
@@ -327,18 +392,29 @@ Keep repeating until an acceptable location is found, randomly. \hypertarget{cla
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a0543038015f3bbd9db9e9a235cf12579}
-
-
-Returns a random number between 0 and n-\/1. 
-
-Generates a random number between 0 and n-\/1. Returns 0 to n-\/1 \hypertarget{classMemoryMatch_a090950f764dee0b982ea254075d3667c}{\index{Memory\-Match@{Memory\-Match}!Run\-Game@{Run\-Game}}
+Returns a random number between 0 and n-\/1 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n,the} & upper bound for the random number\\
+\hline
+\end{DoxyParams}
+Generates a random number between 0 and n-\/1 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n,the} & upper bound for the random number \\
+\hline
+\end{DoxyParams}
+Returns 0 to n-\/1 \hypertarget{classMemoryMatch_a090950f764dee0b982ea254075d3667c}{\index{Memory\-Match@{Memory\-Match}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Run\-Game (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMemoryMatch_a090950f764dee0b982ea254075d3667c}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. Get input 1-\/4 
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em player,pointer} & to the player, used to decrement health. \\
+\hline
+\end{DoxyParams}
+Get input 1-\/4 
 
 Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
@@ -360,11 +436,12 @@ If i is even, fill the row with squares to place tokens in later \hypertarget{cl
 \item[{int}]{seconds}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_acfc3d904747668225bd52a508d9dcae6}
-
-
-Causes a \char`\"{}seconds\char`\"{} delay in the program process. 
-
-Causes a three second delay in the program process. \hypertarget{classMemoryMatch_a026870bd184e56fc576c1ec85f64b487}{\index{Memory\-Match@{Memory\-Match}!Set\-Inputs@{Set\-Inputs}}
+Causes a \char`\"{}seconds\char`\"{} delay in the program process 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & amount of seconds to delay the game for \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMemoryMatch_afe732c2f2aef27e10742604aa0b6b474}{\index{Memory\-Match@{Memory\-Match}!Set\-Inputs@{Set\-Inputs}}
 \index{Set\-Inputs@{Set\-Inputs}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Set\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Set\-Inputs (
 \begin{DoxyParamCaption}
@@ -374,22 +451,20 @@ Causes a three second delay in the program process. \hypertarget{classMemoryMatc
 \item[{int \&}]{Y2, }
 \item[{{\bf Memory\-Menu} \&}]{menu}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a026870bd184e56fc576c1ec85f64b487}
-\hypertarget{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}{\index{Memory\-Match@{Memory\-Match}!Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}}
-\index{Set\-Options\-In\-Menu@{Set\-Options\-In\-Menu}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{Set\-Options\-In\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Set\-Options\-In\-Menu (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classMemoryMatch_a62548d6cf028d372c08cc01a0693edb2}
-
-
-Sends the menu class the options for the player to select. 
-
-
-
-Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
-
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_afe732c2f2aef27e10742604aa0b6b474}
+Setinputs assigns user input to the appropriate variables. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & first x-\/coordinate to flip to the user. \\
+\hline
+\mbox{\tt in}  & {\em the} & first y-\/coordinate to flip to the user. \\
+\hline
+\mbox{\tt in}  & {\em the} & second x-\/coordinate to flip to the user \\
+\hline
+\mbox{\tt in}  & {\em the} & second y-\/coordinate to flip to the user. \\
+\hline
+\mbox{\tt in}  & {\em the} & menu object used for getting the input from the user. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}{\index{Memory\-Match@{Memory\-Match}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Memory\-Match\-::\-Valid\-Move (
@@ -400,7 +475,18 @@ Implements \hyperlink{classPuzzle_adc90364342151caf536c4a34f2ca71d3}{Puzzle}.
 \item[{int}]{Y2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_ae5f190c71bc1a63ec95eab6fd8a3c2c7}
-Checks if the coordinates have been matched already, returns true if they are unmatched, false if they have previously been matched \hypertarget{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}{\index{Memory\-Match@{Memory\-Match}!Win\-Check@{Win\-Check}}
+Checks if the coordinates have been matched already using the membership table stored in the match vector, returns true if they are unmatched, false if they have previously been matched 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-X1,The} & X-\/\-Coordinate of the first card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-Y1,The} & Y-\/\-Coordinate of the first card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-X2,The} & X-\/\-Coordinate of the second card to check \\
+\hline
+\mbox{\tt in}  & {\em input\-Y2,The} & Y-\/\-Coordinate of the second card to check \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMemoryMatch_a1c958b2c366188c2c603c562b3f2f878}{\index{Memory\-Match@{Memory\-Match}!Win\-Check@{Win\-Check}}
 \index{Win\-Check@{Win\-Check}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Win\-Check}]{\setlength{\rightskip}{0pt plus 5cm}void Memory\-Match\-::\-Win\-Check (
 \begin{DoxyParamCaption}
@@ -417,29 +503,33 @@ Checks the state of the int table to see if the player has won the game, returns
 
 dimensions for the gameboard 
 
-\hypertarget{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}{\index{Memory\-Match@{Memory\-Match}!char\-Table@{char\-Table}}
+\hypertarget{classMemoryMatch_a06ea18368c12d6b067ff18b389ba86c4}{\index{Memory\-Match@{Memory\-Match}!char\-Table@{char\-Table}}
 \index{char\-Table@{char\-Table}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{char\-Table}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$char$>$ $>$ Memory\-Match\-::char\-Table\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_af2437cf6ce06147e64feb7dca23715e7}
+\subsubsection[{char\-Table}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ vector $<$ char $>$ $>$ Memory\-Match\-::char\-Table\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a06ea18368c12d6b067ff18b389ba86c4}
 
 
 The vector which holds the char values of the table to be matched. 
 
-\hypertarget{classMemoryMatch_a87ee5474b348c72d91a359e1bbbe2e10}{\index{Memory\-Match@{Memory\-Match}!match\-Vector@{match\-Vector}}
+\hypertarget{classMemoryMatch_a4e49279d32294d1f464751956868b7aa}{\index{Memory\-Match@{Memory\-Match}!match\-Vector@{match\-Vector}}
 \index{match\-Vector@{match\-Vector}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{match\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$vector$<$int$>$ $>$ Memory\-Match\-::match\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a87ee5474b348c72d91a359e1bbbe2e10}
+\subsubsection[{match\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ vector $<$ int $>$ $>$ Memory\-Match\-::match\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a4e49279d32294d1f464751956868b7aa}
 The vector which holds the integer value for the table, 1 being matched, 0 being unmatched. \hypertarget{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}{\index{Memory\-Match@{Memory\-Match}!Memory\-Match\-Screen@{Memory\-Match\-Screen}}
 \index{Memory\-Match\-Screen@{Memory\-Match\-Screen}!MemoryMatch@{Memory\-Match}}
 \subsubsection[{Memory\-Match\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Screen} Memory\-Match\-::\-Memory\-Match\-Screen\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a78399975fec5fea7b2102449a4536fcd}
-\hypertarget{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}{\index{Memory\-Match@{Memory\-Match}!pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}}
+
+
+The screen for the game to be outputted with. 
+
+\hypertarget{classMemoryMatch_a377424818fa6730a40795ced32e201de}{\index{Memory\-Match@{Memory\-Match}!pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}}
 \index{pairs\-Of\-Chars\-Vector@{pairs\-Of\-Chars\-Vector}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{pairs\-Of\-Chars\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$char$>$ Memory\-Match\-::pairs\-Of\-Chars\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a80336b0b989152fed590a6fa755197bc}
+\subsubsection[{pairs\-Of\-Chars\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ char $>$ Memory\-Match\-::pairs\-Of\-Chars\-Vector\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a377424818fa6730a40795ced32e201de}
 
 
 Vector containing symbols to be randomly inserted on the screen at start. 
 
-\hypertarget{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}{\index{Memory\-Match@{Memory\-Match}!used\-Pairs@{used\-Pairs}}
+\hypertarget{classMemoryMatch_a0398b30f4ef488ab7b3e1b10b2ecb75c}{\index{Memory\-Match@{Memory\-Match}!used\-Pairs@{used\-Pairs}}
 \index{used\-Pairs@{used\-Pairs}!MemoryMatch@{Memory\-Match}}
-\subsubsection[{used\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$char$>$ Memory\-Match\-::used\-Pairs\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_adcb66679aaceb1414fe023d065863d2f}
+\subsubsection[{used\-Pairs}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ char $>$ Memory\-Match\-::used\-Pairs\hspace{0.3cm}{\ttfamily [private]}}}\label{classMemoryMatch_a0398b30f4ef488ab7b3e1b10b2ecb75c}
 
 
 Vector containing all pairs that have already been matched up. 

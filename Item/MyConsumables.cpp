@@ -12,22 +12,21 @@
 #include <typeinfo>
 using namespace std;
 
-//*****************************************************************************
 /// HealthPotion Constructor
-//*****************************************************************************
 HealthPotion::HealthPotion()
 {
    value = 10;
-   itemName = NameGenerator("ConsumableNames.txt") + " Health Potion";
+   itemName = NameGenerator("../Item/ConsumableNames.txt") + " Health Potion";
    used = false;
 }
 
-//*****************************************************************************
-/// Use HealthPotion Implementation
-//*****************************************************************************
+/// Defines what happens when the health potion is used
+/// \param[in] target The Character that the health potion is used on
+/// \return true if use was successfull
 bool HealthPotion::Use(Character *target)
 {
-   if(!used) {
+   if(!used)
+   {
       target->ChangeHealth(value);
       used = true;
       return true;
@@ -35,22 +34,22 @@ bool HealthPotion::Use(Character *target)
    return false;
 }
 
-//*****************************************************************************
 /// Food Constuctor
-//*****************************************************************************
 Food::Food()
 {
    value = 3;
-   itemName = NameGenerator("ConsumableNames.txt") + " Food";
+   itemName = NameGenerator("../Item/ConsumableNames.txt") + " Food";
    used = false;
 }
 
-//*****************************************************************************
-/// Use Food Implementation
-//*****************************************************************************
+/// Defines what happens when the food is used
+/// \param[in] target The Character that the food is used on
+/// \return true if use was successfull
+/// \exeption invalid_argument Thrown if target is not a player
 bool Food::Use(Character *target)
 {
-   if(!used) {     
+   if(!used)
+   {     
       target->ChangeStamina(value);
       used = true;
       return true;

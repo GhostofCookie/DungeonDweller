@@ -30,7 +30,6 @@ var searchData=
   ['_7eroom',['~Room',['../classRoom.html#a67d5da09983cc53097807fd43ba5481a',1,'Room']]],
   ['_7eroomtree',['~RoomTree',['../classRoomTree.html#a1bd0bf9ba15d59e29127f762a3cdf036',1,'RoomTree']]],
   ['_7escreen',['~Screen',['../classScreen.html#a4243bc17596af96415b09ac48205676d',1,'Screen']]],
-  ['_7eslotscreen',['~SlotScreen',['../classSlotScreen.html#a1978a574c2835aeafd746ff3813c7253',1,'SlotScreen']]],
   ['_7etictactoe',['~TicTacToe',['../classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5',1,'TicTacToe']]],
   ['_7etictactoemenu',['~TicTacToeMenu',['../classTicTacToeMenu.html#a429d4d036694b8d96b08896f50d5f19b',1,'TicTacToeMenu']]],
   ['_7etrademenu',['~TradeMenu',['../classTradeMenu.html#ac2cf70176a9ad343276dcaa6a4917e99',1,'TradeMenu']]]

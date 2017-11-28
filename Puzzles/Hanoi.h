@@ -28,7 +28,7 @@ class Hanoi: public virtual Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
    ///Checks to see if the target stack has a larger disc than that of the
@@ -65,6 +65,10 @@ class Hanoi: public virtual Puzzle
    ///Sets up the discs on the gameboard for the beginning of the game.
    void DiscSetup();
 
+   ///Outputs an appropriate error message of the user tries to move a disc
+   ///from an empty stack
+   void EmptyPrompt();
+      
    ///Helper function for discSetup, pushes a disc on the left stack at the
    ///height specified by bottom.
    ///\param[in] bottom, the height to place the disc at.
@@ -88,6 +92,8 @@ class Hanoi: public virtual Puzzle
    
    /// Maintains the height of the stacks in the game
    int maxStackHeight;
+
+   string endGamePrompt;
    
    ///HanoiScreen stores and outputs the contents of the game to the terminal
    Screen HanoiScreen;

@@ -24,7 +24,7 @@ class ConnectFour: virtual public Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
    ///Assign the player selection to the board.
@@ -78,12 +78,12 @@ class ConnectFour: virtual public Puzzle
    ///Sets the board up for the beginning of the game, placing them in screen
    void BoardSetup();
    
-   ///Sets the error messages in the menu.
-   void SetOptionsInMenu();
-
    ///Prompts the player and handles the end of the game appropriately.
    ///\param[in] currentPlayer, assigned to be human for new game.
-   void EndGamePrompt(int &currentPlayer);
+   ///\pram[in] menu, the menu used to output stuffs
+   ///\param[in] player, a pointer to the player usd to modify stats
+   void EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
+		      , Character *player);
    
    ///Resets the game for another round in the event that the AI wins.
    void ResetGame(int &currentPlayer);
@@ -97,7 +97,7 @@ class ConnectFour: virtual public Puzzle
    Screen ConnectFourScreen;
    
    ///The vector which stores the gameboards chars.
-   std::vector<vector<char>>grid;
+   std :: vector < vector < char > > grid;
 
    ///currentPlayerChar keeps track of which character to insert depending on
    ///whos turn it is.

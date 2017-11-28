@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <iomanip>
 
+
+
 /// This is the the default constructor.
 ExploreState::ExploreState()
 {
@@ -11,13 +13,12 @@ ExploreState::ExploreState()
    menu = new ExploreMenu();
    screen = new Screen();
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
-   roomPtr = new Room(import->collection,0);
+   roomPtr = new Room(import->collection, 0);
    roomTree = new RoomTree(roomPtr);
-
-   // create the player
-   player = Player(30, 0, "Reid", "Human", 100, 3, ImportImg("../DD_Art/Player/DD_Player.txt"));
+   currState = 'E';
 }
 
+/// Deconstructor
 ExploreState::~ExploreState()
 {
    delete menu;
@@ -25,7 +26,7 @@ ExploreState::~ExploreState()
    delete roomPtr;
    delete roomTree;
    delete import;
-   delete character;
+   delete player;
 }
 
 /// Sets the layout for the game menu and screen.
@@ -50,48 +51,59 @@ void ExploreState::Set()
 
 }
 
-/// Gets the layout for the game menu and screen.
+/// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
+   ImportImg r = ImportImg(player->Img());
+   
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
 
-   player.Img().AlignCenter(*screen);
-   player.Draw(*screen);
+   r.AlignCenter(*screen);
+   r.Draw(*screen);
 
-   SetState((roomTree->At())->GetType());
+   // draw the npc to the screen if there is one
+   if((roomTree->At())->GetType() > 0)
+       (roomTree->At())->GetNpc().Img().Draw(*screen);
 
    // print the player's informaton and the screen
-   cout << setfill(' ') << "[$]Gold: " << player.GetGold();
-   cout << setw(43) << "[S]Stamina: " << player.GetStamina();
-   cout << setw(41) << right << "[+]Health: " << player.GetHealth() << right << endl;
+   cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
+   cout << setw(28) << "[$]Gold: " << player->GetGold();
+   cout << setw(28) << "[S]Stamina: " << player->GetStamina();
+   cout << setw(28) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
-          
-   // Print the menu and handle user input
-   menu->OutputMenu();
-   menu->HandleInput(cin);
 
-
-   // Handle input from player
-   RunInput(menu->GetOption());
+   SetState((roomTree->At())->GetType());
+   if(currState != 'M')
+   {
+      // Print the menu and handle user input
+      menu->OutputMenu();
+      menu->HandleInput(cin);
+      // Handle input from player
+      RunInput(menu->GetOption());
+   }   
 }
 
 /// Helper function to give input functionality
+/// \param[in] n the menu option to set
 void ExploreState::RunInput(char n)
 {
    Cutscene *anim;
+   
    if(n != '\0')
    {
       switch(n)
       {
+	 // Move up
 	 case 'w' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitUp();
-	    
+
+	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->Move('U'))
 	    {
 	       roomTree->NewRoom('U', new Room(import->collection));
@@ -99,16 +111,21 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterDown();
+
+	    // lower the stamina for moving
+	    player->ChangeStamina(-1);
 	    break;
-	 
+
+	    // Move Left
 	 case 'a' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitLeft();
-	 
+
+	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->Move('L'))
 	    {
 	       roomTree->NewRoom('L',new Room(import->collection));
@@ -116,16 +133,21 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterRight();
+
+	    // lower the stamina for moving
+	    player->ChangeStamina(-1);
 	    break;
-	 
+
+	    // Move Down
 	 case 's' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitDown();
-	 
+
+	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->Move('D'))
 	    {
 	       roomTree->NewRoom('D',new Room(import->collection));
@@ -133,16 +155,21 @@ void ExploreState::RunInput(char n)
 	    }
 	 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterUp();
+
+	    // lower the stamina for moving
+	    player->ChangeStamina(-1);
 	    break;
-	 
+
+	    // Move Right
 	 case 'd' :
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->ExitRight();
-	 
+
+	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->Move('R'))
 	    {
 	       roomTree->NewRoom('R',new Room(import->collection));
@@ -150,15 +177,22 @@ void ExploreState::RunInput(char n)
 	    }
 
 	    delete anim;
-	    anim = new Cutscene(player.Img(), roomTree->At()->GetImage(),
+	    anim = new Cutscene(player->Img(), roomTree->At()->GetImage(),
 				roomTree->At());
 	    anim->EnterLeft();
+
+	    // lower the stamina for moving
+	    player->ChangeStamina(-1);
 	    break;
+
+	    // Trade Option
 	 case 't':
 	    currState = 'S';
-	    return;
 	    break;
+
+	    // Puzzle Option
 	 case 'p':
+	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->At()->IsComplete())
 	    {
 	       currState = 'P';
@@ -167,23 +201,31 @@ void ExploreState::RunInput(char n)
 	    else currState = 'E';
 	    return;
 	    break;
+
+	    // Quit the game
 	 case 'q':
 	    char ch;
 	    cout << "Are you sure you want to quit to main menu?";
 	    cin >> ch;
 	    if(tolower(ch) == 'y')
+	      {
 	       currState = 'M';
+	       return;
+	      }
 	    else
 	       currState = 'E';
-	    return;
 	    break;
+
+	    // Inventory Option
 	 case 'i':
 	    currState = 'I';
 	    return;
 	    break;
+	    
 	 default:
 	    currState = 'E';
 	    return;
+	    break;
       };
 
       delete anim;
@@ -192,46 +234,47 @@ void ExploreState::RunInput(char n)
 
 /// Helper function to set the current state of the game based on the current
 /// room type.
+/// \param[in] n the state to set
 void ExploreState::SetState(int n)
 {
-   if(n == 113)
+   Cutscene c;
+   
+   // quit the game
+   if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
+   {
+      //  Insert defeat anim here
+      cout << "You have run out of stamina" << endl;
+      usleep(3000000);
       currState = 'M';
-   else
+      return;
+      
+   } else {
       switch(n)
       {
 	 case 0:
 	 case 1:
 	 case 3:
 	    currState = 'E';
-	    return;
 	    break;
+
+	    // fight state
 	 case 2:
 	    if(!roomTree->At()->IsComplete())
 	    {
-	       int i;
-	       screen->outlineOn = false;
-	       for(i = 0; i < 2; i++)
-	       {
-		  system("clear");
-		  screen->Erase();
-		  usleep(200000);
-		  if(i%2 == 0)
-		     screen->Fill('*');
-		  else
-		     screen->Fill(' ');
-		  cout<<screen;
-		  usleep(200000);
-
-	       }
-	    
-	       screen->outlineOn = true;
+	       c.MonsterEncounter();	    
 	       roomTree->At()->complete = true;
+	       // sets the monster to dead and sets him to a location
+	       roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
+	       roomTree->At()->GetNpc().Img().AlignCenter(*screen);
+	       roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
 	       //currState = 'F';
 	    }
 	    else currState = 'E';
 	    break;
+	    
 	 default:
 	    currState = 'E';
 	    return;
       }
+   }
 }
