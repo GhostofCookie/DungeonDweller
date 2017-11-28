@@ -75,7 +75,7 @@ void Screen::DrawBorder(char ch)
    {
       for(int i = 0; i < height; i++)
 	 for(int j = 0; j < width; j++)
-	    if(i == 0 || i == height-1 || j == 0 || j == width-1)
+	    if(i == 0 || i == height - 1 || j == 0 || j == width - 1)
 	       Set(i, j, ch);
    }
 }
@@ -89,7 +89,7 @@ void Screen::DrawBorder()
    {
       for(int i = 0; i < height; i++)
 	 for(int j = 0; j < width; j++)
-	    if(i == 0 || i == height-1 || j == 0 || j == width-1)
+	    if(i == 0 || i == height - 1 || j == 0 || j == width - 1)
 	       Set(i, j, outlineCh);
    }
 }
@@ -101,7 +101,7 @@ void Screen::Fill()
 {
    for(int i = 0; i < height; i++)
       for(int j = 0; j < width; j++)
-	 if(i != 0 && i != height-1 && j != 0 && j != width-1)
+	 if(i != 0 && i != height - 1 && j != 0 && j != width - 1)
 	    Set(i, j, outlineCh);
 }
 
@@ -113,7 +113,7 @@ void Screen::Fill(char ch)
 {
    for(int i = 0; i < height; i++)
       for(int j = 0; j < width; j++)
-	 if(i != 0 && i != height-1 && j != 0 && j != width-1)
+	 if(i != 0 && i != height - 1 && j != 0 && j != width - 1)
 	    Set(i, j, ch);
 }
 

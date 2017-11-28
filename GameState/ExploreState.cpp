@@ -63,14 +63,16 @@ void ExploreState::Set()
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
+   ImportImg r = ImportImg(player->Img());
+   
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
 
-   player->Img().AlignCenter(*screen);
-   player->Draw(*screen);
+   r.AlignCenter(*screen);
+   r.Draw(*screen);
 
    // print the player's informaton and the screen
    cout << setfill(' ') << "[$]Gold: " << player->GetGold();
@@ -120,11 +122,7 @@ void ExploreState::RunInput(char n)
 	    anim->EnterDown();
 
 	    // lower the stamina for moving
-<<<<<<< HEAD
-	    player->ChangeStamina(1);
-=======
-	    player.ChangeStamina(-1);
->>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Left
@@ -146,11 +144,7 @@ void ExploreState::RunInput(char n)
 	    anim->EnterRight();
 
 	    // lower the stamina for moving
-<<<<<<< HEAD
-	    player->ChangeStamina(1);
-=======
-	    player.ChangeStamina(-1);
->>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Down
@@ -172,11 +166,7 @@ void ExploreState::RunInput(char n)
 	    anim->EnterUp();
 
 	    // lower the stamina for moving
-<<<<<<< HEAD
-	    player->ChangeStamina(1);
-=======
-	    player.ChangeStamina(-1);
->>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Move Right
@@ -198,11 +188,7 @@ void ExploreState::RunInput(char n)
 	    anim->EnterLeft();
 
 	    // lower the stamina for moving
-<<<<<<< HEAD
-	    player->ChangeStamina(1);
-=======
-	    player.ChangeStamina(-1);
->>>>>>> 701f5cf5b842138e644ce5cfba6fcc486fa5c117
+	    player->ChangeStamina(-1);
 	    break;
 
 	    // Trade Option
@@ -262,12 +248,11 @@ void ExploreState::SetState(int n)
    Cutscene c;
    
    // quit the game
-   cout << "health: " << player->GetHealth() << ", stamina: " << player->GetStamina() << endl;
-   usleep(1000000);
-   
    if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
    {
-     //  Insert defeat anim here
+      //  Insert defeat anim here
+      cout << "You have run out of stamina" << endl;
+      usleep(3000000);
       currState = 'M';
       return;
       

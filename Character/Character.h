@@ -43,13 +43,10 @@ class Character
 
    
   public:
-<<<<<<< HEAD
-=======
    
    /// Character constructor
    Character();
    
->>>>>>> 9cb06eb088b61741c144b27556359e16435cb686
    /// Character deconstructor
    virtual ~Character(){}
 
