@@ -26,7 +26,6 @@ class Item;
 class Character
 {
   protected:
-   
    ImportImg img;
    
    /// Vector of items the character has
@@ -40,6 +39,8 @@ class Character
 
    /// Characters stamina
    int stamina;
+
+
    
   public:
    

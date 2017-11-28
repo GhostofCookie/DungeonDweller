@@ -26,7 +26,7 @@ class CodeCracker: public virtual Puzzle
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
    ///Checks the semantics of the user choice to make sure they aren't doing
@@ -69,7 +69,8 @@ class CodeCracker: public virtual Puzzle
    ///\param[in]riddleIndex, the location of the riddle in the riddle vector.
    ///\param[in]menu, the menu object to be saved to and then outputted.
    void SetRiddleInMenu(int riddleIndex, RiddleMenu &menu);
-///******************************************************************************************************************************************* 
+
+   ///Gets the menu ready to start the first iteration.
    void SetOptionsInMenu();
 
    ///Sets a riddles index to false in the membership table usedRiddles.

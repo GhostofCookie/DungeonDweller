@@ -24,7 +24,7 @@ class ConnectFour: virtual public Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.  
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
    ///Assign the player selection to the board.
@@ -97,7 +97,7 @@ class ConnectFour: virtual public Puzzle
    Screen ConnectFourScreen;
    
    ///The vector which stores the gameboards chars.
-   std::vector<vector<char>>grid;
+   std :: vector < vector < char > > grid;
 
    ///currentPlayerChar keeps track of which character to insert depending on
    ///whos turn it is.

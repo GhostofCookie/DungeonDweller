@@ -30,7 +30,9 @@ void RiddleMenu::SetOptions(int row, int col, int space)
    for(int i = 0; i < menuWidth-2; i++)
       Set(menuHeight/2-1,i, ' ');
    for(unsigned int i = 0; i < query.length(); i++)
-      Set(menuHeight/2-1,menuWidth/2 - query.length()/2-1+i, query[i]);
+   {
+      Set(menuHeight/2-1, menuWidth/2 - query.length()/2-1+i, query_P1[i]);
+   }
 }
 
 void RiddleMenu::HandleInput(istream & is)
