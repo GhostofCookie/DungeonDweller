@@ -26,6 +26,9 @@ class MainState : public GameState
    void Set();
    /// Outputs the set layout.
    void Get();
+
+   void CreatePlayer();
+		    
 };
 
 #endif

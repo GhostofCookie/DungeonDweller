@@ -13,6 +13,16 @@ void RoomTreeTest::setUp()
 	Tree1->NewRoom('d',nullptr);
 	Tree1->NewRoom('r',nullptr);
 	Tree1->NewRoom('u',nullptr);
+	Tree3->NewRoom('D',nullptr);
+	Tree3->Move('D');
+	Tree3->NewRoom('D',nullptr);
+	Tree3->Move('D');
+	Tree3->NewRoom('D',nullptr);
+	Tree3->Move('D');
+	Tree3->NewRoom('D',nullptr);
+	Tree3->Move('D');
+	Tree3->NewRoom('D',nullptr);
+	Tree3->Move('D');
 }
 
 void RoomTreeTest::tearDown()
@@ -45,4 +55,17 @@ void RoomTreeTest::testNewRoom()
 void RoomTreeTest::testAt()
 {
 	CPPUNIT_ASSERT(Tree1->At() == nullptr);
+}
+
+void RoomTreeTest::testCurrentHeight()
+{
+	CPPUNIT_ASSERT(Tree1->CurrentHeight() == 1);
+	CPPUNIT_ASSERT(Tree2->CurrentHeight() == 1);
+	CPPUNIT_ASSERT(Tree3->CurrentHeight() == 6);
+}
+
+void RoomTreeTest::testTotalNodes()
+{
+	CPPUNIT_ASSERT(Tree1->TotalNodes() == 5);
+	CPPUNIT_ASSERT(Tree3->TotalNodes() == 6);
 }

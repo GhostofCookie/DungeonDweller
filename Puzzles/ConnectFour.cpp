@@ -202,13 +202,9 @@ bool ConnectFour:: IsInputOutOfScope(int input)
 void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 {
    if(currentPlayer %2 == 0)
-   {
       currentPlayerChar ='@';
-   }
    else
-   {
       currentPlayerChar = '#';
-   }
 }
 
 ///If currentPlayer is even, the AI has won, -1 player health, reset

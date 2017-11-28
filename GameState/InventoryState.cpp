@@ -7,6 +7,7 @@
 #include "InventoryState.h"
 #include "../Menu/CharacterMenu.h"
 
+
 /// This is the the default constructor.
 InventoryState::InventoryState()
 {

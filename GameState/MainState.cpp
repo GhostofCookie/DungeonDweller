@@ -1,5 +1,6 @@
 #include "MainState.h"
 #include <vector>
+#include <stdlib.h>
 
 MainState::MainState()
 {
@@ -20,6 +21,7 @@ void MainState::Set()
    menu->AddOption('q', "Quit Game");
 
 }
+
 void MainState::Get()
 {
    Cutscene anim; anim.Intro();
@@ -37,12 +39,12 @@ void MainState::CreatePlayer()
 {
    cout << "Hello! Welcome to the dungeon." << endl;
    cout << "You are going to need a character to get through this place, what do you want your name to be?" << endl;
-   cout << ">:"
+   cout << ">:";
    string name;
    cin >> name;
    cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
 
-   vector<Player> loadOuts;
+   vector<Player> loadouts;
    Player ranger(40, 1, name, "Ranger", 20, 50);
    Sword *sword;
    ranger.FillInventory(sword);
@@ -70,23 +72,29 @@ void MainState::CreatePlayer()
    loadouts.push_back(warrior);
    loadouts.push_back(mage);
    loadouts.push_back(comp);
-   
-   while(menu->GetOption != 'c')
-   {
-      int i = 0;
 
-      loadout[i].Print();
-      menu->AddOption('c', "Choose race");
-      menu->AddOption('n', "Next race");
-      if(menu->GetOption() == 'c')
-      {
-	 player = loadout[i];
-	 currState = 'E';
-	 break;
-      }
+   char ans;
+   int i = 0;
+   do
+   {
+      loadouts[i].Print();
+      cout << "[C] Choose" << endl;
+      cout << "[N] Next" << endl;
+      cout << ">:";
+      cin >> ans;
+      tolower(ans);
+      if(ans == 'c')
+	 player = new Player(loadouts[i]);
       else
-	 if(i+1 == 5)
+      {
+	 if(i > 3)
 	    i = 0;
-      i++;
-   }
+	 else
+	    i++;
+      }
+      system("clear");
+      
+   }while(ans == 'n');
+   
+   currState = 'E';
 }

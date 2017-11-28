@@ -5,9 +5,33 @@ Character::Character()
 
 
 
+Character:: Character(Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Character:: Character(const Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Character& Character:: operator=(const Character &p)
+{
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+
+   return *this;
+}
+
+
 void Character:: ChangeGold(int goldMod)
 {
- if(gold += goldMod <= 0)
+ if(gold + goldMod <= 0)
     gold = 0;
  else
     gold += goldMod; 
@@ -15,7 +39,7 @@ void Character:: ChangeGold(int goldMod)
 
 void Character:: ChangeHealth(int hMod)
 {
- if(health += hMod <= 0)
+ if(health + hMod <= 0)
     health = 0;
  else
    health += hMod;
@@ -41,15 +65,13 @@ void Character:: FillInventory(Item *item)
 
 void Character:: ChangeStamina(int sMod)
 {
-  stamina += sMod;
+   if(stamina + sMod <= 0)
+      stamina = 0;
+   else
+      stamina += sMod;
 }
 
 void Character:: Draw(Screen &screen)
 {
    img.Draw(screen);
-}
-
-ImportImg Character:: Img()
-{
-   return img;
 }

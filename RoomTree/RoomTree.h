@@ -45,6 +45,7 @@ class RoomTree
 public:
 
 	/// RoomTree Constructor
+	/// \param[in] rootRoom Pointer to the room that will be at the root of the tree
 	RoomTree(Room* rootRoom);
 
 	/// RoomTree Destructor
@@ -61,11 +62,11 @@ public:
 	/// \exception invalid_argument Thrown if the direction is invalid
 	bool Move(char dir);
 
-	/// Gives a const pointer to the room currently at for accessing
+	/// Gives a const pointer to the room currently at for accessing only
 	/// \return A const pointer to current room
-	const Room* At() const;
+	Room const *At() const;
 
-	/// Gives a pointer to current room
+	/// Gives a pointer to current room and allows changes
 	/// \return Pointer to current room
 	Room* At();
 
@@ -73,10 +74,16 @@ public:
 	/// \returns the height of the current node
 	unsigned int CurrentHeight() const;
 
+	/// Gives the total Nodes in the tree
+	unsigned int TotalNodes() const;
 private:
 	/// Helper function to assist in deleting the tree
 	/// \param[in] tempRoot The root of the tree to be deleted
 	void DeleteTree(Node *tempRoot);
+
+	/// Helper function to cout nodes in the tree
+	/// \param[in] tempRoot The root of the tree to be counted
+	unsigned int NodesInBranch(Node *tempRoot) const;
 
 	/// Root or starting room of the dungeon
 	Node* root;

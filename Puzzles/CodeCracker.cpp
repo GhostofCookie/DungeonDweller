@@ -63,15 +63,6 @@ void CodeCracker:: RunGame(Character *player)
       }
    }
 }
-//**************************************************************************************************
-///Checks the semantics of the user choice to make sure they aren't doing
-///something that would break the game with their input.
-///\param[in]input, has been checked for syntax by input method  
-bool CodeCracker::ValidMove(char input)
-{
-   //if condition
-   return false;
-}
 
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.

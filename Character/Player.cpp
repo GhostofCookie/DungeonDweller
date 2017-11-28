@@ -12,6 +12,38 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
    stamina = s;
 }
 
+Player:: Player(Player &p)
+{
+   name = p.GetName();
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();   
+}
+
+Player:: Player(const Player &p)
+{
+   name = p.GetName();
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+}
+
+Player& Player:: operator=(const Player &p)
+{
+   name = p.GetName();
+   race = p.GetRace();
+   keys = p.GetKeys();
+   gold = p.GetGold();
+   health = p.GetHealth();
+   stamina = p.GetStamina();
+
+   return *this;
+}
+
 void Player:: ChangeKeys(int keyMod)
 {
    if(keys += keyMod <= 0)
@@ -36,4 +68,7 @@ void Player:: Print()
    cout << "Stamina: " << stamina << endl;
    cout << "Health: " << health << endl;
    cout << "Gold: " << gold << endl;
+
+   for(unsigned int i = 0; i < inventory.size(); i++)
+      cout << inventory[i]->Name();
 }

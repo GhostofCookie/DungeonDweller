@@ -15,8 +15,11 @@
 #include "../Character/Character.h"
 #include "../Character/Player.h" 
 #include "../Character/Npc.h"
-#include "../Item/Item.h"
 #include "../Item/MyConsumables.h"
+<<<<<<< HEAD
+=======
+#include "../Item/Item.h"
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
 
@@ -42,20 +45,23 @@ class GameState
    /// Returns the current state.
    char GetState() const {return currState;}
 <<<<<<< HEAD
+<<<<<<< HEAD
    Item *item = new Sword();
 =======
 <<<<<<< HEAD
-   /// Creates the player
-   virtual void CreatePlayer() = 0;
-   /// Creates an Npc
-   virtual void CreateNpc() = 0;
-   
 =======
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
+   /// Creates the player
+      
+   
    /// Returns the current player.
    Character& GetPlayer() const { return *player; }
 
+<<<<<<< HEAD
 >>>>>>> a24eda0dfda4bfbf941e69339e74c698eb0f5c67
 >>>>>>> 9e6554324c03366f14ab3fd65972e49be98efe48
+=======
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
   protected:
    ///< pointer to the menu.
    Menu *menu;
@@ -65,19 +71,10 @@ class GameState
    char currState;
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
-   /// The main character
-<<<<<<< HEAD
-   Player player;
-   /// Pointer to the player;
-   Character *character = &player;
    ///Any Npc that needs to be created
    Npc npc;
-=======
-   Character *player;
-   /// Pointer to the player;
-   Character *character = player;
->>>>>>> a24eda0dfda4bfbf941e69339e74c698eb0f5c67
-
+   
+   Player *player;
 };
 
 #endif

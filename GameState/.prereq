@@ -6,6 +6,7 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -13,6 +14,25 @@ testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h MainState.h ../Cutscene/Cutscene.h \
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h MainState.h ../Cutscene/Cutscene.h \
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h ExploreState.h ../Room/Room.h \
@@ -63,6 +83,7 @@ ExploreState.o: ExploreState.cpp ExploreState.h GameState.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -70,6 +91,25 @@ ExploreState.o: ExploreState.cpp ExploreState.h GameState.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Cutscene/Cutscene.h \
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h ../Cutscene/Cutscene.h \
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h ../Room/Room.h \
@@ -82,7 +122,20 @@ RoomTree.o: ../RoomTree/RoomTree.cpp ../RoomTree/RoomTree.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
- ../RoomTree/../Room/../Image/ImportImg.h
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
 DefaultImg.o: ../Image/DefaultImg.cpp ../Image/DefaultImg.h \
  ../Image/Image.h ../Image/../Screen/Screen.h
@@ -95,7 +148,16 @@ ImageImporter.o: ../ImageImporter/ImageImporter.cpp \
 Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
  ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
  ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
- ../Room/../Image/ImportImg.h
+ ../Room/../Image/ImportImg.h ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/Item.h \
+ ../Room/../Character/../Image/ImportImg.h ../Room/../Character/Player.h \
+ ../Room/../Character/Character.h \
+ ../Room/../Character/../Item/MyConsumables.h \
+ ../Room/../Character/../Item/Consumable.h \
+ ../Room/../Character/../Item/Item.h ../Room/../Character/Npc.h \
+ ../Room/../Item/Item.h ../Room/../Item/MyConsumables.h \
+ ../Room/../Item/MyWeapons.h ../Room/../Item/Weapon.h \
+ ../Room/../Item/Item.h
 Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/../Screen/Screen.h \
@@ -104,7 +166,20 @@ Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
  ../Cutscene/../Room/../Screen/Screen.h \
  ../Cutscene/../Room/../Image/Image.h \
  ../Cutscene/../Room/../Image/DefaultImg.h \
- ../Cutscene/../Room/../Image/ImportImg.h
+ ../Cutscene/../Room/../Image/ImportImg.h \
+ ../Cutscene/../Room/../Character/Character.h \
+ ../Cutscene/../Room/../Character/../Item/Item.h \
+ ../Cutscene/../Room/../Character/../Image/ImportImg.h \
+ ../Cutscene/../Room/../Character/Player.h \
+ ../Cutscene/../Room/../Character/Character.h \
+ ../Cutscene/../Room/../Character/../Item/MyConsumables.h \
+ ../Cutscene/../Room/../Character/../Item/Consumable.h \
+ ../Cutscene/../Room/../Character/../Item/Item.h \
+ ../Cutscene/../Room/../Character/Npc.h \
+ ../Cutscene/../Room/../Item/Item.h \
+ ../Cutscene/../Room/../Item/MyConsumables.h \
+ ../Cutscene/../Room/../Item/MyWeapons.h \
+ ../Cutscene/../Room/../Item/Weapon.h ../Cutscene/../Room/../Item/Item.h
 Hanoi.o: ../Puzzles/Hanoi.cpp ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Image/Image.h \
@@ -133,6 +208,7 @@ PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -143,6 +219,28 @@ PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/../Screen/Screen.h \
  ../Puzzles/../Image/DefaultImg.h ../Puzzles/../Character/Character.h \
  ../Puzzles/Hanoi.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h ../Puzzles/Puzzle.h ../Puzzles/../Menu/Menu.h \
+ ../Puzzles/../Screen/Screen.h ../Puzzles/../Image/DefaultImg.h \
+ ../Puzzles/../Character/Character.h ../Puzzles/Hanoi.h \
+ ../Puzzles/Puzzle.h ../Puzzles/../Menu/HanoiMenu.h \
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h ../Puzzles/CodeCracker.h \
  ../Puzzles/../Menu/RiddleMenu.h ../Puzzles/TicTacToe.h \
@@ -195,6 +293,7 @@ MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -202,6 +301,25 @@ MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Cutscene/Cutscene.h \
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h ../Cutscene/Cutscene.h \
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h
@@ -213,6 +331,7 @@ FightState.o: FightState.cpp FightState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -220,6 +339,25 @@ FightState.o: FightState.cpp FightState.h GameState.h ../Menu/Menu.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
 TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
  ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
@@ -228,6 +366,7 @@ TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -235,6 +374,25 @@ TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
 Character.o: ../Character/Character.cpp ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h
@@ -274,6 +432,7 @@ InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
  ../RoomTree/../Room/../Image/Image.h \
+<<<<<<< HEAD
  ../RoomTree/../Room/../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
  ../Character/Player.h ../Character/Character.h \
@@ -281,6 +440,25 @@ InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
  ../Character/../Item/Item.h ../Character/Npc.h ../Item/Item.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Cutscene/Cutscene.h \
+=======
+ ../RoomTree/../Room/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/../Image/ImportImg.h \
+ ../RoomTree/../Room/../Character/Player.h \
+ ../RoomTree/../Room/../Character/Character.h \
+ ../RoomTree/../Room/../Character/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Character/../Item/Consumable.h \
+ ../RoomTree/../Room/../Character/../Item/Item.h \
+ ../RoomTree/../Room/../Character/Npc.h \
+ ../RoomTree/../Room/../Item/Item.h \
+ ../RoomTree/../Room/../Item/MyConsumables.h \
+ ../RoomTree/../Room/../Item/MyWeapons.h \
+ ../RoomTree/../Room/../Item/Weapon.h ../RoomTree/../Room/../Item/Item.h \
+ ../Character/Character.h ../Character/Player.h ../Character/Npc.h \
+ ../Item/MyConsumables.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyWeapons.h ../Cutscene/Cutscene.h \
+>>>>>>> 67ef1a4da83321a73c39be799e2149a5cbe726df
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h ../Room/Room.h \

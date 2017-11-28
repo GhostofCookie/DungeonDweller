@@ -43,15 +43,12 @@ class TicTacToe: public virtual Puzzle
    ///Sets the board up for the beginning of the game, placing the grid
    void BoardSetup();
 
-   ///Sends the menu class the options for the player to select.
-   void SetOptionsInMenu();
-
    /// Displays the screen containing the gameboard
    /// \param[in] inputX, the X-coordinate of the selection.
    /// \param[in] inputY, the Y-coordinate of the selection.
    void MovePiece(int inputX, int inputY, char userPiece);
 
-   void EndGamePrompt(int &currentPlayer);
+   void EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character *player);
       
    ///Checks to see if there have been any 3 tokens in a row in the grid vector.
    bool WinCheck();

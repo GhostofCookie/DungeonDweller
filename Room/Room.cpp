@@ -25,6 +25,7 @@ Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
    // Decides on one of the rooms in that set
    int num = Rand(roomCount);
    room = new ImportImg(collection['0'][num]);
+   npc.Img() = ImportImg(collection['@'][0]);
 	
    //Insert the appropriate images to fill the room
    GetRoom(collection);
@@ -58,7 +59,10 @@ Room::Room(const Room &r)
 
 
 /// Destructor
-Room::~Room() { delete room; }
+Room::~Room()
+{
+   delete room;
+}
 
 
 
@@ -139,36 +143,35 @@ void Room::GetPoints()
 
 
 /// Helper function to determine what to draw in the room based on type
+/// \param[in] collection the images being passed
 void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
-{  
-   ImportImg event = ImportImg(collection['@'][0]);//assign it just to avoid error
+{
    
    switch(type)
    {
-      //empty room
-      case 0 :
-	 break;
 	 //NPC Shop
       case 1 :
-	 event = ImportImg(collection['@'][1]);
-	 event.AlignCenter(*room);
-	 event.Image::ShiftRight(*room, 10);
-	 event.Image::Draw(*room);
+	 npc.Img() = ImportImg(collection['n'][0]);
+	 npc.Img().Image::AlignCenter(*room);
+	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
 	 //NPC Enemy	 
       case 2 :
-	 event = ImportImg(collection['@'][2]);
-	 event.AlignCenter(*room);
-	 event.Image::ShiftRight(*room, 10);
-	 event.Image::Draw(*room);
+	 npc.Img() = ImportImg(collection['m'][0]);
+	 npc.Img().Image::AlignCenter(*room);
+	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
 	 //NPC Puzzle
       case 3 :
-	 event = ImportImg(collection['@'][3]);
-	 event.AlignCenter(*room);
-	 event.Image::ShiftRight(*room, 10);
-	 event.Image::Draw(*room);
+	 npc.Img() = ImportImg(collection['n'][1]);
+	 npc.Img().Image::AlignCenter(*room);
+	 npc.Img().Image::ShiftRight(*room, 10);
 	 break;
+      default:
+	 npc.Img() = ImportImg(collection['m'][0]);
+	 npc.Img().Image::AlignCenter(*room);
+	 npc.Img().Image::ShiftRight(*room, 10);
+
    }
 }
 

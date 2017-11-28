@@ -28,7 +28,7 @@ class Puzzle
    ///functions from private until the player has won.                          
    virtual void RunGame(Character *player) = 0;
   protected:
-   void SecondDelay(const int seconds) const;
+   void SecondDelay(int seconds) const;
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;
     
