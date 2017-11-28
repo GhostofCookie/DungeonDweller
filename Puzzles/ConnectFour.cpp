@@ -32,6 +32,9 @@ ConnectFour::~ConnectFour()
 
 void ConnectFour::RunGame(Character *player)
 {
+   if(player==NULL)
+      throw invalid_argument("Player pointer passed to minigame is invalid");
+   
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer = 1, userInput;
@@ -43,20 +46,24 @@ void ConnectFour::RunGame(Character *player)
       system("clear");
       cout << ConnectFourScreen << endl;
       SetCurrentPlayerChar(currentPlayer);
+      ///If it is the AI's turn.
       if(currentPlayer % 2 == 0)
       {
 	 PlayAI(currentPlayerChar);
 	 if(WinCheck() || TieGameCheck(currentPlayer))
 	    EndGamePrompt(currentPlayer, connectFourGameMenu, player);
+	 ///If they don't win, next players turn.
 	 currentPlayer++;
       }
       else
-      {	 
+      {
+	 ///Prompt the user for input and then check if it is valid
 	 connectFourGameMenu.OutputMenu();
 	 connectFourGameMenu.HandleInput(cin);
 	 userInput = connectFourGameMenu.GetColumn();
 	 if(ValidMove(userInput))
 	 {
+	    ///If the input is valid, move the piece and check if they won.
 	    MovePiece(currentPlayerChar, userInput);
 	    if(WinCheck() || TieGameCheck(currentPlayer))
 	       EndGamePrompt(currentPlayer, connectFourGameMenu, player);
@@ -64,13 +71,11 @@ void ConnectFour::RunGame(Character *player)
 	       currentPlayer++;
 	 }
 	 else
-	 {
-	    connectFourGameMenu.SetQuery("Invalid Move, please try again");
-	    currentPlayer=1;
-	 }
+	    ///If their input was invalid, let them know to re-select.
+	    connectFourGameMenu.SetQuery("Invalid Move, please try again");	 
       }
    }
-   SecondDelay(6);
+
 }
 
 void ConnectFour::MovePiece(char userPiece, int column)
@@ -212,14 +217,18 @@ void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
 				, Character *player)
 {
+   system("clear");
    cout << ConnectFourScreen;
-     if(currentPlayer %2 == 0)
+   if(currentPlayer %2 == 0)
    {
       menu.SetQuery("The connect four champion has defeated you! -5 HP");
       menu.OutputMenu();
       player->ChangeHealth(-5);
       ResetGame(currentPlayer);
       SecondDelay(4);
+
+      system("clear");
+      cout << ConnectFourScreen;
       menu.SetQuery("Get ready to duel her again!");
       menu.OutputMenu();
       SecondDelay(4);
@@ -235,9 +244,9 @@ void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
    else
    {
       menu.SetQuery("Congratulations adventurer! You have defeated the champion"
-		 "! You are free to continue!");
+		    "! You are free to continue!");
       menu.OutputMenu();
-      SecondDelay(5);
+      SecondDelay(6);
       PuzzleEnd = true;
    }
 }

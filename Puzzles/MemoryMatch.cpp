@@ -44,6 +44,8 @@ MemoryMatch::~MemoryMatch()
 ///\param[in] player, pointer to the player, used to decrement health. 
 void MemoryMatch::RunGame(Character *player)
 {
+   if(player==NULL)
+      throw invalid_argument("Player pointer passed to minigame is invalid");
    MemoryMenu MemoryMatchMenu;
    int inputX1, inputY1, inputX2, inputY2;
    BoardSetup();

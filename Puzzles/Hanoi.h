@@ -65,6 +65,10 @@ class Hanoi: public virtual Puzzle
    ///Sets up the discs on the gameboard for the beginning of the game.
    void DiscSetup();
 
+   ///Outputs an appropriate error message of the user tries to move a disc
+   ///from an empty stack
+   void EmptyPrompt();
+      
    ///Helper function for discSetup, pushes a disc on the left stack at the
    ///height specified by bottom.
    ///\param[in] bottom, the height to place the disc at.

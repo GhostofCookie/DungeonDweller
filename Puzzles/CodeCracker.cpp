@@ -23,6 +23,8 @@ CodeCracker::~CodeCracker()
 ///functions from private until the player has won.
 void CodeCracker:: RunGame(Character *player)
 {
+   if(player==NULL)
+      throw invalid_argument("Player pointer passed to minigame is invalid");
    int userInput, currentRiddle;
    RiddleMenu GameMenu;
    
@@ -148,7 +150,6 @@ void CodeCracker::ImportRiddles()
 
    ifstream in;
    in.open("../Puzzles/Riddles.txt");
-
    if(in)
    {
       in >> numberOfRiddles;
@@ -168,5 +169,5 @@ void CodeCracker::ImportRiddles()
       in.close();	
    }
    else
-      cout << "File failed to open" << endl;
+      throw invalid_argument("Riddles text file has failed to open");
 }
