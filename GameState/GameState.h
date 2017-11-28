@@ -18,6 +18,8 @@
 #include "../Character/Npc.h"
 #include "../Item/Item.h"
 #include "../Item/MyConsumables.h"
+#include "../Item/Weapon.h"
+#include "../Item/MyWeapons.h"
 
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
@@ -40,7 +42,7 @@ class GameState
    virtual void Get() = 0;
    /// Returns the current state.
    char GetState() const {return currState;}
-
+   Item *item = new Sword();
   protected:
    ///< pointer to the menu.
    Menu *menu;
