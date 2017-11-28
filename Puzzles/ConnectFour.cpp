@@ -9,17 +9,17 @@
 
 ConnectFour::ConnectFour()
 {
-   PuzzleEnd=false;
+   PuzzleEnd = false;
    ///Setting up the game vector 
-   xSize=7;
-   ySize=6;
+   xSize = 7;
+   ySize = 6;
    grid.resize(xSize);
-   for(int i=0; i<xSize; i++)
+   for(int i = 0; i < xSize; i++)
    {
       grid.at(i).resize(ySize);
-      for(int j=0; j<ySize; j++)
+      for(int j = 0; j < ySize; j++)
       {
-	 grid.at(i).at(j)=' ';
+	 grid.at(i).at(j) = ' ';
       }
    }  
 }
@@ -34,17 +34,16 @@ void ConnectFour::RunGame(Character *player)
 {
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
-   int currentPlayer=1, userInput;
+   int currentPlayer = 1, userInput;
    ConnectFourMenu connectFourGameMenu;  
    
    BoardSetup();
-   while(PuzzleEnd==false)
+   while(PuzzleEnd == false)
    {
       system("clear");
-      cout << "CurrentPlayer:" << currentPlayer <<  endl;
       cout << ConnectFourScreen << endl;
       SetCurrentPlayerChar(currentPlayer);
-      if(currentPlayer%2==0)
+      if(currentPlayer % 2 == 0)
       {
 	 PlayAI(currentPlayerChar);
 	 currentPlayer++;
@@ -55,9 +54,7 @@ void ConnectFour::RunGame(Character *player)
       {	 
 	 connectFourGameMenu.OutputMenu();
 	 connectFourGameMenu.HandleInput(cin);
-	 userInput=connectFourGameMenu.GetColumn();
-	 cout << "userInput:" << userInput << endl;
-	 
+	 userInput = connectFourGameMenu.GetColumn();
 	 if(ValidMove(userInput))
 	 {
 	    MovePiece(currentPlayerChar, userInput);
@@ -69,28 +66,26 @@ void ConnectFour::RunGame(Character *player)
 	 else
 	    cout << "Invalid Move, please try again" << endl;
       }
-
    }
 }
 
 void ConnectFour::MovePiece(char userPiece, int column)
 {
-   cout << "MOVE PIECE:" << column << endl;
-   int leftBound=42, bottomSlotHeight=21;;
-   char currentSpot=' ';
-   int height=ySize-1;
+   int leftBound = 42, bottomSlotHeight = 21;
+   char currentSpot = ' ';
+   int height = ySize - 1;
 
-   while(currentSpot==' ')
+   while(currentSpot == ' ')
    {
-      cout << "column " <<column-1 << " is height " <<grid.at(column-1).size() << "     Height subtracted is: " << height << endl;
-      if(grid.at(column-1).at(ySize-height)!=' ')
+      if(grid.at(column - 1).at(ySize - height) != ' ')
       {
-	 cout << "SET AT HEIGHT:" << ySize-height << endl;
 	 height++;
-	 grid.at(column-1).at(ySize-height)=userPiece;
+	 grid.at(column - 1).at(ySize - height) = userPiece;
 	 height--;
-	 ConnectFourScreen.Set((bottomSlotHeight-(height*2)),(column*2+leftBound), userPiece);
-	 currentSpot=userPiece;//Loop break
+	 ConnectFourScreen.Set((bottomSlotHeight - (height * 2)),
+			       (column * 2 + leftBound), userPiece);
+	 ///Break the loop
+	 currentSpot = userPiece;
       }
       else
       {
@@ -98,47 +93,40 @@ void ConnectFour::MovePiece(char userPiece, int column)
       }
       ///If we have reached the bottom of the column and not found a piece, set
       ///the piece at the bottom of the column and break.
-      if(height==0 && (grid.at(column-1).at(ySize-1))==' ')
+      if(height == 0 && (grid.at(column - 1).at(ySize - 1)) == ' ')
       {
-	 cout << "SET AT ZERO" << endl;
-	 grid.at(column-1).at(ySize-1)=userPiece;
+	 grid.at(column - 1).at(ySize - 1) = userPiece;
 
          ///Set the char in the screen
 	 ///Height and column are multiplied by 2 since the actual vector has
 	 /// 1/2 as many spots as the grid displayed on the screen does.
 	 ///Add 11 to the topBound to place it in the bottom slot in the grid.
-	 ConnectFourScreen.Set((bottomSlotHeight+(height*2)),(column*2+leftBound),(userPiece));
-	    ///Break the loop
-	 currentSpot=userPiece;
+	 ConnectFourScreen.Set((bottomSlotHeight +(height * 2)),
+			       (column * 2 + leftBound),(userPiece));
+	 ///Break the loop
+	 currentSpot = userPiece;
       }
    }
-   cout << "GRID" << endl;
-   for(int i=0; i<ySize; i++)
-   {
-      for(int j=0; j<xSize; j++)
-	 cout << grid.at(j).at(i);
-      cout << endl;
-   }      
 }
 
 ///Performs the AI players move
 void ConnectFour::PlayAI(char AiPiece)
 {
-   int columnChoice=Puzzle::RandomNumber(xSize);
-   bool moveSuccessful=false;
+   int columnChoice = Puzzle::RandomNumber(xSize);
+   bool moveSuccessful = false;
 
-   while(moveSuccessful==false)
+   while(moveSuccessful == false)
    {
-      if(columnChoice==0)
+      if(columnChoice == 0)
 	 columnChoice++;
       if(!ValidMove(columnChoice))
       {
-	 columnChoice=Puzzle::RandomNumber(xSize);
+	 columnChoice = Puzzle::RandomNumber(xSize);
       }
       else
       {
 	 MovePiece(AiPiece, columnChoice);
-	 moveSuccessful=true;
+	 moveSuccessful = true;
       }
    }
 
@@ -172,32 +160,33 @@ bool ConnectFour::TieGameCheck(int &currentPlayerChar)
 ///Sets up the board with the ui for the connect four game
 void ConnectFour::BoardSetup()
 {
-   int horizontalBoardSize=15, verticalBoardSize=13, topBound=10, leftBound=43;
-   for(int i=0; i<verticalBoardSize; i++)
+   int horizontalBoardSize =15, verticalBoardSize = 13, topBound = 10,
+      leftBound = 43;
+   for(int i = 0; i < verticalBoardSize; i++)
    {
-      for(int j=0; j<horizontalBoardSize; j++)
+      for(int j = 0; j < horizontalBoardSize; j++)
       {
 	 ///If i is odd, fill the entire row with '-'
-	 if(i%2==0)
+	 if(i %2 == 0)
 	 {
 	    ///topBound and leftBound should set the board centered inside
 	    ///the screen object.
-	    ConnectFourScreen.Set((topBound+i), (leftBound+j),'-');
+	    ConnectFourScreen.Set((topBound + i), (leftBound + j),'-');
 	 }
 	 ///If i is even, fill the row with squares to place tokens in later
 	 else
 	 {
-	    if(j%2!=0)
+	    if(j %2 != 0)
 	    {
 	       ///topBound and leftBound should set the board centered inside
 	       ///the screen object.  
-	       ConnectFourScreen.Set((topBound+i),(leftBound+j),' ');
+	       ConnectFourScreen.Set((topBound + i),(leftBound + j),' ');
 	    }
 	    else
 	    {
 	       ///topBound and leftBound should set the board centered inside
 	       ///the screen object.  
-	       ConnectFourScreen.Set((topBound+i),(leftBound+j),'|');
+	       ConnectFourScreen.Set((topBound + i),(leftBound + j),'|');
 	    }
 	 }
       }
@@ -205,7 +194,7 @@ void ConnectFour::BoardSetup()
 }
 bool ConnectFour:: IsInputOutOfScope(int input)
 {
-   if(input<=7 && input>0)
+   if(input <= 7 && input > 0)
       return false;
    else
       return true;
@@ -213,13 +202,13 @@ bool ConnectFour:: IsInputOutOfScope(int input)
 
 void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 {
-   if(currentPlayer%2==0)
+   if(currentPlayer %2 == 0)
    {
-      currentPlayerChar='@';
+      currentPlayerChar ='@';
    }
    else
    {
-      currentPlayerChar='#';
+      currentPlayerChar = '#';
    }
 }
 
@@ -228,7 +217,7 @@ void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 void ConnectFour::EndGamePrompt(int &currentPlayer)
 {
    cout << ConnectFourScreen;
-   if(currentPlayer%2==0)
+   if(currentPlayer %2 == 0)
    {
       cout << "The connect four champion has defeated you! Lose 1 health"
 	   << " point." << endl;
@@ -236,7 +225,7 @@ void ConnectFour::EndGamePrompt(int &currentPlayer)
       ResetGame(currentPlayer);
       cout << "Get ready to duel her again!" << endl;
    }
-   else if(currentPlayer==-1)
+   else if(currentPlayer == -1)
    {
       cout << "There has been a tie, but unfortunately for you that doesn't"
 	   << " count as a win! Try harder this time!" << endl;
@@ -247,15 +236,15 @@ void ConnectFour::EndGamePrompt(int &currentPlayer)
    {
       cout << "Congratulations adventurer! You have defeated the champion"
 	   << "! You are free to proceed into the next area!" << endl;
-      PuzzleEnd=true;
+      PuzzleEnd = true;
    }
 }
 
 
 bool ConnectFour::WinCheck()
 {
-   cout << "Win Check" << endl;
-   if(VerticalCheck() || HorizontalCheck()||LeftDiagonalCheck()||RightDiagonalCheck())
+   if(VerticalCheck() || HorizontalCheck() || LeftDiagonalCheck()
+      || RightDiagonalCheck())
       return true;
    else
       return false;
@@ -265,38 +254,34 @@ bool ConnectFour::WinCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::VerticalCheck()
 {
-   cout << "Vertical Check" << endl;
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '#' tokens in the line.
-   int atCount=0, poundCount=0;
-   for(int i=0; i<xSize; i++)
+   int atCount = 0, poundCount = 0;
+   for(int i = 0; i < xSize; i++)
    {
-      for(int j=0; j<ySize; j++)
+      for(int j = 0; j < ySize; j++)
       { 
-	 if(grid.at(i).at(j)=='@')
+	 if(grid.at(i).at(j) == '@')
 	 {
 	    atCount++;
-	    poundCount=0;
+	    poundCount = 0;
 	 }
 	 ///If a '#' token is found, reset the count for at since it is not
 	 ///consecutive anymore.  
-	 else if(grid.at(i).at(j)=='#')
+	 else if(grid.at(i).at(j) == '#')
 	 {
 	    poundCount++;
-	    atCount=0;
+	    atCount = 0;
 	 }
 	 ///If either count is at 4 then we have found four of a kind and a player
 	 ///has won so return true. 
-	 if(atCount==4 || poundCount==4)
-	 {
-	    cout << "VC TRUE" << endl;
+	 if(atCount == 4 || poundCount == 4)
 	    return true;
-	 }
       }	   
       ///Reset both counters since we've reached the end of the column with no
       ///match found.
-      atCount=0;
-      poundCount=0;
+      atCount = 0;
+      poundCount = 0;
    }
    ///No matches found, return false
    return false;
@@ -306,45 +291,41 @@ bool ConnectFour::VerticalCheck()
 ///position, returns true if it finds 4 of a kind, false otherwise.
 bool ConnectFour::HorizontalCheck()
 {
-   cout << "Horizontal Check" << endl;
    ///atCount counts the number of '@' tokens in the line.
    ///copyrightCount counts the number of '©' tokens in the line. 
-   int atCount=0, poundCount=0;
-   for(int i=0; i<ySize; i++)
+   int atCount = 0, poundCount = 0;
+   for(int i = 0; i < ySize; i++)
    {
-      for(int j=0; j<xSize; j++)
+      for(int j = 0; j < xSize; j++)
       {
 	 ///If an '@' token is found, reset the count for copyright since it is
 	 /// not consecutive anymore.
-	 if(grid.at(j).at(i)=='@')
+	 if(grid.at(j).at(i) == '@')
 	 {
 	    atCount++;
-	    poundCount=0;
+	    poundCount = 0;
 	 }
 	 ///If a '#' token is found, reset the count for at since it is not
 	 ///consecutive anymore.
-	 else if(grid.at(j).at(i)=='#')
+	 else if(grid.at(j).at(i) == '#')
 	 {
 	    poundCount++;
-	    atCount=0;
+	    atCount = 0;
 	 }
-	 else if(grid.at(j).at(i)==' ')
+	 else if(grid.at(j).at(i) == ' ')
 	 {
-	    poundCount=0;
-	    atCount=0;
+	    poundCount = 0;
+	    atCount = 0;
 	 }
 	 ///If either count is at 4 then we have found four of a kind and a player
 	 ///has won so return true.                                               
-	 if(atCount==4||poundCount==4)
-	 {
-	    cout << "HZ TRUE" << endl;
-	    return true;
+	 if(atCount == 4||poundCount == 4)
+	    return true;	 
       }
-   }
       ///Reset both counters since we've reached the end of the column with no
       ///match found.  
-      atCount=0;
-      poundCount=0;
+      atCount = 0;
+      poundCount = 0;
    }
    return false;
 }
@@ -353,46 +334,45 @@ bool ConnectFour::HorizontalCheck()
 ///positions, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::LeftDiagonalCheck()
 {
-   cout << "LD Check" << endl;
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '#' tokens in the diagonal line. 
-   int atCount=0, poundCount=0;
+   int atCount = 0, poundCount = 0;
 
    ///i is vertical movement, j is horizontal movement
-   for(int i=0; i<3; i++)
+   for(int i = 0; i < 3; i++)
    {
-      for(int j=0; j<4; j++)
+      for(int j = 0; j < 4; j++)
       {
-	 for(int k=0; k<4; k++)
+	 for(int k = 0; k < 4; k++)
 	 {
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
-	    if(grid.at(j+k).at(i+k)=='@')
+	    if(grid.at(j + k).at(i + k) == '@')
 	    {
 	       atCount++;
-	       poundCount=0;
+	       poundCount = 0;
 	    }
 	    ///If a '#' token is found, reset the count for at since it is not
 	    ///consecutive anymore.
-	    if(grid.at(j+k).at(i+k)=='#')
+	    if(grid.at(j + k).at(i + k) == '#')
 	    {
 	       poundCount++;
-	       atCount=0;
+	       atCount = 0;
 	    }
       	    ///If an empty space is found reset both counters since it is no longer a
 	    ///consecutive line
-	    if(grid.at(j+k).at(i+k)==' ')
+	    if(grid.at(j + k).at(i + k) == ' ')
 	    {
-	       poundCount=0;
-	       atCount=0;
+	       poundCount = 0;
+	       atCount = 0;
 	    }
 	    ///If either count is at 4 then we have found four of a kind and a player
 	    ///has won so return true.  
-	    if(atCount==4||poundCount==4)
+	    if(atCount == 4||poundCount == 4)
 	       return true;
 	 }
-	 poundCount=0;
-	 atCount=0;
+	 poundCount = 0;
+	 atCount = 0;
       }
    }
    return false;
@@ -402,108 +382,89 @@ bool ConnectFour::LeftDiagonalCheck()
 ///positions, returns true if it finds 4 of a kind, false otherwise.  
 bool ConnectFour::RightDiagonalCheck()
 {
-   cout << "RD Check" << endl;
    ///atCount counts the number of '@' tokens in the diagonal line.
    ///copyrightCount counts the number of '#' tokens in the diagonal line.
-   int atCount=0, poundCount=0;
+   int atCount = 0, poundCount = 0;
 
    /// i will be the vertical movement, j will the be horizontal movement
-   for(int i=0; i<3; i++)
+   for(int i = 0; i < 3; i++)
    {
-      for(int j=3; j<6; j++)
+      for(int j = 3; j < 6; j++)
       {
-	 for(int k=0; k<4; k++)
+	 for(int k = 0; k < 4; k++)
 	 {
 	    ///If an empty space is found reset both counters since it is no longer a
 	    ///consecutive line
-	    if(grid.at(j-k).at(i+k)==' ')
+	    if(grid.at(j - k).at(i + k) == ' ')
 	    {
-	       poundCount=0;
-	       atCount=0;
+	       poundCount = 0;
+	       atCount = 0;
 	    }
 	    ///If an '@' token is found, reset the count for copyright since it is not
 	    ///consecutive anymore.
-	    else if(grid.at(j-k).at(i+k)=='@')
+	    else if(grid.at(j - k).at(i + k) == '@')
 	    { 
 	       atCount++;
-	       poundCount=0;
+	       poundCount = 0;
 	    }
 	    
 	    ///If a '#' token is found, reset the count for at since it is not
 	    ///consecutive anymore.
-	    else if(grid.at(j-k).at(i+k)=='#')
+	    else if(grid.at(j - k).at(i + k) == '#')
 	    {
 	       poundCount++;
-	       atCount=0;
+	       atCount = 0;
 	    }	    
 	    ///If either count is at 4 then we have found four of a kind and a player
 	    ///has won so return true.
-	    if(atCount==4||poundCount==4)
+	    if(atCount == 4 || poundCount == 4)
 	       return true;
 	 }
-	 poundCount=0;
-	 atCount=0;
+	 poundCount = 0;
+	 atCount = 0;
       }
    }
-   cout << "END OF RD" << endl;
-///If no 4 of a kind has been found, return false.
+   ///If no 4 of a kind has been found, return false.
       return false;
 }
 
 
 ///Returns true if every space in the board has been filled with a character
 bool ConnectFour::IsBoardFull(){
-   int fullColumnCount=0;
-   for(int i=0; i<ySize; i++)
+   int fullColumnCount = 0;
+   for(int i = 0; i < ySize; i++)
    {
       if(IsColumnFull(i))
 	    fullColumnCount++;
    }
    ///If the entire grid is full of characters, return true, else return false.
-   if(fullColumnCount==xSize-1)
+   if(fullColumnCount == xSize - 1)
       return true;
    return false;   
 }
 
 void ConnectFour::ResetGame(int &currentPlayer)
 {
-   for(int i=0; i<xSize; i++)
+   for(int i = 0; i < xSize; i++)
    {
-      for(int j=0; j<ySize; j++)
+      for(int j = 0; j < ySize; j++)
       {
-	 grid.at(i).at(j)=' ';
+	 grid.at(i).at(j) = ' ';
       }
    }
    ConnectFourScreen.Erase();
    BoardSetup();
-   currentPlayer=1;
+   currentPlayer = 1;
 }
 
 ///Function which checks if a column is full
 bool ConnectFour::IsColumnFull(int input)
 {
-   cout << "iscolumnfull"<< endl;
-   for(int i=0; i<ySize; i++)
+   for(int i = 0; i < ySize; i++)
    {
-      cout << "input=" << input << endl;
-      if(grid.at(input).at(i)==' ')
-      {
-	 cout << "FALICY" << endl;
-   
+      if(grid.at(input).at(i) == ' ')
 	 return false;
-      }
    }
    return true;
 }
-   // cout << "IsFullLoop:";
-   // for(int i=0; i<ySize; i++)
-   // {
-   //    cout << i << endl;
-   //    if(grid.at(input).at(i)==' ')
-   //    {
-   // 	 cout << "END AT I=" << i << endl;
-   // 	 return false;
-   //    }
-   // }
-   // return true;
-//}
+

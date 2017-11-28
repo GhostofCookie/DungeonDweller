@@ -16,14 +16,15 @@
 Hanoi::Hanoi()
 {
    BoardSetup();
-   numberOfStacks=3;
-   maxStackHeight=4;
+   numberOfStacks = 3;
+   maxStackHeight = 4;
    tower.resize(numberOfStacks);
    DiscSetup();
-   
-   PuzzleEnd=false;
+   endGamePrompt ="Congratulations you have completed the puzzle!";
+   PuzzleEnd = false;
 }
 
+///Deconstructor
 Hanoi::~Hanoi()
 {
 }
@@ -33,11 +34,10 @@ Hanoi::~Hanoi()
 ///functions from private until the player has won. 
 void Hanoi:: RunGame(Character *player)
 {
-   cout << "Start" << endl;
    char input;
    SetOptionsInMenu();
 
-   while(PuzzleEnd==false)
+   while(PuzzleEnd == false)
    {
       system("clear");
       cout << HanoiScreen;
@@ -47,7 +47,9 @@ void Hanoi:: RunGame(Character *player)
       LogicSwitch(input);
       WinCheck();
    }
-   cout << "A noise creaks behind the wall and the door slides open." << endl;
+   //HanoiGameMenu.SetQuery(endGamePrompt);
+   //HanoiGameMenu.OutputMenu();
+   SecondDelay(5);
 }
 
 ///Sets up the discs on the gameboard for the beginning of the game.    
@@ -60,7 +62,7 @@ void Hanoi:: DiscSetup()
 
    ///Draw to the game screen and then put the discs into the first stack to
    ///start the game.
-   int bottom=15, leftPeg=34;
+   int bottom = 15, leftPeg= 34;
    /*PushDiscOnLeftStack(bottom, disc4);
    bottom--;
    PushDiscOnLeftStack(bottom, disc3);
@@ -95,13 +97,12 @@ void Hanoi:: DiscSetup()
    tower.at(0).push(disc1);
 }
 
-///**********************************************************************************************************************************Remove/Fix before submission
 ///Helper function for discSetup, pushes a disc on the left stack at the
 ///height specified by bottom.
 ///\param[in] bottom, the height to place the disc at.
 ///\param[in] disc, the disc you wish to push into the vector.   
 void Hanoi::PushDiscOnLeftStack(int bottom, DefaultImg disc){
-   int leftPeg=34;
+   int leftPeg = 34;
    disc.AlignCenter(HanoiScreen);
    disc.ShiftLeft(leftPeg);
    disc.ShiftDown(HanoiScreen, bottom);
@@ -112,7 +113,7 @@ void Hanoi::PushDiscOnLeftStack(int bottom, DefaultImg disc){
 ///Sets up the screen with the appropriate game board.    
 void Hanoi:: BoardSetup()
 {
-   int leftDivider=17, peg=34, rightDivider=16, bottom=11;
+   int leftDivider = 17, peg = 34, rightDivider = 16, bottom = 11;
    DefaultImg Divider1(31,1,'|');
    Divider1.AlignCenter(HanoiScreen);
    Divider1.ShiftLeft(leftDivider);
@@ -144,12 +145,12 @@ void Hanoi:: BoardSetup()
 ///Setup the options in the HanoiMenu object for the player to select.
 void Hanoi::SetOptionsInMenu()
 {
-   string menuOption1="Move disc on peg 1 to peg 2"
-      , menuOption2="Move disc on peg 2 to peg 1"
-      , menuOption3="Move disc on peg 3 to peg 2"
-      , menuOption4="Move disc on peg 1 to peg 3"
-      , menuOption5="Move disc on peg 2 to peg 3"
-      , menuOption6="Move disc on peg 3 to peg 1";
+   string menuOption1 = "Move disc on peg 1 to peg 2"
+      , menuOption2 = "Move disc on peg 2 to peg 1"
+      , menuOption3 = "Move disc on peg 3 to peg 2"
+      , menuOption4 = "Move disc on peg 1 to peg 3"
+      , menuOption5 = "Move disc on peg 2 to peg 3"
+      , menuOption6 = "Move disc on peg 3 to peg 1";
    
    HanoiGameMenu.AddOption('1', menuOption1);
    HanoiGameMenu.AddOption('2', menuOption2);
@@ -166,8 +167,8 @@ void Hanoi::WinCheck()
 {
    ///If the user has managed to successfully move all discs to the last peg
    ///then its size should be 4.
-   if(tower.at(2).size()==4)
-      PuzzleEnd=true;
+   if(tower.at(2).size() == 4)
+      PuzzleEnd = true;
 }
 
 ///Moves the disc on the screen from the sourcestack to the targetstack
@@ -175,12 +176,11 @@ void Hanoi::WinCheck()
 ///\param[in] targetStack, the tower to copy the disc to 
 void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 {
-   cout << "DRAW DISC ON TARGET STACK" << endl;
-   int peg=34, bottom=15, targetHeight;
+   int peg = 34, bottom = 15, targetHeight;
    switch(targetStack)
    {
       case 0:
-	 targetHeight=tower.at(targetStack).size();
+	 targetHeight = tower.at(targetStack).size();
 	 
 	 tower.at(sourceStack).top().AlignCenter(HanoiScreen);
 	 tower.at(sourceStack).top().ShiftLeft(peg);
@@ -189,7 +189,7 @@ void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 	 tower.at(sourceStack).top().Draw(HanoiScreen);
 	 break;
       case 1:
-	 targetHeight=tower.at(targetStack).size();
+	 targetHeight = tower.at(targetStack).size();
 	
 	 tower.at(sourceStack).top().AlignCenter(HanoiScreen);
 	 ///Add the height of any discs stored on that stack
@@ -197,7 +197,7 @@ void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 	 tower.at(sourceStack).top().Draw(HanoiScreen);
 	 break;
       case 2:
-	 targetHeight=tower.at(targetStack).size();
+	 targetHeight = tower.at(targetStack).size();
 	 
 	 tower.at(sourceStack).top().AlignCenter(HanoiScreen);
 	 tower.at(sourceStack).top().ShiftRight(HanoiScreen, peg);
@@ -212,13 +212,13 @@ void Hanoi::DrawDiscOnTargetStack(int sourceStack, int targetStack)
 ///source stack, returns false if target is smaller than source.
 ///\param[in]sourceStack, used for comparison against target stack
 ///\param[in]targetStack, used for comparison against source stack 
-bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize) const
+bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize)
+   const
 {
    ///If the disc on the current stack is smaller than the disc on the new stack
    ///it is considered a valid move, so return true, otherwise return false.
-   if(currentTopSize<targetStackTopSize || targetStackTopSize==0)
+   if(currentTopSize < targetStackTopSize || targetStackTopSize == 0)
    {
-      cout << "VALID MOVE" << endl;
       return true;
    }
       else
@@ -231,7 +231,6 @@ bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize) c
 ///\param[in]targetTower, the stack to which we move the disc image.   
 void Hanoi::MovePiece(int sourceTower, int targetTower)
 {
-   cout << "MOVE PIECE" << endl;
    ///targetStackTopSize is the size of the top disc on the target stack, used for a
    ///comparison to see if the player is making a valid move. 
    int targetStackTopSize; 
@@ -239,17 +238,16 @@ void Hanoi::MovePiece(int sourceTower, int targetTower)
    ///size of 0, otherwise find the size of the top disc and set it to
    ///newStackTop
    if(tower.at(targetTower).empty())
-      targetStackTopSize=0;
+      targetStackTopSize = 0;
    else
-      targetStackTopSize=tower.at(targetTower).top().GetCols();
+      targetStackTopSize = tower.at(targetTower).top().GetCols();
 
    ///Check if the move is a valid, if yes, move it over and pop it
    ///from its old location.
    ///currentDiscSize is the size of the disc which we are going to move
    int currentDiscSize;
-   currentDiscSize=tower.at(sourceTower).top().GetCols();//get cols gives the width
-   
-   cout << "TargetSize: " << targetStackTopSize<< "    currentDiscSize: " << currentDiscSize << endl; 
+   currentDiscSize = tower.at(sourceTower).top().GetCols();//get cols gives the width
+
    if(ValidMove(targetStackTopSize,currentDiscSize))
    {
       ///Push the right size disc from the vector of discs based on the
@@ -269,34 +267,31 @@ void Hanoi::MovePiece(int sourceTower, int targetTower)
 ///\param[in] targetTower, the tower which you wish to have cleared on top.  
 void Hanoi::ClearTopDisc(int targetTower)
 {
-   cout << "CLEAR TOP DISC" << endl;
-   cout << "TargetTower:" << targetTower << endl;
-   int discWidth, centerOfScreen=50, midPointInDisc, bottomStartPoint=32
-      ,pegDistance=34, startingPoint;
-   discWidth=tower.at(targetTower).top().GetCols();
+   int discWidth, centerOfScreen = 50, midPointInDisc, bottomStartPoint = 32
+      ,pegDistance = 34, startingPoint;
+   discWidth = tower.at(targetTower).top().GetCols();
    
    switch(targetTower)
    {
       case 0:
-	 startingPoint=centerOfScreen-pegDistance;
+	 startingPoint = centerOfScreen - pegDistance;
 	 break;
       case 1:
-	 startingPoint=centerOfScreen;
+	 startingPoint = centerOfScreen;
 	 break;
       case 2:
-	 startingPoint=centerOfScreen+pegDistance;
+	 startingPoint = centerOfScreen + pegDistance;
 	 break;
    }
-   cout << "tower 1 " << tower.at(targetTower).top().GetCols() << endl;
-   midPointInDisc=discWidth/2;
-   bottomStartPoint-=tower.at(targetTower).size();
-   cout << "STARTINGPOINT:" << startingPoint << "     MidPointInDisc:" <<midPointInDisc << endl;
+   midPointInDisc = discWidth / 2;
+   bottomStartPoint -= tower.at(targetTower).size();
+   
    ///Start at 1 always so that the smallest discs get cleared since starting at
    ///0 wouldn't clear anything for the top disc.
-   for(int i=1; i<midPointInDisc+1; i++)
+   for(int i = 1; i < midPointInDisc + 1; i++)
    {
-      HanoiScreen.Set(bottomStartPoint, startingPoint+i, ' ');
-      HanoiScreen.Set(bottomStartPoint, startingPoint-i, ' ');
+      HanoiScreen.Set(bottomStartPoint, startingPoint + i, ' ');
+      HanoiScreen.Set(bottomStartPoint, startingPoint - i, ' ');
       HanoiScreen.Set(bottomStartPoint, startingPoint, '|');
    }
 }
@@ -305,65 +300,83 @@ void Hanoi::ClearTopDisc(int targetTower)
 /// \param[in] userSelection, the option of moves the player chose  
 void Hanoi::LogicSwitch(char userSelection)
 {
-   cout << "Stack 1 Size:" << tower.at(0).size() << "     Stack 2 Size:" <<tower.at(1).size() << "     Stack 3 size: " << tower.at(2).size() << endl;
    switch(userSelection)
    {
       case '1':
-	 cout << "Move peg 1 to peg 2" << endl;
+	 ///Move peg 1 to peg 2
 	 if(tower.at(0).empty())
+	 {
 	    cout << "That peg is empty, please try another" << endl;
+	    SecondDelay(3);
+	 }
 	 else
 	 {
 	    MovePiece(0,1);//(source,target)
 	 }
 	 break;
       case '2':
-	 cout << "Move peg 2 to peg 1" << endl;
+	 ///Move peg 2 to peg 1
 	 if(tower.at(1).empty())
+	 {
 	    cout << "That peg is empty, please try another" << endl;
+	    SecondDelay(3);
+	 }
 	 else
 	 {
 	    MovePiece(1,0);
 	 }
 	 break;
       case '3':
-	 cout << "Move disk on peg 3 to peg 2" << endl;
+	 ///Move disk on peg 3 to peg 2
 	 if(tower.at(2).empty())
+	 {
 	    cout << "That peg is empty, please try another" << endl;
-	 else
+	    SecondDelay(3);
+	 }
+	    else
 	 {
 	    MovePiece(2,1);
 	 }
 	 break;
       case '4':
-	 cout << "Move peg 1 to peg 3" << endl;
+	 ///Move peg 1 to peg 3
 	 if(tower.at(0).empty())
+	 {
 	    cout << "That peg is empty, please try another" << endl;
-	 else
+	    SecondDelay(3);
+	 }
+	    else
 	 {
 	    MovePiece(0,2);
 	 }
 	 break;
       case '5':
-	 cout << "Move peg 2 to peg 3" << endl;
+	 ///Move peg 2 to peg 3
 	 if(tower.at(1).empty())
+	 {
 	    cout << "That peg is empty, please try another" << endl;
-	 else
+	    SecondDelay(3);
+	 }
+	    else
 	 {
 	    MovePiece(1,2);
 	 }
 	 break;
       case '6':
-	 cout << "Move peg 3 to peg 1" << endl;
+	 ///Move peg 3 to peg 1
 	 if(tower.at(2).empty())
-	    cout << "That peg is empty, please try another" << endl;
-	 else
 	 {
+	    cout << "That peg is empty, please try another" << endl;
+	    SecondDelay(3);
+	 }
+	    else
+	    {
 	    MovePiece(2,0);
 	 }
 	 break;
       default:
-	 cout << "Invalid input, please try again." << endl;
+       	 cout << "Invalid input, please try again." << endl;
+	 SecondDelay(3);
 	 break;
    }
 }

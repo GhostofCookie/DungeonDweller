@@ -1,8 +1,8 @@
-////////////////////////////////////////////////////////////////////////////////
+//
 ///memory_match.cpp
 ///\author Tyler Siwy
 ///CPSC 2720-Howard Cheng-Dungeon Dweller
-////////////////////////////////////////////////////////////////////////////////
+//
 #include "MemoryMatch.h"
 
 MemoryMatch::MemoryMatch()
@@ -161,7 +161,8 @@ void MemoryMatch::BoardSetup()
 ///Checks if the symbol has been used in the random board already
 bool MemoryMatch:: IsInUsedPairs(char symbol)
 {
-   for(int i=0; i<usedPairs.size(); i++)
+   int size=usedPairs.size();;
+   for(int i=0; i<size; i++)
    {
       if(symbol==usedPairs.at(i))
 	 return true;

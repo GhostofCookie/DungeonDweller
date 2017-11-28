@@ -26,11 +26,12 @@ class Puzzle
    virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
-   virtual void RunGame(Character *player)=0;
+   virtual void RunGame(Character *player) = 0;
 
-   void SecondDelay(int seconds);
+   void SecondDelay(const int seconds)const;
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;
+
   private:
    //ALL HANDLED BY MENU OBJECT?
    //virtual void PromptUser(screen &screen);
@@ -42,7 +43,7 @@ class Puzzle
    //virtual void MovePiece(int input)=0;
 
    ///Sends the menu class the options for the player to select.
-   virtual void SetOptionsInMenu()=0;
+   virtual void SetOptionsInMenu() = 0;
     
 };
 #endif

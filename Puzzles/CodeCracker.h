@@ -26,43 +26,55 @@ class CodeCracker: public virtual Puzzle
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
-   void RunGame(Character *player);
+   virtual void RunGame(Character *player);
 
   private:
-//ALL HANDLED BY THE MENU OBJECT
-//void PromptUser(&screen);
-//char UserInput(Menu &menu);
-//bool ValidCommand(char input);
-   
-///Checks the semantics of the user choice to make sure they aren't doing
-///something that would break the game with their input.
-///\param[in]input, has been checked for syntax by input method  
+   ///Checks the semantics of the user choice to make sure they aren't doing
+   ///something that would break the game with their input.
+   ///\param[in]input, has been checked for syntax by input method  
    bool ValidMove(char input);
 
-///Checks to see if the user input is one of the accepted answers.
-///\param[in] Input, an answer to the riddle in the form of the char.
+   ///Checks to see if the user input is one of the accepted answers.
+   ///\param[in] Input, an answer to the riddle in the form of the char.
+   ///\param[in] riddleIndex, location of the puzzles answer in riddle vector
    bool ValidAnswer(int input, int riddleIndex);
 
+   ///Checks if the riddle has already been used so that the player doesn't do
+   ///the same one twice, returns true if it has been used already.
+   ///\param[in] index, location of the riddle in the riddle vector
    bool IsRiddleUsed(int index);
-///Checks if the player has successfully answered 3 riddles.
+   
+   ///Checks if the player has successfully answered 3 riddles and sets
+   ///PuzzlEnd to true if they have.
    void WinCheck();
 
+   ///Outputs the initial message to the player
+   ///\param[in] menu, the menu object to be set and then outputted.
    void InitialPrompt(RiddleMenu &menu);
-///Checks if the player is now dead
+   
+   ///Checks if the player is now dead and ends the game if yes
+   ///\param[in] player, a pointer to the players character passed from main.
    void DeathCheck(Character *player);//Will need to take some kind of character variable/object
    
    ///Outputs the selected riddle, limiting the characters to a set length
    ///and moving them down to the next line if the string is longer than they
    ///limit.
+   ///\param[in]index, the location of the riddle to output.
    void OutputRiddle(int index);
    
-///Imports riddles from a text file and stores them in the vector.
+   ///Imports riddles from a text file and stores them in the riddles vector.
    void ImportRiddles();
 
+   ///Sets a riddle in the games menu so that it can be outputted to the user.
+   ///\param[in]riddleIndex, the location of the riddle in the riddle vector.
+   ///\param[in]menu, the menu object to be saved to and then outputted.
    void SetRiddleInMenu(int riddleIndex, RiddleMenu &menu);
-     
+
+   ///Gets the menu ready to start the first iteration.
    void SetOptionsInMenu();
 
+   ///Sets a riddles index to false in the membership table usedRiddles.
+   ///\param[in]currentRiddle, the riddle to switch the truth value for
    void MakeRiddleUsed(int currentRiddle);
 
    ///Picks one of the unused riddles randomly and returns its index
@@ -85,6 +97,9 @@ class CodeCracker: public virtual Puzzle
    ///Total number of riddles imported into the game
    int numberOfRiddles;
 
+   ///incorrectPrompt is the message to be displayed to the user in the case
+   ///where they get a question wrong, correctPrompt is for when they get the
+   ///question correct.
    string incorrectPrompt, correctPrompt;
 };
 #endif

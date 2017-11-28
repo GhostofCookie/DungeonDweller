@@ -7,6 +7,7 @@
 
 #include "MyWeapons.h"
 #include "../Character/Character.h"
+#include <string>
 using namespace std;
 
 //*****************************************************************************
@@ -24,8 +25,8 @@ Sword::Sword()
 //*****************************************************************************
 bool Sword::Use(Character *target)
 {
-   if(remainingUses > 0) {
-		
+   if(remainingUses > 0)
+   {		
       //Modifies the damage output by up to +- 20%
       double modifier = static_cast<double>((Random(0,40)-20) / 100);
       int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
@@ -45,7 +46,7 @@ Bow::Bow()
    baseDmg = 10;
    remainingUses = 5;
    hitPercent = 70;
-   itemName = NameGenerator("WeaponNames.txt") + " Bow";
+   itemName = NameGenerator("../Item/WeaponNames.txt") + " Bow";
 }
 
 //*****************************************************************************
@@ -56,8 +57,8 @@ bool Bow::Use(Character *target)
    if(remainingUses > 0) {
       
       // Checks for a miss
-      if(Random(1,100) <= hitPercent) {
-	 
+      if(Random(1,100) <= hitPercent)
+      {	 
 	 //Modifies the damage output by up to +- 50%
 	 double modifier = static_cast<double>((Random(0,100)-50) / 100);
 	 int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
@@ -93,7 +94,7 @@ Spell::Spell()
 {
    baseDmg = 20;
    remainingUses = 1;
-   itemName = NameGenerator("SpellNames.txt") + " Spell";
+   itemName = NameGenerator("../Item/SpellNames.txt") + " Spell";
 }
 
 //*****************************************************************************
@@ -101,7 +102,8 @@ Spell::Spell()
 //*****************************************************************************
 bool Spell::Use(Character * target)
 {
-   if(remainingUses > 0) {
+   if(remainingUses > 0)
+   {
       //Modifies the damage output by up to +- 75%
       double modifier = static_cast<double>((Random(0,150)-75) / 100);
       int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);

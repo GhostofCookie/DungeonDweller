@@ -6,14 +6,15 @@
 void CharacterTest:: setUp()
 {
    item = "Does not exist";
+   I = new HealthPotion;
 }
 
-/*
+
 void CharacterTest:: tearDown()
 {
    delete I;
-   }
-*/
+}
+
 
 void CharacterTest:: TestFillInventory()
 {
@@ -28,8 +29,8 @@ void CharacterTest:: TestGetInventoryItems()
 
 void CharacterTest:: TestUseItem()
 {
-   I = C.UseItem(item);
-   CPPUNIT_ASSERT(I == nullptr);  
+   II = C.UseItem(item);
+   CPPUNIT_ASSERT(II == nullptr);  
 }
 
 void CharacterTest:: TestChangeGold()
