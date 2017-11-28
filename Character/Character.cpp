@@ -1,5 +1,7 @@
 #include "Character.h"
 
+
+
 void Character:: ChangeGold(int goldMod)
 {
  if(gold += goldMod <= 0)

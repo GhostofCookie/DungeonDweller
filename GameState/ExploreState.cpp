@@ -70,8 +70,6 @@ void ExploreState::Get()
    (roomTree->At())->Draw(*screen);
 
    player->Img().AlignCenter(*screen);
-   cout << "x: " << player->Img().screenX << ", y: " << player->Img().screenY << endl;
-   usleep(1000000);
    player->Draw(*screen);
 
    // print the player's informaton and the screen
@@ -246,7 +244,7 @@ void ExploreState::SetState(int n)
    cout << "health: " << player->GetHealth() << ", stamina: " << player->GetStamina() << endl;
    usleep(1000000);
    
-   if(n == 113 || player->GetHealth() <= 0)
+   if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
    {
       c.Outro();
       currState = 'M';
