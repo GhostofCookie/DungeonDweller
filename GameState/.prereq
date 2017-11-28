@@ -1,8 +1,7 @@
 testExplore.o: testExplore.cpp GameState.h ../Menu/Menu.h \
- ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
- ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
- ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../RoomTree/../Room/../Screen/Screen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -56,10 +55,10 @@ ConnectFourMenu.o: ../Menu/ConnectFourMenu.cpp ../Menu/ConnectFourMenu.h \
  ../Menu/MinigameMenu.h ../Menu/GameMenu.h ../Menu/Menu.h
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
 ExploreState.o: ExploreState.cpp ExploreState.h GameState.h \
- ../Menu/Menu.h ../Screen/Screen.h ../Screen/SlotScreen.h \
- ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
- ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
- ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
+ ../Menu/Menu.h ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h \
+ ../Menu/Menu.h ../Menu/FightMenu.h ../Menu/ExploreMenu.h \
+ ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
+ ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -97,8 +96,6 @@ Room.o: ../Room/Room.cpp ../Room/Room.h ../Room/../Screen/Screen.h \
  ../Room/../Image/Image.h ../Room/../Image/../Screen/Screen.h \
  ../Room/../Image/DefaultImg.h ../Room/../Image/Image.h \
  ../Room/../Image/ImportImg.h
-SlotScreen.o: ../Screen/SlotScreen.cpp ../Screen/SlotScreen.h \
- ../Screen/Screen.h
 Cutscene.o: ../Cutscene/Cutscene.cpp ../Cutscene/Cutscene.h \
  ../Cutscene/../Screen/Screen.h ../Cutscene/../Image/Image.h \
  ../Cutscene/../Image/../Screen/Screen.h \
@@ -129,10 +126,9 @@ TicTacToe.o: ../Puzzles/TicTacToe.cpp ../Puzzles/TicTacToe.h \
  ../Puzzles/../Menu/TicTacToeMenu.h ../Puzzles/../Menu/MinigameMenu.h \
  ../Puzzles/../Menu/GameMenu.h ../Puzzles/../Menu/Menu.h
 PuzzleState.o: PuzzleState.cpp PuzzleState.h GameState.h ../Menu/Menu.h \
- ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
- ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
- ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../RoomTree/../Room/../Screen/Screen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -192,10 +188,9 @@ CodeCracker.o: ../Puzzles/CodeCracker.cpp ../Puzzles/CodeCracker.h \
  ../Puzzles/../Menu/MinigameMenu.h ../Puzzles/../Menu/GameMenu.h \
  ../Puzzles/../Menu/Menu.h
 MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
- ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
- ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
- ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../RoomTree/../Room/../Screen/Screen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -211,10 +206,9 @@ MainState.o: MainState.cpp MainState.h GameState.h ../Menu/Menu.h \
  ../Cutscene/../Image/DefaultImg.h ../Cutscene/../Image/ImportImg.h \
  ../Cutscene/../Room/Room.h
 FightState.o: FightState.cpp FightState.h GameState.h ../Menu/Menu.h \
- ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
- ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
- ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../RoomTree/../Room/../Screen/Screen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -227,10 +221,9 @@ FightState.o: FightState.cpp FightState.h GameState.h ../Menu/Menu.h \
  ../Item/MyConsumables.h ../Item/Weapon.h ../Item/Item.h \
  ../Item/MyWeapons.h ../Item/Weapon.h
 TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
- ../Screen/Screen.h ../Screen/SlotScreen.h ../Screen/Screen.h \
- ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h ../Menu/FightMenu.h \
- ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
- ../RoomTree/../Room/../Screen/Screen.h \
+ ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
+ ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
+ ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \
@@ -273,10 +266,10 @@ MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h
 InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
- ../Menu/Menu.h ../Screen/Screen.h ../Screen/SlotScreen.h \
- ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h ../Menu/Menu.h \
- ../Menu/FightMenu.h ../Menu/ExploreMenu.h ../RoomTree/RoomTree.h \
- ../RoomTree/../Room/Room.h ../RoomTree/../Room/../Screen/Screen.h \
+ ../Menu/Menu.h ../Screen/Screen.h ../Menu/MainMenu.h ../Menu/GameMenu.h \
+ ../Menu/Menu.h ../Menu/FightMenu.h ../Menu/ExploreMenu.h \
+ ../RoomTree/RoomTree.h ../RoomTree/../Room/Room.h \
+ ../RoomTree/../Room/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/Image.h \
  ../RoomTree/../Room/../Image/../Screen/Screen.h \
  ../RoomTree/../Room/../Image/DefaultImg.h \

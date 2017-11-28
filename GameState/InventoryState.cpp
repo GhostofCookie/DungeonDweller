@@ -40,9 +40,30 @@ item = new Sword();
 /// Gets the layout for the game menu and screen.
 void InventoryState::Get()
 {
+<<<<<<< HEAD
 
 
 
+=======
+  // Item *item = new Sword();
+//   item = item->GetItem("SWORD");
+   //  player.FillInventory(item);
+   //  auto it = player.GetInventoryItems().begin();
+   // while(it != player.GetInventoryItems().end())
+//   {
+      //     cout<<*it<<endl;
+   //     ++it;
+           //  }
+   Item *item = new Sword();
+   item = item->GetItem("SWORD");
+   player->FillInventory(item);
+   auto it = player->GetInventoryItems().begin();
+   while(it != player->GetInventoryItems().end())
+   {
+      cout<<item->Name()<<endl;
+      ++it;
+   }
+>>>>>>> 9e6554324c03366f14ab3fd65972e49be98efe48
    menu->OutputMenu();
    menu->HandleInput(cin);
    

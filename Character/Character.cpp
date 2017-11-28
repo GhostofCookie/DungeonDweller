@@ -3,6 +3,8 @@ Character::Character()
 {
 }
 
+
+
 void Character:: ChangeGold(int goldMod)
 {
  if(gold += goldMod <= 0)

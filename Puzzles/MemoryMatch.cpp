@@ -1,13 +1,13 @@
 //
-///memory_match.cpp
+///MemoryMatch.cpp
 ///\author Tyler Siwy
 ///CPSC 2720-Howard Cheng-Dungeon Dweller
 //
 #include "MemoryMatch.h"
 
+///Default constructor for MemoryMatch, sets height to: 4 and width to: 4  
 MemoryMatch::MemoryMatch()
 {
- 
    boardSize=4;
    pairsOfCharsVector.resize(boardSize*boardSize/2);
    pairsOfCharsVector.at(0)='@';
@@ -21,35 +21,36 @@ MemoryMatch::MemoryMatch()
    
    matchVector.resize(boardSize);
    charTable.resize(boardSize);
-   for(int i=0; i<boardSize; i++)
+   for(int i = 0; i < boardSize; i++)
    {
       charTable.at(i).resize(boardSize);
       matchVector.at(i).resize(boardSize);
 
-      for(int j=0; j<boardSize; j++)
+      for(int j=0; j < boardSize; j++)
       {
-	 matchVector.at(i).at(j)=0;
-	 charTable.at(i).at(j)=' ';
+	 matchVector.at(i).at(j) = 0;
+	 charTable.at(i).at(j) = ' ';
       }
    }   
 }
 
+//Deconstructor
 MemoryMatch::~MemoryMatch()
 {
-
 }
 
+///Method to run the game, serves as a 'main' for the mini-game, calling
+///functions from private until the player has won.
+///\param[in] player, pointer to the player, used to decrement health. 
 void MemoryMatch::RunGame(Character *player)
 {
    MemoryMenu MemoryMatchMenu;
-   cout << "Start" << endl;
    int inputX1, inputY1, inputX2, inputY2;
-   SetOptionsInMenu();
    BoardSetup();
    SaveBoardToScreen();
    system("clear");
    PeekAtBoard(6);
-   while(PuzzleEnd==false)
+   while(PuzzleEnd ==false)
    {
       system("clear");
       cout << MemoryMatchScreen;
@@ -57,10 +58,9 @@ void MemoryMatch::RunGame(Character *player)
       MemoryMatchMenu.HandleInput(cin);
       ///Get input 1-4
       SetInputs(inputX1, inputY1, inputX2, inputY2, MemoryMatchMenu);
-      cout << "inputX1:" << inputX1 << "     inputY1:" << inputY1 << "     inputX2:" << inputX2 << "     inputY2:" << inputY2 << endl;
-      if(CheckInput(inputX1, inputY1, inputX2, inputY2))
+       if(CheckInput(inputX1, inputY1, inputX2, inputY2))
       {
-	 MovePiece(inputX1,inputY1,inputX2,inputY2);//Top left
+	 MovePiece(inputX1, inputY1, inputX2, inputY2);
 	 WinCheck();
       }
       else
@@ -68,6 +68,8 @@ void MemoryMatch::RunGame(Character *player)
    }   
 }
 
+///Outputs a conclusion message to the user and then shows the puzzle results
+///for 6 seconds before ending the game.  
 void MemoryMatch:: EndGamePrompt()
 {
    cout << "Congratulations adventurer! You've solved the puzzle!" << endl;
@@ -75,7 +77,9 @@ void MemoryMatch:: EndGamePrompt()
    Puzzle::SecondDelay(6);
 }
 
-
+///Takes the char input given by the user and returns the associated index
+///for its location within the vector as an int.
+///\param[in]input, the character to convert to an integer index.  
 int MemoryMatch:: ConvertCharToIndex(char input)
 {
    switch(input)
@@ -97,27 +101,41 @@ int MemoryMatch:: ConvertCharToIndex(char input)
 	 break;
    }
 }
-   
+
+///Setinputs assigns user input to the appropriate variables.
+///\param[in]X1, the first x-coordinate to flip to the user.
+///\param[in]Y1, the first y-coordinate to flip to the user.
+///\param[in]X2, the second x-coordinate to flip to the user
+///\param[in]Y2, the second y-coordinate to flip to the user.
+///\param[in]menu, the menu object used for getting the input from the user.  
 void MemoryMatch:: SetInputs(int &X1, int &Y1,int &X2,int &Y2,
 			     MemoryMenu &menu)
 {
    X1=ConvertCharToIndex(menu.GetCoordinates().x1);
-   Y1=menu.GetCoordinates().y1-1;
+   Y1=menu.GetCoordinates().y1 - 1;
    X2=ConvertCharToIndex(menu.GetCoordinates().x2);
-   Y2=menu.GetCoordinates().y2-1;
+   Y2=menu.GetCoordinates().y2 - 1;
 }
 
+///IsInputValid checks to see if the input in within the bounds of the
+///gameboard. Returns true if its valid.
+///\param[in]input, is checked to see if it is within the bounds of the game.  
 bool MemoryMatch:: IsInputValid(int input)
 {
-   if(input>3 || input<0)
+   if(input > 3 || input < 0)
       return false;
    else
       return true;
 }
 
+///Checks to make sure all coordinates are within the bounds of the game
+///board using IsInputValid helper function.
+///\param[in]X1, the first x-coordinate to check.
+///\param[in]Y1, the first y-coordinate to check.
+///\param[in]X2, the second x-coordinate to check.
+///\param[in]Y2, the second y-coordinate to check.   
 bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
 {
-   //cout << "CHECK INPUTS: " << "x1:" << x1 << " y1:" << y1 << " x2:" << x2 << " y2:" << y2 << endl;
    if(IsInputValid(x1) && IsInputValid(y1) && IsInputValid(x2) && IsInputValid(y2))
       return true;
    else
@@ -130,66 +148,69 @@ void MemoryMatch::BoardSetup()
    cout << "Board Setup" << endl;
    int randomPairIndex;
    char randomPairToInsert;
-   bool reSelect=true;
+   bool reSelect = true;
    
    ///Setting up the match-true/false value vector for win checking/error checking
-   for(unsigned int i=0; i<pairsOfCharsVector.size(); i++)
+   for(unsigned int i = 0; i < pairsOfCharsVector.size(); i++)
    {
       ///Try random pairs until the table has been filled in a random order
-      while(reSelect==true)
+      while(reSelect == true)
       {
-	 reSelect=false;
+	 reSelect = false;
 	 ///half of the area of the board since there are pairs so /2
-	 randomPairIndex=RandomNumber(boardSize*boardSize/2);
+	 randomPairIndex = RandomNumber(boardSize * boardSize / 2);
 	 ///Chose a random pair from the table of possible pairs
-	 randomPairToInsert=pairsOfCharsVector.at(randomPairIndex);
+	 randomPairToInsert = pairsOfCharsVector.at(randomPairIndex);
 	 
 	 ///If we haven't used any pair yet. Insert right away
 	 if(usedPairs.empty())
-	    reSelect=false;
+	    reSelect = false;
          ///Else check if we have used it before, if yes, try another pair
 	 else if(IsInUsedPairs(randomPairToInsert))
-	    reSelect=true;	 
+	    reSelect = true;	 
       }
       usedPairs.push_back(pairsOfCharsVector.at(randomPairIndex));
       RandomlyInsertIntoTable(pairsOfCharsVector.at(randomPairIndex));
-      //If we inserted, try another value.
-      reSelect=true;
+      //If we havent inserted, try another value.
+      reSelect = true;
    }
 }
 
-///Checks if the symbol has been used in the random board already
+///Checks if a char is in the used pairs vector and returns true if its found
+///\param[in]symbol, the symbol to be checked.  
 bool MemoryMatch:: IsInUsedPairs(char symbol)
 {
-   int size=usedPairs.size();;
-   for(int i=0; i<size; i++)
+   int size = usedPairs.size();;
+   for(int i = 0; i < size; i++)
    {
-      if(symbol==usedPairs.at(i))
+      if(symbol == usedPairs.at(i))
 	 return true;
    }
    return false;
 }
-///randomly puts pairs into the table
+
+///randomly puts char into the table twice.
+///\param[in]symbol, the symbol to be inserted into the screen  
 void MemoryMatch::RandomlyInsertIntoTable(char symbol)
 {
    int randomXCoordinate;
    int randomYCoordinate;
    bool insertSuccess=false;
    ///Happens twice since it's a pair
-   for(int i=0; i<2; i++)
+   for(int i = 0; i < 2; i++)
    {
       ///Keep repeating until an acceptable location is found, randomly.
-      while(insertSuccess==false)
+      while(insertSuccess == false)
       {
-	 randomXCoordinate=Puzzle::RandomNumber(boardSize);
-	 randomYCoordinate=Puzzle::RandomNumber(boardSize);
-	 if(charTable.at(randomXCoordinate).at(randomYCoordinate)==' ')
+	 randomXCoordinate = Puzzle::RandomNumber(boardSize);
+	 randomYCoordinate = Puzzle::RandomNumber(boardSize);
+	 if(charTable.at(randomXCoordinate).at(randomYCoordinate) == ' ')
 	 {
-	    charTable.at(randomXCoordinate).at(randomYCoordinate)=symbol;
-	    insertSuccess=true;
+	    charTable.at(randomXCoordinate).at(randomYCoordinate) = symbol;
+	    insertSuccess = true;
 	 }
       }
-      insertSuccess=false;
+      insertSuccess = false;
    }
 }
 
@@ -197,39 +218,35 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
 ///the game board
 void MemoryMatch::SaveBoardToScreen()
 {
-   cout << "SaveBoardToScreen" << endl;
    ///topBound and leftBound should set the board centered inside
    ///the screen object.
-   int screenBoardSize=9, topBound=11, leftBound=45;
-   for(int i=0; i<screenBoardSize; i++)
+   int screenBoardSize = 9, topBound = 11, leftBound = 45;
+   for(int i = 0; i < screenBoardSize; i++)
    {
-      for(int j=0; j<screenBoardSize; j++)
+      for(int j = 0; j < screenBoardSize; j++)
       {	 
 	 ///If i is odd, fill the entire row with '-'
-	 if(i%2==0)
-	    MemoryMatchScreen.Set((topBound+i), (leftBound+j),'-');
-
+	 if(i %2 == 0)
+	    MemoryMatchScreen.Set((topBound + i), (leftBound + j), '-');
          ///If i is even, fill the row with squares to place tokens in later
 	 else
 	 {
-	    if(j%2!=0)
-	       MemoryMatchScreen.Set((topBound+i),(leftBound+j),' ');
+	    if(j %2 != 0)
+	       MemoryMatchScreen.Set((topBound + i),(leftBound + j), ' ');
 	    else
-	       MemoryMatchScreen.Set((topBound+i),(leftBound+j),'|');
+	       MemoryMatchScreen.Set((topBound + i),(leftBound + j), '|');
 	 }
       }
    }
 }
 
-///Sends the menu class the options for the player to select.
-void MemoryMatch::SetOptionsInMenu()
-{
-   //MemoryMenu.AddOption('1', menuOption1, MovePiece);
-   
-}
-
-///Checks if the coordinates have been matched already, returns true if they are
-///unmatched, false if they have previously been matched
+///Checks if the coordinates have been matched already using the membership
+///table stored in the match vector, returns true if they are unmatched,
+///false if they have previously been matched
+///\param[in] inputX1, The X-Coordinate of the first card to check
+///\param[in] inputY1, The Y-Coordinate of the first card to check
+///\param[in] inputX2, The X-Coordinate of the second card to check
+///\param[in] inputY2, The Y-Coordinate of the second card to check 
 bool MemoryMatch::ValidMove(int X1, int Y1, int X2, int Y2)
 {
    if(matchVector.at(X1).at(Y1)==1 || matchVector.at(X2).at(Y2)==1)
@@ -238,28 +255,31 @@ bool MemoryMatch::ValidMove(int X1, int Y1, int X2, int Y2)
       return true;
 }
 
-///Causes a three second delay in the program process
 ///Generates a random number between 0 and n-1
+///\param[in] n, the upper bound for the random number   
 int MemoryMatch::RandomNumber(int n)
 {
    ///Returns 0 to n-1
-   n=rand()%n;
+   n = rand ()% n;
    return n;
 }
 
 ///Returns true if n is odd, false if even.
+///\param[in]n, an integer n, checks if it is odd.  
 bool MemoryMatch:: IsOdd(int n)
 {
-   if(n%2==0)
+   if(n % 2 == 0)
       return false;
    else
       return true;
 }
 
 ///Returns true if char has a true value in the matchVector, false otherwise
+///\param[in] inputX, The X-Coordinate of the first card to check
+///\param[in] inputY, The Y-Coordinate of the first card to check 
 bool MemoryMatch:: IsCharAlreadyMatched(int inputX, int inputY)
 {
-   if(matchVector.at(inputX).at(inputY)==1)
+   if(matchVector.at(inputX).at(inputY) == 1)
       return true;
    else
       return false;
@@ -268,25 +288,31 @@ bool MemoryMatch:: IsCharAlreadyMatched(int inputX, int inputY)
 
 ///Flips the char stored at the inputted coordinates on chartable and sets them
 ///on the screen.
+///\param[in] inputX, The X-Coordinate of the first card to flip
+///\param[in] inputY, The Y-Coordinate of the first card to flip 
 void MemoryMatch::FlipTwoChars(int inputX, int inputY)
 {
    ///top left coordinate of the game board on the screen
-   int topBound=11, leftBound=45;
+   int topBound = 11, leftBound = 45;
    ///Symbol to be displayed
    char symbol;
    
    ///Display the first symbol
-   symbol=charTable.at(inputX).at(inputY);
-   MemoryMatchScreen.Set(((inputY*2)+1+topBound), ((inputX*2)+1+leftBound), symbol);
+   symbol = charTable.at(inputX).at(inputY);
+   MemoryMatchScreen.Set(((inputY * 2) + 1 + topBound),
+			 ((inputX * 2) + 1 + leftBound), symbol);
 }
-///Flips two squares and outputs it for 3 seconds then flips it back.
+
+///Flips two squares and outputs it for the inputted amount of seconds and then
+///flips them back over to hide them from the user.
+///\param[in]lengthInSecond, the number of seconds you want to flip for   
 void MemoryMatch::PeekAtBoard(int lengthInSeconds)
 {
    ///top left coordinate of the game board on the screen
-   int topBound=11, leftBound=45;
-   for(int i=0; i<boardSize; i++)
+   int topBound = 11, leftBound = 45;
+   for(int i = 0; i < boardSize; i++)
    {
-      for(int j=0; j<boardSize; j++)
+      for(int j = 0; j < boardSize; j++)
       {
 	 FlipTwoChars(i, j);
       }
@@ -296,26 +322,31 @@ void MemoryMatch::PeekAtBoard(int lengthInSeconds)
    Puzzle::SecondDelay(lengthInSeconds);
    system("clear");
    
-   for(int i=0; i<boardSize; i++)
+   for(int i = 0; i < boardSize; i++)
    {
-      for(int j=0; j<boardSize; j++)
+      for(int j = 0; j < boardSize; j++)
       {
-	 MemoryMatchScreen.Set(((j*2)+1+topBound), ((i*2)+1+leftBound), ' ');
+	 MemoryMatchScreen.Set(((j * 2) + 1 + topBound)
+			       ,((i * 2) + 1 + leftBound), ' ');
       }
    }
 }
 
 ///Flips two squares and outputs it for 3 seconds then flips it back.
+///\param[in] inputX1, The X-Coordinate of the first card to flip
+///\param[in] inputY1, The Y-Coordinate of the first card to flip
+///\param[in] inputX2, The X-Coordinate of the second card to flip
+///\param[in] inputY2, The Y-Coordinate of the second card to flip  
 void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 {
    ///top left coordinate of the game board on the screen
-   int topBound=11, leftBound=45;
+   int topBound = 11, leftBound = 45;
 
    ///Flip the two selected chars, first check if they have been previously
    ///matched, if so, do nothing to them. Otherwise, flip.
-   if(!(IsCharAlreadyMatched(inputX1, inputY1)))
+   if( !(IsCharAlreadyMatched(inputX1, inputY1)))
       FlipTwoChars(inputX1, inputY1);
-   if(!(IsCharAlreadyMatched(inputX2, inputY2)))
+   if( !(IsCharAlreadyMatched(inputX2, inputY2)))
       FlipTwoChars(inputX2, inputY2);
 
    ///Output the game for three seconds
@@ -324,11 +355,12 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 
    ///clear the first and second symbol off of the screen after 3 seconds, only
    ///if they have not previously been matched
-   if(!(IsCharAlreadyMatched(inputX1, inputY1)))
-      MemoryMatchScreen.Set(((inputY1*2)+1+topBound), ((inputX1*2)+1+leftBound), ' ');
-   if(!(IsCharAlreadyMatched(inputX2, inputY2)))
-      MemoryMatchScreen.Set(((inputY2*2)+1+topBound), ((inputX2*2)+1+leftBound), ' ');
-
+   if( !(IsCharAlreadyMatched(inputX1, inputY1)))
+      MemoryMatchScreen.Set(((inputY1 * 2) + 1 + topBound)
+			    , ((inputX1 * 2) + 1 + leftBound), ' ');
+   if( !(IsCharAlreadyMatched(inputX2, inputY2)))
+      MemoryMatchScreen.Set(((inputY2 * 2) + 1 + topBound)
+			    , ((inputX2 * 2) + 1 + leftBound), ' ');
    ///Output the game again now that it has been cleared of the users guess.
    cout << MemoryMatchScreen << endl;
 }
@@ -343,21 +375,17 @@ void MemoryMatch::MovePiece(int inputX1, int inputY1, int inputX2, int inputY2)
 {
    if(MatchCheck(inputX1, inputY1, inputX2, inputY2))
    {
-      cout << "Match!" << endl;
       //Flip the two spots on the board
       FlipTwoChars(inputX1, inputY1);
       FlipTwoChars(inputX2, inputY2);
 
       //Set the two values to true to show that they have been matched.
-      matchVector.at(inputX1).at(inputY1)=1;
-      matchVector.at(inputX2).at(inputY2)=1;
+      matchVector.at(inputX1).at(inputY1) = 1;
+      matchVector.at(inputX2).at(inputY2) = 1;
    }
    else
-   {
-      cout << "Not a match!" << endl;
       ///Show the user the spots they tried for a brief period of time
-      Peek(inputX1,inputY1,inputX2,inputY2);
-   }     
+      Peek(inputX1,inputY1,inputX2,inputY2);  
 }
 
 ///Checks if the two cards selected are a match, returns true if yes.
@@ -368,8 +396,7 @@ void MemoryMatch::MovePiece(int inputX1, int inputY1, int inputX2, int inputY2)
 bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 {
    ///If the two chars are the same.
-   cout << "input1:" << charTable.at(inputX1).at(inputY1) << "  input2:" << charTable.at(inputX2).at(inputY2) << endl;
-   if(charTable.at(inputX1).at(inputY1)==charTable.at(inputX2).at(inputY2))
+   if(charTable.at(inputX1).at(inputY1) == charTable.at(inputX2).at(inputY2))
       return true;
    else
       return false;
@@ -379,18 +406,18 @@ bool MemoryMatch::MatchCheck(int inputX1, int inputY1, int inputX2, int inputY2)
 ///returns true when they have completed the puzzle.
 void MemoryMatch::WinCheck()
 {
-   int trueCount=0;
-   for(int i=0; i<boardSize; i++)
+   int trueCount = 0;
+   for(int i = 0; i < boardSize; i++)
    {
-      for(int j=0; j<boardSize; j++)
+      for(int j = 0; j < boardSize; j++)
       {
-	 if(matchVector.at(i).at(j)==1)
+	 if(matchVector.at(i).at(j) == 1)
 	    trueCount++;
       }
    }
-   if(trueCount==boardSize*boardSize)
+   if(trueCount == boardSize * boardSize)
    {
-      PuzzleEnd=true;
+      PuzzleEnd = true;
       EndGamePrompt();
    }
 }

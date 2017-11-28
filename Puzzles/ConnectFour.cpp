@@ -46,9 +46,9 @@ void ConnectFour::RunGame(Character *player)
       if(currentPlayer % 2 == 0)
       {
 	 PlayAI(currentPlayerChar);
-	 currentPlayer++;
 	 if(WinCheck() || TieGameCheck(currentPlayer))
-	    EndGamePrompt(currentPlayer);
+	    EndGamePrompt(currentPlayer, connectFourGameMenu, player);
+	 currentPlayer++;
       }
       else
       {	 
@@ -59,14 +59,18 @@ void ConnectFour::RunGame(Character *player)
 	 {
 	    MovePiece(currentPlayerChar, userInput);
 	    if(WinCheck() || TieGameCheck(currentPlayer))
-	       EndGamePrompt(currentPlayer);
+	       EndGamePrompt(currentPlayer, connectFourGameMenu, player);
 	    else
 	       currentPlayer++;
 	 }
 	 else
-	    cout << "Invalid Move, please try again" << endl;
+	 {
+	    connectFourGameMenu.SetQuery("Invalid Move, please try again");
+	    currentPlayer=1;
+	 }
       }
    }
+   SecondDelay(6);
 }
 
 void ConnectFour::MovePiece(char userPiece, int column)
@@ -140,11 +144,6 @@ bool ConnectFour:: ValidMove(int input)
       return true;
 }
 
-void ConnectFour::SetOptionsInMenu()
-{
-
-}
-
 bool ConnectFour::TieGameCheck(int &currentPlayerChar)
 {
    if(IsBoardFull())
@@ -214,28 +213,35 @@ void ConnectFour::SetCurrentPlayerChar(int currentPlayer)
 
 ///If currentPlayer is even, the AI has won, -1 player health, reset
 ///the game for another round until the player has won.
-void ConnectFour::EndGamePrompt(int &currentPlayer)
+void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
+				, Character *player)
 {
    cout << ConnectFourScreen;
-   if(currentPlayer %2 == 0)
+     if(currentPlayer %2 == 0)
    {
-      cout << "The connect four champion has defeated you! Lose 1 health"
-	   << " point." << endl;
-      //-1 Health
+      menu.SetQuery("The connect four champion has defeated you! -5 HP");
+      menu.OutputMenu();
+      player->ChangeHealth(-5);
       ResetGame(currentPlayer);
-      cout << "Get ready to duel her again!" << endl;
+      SecondDelay(4);
+      menu.SetQuery("Get ready to duel her again!");
+      menu.OutputMenu();
+      SecondDelay(4);
    }
    else if(currentPlayer == -1)
    {
-      cout << "There has been a tie, but unfortunately for you that doesn't"
-	   << " count as a win! Try harder this time!" << endl;
-      //-1 Health
+      menu.SetQuery( "A tie doesn't count as a win! Try harder this time! -2 HP");
+      player->ChangeHealth(-2);
+      menu.OutputMenu();
+      SecondDelay(5);
       ResetGame(currentPlayer);
    }
    else
    {
-      cout << "Congratulations adventurer! You have defeated the champion"
-	   << "! You are free to proceed into the next area!" << endl;
+      menu.SetQuery("Congratulations adventurer! You have defeated the champion"
+		 "! You are free to continue!");
+      menu.OutputMenu();
+      SecondDelay(5);
       PuzzleEnd = true;
    }
 }
