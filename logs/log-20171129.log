@@ -2,3 +2,5 @@ Pulling Git Repository
 [master 61d820e] Automated Make call to all directories in Kodika. Pre-Pull
  1 file changed, 4 deletions(-)
 Already up-to-date.
+[master fd42ff7] Automated Make call to all directories in Kodika. Pre-Push
+ 1 file changed, 3 insertions(+)
