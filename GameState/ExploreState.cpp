@@ -64,8 +64,12 @@ void ExploreState::Get()
 
    // draw the npc to the screen if there is one
    if((roomTree->At())->GetType() > 0)
-      (roomTree->At())->GetNpc().Img().Draw(*screen);
-
+   {
+      (roomTree->At())->GetNpc().Img().AlignCenter(*screen);
+      (roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
+      (roomTree->At())->GetNpc().Img().Draw(*screen);      
+   }
+   
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
    cout << setw(28) << "[$]Gold: " << player->GetGold();
@@ -264,12 +268,10 @@ void ExploreState::SetState(int n)
 	    c.MonsterEncounter();	    
 	    roomTree->At()->complete = true;
 	    // sets the monster to dead and sets him to a location
-	    Room temp = Room(*roomTree->At());
-	    roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
-	    roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
-	    roomTree->At()->GetNpc().Img().AlignCenter(*screen);
-	    roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
-	    roomTree->At()->GetNpc().Img().Draw(*screen);
+	    (roomTree->At())->GetNpc().Img() = ImportImg(import->collection['m'][1]);
+	    (roomTree->At())->GetNpc().Img().AlignCenter(*screen);
+	    (roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
+	    (roomTree->At())->GetNpc().Img().Draw(*screen);
 	    //currState = 'F';
 	  }
 	else currState = 'E';
