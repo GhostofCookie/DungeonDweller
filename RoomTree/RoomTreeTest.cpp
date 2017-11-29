@@ -9,6 +9,7 @@ void RoomTreeTest::setUp()
    Tree1 = new RoomTree(nullptr);
    Tree2 = new RoomTree(nullptr);
    Tree3 = new RoomTree(nullptr);
+   Tree4 = new RoomTree(nullptr);
    Tree1->NewRoom('l',nullptr);
    Tree1->NewRoom('d',nullptr);
    Tree1->NewRoom('r',nullptr);
@@ -30,6 +31,7 @@ void RoomTreeTest::tearDown()
    delete Tree1;
    delete Tree2;
    delete Tree3;
+   delete Tree4;
 }
 
 void RoomTreeTest::testMove()
@@ -58,7 +60,7 @@ void RoomTreeTest::testAt()
 }
 
 void RoomTreeTest::testCurrentHeight()
-{
+{ 
    CPPUNIT_ASSERT(Tree1->CurrentHeight() == 1);
    CPPUNIT_ASSERT(Tree2->CurrentHeight() == 1);
    CPPUNIT_ASSERT(Tree3->CurrentHeight() == 6);

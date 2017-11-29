@@ -33,13 +33,14 @@ RoomTree::RoomTree(Room* rootRoom)
 RoomTree::~RoomTree()
 {
    DeleteTree(root);
+   currNode = nullptr;
 }
 
 /// Helper function to assist in deleting the tree
 /// \param[in] tempRoot The root of the tree to be deleted
 void RoomTree::DeleteTree(Node *tempRoot)
 {
-   if(!tempRoot) //if this node exists
+   if(tempRoot) //if this node exists
    {
       if('U' != tempRoot->RootDir) //delete up child if its not the parent node
 	 DeleteTree(tempRoot->up);
@@ -54,7 +55,9 @@ void RoomTree::DeleteTree(Node *tempRoot)
 	 DeleteTree(tempRoot->down);
 
       delete tempRoot->room; //delete the room
+      tempRoot->room = nullptr;
       delete tempRoot; //delete this node
+      tempRoot->room = nullptr;
    }
 }
 
