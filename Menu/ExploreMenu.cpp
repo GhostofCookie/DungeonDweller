@@ -1,13 +1,25 @@
+/// \date 25/10/2017
+/// \author Tomas Rigaux
+///
+/// Derived from GameMenu. This is the menu for the player character to use when
+/// they are exploring rooms in the game.
+
 #include "ExploreMenu.h"
 
+/// This is the default constructor.
 ExploreMenu::ExploreMenu()
 {
 }
 
+/// This is the virtual destructor.
 ExploreMenu::~ExploreMenu()
 {
 }
 
+/// This function sets the specific options for the Menu type.
+/// \param[in] row Determines which row the options will start being set at.
+/// \param[in] col Determines which column the options will start from.
+/// \param[in] How mush space inbetween rows.
 void ExploreMenu::SetOptions(int row, int col, int space)
 {
    map < int, string > optionList = indexMap;
@@ -43,6 +55,8 @@ void ExploreMenu::SetOptions(int row, int col, int space)
    }
 }
 
+/// This function handles the input for the menu options.
+/// \param[in,out] is The in-stream operator to read the input.
 void ExploreMenu::HandleInput(istream &is)
 {
    char option;

@@ -17,12 +17,15 @@ class TicTacToeMenu : public virtual MinigameMenu
 {
   private:
    /// \struct Coord
-   /// The coordinates of the location the player wishes to place their piece.
+   /// \brief The coordinates of the location the player wishes to place their piece.
    struct Coord
    {
-     char x;
-     int y;
-   };
+      ///< x is the character coordinate (columns).
+      char x;
+      ///< y is the integer coordinate (rows).
+      int y;
+   };   
+   ///< coordinates of the piece played.
    Coord coordinates;
   public:
    /// This is the default constructor.
