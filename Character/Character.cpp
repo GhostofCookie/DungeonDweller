@@ -1,4 +1,5 @@
 #include "Character.h"
+
 Character::Character()
 {
    gold = 0;
@@ -22,13 +23,19 @@ Character:: Character(const Character &p)
    stamina = p.stamina;
 }
 
-Character& Character:: operator=(const Character &p)
+Character& Character:: operator = (const Character &p)
 {
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
 
    return *this;
+}
+
+Character::~Character()
+{
+   for(unsigned int i=0; i<inventory.size(); i++)
+      delete inventory.at(i);
 }
 
 

@@ -21,7 +21,7 @@ int main()
    GameState *state = new MainState(temp);
    //define character selection here
    GameState *baseState = new ExploreState(temp);//ExploreState(player);
-   Player *player = nullptr;
+   Player *player = NULL;
    while(true) 
    {
       system("clear");
@@ -78,6 +78,8 @@ int main()
       state->Get();
    }
    
+   delete player;
+   delete temp;
    delete state;
    delete baseState;
    

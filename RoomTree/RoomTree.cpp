@@ -198,7 +198,7 @@ unsigned int RoomTree::TotalNodes() const
 
 /// Helper function to cout nodes in the tree
 /// \param[in] tempRoot The root of the tree to be counted
-unsigned int RoomTree::NodesInBranch(Node * tempRoot) const
+unsigned int RoomTree::NodesInBranch(Node *tempRoot) const
 {
    if(tempRoot)
    {

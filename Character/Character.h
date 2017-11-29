@@ -29,7 +29,7 @@ class Character
    ImportImg img;
    
    /// Vector of items the character has
-   vector<Item*> inventory;
+   vector < Item* > inventory;
 
    /// Amount of gold player has
    int gold;
@@ -39,16 +39,14 @@ class Character
 
    /// Characters stamina
    int stamina;
-
-
-   
+ 
   public:
    
    /// Character constructor
    Character();
    
    /// Character deconstructor
-   virtual ~Character(){}
+   virtual ~Character();
 
    /// Const copy constructor
    Character(const Character&);
@@ -57,7 +55,7 @@ class Character
    Character(Character&);
    
    /// Assignment operator overloader for copy constructor
-   Character& operator=(const Character &p);
+   Character& operator = (const Character &p);
 
    /// Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
@@ -65,7 +63,7 @@ class Character
    
    /// Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual vector<Item*> GetInventoryItems();
+   virtual vector < Item* > GetInventoryItems();
 
    /// Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
