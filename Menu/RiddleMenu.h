@@ -29,8 +29,8 @@ class RiddleMenu : public virtual MinigameMenu
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);
-   /// Returns the players input to the riddle.
-   int GetInput() const;
+
+   int GetInput() const {return input;}
   private:
    int input;
 
