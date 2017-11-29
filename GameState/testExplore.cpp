@@ -65,7 +65,7 @@ int main()
 	    break;
 	    
 	 case 'I':
-	    delete state;
+	    //  delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
@@ -164,8 +164,8 @@ Player *CreatePlayer(Player *player)
       
    } while(ans == 'n');
    ///Deleting the loadout vectors pointers
-   for(unsigned int i = 0; i < loadouts.size(); i++)
-      delete loadouts[i];
+   for(auto it = loadouts.begin(); it != loadouts.end(); ++it)
+      delete (*it);
    return player;
 }
 

@@ -11,6 +11,15 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 #include "Menu.h"
+#include "ExploreMenu.h"
+#include "TradeMenu.h"
+#include "FightMenu.h"
+#include "DialogueMenu.h"
+#include "RiddleMenu.h"
+#include "MemoryMenu.h"
+#include "ConnectFourMenu.h"
+#include "TicTacToeMenu.h"
+#include "HanoiMenu.h"
 #include <map>
 
 /// \class MenuTest MenuTest.h
@@ -26,9 +35,9 @@ class MenuTest : public CppUnit::TestFixture
 
   public:
    /// Sets up the test variables for testing.
-   void SetUp();
+   void setUp();
    /// Deletes any pointers to prevent memory leak.
-   void TearDown();
+   void tearDown();
    /// Tests that the constructor is wokring in several varieties of construction.
    void TestConstructors();
    /// Tests the setting of options.
@@ -39,6 +48,13 @@ class MenuTest : public CppUnit::TestFixture
   private:
    Menu *menu = nullptr;
    Menu *menu2 = nullptr;
+   Menu *menu3 = nullptr;
+   Menu *menu4 = nullptr;
+   Menu *menu5 = nullptr;
+   Menu *menu6 = nullptr;
+   Menu *menu7 = nullptr;
+   Menu *menu8 = nullptr;
+   Menu *menu9 = nullptr;
    std::map < int,string > options;
 };
 

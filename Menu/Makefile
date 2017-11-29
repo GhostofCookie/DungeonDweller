@@ -1,16 +1,16 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11 -g #-fprofile-arcs -ftest-coverage #-lcppunit -ldl 
+CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl 
 OBJS = testMenu.o Menu.o MainMenu.o ExploreMenu.o FightMenu.o TradeMenu.o DialogueMenu.o CharacterMenu.o HanoiMenu.o MemoryMenu.o RiddleMenu.o TicTacToeMenu.o ConnectFourMenu.o ../Screen/Screen.o
 OBJS2 = RunTest.o Menu.o MenuTest.o
 
 ## targets and prerequisites
 .PHONY : all
-all : menuTest #runTest
+all : menuTest testHeaders
 
 menuTest : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@
 
-runTest : $(OBJS2)
+testHeaders : $(OBJS2)
 	$(CC) $(CCFLAGS) $^ -o $@
 
 # default rule for compiling .cc to .o
@@ -32,4 +32,4 @@ clean:
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f menuTest runTest
+	rm -f menuTest testHeaders

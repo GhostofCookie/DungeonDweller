@@ -19,6 +19,10 @@ TicTacToeMenu.o: TicTacToeMenu.cpp TicTacToeMenu.h MinigameMenu.h \
 ConnectFourMenu.o: ConnectFourMenu.cpp ConnectFourMenu.h MinigameMenu.h \
  GameMenu.h Menu.h
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
-RunTest.o: RunTest.cpp MenuTest.h Menu.h
+RunTest.o: RunTest.cpp MenuTest.h Menu.h ExploreMenu.h GameMenu.h \
+ TradeMenu.h FightMenu.h DialogueMenu.h RiddleMenu.h MinigameMenu.h \
+ MemoryMenu.h ConnectFourMenu.h TicTacToeMenu.h HanoiMenu.h
 Menu.o: Menu.cpp Menu.h
-MenuTest.o: MenuTest.cpp MenuTest.h Menu.h
+MenuTest.o: MenuTest.cpp MenuTest.h Menu.h ExploreMenu.h GameMenu.h \
+ TradeMenu.h FightMenu.h DialogueMenu.h RiddleMenu.h MinigameMenu.h \
+ MemoryMenu.h ConnectFourMenu.h TicTacToeMenu.h HanoiMenu.h
