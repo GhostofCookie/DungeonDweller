@@ -25,7 +25,7 @@ void ExploreMenu::SetOptions(int row, int col, int space)
       for(unsigned int i=0; i < temp.length(); i++)
       {
 
-	 if(it->first! = 113 && count < 3)
+	 if(it->first != 113 && count < 3)
 	    Set(row,((width - 2) * value) / divider + i - temp.length() / 2 + 1,temp[i]);
 	 if(it->first!=113 && count >= 3)
 	    Set(row + 2, ((width - 2) * value)/divider + i - temp.length() / 2 + 1, temp[i]);

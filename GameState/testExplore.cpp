@@ -16,17 +16,19 @@ void CreatePlayer(Player *p);
 
 int main()
 {
-  Player *player=nullptr;
+   Player *player = new Player();
 
    GameState *state = new MainState(player);
    //define character selection here
    GameState *baseState = new ExploreState(player);
 
+  
+   
    while(true) 
    {
       system("clear");
       state->Set();
-
+      
       switch(state->GetState())
       {
 	 case 'E':
@@ -34,6 +36,7 @@ int main()
 	     {
 	       baseState = new ExploreState(player);
 	       state = baseState;
+	       CreatePlayer(player);
 	     }
 	     else
 	       state = baseState;
@@ -60,6 +63,7 @@ int main()
       }
       state->Set();
       state->Get();
+
    }
    
    delete state;
@@ -115,8 +119,11 @@ void CreatePlayer(Player *player)
       cout << ">:";
       cin >> ans;
       if(tolower(ans) == 'c')
+      {
+	 delete player;
 	 player = new Player(loadouts[i]);
-      else
+	 player->Img() = ImportImg("../DD_Art/Player/DD_Player.txt");
+      } else
       {
 	 if(i > 3)
 	    i = 0;

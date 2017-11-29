@@ -26,7 +26,7 @@ ExploreState::~ExploreState()
    delete roomPtr;
    delete roomTree;
    delete import;
-   //   delete player;
+   delete player;
 }
 
 /// Sets the layout for the game menu and screen.
@@ -53,16 +53,14 @@ void ExploreState::Set()
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
-  ImportImg r = ImportImg(player->Img());
-
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
    (roomTree->At())->AlignCenter(*screen);
    (roomTree->At())->Draw(*screen);
 
-   //  r.AlignCenter(*screen);
-   // r.Draw(*screen);
+   player->Img().AlignCenter(*screen);
+   player->Img().Draw(*screen);
 
    // draw the npc to the screen if there is one
    if((roomTree->At())->GetType() > 0)
@@ -71,8 +69,8 @@ void ExploreState::Get()
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
    cout << setw(28) << "[$]Gold: " << player->GetGold();
-   cout << setw(28) << "[S]Stamina: " << player->GetStamina();
-   cout << setw(28) << right << "[+]Health: " << player->GetHealth() << right << endl;
+   cout << setw(27) << "[S]Stamina: " << player->GetStamina();
+   cout << setw(27) << right << "[+]Health: " << player->GetHealth() << right << endl;
    cout << screen;
 
    
@@ -245,7 +243,7 @@ void ExploreState::SetState(int n)
   if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
     {
       //  Insert defeat anim here
-      cout << "You have run out of stamina" << endl;
+      cout << "*** You have run out of stamina ***" << endl;
       usleep(3000000);
       currState = 'M';
       return;
@@ -268,7 +266,7 @@ void ExploreState::SetState(int n)
 	    // sets the monster to dead and sets him to a location
 	    Room temp = Room(*roomTree->At());
 	    roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
-	    // roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
+	    roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
 	    roomTree->At()->GetNpc().Img().AlignCenter(*screen);
 	    roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
 	    roomTree->At()->GetNpc().Img().Draw(*screen);

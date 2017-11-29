@@ -145,6 +145,6 @@ class Room
    void Draw(ImportImg &img, int y, int x);
    
    /// Function to return the npc
-   Character& GetNpc() { return npc; }
+   Character GetNpc() { return npc; }
 };
 #endif /* Room_h */
