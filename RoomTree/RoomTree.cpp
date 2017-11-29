@@ -33,10 +33,6 @@ RoomTree::RoomTree(Room* rootRoom)
 RoomTree::~RoomTree()
 {
    DeleteTree(root);
-   delete root;
-   delete currNode;
-   root = nullptr;
-   currNode = nullptr;
 }
 
 /// Helper function to assist in deleting the tree
@@ -57,6 +53,7 @@ void RoomTree::DeleteTree(Node *tempRoot)
       if('D' != tempRoot->RootDir) //delete down child if its not the parent node
 	 DeleteTree(tempRoot->down);
 
+      delete tempRoot->room; //delete the room
       delete tempRoot; //delete this node
    }
 }
@@ -206,30 +203,35 @@ unsigned int RoomTree::NodesInBranch(Node *tempRoot) const
    {
       switch(tempRoot->RootDir)
       {
+	 case '\0':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->right)
+	       + NodesInBranch(tempRoot->up) + 1;
 	 case 'U':
 	    return NodesInBranch(tempRoot->left)
 	       + NodesInBranch(tempRoot->down)
-	       + NodesInBranch(tempRoot->right);
+	       + NodesInBranch(tempRoot->right) + 1;
 	    break;
 	 case 'L':
 	    return NodesInBranch(tempRoot->up)
 	       + NodesInBranch(tempRoot->down)
-	       + NodesInBranch(tempRoot->right);
+	       + NodesInBranch(tempRoot->right) + 1;
 	    break;
 	 case 'R':
 	    return NodesInBranch(tempRoot->left)
 	       + NodesInBranch(tempRoot->down)
-	       + NodesInBranch(tempRoot->up);
+	       + NodesInBranch(tempRoot->up) + 1;
 	    break;
 	 case 'D':
 	    return NodesInBranch(tempRoot->left)
 	       + NodesInBranch(tempRoot->up)
-	       + NodesInBranch(tempRoot->right);
+	       + NodesInBranch(tempRoot->right) + 1;
 	    break;
 	 default:
 	    break;
       }
    }
 
-   return 1;
+   return 0;
 }
