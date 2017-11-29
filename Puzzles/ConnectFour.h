@@ -97,7 +97,7 @@ class ConnectFour: virtual public Puzzle
    Screen ConnectFourScreen;
    
    ///The vector which stores the gameboards chars.
-   std :: vector < vector < char > > grid;
+   std :: vector < vector <char> > grid;
 
    ///currentPlayerChar keeps track of which character to insert depending on
    ///whos turn it is.
