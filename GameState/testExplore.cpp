@@ -42,8 +42,8 @@ int main()
 	    }
 	    else
 	       state = baseState;
-	   
 	    break;
+	    
 	 case 'P':
 	    delete state;
 	    state = new PuzzleState(player);
