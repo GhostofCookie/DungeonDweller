@@ -70,6 +70,13 @@ void Player:: Print()
    cout << "Health: " << health << endl;
    cout << "Gold: " << gold << endl << endl << "Items: " << endl;
 
-   for(unsigned int i = 0; i < inventory.size(); i++)
-      cout << inventory[i]->Name() << endl;
+   if(inventory.size() == 0)
+   {
+      cout << "N/A";
+   } else
+   {
+      for(unsigned int i = 0; i < inventory.size(); i++)
+	 cout << inventory[i]->Name() << endl;
+   }
+   cout << endl;
 }

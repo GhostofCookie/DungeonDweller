@@ -46,7 +46,7 @@ class GameState
      
    Item *item;
    /// Returns the current player.
-   Player GetPlayer() const { return *player; }
+   Player &GetPlayer() const { return *player; }
 
   protected:
    ///< pointer to the menu.

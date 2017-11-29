@@ -35,6 +35,8 @@ class ExploreState : public GameState
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();
+
+   
   private:
    /// Helper function to set the current state of the game based on the current
    /// room type.
@@ -45,8 +47,6 @@ class ExploreState : public GameState
    void RunInput(char option);
    ImageImporter *import;
    Room *roomPtr;
-  
-
 };
 
 #endif

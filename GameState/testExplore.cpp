@@ -12,7 +12,7 @@
 #include "../Item/MyWeapons.h"
 using namespace std;
 
-Player *CreatePlayer(Player *p = nullptr);
+Player *CreatePlayer(Player *p);
 
 int main()
 {
@@ -54,7 +54,7 @@ int main()
 	    break;
 	    
 	 case 'S':
-	    //	   delete state;
+	    //delete state;
 	    state = new TradeState(player);
 	    break;
 	    
