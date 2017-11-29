@@ -19,6 +19,15 @@ CodeCracker::~CodeCracker()
 {
 }
 
+void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
+{
+   string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
+   menu.SetQuery(temp);
+   menu.OutputMenu();
+   player->ChangeStamina(+5);
+   player->ChangeGold(+10);
+}
+
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
 void CodeCracker:: RunGame(Character *player)
@@ -38,8 +47,6 @@ void CodeCracker:: RunGame(Character *player)
    {
       system("clear");
       currentRiddle = UnusedRandomRiddle();
-
-      cout << "current Riddle: " << question.at(currentRiddle) << endl;
       SetRiddleInMenu(currentRiddle, GameMenu);
       GameMenu.OutputMenu();
       GameMenu.HandleInput(cin);
@@ -64,6 +71,7 @@ void CodeCracker:: RunGame(Character *player)
 	 DeathCheck(player);
       }
    }
+   EndGamePrompt(player, GameMenu);
 }
 
 ///Checks to see if the user input is one of the accepted answers.

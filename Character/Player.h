@@ -42,8 +42,7 @@ public:
    Player(Player&);
 
    /// Assignment operator overloader for copy constructor
-   Player& operator=(const Player &p);
-
+   Player& operator = (const Player &p);
 
    ///Amount of keys the player has
    /// \param[in&] keys, current amount of keys the player has
@@ -52,7 +51,7 @@ public:
 
    ///Function to use a key
    /// \param[in] keys, uses a key if availible
-   bool UseKey(int& keys);
+   bool UseKey(int &keys);
 
    /// Shows the amount of keys
    int GetKeys() const {return keys;};

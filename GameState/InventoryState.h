@@ -26,7 +26,7 @@ class InventoryState : public GameState
 {
   public:
    /// This is the the default constructor.
-   InventoryState();
+   InventoryState(Player *p);
    /// This is the default destructor.
    ~InventoryState();
    /// Sets the layout for the game menu and screen.

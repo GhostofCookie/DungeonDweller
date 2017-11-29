@@ -14,32 +14,32 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
 
 Player:: Player(Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();   
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
 Player:: Player(const Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
-Player& Player:: operator=(const Player &p)
+Player& Player::operator=(const Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 
    return *this;
 }
@@ -63,12 +63,20 @@ bool Player:: UseKey(int& keys)
 
 void Player:: Print()
 {
+   cout << endl;
    cout << "Name: " << name << endl;
    cout << "Race: " << race << endl;
    cout << "Stamina: " << stamina << endl;
    cout << "Health: " << health << endl;
-   cout << "Gold: " << gold << endl;
+   cout << "Gold: " << gold << endl << endl << "Items: " << endl;
 
-   for(unsigned int i = 0; i < inventory.size(); i++)
-      cout << inventory[i]->Name();
+   if(inventory.size() == 0)
+   {
+      cout << "N/A";
+   } else
+   {
+      for(unsigned int i = 0; i < inventory.size(); i++)
+	 cout << inventory[i]->Name() << endl;
+   }
+   cout << endl;
 }

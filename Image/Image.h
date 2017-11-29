@@ -195,6 +195,8 @@ class Image
    
    /// Returns the width of the image
    int GetCols() const;
+
+   virtual void CopyCoordinates(const Image &img) { screenY = img.screenY; screenX = img.screenX; }
 	
    /// Helper function to switch the slant characters
    void FixSlants();

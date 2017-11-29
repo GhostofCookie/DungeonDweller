@@ -9,35 +9,43 @@
 
 
 /// This is the the default constructor.
-InventoryState::InventoryState()
+InventoryState::InventoryState(Player *p)
 {
    screen = new Screen();
    menu = new CharacterMenu();
+   player = p;
 
 }
 
 /// This is the default destructor.
 InventoryState::~InventoryState()
 {
-
+  delete screen;
+  delete menu;
 }
 
 /// Sets the layout for the game menu and screen.
 void InventoryState::Set()
 {
-  auto it = player->GetInventoryItems().begin();
-  int i=0;
-  while(it != player->GetInventoryItems().end())
+  vector<Item*> inv = player->GetInventoryItems();
+  auto it = inv.begin();
+  int i = 1;
+  if(inv.empty())
+    cout<<"Empty."<<endl;
+  while(it != inv.end())
     {
-      menu->AddOption(i, (*it)->Name());
+      menu->AddOption(i,(*it)->Name());
       ++it;
+      ++i;
     }
+
   menu->AddOption('q', "Back to Room");
 }
 
 /// Gets the layout for the game menu and screen.
 void InventoryState::Get()
 {
+  cout << " [#] Inventory"<<endl;
    menu->OutputMenu();
    menu->HandleInput(cin);
    
@@ -57,6 +65,7 @@ void InventoryState::Get()
        // Show the items information exclusively
        break;
      default:
+       currState = 'I';
        return;
        break;
      }

@@ -25,7 +25,7 @@ class Menu
  /// \var currOption This is the current option chosen.
   char currOption;
   /// \var indexMap This is the map used to display the options on the screen
-  map<int,string> indexMap;
+  map < int,string > indexMap;
   /// \var menuHeight This is the height of the menu.
   int menuHeight;
   /// \var menuWidth This is the width of the menu.
@@ -57,7 +57,7 @@ class Menu
   /// \param[in] row Determines which row the options will start being set at.
   /// \param[in] col Determines which column the options will start from.
   /// \param[in] How mush space inbetween rows.
-  virtual void SetOptions(int row=3, int col=3, int space=2);
+  virtual void SetOptions(int row = 3, int col = 3, int space = 2);
 
   /// Handles the user input, and runs an option from the menu.
   /// \param[in,out] is The in-stream operator to read the input.

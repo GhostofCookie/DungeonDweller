@@ -18,7 +18,7 @@ class GameMenu : public Menu
 {
 public:
   /// This is the default constructor.
-  GameMenu(int height=10):Menu(height) {}
+  GameMenu(int height = 10): Menu(height) {}
 
   /// This function sets the specific options for the Menu type. It is pure virtual
   /// \param[in] row Determines which row the options will start being set at.

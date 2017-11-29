@@ -23,7 +23,7 @@ int main()
 //   MemoryMenu *menu = nullptr;
    RiddleMenu *menu = nullptr;
    Screen *screen = nullptr;
-   map<int, string> options;
+   map < int, string > options;
    menu = new RiddleMenu();
    screen = new Screen();
 //   menu = new MemoryMenu();
@@ -34,12 +34,12 @@ int main()
    
    while(true)
    {
-      if(menu->GetInput()==1)
+      if(menu->GetInput() == 1)
 	 menu->SetQuery("Incorrect.");
       else
 	 menu->SetQuery("How do you answer?");
 
-      cout<<screen;
+      cout << screen;
       menu->OutputMenu();
       menu->HandleInput(cin);
 //      testFunction(menu->GetOption());
@@ -53,23 +53,23 @@ int main()
 }
 void testCoord(char x, int y)
 {
-  cout<<"X = "<<x<<"Y = "<<y<<endl;
+  cout << "X = " << x << "Y = " << y << endl;
 }
 void testFunction(char x)
 {
   switch(x)
     {
     case 'W':
-      cout<<"Moved Up!"<<endl;
+      cout << "Moved Up!" << endl;
       break;
     case 'S':
-      cout<<"Moved Down."<<endl;
+      cout << "Moved Down." << endl;
       break;
     case 'A':
-      cout<<"Moved left."<<endl;
+      cout << "Moved left." << endl;
       break;
     case 'D':
-      cout<<"Moved Right!"<<endl;
+      cout << "Moved Right!" << endl;
       break;
     };
   

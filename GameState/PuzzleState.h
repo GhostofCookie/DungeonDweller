@@ -26,7 +26,7 @@ class PuzzleState : public GameState
   /// a puzzle/minigame. Derived from GameState.
  public:
   /// Default constructor
-  PuzzleState();
+  PuzzleState(Player *p);
   /// Sets the layout of the game.
   void Set();
   /// Outputs the set layout.

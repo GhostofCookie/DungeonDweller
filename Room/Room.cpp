@@ -25,7 +25,7 @@ Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
    // Decides on one of the rooms in that set
    int num = Rand(roomCount);
    room = new ImportImg(collection['0'][num]);
-   npc.Img() = ImportImg(collection['@'][0]);
+//   npc.Img() = ImportImg(collection['@'][0]);
 	
    //Insert the appropriate images to fill the room
    GetRoom(collection);
@@ -154,24 +154,24 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
 	 npc.Img() = ImportImg(collection['n'][0]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
+	 npc.Img().Draw(*room);
 	 break;
 	 //NPC Enemy	 
       case 2 :
 	 npc.Img() = ImportImg(collection['m'][0]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
+	 npc.Img().Draw(*room);
 	 break;
 	 //NPC Puzzle
       case 3 :
 	 npc.Img() = ImportImg(collection['n'][1]);
 	 npc.Img().Image::AlignCenter(*room);
 	 npc.Img().Image::ShiftRight(*room, 10);
+	 npc.Img().Draw(*room);
 	 break;
       default:
-	 npc.Img() = ImportImg(collection['m'][0]);
-	 npc.Img().Image::AlignCenter(*room);
-	 npc.Img().Image::ShiftRight(*room, 10);
-
+	 break;
    }
 }
 
@@ -218,6 +218,20 @@ void Room::Draw(Screen &screen) { room->Image::Draw(screen); }
 /// \param[in] y the y coordinate
 /// \param[in] x The x coordinate
 void Room::Draw(Screen &screen, int y, int x) { room->Image::Draw(screen, y, x); }
+
+
+
+/// Function aligns the room to the center to the screen
+/// \param[in] screen The img that is passed
+void Room::Draw(ImportImg &img) { room->Image::Draw(img); }
+
+
+
+/// Function aligns the room to the center to the screen
+/// \param[in] img The img that is passed
+/// \param[in] y the y coordinate
+/// \param[in] x The x coordinate
+void Room::Draw(ImportImg &img, int y, int x) { room->Image::Draw(img, y, x); }
 
 
 

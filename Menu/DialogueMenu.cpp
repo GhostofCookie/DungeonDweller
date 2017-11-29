@@ -10,7 +10,7 @@ DialogueMenu::~DialogueMenu()
 
 void DialogueMenu::SetOptions(int row, int col, int space)
 {
-   map<int,string> optionsList = indexMap;
+   map < int,string > optionsList = indexMap;
    Menu::SetOptions();
 }
 

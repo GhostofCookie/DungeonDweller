@@ -8,6 +8,7 @@
 #ifndef ROOMTREE_H
 #define ROOMTREE_H
 #include <iostream>
+#include "../Character/Character.h"
 #include "../Room/Room.h"
 using namespace std;
 

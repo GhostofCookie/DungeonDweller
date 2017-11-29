@@ -59,7 +59,6 @@ void RoomTree::DeleteTree(Node *tempRoot)
    }
 }
 
-
 /// Inserts a new room at child (throws exeption if already occupied)
 /// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
 /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
@@ -77,7 +76,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 	 currNode->up->room = roomptr;
 	 currNode->up->RootDir = 'D';
 	 break;
-
+	 
       case 'L':
 	 if(currNode->left)
 	    throw invalid_argument("room occupied");
@@ -194,39 +193,39 @@ unsigned int RoomTree::CurrentHeight() const
 /// Gives the total Nodes in the tree
 unsigned int RoomTree::TotalNodes() const
 {
-	return NodesInBranch(root);
+   return NodesInBranch(root);
 }
 
 /// Helper function to cout nodes in the tree
 /// \param[in] tempRoot The root of the tree to be counted
-unsigned int RoomTree::NodesInBranch(Node * tempRoot) const
+unsigned int RoomTree::NodesInBranch(Node *tempRoot) const
 {
-	if(tempRoot)
-	{
-		switch(tempRoot->RootDir)
-		{
-			case 'U':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->right);
-				break;
-			case 'L':
-				return NodesInBranch(tempRoot->up)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->right);
-				break;
-			case 'R':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->up);
-				break;
-			case 'D':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->up)
-					+ NodesInBranch(tempRoot->right);
-				break;
-		}
-	}
-	else
-		return 1;
+   if(tempRoot)
+   {
+      switch(tempRoot->RootDir)
+      {
+	 case 'U':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+	 case 'L':
+	    return NodesInBranch(tempRoot->up)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+	 case 'R':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->up);
+	    break;
+	 case 'D':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->up)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+      }
+   }
+   else
+      return 1;
 }

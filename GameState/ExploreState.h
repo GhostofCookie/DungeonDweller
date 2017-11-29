@@ -28,13 +28,15 @@ class ExploreState : public GameState
 {
   public:
    /// This is the the default constructor.
-   ExploreState();
+   ExploreState(Player *p);
    /// This is the default destructor.
    ~ExploreState();
    /// Sets the layout for the game menu and screen.
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();
+
+   
   private:
    /// Helper function to set the current state of the game based on the current
    /// room type.
@@ -45,8 +47,6 @@ class ExploreState : public GameState
    void RunInput(char option);
    ImageImporter *import;
    Room *roomPtr;
-  
-
 };
 
 #endif

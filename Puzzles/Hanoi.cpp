@@ -20,7 +20,7 @@ Hanoi::Hanoi()
    maxStackHeight = 4;
    tower.resize(numberOfStacks);
    DiscSetup();
-   endGamePrompt ="Congratulations you have completed the puzzle!";
+   endGamePrompt ="Congratulations you have completed the puzzle! +5 Stamina";
    PuzzleEnd = false;
 }
 
@@ -29,7 +29,12 @@ Hanoi::~Hanoi()
 {
 }
 
-
+///Outputs the end of game text and changes the players stats
+void Hanoi::EndGamePrompt(Character *player)
+{
+   cout << endGamePrompt << endl;
+   player->ChangeStamina(5);
+}
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won. 
 void Hanoi:: RunGame(Character *player)
@@ -48,6 +53,7 @@ void Hanoi:: RunGame(Character *player)
       input=HanoiGameMenu.GetOption();//returns a char
       LogicSwitch(input);
       WinCheck();
+      EndGamePrompt(player);
    }
    //HanoiGameMenu.SetQuery(endGamePrompt);
    //HanoiGameMenu.OutputMenu();
