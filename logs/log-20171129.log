@@ -389,7 +389,6 @@ rm -f *~ *# .#*
 rm -f explore
 g++ -c -Wall -std=c++11 -g  testExplore.cpp
 g++ -c -Wall -std=c++11 -g  ExploreState.cpp
-g++ -c -Wall -std=c++11 -g  ../Cutscene/Cutscene.cpp
 g++ -c -Wall -std=c++11 -g  PuzzleState.cpp
 g++ -c -Wall -std=c++11 -g  MainState.cpp
 g++ -c -Wall -std=c++11 -g  FightState.cpp
@@ -445,8 +444,3 @@ g++ -c -Wall -std=c++11 -g  main.cpp
 g++ -c -Wall -std=c++11 -g  Cutscene.cpp
 g++ -Wall -std=c++11 -g  main.o Cutscene.o ../ImageImporter/ImageImporter.o ../Screen/Screen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../Room/Room.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o -o main 
 Pulling Git Repository
-[master 9f6983b] Automated Make call to all directories in Kodika. Pre-Pull
- 4 files changed, 48 insertions(+)
- create mode 100644 RoomTree/RoomTree.o
- create mode 100644 RoomTree/RoomTreeTest.o
-Already up-to-date.
