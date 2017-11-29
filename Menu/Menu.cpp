@@ -14,7 +14,7 @@ using namespace std;
 /// \param[in] height This is the height of the menu.
 /// \param[in] width This is the width of the menu.
 Menu::Menu(int height, int width)
-   : menu_Array{ new char*[height]}, currOption{' '}, menuHeight{ height }, menuWidth{ width }
+   : menu_Array{ new char *[height] }, currOption{' '}, menuHeight{ height }, menuWidth{ width }
 {
    for (int i = 0; i < height; i++)
    {
@@ -37,24 +37,24 @@ Menu::~Menu()
 void Menu::HandleInput(istream& is)
 {
    char option;
-   cout<<"-> ";
+   cout << "-> ";
    is >> option;
    is.clear();
-   is.ignore(255,'\n');
+   is.ignore(255, '\n');
 
    auto it = indexMap.find(tolower(option));
    if(it != indexMap.end())
       currOption = tolower(option);
    else
    {
-      currOption='\n';
+      currOption = '\n';
       return;
    }
    if(is.fail())
    {
       throw invalid_argument("Invalid input. Please enter something more sensible.");
       is.clear();
-      is.ignore(255,'\n');
+      is.ignore(255, '\n');
    }
 }
 
@@ -66,7 +66,7 @@ void Menu::AddOption(char command, string optionName)
 {
    auto it = indexMap.find(command);
    if(it->first != command)
-      indexMap[static_cast<int>(tolower(command))] = optionName;
+      indexMap[static_cast < int > (tolower(command))] = optionName;
    else return;
 }
 
@@ -78,7 +78,7 @@ char Menu::GetOption() const
 /// \param[in] row Determines which row the options will start being set at.
 /// \param[in] col Determines which column the options will start from.
 /// \param[in] How much space inbetween rows.
-void Menu::SetOptions(int row,int col,int space)
+void Menu::SetOptions(int row, int col, int space)
 {
    auto it = indexMap.begin();
    string tempName;
@@ -86,20 +86,22 @@ void Menu::SetOptions(int row,int col,int space)
   
    while (it != indexMap.end())
    {
-      tempName+='[';tempName+=it->first;tempName+=']';tempName += it->second;
+      tempName += '['; tempName += it->first;
+      tempName += ']';tempName += it->second;
       for (unsigned int j = 0; j < tempName.length(); j++)
       {
-	 if(it->first!=113) Set(row,col+j,tempName[j]);
-	 else Set(menuHeight-3, menuWidth/2 +j- tempName.length()/2,tempName[j]);
+	 if(it->first != 113) Set(row, col + j, tempName[j]);
+	 else Set(menuHeight - 3, menuWidth / 2 + j - tempName.length() / 2
+		  , tempName[j]);
       }
       if(it->first != 113) row += space;
       if (row >= menuHeight - 1)
       {
 	 row = origRow;
-	 col += it->second.length() + menuWidth/4+1;
+	 col += it->second.length() + menuWidth / 4 + 1;
       }
       ++it;
-      tempName="";
+      tempName = "";
    }
    it = indexMap.begin();
 }
@@ -137,7 +139,7 @@ void Menu::BuildMenu()
 {
   for(int i = 0; i < menuHeight; i++)
     for(int j = 0; j <menuWidth; j++)
-      Set(i,j,' ');
+      Set(i, j, ' ');
    SetOptions();
    // Builds the outline of the menu.
    for (int i = 0; i < menuHeight; i++)

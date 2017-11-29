@@ -8,16 +8,16 @@ ExploreMenu::~ExploreMenu()
 {
 }
 
-void ExploreMenu::SetOptions(int row, int col,int space)
+void ExploreMenu::SetOptions(int row, int col, int space)
 {
-   map<int,string> optionList = indexMap;
+   map < int, string > optionList = indexMap;
    int width = menuWidth;
    auto it = optionList.begin();
-   int value = 1, count=0, divider = 4;
+   int value = 1, count = 0, divider = 4;
    string temp;
-   while(it!=optionList.end())
+   while(it != optionList.end())
    {
-      temp += '[';temp += it->first;temp += ']';temp += it->second;
+      temp += '['; temp += it->first; temp += ']'; temp += it->second;
       	 if(optionList.size() > 5)
 	    divider = 6;
 	 else
@@ -25,12 +25,12 @@ void ExploreMenu::SetOptions(int row, int col,int space)
       for(unsigned int i=0; i < temp.length(); i++)
       {
 
-	 if(it->first!=113 && count < 3)
-	    Set(row,((width-2) * value)/divider + i - temp.length()/2 + 1,temp[i]);
+	 if(it->first! = 113 && count < 3)
+	    Set(row,((width - 2) * value) / divider + i - temp.length() / 2 + 1,temp[i]);
 	 if(it->first!=113 && count >= 3)
-	    Set(row + 2, ((width - 2) * value)/divider + i - temp.length()/2 + 1, temp[i]);
+	    Set(row + 2, ((width - 2) * value)/divider + i - temp.length() / 2 + 1, temp[i]);
 	 if(it->first == 113)
-	    Set(8, width/2 + i - it->second.length()/2,temp[i]);
+	    Set(8, width / 2 + i - it->second.length() / 2,temp[i]);
       }
       if(it->first != 'q')
 	 value += 2;
@@ -39,14 +39,14 @@ void ExploreMenu::SetOptions(int row, int col,int space)
 	 value = 1;
       
       ++it;
-      temp="";
+      temp = "";
    }
 }
 
 void ExploreMenu::HandleInput(istream &is)
 {
    char option;
-   cout<<"-> ";
+   cout << "-> ";
    is >> option;
    is.clear();
    is.ignore(255,'\n');
@@ -56,13 +56,13 @@ void ExploreMenu::HandleInput(istream &is)
       currOption = tolower(option);
    else
    {
-      currOption='\n';
+      currOption = '\n';
       return;
    }
    if(is.fail())
    {
       throw invalid_argument("Invalid input. Please enter something more sensible.");
       is.clear();
-      is.ignore(255,'\n');
+      is.ignore(255, '\n');
    }
 }

@@ -16,7 +16,7 @@ class MainMenu : public virtual GameMenu
 {
 public:
   /// This is the default constructor.
-  MainMenu(int height=33);
+  MainMenu(int height = 33);
 
   /// This function sets the specific options for the Menu type.
   /// \param[in] OptionsList A map of all the options for the current
