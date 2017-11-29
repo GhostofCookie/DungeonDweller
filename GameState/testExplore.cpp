@@ -12,7 +12,7 @@
 #include "../Item/MyWeapons.h"
 using namespace std;
 
-Player *CreatePlayer(Player *p);
+Player *CreatePlayer(Player *p = nullptr);
 
 int main()
 {
@@ -31,45 +31,43 @@ int main()
       {
 	
 	 case 'E':
-	   if(player == nullptr)
-	     {
+	    if(player == nullptr || player->GetStamina() <= 0 || player->GetHealth() <= 0 )
+	    {
 	       player = CreatePlayer(player);
-	       //	       delete state;
+	       delete baseState;
+	       delete state;
 	       baseState = new ExploreState(player);
 	       state = baseState;
-	     }
-	   if(player != nullptr && (player->GetStamina() <= 0 || player->GetHealth() <= 0))
-	     {
-	       player = CreatePlayer(player);
-	       //delete state;
-	       baseState = new ExploreState(player);
-	       state = baseState;
-
-	     }
+	    }
 	    else
 	       state = baseState;
 	   
 	    break;
 	 case 'P':
-	   // delete state;
+	    // delete state;
 	    state = new PuzzleState(player);
 	    break;
+	    
 	 case 'F':
-	   //delete state;
+	    //delete state;
 	    state = new FightState(player);
 	    break;
+	    
 	 case 'S':
-	   //	   delete state;
+	    //	   delete state;
 	    state = new TradeState(player);
 	    break;
+	    
 	 case 'M':
 
 	    state = new MainState(player);
 	    break;
+	    
 	 case 'I':
 	   //delete state;
 	    state = new InventoryState(player);
 	    break;
+	    
 	 default:
 	    state = new MainState(player);
 
@@ -83,6 +81,8 @@ int main()
    delete baseState;
    return 0;
 }
+
+
 
 Player *CreatePlayer(Player *player)
 {
@@ -147,7 +147,8 @@ Player *CreatePlayer(Player *player)
       }
       system("clear");
       
-   }while(ans == 'n');
+   } while(ans == 'n');
+   
    return player;
 }
 
