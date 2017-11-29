@@ -63,12 +63,20 @@ bool Player:: UseKey(int& keys)
 
 void Player:: Print()
 {
+   cout << endl;
    cout << "Name: " << name << endl;
    cout << "Race: " << race << endl;
    cout << "Stamina: " << stamina << endl;
    cout << "Health: " << health << endl;
-   cout << "Gold: " << gold << endl;
+   cout << "Gold: " << gold << endl << endl << "Items: " << endl;
 
-   for(unsigned int i = 0; i < inventory.size(); i++)
-      cout << inventory[i]->Name();
+   if(inventory.size() == 0)
+   {
+      cout << "N/A";
+   } else
+   {
+      for(unsigned int i = 0; i < inventory.size(); i++)
+	 cout << inventory[i]->Name() << endl;
+   }
+   cout << endl;
 }

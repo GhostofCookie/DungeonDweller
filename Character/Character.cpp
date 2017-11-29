@@ -1,31 +1,40 @@
 #include "Character.h"
+
 Character::Character()
 {
+   gold = 0;
+   health = 0;
+   stamina = 0;
 }
 
 
 
 Character:: Character(Character &p)
 {
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
 Character:: Character(const Character &p)
 {
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
-Character& Character:: operator=(const Character &p)
+Character& Character:: operator = (const Character &p)
 {
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 
    return *this;
+}
+
+Character::~Character()
+{
+   EmptyInventory();
 }
 
 
@@ -53,7 +62,7 @@ Item* Character:: UseItem(string item)
    return nullptr;
 }
 
-vector<Item*> Character:: GetInventoryItems()
+vector < Item* > Character:: GetInventoryItems()
 {
    return inventory; 
 }
@@ -61,6 +70,12 @@ vector<Item*> Character:: GetInventoryItems()
 void Character:: FillInventory(Item *item)
 {
    inventory.push_back(item);
+}
+
+void Character:: EmptyInventory()
+{
+   for(auto it = inventory.begin(); it != inventory.end(); ++it)
+      delete *it;
 }
 
 void Character:: ChangeStamina(int sMod)

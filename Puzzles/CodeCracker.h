@@ -47,7 +47,9 @@ class CodeCracker: public virtual Puzzle
    ///Outputs the initial message to the player
    ///\param[in] menu, the menu object to be set and then outputted.
    void InitialPrompt(RiddleMenu &menu);
-   
+
+   void EndGamePrompt(Character *player, RiddleMenu &menu);
+      
    ///Checks if the player is now dead and ends the game if yes
    ///\param[in] player, a pointer to the players character passed from main.
    void DeathCheck(Character *player);

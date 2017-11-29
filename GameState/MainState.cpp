@@ -7,7 +7,6 @@ MainState::MainState(Player *p)
    menu = new MainMenu();
    currState = 'M';
    player = p;
-
 }
 
 MainState::~MainState()
@@ -18,11 +17,10 @@ MainState::~MainState()
 
 void MainState::Set()
 {
-   menu->AddOption('P',"Play Game");
+   menu->AddOption('p',"Play Game");
    if(tolower(menu->GetOption()) == 'p')
      currState = 'E';
    menu->AddOption('q', "Quit Game");
-
 }
 
 void MainState::Get()
@@ -37,11 +35,4 @@ void MainState::Get()
       anim.Outro();
       exit(0);
    }
-}
-
-void MainState::CreatePlayer()
-{
- 
-   
-   currState = 'E';
 }

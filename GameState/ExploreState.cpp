@@ -53,6 +53,8 @@ void ExploreState::Set()
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
+  if(player != nullptr)
+    {
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -87,7 +89,7 @@ void ExploreState::Get()
       // Handle input from player
       RunInput(menu->GetOption());
    }
-   
+    }
 }
 
 /// Helper function to give input functionality
@@ -191,6 +193,7 @@ void ExploreState::RunInput(char n)
 	  // Trade Option
 	case 't':
 	  currState = 'S';
+	  return;
 	  break;
 
 	  // Puzzle Option
@@ -217,6 +220,7 @@ void ExploreState::RunInput(char n)
 	    }
 	  else
 	    currState = 'E';
+	  return;
 	  break;
 
 	  // Inventory Option
@@ -275,6 +279,7 @@ void ExploreState::SetState(int n)
 	    //currState = 'F';
 	  }
 	else currState = 'E';
+	return;
 	break;
 	    
       default:
