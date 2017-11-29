@@ -98,6 +98,8 @@ class Character
 
    /// Draw the player
    virtual void Draw(Screen &screen);
+
+   void EmptyInventory();
 }; 
 
 #endif /* Character_hpp */

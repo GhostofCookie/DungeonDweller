@@ -162,12 +162,15 @@ Player *CreatePlayer(Player *player)
       system("clear");
       
    } while(ans == 'n');
+<<<<<<< HEAD
 
 
    for (unsigned int i = 0; i < loadouts.size(); i++)
       for(int j = 0; j < loadout[i].Get
       delete loadout[i];
 
+=======
+>>>>>>> b5ba59448c2eb95d3e6d963e509eeaf4ae1f9297
    
    return player;
 }

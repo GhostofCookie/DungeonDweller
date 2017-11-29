@@ -34,8 +34,8 @@ Character& Character:: operator = (const Character &p)
 
 Character::~Character()
 {
-   for(unsigned int i=0; i<inventory.size(); i++)
-      delete inventory.at(i);
+   EmptyInventory();
+   
 }
 
 
@@ -71,6 +71,12 @@ vector < Item* > Character:: GetInventoryItems()
 void Character:: FillInventory(Item *item)
 {
    inventory.push_back(item);
+}
+
+void Character:: EmptyInventory()
+{
+   for(auto it = inventory.begin(); it != inventory.end(); ++it)
+      delete *it;
 }
 
 void Character:: ChangeStamina(int sMod)
