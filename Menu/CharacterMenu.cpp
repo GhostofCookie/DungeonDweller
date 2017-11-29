@@ -1,13 +1,25 @@
+/// \date 25/10/2017
+/// \author Tomas Rigaux
+///
+/// Derived from GameMenu. This is the menu for the player to choose their
+/// character.
+
 #include "CharacterMenu.h"
 
+/// This is the default constructor.
 CharacterMenu::CharacterMenu()
 {
 }
 
+/// This is the virtual destructor.
 CharacterMenu::~CharacterMenu()
 {
 }
 
+/// This function sets the specific options for the Menu type.
+/// \param[in] row The row to start setting the options.
+/// \param[in] col The column to start aetting options.
+/// \param[in] space the space in-between options.
 void CharacterMenu::SetOptions(int row, int col, int space)
 {
    auto it = indexMap.begin();
@@ -40,6 +52,8 @@ void CharacterMenu::SetOptions(int row, int col, int space)
    it = indexMap.begin();
 }
 
+/// This function handles the input for the menu options.
+/// \param[in,out] is The in-stream operator to read the input.
 void CharacterMenu::HandleInput(istream &is)
 {
    Menu::HandleInput(is);

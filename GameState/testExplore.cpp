@@ -42,8 +42,8 @@ int main()
 	    }
 	    else
 	       state = baseState;
-	   
 	    break;
+	    
 	 case 'P':
 	    delete state;
 	    state = new PuzzleState(player);
@@ -99,7 +99,7 @@ Player *CreatePlayer(Player *player)
    cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
 
    // initialize a list of preset characters
-   vector<Player*> loadouts;
+   vector <Player*> loadouts;
 
    // create a ranger preset
    Player *ranger = new Player(40, 1, name, "Ranger", 20, 50);
@@ -150,7 +150,7 @@ Player *CreatePlayer(Player *player)
       if(tolower(ans) == 'c')
       {
 	 delete player;
-	 player = loadouts[i];
+	 player = new Player(*loadouts[i]);
 	 player->Img() = ImportImg("../DD_Art/Player/DD_Player.txt");
 	 
       } else
@@ -163,7 +163,9 @@ Player *CreatePlayer(Player *player)
       system("clear");
       
    } while(ans == 'n');
-   
+   ///Deleting the loadout vectors pointers
+   for(unsigned int i = 0; i < loadouts.size(); i++)
+      delete loadouts[i];
    return player;
 }
 

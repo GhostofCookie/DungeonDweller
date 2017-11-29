@@ -33,9 +33,10 @@ RoomTree::RoomTree(Room* rootRoom)
 RoomTree::~RoomTree()
 {
    DeleteTree(root);
+   delete root;
+   delete currNode;
    root = nullptr;
    currNode = nullptr;
-   delete root;
 }
 
 /// Helper function to assist in deleting the tree
