@@ -1,13 +1,25 @@
+/// \date 24/10/2017
+/// \author Tomas Rigaux
+///
+/// This is the implementation for the menu class for the Riddle minigame.
+///
+
 #include "RiddleMenu.h"
 
+/// This is the default constructor.
 RiddleMenu::RiddleMenu()
 {
 }
 
+/// This is the virtual destructor.
 RiddleMenu::~RiddleMenu()
 {
 }
 
+/// This function sets the specific options for the Menu type.
+/// \param[in] row Determines which row the options will start being set at.
+/// \param[in] col Determines which column the options will start from.
+/// \param[in] How mush space inbetween rows.
 void RiddleMenu::SetOptions(int row, int col, int space)
 {
    int mark = 0;
@@ -36,6 +48,8 @@ void RiddleMenu::SetOptions(int row, int col, int space)
    }
 }
 
+/// This function handles the input for the menu options.
+/// \param[in,out] is The in-stream operator to read the input.
 void RiddleMenu::HandleInput(istream & is)
 {
    int y;
@@ -55,9 +69,4 @@ void RiddleMenu::HandleInput(istream & is)
    else
       input = y;
 
-}
-
-int RiddleMenu::GetInput() const
-{
-   return input;
 }

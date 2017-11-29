@@ -21,24 +21,30 @@ int main()
   // ConnectFourMenu * menu = new ConnectFourMenu();;
 //   Menu *menu = nullptr;
 //   MemoryMenu *menu = nullptr;
-   RiddleMenu *menu = nullptr;
+   Menu *menu = nullptr;
    Screen *screen = nullptr;
    map < int, string > options;
-   menu = new RiddleMenu();
+   menu = new FightMenu();
    screen = new Screen();
 //   menu = new MemoryMenu();
    menu->AddOption('W', "Move Up");
    menu->AddOption('S', "Move Down");
    menu->AddOption('A', "Move Left");
    menu->AddOption('D', "Move Right");
+   menu->AddOption('t', "Move Up");
+   menu->AddOption('y', "Move Down");
+   menu->AddOption('h', "Move Left");
+   menu->AddOption('j', "Move Right");
+   menu->AddOption('o', "Move Right");
+
    
    while(true)
    {
-      if(menu->GetInput() == 1)
+      /*   if(menu->GetInput() == 1)
 	 menu->SetQuery("Incorrect.");
       else
 	 menu->SetQuery("How do you answer?");
-
+      */
       cout << screen;
       menu->OutputMenu();
       menu->HandleInput(cin);
