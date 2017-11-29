@@ -15,6 +15,7 @@ then
     do
 	(cd "$d" && make clean-all)
 	(cd "$d" && make )
+	(cd "$d" && testHeaders );
     done
 
 fi
