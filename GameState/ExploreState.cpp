@@ -24,9 +24,9 @@ ExploreState::~ExploreState()
    delete menu;
    delete screen;
    delete roomPtr;
-   delete roomTree;
+   //   delete roomTree;
    delete import;
-   delete player;
+   //   delete player;
 }
 
 /// Sets the layout for the game menu and screen.
@@ -53,6 +53,8 @@ void ExploreState::Set()
 /// Prints the layout of the screen, character info, and the menu
 void ExploreState::Get()
 {
+  if(player != nullptr)
+    {
    // clear the screen
    screen->Erase();
    // align the current room to the screen and print
@@ -64,8 +66,12 @@ void ExploreState::Get()
 
    // draw the npc to the screen if there is one
    if((roomTree->At())->GetType() > 0)
-      (roomTree->At())->GetNpc().Img().Draw(*screen);
-
+   {
+      (roomTree->At())->GetNpc().Img().AlignCenter(*screen);
+      (roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
+      (roomTree->At())->GetNpc().Img().Draw(*screen);      
+   }
+   
    // print the player's informaton and the screen
    cout << setfill(' ') << "[^]Depth: " << roomTree->CurrentHeight();
    cout << setw(28) << "[$]Gold: " << player->GetGold();
@@ -83,7 +89,7 @@ void ExploreState::Get()
       // Handle input from player
       RunInput(menu->GetOption());
    }
-   
+    }
 }
 
 /// Helper function to give input functionality
@@ -187,6 +193,7 @@ void ExploreState::RunInput(char n)
 	  // Trade Option
 	case 't':
 	  currState = 'S';
+	  return;
 	  break;
 
 	  // Puzzle Option
@@ -213,6 +220,7 @@ void ExploreState::RunInput(char n)
 	    }
 	  else
 	    currState = 'E';
+	  return;
 	  break;
 
 	  // Inventory Option
@@ -264,15 +272,14 @@ void ExploreState::SetState(int n)
 	    c.MonsterEncounter();	    
 	    roomTree->At()->complete = true;
 	    // sets the monster to dead and sets him to a location
-	    Room temp = Room(*roomTree->At());
-	    roomTree->At()->GetNpc().Img() = ImportImg(import->collection['m'][1]);
-	    roomTree->At()->GetNpc().Img().CopyCoordinates(temp.GetNpc().Img());
-	    roomTree->At()->GetNpc().Img().AlignCenter(*screen);
-	    roomTree->At()->GetNpc().Img().ShiftRight(*screen, 10);
-	    roomTree->At()->GetNpc().Img().Draw(*screen);
+	    (roomTree->At())->GetNpc().Img() = ImportImg(import->collection['m'][1]);
+	    (roomTree->At())->GetNpc().Img().AlignCenter(*screen);
+	    (roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
+	    (roomTree->At())->GetNpc().Img().Draw(*screen);
 	    //currState = 'F';
 	  }
 	else currState = 'E';
+	return;
 	break;
 	    
       default:

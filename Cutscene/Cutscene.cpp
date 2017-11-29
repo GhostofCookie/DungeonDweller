@@ -75,9 +75,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      if(type > 0)
-	 npc.Draw(screen);
-      
+            
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
    }
@@ -105,9 +103,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      if(type > 0)
-	 npc.Draw(screen);
-      
+            
       screen.MultiPrint(scr);
       usleep(VERTSPEED);
    }
@@ -135,9 +131,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      if(type > 0)
-	 npc.Draw(screen);
-      
+            
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
    }
@@ -165,9 +159,7 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
-      if(type > 0)
-	 npc.Draw(screen);
-      
+            
       screen.MultiPrint(scr);
       usleep(HORIZSPEED);
     }

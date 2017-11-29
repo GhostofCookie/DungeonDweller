@@ -25,7 +25,7 @@ class CharacterMenu : public GameMenu
    /// \param[in] row The row to start setting the options.
    /// \param[in] col The column to start aetting options.
    /// \param[in] space the space in-between options.
-   virtual void SetOptions(int row, int col, int space);
+   virtual void SetOptions(int row=0, int col=1, int space=2);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
    virtual void HandleInput(istream &is);
