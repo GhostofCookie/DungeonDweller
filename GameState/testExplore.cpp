@@ -20,8 +20,8 @@ int main()
 
    GameState *state = new MainState(temp);
    //define character selection here
-   GameState *baseState = new ExploreState(temp);//ExploreState(player);
-   Player *player = NULL;
+   GameState *baseState = nullptr;// new ExploreState(temp);//ExploreState(player);
+   Player *player = nullptr;
    while(true) 
    {
       system("clear");
@@ -33,6 +33,7 @@ int main()
 	 case 'E':
 	    if(player == nullptr || player->GetStamina() <= 0 || player->GetHealth() <= 0 )
 	    {
+	       delete player;
 	       player = CreatePlayer(player);
 	       delete baseState;
 	       delete state;
