@@ -28,7 +28,7 @@ class ExploreState : public GameState
 {
   public:
    /// This is the the default constructor.
-   ExploreState();
+   ExploreState(Player *p);
    /// This is the default destructor.
    ~ExploreState();
    /// Sets the layout for the game menu and screen.

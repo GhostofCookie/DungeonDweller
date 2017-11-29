@@ -17,7 +17,7 @@ class TradeState : public GameState
    /// Derived from GameState.
   public:
    /// Default constructor
-   TradeState();
+   TradeState(Player *p);
    /// Sets the layout of the game.
    void Set();
    /// Outputs the set layout.

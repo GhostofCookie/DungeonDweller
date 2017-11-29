@@ -1,8 +1,8 @@
  #include "PuzzleState.h"
 
-PuzzleState::PuzzleState()
+PuzzleState::PuzzleState(Player *p)
 {
-
+  player = p;
 }
 
 void PuzzleState::Set()

@@ -6,7 +6,7 @@
 #include "TradeState.h"
 
 /// Default constructor
-TradeState::TradeState()
+TradeState::TradeState(Player *p)
 {
 
 }

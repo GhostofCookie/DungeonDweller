@@ -9,10 +9,11 @@
 
 
 /// This is the the default constructor.
-InventoryState::InventoryState()
+InventoryState::InventoryState(Player *p)
 {
    screen = new Screen();
    menu = new CharacterMenu();
+   player = p;
 
 }
 

@@ -6,7 +6,7 @@
 #include "FightState.h"
 
 /// This is the default constructor.
-FightState::FightState()
+FightState::FightState(Player *p)
 {
 
 }

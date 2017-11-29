@@ -14,32 +14,32 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
 
 Player:: Player(Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();   
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
 Player:: Player(const Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 }
 
-Player& Player:: operator=(const Player &p)
+Player& Player::operator=(const Player &p)
 {
-   name = p.GetName();
-   race = p.GetRace();
-   keys = p.GetKeys();
-   gold = p.GetGold();
-   health = p.GetHealth();
-   stamina = p.GetStamina();
+   name = p.name;
+   race = p.race;
+   keys = p.keys;
+   gold = p.gold;
+   health = p.health;
+   stamina = p.stamina;
 
    return *this;
 }

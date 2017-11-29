@@ -32,7 +32,7 @@ class GameState
    /// on the current situation of the player character.
   public:
    /// Default constructor
-   GameState(){}
+  GameState(Player *p=nullptr):player{p}{}
    /// Default destructor
    virtual ~GameState(){}
    /// Sets the layout of the game.
@@ -46,7 +46,7 @@ class GameState
      
    Item *item;
    /// Returns the current player.
-   Character& GetPlayer() const { return *player; }
+   Player GetPlayer() const { return *player; }
 
   protected:
    ///< pointer to the menu.
@@ -57,10 +57,9 @@ class GameState
    char currState;
    /// allows access from different states to check whether room is complete
    RoomTree *roomTree;
-   ///Any Npc that needs to be created
-   Npc npc;
-   
+   ///
    Player *player;
+   
 };
 
 #endif

@@ -16,7 +16,7 @@ class FightState : public GameState
    /// engaged in combat. Derived from GameState.
   public:
    /// This is the default constructor.
-   FightState();
+   FightState(Player *p);
    /// Sets the layout of the game.
    void Set();
    /// Outpouts the layout of the game.
