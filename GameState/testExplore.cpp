@@ -44,31 +44,32 @@ int main()
 	   
 	    break;
 	 case 'P':
-	    // delete state;
+	    delete state;
 	    state = new PuzzleState(player);
 	    break;
 	    
 	 case 'F':
-	    //delete state;
+	    delete state;
 	    state = new FightState(player);
 	    break;
 	    
 	 case 'S':
-	    //delete state;
+	    delete state;
 	    state = new TradeState(player);
 	    break;
 	    
 	 case 'M':
-
+	    delete state;
 	    state = new MainState(player);
 	    break;
 	    
 	 case 'I':
-	   //delete state;
+	    delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
 	 default:
+	    delete state;
 	    state = new MainState(player);
 
       }
