@@ -4,6 +4,7 @@ FNAME=$(date +%y%m%d)
 TO="Menu GameState Room RoomTree Image ImageImporter Puzzles Cutscene"
 MAIN="/home/rigt2720/Kodika"
 
+cd $MAIN
 if [ $? -eq 0 ]
 then
     for d in $TO
