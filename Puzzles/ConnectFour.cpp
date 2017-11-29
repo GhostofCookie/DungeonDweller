@@ -244,8 +244,9 @@ void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
    else
    {
       menu.SetQuery("Congratulations adventurer! You have defeated the champion"
-		    "! You are free to continue! +10 GP");
+		    "! You are free to continue! +10 GP +5 Stamina");
       player->ChangeGold(10);
+      player->ChangeStamina(5);
       menu.OutputMenu();
       SecondDelay(6);
       PuzzleEnd = true;

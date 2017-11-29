@@ -30,14 +30,14 @@ TicTacToe::~TicTacToe()
 
 void TicTacToe::RunGame(Character *player)
 {
-   if(player==NULL)
+   if(player == NULL)
       throw invalid_argument("Player pointer passed to minigame is invalid");
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer = 1, inputX, inputY;
    BoardSetup();
    TicTacToeMenu ticTacToeGameMenu;
-   while(PuzzleEnd==false)
+   while(PuzzleEnd == false)
    {
       system("clear");
       cout << TicTacToeScreen << endl;
@@ -272,7 +272,7 @@ void TicTacToe::MovePiece(int inputX, int inputY, char userPiece)
 bool TicTacToe::WinCheck()
 {
    if(VerticalCheck()|| HorizontalCheck()
-      ||LeftDiagonalCheck()||RightDiagonalCheck())
+      || LeftDiagonalCheck() || RightDiagonalCheck())
       return true;
    else
       return false;
@@ -344,11 +344,14 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
    }
    else
    {
+      string temp="Congratulations adventurer! You have defeated the champion!";
+      temp+= "+10 GP +5 Stamina.";
       cout << TicTacToeScreen << endl;
-      menu.SetQuery("Congratulations adventurer! You have defeated the champion! +10 GP");
+      menu.SetQuery(temp);
       menu.OutputMenu();
       SecondDelay(5);
       player->ChangeGold(10);
+      player->ChangeStamina(5);
       PuzzleEnd = true;
    }
 }

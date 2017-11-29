@@ -65,6 +65,9 @@ class Hanoi: public virtual Puzzle
    ///Sets up the discs on the gameboard for the beginning of the game.
    void DiscSetup();
 
+   ///Outputs the end of game text and changes the players stats
+   void EndGamePrompt(Character *player);
+   
    ///Outputs an appropriate error message of the user tries to move a disc
    ///from an empty stack
    void EmptyPrompt();

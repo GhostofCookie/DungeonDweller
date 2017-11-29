@@ -74,7 +74,9 @@ void MemoryMatch::RunGame(Character *player)
 ///for 6 seconds before ending the game.  
 void MemoryMatch:: EndGamePrompt()
 {
-   cout << "Congratulations adventurer! You've solved the puzzle!" << endl;
+   string temp = "Congratulations adventurer! You've solved the puzzle!";
+   temp+=" +5 Stamina";
+   cout << temp << endl;
    cout << MemoryMatchScreen;
    Puzzle::SecondDelay(6);
 }
