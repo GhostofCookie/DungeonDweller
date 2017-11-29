@@ -21,14 +21,13 @@ class Puzzle
 {
   public:
    int RandomNumber(int n) const;
-   
+   void SecondDelay(int seconds) const;
    ///Virtual Destructor
    virtual ~Puzzle(){}
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
    virtual void RunGame(Character *player) = 0;
   protected:
-   void SecondDelay(int seconds) const;
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;
     

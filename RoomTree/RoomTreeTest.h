@@ -44,6 +44,7 @@ class RoomTreeTest : public CppUnit::TestFixture
 	  RoomTree *Tree1;
 	  RoomTree *Tree2;
 	  RoomTree *Tree3;
+	  RoomTree *Tree4;
 
 };
 #endif

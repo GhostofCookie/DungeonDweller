@@ -1,1 +1,118 @@
 Pulling Git Repository
+[master 4b3b615] Automated Make call to all directories in Kodika. Pre-Pull
+ 54 files changed, 327 insertions(+), 218 deletions(-)
+ rewrite Character/Character.o (90%)
+ rewrite Character/Player.o (95%)
+ rewrite Character/main (83%)
+ rewrite Character/main.cpp (70%)
+ rewrite Character/main.o (82%)
+ create mode 100644 GameState/ExploreState.o
+ create mode 100644 GameState/FightState.o
+ create mode 100644 GameState/InventoryState.o
+ create mode 100644 GameState/MainState.o
+ create mode 100644 GameState/Player.o
+ create mode 100644 GameState/PuzzleState.o
+ create mode 100644 GameState/Screen.o
+ create mode 100644 GameState/TradeState.o
+ create mode 100755 GameState/explore
+ create mode 100644 GameState/testExplore.o
+ create mode 100644 Menu/CharacterMenu.o
+ create mode 100644 Menu/ConnectFourMenu.o
+ create mode 100644 Menu/DialogueMenu.o
+ create mode 100644 Menu/ExploreMenu.o
+ create mode 100644 Menu/FightMenu.o
+ create mode 100644 Menu/HanoiMenu.o
+ create mode 100644 Menu/MainMenu.o
+ create mode 100644 Menu/MemoryMenu.o
+ create mode 100644 Menu/Menu.o
+ create mode 100644 Menu/MenuTest.o
+ create mode 100644 Menu/RiddleMenu.o
+ create mode 100644 Menu/RunTest.o
+ create mode 100644 Menu/Screen.o
+ create mode 100644 Menu/TicTacToeMenu.o
+ create mode 100644 Menu/TradeMenu.o
+ create mode 100755 Menu/menuTest
+ create mode 100644 Menu/testMenu.o
+ rewrite Puzzles/Character.o (90%)
+ rewrite Puzzles/CodeCracker.o (78%)
+ rewrite Puzzles/ConnectFour.o (85%)
+ create mode 100644 logs/log-20171129.log
+CONFLICT (rename/add): Rename Character/Screen.o->GameState/Screen.o in f80d24fb5d6451ee621f46115db85a7c69a29d22. GameState/Screen.o added in HEAD
+Adding as GameState/Screen.o~HEAD instead
+Auto-merging makeGame.sh
+Removing RoomTree/main
+Auto-merging Puzzles/main
+CONFLICT (content): Merge conflict in Puzzles/main
+Auto-merging Puzzles/TicTacToe.o
+CONFLICT (content): Merge conflict in Puzzles/TicTacToe.o
+Auto-merging Puzzles/Screen.o
+CONFLICT (content): Merge conflict in Puzzles/Screen.o
+Auto-merging Puzzles/ConnectFour.o
+CONFLICT (content): Merge conflict in Puzzles/ConnectFour.o
+Auto-merging Puzzles/CodeCracker.o
+CONFLICT (content): Merge conflict in Puzzles/CodeCracker.o
+Auto-merging Menu/testMenu.o
+CONFLICT (add/add): Merge conflict in Menu/testMenu.o
+Auto-merging Menu/menuTest
+CONFLICT (add/add): Merge conflict in Menu/menuTest
+Auto-merging Menu/TradeMenu.o
+CONFLICT (add/add): Merge conflict in Menu/TradeMenu.o
+Auto-merging Menu/TicTacToeMenu.o
+CONFLICT (add/add): Merge conflict in Menu/TicTacToeMenu.o
+Auto-merging Menu/Screen.o
+CONFLICT (add/add): Merge conflict in Menu/Screen.o
+Auto-merging Menu/RiddleMenu.o
+CONFLICT (add/add): Merge conflict in Menu/RiddleMenu.o
+Auto-merging Menu/Menu.o
+CONFLICT (add/add): Merge conflict in Menu/Menu.o
+Auto-merging Menu/MemoryMenu.o
+CONFLICT (add/add): Merge conflict in Menu/MemoryMenu.o
+Auto-merging Menu/MainMenu.o
+CONFLICT (add/add): Merge conflict in Menu/MainMenu.o
+Auto-merging Menu/HanoiMenu.o
+CONFLICT (add/add): Merge conflict in Menu/HanoiMenu.o
+Auto-merging Menu/FightMenu.o
+CONFLICT (add/add): Merge conflict in Menu/FightMenu.o
+Auto-merging Menu/ExploreMenu.o
+CONFLICT (add/add): Merge conflict in Menu/ExploreMenu.o
+Auto-merging Menu/DialogueMenu.o
+CONFLICT (add/add): Merge conflict in Menu/DialogueMenu.o
+Auto-merging Menu/ConnectFourMenu.o
+CONFLICT (add/add): Merge conflict in Menu/ConnectFourMenu.o
+Auto-merging Menu/CharacterMenu.o
+CONFLICT (add/add): Merge conflict in Menu/CharacterMenu.o
+Auto-merging Item/Items
+CONFLICT (content): Merge conflict in Item/Items
+Auto-merging GameState/testExplore.o
+CONFLICT (add/add): Merge conflict in GameState/testExplore.o
+Auto-merging GameState/testExplore.cpp
+Auto-merging GameState/explore
+CONFLICT (add/add): Merge conflict in GameState/explore
+Auto-merging GameState/TradeState.o
+CONFLICT (add/add): Merge conflict in GameState/TradeState.o
+Auto-merging GameState/Screen.o
+CONFLICT (content): Merge conflict in GameState/Screen.o
+Auto-merging GameState/PuzzleState.o
+CONFLICT (add/add): Merge conflict in GameState/PuzzleState.o
+Auto-merging GameState/Player.o
+CONFLICT (add/add): Merge conflict in GameState/Player.o
+Auto-merging GameState/MainState.o
+CONFLICT (add/add): Merge conflict in GameState/MainState.o
+Auto-merging GameState/InventoryState.o
+CONFLICT (add/add): Merge conflict in GameState/InventoryState.o
+Auto-merging GameState/FightState.o
+CONFLICT (add/add): Merge conflict in GameState/FightState.o
+Auto-merging GameState/ExploreState.o
+CONFLICT (add/add): Merge conflict in GameState/ExploreState.o
+Auto-merging Character/main.o
+CONFLICT (content): Merge conflict in Character/main.o
+Auto-merging Character/main
+CONFLICT (content): Merge conflict in Character/main
+Auto-merging Character/Player.o
+CONFLICT (content): Merge conflict in Character/Player.o
+Auto-merging Character/Player.cpp
+Auto-merging Character/Npc.o
+CONFLICT (content): Merge conflict in Character/Npc.o
+Auto-merging Character/Character.o
+CONFLICT (content): Merge conflict in Character/Character.o
+Automatic merge failed; fix conflicts and then commit the result.
