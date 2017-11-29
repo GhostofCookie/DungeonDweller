@@ -32,7 +32,7 @@ class GameState
    /// on the current situation of the player character.
   public:
    /// Default constructor
-  GameState(Player *p=nullptr):player{p}{}
+   GameState(Player *p=nullptr):player{p}{}
    /// Default destructor
    virtual ~GameState(){}
    /// Sets the layout of the game.

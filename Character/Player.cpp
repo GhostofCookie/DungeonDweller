@@ -12,6 +12,17 @@ Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
    stamina = s;
 }
 
+Player:: ~Player()
+{
+   EmptyInventory();
+}
+
+void Player:: EmptyInventory()
+{
+   for(auto it = inventory.begin(); it != inventory.end(); ++it)
+      delete *it;
+}
+
 Player:: Player(Player &p)
 {
    name = p.name;

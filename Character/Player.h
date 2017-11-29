@@ -35,6 +35,9 @@ public:
     /// \param[in] r, players race
    Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
 
+   /// Player deconstructor
+   ~Player();
+   
    /// Const copy constructor
    Player(const Player&);
 
@@ -64,6 +67,8 @@ public:
    
    /// Prints all player stats
    void Print();
+
+   void EmptyInventory();
    
   private: 
    ///Name of the player
