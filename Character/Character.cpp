@@ -35,7 +35,6 @@ Character& Character:: operator = (const Character &p)
 Character::~Character()
 {
    EmptyInventory();
-   
 }
 
 

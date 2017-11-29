@@ -33,6 +33,8 @@ RoomTree::RoomTree(Room* rootRoom)
 RoomTree::~RoomTree()
 {
    DeleteTree(root);
+   delete root;
+   delete currNode;
    root = nullptr;
    currNode = nullptr;
 }
@@ -224,8 +226,10 @@ unsigned int RoomTree::NodesInBranch(Node *tempRoot) const
 	       + NodesInBranch(tempRoot->up)
 	       + NodesInBranch(tempRoot->right);
 	    break;
+	 default:
+	    break;
       }
    }
-   else
-      return 1;
+
+   return 1;
 }
