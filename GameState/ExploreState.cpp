@@ -24,9 +24,9 @@ ExploreState::~ExploreState()
    delete menu;
    delete screen;
    delete roomPtr;
-   //   delete roomTree;
+   delete roomTree;
    delete import;
-   //   delete player;
+   delete player;
 }
 
 /// Sets the layout for the game menu and screen.

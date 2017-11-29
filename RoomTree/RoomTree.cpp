@@ -193,39 +193,39 @@ unsigned int RoomTree::CurrentHeight() const
 /// Gives the total Nodes in the tree
 unsigned int RoomTree::TotalNodes() const
 {
-	return NodesInBranch(root);
+   return NodesInBranch(root);
 }
 
 /// Helper function to cout nodes in the tree
 /// \param[in] tempRoot The root of the tree to be counted
 unsigned int RoomTree::NodesInBranch(Node * tempRoot) const
 {
-	if(tempRoot)
-	{
-		switch(tempRoot->RootDir)
-		{
-			case 'U':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->right);
-				break;
-			case 'L':
-				return NodesInBranch(tempRoot->up)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->right);
-				break;
-			case 'R':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->down)
-					+ NodesInBranch(tempRoot->up);
-				break;
-			case 'D':
-				return NodesInBranch(tempRoot->left)
-					+ NodesInBranch(tempRoot->up)
-					+ NodesInBranch(tempRoot->right);
-				break;
-		}
-	}
-	else
-		return 1;
+   if(tempRoot)
+   {
+      switch(tempRoot->RootDir)
+      {
+	 case 'U':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+	 case 'L':
+	    return NodesInBranch(tempRoot->up)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+	 case 'R':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->down)
+	       + NodesInBranch(tempRoot->up);
+	    break;
+	 case 'D':
+	    return NodesInBranch(tempRoot->left)
+	       + NodesInBranch(tempRoot->up)
+	       + NodesInBranch(tempRoot->right);
+	    break;
+      }
+   }
+   else
+      return 1;
 }

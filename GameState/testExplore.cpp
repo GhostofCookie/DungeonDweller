@@ -79,6 +79,7 @@ int main()
    
    delete state;
    delete baseState;
+   
    return 0;
 }
 
@@ -93,29 +94,36 @@ Player *CreatePlayer(Player *player)
    cin >> name;
    cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
 
+   // initialize a list of preset characters
    vector<Player*> loadouts;
+
+   // create a ranger preset
    Player *ranger = new Player(40, 1, name, "Ranger", 20, 50);
    Sword *sword = new Sword;
    ranger->FillInventory(sword);
-   
+
+   // create a hunter preset
    Player *hunter = new Player(50, 1, name, "Hunter", 20, 40);
    Bow *bow = new Bow;
    hunter->FillInventory(bow);
-   
+
+   // create a warrior preset
    Player *warrior = new Player(20, 2, name, "Warrior", 20, 70);
    Bow *bowW = new Bow;
    Sword *swordW = new Sword;
    hunter->FillInventory(bowW);
    hunter->FillInventory(swordW);
-   
+
+   // create a mage preset
    Player *mage = new Player(40, 5, name, "Mage", 40, 30);
    Spell *spell = new Spell;
    Spell *spellM = new Spell;
    mage->FillInventory(spell);
    mage->FillInventory(spellM);
 
+   // create a computer science preset
    Player *comp = new Player(5, 0, name, "The Computer Scientist", 10000, 10);
-   
+
    loadouts.push_back(ranger);
    loadouts.push_back(hunter);
    loadouts.push_back(warrior);
@@ -124,6 +132,8 @@ Player *CreatePlayer(Player *player)
 
    char ans;
    int i = 0;
+
+   // flip between different classes until one is chosen
    do
    {
       loadouts[i]->Print();
@@ -131,12 +141,13 @@ Player *CreatePlayer(Player *player)
       cout << "[N] Next" << endl;
       cout << ">:";
       cin >> ans;
+
+      // set the player to the selected character
       if(tolower(ans) == 'c')
       {
 	 delete player;
 	 player = loadouts[i];
 	 player->Img() = ImportImg("../DD_Art/Player/DD_Player.txt");
-	 return player;
 	 
       } else
       {

@@ -52,7 +52,7 @@ class GameState
    ///< pointer to the menu.
    Menu *menu;
    ///< pointer to the screen;
-   Screen *screen;
+   Screen *screen = new Screen();
    ///< defines which gamestate will be used.
    char currState;
    /// allows access from different states to check whether room is complete
