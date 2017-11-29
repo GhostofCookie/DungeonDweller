@@ -18,7 +18,7 @@ MainState::~MainState()
 
 void MainState::Set()
 {
-   menu->AddOption('P',"Play Game");
+   menu->AddOption('p',"Play Game");
    if(tolower(menu->GetOption()) == 'p')
      currState = 'E';
    menu->AddOption('q', "Quit Game");

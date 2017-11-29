@@ -12,18 +12,16 @@
 #include "../Item/MyWeapons.h"
 using namespace std;
 
-void CreatePlayer(Player *p);
+Player *CreatePlayer(Player *p);
 
 int main()
 {
-   Player *player = new Player();
+   Player *temp = new Player;
 
-   GameState *state = new MainState(player);
+   GameState *state = new MainState(temp);
    //define character selection here
-   GameState *baseState = new ExploreState(player);
-
-  
-   
+   GameState *baseState = new ExploreState(temp);//ExploreState(player);
+   Player *player = nullptr;
    while(true) 
    {
       system("clear");
@@ -31,39 +29,54 @@ int main()
       
       switch(state->GetState())
       {
+	
 	 case 'E':
-	    if(player->GetStamina() <= 0 || player->GetHealth() <= 0)
+	   if(player == nullptr)
 	     {
+	       player = CreatePlayer(player);
+	       //	       delete state;
 	       baseState = new ExploreState(player);
 	       state = baseState;
-	       CreatePlayer(player);
 	     }
-	     else
+	   if(player != nullptr && (player->GetStamina() <= 0 || player->GetHealth() <= 0))
+	     {
+	       player = CreatePlayer(player);
+	       //delete state;
+	       baseState = new ExploreState(player);
 	       state = baseState;
+
+	     }
+	    else
+	       state = baseState;
+	   
 	    break;
 	 case 'P':
+	   // delete state;
 	    state = new PuzzleState(player);
 	    break;
 	 case 'F':
+	   //delete state;
 	    state = new FightState(player);
 	    break;
 	 case 'S':
+	   //	   delete state;
 	    state = new TradeState(player);
 	    break;
 	 case 'M':
-	    state = new MainState(player);
 
+	    state = new MainState(player);
 	    break;
 	 case 'I':
+	   //delete state;
 	    state = new InventoryState(player);
 	    break;
 	 default:
 	    state = new MainState(player);
 
       }
+
       state->Set();
       state->Get();
-
    }
    
    delete state;
@@ -71,7 +84,7 @@ int main()
    return 0;
 }
 
-void CreatePlayer(Player *player)
+Player *CreatePlayer(Player *player)
 {
   cout << "Hello! Welcome to the dungeon." << endl;
    cout << "You are going to need a character to get through this place, what do you want your name to be?" << endl;
@@ -80,28 +93,28 @@ void CreatePlayer(Player *player)
    cin >> name;
    cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
 
-   vector<Player> loadouts;
-   Player ranger(40, 1, name, "Ranger", 20, 50);
+   vector<Player*> loadouts;
+   Player *ranger = new Player(40, 1, name, "Ranger", 20, 50);
    Sword *sword = new Sword;
-   ranger.FillInventory(sword);
+   ranger->FillInventory(sword);
    
-   Player hunter(50, 1, name, "Hunter", 20, 40);
+   Player *hunter = new Player(50, 1, name, "Hunter", 20, 40);
    Bow *bow = new Bow;
-   hunter.FillInventory(bow);
+   hunter->FillInventory(bow);
    
-   Player warrior(20, 2, name, "Warrior", 20, 70);
+   Player *warrior = new Player(20, 2, name, "Warrior", 20, 70);
    Bow *bowW = new Bow;
    Sword *swordW = new Sword;
-   hunter.FillInventory(bowW);
-   hunter.FillInventory(swordW);
+   hunter->FillInventory(bowW);
+   hunter->FillInventory(swordW);
    
-   Player mage(40, 5, name, "Mage", 40, 30);
+   Player *mage = new Player(40, 5, name, "Mage", 40, 30);
    Spell *spell = new Spell;
    Spell *spellM = new Spell;
-   mage.FillInventory(spell);
-   mage.FillInventory(spellM);
+   mage->FillInventory(spell);
+   mage->FillInventory(spellM);
 
-   Player comp(5, 0, name, "The Computer Scientist", 10000, 10);
+   Player *comp = new Player(5, 0, name, "The Computer Scientist", 10000, 10);
    
    loadouts.push_back(ranger);
    loadouts.push_back(hunter);
@@ -113,7 +126,7 @@ void CreatePlayer(Player *player)
    int i = 0;
    do
    {
-      loadouts[i].Print();
+      loadouts[i]->Print();
       cout << "[C] Choose" << endl;
       cout << "[N] Next" << endl;
       cout << ">:";
@@ -121,8 +134,10 @@ void CreatePlayer(Player *player)
       if(tolower(ans) == 'c')
       {
 	 delete player;
-	 player = new Player(loadouts[i]);
+	 player = loadouts[i];
 	 player->Img() = ImportImg("../DD_Art/Player/DD_Player.txt");
+	 return player;
+	 
       } else
       {
 	 if(i > 3)
@@ -133,7 +148,7 @@ void CreatePlayer(Player *player)
       system("clear");
       
    }while(ans == 'n');
-
+   return player;
 }
 
 
