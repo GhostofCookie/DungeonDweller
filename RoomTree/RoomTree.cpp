@@ -57,7 +57,7 @@ void RoomTree::DeleteTree(Node *tempRoot)
       delete tempRoot->room; //delete the room
       tempRoot->room = nullptr;
       delete tempRoot; //delete this node
-      tempRoot->room = nullptr;
+      tempRoot = nullptr;
    }
 }
 
