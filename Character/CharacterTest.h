@@ -12,6 +12,7 @@
 #include <algorithm>
 
 class Item;
+class Weapon;
 /// class to test functionality of the IntVector class
 class CharacterTest : public CppUnit::TestFixture
 {
@@ -39,9 +40,9 @@ class CharacterTest : public CppUnit::TestFixture
   private:
    
    //values used for test cases
-   HealthPotion *I;
+   MyWeapons *I;
    string item;
-   vector<Item*> inv;
+   vector<MyWeapons*> inv;
    Character C;
    Item *II;
 };

@@ -11,7 +11,7 @@ int main()
     Screen *screen = new Screen();
     Player *t = nullptr;
     t = create(t);
-   vector<Item*> inv = t->GetInventoryItems();
+   vector<Weapon*> inv = t->GetInventoryItems();
   auto it = inv.begin();
 
   while(it != inv.end())

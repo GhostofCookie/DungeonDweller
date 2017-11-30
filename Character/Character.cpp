@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "../Item/MyWeapons.h"
 
 Character::Character()
 {
@@ -54,7 +55,7 @@ void Character:: ChangeHealth(int hMod)
    health += hMod;
 }
 
-Item* Character:: UseItem(string item)
+Weapon* Character:: UseItem(string item)
 {
    for(unsigned int i = 0; i < inventory.size(); i++)
       if(inventory[i]->Name() == item)
@@ -62,12 +63,12 @@ Item* Character:: UseItem(string item)
    return nullptr;
 }
 
-vector < Item* > Character:: GetInventoryItems()
+vector < Weapon* > Character:: GetInventoryItems()
 {
    return inventory; 
 }
 
-void Character:: FillInventory(Item *item)
+void Character:: FillInventory(MyWeapons *item)
 {
    inventory.push_back(item);
 }
