@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FNAME=$(date +%y%m%d) 
-TO="Menu  Room RoomTree   Puzzles "
+TO="Menu GameState Room RoomTree Image ImageImporter Puzzles Cutscene"
 MAIN="/home/rigt2720/Kodika"
 
 cd $MAIN
