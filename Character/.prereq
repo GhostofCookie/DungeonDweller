@@ -1,23 +1,31 @@
-main.o: main.cpp Character.h ../Item/Item.h ../Image/ImportImg.h \
- ../Image/Image.h ../Image/../Screen/Screen.h Player.h \
- ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
- ../Item/MyWeapons.h ../Item/Weapon.h ../Screen/Screen.h
-Player.o: Player.cpp Player.h Character.h ../Item/Item.h \
- ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h Npc.h
-Npc.o: Npc.cpp Npc.h Character.h ../Item/Item.h ../Image/ImportImg.h \
- ../Image/Image.h ../Image/../Screen/Screen.h ../Item/MyConsumables.h \
- ../Item/Consumable.h ../Item/Item.h Player.h
-Character.o: Character.cpp Character.h ../Item/Item.h \
- ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h
+main.o: main.cpp Character.h ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h Player.h ../Screen/Screen.h
+Player.o: Player.cpp Player.h Character.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h Npc.h
+Npc.o: Npc.cpp Npc.h Character.h ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h Player.h
+Character.o: Character.cpp Character.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h
 MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/MyWeapons.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/MyConsumables.h \
  ../Item/../Character/../Item/Item.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h \
- ../Item/../Character/Player.h ../Item/../Character/Character.h \
- ../Item/../Character/../Item/MyConsumables.h
+ ../Item/../Character/Player.h ../Item/../Character/Character.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
@@ -27,38 +35,53 @@ Item.o: ../Item/Item.cpp ../Item/Item.h ../Item/MyWeapons.h \
 Weapon.o: ../Item/Weapon.cpp ../Item/Weapon.h ../Item/Item.h
 MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
  ../Item/Item.h ../Item/../Character/Character.h \
- ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Item/MyWeapons.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/MyConsumables.h \
+ ../Item/../Character/../Item/Consumable.h \
+ ../Item/../Character/../Item/Item.h ../Item/../Character/../Item/Item.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h
-mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h ../Item/Item.h \
- ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
+mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h \
+ ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
  ../Screen/Screen.h CharacterTest.h
 PlayerTest.o: PlayerTest.cpp PlayerTest.h Player.h Character.h \
- ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
- ../Item/Item.h ../Screen/Screen.h
-CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
- ../Item/Item.h ../Image/ImportImg.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Item/MyConsumables.h ../Item/Consumable.h \
- ../Item/Item.h ../Screen/Screen.h
-Character.o: Character.cpp Character.h ../Item/Item.h \
- ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h
-Player.o: Player.cpp Player.h Character.h ../Item/Item.h \
+ ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h Npc.h
-Npc.o: Npc.cpp Npc.h Character.h ../Item/Item.h ../Image/ImportImg.h \
- ../Image/Image.h ../Image/../Screen/Screen.h ../Item/MyConsumables.h \
- ../Item/Consumable.h ../Item/Item.h Player.h
+ ../Screen/Screen.h
+CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
+ ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
+ ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
+ ../Screen/Screen.h
+Character.o: Character.cpp Character.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h
+Player.o: Player.cpp Player.h Character.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h Npc.h
+Npc.o: Npc.cpp Npc.h Character.h ../Item/MyWeapons.h ../Item/Weapon.h \
+ ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+ ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
+ ../Image/Image.h ../Image/../Screen/Screen.h Player.h
 MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Item/../Character/Character.h \
+ ../Item/../Character/../Item/MyWeapons.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/MyConsumables.h \
  ../Item/../Character/../Item/Item.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h \
- ../Item/../Character/Player.h ../Item/../Character/Character.h \
- ../Item/../Character/../Item/MyConsumables.h
+ ../Item/../Character/Player.h ../Item/../Character/Character.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
@@ -68,7 +91,11 @@ Item.o: ../Item/Item.cpp ../Item/Item.h ../Item/MyWeapons.h \
 Weapon.o: ../Item/Weapon.cpp ../Item/Weapon.h ../Item/Item.h
 MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
  ../Item/Item.h ../Item/../Character/Character.h \
- ../Item/../Character/../Item/Item.h \
+ ../Item/../Character/../Item/MyWeapons.h \
+ ../Item/../Character/../Item/Weapon.h \
+ ../Item/../Character/../Item/MyConsumables.h \
+ ../Item/../Character/../Item/Consumable.h \
+ ../Item/../Character/../Item/Item.h ../Item/../Character/../Item/Item.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h

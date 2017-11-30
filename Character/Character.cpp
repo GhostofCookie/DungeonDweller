@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "../Item/MyWeapons.h"
 
 Character::Character()
 {
@@ -8,14 +9,15 @@ Character::Character()
 }
 
 
-
+/*
 Character:: Character(Character &p)
 {
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
    inventory = p.inventory;
-}
+   }
+*/
 
 Character:: Character(const Character &p)
 {
