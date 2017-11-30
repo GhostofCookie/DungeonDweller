@@ -30,6 +30,17 @@ ExploreState::~ExploreState()
 	delete import;
 	delete player;
 }
+//******************************************************************************
+ExploreState::ExploreState(GameState &obj){
+   player=obj.GetPlayer();
+}
+
+ExploreState::ExploreState(const ExploreState &obj)
+{
+   import=obj.import;
+   roomPtr=obj.roomPtr;
+}
+//******************************************************************************
 
 /// Sets the layout for the game menu and screen.
 void ExploreState::Set()
