@@ -22,10 +22,12 @@ CodeCracker::~CodeCracker()
 void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
 {
    string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
-   menu.SetQuery(temp);
-   menu.OutputMenu();
+   //menu.SetQuery(temp);
+   //menu.OutputMenu();
+   cout << temp << endl;
    player->ChangeStamina(+5);
    player->ChangeGold(+10);
+   SecondDelay(5);
 }
 
 ///Method to run the game, serves as a 'main' for the mini-game, calling
@@ -47,31 +49,35 @@ void CodeCracker:: RunGame(Character *player)
    {
       system("clear");
       currentRiddle = UnusedRandomRiddle();
-      SetRiddleInMenu(currentRiddle, GameMenu);
-      GameMenu.OutputMenu();
-      GameMenu.HandleInput(cin);
-      
+      //SetRiddleInMenu(currentRiddle, GameMenu);
+      cout << question.at(currentRiddle);
+      //GameMenu.OutputMenu();
+      GameMenu.HandleInput(cin);   
       userInput = GameMenu.GetInput();
 
       if(ValidAnswer(userInput, currentRiddle))
       {
 	 MakeRiddleUsed(currentRiddle);
-	 GameMenu.SetQuery(correctPrompt);
-	 GameMenu.OutputMenu();
- 	 Puzzle::SecondDelay(3);
+	 //GameMenu.SetQuery(correctPrompt);
+	 //GameMenu.OutputMenu();
+	 cout << correctPrompt << endl;
+	 Puzzle::SecondDelay(3);
 	 riddleCompletionCount++;
+	 cout << "riddlecompcount:" << riddleCompletionCount << endl;
 	 WinCheck();
       }
       else
       {
-	 GameMenu.SetQuery(incorrectPrompt);
-	 GameMenu.OutputMenu();
+	 cout << incorrectPrompt << endl;
+	 //GameMenu.SetQuery(incorrectPrompt);
+	 //GameMenu.OutputMenu();
 	 SecondDelay(3);
 	 player->ChangeHealth(-5);
 	 DeathCheck(player);
       }
    }
-   EndGamePrompt(player, GameMenu);
+   if(player->GetHealth() != 0)
+      EndGamePrompt(player, GameMenu);
 }
 
 ///Checks to see if the user input is one of the accepted answers.
@@ -111,8 +117,9 @@ void CodeCracker::WinCheck()
 void CodeCracker::InitialPrompt(RiddleMenu &menu)
 {
    string initialPrompt = "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
-   menu.SetQuery(initialPrompt);
-   menu.OutputMenu();
+   //menu.SetQuery(initialPrompt);
+   //menu.OutputMenu();
+   cout << initialPrompt << endl;
    Puzzle::SecondDelay(6);
 }
 
@@ -147,7 +154,11 @@ int CodeCracker::UnusedRandomRiddle()
 void CodeCracker::DeathCheck(Character *player)
 {
    if(player->GetHealth() == 0)
+   {
+      cout << "You're dead Jim" << endl;
+      SecondDelay(4);
       PuzzleEnd = true;
+   }
 }
 
 ///Imports riddles from a text file and stores them in the vector.
