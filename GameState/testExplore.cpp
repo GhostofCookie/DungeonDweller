@@ -151,7 +151,7 @@ int PlayerChoice(){
 	    break;
 	 case 4:
 	    cout << "Race: Computer Scientist" << endl << "Stamina: 5" << endl
-		 << "Health: 10" << endl << "Gold: 10000" << endl;
+		 << "Health: 10" << endl << "Gold: 10,000" << endl;
 	    break;
       }
       cout << "[C] Choose" << endl;
