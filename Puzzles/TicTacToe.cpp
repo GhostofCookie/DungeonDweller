@@ -322,6 +322,15 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
 {
    ///If currentPlayer is even, the AI has won, -1 player health, reset
    ///the game for another round until the player has won.
+   if(currentPlayer == -1)
+   {
+      system("clear");
+      cout << TicTacToeScreen << endl;
+      menu.SetQuery("There has been a tie, so get ready to play again!");
+      menu.OutputMenu();
+      SecondDelay(4);
+      ResetGame(currentPlayer);
+   }     
    if(currentPlayer % 2 == 0)
    {
       system("clear");
@@ -332,15 +341,6 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
       player->ChangeHealth(-5);
       ResetGame(currentPlayer);
       cout << "Get ready to duel her again!" << endl;
-   }
-   else if(currentPlayer % 2 == -1)
-   {
-      system("clear");
-      cout << TicTacToeScreen << endl;
-      menu.SetQuery("There has been a tie, so get ready to play again!");
-      menu.OutputMenu();
-      SecondDelay(4);
-      ResetGame(currentPlayer);
    }
    else
    {
@@ -358,18 +358,24 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
 
 bool TicTacToe::TieGameCheck(int &currentPlayer)
 {
+   int count=0;
    for(int i = 0; i < boardSize; i++)
    {
       for(int j = 0; j < boardSize; j++)
       {
-	 if(gameBoard.at(i).at(j) == ' ');
-	 	    return false;
+	 if(gameBoard.at(i).at(j) == 'O' || gameBoard.at(i).at(j) == 'X')
+	    count++;
       }
    }
+   if(count==9)
+   {
    currentPlayer = -1;
    return true;
+   }
+   else
+      return false;
 }
-   
+
 
 void TicTacToe::ResetGame(int &currentPlayer)
 {
