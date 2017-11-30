@@ -2,17 +2,15 @@
 #include <vector>
 #include <stdlib.h>
 
-MainState::MainState(Player *p)
+MainState::MainState()
 {
    menu = new MainMenu();
-   currState = 'M';
-   player = p;
+
 }
 
 MainState::~MainState()
 {
    delete screen;
-   delete menu;
    delete player;
 }
 

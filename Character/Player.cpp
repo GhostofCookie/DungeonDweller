@@ -31,13 +31,6 @@ Player:: Player(Player &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
-   Item *item = nullptr;
-   for(size_t i = 0; i < p.inventory.size(); ++i)
-   {
-      item = (p.inventory[i]);
-      for(auto it = inventory.begin(); it != inventory.end(); ++it)
-	 inventory[i] = item;
-   }
 }
 
 Player:: Player(const Player &p)
@@ -48,14 +41,6 @@ Player:: Player(const Player &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
-   Item *item = nullptr;
-   inventory = p.inventory;
-   for(size_t i = 0; i < p.inventory.size(); ++i)
-   {
-      item = (p.inventory[i]);
-      for(auto it = inventory.begin(); it != inventory.end(); ++it)
-	 inventory[i] = item;
-   }
 }
 
 Player& Player::operator=(const Player &p)
@@ -66,14 +51,7 @@ Player& Player::operator=(const Player &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
-   Item *item = nullptr;
-   for(size_t i = 0; i < p.inventory.size(); ++i)
-   {
-      item = (p.inventory[i]);
-      for(auto it = inventory.begin(); it != inventory.end(); ++it)
-	 inventory[i] = item;
-   }
-   
+
    return *this;
 }
 
