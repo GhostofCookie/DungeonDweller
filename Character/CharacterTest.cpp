@@ -19,7 +19,7 @@ void CharacterTest:: tearDown()
    delete I;
 }
 
-
+/*
 void CharacterTest:: TestFillInventory()
 {
    cout << "fill" << endl;
@@ -31,7 +31,7 @@ void CharacterTest:: TestFillInventory()
    cout << i << endl;
    CPPUNIT_ASSERT(inv[0] == I);
 }
-
+*/
 void CharacterTest:: TestGetInventoryItems()
 {
    cout << "get" << endl;

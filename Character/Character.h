@@ -57,7 +57,7 @@ class Character
    Character(const Character&);
 
    /// Copy constructor
-   Character(Character&);
+//   Character(Character&);
    
    /// Assignment operator overloader for copy constructor
    Character& operator = (const Character &p);

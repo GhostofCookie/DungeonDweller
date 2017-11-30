@@ -119,7 +119,7 @@ void ExploreState::RunInput(char n)
 					}
 				}
 				catch(invalid_argument &ia) {
-					throw runtime_error("Room Error: " + ia.what);
+				   throw runtime_error("Room Error: " + ia.what());
 				}
 
 				delete anim;
