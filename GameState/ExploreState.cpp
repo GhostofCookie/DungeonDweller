@@ -119,7 +119,9 @@ void ExploreState::RunInput(char n)
 					}
 				}
 				catch(invalid_argument &ia) {
-				   throw runtime_error("Room Error: " + ia.what());
+				   string temp=ia.what();
+				   throw runtime_error("Room error:"+temp);
+				   //throw runtime_error("Room Error: " + ia.what());
 				}
 
 				delete anim;
@@ -146,7 +148,9 @@ void ExploreState::RunInput(char n)
 					}
 				}
 				catch(invalid_argument &ia) {
-					throw runtime_error("Room Error: " + ia.what);
+				   //throw runtime_error("Room Error: " + ia.what);
+				  string temp=ia.what();
+				   throw runtime_error("Room error:"+temp);
 				}
 
 				delete anim;
@@ -166,19 +170,21 @@ void ExploreState::RunInput(char n)
 
 				// check to ensure room does not exist before creating new one
 				try {
-					if(!roomTree->Move('D'))
-					{
-						roomTree->NewRoom('D',new Room(import->collection));
-						roomTree->Move('D');
-					}
+				   if(!roomTree->Move('D'))
+				   {
+				      roomTree->NewRoom('D',new Room(import->collection));
+				      roomTree->Move('D');
+				   }
 				}
 				catch(invalid_argument &ia) {
-					throw runtime_error("Room Error: " + ia.what);
+				   string temp=ia.what();
+				   throw runtime_error("Room error:"+temp);
+				   //throw runtime_error("Room Error: " + ia.what);
 				}
 
 				delete anim;
 				anim = new Cutscene(player->Img(),roomTree->At()->GetImage(),
-					roomTree->At());
+						    roomTree->At());
 				anim->EnterUp();
 
 				// lower the stamina for moving
@@ -186,27 +192,29 @@ void ExploreState::RunInput(char n)
 				break;
 
 				// Move Right
-			case 'd':
-				anim = new Cutscene(player->Img(),roomTree->At()->GetImage(),
-					roomTree->At());
-				anim->ExitRight();
+		   case 'd':
+		      anim = new Cutscene(player->Img(),roomTree->At()->GetImage(),
+					  roomTree->At());
+		      anim->ExitRight();
 
-				// check to ensure room does not exist before creating new one
-				try {
-					if(!roomTree->Move('R'))
-					{
-						roomTree->NewRoom('R',new Room(import->collection));
-						roomTree->Move('R');
-					}
-				}
-				catch(invalid_argument &ia) {
-					throw runtime_error("Room Error: " + ia.what);
-				}
+		      // check to ensure room does not exist before creating new one
+		      try {
+			 if(!roomTree->Move('R'))
+			 {
+			    roomTree->NewRoom('R',new Room(import->collection));
+			    roomTree->Move('R');
+			 }
+		      }
+		      catch(invalid_argument &ia) {
+			 string temp=ia.what();
+			 throw runtime_error("Room error:"+temp);
+			 //throw runtime_error("Room Error: " + ia.what);
+		      }
 
-				delete anim;
-				anim = new Cutscene(player->Img(),roomTree->At()->GetImage(),
-					roomTree->At());
-				anim->EnterLeft();
+		      delete anim;
+		      anim = new Cutscene(player->Img(),roomTree->At()->GetImage(),
+					  roomTree->At());
+		      anim->EnterLeft();
 
 				// lower the stamina for moving
 				player->ChangeStamina(-1);
