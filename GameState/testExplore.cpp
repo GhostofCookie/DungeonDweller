@@ -17,12 +17,10 @@ int PlayerChoice();
 
 int main()
 {
-   Player *temp = new Player;
-
-   GameState *state = new MainState(temp);
+   GameState *state = new MainState();
    //define character selection here
-   GameState *baseState = nullptr;// new ExploreState(temp);//ExploreState(player);
-   Player *player = new Player(99,99,"","",99,99);//nullptr;
+   GameState *baseState = new ExploreState();//ExploreState(player);
+   Player *player = (*baseState).GetPlayer();
    while(true) 
    {
       system("clear");
@@ -32,18 +30,18 @@ int main()
       {
 	
 	 case 'E':
-	    if(player == nullptr || player->GetStamina() <= 0 || player->GetHealth() <= 0 )
+	   if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
 	    {
-	       delete player;
-	       CreatePlayer(player);
-	       delete baseState;
-	       delete state;
-	       baseState = new ExploreState(player);
-	       state = baseState;
+	      //  delete player;
+	      //   CreatePlayer(player);
+	      delete baseState;
+	      delete state;
+	      baseState = new ExploreState();
+	      state = new ExploreState(*baseState);
 	    }
 	    else
-	       state = baseState;
-	   
+	      state = new ExploreState(*baseState);
+ 
 	    break;
 	 case 'P':
 	    delete state;
@@ -62,17 +60,17 @@ int main()
 	    
 	 case 'M':
 	    delete state;
-	    state = new MainState(player);
+	    state = new MainState();
 	    break;
 	    
 	 case 'I':
-	    //  delete state;
+	    delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
 	 default:
 	    delete state;
-	    state = new MainState(player);
+	    state = new MainState();
 
       }
 
@@ -81,7 +79,6 @@ int main()
    }
    
    delete player;
-   delete temp;
    delete state;
    delete baseState;
    
@@ -154,7 +151,7 @@ int PlayerChoice(){
 	    break;
 	 case 4:
 	    cout << "Race: Computer Scientist" << endl << "Stamina: 5" << endl
-		 << "Health: 10" << endl << "Gold: 10000" << endl;
+		 << "Health: 10" << endl << "Gold: 10,000" << endl;
 	    break;
       }
       cout << "[C] Choose" << endl;

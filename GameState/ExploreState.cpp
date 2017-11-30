@@ -6,7 +6,7 @@
 
 
 /// This is the the default constructor.
-ExploreState::ExploreState(Player *p)
+ExploreState::ExploreState()
 {
 	// set random seed
 	srand((unsigned int)time(NULL));
@@ -16,7 +16,7 @@ ExploreState::ExploreState(Player *p)
 	import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
 	roomPtr = new Room(import->collection,0);
 	roomTree = new RoomTree(roomPtr);
-	player = p;
+	player = new Player(20,0,"Tim","Adventurer",100,10);
 	currState = 'E';
 }
 
@@ -25,8 +25,8 @@ ExploreState::~ExploreState()
 {
 	delete menu;
 	delete screen;
-	delete roomPtr;
-	//delete roomTree;
+       	delete roomPtr;
+	delete roomTree;
 	delete import;
 	delete player;
 }
@@ -36,7 +36,7 @@ void ExploreState::Set()
 {
 	if(menu != nullptr)
 	{
-		delete menu;
+	  delete menu;
 		menu = new ExploreMenu();
 	}
 	menu->AddOption('w',"Move Up");
