@@ -19,53 +19,46 @@ InventoryState::InventoryState(Player *p)
 /// This is the default destructor.
 InventoryState::~InventoryState()
 {
-  delete screen;
-  delete menu;
-  delete player;
+   delete screen;
+   delete menu;
+   delete player;
 }
 
 /// Sets the layout for the game menu and screen.
 void InventoryState::Set()
 {
-  vector <Item*> inv = player->GetInventoryItems();
-  auto it = inv.begin();
-  int i = 1;
-  if(inv.empty())
-    cout << "Empty." << endl;
-  while(it != inv.end())
-    {
+   auto it = player->GetInventoryItems().begin();
+   int i = 1;
+   if(player->GetInventoryItems().empty())
+      cout << "Empty." << endl;
+   while(it != player->GetInventoryItems().end())
+   {
       menu->AddOption(i,(*it)->Name());
       ++it;
       ++i;
-    }
-  menu->AddOption('q', "Back to Room");
+   }
+/*   it = inv.begin();
+   for(; it != inv.end(); ++it)
+   delete *it;*/
+   menu->AddOption('q', "Back to Room");
 }
 
 /// Gets the layout for the game menu and screen.
 void InventoryState::Get()
 {
-  cout << " [#] Inventory" << endl;
+   cout << " [#] Inventory" << endl;
    menu->OutputMenu();
    menu->HandleInput(cin);
    
    switch(menu->GetOption())
-     {
-     case 'q':
-       currState = 'E';
-       return;
-       break;
-     case 'u':
-       // Use the item
-       break;
-     case 'e':
-       // Equip the item
-       break;
-     case 'i':
-       // Show the items information exclusively
-       break;
-     default:
-       currState = 'I';
-       return;
-       break;
-     }
+   {
+      case 'q':
+	 currState = 'E';
+	 return;
+	 break;
+      default:
+	 currState = 'I';
+	 return;
+	 break;
+   }
 }

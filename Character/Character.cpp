@@ -15,6 +15,7 @@ Character:: Character(Character &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
+   inventory = p.inventory;
 }
 
 Character:: Character(const Character &p)
@@ -22,6 +23,7 @@ Character:: Character(const Character &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
+   inventory = p.inventory;
 }
 
 Character& Character:: operator = (const Character &p)
@@ -29,6 +31,7 @@ Character& Character:: operator = (const Character &p)
    gold = p.gold;
    health = p.health;
    stamina = p.stamina;
+   inventory = p.inventory;
 
    return *this;
 }
@@ -76,7 +79,11 @@ void Character:: FillInventory(MyWeapons *item)
 void Character:: EmptyInventory()
 {
    for(auto it = inventory.begin(); it != inventory.end(); ++it)
-      delete *it;
+   {
+       delete *it;
+       *it = nullptr;
+   }
+   inventory.clear();
 }
 
 void Character:: ChangeStamina(int sMod)

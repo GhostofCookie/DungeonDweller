@@ -8,6 +8,7 @@
 Player *create(Player *);
 int main()
 {
+<<<<<<< HEAD
     Screen *screen = new Screen();
     Player *t = nullptr;
     t = create(t);
@@ -16,38 +17,53 @@ int main()
 
   while(it != inv.end())
     {
+=======
+   Screen *screen = new Screen();
+   Player *t = nullptr;
+   t = create(t);
+   auto it = t->GetInventoryItems().begin();
+
+   while(it != t->GetInventoryItems().end())
+   {
+>>>>>>> 22fa84ac18c72a6bab7f6032f5928f8d8adbc523
       cout<<(*it)->Name()<<endl;
       ++it;
-    }
+   }
+
+   it = (t->GetInventoryItems()).begin();
    // player.Draw(screen);
-    t->Img().AlignCenter(*screen);
-    t->Img().Draw(*screen);
+   t->Img().AlignCenter(*screen);
+   t->Img().Draw(*screen);
    cout << *screen;
+    for(; it != (t->GetInventoryItems()).end(); ++it)
+       delete *it;
+   delete t;
+   delete screen;
    return 0;
 }
 
 Player *create(Player *p)
 {
-  vector<Player*> players;
+   vector<Player*> players;
 
 
-    Player *player = new Player(10, 10,"hi", "hello", 10, 10);
-    Player *player2 = new Player(10, 10,"bi", "bye", 10, 10);
+   Player *player = new Player(10, 10,"hi", "hello", 10, 10);
+   Player *player2 = new Player(10, 10,"bi", "bye", 10, 10);
 
-    Sword *sword = new Sword;
-    player->FillInventory(sword);
-    player->FillInventory(new Bow);
-    player->FillInventory(new Sword);
-    player2->FillInventory(new Bow);
-    player2->FillInventory(new Bow);
+//   Sword *sword = new Sword;
+   player->FillInventory(new Sword);
+   player->FillInventory(new Bow);
+   player->FillInventory(new Sword);
+   player2->FillInventory(new Bow);
+   player2->FillInventory(new Bow);
 
-
-
-    players.push_back(player);
-    players.push_back(player2);
-    int i;
-    cin>>i;
-    delete p;
-    p = players[i];
-    return p;
+   players.push_back(player);
+   players.push_back(player2);
+   int i=0;
+   cin>>i;
+   delete p;
+   p = new Player(*players[i]);
+/*   for(auto it = players.begin(); it != players.end(); ++it)
+     delete (*it);*/
+   return p;
 }

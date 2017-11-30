@@ -2,9 +2,9 @@ CC = g++
 CCFLAGS = -Wall -std=c++11 -g #-fprofile-arcs -ftest-coverage
 OBJS = Puzzle.o TicTacToe.o Hanoi.o ConnectFour.o CodeCracker.o ../Menu/RiddleMenu.o PuzzleMain.o MemoryMatch.o ../Menu/HanoiMenu.o ../Menu/ConnectFourMenu.o ../Menu/TicTacToeMenu.o ../Menu/MemoryMenu.o ../Screen/Screen.o ../Image/DefaultImg.o ../Image/Image.o ../Menu/Menu.o ../Menu/Menu.o ../Character/Character.o ../Item/Item.o ../Image/ImportImg.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
 .PHONY : all
-all : main
+all : testHeaders
 
-main : $(OBJS)
+testHeaders : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
 %.o : %.cpp
@@ -24,4 +24,4 @@ clean :
 
 .PHONY : clean-all
 clean-all : clean
-	rm -f main
+	rm -f testHeaders
