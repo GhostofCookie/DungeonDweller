@@ -3,9 +3,9 @@ CCFLAGS = -Wall -std=c++11 -g -lcppunit -ldl #-fprofile-arcs -ftest-coverage
 OBJS = RoomTreeTester.o RoomTreeTest.o RoomTree.o ../Room/Room.o ../Screen/Screen.o ../Image/Image.o ../Image/ImportImg.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o
 
 .PHONY : all
-all : main
+all : testHeaders
 
-main : $(OBJS)
+testHeaders : $(OBJS)
 	$(CC) $(CCFLAGS) $^ -o $@ 
 
 %.o : %.cpp
@@ -21,7 +21,7 @@ include .prereq
 
 .PHONY : clean
 clean :
-	rm -f *.o *~ #* .#*
+	rm -f *.o *~ *# .#*
 
 .PHONY : clean-all
 clean-all : clean

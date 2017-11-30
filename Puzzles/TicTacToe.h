@@ -29,11 +29,6 @@ class TicTacToe: public virtual Puzzle
    virtual void RunGame(Character *player);
    
   private:
-   ///ALL HANDLED BY THE MENU OBJECT?
-   //void PromptUser(&screen);//Prompts user for input
-   //char UserInput(&menu);//Gets user input
-   //bool ValidCommand(char input);//Checks formatting
-
    ///Checks the semantics of the user choice to make sure they aren't doing
    ///something that would break the game with their input.
    /// \param[in] inputX, the X-coordinate of the selection.

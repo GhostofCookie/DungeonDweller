@@ -42,8 +42,8 @@ int main()
 	    }
 	    else
 	       state = baseState;
+	   
 	    break;
-	    
 	 case 'P':
 	    delete state;
 	    state = new PuzzleState(player);
@@ -65,7 +65,7 @@ int main()
 	    break;
 	    
 	 case 'I':
-	    delete state;
+	    //  delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
@@ -96,7 +96,7 @@ Player *CreatePlayer(Player *player)
    cout << ">:";
    string name;
    cin >> name;
-   cout << "You are also going to need some equipment down there too, please choose your load-out." << endl;
+   cout << "You are also going to need some equipment down there, please choose your load-out." << endl;
 
    // initialize a list of preset characters
    vector <Player*> loadouts;
@@ -164,8 +164,8 @@ Player *CreatePlayer(Player *player)
       
    } while(ans == 'n');
    ///Deleting the loadout vectors pointers
-   for(unsigned int i = 0; i < loadouts.size(); i++)
-      delete loadouts[i];
+   for(auto it = loadouts.begin(); it != loadouts.end(); ++it)
+      delete (*it);
    return player;
 }
 

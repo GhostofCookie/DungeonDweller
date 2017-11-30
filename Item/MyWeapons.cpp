@@ -24,7 +24,7 @@ Sword::Sword()
 bool Sword::Use(Character *target)
 {
    if(remainingUses > 0)
-   {		
+   {
       //Modifies the damage output by up to +- 20%
       double modifier = static_cast<double>((Random(0,40)-20) / 100);
       int damage = baseDmg + static_cast<int>(static_cast<double>(baseDmg) * modifier + 0.5);
