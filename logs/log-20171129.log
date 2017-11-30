@@ -444,3 +444,6 @@ g++ -c -Wall -std=c++11 -g  main.cpp
 g++ -c -Wall -std=c++11 -g  Cutscene.cpp
 g++ -Wall -std=c++11 -g  main.o Cutscene.o ../ImageImporter/ImageImporter.o ../Screen/Screen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../Room/Room.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o -o main 
 Pulling Git Repository
+[master cf9e072] Automated Make call to all directories in Kodika. Pre-Pull
+ 1 file changed, 4 deletions(-)
+Already up-to-date.
