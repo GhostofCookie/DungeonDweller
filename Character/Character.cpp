@@ -79,12 +79,20 @@ void Character:: FillInventory(Item *item)
 
 void Character:: EmptyInventory()
 {
-   for(auto it = inventory.begin(); it != inventory.end(); ++it)
+   if(inventory.size() != 0)
    {
-       delete *it;
-       *it = nullptr;
-   }
+      for(unsigned int i=0; i < inventory.size(); i++)
+      {
+	 delete inventory.at(i);
+	 inventory.at(i)=nullptr;
+      }	 
+   // for(auto it = inventory.begin(); it != inventory.end(); ++it)
+   // {
+   //     delete *it;
+   //     *it = nullptr;
+   // }
    inventory.clear();
+   }
 }
 
 void Character:: ChangeStamina(int sMod)
