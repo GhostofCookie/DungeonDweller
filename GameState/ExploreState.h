@@ -28,10 +28,21 @@ class ExploreState : public GameState
 {
   public:
    /// This is the the default constructor.
-   ExploreState(Player *p);
+   ExploreState();
    /// This is the default destructor.
    ~ExploreState();
-   /// Sets the layout for the game menu and screen.
+  //*******************************************************************************
+   ExploreState(GameState &obj);
+ 
+   ///Const copy constructor
+   ///\param[in] state reference to an explore state
+   ExploreState(const ExploreState &obj);
+   //*******************************************************************************
+   /// Default copy constructor
+   /// \param[in] state reference to an 
+   ExploreState(ExploreState &obj);
+
+/// Sets the layout for the game menu and screen.
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();

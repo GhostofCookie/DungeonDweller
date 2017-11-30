@@ -12,16 +12,15 @@
 #include "../Item/MyWeapons.h"
 using namespace std;
 
-Player *CreatePlayer(Player *p);
+void CreatePlayer(Player *ptr);
+int PlayerChoice();
 
 int main()
 {
-   Player *temp = new Player;
-
-   GameState *state = new MainState(temp);
+   GameState *state = new MainState();
    //define character selection here
-   GameState *baseState = nullptr;// new ExploreState(temp);//ExploreState(player);
-   Player *player = nullptr;
+   GameState *baseState = new ExploreState();//ExploreState(player);
+   Player *player = (*baseState).GetPlayer();
    while(true) 
    {
       system("clear");
@@ -31,18 +30,18 @@ int main()
       {
 	
 	 case 'E':
-	    if(player == nullptr || player->GetStamina() <= 0 || player->GetHealth() <= 0 )
+	   if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
 	    {
-	       delete player;
-	       player = CreatePlayer(player);
-	       delete baseState;
-	       delete state;
-	       baseState = new ExploreState(player);
-	       state = baseState;
+	      //  delete player;
+	      //   CreatePlayer(player);
+	      delete baseState;
+	      delete state;
+	      baseState = new ExploreState();
+	      state = new ExploreState(*baseState);
 	    }
 	    else
-	       state = baseState;
-	   
+	      state = new ExploreState(*baseState);
+ 
 	    break;
 	 case 'P':
 	    delete state;
@@ -61,17 +60,17 @@ int main()
 	    
 	 case 'M':
 	    delete state;
-	    state = new MainState(player);
+	    state = new MainState();
 	    break;
 	    
 	 case 'I':
-	    //  delete state;
+	    delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
 	 default:
 	    delete state;
-	    state = new MainState(player);
+	    state = new MainState();
 
       }
 
@@ -80,93 +79,92 @@ int main()
    }
    
    delete player;
-   delete temp;
    delete state;
    delete baseState;
    
    return 0;
 }
 
-
-
-Player *CreatePlayer(Player *player)
-{
-  cout << "Hello! Welcome to the dungeon." << endl;
+void CreatePlayer(Player *ptr){
+   delete ptr;
+   ptr=nullptr;
+   cout << "Hello! Welcome to the dungeon." << endl;
    cout << "You are going to need a character to get through this place, what do you want your name to be?" << endl;
    cout << ">:";
    string name;
    cin >> name;
    cout << "You are also going to need some equipment down there, please choose your load-out." << endl;
 
-   // initialize a list of preset characters
-   vector <Player*> loadouts;
-
-   // create a ranger preset
-   Player *ranger = new Player(40, 1, name, "Ranger", 20, 50);
-   Sword *sword = new Sword;
-   ranger->FillInventory(sword);
-
-   // create a hunter preset
-   Player *hunter = new Player(50, 1, name, "Hunter", 20, 40);
-   Bow *bow = new Bow;
-   hunter->FillInventory(bow);
-
-   // create a warrior preset
-   Player *warrior = new Player(20, 2, name, "Warrior", 20, 70);
-   Bow *bowW = new Bow;
-   Sword *swordW = new Sword;
-   hunter->FillInventory(bowW);
-   hunter->FillInventory(swordW);
-
-   // create a mage preset
-   Player *mage = new Player(40, 5, name, "Mage", 40, 30);
-   Spell *spell = new Spell;
-   Spell *spellM = new Spell;
-   mage->FillInventory(spell);
-   mage->FillInventory(spellM);
-
-   // create a computer science preset
-   Player *comp = new Player(5, 0, name, "The Computer Scientist", 10000, 10);
-
-   loadouts.push_back(ranger);
-   loadouts.push_back(hunter);
-   loadouts.push_back(warrior);
-   loadouts.push_back(mage);
-   loadouts.push_back(comp);
-
-   char ans;
-   int i = 0;
-
-   // flip between different classes until one is chosen
-   do
+   int input=PlayerChoice();
+   
+   switch(input)
    {
-      loadouts[i]->Print();
+      case 0:
+	 // create a ranger preset
+	 ptr = new Player(40, 1, name, "Ranger", 20, 50);
+	 ptr->FillInventory(new Sword);
+	 break;
+      case 1:
+	 // create a hunter preset
+	 ptr = new Player(50, 1, name, "Hunter", 20, 40);
+	 ptr->FillInventory(new Bow);
+	 break;
+      case 2:   // create a warrior preset
+	 ptr = new Player(20, 2, name, "Warrior", 20, 70);
+	 ptr->FillInventory(new Bow);
+	 ptr->FillInventory(new Sword);
+	 break;
+      case 3:   // create a mage preset
+	 ptr = new Player(40, 5, name, "Mage", 40, 30);
+	 ptr->FillInventory(new Spell);
+	 ptr->FillInventory(new Spell);
+	 break;
+      case 4:    // create a computer science preset
+	 ptr = new Player(5, 0, name, "The Computer Scientist", 10000, 10);
+	 break;
+   }
+}
+
+int PlayerChoice(){
+   int iterator=0;
+   char ans;
+   bool loopEnd=false;
+   while(loopEnd==false)
+   {
+      switch(iterator)
+      {
+	 case 0:
+	    cout << "Race: Ranger" << endl << "Stamina: 40" << endl
+		 << "Health: 50" << endl << "Gold: 20" << endl;
+	    break;
+	 case 1:
+	    cout << "Race: Hunter" << endl << "Stamina: 50" << endl
+		 << "Health: 40" << endl << "Gold: 20" << endl;
+	    break;
+	 case 2:
+	    cout << "Race: Warrior" << endl << "Stamina: 20" << endl
+		 << "Health: 70" << endl << "Gold: 20" << endl;
+	    break;
+	 case 3:
+	    cout << "Race: Mage" << endl << "Stamina: 40" << endl
+		 << "Health: 30" << endl << "Gold: 40" << endl;
+	    break;
+	 case 4:
+	    cout << "Race: Computer Scientist" << endl << "Stamina: 5" << endl
+		 << "Health: 10" << endl << "Gold: 10,000" << endl;
+	    break;
+      }
       cout << "[C] Choose" << endl;
       cout << "[N] Next" << endl;
       cout << ">:";
       cin >> ans;
-
-      // set the player to the selected character
-      if(tolower(ans) == 'c')
-      {
-	 delete player;
-	 player = new Player(*loadouts[i]);
-	 player->Img() = ImportImg("../DD_Art/Player/DD_Player.txt");
-	 
-      } else
-      {
-	 if(i > 3)
-	    i = 0;
-	 else
-	    i++;
-      }
+      if(ans == 'c' || ans == 'C')
+	 loopEnd=true;
+      else
+	 iterator++;
+      if(iterator>4)
+	 iterator=0;
       system("clear");
-      
-   } while(ans == 'n');
-   ///Deleting the loadout vectors pointers
-   for(auto it = loadouts.begin(); it != loadouts.end(); ++it)
-      delete (*it);
-   return player;
+   }
+   return iterator;
 }
-
-

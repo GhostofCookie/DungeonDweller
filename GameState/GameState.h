@@ -46,13 +46,13 @@ class GameState
      
    Item *item;
    /// Returns the current player.
-   Player &GetPlayer() const { return *player; }
+   Player *GetPlayer() const { return player; }
 
   protected:
    ///< pointer to the menu.
    Menu *menu;
    ///< pointer to the screen;
-   Screen *screen = new Screen();
+   Screen *screen;
    ///< defines which gamestate will be used.
    char currState;
    /// allows access from different states to check whether room is complete

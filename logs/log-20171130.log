@@ -444,8 +444,100 @@ g++ -c -Wall -std=c++11 -g  main.cpp
 g++ -c -Wall -std=c++11 -g  Cutscene.cpp
 g++ -Wall -std=c++11 -g  main.o Cutscene.o ../ImageImporter/ImageImporter.o ../Screen/Screen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../Room/Room.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o -o main 
 Pulling Git Repository
-[master 53f0d7a] Automated Make call to all directories in Kodika. Pre-Pull
- 2 files changed, 31 insertions(+), 4 deletions(-)
-Already up-to-date.
-[master 22fa84a] Automated Make call to all directories in Kodika. Pre-Push
- 1 file changed, 3 insertions(+)
+[master 65e2d0c] Automated Make call to all directories in Kodika. Pre-Pull
+ 3 files changed, 449 insertions(+), 1 deletion(-)
+ create mode 100644 logs/log-20171130.log
+Removing doxygen/latex/puzzle_8h.tex
+Removing doxygen/latex/puzzleMain_8cpp.tex
+Removing doxygen/latex/hanoi_8h.tex
+Removing doxygen/latex/hanoi_8cpp.tex
+Removing doxygen/html/puzzle_8h_source.html
+Removing doxygen/html/puzzle_8h.html
+Removing doxygen/html/puzzleMain_8cpp.html
+Removing doxygen/html/hanoi_8h_source.html
+Removing doxygen/html/hanoi_8h.html
+Removing doxygen/html/hanoi_8cpp.html
+Removing Puzzles/testHeaders
+Removing Puzzles/main
+Removing Puzzles/TicTacToe.o
+Removing Puzzles/PuzzleMain.o
+Removing Puzzles/Puzzle.o
+Removing Puzzles/MemoryMatch.o
+Removing Puzzles/Hanoi.o
+Removing Puzzles/ConnectFour.o
+Removing Puzzles/CodeCracker.o
+Removing Character/mainTest
+Removing Character/.#Character.h
+Removing Character/#Character.h#
+Merge made by the 'recursive' strategy.
+ Character/#Character.h#            | 102 --------
+ Character/.#Character.h            |   1 -
+ Character/.prereq                  |  93 ++++---
+ Character/Character.cpp            |   6 +-
+ Character/Character.h              |  12 +-
+ Character/Character.o              | Bin 220872 -> 219872 bytes
+ Character/CharacterTest.cpp        |  20 +-
+ Character/CharacterTest.h          |   5 +-
+ Character/CharacterTest.o          | Bin 0 -> 148152 bytes
+ Character/Makefile                 |   8 +-
+ Character/Npc.o                    | Bin 72120 -> 72136 bytes
+ Character/Player.o                 | Bin 168032 -> 168760 bytes
+ Character/PlayerTest.o             | Bin 0 -> 93320 bytes
+ Character/main                     | Bin 722808 -> 722888 bytes
+ Character/main.cpp                 |  12 +
+ Character/main.o                   | Bin 183928 -> 184288 bytes
+ Character/mainTest                 | Bin 822928 -> 0 bytes
+ Character/mainTest.o               | Bin 0 -> 256232 bytes
+ Character/testHeaders              | Bin 0 -> 837560 bytes
+ GameState/.prereq                  | 266 ++++++++++++-------
+ GameState/ExploreState.cpp         | 524 +++++++++++++++++++------------------
+ GameState/explore                  | Bin 2919888 -> 2893688 bytes
+ GameState/testExplore.o            | Bin 294592 -> 294520 bytes
+ Puzzles/CodeCracker.cpp            |  39 ++-
+ Puzzles/CodeCracker.o              | Bin 358040 -> 0 bytes
+ Puzzles/ConnectFour.o              | Bin 249504 -> 0 bytes
+ Puzzles/Hanoi.o                    | Bin 326664 -> 0 bytes
+ Puzzles/MemoryMatch.o              | Bin 428672 -> 0 bytes
+ Puzzles/Puzzle.o                   | Bin 66312 -> 0 bytes
+ Puzzles/PuzzleMain.o               | Bin 109824 -> 0 bytes
+ Puzzles/TicTacToe.cpp              |  30 ++-
+ Puzzles/TicTacToe.o                | Bin 349104 -> 0 bytes
+ Puzzles/main                       | Bin 1585128 -> 0 bytes
+ Puzzles/testHeaders                | Bin 1597656 -> 0 bytes
+ doxygen/html/hanoi_8cpp.html       | 101 -------
+ doxygen/html/hanoi_8h.html         | 112 --------
+ doxygen/html/hanoi_8h_source.html  | 149 -----------
+ doxygen/html/puzzleMain_8cpp.html  | 126 ---------
+ doxygen/html/puzzle_8h.html        | 114 --------
+ doxygen/html/puzzle_8h_source.html | 139 ----------
+ doxygen/latex/hanoi_8cpp.tex       |   4 -
+ doxygen/latex/hanoi_8h.tex         |   9 -
+ doxygen/latex/puzzleMain_8cpp.tex  |  20 --
+ doxygen/latex/puzzle_8h.tex        |  12 -
+ 44 files changed, 593 insertions(+), 1311 deletions(-)
+ delete mode 100644 Character/#Character.h#
+ delete mode 120000 Character/.#Character.h
+ create mode 100644 Character/CharacterTest.o
+ create mode 100644 Character/PlayerTest.o
+ delete mode 100755 Character/mainTest
+ create mode 100644 Character/mainTest.o
+ create mode 100755 Character/testHeaders
+ delete mode 100644 Puzzles/CodeCracker.o
+ delete mode 100644 Puzzles/ConnectFour.o
+ delete mode 100644 Puzzles/Hanoi.o
+ delete mode 100644 Puzzles/MemoryMatch.o
+ delete mode 100644 Puzzles/Puzzle.o
+ delete mode 100644 Puzzles/PuzzleMain.o
+ delete mode 100644 Puzzles/TicTacToe.o
+ delete mode 100755 Puzzles/main
+ delete mode 100755 Puzzles/testHeaders
+ delete mode 100644 doxygen/html/hanoi_8cpp.html
+ delete mode 100644 doxygen/html/hanoi_8h.html
+ delete mode 100644 doxygen/html/hanoi_8h_source.html
+ delete mode 100644 doxygen/html/puzzleMain_8cpp.html
+ delete mode 100644 doxygen/html/puzzle_8h.html
+ delete mode 100644 doxygen/html/puzzle_8h_source.html
+ delete mode 100644 doxygen/latex/hanoi_8cpp.tex
+ delete mode 100644 doxygen/latex/hanoi_8h.tex
+ delete mode 100644 doxygen/latex/puzzleMain_8cpp.tex
+ delete mode 100644 doxygen/latex/puzzle_8h.tex

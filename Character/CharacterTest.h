@@ -12,12 +12,13 @@
 #include <algorithm>
 
 class Item;
+class Weapon;
 /// class to test functionality of the IntVector class
 class CharacterTest : public CppUnit::TestFixture
 {
    //test cases
    CPPUNIT_TEST_SUITE(CharacterTest);
-   CPPUNIT_TEST(TestFillInventory);
+//   CPPUNIT_TEST(TestFillInventory);
    CPPUNIT_TEST(TestGetInventoryItems);
    CPPUNIT_TEST(TestUseItem);
    CPPUNIT_TEST(TestChangeGold);
@@ -29,7 +30,7 @@ class CharacterTest : public CppUnit::TestFixture
    
    void setUp(); ///>override \c setUp to create variable
    void tearDown();
-   void TestFillInventory();
+   // void TestFillInventory();
    void TestGetInventoryItems();
    void TestUseItem();
    void TestChangeGold();

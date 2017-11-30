@@ -19,7 +19,7 @@ class MainState : public GameState
 {
   public:
    /// Default constructor
-   MainState(Player *p);
+   MainState();
    /// Default destructor
    ~MainState();
    /// Sets the layout of the game.
@@ -27,8 +27,6 @@ class MainState : public GameState
    /// Outputs the set layout.
    void Get();
 
-   Player& GetPlayer(){ return *player; }
-		    
 };
 
 #endif
