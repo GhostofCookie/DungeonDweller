@@ -444,9 +444,3 @@ g++ -c -Wall -std=c++11 -g  main.cpp
 g++ -c -Wall -std=c++11 -g  Cutscene.cpp
 g++ -Wall -std=c++11 -g  main.o Cutscene.o ../ImageImporter/ImageImporter.o ../Screen/Screen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../Room/Room.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o -o main 
 Pulling Git Repository
-[master ca247b2] Automated Make call to all directories in Kodika. Pre-Pull
- 4 files changed, 435 insertions(+)
- create mode 100644 GameState/ExploreState.o
- create mode 100644 GameState/FightState.o
- create mode 100644 GameState/InventoryState.o
-Already up-to-date.
