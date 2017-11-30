@@ -34,7 +34,7 @@ class Character
    ImportImg img;
    
    /// Vector of items the character has
-   vector < MyWeapons* > inventory;
+   vector < Item* > inventory;
 
    /// Amount of gold player has
    int gold;
@@ -64,15 +64,15 @@ class Character
 
    /// Function to fill the characters inventory
    /// \param[in] inventory, the vector that stores the items in inventory
-   virtual void FillInventory(Weapon *item);
+   virtual void FillInventory(Item *item);
    
    /// Shows a list of inventory items
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual vector < Weapon* > GetInventoryItems();
+   virtual vector < Item* > GetInventoryItems();
 
    /// Chooses the item to be used
    /// \param[in] Inventory, a pointer to a vector of inventory items
-   virtual Weapon* UseItem(string item);
+   virtual Item* UseItem(string item);
 
    /// Change the amount of gold a character has
    /// \param[in] GoldMod, how much the current gold will be changed by

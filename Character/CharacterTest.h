@@ -40,9 +40,9 @@ class CharacterTest : public CppUnit::TestFixture
   private:
    
    //values used for test cases
-   MyWeapons *I;
+   HealthPotion *I;
    string item;
-   vector<MyWeapons*> inv;
+   vector<Item*> inv;
    Character C;
    Item *II;
 };

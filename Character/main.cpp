@@ -8,16 +8,16 @@
 Player *create(Player *);
 int main()
 {
-<<<<<<< HEAD
+
     Screen *screen = new Screen();
     Player *t = nullptr;
     t = create(t);
-   vector<Weapon*> inv = t->GetInventoryItems();
+   vector<Item*> inv = t->GetInventoryItems();
   auto it = inv.begin();
 
   while(it != inv.end())
     {
-=======
+
    Screen *screen = new Screen();
    Player *t = nullptr;
    t = create(t);
@@ -25,7 +25,7 @@ int main()
 
    while(it != t->GetInventoryItems().end())
    {
->>>>>>> 22fa84ac18c72a6bab7f6032f5928f8d8adbc523
+
       cout<<(*it)->Name()<<endl;
       ++it;
    }
@@ -40,6 +40,7 @@ int main()
    delete t;
    delete screen;
    return 0;
+    }
 }
 
 Player *create(Player *p)

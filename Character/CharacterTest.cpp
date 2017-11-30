@@ -8,7 +8,7 @@ void CharacterTest:: setUp()
 {
    cout << "setup" << endl;
    item = "Does not exist";
-   I = new Bow;
+   I = new HealthPotion;
 
 }
 

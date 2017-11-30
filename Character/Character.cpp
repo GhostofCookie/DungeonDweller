@@ -58,7 +58,7 @@ void Character:: ChangeHealth(int hMod)
    health += hMod;
 }
 
-Weapon* Character:: UseItem(string item)
+Item* Character:: UseItem(string item)
 {
    for(unsigned int i = 0; i < inventory.size(); i++)
       if(inventory[i]->Name() == item)
@@ -66,12 +66,12 @@ Weapon* Character:: UseItem(string item)
    return nullptr;
 }
 
-vector < Weapon* > Character:: GetInventoryItems()
+vector < Item* > Character:: GetInventoryItems()
 {
    return inventory; 
 }
 
-void Character:: FillInventory(MyWeapons *item)
+void Character:: FillInventory(Item *item)
 {
    inventory.push_back(item);
 }
