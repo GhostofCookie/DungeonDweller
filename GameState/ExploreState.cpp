@@ -17,7 +17,7 @@ ExploreState::ExploreState(Player *p)
 	roomPtr = new Room(import->collection,0);
 	roomTree = new RoomTree(roomPtr);
 	player = p;
-	delete p;
+	currState = 'E';
 }
 
 /// Deconstructor
@@ -26,7 +26,7 @@ ExploreState::~ExploreState()
 	delete menu;
 	delete screen;
 	delete roomPtr;
-	delete roomTree;
+	//delete roomTree;
 	delete import;
 	delete player;
 }

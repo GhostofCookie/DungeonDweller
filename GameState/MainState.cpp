@@ -13,6 +13,7 @@ MainState::~MainState()
 {
    delete screen;
    delete menu;
+   delete player;
 }
 
 void MainState::Set()
