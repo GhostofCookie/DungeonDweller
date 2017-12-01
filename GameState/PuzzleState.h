@@ -21,18 +21,20 @@ using namespace std;
 
 class PuzzleState : public GameState
 {
-  /// \class PuzzleState PuzzleState.h
-  /// \brief This is the state of the game when the player is interacting with
-  /// a puzzle/minigame. Derived from GameState.
- public:
-  /// Default constructor
-  PuzzleState(Player *p);
-  /// Sets the layout of the game.
-  void Set();
-  /// Outputs the set layout.
-  void Get();
- private:
-  vector<Puzzle*> puzzles;
+   /// \class PuzzleState PuzzleState.h
+   /// \brief This is the state of the game when the player is interacting with
+   /// a puzzle/minigame. Derived from GameState.
+  public:
+   /// Default constructor
+   PuzzleState(Player *p);
+   /// Default Destructor.
+   ~PuzzleState();
+   /// Sets the layout of the game.
+   void Set();
+   /// Outputs the set layout.
+   void Get();
+  private:
+   vector<Puzzle*> puzzles;
 };
 
 #endif

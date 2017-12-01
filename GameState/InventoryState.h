@@ -5,6 +5,7 @@
 ///
 
 #include "GameState.h"
+#include "ExploreState.h"
 #include "../Menu/ExploreMenu.h"
 #include "../Cutscene/Cutscene.h"
 #include "../Room/Room.h"

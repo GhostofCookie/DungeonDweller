@@ -13,7 +13,7 @@ InventoryState::InventoryState(Player *p)
 {
    screen = new Screen();
    menu = new CharacterMenu();
-   player = p;
+   player = new Player(*p);
 }
 
 /// This is the default destructor.
@@ -29,17 +29,17 @@ void InventoryState::Set()
 {
    auto it = player->GetInventoryItems().begin();
    int i = 1;
-   if(player->GetInventoryItems().empty())
-      cout << "Empty." << endl;
+//   if(player->GetInventoryItems().empty())
+      menu->AddOption(0,"Empty.");
    while(it != player->GetInventoryItems().end())
    {
       menu->AddOption(i,(*it)->Name());
       ++it;
       ++i;
-   }
-/*   it = inv.begin();
-   for(; it != inv.end(); ++it)
-   delete *it;*/
+      }
+   it = player->GetInventoryItems().begin();
+   for(; it != player->GetInventoryItems().end(); ++it)
+   delete *it;
    menu->AddOption('q', "Back to Room");
 }
 

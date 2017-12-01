@@ -6,7 +6,6 @@
 
 // Screen Headers
 #include "../Screen/Screen.h"
-#include "../Screen/SlotScreen.h"
 // Image Headers
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
@@ -41,6 +40,7 @@
 #include "../GameState/GameState.h"
 #include "../GameState/MainState.h"
 #include "../GameState/TradeState.h"
+#include "../GameState/InventoryState.h"
 // Puzzle Headers
 #include "../Puzzles/CodeCracker.h"
 #include "../Puzzles/ConnectFour.h"
@@ -64,14 +64,78 @@ using namespace std;
 
 int main()
 {
-   GameState *state = new ExploreState();
-
-   // temp game setup * prone to break
-   while(true)
+   GameState *state = new MainState();
+   //define character selection here
+   GameState *baseState = new ExploreState();//ExploreState(player);
+   Player *player = (*baseState).GetPlayer();
+   while(true) 
    {
+      system("clear");
+      state->Set();
+      
+      switch(state->GetState())
+      {	
+	 case 'E':
+	    if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
+	    {
+	       delete player;
+	       //   CreatePlayer(player);
+	       baseState = nullptr;
+	       delete baseState;
+	       state = nullptr;
+	       delete state;
+	       baseState = new ExploreState();
+	       state = new MainState();
+	       player = (*baseState).GetPlayer();
+	    }
+	    else
+	       state = new ExploreState(*baseState);
+ 
+	    break;
+	 case 'P':
+	    state = nullptr;
+	    delete state;
+	    state = new PuzzleState(player);
+	    break;
+	    
+	 case 'F':
+	    state = nullptr;
+	    delete state;
+	    state = new FightState(player);
+	    break;
+	    
+	 case 'S':
+	    state = nullptr;
+	    delete state;
+	    state = new TradeState(player);
+	    break;
+	    
+/*	 case 'M':
+	    state = nullptr;
+	    delete state;
+	    state = new MainState();
+	    break;*/
+	    
+	 case 'I':
+	    state = nullptr;
+	    delete state;
+	    state = new InventoryState(player);
+	    break;
+	    
+	 default:
+	    state = nullptr;
+	    delete state;
+	    state = new MainState();
+
+      }
+
       state->Set();
       state->Get();
    }
+   
+   delete player;
+   delete state;
+   delete baseState;
    
    return 0;
 }

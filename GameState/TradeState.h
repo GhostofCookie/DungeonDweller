@@ -18,6 +18,8 @@ class TradeState : public GameState
   public:
    /// Default constructor
    TradeState(Player *p);
+   /// Default destructor.
+   virtual ~TradeState();
    /// Sets the layout of the game.
    void Set();
    /// Outputs the set layout.

@@ -2,7 +2,12 @@
 
 PuzzleState::PuzzleState(Player *p)
 {
-  player = p;
+   player = new Player(*p);
+}
+
+PuzzleState::~PuzzleState()
+{
+   delete player;
 }
 
 void PuzzleState::Set()

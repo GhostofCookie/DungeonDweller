@@ -34,7 +34,7 @@ class ImageImporter
   public:
    /// Object that opens a main file containing other file paths
    /// \param[in] file the master file used
-   ImageImporter(string file = "");
+   ImageImporter(string file = "../DD_Art/DD_MasterFileLinux.txt");
    /// Deconstuctor
    ~ImageImporter();
 		

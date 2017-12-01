@@ -21,7 +21,7 @@ CodeCracker::~CodeCracker()
 
 void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
 {
-   string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
+   string temp="Puzzler: Well, off you go then! +5 Stamina, +10 Gold";
    //menu.SetQuery(temp);
    //menu.OutputMenu();
    cout << temp << endl;

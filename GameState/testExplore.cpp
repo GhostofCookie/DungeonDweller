@@ -27,48 +27,56 @@ int main()
       state->Set();
       
       switch(state->GetState())
-      {
-	
+      {	
 	 case 'E':
-	   if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
+	    if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
 	    {
-	      //  delete player;
-	      //   CreatePlayer(player);
-	      delete baseState;
-	      delete state;
-	      baseState = new ExploreState();
-	      state = new ExploreState(*baseState);
+	       delete player;
+	       //   CreatePlayer(player);
+	       baseState = nullptr;
+	       delete baseState;
+	       state = nullptr;
+	       delete state;
+	       baseState = new ExploreState();
+	       state = new MainState();
+	       player = (*baseState).GetPlayer();
 	    }
 	    else
-	      state = new ExploreState(*baseState);
+	       state = new ExploreState(*baseState);
  
 	    break;
 	 case 'P':
+	    state = nullptr;
 	    delete state;
 	    state = new PuzzleState(player);
 	    break;
 	    
 	 case 'F':
+	    state = nullptr;
 	    delete state;
 	    state = new FightState(player);
 	    break;
 	    
 	 case 'S':
+	    state = nullptr;
 	    delete state;
 	    state = new TradeState(player);
 	    break;
 	    
-	 case 'M':
+/*	 case 'M':
+	    state = nullptr;
 	    delete state;
 	    state = new MainState();
-	    break;
+	    break;*/
 	    
 	 case 'I':
+	    state = nullptr;
 	    delete state;
 	    state = new InventoryState(player);
 	    break;
 	    
 	 default:
+	    state = nullptr;
 	    delete state;
 	    state = new MainState();
 

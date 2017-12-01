@@ -411,7 +411,7 @@ TradeState.o: TradeState.cpp TradeState.h GameState.h ../Menu/Menu.h \
  ../RoomTree/../Room/../Item/MyConsumables.h \
  ../RoomTree/../Room/../Item/MyWeapons.h ../Character/Character.h \
  ../Character/Player.h ../Character/Npc.h ../Item/MyConsumables.h \
- ../Item/Item.h ../Item/Weapon.h ../Item/MyWeapons.h
+ ../Item/Item.h ../Item/Weapon.h ../Item/MyWeapons.h ../Menu/TradeMenu.h
 Character.o: ../Character/Character.cpp ../Character/Character.h \
  ../Character/../Item/MyWeapons.h ../Character/../Item/Weapon.h \
  ../Character/../Item/Item.h ../Character/../Item/Weapon.h \
@@ -486,7 +486,7 @@ InventoryState.o: InventoryState.cpp InventoryState.h GameState.h \
  ../RoomTree/../Room/../Item/MyConsumables.h \
  ../RoomTree/../Room/../Item/MyWeapons.h ../Character/Character.h \
  ../Character/Player.h ../Character/Npc.h ../Item/MyConsumables.h \
- ../Item/Item.h ../Item/Weapon.h ../Item/MyWeapons.h \
+ ../Item/Item.h ../Item/Weapon.h ../Item/MyWeapons.h ExploreState.h \
  ../Cutscene/Cutscene.h ../Cutscene/../Screen/Screen.h \
  ../Cutscene/../Image/Image.h ../Cutscene/../Image/DefaultImg.h \
  ../Cutscene/../Image/ImportImg.h ../Cutscene/../Room/Room.h \

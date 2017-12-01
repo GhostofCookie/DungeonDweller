@@ -130,7 +130,8 @@ void Menu::OutputMenu()
 /// (x,y) in the multi-dimensional array.
 void Menu::Set(int x, int y, char ch)
 {
-   menu_Array[x][y] = ch;
+   if( x < menuHeight && y < menuWidth )
+      menu_Array[x][y] = ch;
 }
 
 /// Builds the menu based on the options and outline to the dimensions

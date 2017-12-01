@@ -32,21 +32,26 @@ class GameState
    /// on the current situation of the player character.
   public:
    /// Default constructor
-   GameState(Player *p=nullptr):player{p}{}
+   GameState(Player *p=nullptr):menu{nullptr},screen{nullptr}
+   ,currState{'M'},roomTree{nullptr}
+   ,player{p}{}
    /// Default destructor
    virtual ~GameState(){}
    /// Sets the layout of the game.
    virtual void Set() = 0;
    /// Outputs the set layout.
    virtual void Get() = 0;
-   /// Returns the current state.
-   char GetState() const {return currState;}
 
-   /// Creates the player
-     
-   Item *item;
+   /// Returns the current state.
+   char GetState() const { return currState; }
    /// Returns the current player.
    Player *GetPlayer() const { return player; }
+   /// Returns the room tree.
+   RoomTree *GetRoomTree() const { return roomTree; }
+   /// Returns menu
+   Menu *GetMenu() const { return menu; }
+   /// Returns the screen
+   Screen *GetScreen() const {return screen; }
 
   protected:
    ///< pointer to the menu.

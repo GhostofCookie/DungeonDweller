@@ -1,18 +1,18 @@
 CC = g++
 ARCHIVEDIR = ../ImageImporter:../Menu:../GameState:../Screen:../Image:../Room:../RoomTree:../Puzzles:../Cutscene
 MENU = ../Menu/CharacterMenu.o ../Menu/ConnectFourMenu.o ../Menu/DialogueMenu.o ../Menu/ExploreMenu.o ../Menu/FightMenu.o ../Menu/HanoiMenu.o ../Menu/MainMenu.o ../Menu/MemoryMenu.o ../Menu/Menu.o ../Menu/RiddleMenu.o ../Menu/TicTacToeMenu.o ../Menu/TradeMenu.o
-STATE = ../GameState/ExploreState.o
-SCREEN = ../Screen/Screen.o ../Screen/SlotScreen.o
+STATE = ../GameState/ExploreState.o ../GameState/TradeState.o ../GameState/FightState.o ../GameState/MainState.o ../GameState/PuzzleState.o  ../GameState/InventoryState.o
+SCREEN = ../Screen/Screen.o
 IMAGE = ../Image/Image.o ../Image/ImportImg.o ../Image/DefaultImg.o ../ImageImporter/ImageImporter.o
 ROOM =  ../Room/Room.o
 ROOMTREE = ../RoomTree/RoomTree.o
 CUTSCENE = ../Cutscene/Cutscene.o
-PUZZLE = #../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o
-ITEM = ##../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
-CHARACTER = ## ../Character/Npc.o ../Character/Player.o
-OBJS = DungeonDweller.o $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(CUTSCENE) $(PUZZLE) $(ITEM) $(STATE)
-COV = -fprofile-arcs -ftest-coverage #-lcppunit -ldl 
-CCFLAGS = -Wall -std=c++11 $(COV)#-I$(ARCHIVEDIR) -g 
+PUZZLE = ../Puzzles/CodeCracker.o ../Puzzles/ConnectFour.o ../Puzzles/Hanoi.o ../Puzzles/MemoryMatch.o ../Puzzles/TicTacToe.o ../Puzzles/Puzzle.o
+ITEM = ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o ../Item/MyConsumables.o
+CHARACTER =  ../Character/Npc.o ../Character/Player.o ../Character/Character.o
+OBJS = DungeonDweller.o $(MENU) $(SCREEN) $(IMAGE) $(ROOM) $(ROOMTREE) $(CUTSCENE) $(PUZZLE) $(ITEM) $(STATE) $(CHARACTER)
+COV = -lcppunit -ldl 
+CCFLAGS = -Wall -std=c++11 $(COV) #-I$(ARCHIVEDIR) -g 
 
 LIB = ./lib
 LINKS = -L $(LIB) $(COV)
