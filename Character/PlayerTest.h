@@ -21,8 +21,12 @@ class PlayerTest : public CppUnit::TestFixture
    CPPUNIT_TEST_SUITE_END();
 
   public:
-   void setUp(); ///>override \c setUp to create variable
-   void TestKeys();
+
+   ///>override \c setUp to create variable
+   void setUp();
+
+   ///> test key functions of player
+   void TestKeys(); 
    
   private:
    //values used for test cases

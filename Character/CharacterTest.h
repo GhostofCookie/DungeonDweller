@@ -13,12 +13,12 @@
 
 class Item;
 class Weapon;
-/// class to test functionality of the IntVector class
+/// class to test functionality of the Character class
 class CharacterTest : public CppUnit::TestFixture
 {
    //test cases
    CPPUNIT_TEST_SUITE(CharacterTest);
-//   CPPUNIT_TEST(TestFillInventory);
+   CPPUNIT_TEST(TestFillInventory);
    CPPUNIT_TEST(TestGetInventoryItems);
    CPPUNIT_TEST(TestUseItem);
    CPPUNIT_TEST(TestChangeGold);
@@ -27,24 +27,34 @@ class CharacterTest : public CppUnit::TestFixture
    CPPUNIT_TEST_SUITE_END();
 
   public:
-   
-   void setUp(); ///>override \c setUp to create variable
-   void tearDown();
-   // void TestFillInventory();
+
+   /// >override \c setUp to create variable
+   void setUp();
+
+   ///> test filling the characters inventory
+   void TestFillInventory();
+
+   ///> test geting the characters entire inventory
    void TestGetInventoryItems();
+
+   ///> test returning and item to use in the characters inventory
    void TestUseItem();
+
+   ///> test changing how much gold the character has
    void TestChangeGold();
+
+   ///> test changing how much health the character has
    void TestChangeHealth();
+
+   ///. test changing how much stamina the character has
    void TestChangeStamina();
    
   private:
    
    //values used for test cases
-   HealthPotion *I;
    string item;
    vector<Item*> inv;
    Character C;
-   Item *II;
 };
 
 #endif
