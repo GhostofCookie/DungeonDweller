@@ -19,7 +19,7 @@
 using namespace std;
 
 
-/// The ImageImporter class can import multiple files and convert them into
+/// \brief The ImageImporter class can import multiple files and convert them into
 /// Images to use at a later time
 class ImageImporter
 {

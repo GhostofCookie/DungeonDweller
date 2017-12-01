@@ -32,7 +32,7 @@ using namespace std;
 
 
 
-/// The Room class defines random values that characterize a room's event.
+/// /brief The Room class defines random values that characterize a room's event.
 /// It also applies appropriate images onto a given room image
 class Room
 {

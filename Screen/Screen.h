@@ -13,7 +13,7 @@
 using namespace std;
 
 
-/// This class represents an abstract base class in which different
+/// \brief This class represents an abstract base class in which different
 /// screens can be created from the default
 class Screen
 {	

@@ -8,6 +8,7 @@
 #include "MyWeapons.h"
 #include "../Character/Character.h"
 #include <string>
+#include <stdexcept>
 using namespace std;
 
 /// Sword Constructor
@@ -19,7 +20,7 @@ Sword::Sword()
    {
       itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
    }
-   catch(runtime_error &re)
+   catch(runtime_error)
    {
       itemName = "Sword";
    }
@@ -53,7 +54,7 @@ Bow::Bow()
    {
       itemName = NameGenerator("../Item/WeaponNames.txt") + " Bow";
    }
-   catch(runtime_error &re)
+   catch(runtime_error)
    {
       itemName = "Bow";
    }
@@ -104,7 +105,7 @@ Spell::Spell()
    {
    itemName = NameGenerator("../Item/SpellNames.txt") + " Spell";
    }
-   catch(runtime_error &re) {
+   catch(runtime_error) {
       itemName = "Spell";
    }
 }

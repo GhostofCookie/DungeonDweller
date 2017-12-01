@@ -1,15 +1,22 @@
 MyConsumables.o: MyConsumables.cpp MyConsumables.h Consumable.h Item.h \
- ../Character/Character.h ../Character/../Item/Item.h \
- ../Character/../Image/ImportImg.h ../Character/../Image/Image.h \
- ../Character/../Image/../Screen/Screen.h ../Character/Player.h \
- ../Character/Character.h ../Character/../Item/MyConsumables.h
+ ../Character/Character.h ../Character/../Item/MyWeapons.h \
+ ../Character/../Item/Weapon.h ../Character/../Item/Item.h \
+ ../Character/../Item/Weapon.h ../Character/../Item/MyConsumables.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h \
+ ../Character/Player.h ../Character/Character.h
 Item.o: Item.cpp Item.h MyWeapons.h Weapon.h MyConsumables.h Consumable.h
 MyWeapons.o: MyWeapons.cpp MyWeapons.h Weapon.h Item.h \
- ../Character/Character.h ../Character/../Item/Item.h \
- ../Character/../Image/ImportImg.h ../Character/../Image/Image.h \
- ../Character/../Image/../Screen/Screen.h
+ ../Character/Character.h ../Character/../Item/MyWeapons.h \
+ ../Character/../Item/Weapon.h ../Character/../Item/MyConsumables.h \
+ ../Character/../Item/Consumable.h ../Character/../Item/Item.h \
+ ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
+ ../Character/../Image/Image.h ../Character/../Image/../Screen/Screen.h
 Weapon.o: Weapon.cpp Weapon.h Item.h
-Character.o: ../Character/Character.h ../Character/../Item/Item.h \
+Character.o: ../Character/Character.h ../Character/../Item/MyWeapons.h \
+ ../Character/../Item/Weapon.h ../Character/../Item/Item.h \
+ ../Character/../Item/Weapon.h ../Character/../Item/MyConsumables.h \
+ ../Character/../Item/Consumable.h ../Character/../Item/Item.h \
  ../Character/../Image/ImportImg.h ../Character/../Image/Image.h \
  ../Character/../Image/../Screen/Screen.h
 Items.o: Items.cpp MyConsumables.h Consumable.h Item.h MyWeapons.h \

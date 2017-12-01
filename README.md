@@ -11,6 +11,9 @@ DungeonDwellerDocuments/:
 doxygen/:
    - Contains all doxygen related items.
 
+Game/:
+   - Contains the main game executable and file.
+   
 Menu/:
    - contains all menu related headers and implementations.
 
