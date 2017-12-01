@@ -9,7 +9,7 @@ var dir_4836d6e1a1f2b9de6cb88fa109ea7ca3 =
       [ "CharacterTest", "classCharacterTest.html", "classCharacterTest" ]
     ] ],
     [ "main.cpp", "Character_2main_8cpp.html", "Character_2main_8cpp" ],
-    [ "mainTest.cpp", "mainTest_8cpp.html", "mainTest_8cpp" ],
+    [ "mainTest.cpp", "Character_2mainTest_8cpp.html", "Character_2mainTest_8cpp" ],
     [ "Npc.cpp", "Npc_8cpp.html", null ],
     [ "Npc.h", "Npc_8h.html", [
       [ "Npc", "classNpc.html", "classNpc" ]

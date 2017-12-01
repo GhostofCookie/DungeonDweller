@@ -9,7 +9,7 @@ var classCodeCracker =
     [ "IsRiddleUsed", "classCodeCracker.html#a5540b8495c5f97f92cdb9b56a6005e6a", null ],
     [ "MakeRiddleUsed", "classCodeCracker.html#a23587f975c42657b90e78d00cf93bd38", null ],
     [ "OutputRiddle", "classCodeCracker.html#a02a6f156f051feca5691b8a4c4f44310", null ],
-    [ "RunGame", "classCodeCracker.html#a663fb6edb8141efd3b1760e46ea9f4e9", null ],
+    [ "RunGame", "classCodeCracker.html#a77c80b74947f9f37eaa8319b32c606b0", null ],
     [ "SetRiddleInMenu", "classCodeCracker.html#a98c0c73ba7bc17e56a8a913ada09955f", null ],
     [ "UnusedRandomRiddle", "classCodeCracker.html#a55bebba723a92d780659f016e9e394e4", null ],
     [ "ValidAnswer", "classCodeCracker.html#aeddf29fcc2034f0acb41d41e0f755a3c", null ],

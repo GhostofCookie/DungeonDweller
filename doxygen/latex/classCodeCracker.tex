@@ -23,7 +23,7 @@ Inheritance diagram for Code\-Cracker\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default constructor for hanoi, reads in riddles from .txt files. \end{DoxyCompactList}\item 
 virtual \hyperlink{classCodeCracker_ae7dc389e166286ca2271625154dde39c}{$\sim$\-Code\-Cracker} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
+virtual void \hyperlink{classCodeCracker_a77c80b74947f9f37eaa8319b32c606b0}{Run\-Game} (\hyperlink{classCharacter}{Character} $\ast$player)
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -33,7 +33,7 @@ bool \hyperlink{classCodeCracker_aeddf29fcc2034f0acb41d41e0f755a3c}{Valid\-Answe
 bool \hyperlink{classCodeCracker_a5540b8495c5f97f92cdb9b56a6005e6a}{Is\-Riddle\-Used} (int index)
 \item 
 void \hyperlink{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{Win\-Check} ()
-\begin{DoxyCompactList}\small\item\em Checks if the player has successfully answered 3 riddles. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{Initial\-Prompt} (\hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
 \item 
 void \hyperlink{classCodeCracker_a0f224858393bc3c597bd81babc87764b}{End\-Game\-Prompt} (\hyperlink{classCharacter}{Character} $\ast$player, \hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
@@ -138,7 +138,7 @@ Checks if the player is now dead and ends the game if yes
 
 Imports riddles from a text file and stores them in the riddles vector. 
 
-Imports riddles from a text file and stores them in the vector. \hypertarget{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{\index{Code\-Cracker@{Code\-Cracker}!Initial\-Prompt@{Initial\-Prompt}}
+\hypertarget{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{\index{Code\-Cracker@{Code\-Cracker}!Initial\-Prompt@{Initial\-Prompt}}
 \index{Initial\-Prompt@{Initial\-Prompt}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Initial\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Initial\-Prompt (
 \begin{DoxyParamCaption}
@@ -186,19 +186,19 @@ Outputs the selected riddle, limiting the characters to a set length and moving 
 \mbox{\tt in}  & {\em the} & location of the riddle to output. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
+\hypertarget{classCodeCracker_a77c80b74947f9f37eaa8319b32c606b0}{\index{Code\-Cracker@{Code\-Cracker}!Run\-Game@{Run\-Game}}
 \index{Run\-Game@{Run\-Game}!CodeCracker@{Code\-Cracker}}
-\subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Run\-Game (
+\subsubsection[{Run\-Game}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Code\-Cracker\-::\-Run\-Game (
 \begin{DoxyParamCaption}
 \item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a663fb6edb8141efd3b1760e46ea9f4e9}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCodeCracker_a77c80b74947f9f37eaa8319b32c606b0}
 Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em player,a} & pointer to the players character for changing stats.\\
+\mbox{\tt in}  & {\em player,a} & pointer to the players character for changing stats. \\
 \hline
 \end{DoxyParams}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. 
+
 
 Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
@@ -250,10 +250,6 @@ Checks to see if the user input is one of the accepted answers.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a3177ddb9deb208ac462d55970b112626}
-
-
-Checks if the player has successfully answered 3 riddles. 
-
 Checks if the player has successfully answered 3 riddles and sets Puzzl\-End to true if they have. 
 
 \subsection{Member Data Documentation}

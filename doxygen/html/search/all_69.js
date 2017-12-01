@@ -31,7 +31,7 @@ var searchData=
   ['iseven',['IsEven',['../classImage.html#aa723637c3d64e1290dbfc67238321413',1,'Image::IsEven()'],['../classScreen.html#af7a18ec4e53fb371293e9ebcc23b7e2b',1,'Screen::IsEven()']]],
   ['isinputoutofscope',['IsInputOutOfScope',['../classConnectFour.html#a5e33120d5b6a49e8eacd976de8be9c7c',1,'ConnectFour']]],
   ['isinputvalid',['IsInputValid',['../classMemoryMatch.html#a8d0683346a26c1d00c818e9b75b5a412',1,'MemoryMatch::IsInputValid()'],['../classTicTacToe.html#a6c8bc2be4b6fc3f462905252c70b5183',1,'TicTacToe::IsInputValid()']]],
-  ['isintinputvalid',['IsIntInputValid',['../classTicTacToe.html#a5182bf8f6a082e22e522b31bdd179df7',1,'TicTacToe']]],
+  ['isintinputvalid',['IsIntInputValid',['../classTicTacToe.html#ab2b2442eaad32fe7bd57db13ca5db77f',1,'TicTacToe']]],
   ['isinusedpairs',['IsInUsedPairs',['../classMemoryMatch.html#a7f3998ff0f59a063a493156c2d00eca2',1,'MemoryMatch']]],
   ['isodd',['IsOdd',['../classMemoryMatch.html#a2cdc3fbc35524564a651e3cc1d5d03df',1,'MemoryMatch']]],
   ['isriddleused',['IsRiddleUsed',['../classCodeCracker.html#a5540b8495c5f97f92cdb9b56a6005e6a',1,'CodeCracker']]],

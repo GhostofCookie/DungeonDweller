@@ -41,7 +41,7 @@ bool \hyperlink{classTicTacToe_afe8f0ecd818f9f6b8418b7e597ff56a7}{Win\-Check} ()
 bool \hyperlink{classTicTacToe_a8134bdddf731a29f61f42273e23f1abf}{Tie\-Game\-Check} (int \&current\-Player)
 \item 
 void \hyperlink{classTicTacToe_a457647024a551cb3d574d47a9ca85091}{Ai\-Move} (char Ai\-Piece)
-\begin{DoxyCompactList}\small\item\em Performs the selection for the npc opponent. \end{DoxyCompactList}\item 
+\item 
 bool \hyperlink{classTicTacToe_afce358eabb849ae0dbf55818a7bdc56b}{Horizontal\-Check} ()
 \item 
 bool \hyperlink{classTicTacToe_aff214a5737d06961a5f6a14cf97ed1fe}{Vertical\-Check} ()
@@ -52,7 +52,7 @@ bool \hyperlink{classTicTacToe_ad65a6d8382d7a59c68a6778caea91d78}{Left\-Diagonal
 \item 
 bool \hyperlink{classTicTacToe_a6c8bc2be4b6fc3f462905252c70b5183}{Is\-Input\-Valid} (char input\-X, int input\-Y)
 \item 
-bool \hyperlink{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}{Is\-Int\-Input\-Valid} (int input\-Y)
+bool \hyperlink{classTicTacToe_ab2b2442eaad32fe7bd57db13ca5db77f}{Is\-Int\-Input\-Valid} (int input)
 \item 
 void \hyperlink{classTicTacToe_a3c05c5ac2c16a02a6a3c3b2021fdde74}{Set\-Current\-Players\-Char} (int current\-Player)
 \item 
@@ -122,10 +122,11 @@ Deconstructor.
 \item[{char}]{Ai\-Piece}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a457647024a551cb3d574d47a9ca85091}
-
-
 Performs the selection for the npc opponent. 
-
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Ai\-Piece,which} & char to insert into the board \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTicTacToe_a5a03afaffde20d826472e7a8e27995e4}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Board\-Setup@{Board\-Setup}}
 \index{Board\-Setup@{Board\-Setup}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Board\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Board\-Setup (
@@ -150,6 +151,11 @@ top\-Bound and left\-Bound should set the board centered inside the screen objec
 \item[{char}]{input}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a40ab96fced3061640200f5e7b83e0415}
+Takes a char from the input and assigns it an appropriate int 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & char to convert \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTicTacToe_a608d3101cab7340fcc2d0ea5061c37ea}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!End\-Game\-Prompt@{End\-Game\-Prompt}}
 \index{End\-Game\-Prompt@{End\-Game\-Prompt}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-End\-Game\-Prompt (
@@ -159,6 +165,13 @@ top\-Bound and left\-Bound should set the board centered inside the screen objec
 \item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a608d3101cab7340fcc2d0ea5061c37ea}
+Prompts the player and handles the end of the game appropriately. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\-Player,assigned} & to be human for new game. \mbox{[}in\mbox{]} menu, the menu used to output stuffs \\
+\hline
+\mbox{\tt in}  & {\em player,a} & pointer to the player usd to modify stats \\
+\hline
+\end{DoxyParams}
 If current\-Player is even, the A\-I has won, -\/1 player health, reset the game for another round until the player has won. \hypertarget{classTicTacToe_afce358eabb849ae0dbf55818a7bdc56b}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Horizontal\-Check@{Horizontal\-Check}}
 \index{Horizontal\-Check@{Horizontal\-Check}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Horizontal\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Horizontal\-Check (
@@ -187,13 +200,25 @@ Returns true if every space in the board has been filled with a character.
 \item[{int}]{input\-Y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a6c8bc2be4b6fc3f462905252c70b5183}
-\hypertarget{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Int\-Input\-Valid@{Is\-Int\-Input\-Valid}}
+Makes sure the input is within the bounds of the game 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x-\/coordinate} & to check \\
+\hline
+\mbox{\tt in}  & {\em y-\/coordinate} & to check \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTicTacToe_ab2b2442eaad32fe7bd57db13ca5db77f}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Int\-Input\-Valid@{Is\-Int\-Input\-Valid}}
 \index{Is\-Int\-Input\-Valid@{Is\-Int\-Input\-Valid}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Is\-Int\-Input\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Is\-Int\-Input\-Valid (
 \begin{DoxyParamCaption}
-\item[{int}]{input\-Y}
+\item[{int}]{input}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a5182bf8f6a082e22e522b31bdd179df7}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_ab2b2442eaad32fe7bd57db13ca5db77f}
+Checks to see if the int is within the bounds of the game 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & value to check \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTicTacToe_a7b1ba09a855c9a3f71e3e06b3e76a992}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Is\-Spot\-Filled@{Is\-Spot\-Filled}}
 \index{Is\-Spot\-Filled@{Is\-Spot\-Filled}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Is\-Spot\-Filled}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Is\-Spot\-Filled (
@@ -238,6 +263,11 @@ Displays the screen containing the gameboard
 \item[{int \&}]{current\-Player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a740fc2c6b0526442ead17835c473f93e}
+Resets the game to the starting state 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an} & int to show whos turn it is \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTicTacToe_a36b58f33246558d0b7b34412b641cff6}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Reset\-Game@{Reset\-Game}}
 \index{Reset\-Game@{Reset\-Game}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Reset\-Game}]{\setlength{\rightskip}{0pt plus 5cm}void Tic\-Tac\-Toe\-::\-Reset\-Game (
@@ -285,6 +315,11 @@ Checks who's turn it is and sets Current\-Player\-Char to their correct char. \h
 \item[{int \&}]{current\-Player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classTicTacToe_a8134bdddf731a29f61f42273e23f1abf}
+Checks if there is a tie, returns true if yes. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em current\-Player,a} & reference to which players turn it is \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTicTacToe_ab3e52a3c1bb9fefe08f4c4641f8a70f8}{\index{Tic\-Tac\-Toe@{Tic\-Tac\-Toe}!Valid\-Move@{Valid\-Move}}
 \index{Valid\-Move@{Valid\-Move}!TicTacToe@{Tic\-Tac\-Toe}}
 \subsubsection[{Valid\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Tic\-Tac\-Toe\-::\-Valid\-Move (

@@ -31,7 +31,7 @@ var searchData=
   ['roomtypes',['ROOMTYPES',['../Room_8cpp.html#affb996ca750088e78b1a4255f69684d6',1,'Room.cpp']]],
   ['root',['root',['../classRoomTree.html#a3e7726e562748d38e587bb20ccde6451',1,'RoomTree']]],
   ['rootdir',['RootDir',['../classRoomTree_1_1Node.html#a3e006530059cc6994534d92e10b5fc72',1,'RoomTree::Node']]],
-  ['rungame',['RunGame',['../classCodeCracker.html#a663fb6edb8141efd3b1760e46ea9f4e9',1,'CodeCracker::RunGame()'],['../classConnectFour.html#a3b578d1126bc575fa23b8811f121c8be',1,'ConnectFour::RunGame()'],['../classHanoi.html#a294a2a533b7f3305391aa880f7a0eb36',1,'Hanoi::RunGame()'],['../classMemoryMatch.html#a090950f764dee0b982ea254075d3667c',1,'MemoryMatch::RunGame()'],['../classPuzzle.html#a134875b96b18d9963d2b018fd14e7ab9',1,'Puzzle::RunGame()'],['../classTicTacToe.html#acf4f00b2f56781f0c41a4d51cfe03268',1,'TicTacToe::RunGame()']]],
+  ['rungame',['RunGame',['../classCodeCracker.html#a77c80b74947f9f37eaa8319b32c606b0',1,'CodeCracker::RunGame()'],['../classConnectFour.html#a3b578d1126bc575fa23b8811f121c8be',1,'ConnectFour::RunGame()'],['../classHanoi.html#a294a2a533b7f3305391aa880f7a0eb36',1,'Hanoi::RunGame()'],['../classMemoryMatch.html#a090950f764dee0b982ea254075d3667c',1,'MemoryMatch::RunGame()'],['../classPuzzle.html#a134875b96b18d9963d2b018fd14e7ab9',1,'Puzzle::RunGame()'],['../classTicTacToe.html#acf4f00b2f56781f0c41a4d51cfe03268',1,'TicTacToe::RunGame()']]],
   ['runinput',['RunInput',['../classExploreState.html#a8cd0a8ff2ca053a68f57f1eb73c3e4b9',1,'ExploreState']]],
   ['runtest_2ecpp',['RunTest.cpp',['../RunTest_8cpp.html',1,'']]]
 ];

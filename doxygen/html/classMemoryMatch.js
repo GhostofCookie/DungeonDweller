@@ -19,7 +19,6 @@ var classMemoryMatch =
     [ "RandomNumber", "classMemoryMatch.html#a0543038015f3bbd9db9e9a235cf12579", null ],
     [ "RunGame", "classMemoryMatch.html#a090950f764dee0b982ea254075d3667c", null ],
     [ "SaveBoardToScreen", "classMemoryMatch.html#a6d4c54b56ee4f5b4df36b7767e07ebd5", null ],
-    [ "SecondDelay", "classMemoryMatch.html#acfc3d904747668225bd52a508d9dcae6", null ],
     [ "SetInputs", "classMemoryMatch.html#afe732c2f2aef27e10742604aa0b6b474", null ],
     [ "ValidMove", "classMemoryMatch.html#ae5f190c71bc1a63ec95eab6fd8a3c2c7", null ],
     [ "WinCheck", "classMemoryMatch.html#a1c958b2c366188c2c603c562b3f2f878", null ],

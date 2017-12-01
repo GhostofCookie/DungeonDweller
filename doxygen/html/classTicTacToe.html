@@ -166,7 +166,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a8134bdddf731a29f61f42273e23f1abf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a8134bdddf731a29f61f42273e23f1abf">TieGameCheck</a> (int &amp;currentPlayer)</td></tr>
 <tr class="separator:a8134bdddf731a29f61f42273e23f1abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a457647024a551cb3d574d47a9ca85091"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a457647024a551cb3d574d47a9ca85091">AiMove</a> (char AiPiece)</td></tr>
-<tr class="memdesc:a457647024a551cb3d574d47a9ca85091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the selection for the npc opponent.  <a href="#a457647024a551cb3d574d47a9ca85091">More...</a><br/></td></tr>
 <tr class="separator:a457647024a551cb3d574d47a9ca85091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce358eabb849ae0dbf55818a7bdc56b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#afce358eabb849ae0dbf55818a7bdc56b">HorizontalCheck</a> ()</td></tr>
 <tr class="separator:afce358eabb849ae0dbf55818a7bdc56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,8 +177,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ad65a6d8382d7a59c68a6778caea91d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c8bc2be4b6fc3f462905252c70b5183"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a6c8bc2be4b6fc3f462905252c70b5183">IsInputValid</a> (char inputX, int inputY)</td></tr>
 <tr class="separator:a6c8bc2be4b6fc3f462905252c70b5183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5182bf8f6a082e22e522b31bdd179df7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a5182bf8f6a082e22e522b31bdd179df7">IsIntInputValid</a> (int inputY)</td></tr>
-<tr class="separator:a5182bf8f6a082e22e522b31bdd179df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b2442eaad32fe7bd57db13ca5db77f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#ab2b2442eaad32fe7bd57db13ca5db77f">IsIntInputValid</a> (int input)</td></tr>
+<tr class="separator:ab2b2442eaad32fe7bd57db13ca5db77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c05c5ac2c16a02a6a3c3b2021fdde74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a3c05c5ac2c16a02a6a3c3b2021fdde74">SetCurrentPlayersChar</a> (int currentPlayer)</td></tr>
 <tr class="separator:a3c05c5ac2c16a02a6a3c3b2021fdde74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a740fc2c6b0526442ead17835c473f93e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicTacToe.html#a740fc2c6b0526442ead17835c473f93e">ResetGame</a> (int &amp;currentPlayer)</td></tr>
@@ -286,8 +285,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Performs the selection for the npc opponent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">AiPiece,which</td><td>char to insert into the board </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -342,6 +346,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Takes a char from the input and assigns it an appropriate int </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -382,6 +393,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Prompts the player and handles the end of the game appropriately. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">currentPlayer,assigned</td><td>to be human for new game. [in] menu, the menu used to output stuffs </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">player,a</td><td>pointer to the player usd to modify stats </td></tr>
+  </table>
+  </dd>
+</dl>
 <p>If currentPlayer is even, the AI has won, -1 player health, reset the game for another round until the player has won. </p>
 
 </div>
@@ -467,10 +486,18 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Makes sure the input is within the bounds of the game </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x-coordinate</td><td>to check </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y-coordinate</td><td>to check </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a5182bf8f6a082e22e522b31bdd179df7"></a>
+<a class="anchor" id="ab2b2442eaad32fe7bd57db13ca5db77f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -481,7 +508,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">bool TicTacToe::IsIntInputValid </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>inputY</em></td><td>)</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -491,6 +518,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks to see if the int is within the bounds of the game </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">the</td><td>value to check </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -624,6 +658,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Resets the game to the starting state </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">an</td><td>int to show whos turn it is </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -752,6 +793,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Checks if there is a tie, returns true if yes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">currentPlayer,a</td><td>reference to which players turn it is </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
