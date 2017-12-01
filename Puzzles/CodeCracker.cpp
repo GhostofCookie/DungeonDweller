@@ -19,6 +19,7 @@ CodeCracker::~CodeCracker()
 {
 }
 
+<<<<<<< HEAD
 void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
 {
    string temp="Puzzler: Well, off you go then! +5 Stamina, +10 Gold";
@@ -30,6 +31,8 @@ void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
    SecondDelay(5);
 }
 
+=======
+>>>>>>> 5ad498c7ff96a2dc50a2b5435efdab713b610d11
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won.
 void CodeCracker:: RunGame(Character *player)
@@ -78,6 +81,18 @@ void CodeCracker:: RunGame(Character *player)
    }
    if(player->GetHealth() != 0)
       EndGamePrompt(player, GameMenu);
+}
+
+
+void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
+{
+   string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
+   //menu.SetQuery(temp);
+   //menu.OutputMenu();
+   cout << temp << endl;
+   player->ChangeStamina(+5);
+   player->ChangeGold(+10);
+   SecondDelay(5);
 }
 
 ///Checks to see if the user input is one of the accepted answers.

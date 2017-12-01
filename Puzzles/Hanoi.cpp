@@ -33,7 +33,7 @@ Hanoi::~Hanoi()
 void Hanoi::EndGamePrompt(Character *player)
 {
    cout << endGamePrompt << endl;
-   player->ChangeStamina(5);
+   player->ChangeStamina(+5);
 }
 ///Method to run the game, serves as a 'main' for the mini-game, calling
 ///functions from private until the player has won. 

@@ -110,10 +110,6 @@ class MemoryMatch: virtual public Puzzle
    ///Outputs a conclusion message to the user and then shows the puzzle results
    ///for 6 seconds before ending the game.
    void EndGamePrompt();
-   
-   ///Causes a "seconds" delay in the program process
-   ///\param[in]seconds, the amount of seconds to delay the game for
-   void SecondDelay(int seconds);
 
    ///Flips two squares and outputs it for 3 seconds then flips it back.   
    ///\param[in] inputX1, The X-Coordinate of the first card to flip
