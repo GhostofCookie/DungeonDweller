@@ -6,5 +6,6 @@ var searchData=
   ['tree1',['Tree1',['../classRoomTreeTest.html#aba5c37d20a82bff695de4c78a547f23f',1,'RoomTreeTest']]],
   ['tree2',['Tree2',['../classRoomTreeTest.html#aada805154b8f5306805936f0ba43834c',1,'RoomTreeTest']]],
   ['tree3',['Tree3',['../classRoomTreeTest.html#aa70878ec1fa44e95f78e59a236572b27',1,'RoomTreeTest']]],
-  ['type',['type',['../classRoom.html#a209eba22dbc85cb190906de3f0363e59',1,'Room']]]
+  ['tree4',['Tree4',['../classRoomTreeTest.html#afaaf16b5f57fc43c3e265dca242af31e',1,'RoomTreeTest']]],
+  ['type',['type',['../classCutscene.html#ac07858b694eab044576aa40257406e69',1,'Cutscene::type()'],['../classRoom.html#a209eba22dbc85cb190906de3f0363e59',1,'Room::type()']]]
 ];

@@ -23,6 +23,14 @@ Inheritance diagram for Explore\-State\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em This is the the default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classExploreState_a713fbeb296e929346e07ffe63c1af580}{$\sim$\-Explore\-State} ()
 \begin{DoxyCompactList}\small\item\em This is the default destructor. \end{DoxyCompactList}\item 
+\hyperlink{classExploreState_acb7330c9d04aeccdd2a9519b4d9fe232}{Explore\-State} (\hyperlink{classGameState}{Game\-State} \&obj)
+\item 
+\hyperlink{classExploreState_ab003f9b4c30fd15aae47c28fd9739114}{Explore\-State} (\hyperlink{classExploreState}{Explore\-State} \&obj)
+\item 
+\hyperlink{classExploreState_a4e0a1e3d3d17544b92b3e1ea31a274c4}{Explore\-State} (const \hyperlink{classExploreState}{Explore\-State} \&obj)
+\item 
+\hyperlink{classExploreState}{Explore\-State} \& \hyperlink{classExploreState_a010ecb3daf679e9ae2a97f4d760dda5b}{operator=} (const \hyperlink{classExploreState}{Explore\-State} \&obj)
+\item 
 void \hyperlink{classExploreState_a8fb38f9fca513b87d914d077a0f2652b}{Set} ()
 \begin{DoxyCompactList}\small\item\em Sets the layout for the game menu and screen. \end{DoxyCompactList}\item 
 void \hyperlink{classExploreState_ace76d7a24bcb85f6f0a0fe0d0e763e21}{Get} ()
@@ -70,7 +78,38 @@ This is the the default constructor.
 
 This is the default destructor. 
 
-Deconstructor. 
+Deconstructor. \hypertarget{classExploreState_acb7330c9d04aeccdd2a9519b4d9fe232}{\index{Explore\-State@{Explore\-State}!Explore\-State@{Explore\-State}}
+\index{Explore\-State@{Explore\-State}!ExploreState@{Explore\-State}}
+\subsubsection[{Explore\-State}]{\setlength{\rightskip}{0pt plus 5cm}Explore\-State\-::\-Explore\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\-State} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classExploreState_acb7330c9d04aeccdd2a9519b4d9fe232}
+\hypertarget{classExploreState_ab003f9b4c30fd15aae47c28fd9739114}{\index{Explore\-State@{Explore\-State}!Explore\-State@{Explore\-State}}
+\index{Explore\-State@{Explore\-State}!ExploreState@{Explore\-State}}
+\subsubsection[{Explore\-State}]{\setlength{\rightskip}{0pt plus 5cm}Explore\-State\-::\-Explore\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf Explore\-State} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classExploreState_ab003f9b4c30fd15aae47c28fd9739114}
+Default copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & reference to an \\
+\hline
+\end{DoxyParams}
+\hypertarget{classExploreState_a4e0a1e3d3d17544b92b3e1ea31a274c4}{\index{Explore\-State@{Explore\-State}!Explore\-State@{Explore\-State}}
+\index{Explore\-State@{Explore\-State}!ExploreState@{Explore\-State}}
+\subsubsection[{Explore\-State}]{\setlength{\rightskip}{0pt plus 5cm}Explore\-State\-::\-Explore\-State (
+\begin{DoxyParamCaption}
+\item[{const {\bf Explore\-State} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classExploreState_a4e0a1e3d3d17544b92b3e1ea31a274c4}
+Const copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & reference to an explore state \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classExploreState_ace76d7a24bcb85f6f0a0fe0d0e763e21}{\index{Explore\-State@{Explore\-State}!Get@{Get}}
@@ -88,6 +127,18 @@ Prints the layout of the screen, character info, and the menu.
 
 Implements \hyperlink{classGameState_a4283cb3aa5637d4815d64272843a0625}{Game\-State}.
 
+\hypertarget{classExploreState_a010ecb3daf679e9ae2a97f4d760dda5b}{\index{Explore\-State@{Explore\-State}!operator=@{operator=}}
+\index{operator=@{operator=}!ExploreState@{Explore\-State}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Explore\-State} \& Explore\-State\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Explore\-State} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classExploreState_a010ecb3daf679e9ae2a97f4d760dda5b}
+Assignment operator for the \hyperlink{classExploreState}{Explore\-State}. 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
 \hypertarget{classExploreState_a8cd0a8ff2ca053a68f57f1eb73c3e4b9}{\index{Explore\-State@{Explore\-State}!Run\-Input@{Run\-Input}}
 \index{Run\-Input@{Run\-Input}!ExploreState@{Explore\-State}}
 \subsubsection[{Run\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Explore\-State\-::\-Run\-Input (

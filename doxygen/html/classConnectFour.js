@@ -21,7 +21,7 @@ var classConnectFour =
     [ "WinCheck", "classConnectFour.html#a4f7dd5550d9ba548c542d887822cc1f0", null ],
     [ "ConnectFourScreen", "classConnectFour.html#a7548207e4c83260233e8d3668ae3e7e2", null ],
     [ "currentPlayerChar", "classConnectFour.html#adc938d715dbe28efc1db3b4a1dc866cb", null ],
-    [ "grid", "classConnectFour.html#a42275b6a7a1b490b7e9adc3e2d5480d9", null ],
+    [ "grid", "classConnectFour.html#aa394189c6422c3901d18997202fff27e", null ],
     [ "xSize", "classConnectFour.html#a9ebcc46eaaac1805eab8b90925f83a63", null ],
     [ "ySize", "classConnectFour.html#acd39fbfa19a81ab05e7aae3ac51e9ed8", null ]
 ];

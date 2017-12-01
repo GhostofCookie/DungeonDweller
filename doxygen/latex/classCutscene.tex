@@ -18,7 +18,7 @@ struct \hyperlink{structCutscene_1_1Point}{Point}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCutscene_aed118d443c7a13d7bac403875d4c9924}{Cutscene} (\hyperlink{classImportImg}{Import\-Img} image=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}), Import\-Img r=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}), Room $\ast$room\-Template=nullptr)
+\hyperlink{classCutscene_ae6431d4d2472cfa4c5ba7c22bb1c14e2}{Cutscene} (\hyperlink{classImportImg}{Import\-Img} image=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}), Import\-Img r=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/Rooms/D\-D\-\_\-\-Square.\-txt\char`\"{}), Room $\ast$room\-Template=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classCutscene_a87f27f6e952b056528f7974e075e737b}{$\sim$\-Cutscene} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -105,22 +105,24 @@ vector$<$ \hyperlink{structCutscene_1_1Point}{Point} $>$ \hyperlink{classCutscen
 \hyperlink{classImportImg}{Import\-Img} \hyperlink{classCutscene_a033c0715f32be9730d3692e57fe17096}{room}
 \begin{DoxyCompactList}\small\item\em the room to be animated in \end{DoxyCompactList}\item 
 \hyperlink{classImportImg}{Import\-Img} \hyperlink{classCutscene_a85778dff65358df7ddf7a77edeae9b7a}{npc}
-\begin{DoxyCompactList}\small\item\em the npc to be in the room \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the npc to be in the room \end{DoxyCompactList}\item 
+int \hyperlink{classCutscene_ac07858b694eab044576aa40257406e69}{type} = 0
+\begin{DoxyCompactList}\small\item\em the type of room \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 This class runs cutscenes that improve the quality of room transitions. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCutscene_aed118d443c7a13d7bac403875d4c9924}{\index{Cutscene@{Cutscene}!Cutscene@{Cutscene}}
+\hypertarget{classCutscene_ae6431d4d2472cfa4c5ba7c22bb1c14e2}{\index{Cutscene@{Cutscene}!Cutscene@{Cutscene}}
 \index{Cutscene@{Cutscene}!Cutscene@{Cutscene}}
 \subsubsection[{Cutscene}]{\setlength{\rightskip}{0pt plus 5cm}Cutscene\-::\-Cutscene (
 \begin{DoxyParamCaption}
 \item[{{\bf Import\-Img}}]{image = {\ttfamily {\bf Import\-Img}(\char`\"{}../DD\-\_\-Art/{\bf Player}/DD\-\_\-Player.txt\char`\"{})}, }
-\item[{{\bf Import\-Img}}]{r = {\ttfamily {\bf Import\-Img}(\char`\"{}../DD\-\_\-Art/{\bf Player}/DD\-\_\-Player.txt\char`\"{})}, }
+\item[{{\bf Import\-Img}}]{r = {\ttfamily {\bf Import\-Img}(\char`\"{}../DD\-\_\-Art/Rooms/DD\-\_\-Square.txt\char`\"{})}, }
 \item[{{\bf Room} $\ast$}]{temp\-Room = {\ttfamily nullptr}}
 \end{DoxyParamCaption}
-)}}\label{classCutscene_aed118d443c7a13d7bac403875d4c9924}
+)}}\label{classCutscene_ae6431d4d2472cfa4c5ba7c22bb1c14e2}
 
 
 Constructor. 
@@ -614,6 +616,13 @@ variable to keep track of a position for animating
 
 
 screen to draw the cutscene on 
+
+\hypertarget{classCutscene_ac07858b694eab044576aa40257406e69}{\index{Cutscene@{Cutscene}!type@{type}}
+\index{type@{type}!Cutscene@{Cutscene}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int Cutscene\-::type = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCutscene_ac07858b694eab044576aa40257406e69}
+
+
+the type of room 
 
 
 

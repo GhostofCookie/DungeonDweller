@@ -7,6 +7,7 @@ var searchData=
   ['player',['Player',['../classPlayer.html',1,'Player'],['../classGameState.html#a580b319e1866f1bb79328c7d09581bdf',1,'GameState::player()'],['../classPlayer.html#a36d6f55c7bc6d95cf23d2439b9da19bb',1,'Player::Player(int s=0, int k=0, string n=&quot; &quot;, string r=&quot; &quot;, int g=0, int h=0, ImportImg img=ImportImg(&quot;../DD_Art/Player/DD_Player.txt&quot;))'],['../classPlayer.html#a8826850c4f8a2871819713ef61148836',1,'Player::Player(const Player &amp;)'],['../classPlayer.html#ad2d305f9af724e761a491b7a85a020e0',1,'Player::Player(Player &amp;)']]],
   ['player_2ecpp',['Player.cpp',['../Player_8cpp.html',1,'']]],
   ['player_2eh',['Player.h',['../Player_8h.html',1,'']]],
+  ['playerchoice',['PlayerChoice',['../testExplore_8cpp.html#aa15b0d3d90aa74b84db3575abc857eff',1,'testExplore.cpp']]],
   ['playertest',['PlayerTest',['../classPlayerTest.html',1,'']]],
   ['playertest_2ecpp',['PlayerTest.cpp',['../PlayerTest_8cpp.html',1,'']]],
   ['playertest_2eh',['PlayerTest.h',['../PlayerTest_8h.html',1,'']]],
@@ -22,7 +23,7 @@ var searchData=
   ['puzzleend',['PuzzleEnd',['../classPuzzle.html#a965ad54e9f7340c3cad944fc82c61a2b',1,'Puzzle']]],
   ['puzzlemain_2ecpp',['PuzzleMain.cpp',['../PuzzleMain_8cpp.html',1,'']]],
   ['puzzles',['puzzles',['../classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e',1,'PuzzleState']]],
-  ['puzzlestate',['PuzzleState',['../classPuzzleState.html',1,'PuzzleState'],['../classPuzzleState.html#a441deecdaf8b7ff103933664ff476870',1,'PuzzleState::PuzzleState()']]],
+  ['puzzlestate',['PuzzleState',['../classPuzzleState.html',1,'PuzzleState'],['../classPuzzleState.html#a62da37afc97f9a22a6730a32df9f657e',1,'PuzzleState::PuzzleState()']]],
   ['puzzlestate_2ecpp',['PuzzleState.cpp',['../PuzzleState_8cpp.html',1,'']]],
   ['puzzlestate_2eh',['PuzzleState.h',['../PuzzleState_8h.html',1,'']]]
 ];

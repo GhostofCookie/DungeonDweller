@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7echaracter',['~Character',['../classCharacter.html#af3ec409c562122c4464e8a9d3be5f6d2',1,'Character']]],
+  ['_7echaracter',['~Character',['../classCharacter.html#a9e9be564d05ded80962b2045aa70b3fc',1,'Character']]],
   ['_7echaractermenu',['~CharacterMenu',['../classCharacterMenu.html#a13cc9232a05a31d3771f6ef1a2038c18',1,'CharacterMenu']]],
   ['_7ecodecracker',['~CodeCracker',['../classCodeCracker.html#ae7dc389e166286ca2271625154dde39c',1,'CodeCracker']]],
   ['_7econnectfour',['~ConnectFour',['../classConnectFour.html#ae7d414d7f7f694fd427bfeaef80bd1f9',1,'ConnectFour']]],
@@ -25,12 +25,15 @@ var searchData=
   ['_7emenu',['~Menu',['../classMenu.html#a831387f51358cfb88cd018e1777bc980',1,'Menu']]],
   ['_7eminigamemenu',['~MinigameMenu',['../classMinigameMenu.html#a6b8621ca44319d6b2759766bdca9cbf9',1,'MinigameMenu']]],
   ['_7enpc',['~Npc',['../classNpc.html#a2249c5155af3d692e51ff610064e81fe',1,'Npc']]],
+  ['_7eplayer',['~Player',['../classPlayer.html#a749d2c00e1fe0f5c2746f7505a58c062',1,'Player']]],
   ['_7epuzzle',['~Puzzle',['../classPuzzle.html#a4319df1536a07cd1aaf23b27aeb53579',1,'Puzzle']]],
+  ['_7epuzzlestate',['~PuzzleState',['../classPuzzleState.html#ab451829133cf607c0f0b33ef0bbb4529',1,'PuzzleState']]],
   ['_7eriddlemenu',['~RiddleMenu',['../classRiddleMenu.html#a9366deb179c1145947e37d599216d64e',1,'RiddleMenu']]],
   ['_7eroom',['~Room',['../classRoom.html#a67d5da09983cc53097807fd43ba5481a',1,'Room']]],
   ['_7eroomtree',['~RoomTree',['../classRoomTree.html#a1bd0bf9ba15d59e29127f762a3cdf036',1,'RoomTree']]],
   ['_7escreen',['~Screen',['../classScreen.html#a4243bc17596af96415b09ac48205676d',1,'Screen']]],
   ['_7etictactoe',['~TicTacToe',['../classTicTacToe.html#a5e9c4ed3279034d5530cc7b94a3e10e5',1,'TicTacToe']]],
   ['_7etictactoemenu',['~TicTacToeMenu',['../classTicTacToeMenu.html#a429d4d036694b8d96b08896f50d5f19b',1,'TicTacToeMenu']]],
-  ['_7etrademenu',['~TradeMenu',['../classTradeMenu.html#ac2cf70176a9ad343276dcaa6a4917e99',1,'TradeMenu']]]
+  ['_7etrademenu',['~TradeMenu',['../classTradeMenu.html#ac2cf70176a9ad343276dcaa6a4917e99',1,'TradeMenu']]],
+  ['_7etradestate',['~TradeState',['../classTradeState.html#a1853dfb4248407b96035822d043570ad',1,'TradeState']]]
 ];

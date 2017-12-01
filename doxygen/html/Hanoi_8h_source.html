@@ -147,38 +147,42 @@ $(document).ready(function(){initNavTree('Hanoi_8h_source.html','');});
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keywordtype">void</span> DiscSetup();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keywordtype">void</span> PushDiscOnLeftStack(<span class="keywordtype">int</span> bottom, <a class="code" href="classDefaultImg.html">DefaultImg</a> disc);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="keywordtype">void</span> BoardSetup();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   <span class="keywordtype">void</span> DrawDiscOnTargetStack(<span class="keywordtype">int</span> sourceStack, <span class="keywordtype">int</span> targetStack);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">   83</a></span>&#160;   std::vector&lt;stack&lt;DefaultImg&gt;&gt;<a class="code" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">tower</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">   87</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">numberOfStacks</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   <span class="keywordtype">void</span> EndGamePrompt(<a class="code" href="classCharacter.html">Character</a> *player);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   <span class="keywordtype">void</span> EmptyPrompt();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <span class="keywordtype">void</span> PushDiscOnLeftStack(<span class="keywordtype">int</span> bottom, <a class="code" href="classDefaultImg.html">DefaultImg</a> disc);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   <span class="keywordtype">void</span> BoardSetup();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   <span class="keywordtype">void</span> DrawDiscOnTargetStack(<span class="keywordtype">int</span> sourceStack, <span class="keywordtype">int</span> targetStack);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">   90</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">maxStackHeight</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">   92</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">endGamePrompt</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">   95</a></span>&#160;   <a class="code" href="classScreen.html">Screen</a> <a class="code" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">HanoiScreen</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">   98</a></span>&#160;   <a class="code" href="classHanoiMenu.html">HanoiMenu</a> <a class="code" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">HanoiGameMenu</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">   90</a></span>&#160;   std::vector&lt;stack&lt;DefaultImg&gt;&gt;<a class="code" href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">tower</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">   94</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">numberOfStacks</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">   97</a></span>&#160;   <span class="keywordtype">int</span> <a class="code" href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">maxStackHeight</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">   99</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">endGamePrompt</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">  102</a></span>&#160;   <a class="code" href="classScreen.html">Screen</a> <a class="code" href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">HanoiScreen</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;   </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">  105</a></span>&#160;   <a class="code" href="classHanoiMenu.html">HanoiMenu</a> <a class="code" href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">HanoiGameMenu</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classDefaultImg_html"><div class="ttname"><a href="classDefaultImg.html">DefaultImg</a></div><div class="ttdoc">The DefaultImg class represents a basic square image made of characters. </div><div class="ttdef"><b>Definition:</b> DefaultImg.h:15</div></div>
-<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:26</div></div>
+<div class="ttc" id="classCharacter_html"><div class="ttname"><a href="classCharacter.html">Character</a></div><div class="ttdoc">Abstract base class of Npc&amp;#39;s and Player&amp;#39;s attributes. </div><div class="ttdef"><b>Definition:</b> Character.h:28</div></div>
 <div class="ttc" id="classHanoi_html"><div class="ttname"><a href="classHanoi.html">Hanoi</a></div><div class="ttdef"><b>Definition:</b> Hanoi.h:20</div></div>
 <div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
-<div class="ttc" id="classHanoi_html_a43513810a88b1c43a61dc26838ce6446"><div class="ttname"><a href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">Hanoi::endGamePrompt</a></div><div class="ttdeci">string endGamePrompt</div><div class="ttdef"><b>Definition:</b> Hanoi.h:92</div></div>
+<div class="ttc" id="classHanoi_html_a43513810a88b1c43a61dc26838ce6446"><div class="ttname"><a href="classHanoi.html#a43513810a88b1c43a61dc26838ce6446">Hanoi::endGamePrompt</a></div><div class="ttdeci">string endGamePrompt</div><div class="ttdef"><b>Definition:</b> Hanoi.h:99</div></div>
 <div class="ttc" id="Puzzle_8h_html"><div class="ttname"><a href="Puzzle_8h.html">Puzzle.h</a></div></div>
 <div class="ttc" id="classPuzzle_html"><div class="ttname"><a href="classPuzzle.html">Puzzle</a></div><div class="ttdef"><b>Definition:</b> Puzzle.h:20</div></div>
-<div class="ttc" id="classHanoi_html_a826f3bc786cb5c7b6499508d0b8bc9b4"><div class="ttname"><a href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">Hanoi::maxStackHeight</a></div><div class="ttdeci">int maxStackHeight</div><div class="ttdoc">Maintains the height of the stacks in the game. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:90</div></div>
-<div class="ttc" id="classHanoi_html_abcdaa5a4b56f9c3916bf49e054e1cf8c"><div class="ttname"><a href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">Hanoi::numberOfStacks</a></div><div class="ttdeci">int numberOfStacks</div><div class="ttdef"><b>Definition:</b> Hanoi.h:87</div></div>
+<div class="ttc" id="classHanoi_html_a826f3bc786cb5c7b6499508d0b8bc9b4"><div class="ttname"><a href="classHanoi.html#a826f3bc786cb5c7b6499508d0b8bc9b4">Hanoi::maxStackHeight</a></div><div class="ttdeci">int maxStackHeight</div><div class="ttdoc">Maintains the height of the stacks in the game. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:97</div></div>
+<div class="ttc" id="classHanoi_html_abcdaa5a4b56f9c3916bf49e054e1cf8c"><div class="ttname"><a href="classHanoi.html#abcdaa5a4b56f9c3916bf49e054e1cf8c">Hanoi::numberOfStacks</a></div><div class="ttdeci">int numberOfStacks</div><div class="ttdef"><b>Definition:</b> Hanoi.h:94</div></div>
 <div class="ttc" id="classHanoiMenu_html"><div class="ttname"><a href="classHanoiMenu.html">HanoiMenu</a></div><div class="ttdoc">This is the menu class for the Hanoi minigame. </div><div class="ttdef"><b>Definition:</b> HanoiMenu.h:17</div></div>
-<div class="ttc" id="classHanoi_html_afe67c656c8ce8c7006e8b7f23fbe9ae9"><div class="ttname"><a href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">Hanoi::tower</a></div><div class="ttdeci">std::vector&lt; stack&lt; DefaultImg &gt; &gt; tower</div><div class="ttdoc">The vector which holds each towers&amp;#39; defaultImg. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:83</div></div>
-<div class="ttc" id="classHanoi_html_a7d73005d59c4f2134ffd564964ab3f49"><div class="ttname"><a href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">Hanoi::HanoiGameMenu</a></div><div class="ttdeci">HanoiMenu HanoiGameMenu</div><div class="ttdoc">GameMenu is used for handling input. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:98</div></div>
-<div class="ttc" id="classHanoi_html_a1b9bfd6a0428f772d78b66a5a3268c4c"><div class="ttname"><a href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">Hanoi::HanoiScreen</a></div><div class="ttdeci">Screen HanoiScreen</div><div class="ttdoc">HanoiScreen stores and outputs the contents of the game to the terminal. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:95</div></div>
+<div class="ttc" id="classHanoi_html_afe67c656c8ce8c7006e8b7f23fbe9ae9"><div class="ttname"><a href="classHanoi.html#afe67c656c8ce8c7006e8b7f23fbe9ae9">Hanoi::tower</a></div><div class="ttdeci">std::vector&lt; stack&lt; DefaultImg &gt; &gt; tower</div><div class="ttdoc">The vector which holds each towers&amp;#39; defaultImg. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:90</div></div>
+<div class="ttc" id="classHanoi_html_a7d73005d59c4f2134ffd564964ab3f49"><div class="ttname"><a href="classHanoi.html#a7d73005d59c4f2134ffd564964ab3f49">Hanoi::HanoiGameMenu</a></div><div class="ttdeci">HanoiMenu HanoiGameMenu</div><div class="ttdoc">GameMenu is used for handling input. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:105</div></div>
+<div class="ttc" id="classHanoi_html_a1b9bfd6a0428f772d78b66a5a3268c4c"><div class="ttname"><a href="classHanoi.html#a1b9bfd6a0428f772d78b66a5a3268c4c">Hanoi::HanoiScreen</a></div><div class="ttdeci">Screen HanoiScreen</div><div class="ttdoc">HanoiScreen stores and outputs the contents of the game to the terminal. </div><div class="ttdef"><b>Definition:</b> Hanoi.h:102</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

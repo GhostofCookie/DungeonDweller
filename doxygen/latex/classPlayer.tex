@@ -21,24 +21,28 @@ Inheritance diagram for Player\-:\begin{figure}[H]
 \item 
 \hyperlink{classPlayer_a36d6f55c7bc6d95cf23d2439b9da19bb}{Player} (int s=0, int k=0, string n=\char`\"{} \char`\"{}, string r=\char`\"{} \char`\"{}, int g=0, int h=0, \hyperlink{classImportImg}{Import\-Img} \hyperlink{classCharacter_a3a0a90b2a43858b259912f659b8e0eea}{img}=\hyperlink{classImportImg}{Import\-Img}(\char`\"{}../D\-D\-\_\-\-Art/\hyperlink{classPlayer}{Player}/D\-D\-\_\-\-Player.\-txt\char`\"{}))
 \item 
+\hyperlink{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\-Player} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPlayer}{Player} deconstructor. \end{DoxyCompactList}\item 
 \hyperlink{classPlayer_a8826850c4f8a2871819713ef61148836}{Player} (const \hyperlink{classPlayer}{Player} \&)
-\item 
+\begin{DoxyCompactList}\small\item\em Const copy constructor. \end{DoxyCompactList}\item 
 \hyperlink{classPlayer_ad2d305f9af724e761a491b7a85a020e0}{Player} (\hyperlink{classPlayer}{Player} \&)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 \hyperlink{classPlayer}{Player} \& \hyperlink{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}{operator=} (const \hyperlink{classPlayer}{Player} \&p)
-\item 
+\begin{DoxyCompactList}\small\item\em Assignment operator overloader for copy constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classPlayer_af2f60260add77e68519783dec5400a9f}{Change\-Keys} (int key\-Mod)
 \item 
 bool \hyperlink{classPlayer_af839bdc1524d571568ea31a34f44f3ab}{Use\-Key} (int \&\hyperlink{classPlayer_ac46baa685ca2a266178f03b9e9877e65}{keys})
 \item 
 int \hyperlink{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}{Get\-Keys} () const 
-\begin{DoxyCompactList}\small\item\em Shows the amount of keys. \end{DoxyCompactList}\item 
+\item 
 string \hyperlink{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}{Get\-Race} () const 
-\begin{DoxyCompactList}\small\item\em Shows players race. \end{DoxyCompactList}\item 
+\item 
 string \hyperlink{classPlayer_a5645669a3ad13ea99d194b85601e79ec}{Get\-Name} () const 
-\begin{DoxyCompactList}\small\item\em Shows players name. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classPlayer_a526ecf9587b1a537e48b5fca4d2997eb}{Print} ()
-\begin{DoxyCompactList}\small\item\em Prints all player stats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints all player stats. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_af7b9e152fb61d8b4b0bbaf94a68a859c}{Empty\-Inventory} ()
+\begin{DoxyCompactList}\small\item\em helper function for deconstructor \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -78,7 +82,24 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 \hline
 \mbox{\tt in}  & {\em r,players} & race \\
 \hline
+\mbox{\tt in}  & {\em g,players} & gold amount \\
+\hline
+\mbox{\tt in}  & {\em h,playes} & health \\
+\hline
+\mbox{\tt in}  & {\em img,image} & representing the player \\
+\hline
 \end{DoxyParams}
+\hypertarget{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}{\index{Player@{Player}!$\sim$\-Player@{$\sim$\-Player}}
+\index{$\sim$\-Player@{$\sim$\-Player}!Player@{Player}}
+\subsubsection[{$\sim$\-Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::$\sim$\-Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_a749d2c00e1fe0f5c2746f7505a58c062}
+
+
+\hyperlink{classPlayer}{Player} deconstructor. 
+
 \hypertarget{classPlayer_a8826850c4f8a2871819713ef61148836}{\index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
@@ -86,6 +107,10 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 \item[{const {\bf Player} \&}]{p}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_a8826850c4f8a2871819713ef61148836}
+
+
+Const copy constructor. 
+
 \hypertarget{classPlayer_ad2d305f9af724e761a491b7a85a020e0}{\index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\-::\-Player (
@@ -93,6 +118,10 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 \item[{{\bf Player} \&}]{p}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_ad2d305f9af724e761a491b7a85a020e0}
+
+
+Copy constructor. 
+
 
 
 \subsection{Member Function Documentation}
@@ -105,11 +134,20 @@ Derived class from \hyperlink{classCharacter}{Character} which provides \hyperli
 )}}\label{classPlayer_af2f60260add77e68519783dec5400a9f}
 Amount of keys the player has 
 \begin{DoxyParams}[1]{Parameters}
- & {\em in\&\mbox{]}} & keys, current amount of keys the player has \\
-\hline
 \mbox{\tt in}  & {\em key\-Mod,how} & the current amount of keys will be modified \\
 \hline
 \end{DoxyParams}
+\hypertarget{classPlayer_af7b9e152fb61d8b4b0bbaf94a68a859c}{\index{Player@{Player}!Empty\-Inventory@{Empty\-Inventory}}
+\index{Empty\-Inventory@{Empty\-Inventory}!Player@{Player}}
+\subsubsection[{Empty\-Inventory}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Empty\-Inventory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPlayer_af7b9e152fb61d8b4b0bbaf94a68a859c}
+
+
+helper function for deconstructor 
+
 \hypertarget{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}{\index{Player@{Player}!Get\-Keys@{Get\-Keys}}
 \index{Get\-Keys@{Get\-Keys}!Player@{Player}}
 \subsubsection[{Get\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}int Player\-::\-Get\-Keys (
@@ -117,10 +155,9 @@ Amount of keys the player has
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a1e9effacf495f5eabdf14a420e03eecd}
-
-
-Shows the amount of keys. 
-
+Shows the amount of keys \begin{DoxyReturn}{Returns}
+the number of keys the player has 
+\end{DoxyReturn}
 \hypertarget{classPlayer_a5645669a3ad13ea99d194b85601e79ec}{\index{Player@{Player}!Get\-Name@{Get\-Name}}
 \index{Get\-Name@{Get\-Name}!Player@{Player}}
 \subsubsection[{Get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Player\-::\-Get\-Name (
@@ -128,10 +165,9 @@ Shows the amount of keys.
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a5645669a3ad13ea99d194b85601e79ec}
-
-
-Shows players name. 
-
+Shows players name \begin{DoxyReturn}{Returns}
+the string representing the players name 
+\end{DoxyReturn}
 \hypertarget{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}{\index{Player@{Player}!Get\-Race@{Get\-Race}}
 \index{Get\-Race@{Get\-Race}!Player@{Player}}
 \subsubsection[{Get\-Race}]{\setlength{\rightskip}{0pt plus 5cm}string Player\-::\-Get\-Race (
@@ -139,10 +175,9 @@ Shows players name.
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPlayer_a5b008e9aa1ebe834f022d4e3cfa958c6}
-
-
-Shows players race. 
-
+Shows players race \begin{DoxyReturn}{Returns}
+the string representing the players race 
+\end{DoxyReturn}
 \hypertarget{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}{\index{Player@{Player}!operator=@{operator=}}
 \index{operator=@{operator=}!Player@{Player}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} \& Player\-::operator= (
@@ -150,6 +185,10 @@ Shows players race.
 \item[{const {\bf Player} \&}]{p}
 \end{DoxyParamCaption}
 )}}\label{classPlayer_a104a89a5228f4d0b87b6e182fc5cb268}
+
+
+Assignment operator overloader for copy constructor. 
+
 \hypertarget{classPlayer_a526ecf9587b1a537e48b5fca4d2997eb}{\index{Player@{Player}!Print@{Print}}
 \index{Print@{Print}!Player@{Player}}
 \subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void Player\-::\-Print (
@@ -173,6 +212,9 @@ Function to use a key
 \mbox{\tt in}  & {\em keys,uses} & a key if availible \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a key can be used 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}

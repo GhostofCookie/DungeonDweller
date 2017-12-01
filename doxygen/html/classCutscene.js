@@ -1,7 +1,7 @@
 var classCutscene =
 [
     [ "Point", "structCutscene_1_1Point.html", "structCutscene_1_1Point" ],
-    [ "Cutscene", "classCutscene.html#aed118d443c7a13d7bac403875d4c9924", null ],
+    [ "Cutscene", "classCutscene.html#ae6431d4d2472cfa4c5ba7c22bb1c14e2", null ],
     [ "~Cutscene", "classCutscene.html#a87f27f6e952b056528f7974e075e737b", null ],
     [ "ClearScreen", "classCutscene.html#af0548c4b14e868b8eb59515121b1c757", null ],
     [ "EnterBottomToCenter", "classCutscene.html#a169e1c53a82b22a8a38cf652b81fddec", null ],
@@ -41,5 +41,6 @@ var classCutscene =
     [ "room", "classCutscene.html#a033c0715f32be9730d3692e57fe17096", null ],
     [ "savedX", "classCutscene.html#a1d5c331a4d60a28f84eaa987f2a2fb4f", null ],
     [ "savedY", "classCutscene.html#af8166fd7fdf29fe8f86cadd29363fd78", null ],
-    [ "screen", "classCutscene.html#a70df90fafe45f9a661d9e05ac4dd2a22", null ]
+    [ "screen", "classCutscene.html#a70df90fafe45f9a661d9e05ac4dd2a22", null ],
+    [ "type", "classCutscene.html#ac07858b694eab044576aa40257406e69", null ]
 ];

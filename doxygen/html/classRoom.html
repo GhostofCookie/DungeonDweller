@@ -165,9 +165,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a22685a17cc047823ebbd551219377d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77030565e65008df509a60d4a01a668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoom.html#aa77030565e65008df509a60d4a01a668">Draw</a> (<a class="el" href="classScreen.html">Screen</a> &amp;screen, int y, int x)</td></tr>
 <tr class="separator:aa77030565e65008df509a60d4a01a668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e1baeb8c813666d5359f41f9f50378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoom.html#ae7e1baeb8c813666d5359f41f9f50378">GetNpc</a> ()</td></tr>
-<tr class="memdesc:ae7e1baeb8c813666d5359f41f9f50378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to return the npc.  <a href="#ae7e1baeb8c813666d5359f41f9f50378">More...</a><br/></td></tr>
-<tr class="separator:ae7e1baeb8c813666d5359f41f9f50378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa918051064d488954d30734e0a0f683e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoom.html#aa918051064d488954d30734e0a0f683e">Draw</a> (<a class="el" href="classImportImg.html">ImportImg</a> &amp;img)</td></tr>
+<tr class="separator:aa918051064d488954d30734e0a0f683e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6310c508c92f335fe813d6531dee6179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoom.html#a6310c508c92f335fe813d6531dee6179">Draw</a> (<a class="el" href="classImportImg.html">ImportImg</a> &amp;img, int y, int x)</td></tr>
+<tr class="separator:a6310c508c92f335fe813d6531dee6179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab628d09d88554312d73163e52ab2075a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacter.html">Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoom.html#ab628d09d88554312d73163e52ab2075a">GetNpc</a> ()</td></tr>
+<tr class="memdesc:ab628d09d88554312d73163e52ab2075a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to return the npc.  <a href="#ab628d09d88554312d73163e52ab2075a">More...</a><br/></td></tr>
+<tr class="separator:ab628d09d88554312d73163e52ab2075a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -551,6 +555,84 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa918051064d488954d30734e0a0f683e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Room::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImportImg.html">ImportImg</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to draw to the screen</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the img drawn on</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function aligns the room to the center to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>The img that is passed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6310c508c92f335fe813d6531dee6179"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Room::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classImportImg.html">ImportImg</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to draw to the screen</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>the img drawn on</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function aligns the room to the center to the screen </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>The img that is passed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the y coordinate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a3e33111e62068e4ae0fef5b17a1f1841"></a>
 <div class="memitem">
 <div class="memproto">
@@ -625,7 +707,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae7e1baeb8c813666d5359f41f9f50378"></a>
+<a class="anchor" id="ab628d09d88554312d73163e52ab2075a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -633,7 +715,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCharacter.html">Character</a>&amp; Room::GetNpc </td>
+          <td class="memname"><a class="el" href="classCharacter.html">Character</a> Room::GetNpc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

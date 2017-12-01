@@ -15,6 +15,7 @@ var classImage =
     [ "AlignRight", "classImage.html#a171b44f5d1ac53bfa9984a87c9786dd1", null ],
     [ "AlignTop", "classImage.html#a5048f1f5a975185d24a08247dbce1568", null ],
     [ "AlignTop", "classImage.html#a12f3de115677e508268f5b7d3485b483", null ],
+    [ "CopyCoordinates", "classImage.html#ada292cfbe131d1e84a9f6aaddc22064b", null ],
     [ "Create", "classImage.html#a6bb7dff9e4c4c31b2d63d7b0a330ef89", null ],
     [ "Draw", "classImage.html#a057cb6b10590608656ff2a7aa159f515", null ],
     [ "Draw", "classImage.html#a1e3d4ae638b3fc1fbee81c509c1551f6", null ],

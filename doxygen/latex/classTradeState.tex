@@ -19,8 +19,10 @@ Inheritance diagram for Trade\-State\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classTradeState_a1778870265717d50054d29be886b27d4}{Trade\-State} ()
+\hyperlink{classTradeState_af89b3e3872cd71acbd27d36b05c913e8}{Trade\-State} (\hyperlink{classPlayer}{Player} $\ast$p)
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTradeState_a1853dfb4248407b96035822d043570ad}{$\sim$\-Trade\-State} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classTradeState_af0d9fdcd649c1e74620dc77a4b8f92f9}{Set} ()
 \begin{DoxyCompactList}\small\item\em Sets the layout of the game. \end{DoxyCompactList}\item 
 void \hyperlink{classTradeState_a6479e704b1063281721200a0beac6bc1}{Get} ()
@@ -40,13 +42,13 @@ Tomas Rigaux
 This is the state of the game when the player is trading with an N\-P\-C character. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classTradeState_a1778870265717d50054d29be886b27d4}{\index{Trade\-State@{Trade\-State}!Trade\-State@{Trade\-State}}
+\hypertarget{classTradeState_af89b3e3872cd71acbd27d36b05c913e8}{\index{Trade\-State@{Trade\-State}!Trade\-State@{Trade\-State}}
 \index{Trade\-State@{Trade\-State}!TradeState@{Trade\-State}}
 \subsubsection[{Trade\-State}]{\setlength{\rightskip}{0pt plus 5cm}Trade\-State\-::\-Trade\-State (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf Player} $\ast$}]{p}
 \end{DoxyParamCaption}
-)}}\label{classTradeState_a1778870265717d50054d29be886b27d4}
+)}}\label{classTradeState_af89b3e3872cd71acbd27d36b05c913e8}
 
 
 Default constructor. 
@@ -57,7 +59,18 @@ Default constructor.
 \begin{DoxyAuthor}{Author}
 Tomas Rigaux
 \end{DoxyAuthor}
-This is the implementation for the Trade State. 
+This is the implementation for the Trade State. \hypertarget{classTradeState_a1853dfb4248407b96035822d043570ad}{\index{Trade\-State@{Trade\-State}!$\sim$\-Trade\-State@{$\sim$\-Trade\-State}}
+\index{$\sim$\-Trade\-State@{$\sim$\-Trade\-State}!TradeState@{Trade\-State}}
+\subsubsection[{$\sim$\-Trade\-State}]{\setlength{\rightskip}{0pt plus 5cm}Trade\-State\-::$\sim$\-Trade\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTradeState_a1853dfb4248407b96035822d043570ad}
+
+
+Default destructor. 
+
+
 
 \subsection{Member Function Documentation}
 \hypertarget{classTradeState_a6479e704b1063281721200a0beac6bc1}{\index{Trade\-State@{Trade\-State}!Get@{Get}}

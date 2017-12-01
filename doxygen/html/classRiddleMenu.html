@@ -144,7 +144,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef67f984c1aad0b8240e03b43ccbe615"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRiddleMenu.html#aef67f984c1aad0b8240e03b43ccbe615">HandleInput</a> (istream &amp;is)</td></tr>
 <tr class="separator:aef67f984c1aad0b8240e03b43ccbe615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a462f8a9d922e228c61619396e6ee8dc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRiddleMenu.html#a462f8a9d922e228c61619396e6ee8dc2">GetInput</a> () const </td></tr>
-<tr class="memdesc:a462f8a9d922e228c61619396e6ee8dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the players input to the riddle.  <a href="#a462f8a9d922e228c61619396e6ee8dc2">More...</a><br/></td></tr>
 <tr class="separator:a462f8a9d922e228c61619396e6ee8dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMinigameMenu"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMinigameMenu')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMinigameMenu.html">MinigameMenu</a></td></tr>
 <tr class="memitem:a90d42578d68f68c3b26c414f90f2d950 inherit pub_methods_classMinigameMenu"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMinigameMenu.html#a90d42578d68f68c3b26c414f90f2d950">MinigameMenu</a> ()</td></tr>
@@ -191,8 +190,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classMenu"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMenu')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMenu.html">Menu</a></td></tr>
 <tr class="memitem:a8cabd1390fcc59aba53b79788915c792 inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a8cabd1390fcc59aba53b79788915c792">currOption</a></td></tr>
 <tr class="separator:a8cabd1390fcc59aba53b79788915c792 inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18566c84b43074d03f0ad3cacd748aae inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top">map&lt; int, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a18566c84b43074d03f0ad3cacd748aae">indexMap</a></td></tr>
-<tr class="separator:a18566c84b43074d03f0ad3cacd748aae inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6761c21ec3e1d3a5295479443e7c1a90 inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top">map&lt; int, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a6761c21ec3e1d3a5295479443e7c1a90">indexMap</a></td></tr>
+<tr class="separator:a6761c21ec3e1d3a5295479443e7c1a90 inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9364e391e91acd266444a2604cb838e inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#ad9364e391e91acd266444a2604cb838e">menuHeight</a></td></tr>
 <tr class="separator:ad9364e391e91acd266444a2604cb838e inherit pro_attribs_classMenu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c90eda61cd9071dcafda04569dfdd67 inherit pro_attribs_classMenu"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenu.html#a5c90eda61cd9071dcafda04569dfdd67">menuWidth</a></td></tr>
@@ -215,6 +214,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This is the default constructor. </p>
+<dl class="section date"><dt>Date</dt><dd>24/10/2017 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Tomas Rigaux</dd></dl>
+<p>This is the implementation for the menu class for the Riddle minigame. </p>
 
 </div>
 </div>
@@ -247,6 +249,9 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a462f8a9d922e228c61619396e6ee8dc2"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int RiddleMenu::GetInput </td>
@@ -255,9 +260,12 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Returns the players input to the riddle. </p>
 
 </div>
 </div>

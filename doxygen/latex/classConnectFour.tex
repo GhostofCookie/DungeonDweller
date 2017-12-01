@@ -65,7 +65,7 @@ void \hyperlink{classConnectFour_a8f74f9d22c247508e868222c27136641}{Set\-Current
 \item 
 \hyperlink{classScreen}{Screen} \hyperlink{classConnectFour_a7548207e4c83260233e8d3668ae3e7e2}{Connect\-Four\-Screen}
 \item 
-std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}{grid}
+std\-::vector$<$ vector$<$ char $>$ $>$ \hyperlink{classConnectFour_aa394189c6422c3901d18997202fff27e}{grid}
 \begin{DoxyCompactList}\small\item\em The vector which stores the gameboards chars. \end{DoxyCompactList}\item 
 char \hyperlink{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{current\-Player\-Char}
 \item 
@@ -307,7 +307,17 @@ If no 4 of a kind has been found, return false. \hypertarget{classConnectFour_a3
 \item[{{\bf Character} $\ast$}]{player}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classConnectFour_a3b578d1126bc575fa23b8811f121c8be}
-Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. current\-Player keeps track of whos turn it is, if it's odd, it is the user, if it is even, it is the A\-I's turn. 
+Method to run the game, serves as a 'main' for the mini-\/game, calling functions from private until the player has won. current\-Player keeps track of whos turn it is, if it's odd, it is the user, if it is even, it is the A\-I's turn.
+
+If it is the A\-I's turn.
+
+If they don't win, next players turn.
+
+Prompt the user for input and then check if it is valid
+
+If the input is valid, move the piece and check if they won.
+
+If their input was invalid, let them know to re-\/select. 
 
 Implements \hyperlink{classPuzzle_a134875b96b18d9963d2b018fd14e7ab9}{Puzzle}.
 
@@ -382,9 +392,9 @@ Checks to see if there have been any 4 tokens in a row in the grid vector.
 Connect\-Four\-Screen stores and outputs the contents of the game to the terminal \hypertarget{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}{\index{Connect\-Four@{Connect\-Four}!current\-Player\-Char@{current\-Player\-Char}}
 \index{current\-Player\-Char@{current\-Player\-Char}!ConnectFour@{Connect\-Four}}
 \subsubsection[{current\-Player\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char Connect\-Four\-::current\-Player\-Char\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_adc938d715dbe28efc1db3b4a1dc866cb}
-current\-Player\-Char keeps track of which character to insert depending on whos turn it is. \hypertarget{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
+current\-Player\-Char keeps track of which character to insert depending on whos turn it is. \hypertarget{classConnectFour_aa394189c6422c3901d18997202fff27e}{\index{Connect\-Four@{Connect\-Four}!grid@{grid}}
 \index{grid@{grid}!ConnectFour@{Connect\-Four}}
-\subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ vector $<$ char $>$ $>$ Connect\-Four\-::grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_a42275b6a7a1b490b7e9adc3e2d5480d9}
+\subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}std \-:: vector$<$ vector $<$char$>$ $>$ Connect\-Four\-::grid\hspace{0.3cm}{\ttfamily [private]}}}\label{classConnectFour_aa394189c6422c3901d18997202fff27e}
 
 
 The vector which stores the gameboards chars. 

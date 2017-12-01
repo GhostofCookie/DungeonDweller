@@ -18,7 +18,7 @@ Inheritance diagram for Character\-Menu\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classCharacterMenu_a13cc9232a05a31d3771f6ef1a2038c18}{$\sim$\-Character\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classCharacterMenu_a01c004bd0932adc6b6a63dde5890cffa}{Set\-Options} (int row, int col, int space)
+virtual void \hyperlink{classCharacterMenu_a4f03af624e0a914316b4044e203cb45f}{Set\-Options} (int row=0, int col=1, int space=2)
 \item 
 virtual void \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
@@ -37,7 +37,13 @@ virtual void \hyperlink{classCharacterMenu_a9530ef35d34be27d09f740563dbe59ea}{Ha
 
 This is the default constructor. 
 
-\hypertarget{classCharacterMenu_a13cc9232a05a31d3771f6ef1a2038c18}{\index{Character\-Menu@{Character\-Menu}!$\sim$\-Character\-Menu@{$\sim$\-Character\-Menu}}
+\begin{DoxyDate}{Date}
+25/10/2017 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Tomas Rigaux
+\end{DoxyAuthor}
+Derived from \hyperlink{classGameMenu}{Game\-Menu}. This is the menu for the player to choose their character. \hypertarget{classCharacterMenu_a13cc9232a05a31d3771f6ef1a2038c18}{\index{Character\-Menu@{Character\-Menu}!$\sim$\-Character\-Menu@{$\sim$\-Character\-Menu}}
 \index{$\sim$\-Character\-Menu@{$\sim$\-Character\-Menu}!CharacterMenu@{Character\-Menu}}
 \subsubsection[{$\sim$\-Character\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Character\-Menu\-::$\sim$\-Character\-Menu (
 \begin{DoxyParamCaption}
@@ -67,15 +73,15 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
 
-\hypertarget{classCharacterMenu_a01c004bd0932adc6b6a63dde5890cffa}{\index{Character\-Menu@{Character\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classCharacterMenu_a4f03af624e0a914316b4044e203cb45f}{\index{Character\-Menu@{Character\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!CharacterMenu@{Character\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Character\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{int}]{row, }
-\item[{int}]{col, }
-\item[{int}]{space}
+\item[{int}]{row = {\ttfamily 0}, }
+\item[{int}]{col = {\ttfamily 1}, }
+\item[{int}]{space = {\ttfamily 2}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacterMenu_a01c004bd0932adc6b6a63dde5890cffa}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCharacterMenu_a4f03af624e0a914316b4044e203cb45f}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em row} & The row to start setting the options. \\

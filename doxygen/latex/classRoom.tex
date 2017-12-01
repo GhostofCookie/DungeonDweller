@@ -43,7 +43,11 @@ void \hyperlink{classRoom_a22685a17cc047823ebbd551219377d6c}{Draw} (\hyperlink{c
 \item 
 void \hyperlink{classRoom_aa77030565e65008df509a60d4a01a668}{Draw} (\hyperlink{classScreen}{Screen} \&screen, int y, int x)
 \item 
-\hyperlink{classCharacter}{Character} \& \hyperlink{classRoom_ae7e1baeb8c813666d5359f41f9f50378}{Get\-Npc} ()
+void \hyperlink{classRoom_aa918051064d488954d30734e0a0f683e}{Draw} (\hyperlink{classImportImg}{Import\-Img} \&img)
+\item 
+void \hyperlink{classRoom_a6310c508c92f335fe813d6531dee6179}{Draw} (\hyperlink{classImportImg}{Import\-Img} \&img, int y, int x)
+\item 
+\hyperlink{classCharacter}{Character} \hyperlink{classRoom_ab628d09d88554312d73163e52ab2075a}{Get\-Npc} ()
 \begin{DoxyCompactList}\small\item\em Function to return the npc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -270,6 +274,46 @@ Function aligns the room to the center to the screen
 \mbox{\tt in}  & {\em x} & The x coordinate \\
 \hline
 \end{DoxyParams}
+\hypertarget{classRoom_aa918051064d488954d30734e0a0f683e}{\index{Room@{Room}!Draw@{Draw}}
+\index{Draw@{Draw}!Room@{Room}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Import\-Img} \&}]{img}
+\end{DoxyParamCaption}
+)}}\label{classRoom_aa918051064d488954d30734e0a0f683e}
+Function to draw to the screen
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the img drawn on\\
+\hline
+\end{DoxyParams}
+Function aligns the room to the center to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em screen} & The img that is passed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoom_a6310c508c92f335fe813d6531dee6179}{\index{Room@{Room}!Draw@{Draw}}
+\index{Draw@{Draw}!Room@{Room}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Import\-Img} \&}]{img, }
+\item[{int}]{y, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}}\label{classRoom_a6310c508c92f335fe813d6531dee6179}
+Function to draw to the screen
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & the img drawn on\\
+\hline
+\end{DoxyParams}
+Function aligns the room to the center to the screen 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em img} & The img that is passed \\
+\hline
+\mbox{\tt in}  & {\em y} & the y coordinate \\
+\hline
+\mbox{\tt in}  & {\em x} & The x coordinate \\
+\hline
+\end{DoxyParams}
 \hypertarget{classRoom_a3e33111e62068e4ae0fef5b17a1f1841}{\index{Room@{Room}!Get\-Event\-Images@{Get\-Event\-Images}}
 \index{Get\-Event\-Images@{Get\-Event\-Images}!Room@{Room}}
 \subsubsection[{Get\-Event\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Room\-::\-Get\-Event\-Images (
@@ -309,13 +353,13 @@ Function to return the image. \hypertarget{classRoom_a8685389724a048cbc9c43d4fd6
 
 Function that returns the room's image file path. 
 
-Function to return the image file path. \hypertarget{classRoom_ae7e1baeb8c813666d5359f41f9f50378}{\index{Room@{Room}!Get\-Npc@{Get\-Npc}}
+Function to return the image file path. \hypertarget{classRoom_ab628d09d88554312d73163e52ab2075a}{\index{Room@{Room}!Get\-Npc@{Get\-Npc}}
 \index{Get\-Npc@{Get\-Npc}!Room@{Room}}
-\subsubsection[{Get\-Npc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Character}\& Room\-::\-Get\-Npc (
+\subsubsection[{Get\-Npc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Character} Room\-::\-Get\-Npc (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRoom_ae7e1baeb8c813666d5359f41f9f50378}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRoom_ab628d09d88554312d73163e52ab2075a}
 
 
 Function to return the npc. 

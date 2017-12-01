@@ -23,7 +23,7 @@ Inheritance diagram for Fight\-Menu\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}{$\sim$\-Fight\-Menu} ()
 \begin{DoxyCompactList}\small\item\em This is the virtual destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}{Set\-Options} (int row, int col, int space)
+virtual void \hyperlink{classFightMenu_a234a915424eb00727d304834a4af352c}{Set\-Options} (int row=1, int col=1, int space=2)
 \item 
 virtual void \hyperlink{classFightMenu_a6d69cf9a19e7bae304d5a116285c1a51}{Handle\-Input} (istream \&is)
 \end{DoxyCompactItemize}
@@ -45,7 +45,13 @@ This is the menu for the player to use when they are engaged in combat.
 
 This is the default constructor. 
 
-\hypertarget{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}{\index{Fight\-Menu@{Fight\-Menu}!$\sim$\-Fight\-Menu@{$\sim$\-Fight\-Menu}}
+\begin{DoxyDate}{Date}
+21/10/2017 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Tomas Rigaux
+\end{DoxyAuthor}
+This is the fight class. This is the menu for the player to use when they are engaged in combat. \hypertarget{classFightMenu_a8a8792d7c674b0f19cdc9bf3a5ae96ca}{\index{Fight\-Menu@{Fight\-Menu}!$\sim$\-Fight\-Menu@{$\sim$\-Fight\-Menu}}
 \index{$\sim$\-Fight\-Menu@{$\sim$\-Fight\-Menu}!FightMenu@{Fight\-Menu}}
 \subsubsection[{$\sim$\-Fight\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}Fight\-Menu\-::$\sim$\-Fight\-Menu (
 \begin{DoxyParamCaption}
@@ -75,15 +81,15 @@ This function handles the input for the menu options.
 
 Implements \hyperlink{classGameMenu_a02ba09feedece5773f44ba865ccffb42}{Game\-Menu}.
 
-\hypertarget{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}{\index{Fight\-Menu@{Fight\-Menu}!Set\-Options@{Set\-Options}}
+\hypertarget{classFightMenu_a234a915424eb00727d304834a4af352c}{\index{Fight\-Menu@{Fight\-Menu}!Set\-Options@{Set\-Options}}
 \index{Set\-Options@{Set\-Options}!FightMenu@{Fight\-Menu}}
 \subsubsection[{Set\-Options}]{\setlength{\rightskip}{0pt plus 5cm}void Fight\-Menu\-::\-Set\-Options (
 \begin{DoxyParamCaption}
-\item[{int}]{row, }
-\item[{int}]{col, }
-\item[{int}]{space}
+\item[{int}]{row = {\ttfamily 1}, }
+\item[{int}]{col = {\ttfamily 1}, }
+\item[{int}]{space = {\ttfamily 2}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFightMenu_a22b8ce181d2f327bd8839315c4843cf5}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFightMenu_a234a915424eb00727d304834a4af352c}
 This function sets the specific options for the \hyperlink{classMenu}{Menu} type. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em row} & Determines which row the options will start being set at. \\

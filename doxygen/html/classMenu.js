@@ -10,7 +10,7 @@ var classMenu =
     [ "Set", "classMenu.html#aa13913062e78fbd036ca698e0c0c5038", null ],
     [ "SetOptions", "classMenu.html#acc31e14c9ed4dd2fb5dc4319738bafba", null ],
     [ "currOption", "classMenu.html#a8cabd1390fcc59aba53b79788915c792", null ],
-    [ "indexMap", "classMenu.html#a18566c84b43074d03f0ad3cacd748aae", null ],
+    [ "indexMap", "classMenu.html#a6761c21ec3e1d3a5295479443e7c1a90", null ],
     [ "menu_Array", "classMenu.html#a6fdd29d716c7fb985f038ddde93794a0", null ],
     [ "menuHeight", "classMenu.html#ad9364e391e91acd266444a2604cb838e", null ],
     [ "menuWidth", "classMenu.html#a5c90eda61cd9071dcafda04569dfdd67", null ]

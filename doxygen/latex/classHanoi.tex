@@ -37,6 +37,10 @@ void \hyperlink{classHanoi_af46c88d825078b8255128c53f717cf8d}{Clear\-Top\-Disc} 
 \item 
 void \hyperlink{classHanoi_a95845d40d6b0594cc69612c6421333a2}{Disc\-Setup} ()
 \begin{DoxyCompactList}\small\item\em Sets up the discs on the gameboard for the beginning of the game. \end{DoxyCompactList}\item 
+void \hyperlink{classHanoi_a56d34cbc5ea671b500583e50450cb5f8}{End\-Game\-Prompt} (\hyperlink{classCharacter}{Character} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Outputs the end of game text and changes the players stats. \end{DoxyCompactList}\item 
+void \hyperlink{classHanoi_aa3eddb6c7dd6e290475ae2620995c339}{Empty\-Prompt} ()
+\item 
 void \hyperlink{classHanoi_a47fdd8cbbb4b12ea2941c639868236bc}{Push\-Disc\-On\-Left\-Stack} (int bottom, \hyperlink{classDefaultImg}{Default\-Img} disc)
 \item 
 void \hyperlink{classHanoi_a5dc7aab5bfe9d0b9d83ba75be22412e2}{Board\-Setup} ()
@@ -149,7 +153,25 @@ Add the height of any discs stored on that stack
 
 Add the height of any discs stored on that stack
 
-Add the height of any discs stored on that stack \hypertarget{classHanoi_ac2a9f2762281242491b736caae5baea9}{\index{Hanoi@{Hanoi}!Logic\-Switch@{Logic\-Switch}}
+Add the height of any discs stored on that stack \hypertarget{classHanoi_aa3eddb6c7dd6e290475ae2620995c339}{\index{Hanoi@{Hanoi}!Empty\-Prompt@{Empty\-Prompt}}
+\index{Empty\-Prompt@{Empty\-Prompt}!Hanoi@{Hanoi}}
+\subsubsection[{Empty\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Empty\-Prompt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_aa3eddb6c7dd6e290475ae2620995c339}
+Outputs an appropriate error message of the user tries to move a disc from an empty stack \hypertarget{classHanoi_a56d34cbc5ea671b500583e50450cb5f8}{\index{Hanoi@{Hanoi}!End\-Game\-Prompt@{End\-Game\-Prompt}}
+\index{End\-Game\-Prompt@{End\-Game\-Prompt}!Hanoi@{Hanoi}}
+\subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-End\-Game\-Prompt (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{player}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classHanoi_a56d34cbc5ea671b500583e50450cb5f8}
+
+
+Outputs the end of game text and changes the players stats. 
+
+\hypertarget{classHanoi_ac2a9f2762281242491b736caae5baea9}{\index{Hanoi@{Hanoi}!Logic\-Switch@{Logic\-Switch}}
 \index{Logic\-Switch@{Logic\-Switch}!Hanoi@{Hanoi}}
 \subsubsection[{Logic\-Switch}]{\setlength{\rightskip}{0pt plus 5cm}void Hanoi\-::\-Logic\-Switch (
 \begin{DoxyParamCaption}

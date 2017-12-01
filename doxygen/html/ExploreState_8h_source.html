@@ -131,19 +131,25 @@ $(document).ready(function(){initNavTree('ExploreState_8h_source.html','');});
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <a class="code" href="classExploreState.html">ExploreState</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   ~<a class="code" href="classExploreState.html">ExploreState</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keywordtype">void</span> Set();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keywordtype">void</span> Get();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keywordtype">void</span> SetState(<span class="keywordtype">int</span> type);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordtype">void</span> RunInput(<span class="keywordtype">char</span> option);</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classExploreState.html#aa9bd4b4504c72ae70c440c401f1a60aa">   46</a></span>&#160;   <a class="code" href="classImageImporter.html">ImageImporter</a> *<span class="keyword">import</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">   47</a></span>&#160;   <a class="code" href="classRoom.html">Room</a> *<a class="code" href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">roomPtr</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classExploreState_html_a7863a120d0a1ad5b1ff6d1c77f60cea1"><div class="ttname"><a href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">ExploreState::roomPtr</a></div><div class="ttdeci">Room * roomPtr</div><div class="ttdef"><b>Definition:</b> ExploreState.h:47</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <a class="code" href="classExploreState.html">ExploreState</a>(<a class="code" href="classGameState.html">GameState</a> &amp;obj);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <a class="code" href="classExploreState.html">ExploreState</a>(<a class="code" href="classExploreState.html">ExploreState</a> &amp;obj);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <a class="code" href="classExploreState.html">ExploreState</a>(<span class="keyword">const</span> <a class="code" href="classExploreState.html">ExploreState</a> &amp;obj);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <a class="code" href="classExploreState.html">ExploreState</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classExploreState.html">ExploreState</a> &amp;obj);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   <span class="keywordtype">void</span> Set();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <span class="keywordtype">void</span> Get();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordtype">void</span> SetState(<span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordtype">void</span> RunInput(<span class="keywordtype">char</span> option);</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classExploreState.html#aa9bd4b4504c72ae70c440c401f1a60aa">   60</a></span>&#160;   <a class="code" href="classImageImporter.html">ImageImporter</a> *<span class="keyword">import</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">   61</a></span>&#160;   <a class="code" href="classRoom.html">Room</a> *<a class="code" href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">roomPtr</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classExploreState_html_a7863a120d0a1ad5b1ff6d1c77f60cea1"><div class="ttname"><a href="classExploreState.html#a7863a120d0a1ad5b1ff6d1c77f60cea1">ExploreState::roomPtr</a></div><div class="ttdeci">Room * roomPtr</div><div class="ttdef"><b>Definition:</b> ExploreState.h:61</div></div>
 <div class="ttc" id="classImageImporter_html"><div class="ttname"><a href="classImageImporter.html">ImageImporter</a></div><div class="ttdef"><b>Definition:</b> ImageImporter.h:24</div></div>
 <div class="ttc" id="GameState_8h_html"><div class="ttname"><a href="GameState_8h.html">GameState.h</a></div></div>
 <div class="ttc" id="classGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdoc">An abstract class, this class defines the state of the current &amp;#39;state&amp;#39; of the game based on the curre...</div><div class="ttdef"><b>Definition:</b> GameState.h:28</div></div>

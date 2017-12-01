@@ -125,19 +125,21 @@ $(document).ready(function(){initNavTree('PuzzleState_8h_source.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPuzzleState.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPuzzleState.html">PuzzleState</a> : <span class="keyword">public</span> <a class="code" href="classGameState.html">GameState</a></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classPuzzleState.html">PuzzleState</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> Set();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> Get();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">   35</a></span>&#160;  vector&lt;Puzzle*&gt; <a class="code" href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">puzzles</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <a class="code" href="classPuzzleState.html">PuzzleState</a>(<a class="code" href="classPlayer.html">Player</a> *p);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   ~<a class="code" href="classPuzzleState.html">PuzzleState</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="keywordtype">void</span> Set();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keywordtype">void</span> Get();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">   37</a></span>&#160;   vector&lt;Puzzle*&gt; <a class="code" href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">puzzles</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="GameState_8h_html"><div class="ttname"><a href="GameState_8h.html">GameState.h</a></div></div>
 <div class="ttc" id="classPuzzleState_html"><div class="ttname"><a href="classPuzzleState.html">PuzzleState</a></div><div class="ttdoc">This is the state of the game when the player is interacting with a puzzle/minigame. Derived from GameState. </div><div class="ttdef"><b>Definition:</b> PuzzleState.h:22</div></div>
 <div class="ttc" id="classGameState_html"><div class="ttname"><a href="classGameState.html">GameState</a></div><div class="ttdoc">An abstract class, this class defines the state of the current &amp;#39;state&amp;#39; of the game based on the curre...</div><div class="ttdef"><b>Definition:</b> GameState.h:28</div></div>
-<div class="ttc" id="classPuzzleState_html_a64782eeed96c532e9db6ed3e4ba6340e"><div class="ttname"><a href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">PuzzleState::puzzles</a></div><div class="ttdeci">vector&lt; Puzzle * &gt; puzzles</div><div class="ttdef"><b>Definition:</b> PuzzleState.h:35</div></div>
+<div class="ttc" id="classPuzzleState_html_a64782eeed96c532e9db6ed3e4ba6340e"><div class="ttname"><a href="classPuzzleState.html#a64782eeed96c532e9db6ed3e4ba6340e">PuzzleState::puzzles</a></div><div class="ttdeci">vector&lt; Puzzle * &gt; puzzles</div><div class="ttdef"><b>Definition:</b> PuzzleState.h:37</div></div>
+<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Derived class from Character which provides Player attributes. </div><div class="ttdef"><b>Definition:</b> Player.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

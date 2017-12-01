@@ -210,17 +210,22 @@ $(document).ready(function(){initNavTree('Image_8h_source.html','');});
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;   <span class="keywordtype">int</span> GetRows() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;   </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;   <span class="keywordtype">int</span> GetCols() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;   <span class="keywordtype">void</span> FixSlants();</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;};</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Image_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classImage.html#ada292cfbe131d1e84a9f6aaddc22064b">  199</a></span>&#160;   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classImage.html#ada292cfbe131d1e84a9f6aaddc22064b">CopyCoordinates</a>(<span class="keyword">const</span> <a class="code" href="classImage.html">Image</a> &amp;img) { screenY = img.<a class="code" href="classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b">screenY</a>; screenX = img.<a class="code" href="classImage.html#a0488098c125477f82fc6ca8e14cc170f">screenX</a>; }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;   <span class="keywordtype">void</span> FixSlants();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;};</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Image_h */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="classImage_html_a2d2bff881014df332b1086483d0eb0e9"><div class="ttname"><a href="classImage.html#a2d2bff881014df332b1086483d0eb0e9">Image::ch</a></div><div class="ttdeci">char ch</div><div class="ttdoc">The character used to draw the image. </div><div class="ttdef"><b>Definition:</b> Image.h:27</div></div>
 <div class="ttc" id="classImage_html_a51df43db420c9c0b57536cb2dd36de5c"><div class="ttname"><a href="classImage.html#a51df43db420c9c0b57536cb2dd36de5c">Image::height</a></div><div class="ttdeci">int height</div><div class="ttdoc">The height of the image. </div><div class="ttdef"><b>Definition:</b> Image.h:23</div></div>
 <div class="ttc" id="classScreen_html"><div class="ttname"><a href="classScreen.html">Screen</a></div><div class="ttdef"><b>Definition:</b> Screen.h:18</div></div>
 <div class="ttc" id="classImage_html_ab8d12f635013c04159cd4d3d972bac88"><div class="ttname"><a href="classImage.html#ab8d12f635013c04159cd4d3d972bac88">Image::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">The width of the image. </div><div class="ttdef"><b>Definition:</b> Image.h:25</div></div>
+<div class="ttc" id="classImage_html_a4c5bb89eba006c3768c2f36ef54d2c5b"><div class="ttname"><a href="classImage.html#a4c5bb89eba006c3768c2f36ef54d2c5b">Image::screenY</a></div><div class="ttdeci">int screenY</div><div class="ttdoc">The screen y coordinate to draw on. </div><div class="ttdef"><b>Definition:</b> Image.h:41</div></div>
 <div class="ttc" id="classImage_html_ac3bad7d8544990b7be9e9c5ee0fb26b8"><div class="ttname"><a href="classImage.html#ac3bad7d8544990b7be9e9c5ee0fb26b8">Image::Img</a></div><div class="ttdeci">vector&lt; vector&lt; char &gt; &gt; Img</div><div class="ttdoc">The image - publically availiable to allow access to locations. </div><div class="ttdef"><b>Definition:</b> Image.h:37</div></div>
 <div class="ttc" id="classImage_html"><div class="ttname"><a href="classImage.html">Image</a></div><div class="ttdoc">The Image class represents a 2D vector that displays an image on screen. </div><div class="ttdef"><b>Definition:</b> Image.h:19</div></div>
+<div class="ttc" id="classImage_html_ada292cfbe131d1e84a9f6aaddc22064b"><div class="ttname"><a href="classImage.html#ada292cfbe131d1e84a9f6aaddc22064b">Image::CopyCoordinates</a></div><div class="ttdeci">virtual void CopyCoordinates(const Image &amp;img)</div><div class="ttdef"><b>Definition:</b> Image.h:199</div></div>
+<div class="ttc" id="classImage_html_a0488098c125477f82fc6ca8e14cc170f"><div class="ttname"><a href="classImage.html#a0488098c125477f82fc6ca8e14cc170f">Image::screenX</a></div><div class="ttdeci">int screenX</div><div class="ttdoc">The screen x coordinate to draw on. </div><div class="ttdef"><b>Definition:</b> Image.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

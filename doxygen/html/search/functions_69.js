@@ -1,7 +1,7 @@
 var searchData=
 [
   ['image',['Image',['../classImage.html#a13aa6167bbc77b7a311a181d67caa058',1,'Image::Image(int h=3, int w=6, char c= &apos;*&apos;)'],['../classImage.html#ad9a2ebd07a4f458ba24d91af0122418e',1,'Image::Image(Image &amp;img)'],['../classImage.html#aa44ed77d00d96d2c878b050835f828c4',1,'Image::Image(const Image &amp;img)']]],
-  ['imageimporter',['ImageImporter',['../classImageImporter.html#a66e456e2a48df9e1ccd729d41f81f1b8',1,'ImageImporter']]],
+  ['imageimporter',['ImageImporter',['../classImageImporter.html#ad6e4c552d18221322f2d30e9ee2fb695',1,'ImageImporter']]],
   ['img',['Img',['../classCharacter.html#a49cd0fdb0fc9e0f824aa54909ca86b2b',1,'Character']]],
   ['import',['Import',['../classImportImg.html#a20bf0509a73e9c08e89518a2ea9a868a',1,'ImportImg']]],
   ['importimg',['ImportImg',['../classImportImg.html#a888292aaf716935b9e6baddea62af5d8',1,'ImportImg::ImportImg(string file=&quot;&quot;)'],['../classImportImg.html#a42a6d3113dfaa5c94fb43360d1641b6f',1,'ImportImg::ImportImg(ImportImg &amp;img)'],['../classImportImg.html#adfc26e250764e4388d9aee048a22a673',1,'ImportImg::ImportImg(const ImportImg &amp;img)']]],
@@ -9,7 +9,7 @@ var searchData=
   ['initialize',['Initialize',['../classScreen.html#a455b38b1ac9b18bd67ecd2e056dff909',1,'Screen']]],
   ['initialprompt',['InitialPrompt',['../classCodeCracker.html#a879d3725e5602f6a5feddc39808f49b2',1,'CodeCracker']]],
   ['intro',['Intro',['../classCutscene.html#aeb7422fbe04520b9bcdceebc9c69b1b5',1,'Cutscene']]],
-  ['inventorystate',['InventoryState',['../classInventoryState.html#ae30417cdbbea88bb6b396767a7c59da6',1,'InventoryState']]],
+  ['inventorystate',['InventoryState',['../classInventoryState.html#aefaeaf24b39ac70fe81617a46f1a2411',1,'InventoryState']]],
   ['isboardfull',['IsBoardFull',['../classConnectFour.html#a408b2a0222e08488c258e4225ba5b8f6',1,'ConnectFour::IsBoardFull()'],['../classTicTacToe.html#a7bb5521e85c2a1d4c61ab405d03a62c5',1,'TicTacToe::IsBoardFull()']]],
   ['ischaralreadymatched',['IsCharAlreadyMatched',['../classMemoryMatch.html#acf4047dc2a34d4045a6a240253cb5600',1,'MemoryMatch']]],
   ['iscolumnfull',['IsColumnFull',['../classConnectFour.html#a26d75c9c50d6424df11de765086edc8a',1,'ConnectFour']]],

@@ -16,5 +16,6 @@ var classRoomTreeTest =
     [ "testTotalNodes", "classRoomTreeTest.html#a59d8363440d55c68ef79109efe88a5f5", null ],
     [ "Tree1", "classRoomTreeTest.html#aba5c37d20a82bff695de4c78a547f23f", null ],
     [ "Tree2", "classRoomTreeTest.html#aada805154b8f5306805936f0ba43834c", null ],
-    [ "Tree3", "classRoomTreeTest.html#aa70878ec1fa44e95f78e59a236572b27", null ]
+    [ "Tree3", "classRoomTreeTest.html#aa70878ec1fa44e95f78e59a236572b27", null ],
+    [ "Tree4", "classRoomTreeTest.html#afaaf16b5f57fc43c3e265dca242af31e", null ]
 ];

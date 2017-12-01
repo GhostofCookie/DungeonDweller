@@ -6,6 +6,8 @@ var classHanoi =
     [ "ClearTopDisc", "classHanoi.html#af46c88d825078b8255128c53f717cf8d", null ],
     [ "DiscSetup", "classHanoi.html#a95845d40d6b0594cc69612c6421333a2", null ],
     [ "DrawDiscOnTargetStack", "classHanoi.html#a7ed013f980f79fb4d4bd5efbc0fef633", null ],
+    [ "EmptyPrompt", "classHanoi.html#aa3eddb6c7dd6e290475ae2620995c339", null ],
+    [ "EndGamePrompt", "classHanoi.html#a56d34cbc5ea671b500583e50450cb5f8", null ],
     [ "LogicSwitch", "classHanoi.html#ac2a9f2762281242491b736caae5baea9", null ],
     [ "MovePiece", "classHanoi.html#ace4cf62c16bc617ac158171a94b9b6a1", null ],
     [ "PushDiscOnLeftStack", "classHanoi.html#a47fdd8cbbb4b12ea2941c639868236bc", null ],

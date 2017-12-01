@@ -3,6 +3,7 @@ var classCodeCracker =
     [ "CodeCracker", "classCodeCracker.html#a46b5ec438efd38104b9a406b45c8cd68", null ],
     [ "~CodeCracker", "classCodeCracker.html#ae7dc389e166286ca2271625154dde39c", null ],
     [ "DeathCheck", "classCodeCracker.html#aa3e32b1d98fe1935315d02c832877e33", null ],
+    [ "EndGamePrompt", "classCodeCracker.html#a0f224858393bc3c597bd81babc87764b", null ],
     [ "ImportRiddles", "classCodeCracker.html#a13ef45a98032d321c825e7a2c5439a33", null ],
     [ "InitialPrompt", "classCodeCracker.html#a879d3725e5602f6a5feddc39808f49b2", null ],
     [ "IsRiddleUsed", "classCodeCracker.html#a5540b8495c5f97f92cdb9b56a6005e6a", null ],

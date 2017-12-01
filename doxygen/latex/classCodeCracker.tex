@@ -36,6 +36,8 @@ void \hyperlink{classCodeCracker_a3177ddb9deb208ac462d55970b112626}{Win\-Check} 
 \begin{DoxyCompactList}\small\item\em Checks if the player has successfully answered 3 riddles. \end{DoxyCompactList}\item 
 void \hyperlink{classCodeCracker_a879d3725e5602f6a5feddc39808f49b2}{Initial\-Prompt} (\hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
 \item 
+void \hyperlink{classCodeCracker_a0f224858393bc3c597bd81babc87764b}{End\-Game\-Prompt} (\hyperlink{classCharacter}{Character} $\ast$player, \hyperlink{classRiddleMenu}{Riddle\-Menu} \&menu)
+\item 
 void \hyperlink{classCodeCracker_aa3e32b1d98fe1935315d02c832877e33}{Death\-Check} (\hyperlink{classCharacter}{Character} $\ast$player)
 \item 
 void \hyperlink{classCodeCracker_a02a6f156f051feca5691b8a4c4f44310}{Output\-Riddle} (int index)
@@ -117,6 +119,14 @@ Checks if the player is now dead and ends the game if yes
 \mbox{\tt in}  & {\em player,a} & pointer to the players character passed from main. \\
 \hline
 \end{DoxyParams}
+\hypertarget{classCodeCracker_a0f224858393bc3c597bd81babc87764b}{\index{Code\-Cracker@{Code\-Cracker}!End\-Game\-Prompt@{End\-Game\-Prompt}}
+\index{End\-Game\-Prompt@{End\-Game\-Prompt}!CodeCracker@{Code\-Cracker}}
+\subsubsection[{End\-Game\-Prompt}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-End\-Game\-Prompt (
+\begin{DoxyParamCaption}
+\item[{{\bf Character} $\ast$}]{player, }
+\item[{{\bf Riddle\-Menu} \&}]{menu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCodeCracker_a0f224858393bc3c597bd81babc87764b}
 \hypertarget{classCodeCracker_a13ef45a98032d321c825e7a2c5439a33}{\index{Code\-Cracker@{Code\-Cracker}!Import\-Riddles@{Import\-Riddles}}
 \index{Import\-Riddles@{Import\-Riddles}!CodeCracker@{Code\-Cracker}}
 \subsubsection[{Import\-Riddles}]{\setlength{\rightskip}{0pt plus 5cm}void Code\-Cracker\-::\-Import\-Riddles (
