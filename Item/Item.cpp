@@ -66,14 +66,14 @@ string Item::NameGenerator(string fileName)
    ifstream fin;
    fin.open(fileName);
    if(fin.fail())
-      throw invalid_argument("Could not open " + fileName);
+      throw runtime_error("Could not open " + fileName);
    string tempName;
    while(!fin.eof())
    {
       getline(fin,tempName);
-	  if(tempName.length() > 0)
-		  if(tempName[tempName.length() - 1] == '\r')
-			  tempName = tempName.substr(0,tempName.size() - 1);
+      if(tempName.length() > 0)
+	 if(tempName[tempName.length() - 1] == '\r')
+	    tempName = tempName.substr(0,tempName.size() - 1);
       if(tempName != "") // Remove any empty lines
 	 adjectives.push_back(tempName);
    }
