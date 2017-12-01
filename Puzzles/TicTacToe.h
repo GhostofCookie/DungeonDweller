@@ -43,14 +43,21 @@ class TicTacToe: public virtual Puzzle
    /// \param[in] inputY, the Y-coordinate of the selection.
    void MovePiece(int inputX, int inputY, char userPiece);
 
+    ///Prompts the player and handles the end of the game appropriately.
+   ///\param[in] currentPlayer, assigned to be human for new game.
+   ///\pram[in] menu, the menu used to output stuffs
+   ///\param[in] player, a pointer to the player usd to modify stats
    void EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character *player);
       
    ///Checks to see if there have been any 3 tokens in a row in the grid vector.
    bool WinCheck();
 
+   ///Checks if there is a tie, returns true if yes.
+   ///\param[in] currentPlayer, a reference to which players turn it is
    bool TieGameCheck(int &currentPlayer);
    
    ///Performs the selection for the npc opponent.
+   ///\param[in] AiPiece, which char to insert into the board
    void AiMove(char AiPiece);
 
    ///Checks the entire grid to see if there is 3 of a kind in a horizontal
@@ -69,16 +76,25 @@ class TicTacToe: public virtual Puzzle
    ///position, returns true if it finds 3 of a kind, false otherwise.  
    bool LeftDiagonalCheck();
 
+   ///Makes sure the input is within the bounds of the game
+   ///\param[in]inputX, x-coordinate to check
+   ///\param[in]inputY, y-coordinate to check
    bool IsInputValid(char inputX, int inputY);
 
-   bool IsIntInputValid(int inputY);
+   ///Checks to see if the int is within the bounds of the game
+   ///\param[in]input, the value to check
+   bool IsIntInputValid(int input);
    
    ///Checks who's turn it is and sets CurrentPlayerChar to their
    ///correct char.
    void SetCurrentPlayersChar(int currentPlayer);
 
+   ///Resets the game to the starting state
+   ///\param[in]currentPlayer, an int to show whos turn it is
    void ResetGame(int &currentPlayer);
 
+   ///Takes a char from the input and assigns it an appropriate int
+   ///\param[in]input, a char to convert
    int ConvertCharCoordinateToIndex(char input);
    
    ///Vector to store the contents of the gameboard

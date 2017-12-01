@@ -15,8 +15,7 @@
 #include <iostream>
 using namespace std;
 
-///This class contains the mini-game/Puzzle Towers of Hanoi, to be called from
-///the main dugeonDweller program using RunGame();
+///brief This class contains the mini-game/Puzzle Towers of Hanoi, to be called from the main dugeonDweller program using RunGame();
 class Hanoi: public virtual Puzzle
 {
   public:
@@ -28,6 +27,7 @@ class Hanoi: public virtual Puzzle
 
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.
+   ///\param[in] player, reference to the player for editing player stats
    virtual void RunGame(Character *player);
 
   private:

@@ -10,7 +10,7 @@ How many eggs can you put in an empty basket one foot in diameter?
 If you can purchase 8 eggs for 26 cents, how many can you buy for a cent and a quarter?
 8
 How many multiples of 9 are there between 1 and 100?
-10
+11
 If you have 6 black socks, 4 blue socks, 8 brown socks, and 2 red socks in your sock drawer, what is the minimum number of socks that you need to pull out in the dark to be sure you had a matching pair?
 5
 A frog fell into a hole that was 14½ feet deep. He could jump 3 feet, but he slid back a foot each time he jumped. How many jumps does it take him to get out of the hole?
