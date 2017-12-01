@@ -57,7 +57,7 @@ CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Screen/Screen.h
+ ../Screen/Screen.h Player.h
 Character.o: Character.cpp Character.h ../Item/MyWeapons.h \
  ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
