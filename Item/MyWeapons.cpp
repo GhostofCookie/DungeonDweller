@@ -15,7 +15,14 @@ Sword::Sword()
 {
    baseDmg = 5;
    remainingUses = 10;
-   itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
+   try
+   {
+      itemName = NameGenerator("../Item/WeaponNames.txt") + " Sword";
+   }
+   catch(runtime_error &re)
+   {
+      itemName = "Sword";
+   }
 }
 
 /// Defines what happens when the sword is used
@@ -42,10 +49,17 @@ Bow::Bow()
    baseDmg = 10;
    remainingUses = 5;
    hitPercent = 70;
-   itemName = NameGenerator("../Item/WeaponNames.txt") + " Bow";
+   try
+   {
+      itemName = NameGenerator("../Item/WeaponNames.txt") + " Bow";
+   }
+   catch(runtime_error &re)
+   {
+      itemName = "Bow";
+   }
 }
 
-/// Defines what happens when the spell is used
+/// Defines what happens when the bow is used
 /// \param[in] target The character that the spell is used on
 /// \return true if use was successfull
 bool Bow::Use(Character *target)
@@ -86,7 +100,13 @@ Spell::Spell()
 {
    baseDmg = 20;
    remainingUses = 1;
+   try
+   {
    itemName = NameGenerator("../Item/SpellNames.txt") + " Spell";
+   }
+   catch(runtime_error &re) {
+      itemName = "Spell";
+   }
 }
 
 /// Defines what happens when the spell is used

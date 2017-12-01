@@ -9,7 +9,7 @@ Character::Character()
 }
 
 
-/*
+
 Character:: Character(Character &p)
 {
    gold = p.gold;
@@ -17,7 +17,7 @@ Character:: Character(Character &p)
    stamina = p.stamina;
    inventory = p.inventory;
    }
-*/
+
 
 Character:: Character(const Character &p)
 {

@@ -17,14 +17,11 @@
 #include "../Image/ImportImg.h"
 #include <vector>
 
-
 using namespace std;
 
 class Item;
 class MyConsumable;
 class Weapon;
-//class MyWeapons;
-
 
 /// \class Character Character.h
 /// \brief Abstract base class of Npc's and Player's attributes
@@ -57,50 +54,53 @@ class Character
    Character(const Character&);
 
    /// Copy constructor
-//   Character(Character&);
+   Character(Character&);
    
    /// Assignment operator overloader for copy constructor
    Character& operator = (const Character &p);
 
    /// Function to fill the characters inventory
-   /// \param[in] inventory, the vector that stores the items in inventory
+   /// \param[in] item, a pointer to the item being added into inventory
    virtual void FillInventory(Item *item);
    
    /// Shows a list of inventory items
-   /// \param[in] Inventory, a pointer to a vector of inventory items
+   /// \return, a the vector of the inventory
    virtual vector < Item* > GetInventoryItems();
 
    /// Chooses the item to be used
-   /// \param[in] Inventory, a pointer to a vector of inventory items
+   /// \param[in] item, the item name to be found in the inventory vector
+   /// \return Item, a pointer to an item if its found in the inventory
    virtual Item* UseItem(string item);
 
    /// Change the amount of gold a character has
-   /// \param[in] GoldMod, how much the current gold will be changed by
+   /// \param[in] goldMod, how much the current gold will be changed by
    virtual void ChangeGold(int goldMod);
 
    /// Changes the characters health
-   /// \param[in] HMod, how the current health will be modified
+   /// \param[in] hMod, how the current health will be modified
    virtual void ChangeHealth(int hMod);
 
    /// Changes players stamina
    /// \param[in] sMod, how the curent stamina will be modified
    virtual void ChangeStamina(int sMod);
 
-   /// Returns the stamina value
+   /// \return the stamina value of the character
    virtual int GetStamina() const { return stamina; };
    
-   /// Returns the gold value
+   /// \return the gold value of the character
    virtual int GetGold() const { return gold; };
    
-   /// Returns the health value
+   /// /return the health value of the character
    virtual int GetHealth() const { return health; };
 
-   /// Return the image
+   /// \return the image representing the character
    virtual ImportImg& Img() { return img; };
 
    /// Draw the player
+   /// \param[in] screen, a reference to the screen
    virtual void Draw(Screen &screen);
 
+   /// Helper function for the destructor to delete inventory items
    void EmptyInventory();
 }; 
 
