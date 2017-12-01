@@ -7,6 +7,7 @@ main directory:
 DungeonDwellerDocuments/:
    - Contains document for coding conventions followed in this project.
    - Contains proposal feedback.
+   - Contains the Write-Up for the final submission
 
 doxygen/:
    - Contains all doxygen related items.
