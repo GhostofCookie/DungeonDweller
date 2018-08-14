@@ -32,7 +32,7 @@ class Player : public Character
    /// \param[in] g, players gold amount
    /// \param[in] h, playes health
    /// \param[in] img, image representing the player
-   Player(int s = 0, int k = 0, std::string n = " ", std::string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
+   Player(int s = 0, int k = 0, std::string n = " ", std::string r = " ", int g = 0, int h = 0, const ImportImg& img = ImportImg("../DD_Art/Player/DD_Player.txt"));
 
    /// Player deconstructor
    ~Player();

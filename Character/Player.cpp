@@ -3,7 +3,7 @@
 
 
 
-Player:: Player(int s, int k, std::string n, std::string r, int g, int h, ImportImg i)
+Player:: Player(int s, int k, std::string n, std::string r, int g, int h, const ImportImg& i)
    : name{n}, race{r}, keys{k}
 {
    img = ImportImg(i);

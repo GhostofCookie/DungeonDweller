@@ -1,6 +1,6 @@
 CC=g++
 CCFLAGS= -Wall -std=c++11 -g -lcppunit -ldl #-fprofile-arcs -ftest-coverage
-OBJS= main.o Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
+OBJS= CharacterMain.o Player.o Npc.o Character.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
 OBJS2= mainTest.o PlayerTest.o CharacterTest.o Character.o Player.o Npc.o ../Item/MyConsumables.o ../Image/ImportImg.o ../Image/Image.o ../Screen/Screen.o ../Item/Item.o ../Item/Weapon.o ../Item/MyWeapons.o
 
 .PHONY : all

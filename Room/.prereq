@@ -1,27 +1,22 @@
 main.o: main.cpp Room.h ../Screen/Screen.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
- ../Image/ImportImg.h ../Character/Character.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/MyWeapons.h ../Character/../Item/Weapon.h \
  ../Character/../Item/Item.h ../Character/../Item/Weapon.h \
  ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
- ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
- ../Character/Player.h ../Character/Character.h ../Character/Npc.h \
+ ../Character/../Item/Item.h ../Character/Player.h ../Character/Npc.h \
  ../Item/Item.h ../Item/MyConsumables.h ../Item/MyWeapons.h \
- ../Room/Room.h ../ImageImporter/ImageImporter.h \
- ../ImageImporter/../Image/Image.h ../ImageImporter/../Image/ImportImg.h
+ ../ImageImporter/ImageImporter.h
 Room.o: Room.cpp Room.h ../Screen/Screen.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/DefaultImg.h ../Image/Image.h \
- ../Image/ImportImg.h ../Character/Character.h \
+ ../Image/DefaultImg.h ../Image/ImportImg.h ../Character/Character.h \
  ../Character/../Item/MyWeapons.h ../Character/../Item/Weapon.h \
  ../Character/../Item/Item.h ../Character/../Item/Weapon.h \
  ../Character/../Item/MyConsumables.h ../Character/../Item/Consumable.h \
- ../Character/../Item/Item.h ../Character/../Image/ImportImg.h \
- ../Character/Player.h ../Character/Character.h ../Character/Npc.h \
+ ../Character/../Item/Item.h ../Character/Player.h ../Character/Npc.h \
  ../Item/Item.h ../Item/MyConsumables.h ../Item/MyWeapons.h
 ImageImporter.o: ../ImageImporter/ImageImporter.cpp \
  ../ImageImporter/ImageImporter.h ../ImageImporter/../Image/Image.h \
  ../ImageImporter/../Image/../Screen/Screen.h \
- ../ImageImporter/../Image/ImportImg.h ../ImageImporter/../Image/Image.h
+ ../ImageImporter/../Image/ImportImg.h
 Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
@@ -61,7 +56,7 @@ MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h \
- ../Item/../Character/Player.h ../Item/../Character/Character.h
+ ../Item/../Character/Player.h
 MyWeapons.o: ../Item/MyWeapons.cpp ../Item/MyWeapons.h ../Item/Weapon.h \
  ../Item/Item.h ../Item/../Character/Character.h \
  ../Item/../Character/../Item/MyWeapons.h \

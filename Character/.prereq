@@ -1,7 +1,7 @@
-main.o: main.cpp Character.h ../Item/MyWeapons.h ../Item/Weapon.h \
- ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
+CharacterMain.o: CharacterMain.cpp Character.h ../Item/MyWeapons.h \
+ ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
- ../Image/Image.h ../Image/../Screen/Screen.h Player.h ../Screen/Screen.h
+ ../Image/Image.h ../Image/../Screen/Screen.h Player.h
 Player.o: Player.cpp Player.h Character.h ../Item/MyWeapons.h \
  ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
@@ -25,7 +25,7 @@ MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h \
- ../Item/../Character/Player.h ../Item/../Character/Character.h
+ ../Item/../Character/Player.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
@@ -47,17 +47,16 @@ mainTest.o: mainTest.cpp PlayerTest.h Player.h Character.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Screen/Screen.h CharacterTest.h
+ CharacterTest.h
 PlayerTest.o: PlayerTest.cpp PlayerTest.h Player.h Character.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
- ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Screen/Screen.h
+ ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h
 CharacterTest.o: CharacterTest.cpp CharacterTest.h Character.h \
  ../Item/MyWeapons.h ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h \
  ../Item/MyConsumables.h ../Item/Consumable.h ../Item/Item.h \
  ../Image/ImportImg.h ../Image/Image.h ../Image/../Screen/Screen.h \
- ../Screen/Screen.h Player.h
+ Player.h
 Character.o: Character.cpp Character.h ../Item/MyWeapons.h \
  ../Item/Weapon.h ../Item/Item.h ../Item/Weapon.h ../Item/MyConsumables.h \
  ../Item/Consumable.h ../Item/Item.h ../Image/ImportImg.h \
@@ -81,7 +80,7 @@ MyConsumables.o: ../Item/MyConsumables.cpp ../Item/MyConsumables.h \
  ../Item/../Character/../Image/ImportImg.h \
  ../Item/../Character/../Image/Image.h \
  ../Item/../Character/../Image/../Screen/Screen.h \
- ../Item/../Character/Player.h ../Item/../Character/Character.h
+ ../Item/../Character/Player.h
 ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
  ../Image/../Screen/Screen.h
 Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
