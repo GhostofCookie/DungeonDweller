@@ -2,5 +2,7 @@
 *.sln
 *.vcxproj
 *.vcxproj.filters
+*.o
+*.obj
 feedback/Kodika-final.txt
 logs/
