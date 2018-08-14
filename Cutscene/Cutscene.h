@@ -1,10 +1,8 @@
 #pragma once
 
-#ifdef ____linux____
+#ifdef	__linux__
 #include <unistd.h>
-#endif
-
-#ifdef _WIN32
+#elif _WIN32
 // Place windows unistd.h equivalent.
 #endif
 

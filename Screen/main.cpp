@@ -14,12 +14,11 @@
 //Room Header
 #include "../Room/Room.h"
 //Time Headers
-#ifdef ____linux____
+#ifdef __linux__
 #include <unistd.h>
-#endif
-
-#ifdef _WIN32
+#elif _WIN32
 // Place windows unistd.h equivalent.
+#else
 #endif
 #include <ctime>
 
