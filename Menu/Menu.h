@@ -5,14 +5,12 @@
 /// menus.
 ///
 
+#pragma once
+
 #include <iostream>
 #include <map>
 #include <vector>
 #include <stdexcept>
-
-
-#ifndef MENU_H
-#define MENU_H
 
 /// \class Menu Menu.h
 /// \brief This is the base class for all menus for the main game.
@@ -84,4 +82,3 @@ class Menu
 
 };
 
-#endif

@@ -1,5 +1,5 @@
 CC = g++
-CCFLAGS = -Wall -std=c++11 -g #-lcppunit -ldl #-fprofile-arcs -ftest-coverage
+CCFLAGS = -D __linux__ -Wall -std=c++11 -g #-lcppunit -ldl #-fprofile-arcs -ftest-coverage
 OBJS = main.o Cutscene.o ../ImageImporter/ImageImporter.o ../Screen/Screen.o ../Image/Image.o ../Image/DefaultImg.o ../Image/ImportImg.o ../Room/Room.o ../Character/Character.o ../Item/Item.o ../Item/MyConsumables.o ../Item/MyWeapons.o
 
 .PHONY : all
