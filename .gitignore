@@ -1,0 +1,6 @@
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+feedback/Kodika-final.txt
+logs/
