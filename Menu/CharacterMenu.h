@@ -6,7 +6,7 @@
 
 #include "GameMenu.h"
 #include <map>
-using namespace std;
+
 
 #ifndef CHARACTERMENU_H
 #define CHARACTERMENU_H
@@ -28,7 +28,7 @@ class CharacterMenu : public GameMenu
    virtual void SetOptions(int row=0, int col=1, int space=2);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
-   virtual void HandleInput(istream &is);
+   virtual void HandleInput( std::istream &is);
 };
 
 #endif

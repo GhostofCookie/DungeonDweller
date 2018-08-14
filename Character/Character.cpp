@@ -8,17 +8,6 @@ Character::Character()
    stamina = 0;
 }
 
-
-
-Character:: Character(Character &p)
-{
-   gold = p.gold;
-   health = p.health;
-   stamina = p.stamina;
-   inventory = p.inventory;
-   }
-
-
 Character:: Character(const Character &p)
 {
    gold = p.gold;
@@ -59,7 +48,7 @@ void Character:: ChangeHealth(int hMod)
    health += hMod;
 }
 
-Item* Character:: UseItem(string item)
+Item* Character:: UseItem(std::string item)
 {
    for(unsigned int i = 0; i < inventory.size(); i++)
       if(inventory[i]->Name() == item)
@@ -67,7 +56,7 @@ Item* Character:: UseItem(string item)
    return nullptr;
 }
 
-vector < Item* > Character:: GetInventoryItems()
+std::vector < Item* > Character:: GetInventoryItems()
 {
    return inventory; 
 }

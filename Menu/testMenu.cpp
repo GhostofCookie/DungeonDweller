@@ -11,7 +11,7 @@
 #include "CharacterMenu.h"
 #include "MemoryMenu.h"
 #include "ConnectFourMenu.h"
-using namespace std;
+
 
 void testFunction(char);
 void testCoord(char,int);
@@ -23,7 +23,7 @@ int main()
 //   MemoryMenu *menu = nullptr;
    Menu *menu = nullptr;
    Screen *screen = nullptr;
-   map < int, string > options;
+   std::map < int, std::string > options;
    menu = new FightMenu();
    screen = new Screen();
 //   menu = new MemoryMenu();
@@ -45,9 +45,9 @@ int main()
       else
 	 menu->SetQuery("How do you answer?");
       */
-      cout << screen;
+      std::cout << screen;
       menu->OutputMenu();
-      menu->HandleInput(cin);
+      menu->HandleInput(std::cin);
 //      testFunction(menu->GetOption());
       //    testCoord(menu->GetCoordinates().x1, menu->GetCoordinates().y1);
       //testCoord(menu->GetCoordinates().x2, menu->GetCoordinates().y2);
@@ -59,23 +59,23 @@ int main()
 }
 void testCoord(char x, int y)
 {
-  cout << "X = " << x << "Y = " << y << endl;
+  std::cout << "X = " << x << "Y = " << y << std::endl;
 }
 void testFunction(char x)
 {
   switch(x)
     {
     case 'W':
-      cout << "Moved Up!" << endl;
+      std::cout << "Moved Up!" << std::endl;
       break;
     case 'S':
-      cout << "Moved Down." << endl;
+      std::cout << "Moved Down." << std::endl;
       break;
     case 'A':
-      cout << "Moved left." << endl;
+      std::cout << "Moved left." << std::endl;
       break;
     case 'D':
-      cout << "Moved Right!" << endl;
+      std::cout << "Moved Right!" << std::endl;
       break;
     };
   

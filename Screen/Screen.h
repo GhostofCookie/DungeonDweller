@@ -5,13 +5,10 @@
 /// \date Oct 20, 2017
 ///
 
-#ifndef Screen_h
-#define Screen_h
+#pragma once
 
 #include <iostream>
 #include <vector>
-using namespace std;
-
 
 /// \brief This class represents an abstract base class in which different
 /// screens can be created from the default
@@ -22,8 +19,8 @@ class Screen
    int height = 0;
    /// The width of the image, default to 0
    int width = 0;
-   /// 2D vector representing the screen object
-   vector<vector<char>> Window;
+   /// 2D std::vector representing the screen object
+   std::vector<std::vector<char>> Window;
 	
 	
 	
@@ -92,17 +89,13 @@ class Screen
    void Erase();
 
    /// Function to print multiple screens beside each other
-   void MultiPrint(const vector<Screen> &screens);
+   void MultiPrint(const std::vector<Screen> &screens);
 
+   /// Overloaded std::ostream operator
+   friend std::ostream& operator <<(std::ostream &os, const Screen &s);
 
-
-   
-   /// Overloaded ostream operator
-   friend ostream& operator <<(ostream &os, const Screen *s);
-   
-   /// Overloaded ostream operator
-   friend ostream& operator <<(ostream &os, const Screen &s);
+   /// Overloaded std::ostream operator
+   friend std::ostream& operator <<(std::ostream &os, const Screen *s);
+  
 };
-
-#endif /* Screen_h */
 

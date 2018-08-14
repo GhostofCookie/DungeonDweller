@@ -5,15 +5,21 @@
 /// \date Oct 20, 2017
 ///
 
-#ifndef PUZZLE_H
-#define PUZZLE_H
+#pragma once
+
+#ifdef linux
+#include <unistd.h>
+#endif
+
+#ifdef _WIN32
+// Place windows unistd.h equivalent.
+#endif
 
 #include "../Menu/Menu.h"
 #include "../Screen/Screen.h"
 #include "../Image/DefaultImg.h"
 #include "../Character/Character.h"
 #include <vector>
-#include <unistd.h>
 #include <stdexcept>
 ///This class represents an abstract base class for each mini-game/puzzle to
 ///derive from.
@@ -32,4 +38,3 @@ class Puzzle
    bool PuzzleEnd;
     
 };
-#endif

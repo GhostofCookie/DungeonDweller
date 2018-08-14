@@ -3,7 +3,7 @@
 #include "DefaultImg.h"
 #include "ImportImg.h"
 #include "../Screen/Screen.h"
-using namespace std;
+
 
 
 
@@ -15,13 +15,13 @@ int main()
    img->AlignCenter(*screen);
    img->Draw(*screen);
 
-   cout << screen << endl;
+   std::cout << screen << std::endl;
    screen->Erase();
 
    img->Fill('!');
    img->Draw(*screen);
 
-   cout << screen << endl;
+   std::cout << screen << std::endl;
    screen->Erase();
    
    return 0;

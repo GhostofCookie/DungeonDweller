@@ -34,11 +34,11 @@ void TicTacToeMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void TicTacToeMenu::HandleInput(istream & is)
+void TicTacToeMenu::HandleInput( std::istream & is)
 {
    char x;
    int y;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> x >> y;
    is.clear();
    is.ignore(255, '\n');
@@ -55,7 +55,7 @@ void TicTacToeMenu::HandleInput(istream & is)
       coordinates.y = 0;
    }
    if(is.fail())
-      throw invalid_argument("Invalid input. please enter coordinates in format A1.");
+      throw std::invalid_argument("Invalid input. please enter coordinates in format A1.");
    
 }
 

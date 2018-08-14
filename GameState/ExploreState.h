@@ -14,12 +14,8 @@
 #include "../Image/ImportImg.h"
 #include <ctime>
 #include <iostream>
-using namespace std;
 
-#ifndef EXPLORESTATE_H
-#define EXPLORESTATE_H
-
-
+#pragma once
 
 /// \class ExploreState ExploreState.h
 /// \brief This is defines the state of the game when the player character is
@@ -33,9 +29,6 @@ class ExploreState : public GameState
    ~ExploreState();
 
    ExploreState(GameState &obj);
-   /// Default copy constructor
-   /// \param[in] state reference to an 
-   ExploreState(ExploreState &obj);
    /// Const copy constructor
    /// \param[in] state reference to an explore state
    ExploreState(const ExploreState &obj);
@@ -47,7 +40,6 @@ class ExploreState : public GameState
    void Set();
    /// Gets the layout for the game menu and screen.
    void Get();
-
    
   private:
    /// Helper function to set the current state of the game based on the current
@@ -61,4 +53,3 @@ class ExploreState : public GameState
    Room *roomPtr;
 };
 
-#endif

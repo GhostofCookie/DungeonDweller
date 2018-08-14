@@ -3,10 +3,9 @@
 #include "TicTacToe.h"
 #include "MemoryMatch.h"
 #include "CodeCracker.h"
-#include <unistd.h>
 #include <ctime>
 #include <iostream>
-using namespace std;
+
 
 int main(){
    Character *Player=new Character;
@@ -17,8 +16,8 @@ int main(){
    TicTacToe ttt;
    MemoryMatch mmTest;
    CodeCracker cc;
-   cout << "1:Hanoi     2:ConnectFour     3:TicTacToe     4:MemoryMatch      5:CodeCracker" <<endl;
-   cin >> input;
+   std::cout << "1:Hanoi     2:ConnectFour     3:TicTacToe     4:MemoryMatch      5:CodeCracker" <<std::endl;
+   std::cin >> input;
    switch(input)
    {
       case 1:

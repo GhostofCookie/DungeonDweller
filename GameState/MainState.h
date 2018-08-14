@@ -9,8 +9,7 @@
 #include "../Cutscene/Cutscene.h"
 #include "../Menu/MainMenu.h"
 
-#ifndef MAINSTATE_H
-#define MAINSTATE_H
+#pragma once
 
 /// \class MainState MainState.h
 /// \brief This is the state of the game when the game is either not yet started or the game has ended.
@@ -28,5 +27,3 @@ class MainState : public GameState
    void Get();
 
 };
-
-#endif

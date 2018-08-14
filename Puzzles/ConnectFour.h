@@ -4,9 +4,17 @@
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
 //  
-#ifndef  CONNECT_FOUR_H
-#define CONNECT_FOUR_H
+
+#pragma once
+
+#ifdef linux
 #include <unistd.h>
+#endif
+
+#ifdef _WIN32
+// Place windows unistd.h equivalent.
+#endif
+
 #include <ctime>
 #include "Puzzle.h"
 #include "../Menu/ConnectFourMenu.h"
@@ -45,7 +53,7 @@ class ConnectFour: virtual public Puzzle
    ///\param[in] The input to be checked, returns false if input out of bounds.
    bool IsInputOutOfScope(int input);
 
-   ///Checks to see if there have been any 4 tokens in a row in the grid vector.
+   ///Checks to see if there have been any 4 tokens in a row in the grid std::vector.
    bool WinCheck();
 
    ///Checks the entire grid to see if there is 4 of a kind in the horizontal
@@ -75,7 +83,7 @@ class ConnectFour: virtual public Puzzle
    ///\param[in]currentPlayer, used to reset the player char for another round.
    bool TieGameCheck(int &currentPlayer);
 
-   ///Sets the board up for the beginning of the game, placing them in screen
+   ///Sets the board up for the beginning of the game, plastd::cing them in screen
    void BoardSetup();
    
    ///Prompts the player and handles the end of the game appropriately.
@@ -96,33 +104,16 @@ class ConnectFour: virtual public Puzzle
    ///terminal
    Screen ConnectFourScreen;
    
-   ///The vector which stores the gameboards chars.
-   std :: vector < vector <char> > grid;
+   ///The std::vector which stores the gameboards chars.
+   std::vector < std::vector <char> > grid;
 
    ///currentPlayerChar keeps track of which character to insert depending on
    ///whos turn it is.
    char currentPlayerChar;
    
    ///xSize is the horizontal dimensions of the game board, ySize is the
-   ///vertical dimensions of the gameboard vector
+   ///vertical dimensions of the gameboard std::vector
    int xSize, ySize;
 
 };
-#endif
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

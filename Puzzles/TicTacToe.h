@@ -12,7 +12,7 @@
 #include "../Screen/Screen.h"
 #include "../Image/DefaultImg.h"
 #include <iostream>
-using namespace std;
+
 
 ///This class contains the mini-game/puzzle Tic Tac Toe
 class TicTacToe: public virtual Puzzle
@@ -35,7 +35,7 @@ class TicTacToe: public virtual Puzzle
    /// \param[in] inputY, the Y-coordinate of the selection. 
    bool ValidMove(int inputX, int inputY);
 
-   ///Sets the board up for the beginning of the game, placing the grid
+   ///Sets the board up for the beginning of the game, plastd::cing the grid
    void BoardSetup();
 
    /// Displays the screen containing the gameboard
@@ -49,7 +49,7 @@ class TicTacToe: public virtual Puzzle
    ///\param[in] player, a pointer to the player usd to modify stats
    void EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character *player);
       
-   ///Checks to see if there have been any 3 tokens in a row in the grid vector.
+   ///Checks to see if there have been any 3 tokens in a row in the grid std::vector.
    bool WinCheck();
 
    ///Checks if there is a tie, returns true if yes.
@@ -98,7 +98,7 @@ class TicTacToe: public virtual Puzzle
    int ConvertCharCoordinateToIndex(char input);
    
    ///Vector to store the contents of the gameboard
-   std::vector < vector < char > > gameBoard;
+   std::vector < std::vector < char > > gameBoard;
 
    ///Dimensions for the board
    int boardSize;

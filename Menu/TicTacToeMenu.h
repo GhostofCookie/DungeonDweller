@@ -6,7 +6,7 @@
 ///
 
 #include "MinigameMenu.h"
-using namespace std;
+
 
 #ifndef TICTACTOEMENU_H
 #define TICTACTOEMENU_H
@@ -39,7 +39,7 @@ class TicTacToeMenu : public virtual MinigameMenu
    virtual void SetOptions(int row, int col, int space);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
-   virtual void HandleInput(istream &is);
+   virtual void HandleInput( std::istream &is);
    /// This function returns the coordinates the player entered.
    Coord GetCoordinates() const;
 

@@ -8,7 +8,7 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 #include "Item.h"
-using namespace std;
+
 
 /// This class is a abstract base class derived from Item to represent weapons in game
 class Weapon: public Item

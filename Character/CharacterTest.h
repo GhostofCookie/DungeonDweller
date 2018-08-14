@@ -52,8 +52,8 @@ class CharacterTest : public CppUnit::TestFixture
   private:
    
    //values used for test cases
-   string item;
-   vector<Item*> inv;
+   std::string item;
+   std::vector<Item*> inv;
    Character C;
 };
 

@@ -24,16 +24,16 @@ TradeMenu::~TradeMenu()
 /// \param[in] How mush space inbetween rows.
 void TradeMenu::SetOptions(int row, int col, int space)
 {
-   map<int,string> optionList = indexMap;
+   std::map<int,std::string> optionList = indexMap;
    int width = menuWidth;
    auto it = optionList.begin();
    int value = 1, count=0;
-   string temp;
+   std::string temp;
    row -= 1;
    while(it!=optionList.end()) 
    {
       if(optionList.size() > 9)
-	 throw invalid_argument("Too many menu options. Max is 9 for FightMenu.");
+	 throw std::invalid_argument("Too many menu options. Max is 9 for FightMenu.");
       if(count < 9)
       {
 	 temp += '[';temp += it->first;temp += ']';temp += it->second;
@@ -66,7 +66,7 @@ void TradeMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void TradeMenu::HandleInput(istream & is)
+void TradeMenu::HandleInput( std::istream & is)
 {
    Menu::HandleInput(is);
 }

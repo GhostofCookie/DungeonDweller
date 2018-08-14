@@ -7,7 +7,7 @@
 
 #include "Weapon.h"
 #include <vector>
-using namespace std;
+
 
 /// Returns the base damage of the weapon (for reading only)
 /// \returns base damage of the weapon

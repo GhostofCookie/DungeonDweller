@@ -31,15 +31,15 @@ void TradeState::Set()
 void TradeState::Get()
 {
    // print the player's informaton and the screen
-   cout << setfill(' ') << "[N]Name: " << player->GetName();
-   cout << setw(20) << "[R]Race: " << player->GetRace() << endl;
-   cout << "[$]Gold: " << player->GetGold();
-   cout << setw(27) << "[S]Stamina: " << player->GetStamina();
-   cout << setw(27) << right << "[+]Health: " << player->GetHealth() << right << endl;
+   std::cout << std::setfill(' ') << "[N]Name: " << player->GetName();
+   std::cout << std::setw(20) << "[R]Race: " << player->GetRace() << std::endl;
+   std::cout << "[$]Gold: " << player->GetGold();
+   std::cout << std::setw(27) << "[S]Stamina: " << player->GetStamina();
+   std::cout << std::setw(27) << std::right << "[+]Health: " << player->GetHealth() << std::right << std::endl;
       
-   cout<<screen;
+   std::cout<<screen;
    menu->OutputMenu();
-   menu->HandleInput(cin);
+   menu->HandleInput(std::cin);
    if(menu->GetOption() == 'q')
    {
       currState = 'E';

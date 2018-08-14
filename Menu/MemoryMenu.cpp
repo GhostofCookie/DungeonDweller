@@ -25,7 +25,7 @@ MemoryMenu::~MemoryMenu()
 }
 
 /// This function sets the specific options for the Menu type.
-/// \param[in] OptionsList A map of all the options for the current
+/// \param[in] OptionsList A std::map of all the options for the current
 /// menu. Each option has a unique key to make input easier.
 /// \param[in] type This denotes the type of menu to display.
 void MemoryMenu::SetOptions(int row, int col, int space)
@@ -39,11 +39,11 @@ void MemoryMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void MemoryMenu::HandleInput(istream & is)
+void MemoryMenu::HandleInput( std::istream & is)
 {
    char x1, x2;
    int y1, y2;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> x1 >> y1 >> x2 >> y2;
    is.clear();
    is.ignore(255, '\n');
@@ -65,7 +65,7 @@ void MemoryMenu::HandleInput(istream & is)
       coordinates.y2 = 0;
    }
    if(is.fail())
-      throw invalid_argument("Invalid input. please enter coordinates in format A1.");
+      throw std::invalid_argument("Invalid input. please enter coordinates in format A1.");
 }
 
 /// This function returns the coordinates the player entered.

@@ -55,7 +55,7 @@ class MenuTest : public CppUnit::TestFixture
    Menu *menu7 = nullptr;
    Menu *menu8 = nullptr;
    Menu *menu9 = nullptr;
-   std::map < int,string > options;
+   std::map < int,std::string > options;
 };
 
 #endif

@@ -5,8 +5,7 @@
 /// \date Oct 25, 2017
 //
 
-#ifndef Character_h
-#define Character_h
+#pragma once
 
 #include <stdio.h>
 #include <iostream>
@@ -17,7 +16,7 @@
 #include "../Image/ImportImg.h"
 #include <vector>
 
-using namespace std;
+
 
 class Item;
 class MyConsumable;
@@ -31,7 +30,7 @@ class Character
    ImportImg img;
    
    /// Vector of items the character has
-   vector < Item* > inventory;
+   std::vector < Item* > inventory;
 
    /// Amount of gold player has
    int gold;
@@ -52,9 +51,6 @@ class Character
 
    /// Const copy constructor
    Character(const Character&);
-
-   /// Copy constructor
-   Character(Character&);
    
    /// Assignment operator overloader for copy constructor
    Character& operator = (const Character &p);
@@ -64,13 +60,13 @@ class Character
    virtual void FillInventory(Item *item);
    
    /// Shows a list of inventory items
-   /// \return, a the vector of the inventory
-   virtual vector < Item* > GetInventoryItems();
+   /// \return, a the std::vector of the inventory
+   virtual std::vector < Item* > GetInventoryItems();
 
    /// Chooses the item to be used
-   /// \param[in] item, the item name to be found in the inventory vector
+   /// \param[in] item, the item name to be found in the inventory std::vector
    /// \return Item, a pointer to an item if its found in the inventory
-   virtual Item* UseItem(string item);
+   virtual Item* UseItem(std::string item);
 
    /// Change the amount of gold a character has
    /// \param[in] goldMod, how much the current gold will be changed by
@@ -103,5 +99,3 @@ class Character
    /// Helper function for the destructor to delete inventory items
    void EmptyInventory();
 }; 
-
-#endif /* Character_hpp */

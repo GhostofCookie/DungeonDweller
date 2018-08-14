@@ -24,7 +24,7 @@ CodeCracker::~CodeCracker()
 void CodeCracker:: RunGame(Character *player)
 {
    if(player==NULL)
-      throw invalid_argument("Player pointer passed to minigame is invalid");
+      throw std::invalid_argument("Player pointer passed to minigame is invalid");
    int userInput, currentRiddle;
    RiddleMenu GameMenu;
    
@@ -39,9 +39,9 @@ void CodeCracker:: RunGame(Character *player)
       system("clear");
       currentRiddle = UnusedRandomRiddle();
       //SetRiddleInMenu(currentRiddle, GameMenu);
-      cout << question.at(currentRiddle);
+      std::cout << question.at(currentRiddle);
       //GameMenu.OutputMenu();
-      GameMenu.HandleInput(cin);   
+      GameMenu.HandleInput(std::cin);   
       userInput = GameMenu.GetInput();
 
       if(ValidAnswer(userInput, currentRiddle))
@@ -49,15 +49,15 @@ void CodeCracker:: RunGame(Character *player)
 	 MakeRiddleUsed(currentRiddle);
 	 //GameMenu.SetQuery(correctPrompt);
 	 //GameMenu.OutputMenu();
-	 cout << correctPrompt << endl;
+	 std::cout << correctPrompt << std::endl;
 	 Puzzle::SecondDelay(3);
 	 riddleCompletionCount++;
-	 cout << "riddlecompcount:" << riddleCompletionCount << endl;
+	 std::cout << "riddlecompcount:" << riddleCompletionCount << std::endl;
 	 WinCheck();
       }
       else
       {
-	 cout << incorrectPrompt << endl;
+	 std::cout << incorrectPrompt << std::endl;
 	 //GameMenu.SetQuery(incorrectPrompt);
 	 //GameMenu.OutputMenu();
 	 SecondDelay(3);
@@ -72,10 +72,10 @@ void CodeCracker:: RunGame(Character *player)
 
 void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
 {
-   string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
+   std::string temp="Puzzler: Well, off you go then! +5 Stamina, +1 Gold";
    //menu.SetQuery(temp);
    //menu.OutputMenu();
-   cout << temp << endl;
+   std::cout << temp << std::endl;
    player->ChangeStamina(+5);
    player->ChangeGold(+10);
    SecondDelay(5);
@@ -83,7 +83,7 @@ void CodeCracker::EndGamePrompt(Character *player, RiddleMenu &menu)
 
 ///Checks to see if the user input is one of the accepted answers.
 ///\param[in] Input, an answer to the riddle in the form of the char.
-///\param[in] riddleIndex, location of the puzzles answer in riddle vector 
+///\param[in] riddleIndex, location of the puzzles answer in riddle std::vector 
 bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 {
    if(input == answer.at(riddleIndex))
@@ -96,7 +96,7 @@ bool CodeCracker::ValidAnswer(int input, int riddleIndex)
 
 ///Checks if the riddle has already been used so that the player doesn't do
 ///the same one twice, returns true if it has been used already.
-///\param[in] index, location of the riddle in the riddle vector 
+///\param[in] index, location of the riddle in the riddle std::vector 
 bool CodeCracker::IsRiddleUsed(int index)
 {
    if(usedRiddles.at(index) == true)
@@ -117,16 +117,16 @@ void CodeCracker::WinCheck()
 ///\param[in] menu, the menu object to be set and then outputted.  
 void CodeCracker::InitialPrompt(RiddleMenu &menu)
 {
-   string initialPrompt = "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
+   std::string initialPrompt = "Puzzler: Stop! Who would pass through the Door of Death must answer me these question three, ere the other side he see.";
    //menu.SetQuery(initialPrompt);
    //menu.OutputMenu();
-   cout << initialPrompt << endl;
+   std::cout << initialPrompt << std::endl;
    Puzzle::SecondDelay(6);
 }
 
 void CodeCracker::SetRiddleInMenu(int riddleIndex, RiddleMenu &menu)
 {
-   string riddleText = question.at(riddleIndex);
+   std::string riddleText = question.at(riddleIndex);
    menu.SetQuery(riddleText);
 
 }
@@ -156,19 +156,19 @@ void CodeCracker::DeathCheck(Character *player)
 {
    if(player->GetHealth() == 0)
    {
-      cout << "You're dead Jim" << endl;
+      std::cout << "You're dead Jim" << std::endl;
       SecondDelay(4);
       PuzzleEnd = true;
    }
 }
 
-///Imports riddles from a text file and stores them in the vector.
+///Imports riddles from a text file and stores them in the std::vector.
 void CodeCracker::ImportRiddles()
 {
-   string line, questionString, questionFormat;
+   std::string line, questionString, questionFormat;
    int qAnswer = 0;
 
-   ifstream in;
+   std::ifstream in;
    in.open("../Puzzles/Riddles.txt");
    if(in)
    {
@@ -189,5 +189,5 @@ void CodeCracker::ImportRiddles()
       in.close();	
    }
    else
-      throw invalid_argument("Riddles text file has failed to open");
+      throw std::invalid_argument("Riddles text file has failed to open");
 }

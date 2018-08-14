@@ -12,7 +12,7 @@ int main()
     Screen *screen = new Screen();
     Player *t = nullptr;
     t = create(t);
-   vector<Item*> inv = t->GetInventoryItems();
+   std::vector<Item*> inv = t->GetInventoryItems();
   auto it = inv.begin();
 
   while(it != inv.end())
@@ -26,7 +26,7 @@ int main()
    while(it != t->GetInventoryItems().end())
    {
 
-      cout<<(*it)->Name()<<endl;
+      std::cout<<(*it)->Name()<<std::endl;
       ++it;
    }
 
@@ -34,7 +34,7 @@ int main()
    // player.Draw(screen);
    t->Img().AlignCenter(*screen);
    t->Img().Draw(*screen);
-   cout << *screen;
+   std::cout << *screen;
     for(; it != (t->GetInventoryItems()).end(); ++it)
        delete *it;
    delete t;
@@ -45,7 +45,7 @@ int main()
 
 Player *create(Player *p)
 {
-   vector<Player*> players;
+   std::vector<Player*> players;
 
 
    Player *player = new Player(10, 10,"hi", "hello", 10, 10);
@@ -61,7 +61,7 @@ Player *create(Player *p)
    players.push_back(player);
    players.push_back(player2);
    int i=0;
-   cin>>i;
+   std::cin>>i;
    delete p;
    p = new Player(*players[i]);
 /*   for(auto it = players.begin(); it != players.end(); ++it)

@@ -6,8 +6,7 @@
 //
 
 
-#ifndef Player_h
-#define Player_h
+#pragma once
 
 #include <stdio.h>
 #include "Character.h"
@@ -17,8 +16,6 @@
 #include <vector>
 #include <string>
 
-using namespace std; 
-
 class Item;
 class MyConsumable;
 class Npc;
@@ -26,7 +23,6 @@ class Npc;
 ///Derived class from Character which provides Player attributes
 class Player : public Character
 {
- 
   public:
    /// Player constructor
    /// \param[in] s, players stamina
@@ -36,16 +32,13 @@ class Player : public Character
    /// \param[in] g, players gold amount
    /// \param[in] h, playes health
    /// \param[in] img, image representing the player
-   Player(int s = 0, int k = 0, string n = " ", string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
+   Player(int s = 0, int k = 0, std::string n = " ", std::string r = " ", int g = 0, int h = 0, ImportImg img = ImportImg("../DD_Art/Player/DD_Player.txt"));
 
    /// Player deconstructor
    ~Player();
    
    /// Const copy constructor
    Player(const Player&);
-
-   /// Copy constructor
-   Player(Player&);
 
    /// Assignment operator overloader for copy constructor
    Player& operator = (const Player &p);
@@ -64,12 +57,12 @@ class Player : public Character
    int GetKeys() const {return keys;};
 
    /// Shows players race
-   /// \return the string representing the players race
-   string GetRace() const {return race;};
+   /// \return the std::string representing the players race
+   std::string GetRace() const {return race;};
 
    /// Shows players name
-   /// \return the string representing the players name
-   string GetName() const {return name;};
+   /// \return the std::string representing the players name
+   std::string GetName() const {return name;};
    
    /// Prints all player stats
    void Print();
@@ -79,13 +72,12 @@ class Player : public Character
    
   private: 
    ///Name of the player
-   string name;
+   std::string name;
    
    ///Race of the player
-   string race;
+   std::string race;
   
    ///Amount of keys player has
    int keys; 
 };
 
-#endif /* Player_hpp */

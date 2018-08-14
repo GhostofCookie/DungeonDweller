@@ -20,10 +20,7 @@
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
 
-#ifndef GAMESTATE_H
-#define GAMESTATE_H
-
-
+#pragma once
 
 class GameState
 {
@@ -31,11 +28,11 @@ class GameState
    /// \brief An abstract class, this class defines the state of the current 'state' of the game based 
    /// on the current situation of the player character.
   public:
-   /// Default constructor
+   /// Default constructor.
    GameState(Player *p=nullptr):menu{nullptr},screen{nullptr}
    ,currState{'M'},roomTree{nullptr}
    ,player{p}{}
-   /// Default destructor
+   /// Default destructor.
    virtual ~GameState(){}
    /// Sets the layout of the game.
    virtual void Set() = 0;
@@ -48,23 +45,21 @@ class GameState
    Player *GetPlayer() const { return player; }
    /// Returns the room tree.
    RoomTree *GetRoomTree() const { return roomTree; }
-   /// Returns menu
+   /// Returns menu.
    Menu *GetMenu() const { return menu; }
-   /// Returns the screen
+   /// Returns the screen.
    Screen *GetScreen() const {return screen; }
 
   protected:
-   ///< pointer to the menu.
+   ///< Pointer to the menu.
    Menu *menu;
-   ///< pointer to the screen;
+   ///< Pointer to the screen.
    Screen *screen;
-   ///< defines which gamestate will be used.
+   ///< Defines which gamestate will be used.
    char currState;
-   /// allows access from different states to check whether room is complete
+   ///< Allows access from different states to check whether room is complete.
    RoomTree *roomTree;
-   ///
+   ///< Pointer to the player character.
    Player *player;
    
 };
-
-#endif

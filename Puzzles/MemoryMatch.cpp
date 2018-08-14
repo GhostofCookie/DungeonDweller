@@ -9,15 +9,15 @@
 MemoryMatch::MemoryMatch()
 {
    boardSize=4;
-   pairsOfCharsVector.resize(boardSize*boardSize/2);
-   pairsOfCharsVector.at(0)='@';
-   pairsOfCharsVector.at(1)='#';
-   pairsOfCharsVector.at(2)='$';
-   pairsOfCharsVector.at(3)='K';
-   pairsOfCharsVector.at(4)='T';
-   pairsOfCharsVector.at(5)='&';
-   pairsOfCharsVector.at(6)='R';
-   pairsOfCharsVector.at(7)='G';
+  pairsOfCharsVector.resize(boardSize*boardSize/2);
+  pairsOfCharsVector.at(0)='@';
+  pairsOfCharsVector.at(1)='#';
+  pairsOfCharsVector.at(2)='$';
+  pairsOfCharsVector.at(3)='K';
+  pairsOfCharsVector.at(4)='T';
+  pairsOfCharsVector.at(5)='&';
+  pairsOfCharsVector.at(6)='R';
+  pairsOfCharsVector.at(7)='G';
    
    matchVector.resize(boardSize);
    charTable.resize(boardSize);
@@ -45,7 +45,7 @@ MemoryMatch::~MemoryMatch()
 void MemoryMatch::RunGame(Character *player)
 {
    if(player==NULL)
-      throw invalid_argument("Player pointer passed to minigame is invalid");
+      throw std::invalid_argument("Player pointer passed to minigame is invalid");
    MemoryMenu MemoryMatchMenu;
    int inputX1, inputY1, inputX2, inputY2;
    BoardSetup();
@@ -55,9 +55,9 @@ void MemoryMatch::RunGame(Character *player)
    while(PuzzleEnd ==false)
    {
       system("clear");
-      cout << MemoryMatchScreen;
+      std::cout << MemoryMatchScreen;
       MemoryMatchMenu.OutputMenu();
-      MemoryMatchMenu.HandleInput(cin);
+      MemoryMatchMenu.HandleInput(std::cin);
       ///Get input 1-4
       SetInputs(inputX1, inputY1, inputX2, inputY2, MemoryMatchMenu);
        if(CheckInput(inputX1, inputY1, inputX2, inputY2))
@@ -66,7 +66,7 @@ void MemoryMatch::RunGame(Character *player)
 	 WinCheck();
       }
       else
-	 cout << "Invalid input, please try again!" << endl;
+	 std::cout << "Invalid input, please try again!" << std::endl;
    }   
 }
 
@@ -74,15 +74,15 @@ void MemoryMatch::RunGame(Character *player)
 ///for 6 seconds before ending the game.  
 void MemoryMatch:: EndGamePrompt()
 {
-   string temp = "Congratulations adventurer! You've solved the puzzle!";
+   std::string temp = "Congratulations adventurer! You've solved the puzzle!";
    temp+=" +5 Stamina";
-   cout << temp << endl;
-   cout << MemoryMatchScreen;
+   std::cout << temp << std::endl;
+   std::cout << MemoryMatchScreen;
    Puzzle::SecondDelay(6);
 }
 
 ///Takes the char input given by the user and returns the associated index
-///for its location within the vector as an int.
+///for its location within the std::vector as an int.
 ///\param[in]input, the character to convert to an integer index.  
 int MemoryMatch:: ConvertCharToIndex(char input)
 {
@@ -146,30 +146,30 @@ bool MemoryMatch:: CheckInput(int x1, int y1, int x2, int y2)
       return false;
 }
 
-///Sets the board up for the beginning of the game, placing them in screen
+///Sets the board up for the beginning of the game, plastd::cing them in screen
 void MemoryMatch::BoardSetup()
 {
-   cout << "Board Setup" << endl;
+   std::cout << "Board Setup" << std::endl;
    int randomPairIndex;
    char randomPairToInsert;
    bool reSelect = true;
    
-   ///Setting up the match-true/false value vector for win checking/error checking
+   ///Setting up the match-true/false value std::vector for win checking/error checking
    for(unsigned int i = 0; i < pairsOfCharsVector.size(); i++)
    {
-      ///Try random pairs until the table has been filled in a random order
+      ///Try random std::pairs until the table has been filled in a random order
       while(reSelect == true)
       {
 	 reSelect = false;
-	 ///half of the area of the board since there are pairs so /2
+	 ///half of the area of the board since there are std::pairs so /2
 	 randomPairIndex = RandomNumber(boardSize * boardSize / 2);
-	 ///Chose a random pair from the table of possible pairs
+	 ///Chose a random std::pair from the table of possible std::pairs
 	 randomPairToInsert = pairsOfCharsVector.at(randomPairIndex);
 	 
-	 ///If we haven't used any pair yet. Insert right away
+	 ///If we haven't used any std::pair yet. Insert right away
 	 if(usedPairs.empty())
 	    reSelect = false;
-         ///Else check if we have used it before, if yes, try another pair
+         ///Else check if we have used it before, if yes, try another std::pair
 	 else if(IsInUsedPairs(randomPairToInsert))
 	    reSelect = true;	 
       }
@@ -180,7 +180,7 @@ void MemoryMatch::BoardSetup()
    }
 }
 
-///Checks if a char is in the used pairs vector and returns true if its found
+///Checks if a char is in the used std::pairs std::vector and returns true if its found
 ///\param[in]symbol, the symbol to be checked.  
 bool MemoryMatch:: IsInUsedPairs(char symbol)
 {
@@ -200,7 +200,7 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
    int randomXCoordinate;
    int randomYCoordinate;
    bool insertSuccess=false;
-   ///Happens twice since it's a pair
+   ///Happens twice since it's a std::pair
    for(int i = 0; i < 2; i++)
    {
       ///Keep repeating until an acceptable location is found, randomly.
@@ -245,7 +245,7 @@ void MemoryMatch::SaveBoardToScreen()
 }
 
 ///Checks if the coordinates have been matched already using the membership
-///table stored in the match vector, returns true if they are unmatched,
+///table stored in the match std::vector, returns true if they are unmatched,
 ///false if they have previously been matched
 ///\param[in] inputX1, The X-Coordinate of the first card to check
 ///\param[in] inputY1, The Y-Coordinate of the first card to check
@@ -322,7 +322,7 @@ void MemoryMatch::PeekAtBoard(int lengthInSeconds)
       }
    }
    ///Output the game for three seconds
-   cout << MemoryMatchScreen << endl; 
+   std::cout << MemoryMatchScreen << std::endl; 
    Puzzle::SecondDelay(lengthInSeconds);
    system("clear");
    
@@ -354,7 +354,7 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
       FlipTwoChars(inputX2, inputY2);
 
    ///Output the game for three seconds
-   cout << MemoryMatchScreen << endl; 
+   std::cout << MemoryMatchScreen << std::endl; 
    Puzzle::SecondDelay(3);
 
    ///clear the first and second symbol off of the screen after 3 seconds, only
@@ -366,7 +366,7 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
       MemoryMatchScreen.Set(((inputY2 * 2) + 1 + topBound)
 			    , ((inputX2 * 2) + 1 + leftBound), ' ');
    ///Output the game again now that it has been cleared of the users guess.
-   cout << MemoryMatchScreen << endl;
+   std::cout << MemoryMatchScreen << std::endl;
 }
 
 ///Flips two cards and shows them to the user for a certain time, if they are

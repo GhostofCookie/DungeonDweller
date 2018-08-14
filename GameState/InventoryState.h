@@ -15,10 +15,9 @@
 #include "../Image/ImportImg.h"
 #include <ctime>
 #include <iostream>
-using namespace std;
 
-#ifndef INVENTORYSTATE_H
-#define INVENTORYSTATE_H
+
+#pragma once
 
 /// \class ExploreState ExploreState.h
 /// \brief This is defines the state of the game when the player character is
@@ -37,4 +36,3 @@ class InventoryState : public GameState
 
 };
 
-#endif

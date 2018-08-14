@@ -6,8 +6,7 @@
 
 #include "GameState.h"
 
-#ifndef FIGHTSTATE_H
-#define FIGHTSTATE_H
+#pragma once
 
 class FightState : public GameState
 {
@@ -23,4 +22,3 @@ class FightState : public GameState
    void Get();
 };
 
-#endif

@@ -5,8 +5,7 @@
 /// \date Oct 20, 2017
 ///
 
-#ifndef Room_h
-#define Room_h
+#pragma once
 
 #include <iostream>
 #include <map>
@@ -28,7 +27,7 @@
 #include "../Item/Item.h"
 #include "../Item/MyConsumables.h"
 #include "../Item/MyWeapons.h"
-using namespace std;
+
 
 
 
@@ -46,8 +45,6 @@ class Room
       // character stored
       char ch;
    };
-
-
    
   private:
    /// A finalized version of the room with data values included
@@ -67,32 +64,31 @@ class Room
    
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles collects all 'event' images for the rooms
-   void GetRoom(map<char, vector<ImportImg>> &imgFiles);
+   void GetRoom(std::map<char, std::vector<ImportImg>> &imgFiles);
    
    /// Locates the key characters used to print other images to the room
    void GetPoints();
    
    /// Print event images to the room based on type
    /// \param[in] imgFiles the collection of images to use
-   void GetEventImages(map<char, vector<ImportImg>> &imgFiles);
+   void GetEventImages(std::map<char, std::vector<ImportImg>> &imgFiles);
 	
 
    
   public:
    /// Constructs a Room object using the given image
    /// \param[in] imgFiles the image used as the room
-   Room(map<char, vector<ImportImg>> &imgFiles, int type = -1, bool c = true);
-   /// Copy Constructor
-   /// \param[in] r the room being copied
-   Room(Room &r);
+   Room(std::map<char, std::vector<ImportImg>> &imgFiles, int type = -1, bool c = true);
+
    /// Copy Constructor
    /// \param[in] r the room being copied
    Room(const Room &r);
+
    /// Destroys the object
    ~Room();
 
    /// The points of each image's key character
-   vector<Point> point; // stores the points to each key
+   std::vector<Point> point; // stores the points to each key
 
    /// To indicate if a room has any events that need to take place
    bool complete;
@@ -101,7 +97,7 @@ class Room
    ImportImg GetImage() const;
    
    /// Function that returns the room's image file path
-   string GetImageFile() const;
+   std::string GetImageFile() const;
    
    /// Function that returns the room's type
    int GetType() const;
@@ -147,4 +143,3 @@ class Room
    /// Function to return the npc
    Character GetNpc() { return npc; }
 };
-#endif /* Room_h */

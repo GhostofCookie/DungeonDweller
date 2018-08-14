@@ -7,8 +7,7 @@
 
 #include "GameState.h"
 
-#ifndef TRADESTATE_H
-#define TRADESTATE_H
+#pragma once
 
 class TradeState : public GameState
 {
@@ -26,4 +25,3 @@ class TradeState : public GameState
    void Get();
 };
 
-#endif

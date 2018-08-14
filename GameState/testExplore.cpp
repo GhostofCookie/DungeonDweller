@@ -10,7 +10,7 @@
 #include "../Item/Item.h"
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
-using namespace std;
+
 
 void CreatePlayer(Player *ptr);
 int PlayerChoice();
@@ -96,12 +96,12 @@ int main()
 void CreatePlayer(Player *ptr){
    delete ptr;
    ptr=nullptr;
-   cout << "Hello! Welcome to the dungeon." << endl;
-   cout << "You are going to need a character to get through this place, what do you want your name to be?" << endl;
-   cout << ">:";
-   string name;
-   cin >> name;
-   cout << "You are also going to need some equipment down there, please choose your load-out." << endl;
+   std::cout << "Hello! Welcome to the dungeon." << std::endl;
+   std::cout << "You are going to need a character to get through this place, what do you want your name to be?" << std::endl;
+   std::cout << ">:";
+   std::string name;
+   std::cin >> name;
+   std::cout << "You are also going to need some equipment down there, please choose your load-out." << std::endl;
 
    int input=PlayerChoice();
    
@@ -142,30 +142,30 @@ int PlayerChoice(){
       switch(iterator)
       {
 	 case 0:
-	    cout << "Race: Ranger" << endl << "Stamina: 40" << endl
-		 << "Health: 50" << endl << "Gold: 20" << endl;
+	    std::cout << "Race: Ranger" << std::endl << "Stamina: 40" << std::endl
+		 << "Health: 50" << std::endl << "Gold: 20" << std::endl;
 	    break;
 	 case 1:
-	    cout << "Race: Hunter" << endl << "Stamina: 50" << endl
-		 << "Health: 40" << endl << "Gold: 20" << endl;
+	    std::cout << "Race: Hunter" << std::endl << "Stamina: 50" << std::endl
+		 << "Health: 40" << std::endl << "Gold: 20" << std::endl;
 	    break;
 	 case 2:
-	    cout << "Race: Warrior" << endl << "Stamina: 20" << endl
-		 << "Health: 70" << endl << "Gold: 20" << endl;
+	    std::cout << "Race: Warrior" << std::endl << "Stamina: 20" << std::endl
+		 << "Health: 70" << std::endl << "Gold: 20" << std::endl;
 	    break;
 	 case 3:
-	    cout << "Race: Mage" << endl << "Stamina: 40" << endl
-		 << "Health: 30" << endl << "Gold: 40" << endl;
+	    std::cout << "Race: Mage" << std::endl << "Stamina: 40" << std::endl
+		 << "Health: 30" << std::endl << "Gold: 40" << std::endl;
 	    break;
 	 case 4:
-	    cout << "Race: Computer Scientist" << endl << "Stamina: 5" << endl
-		 << "Health: 10" << endl << "Gold: 10,000" << endl;
+	    std::cout << "Race: Computer Scientist" << std::endl << "Stamina: 5" << std::endl
+		 << "Health: 10" << std::endl << "Gold: 10,000" << std::endl;
 	    break;
       }
-      cout << "[C] Choose" << endl;
-      cout << "[N] Next" << endl;
-      cout << ">:";
-      cin >> ans;
+      std::cout << "[C] Choose" << std::endl;
+      std::cout << "[N] Next" << std::endl;
+      std::cout << ">:";
+      std::cin >> ans;
       if(ans == 'c' || ans == 'C')
 	 loopEnd=true;
       else

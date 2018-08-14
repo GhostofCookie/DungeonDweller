@@ -7,8 +7,7 @@
 
 #ifndef ITEM_H
 #define ITEM_H
-#include <iostream>
-using namespace std;
+#include <string>
 
 class Character;
 
@@ -23,8 +22,8 @@ class Item
    /// Uses factory design pattern to create items
    /// \param[in] itemType The type of item to be created
    /// \return Pointer to created item
-   /// \exception invalid_argument Thrown if type does not exist or is not allowed
-   Item *GetItem(string itemType);
+   /// \exception std::invalid_argument Thrown if type does not exist or is not allowed
+   Item *GetItem(std::string itemType);
 
    /// Pure Virtual funtion that forces all subclasses to define how to use themselves
    /// \param[in] target The Character the item is being used on
@@ -33,17 +32,17 @@ class Item
 
    /// Allows access to the items name
    /// \return Reference to the name of the item
-   string &Name();
+   std::string &Name();
 
    /// Gives the name of the item without allowing chages
    /// \return Name of the item
-   string Name() const;
+   std::string Name() const;
 
    /// Generates adjectives to add to Item names
    /// \param[in] fileName the file that the names comme from
    /// \returns Adjective generated and to be used
-   /// \exception runtime_error Thrown if source file has no names
-   string NameGenerator(string fileName);
+   /// \exception std::runtime_error Thrown if source file has no names
+   std::string NameGenerator(std::string fileName);
 
   protected:
    /// Helper function to generate random positive numbers
@@ -51,6 +50,6 @@ class Item
    int Random(unsigned int start,unsigned int end);
 
    ///Name of the item
-   string itemName;
+   std::string itemName;
 };
 #endif

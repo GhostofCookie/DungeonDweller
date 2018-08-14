@@ -61,7 +61,7 @@ Cutscene::~Cutscene()
 /// \param[in] d
 void Cutscene::MoveUp(const int originY, const int originX, const int d)
 {
-   vector<Screen> scr = {leftSide, screen, rightSide};
+   std::vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -77,7 +77,9 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
+	  #ifdef linux
       usleep(VERTSPEED);
+	  #endif
    }
 }
 
@@ -89,7 +91,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
 /// \param[in] d
 void Cutscene::MoveDown(const int originY, const int originX, const int d)
 {
-   vector<Screen> scr = {leftSide, screen, rightSide};
+   std::vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -105,7 +107,9 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
+	  #ifdef linux
       usleep(VERTSPEED);
+	  #endif
    }
 }
 
@@ -117,7 +121,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
 /// \param[in] d
 void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 {
-   vector<Screen> scr = {leftSide, screen, rightSide};
+   std::vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -133,7 +137,9 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
+	  #ifdef linux
       usleep(HORIZSPEED);
+	  #endif
    }
 }
 
@@ -145,7 +151,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 /// \param[in] d
 void Cutscene::MoveRight(const int originY, const int originX, const int d)
 {
-   vector<Screen> scr = {leftSide, screen, rightSide};
+   std::vector<Screen> scr = {leftSide, screen, rightSide};
    img.SetOrigin(screen, originY, originX);
 
    // This loop will animate the image and print to the screen
@@ -161,11 +167,11 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
+	  #ifdef linux
       usleep(HORIZSPEED);
+	  #endif
     }
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::EnterTopToCenter()
@@ -174,16 +180,12 @@ void Cutscene::EnterTopToCenter()
    MoveDown(img.screenY, img.screenX, savedY - img.screenY);
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::EnterBottomToCenter()
 {
    img.AlignBottom(screen);
    MoveUp(img.screenY, img.screenX, img.screenY - savedY);
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::EnterLeftToCenter()
@@ -192,8 +194,6 @@ void Cutscene::EnterLeftToCenter()
    MoveRight(img.screenY, img.screenX, savedX - img.screenX);
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::EnterRightToCenter()
 {
@@ -201,15 +201,11 @@ void Cutscene::EnterRightToCenter()
    MoveLeft(img.screenY, img.screenX, img.screenX - savedX);
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::ExitCenterToTop()
 {
    MoveUp(img.screenY, img.screenX, screen.GetRows() - img.screenY);
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::ExitCenterToBottom()
@@ -217,23 +213,17 @@ void Cutscene::ExitCenterToBottom()
    MoveDown(img.screenY, img.screenX, screen.GetRows() - img.screenY);
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::ExitCenterToLeft()
 {
    MoveLeft(img.screenY, img.screenX, room.GetCols() / 2 + img.GetCols() / 2);
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::ExitCenterToRight()
 {
    MoveRight(img.screenY, img.screenX, room.GetCols() / 2 + img.GetCols() / 2);
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::ExitLeft()
@@ -263,8 +253,6 @@ void Cutscene::ExitLeft()
    }
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::ExitRight()
 {
@@ -292,8 +280,6 @@ void Cutscene::ExitRight()
 	 MoveRight(img.screenY, img.screenX, 1);
    }
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::ExitUp()
@@ -323,8 +309,6 @@ void Cutscene::ExitUp()
    } 
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::ExitDown()
 {
@@ -352,8 +336,6 @@ void Cutscene::ExitDown()
 	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::EnterLeft()
@@ -383,8 +365,6 @@ void Cutscene::EnterLeft()
    }
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::EnterRight()
 {
@@ -412,8 +392,6 @@ void Cutscene::EnterRight()
 	 MoveDown(img.screenY, img.screenX, 1);
    }
 }
-
-
 
 /// Function To animate this direction
 void Cutscene::EnterUp()
@@ -443,8 +421,6 @@ void Cutscene::EnterUp()
    }
 }
 
-
-
 /// Function To animate this direction
 void Cutscene::EnterDown()
 {
@@ -473,8 +449,6 @@ void Cutscene::EnterDown()
    }
 }
 
-
-
 /// Function to save the animated image's current coodinate
 void Cutscene::SaveCurrentPosition()
 {
@@ -482,8 +456,6 @@ void Cutscene::SaveCurrentPosition()
    savedX = img.screenX;
    savedY = img.screenY;
 }
-
-
 
 /// Function To animate this direction
 /// \param[in] y the y coordinate to be set
@@ -504,16 +476,14 @@ void Cutscene::FindCharacter(int &y, int &x, const char c, const Room &r)
    }
 }
 
-
-
 /// Function to animate an outro * hardcoded in every cutscene obj
 void Cutscene::Intro()
 {
    Screen scr = Screen();
    ImportImg title = ImportImg("../DD_Art/Credits/title.txt");
 
-   string play = "[P] Play Game";
-   string quit = "[Q] Quit Game";
+   std::string play = "[P] Play Game";
+   std::string quit = "[Q] Quit Game";
    
    title.AlignCenter(scr);
    title.ShiftDown(scr, scr.GetRows() / 2 + title.GetRows());
@@ -525,12 +495,14 @@ void Cutscene::Intro()
       system("clear");
       
       title.Draw(scr);
-      cout << scr;
+      std::cout << scr;
 
       scr.Erase();
       title.ShiftUp(1);
 
+	#ifdef linux
       usleep(200000);
+	#endif
    }
 
    // initialize where the menu options begin to print
@@ -545,9 +517,11 @@ void Cutscene::Intro()
       title.Draw(scr);
       scr.Set(scr.GetRows() - play.length() / 2, playX++, play[i]);
 
-      cout << scr;
+      std::cout << scr;
       
+	#ifdef linux
       usleep(100000);
+	#endif
    }
 
    // iterate through the char array printing each character one at a time
@@ -558,13 +532,13 @@ void Cutscene::Intro()
       title.Draw(scr);
       scr.Set(scr.GetRows() - quit.length() / 2, quitX++, quit[i]);
 
-      cout << scr;
+      std::cout << scr;
       
+	#ifdef linux
       usleep(100000);
+	#endif
    }
 }
-
-
 
 /// Function to animate an outro * hardcoded in every cutscene obj
 void Cutscene::Outro()
@@ -582,18 +556,20 @@ void Cutscene::Outro()
       system("clear");
       
       credits.Draw(scr);
-      cout << scr;
+      std::cout << scr;
 
       scr.Erase();
       credits.ShiftUp(1);
 
+	#ifdef linux
       usleep(VERTSPEED * 2);
+	#endif
    }
 
+	#ifdef linux
    usleep(3000000);
+	#endif
 }
-
-
 
 /// Function to animate an encounter * hardcoded in every cutscene obj
 void Cutscene::MonsterEncounter()
@@ -616,9 +592,11 @@ void Cutscene::MonsterEncounter()
 	 }
       }
       system("clear");
-      cout << scr;
+      std::cout << scr;
+	#ifdef linux
       usleep(20000);
-      
+	#endif
+
       left += am;
       right -= am;
    }
@@ -637,9 +615,10 @@ void Cutscene::MonsterEncounter()
 	 }
       }
       system("clear");
-      cout << scr;
+      std::cout << scr;
+	#ifdef linux
       usleep(20000);
-      
+	#endif  
       left -= am;
       right += am;
    }

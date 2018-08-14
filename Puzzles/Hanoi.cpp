@@ -32,7 +32,7 @@ Hanoi::~Hanoi()
 ///Outputs the end of game text and changes the players stats
 void Hanoi::EndGamePrompt(Character *player)
 {
-   cout << endGamePrompt << endl;
+   std::cout << endGamePrompt << std::endl;
    player->ChangeStamina(+5);
 }
 ///Method to run the game, serves as a 'main' for the mini-game, calling
@@ -40,16 +40,16 @@ void Hanoi::EndGamePrompt(Character *player)
 void Hanoi:: RunGame(Character *player)
 {
    if(player==NULL)
-      throw invalid_argument("Player pointer passed to minigame is invalid"); 
+      throw std::invalid_argument("Player pointer passed to minigame is invalid"); 
    char input;
    SetOptionsInMenu();
 
    while(PuzzleEnd == false)
    {
       system("clear");
-      cout << HanoiScreen;
+      std::cout << HanoiScreen;
       HanoiGameMenu.OutputMenu();
-      HanoiGameMenu.HandleInput(cin);
+      HanoiGameMenu.HandleInput(std::cin);
       input=HanoiGameMenu.GetOption();//returns a char
       LogicSwitch(input);
       WinCheck();
@@ -100,7 +100,7 @@ void Hanoi:: DiscSetup()
 ///Helper function for discSetup, pushes a disc on the left stack at the
 ///height specified by bottom.
 ///\param[in] bottom, the height to place the disc at.
-///\param[in] disc, the disc you wish to push into the vector.   
+///\param[in] disc, the disc you wish to push into the std::vector.   
 void Hanoi::PushDiscOnLeftStack(int bottom, DefaultImg disc){
    int leftPeg = 34;
    disc.AlignCenter(HanoiScreen);
@@ -145,7 +145,7 @@ void Hanoi:: BoardSetup()
 ///Setup the options in the HanoiMenu object for the player to select.
 void Hanoi::SetOptionsInMenu()
 {
-   string menuOption1 = "Move disc on peg 1 to peg 2"
+   std::string menuOption1 = "Move disc on peg 1 to peg 2"
       , menuOption2 = "Move disc on peg 2 to peg 1"
       , menuOption3 = "Move disc on peg 3 to peg 2"
       , menuOption4 = "Move disc on peg 1 to peg 3"
@@ -225,7 +225,7 @@ bool Hanoi:: ValidMove(const int targetStackTopSize, const int currentTopSize)
 	 return false;
 }
 
-///Moves the piece in the vector.stack and calls the helper function to move the
+///Moves the piece in the std::vector.stack and calls the helper function to move the
 ///images on the screen
 ///\param[in]sourceTower, the stack from which we move the disc image.
 ///\param[in]targetTower, the stack to which we move the disc image.   
@@ -250,13 +250,13 @@ void Hanoi::MovePiece(int sourceTower, int targetTower)
 
    if(ValidMove(targetStackTopSize,currentDiscSize))
    {
-      ///Push the right size disc from the vector of discs based on the
+      ///Push the right size disc from the std::vector of discs based on the
       ///size passed into WhichDiscFromSize, size is topOfStack
       ClearTopDisc(sourceTower);
       DrawDiscOnTargetStack(sourceTower,targetTower);
       tower.at(targetTower).push(tower.at(sourceTower).top());
       tower.at(sourceTower).pop();
-      cout << HanoiScreen;
+      std::cout << HanoiScreen;
    }
 }
 
@@ -300,7 +300,7 @@ void Hanoi::ClearTopDisc(int targetTower)
 ///from an empty stack
 void Hanoi::EmptyPrompt()
 {
-   cout << "Disc is empty, please try again." << endl;
+   std::cout << "Disc is empty, please try again." << std::endl;
    SecondDelay(3);
 }
 

@@ -46,9 +46,9 @@ void InventoryState::Set()
 /// Gets the layout for the game menu and screen.
 void InventoryState::Get()
 {
-   cout << " [#] Inventory" << endl;
+   std::cout << " [#] Inventory" << std::endl;
    menu->OutputMenu();
-   menu->HandleInput(cin);
+   menu->HandleInput(std::cin);
    
    switch(menu->GetOption())
    {

@@ -33,7 +33,7 @@ void CharacterTest:: TestUseItem()
 {
    HealthPotion *II;
    II = new HealthPotion;
-   string name = II->Name();
+   std::string name = II->Name();
    C.FillInventory(II);
    CPPUNIT_ASSERT(C.UseItem(item) == nullptr);
    CPPUNIT_ASSERT(C.UseItem(name) == II);

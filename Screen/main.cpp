@@ -16,7 +16,7 @@
 //Time Headers
 #include <unistd.h>//for slowing down time
 #include <ctime>
-using namespace std;
+
 
 
 
@@ -26,14 +26,14 @@ int main()
 srand( (unsigned int) time(NULL));
 	
    // The file path - ***change as desired
-   string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
+   std::string mastrFile = "../DD_Art/DD_MasterFileLinux.txt";
    
    // Display the rooms on a screen
    Screen *screen = new Screen();
    // Create an importer object and read in the masterFile
    ImageImporter imageImport = ImageImporter(mastrFile);
    // Store a bunch of rooms
-   vector<Room*> rooms;
+   std::vector<Room*> rooms;
 	
    // Generate random rooms and print them to the screen
    for(int i = 0; i < 50; i++)
@@ -43,7 +43,7 @@ srand( (unsigned int) time(NULL));
       rooms[i]->Draw(*screen);
 
 //Print the current screen and then erase it for the next frame
-cout << screen << endl;
+std::cout << screen << std::endl;
 screen->Erase();
 
 }

@@ -9,7 +9,7 @@
 #include <map>
 #include <vector>
 #include <stdexcept>
-using namespace std;
+
 
 #ifndef MENU_H
 #define MENU_H
@@ -24,8 +24,8 @@ class Menu
  protected:
  /// \var currOption This is the current option chosen.
   char currOption;
-  /// \var indexMap This is the map used to display the options on the screen
-  map < int,string > indexMap;
+  /// \var indexMap This is the std::map used to display the options on the screen
+  std::map < int,std::string > indexMap;
   /// \var menuHeight This is the height of the menu.
   int menuHeight;
   /// \var menuWidth This is the width of the menu.
@@ -47,7 +47,7 @@ class Menu
   /// \param[in] optionName The name to display for the user.
   /// \param[in] f(int) The is the function which adds functionality to
   /// the option and command.
-  void AddOption(char command, string optionName);
+  void AddOption(char command, std::string optionName);
    
   /// Returns the option chosen by the user/player.
   /// \returns currOption
@@ -61,7 +61,7 @@ class Menu
 
   /// Handles the user input, and runs an option from the menu.
   /// \param[in,out] is The in-stream operator to read the input.
-  virtual void HandleInput(istream& is);
+  virtual void HandleInput( std::istream& is);
 
   /// Display the multi-dimensional array.
   virtual void OutputMenu();

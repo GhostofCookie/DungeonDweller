@@ -9,7 +9,7 @@
 TicTacToe::TicTacToe()
 {
    PuzzleEnd = false;
-   ///Setting up the game vector
+   ///Setting up the game std::vector
    boardSize = 3;
    gameBoard.resize(boardSize);
 
@@ -31,7 +31,7 @@ TicTacToe::~TicTacToe()
 void TicTacToe::RunGame(Character *player)
 {
    if(player == NULL)
-      throw invalid_argument("Player pointer passed to minigame is invalid");
+      throw std::invalid_argument("Player pointer passed to minigame is invalid");
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
    int currentPlayer = 1, inputX, inputY;
@@ -40,7 +40,7 @@ void TicTacToe::RunGame(Character *player)
    while(PuzzleEnd == false)
    {
       system("clear");
-      cout << TicTacToeScreen << endl;
+      std::cout << TicTacToeScreen << std::endl;
       SetCurrentPlayersChar(currentPlayer);
       if(currentPlayer % 2 == 0)
       {
@@ -53,7 +53,7 @@ void TicTacToe::RunGame(Character *player)
       else
       {
 	 ticTacToeGameMenu.OutputMenu();
-	 ticTacToeGameMenu.HandleInput(cin);	 
+	 ticTacToeGameMenu.HandleInput(std::cin);	 
 	 ///X is taken as a,b, or c, Y is taken in as an integer.
 	 inputY = ticTacToeGameMenu.GetCoordinates().y - 1;
 	 inputX =
@@ -325,7 +325,7 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
    if(currentPlayer == -1)
    {
       system("clear");
-      cout << TicTacToeScreen << endl;
+      std::cout << TicTacToeScreen << std::endl;
       menu.SetQuery("There has been a tie, so get ready to play again!");
       menu.OutputMenu();
       SecondDelay(4);
@@ -334,19 +334,19 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
    if(currentPlayer % 2 == 0)
    {
       system("clear");
-      cout << TicTacToeScreen;
+      std::cout << TicTacToeScreen;
       menu.SetQuery("The Tic Tac Toe champion has defeated you! -5 HP.");
       menu.OutputMenu();
       SecondDelay(4);
       player->ChangeHealth(-5);
       ResetGame(currentPlayer);
-      cout << "Get ready to duel her again!" << endl;
+      std::cout << "Get ready to duel her again!" << std::endl;
    }
    else
    {
-      string temp="Congratulations adventurer! You have defeated the champion!";
+      std::string temp="Congratulations adventurer! You have defeated the champion!";
       temp+= "+10 GP +5 Stamina.";
-      cout << TicTacToeScreen << endl;
+      std::cout << TicTacToeScreen << std::endl;
       menu.SetQuery(temp);
       menu.OutputMenu();
       SecondDelay(5);

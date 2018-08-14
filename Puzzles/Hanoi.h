@@ -5,15 +5,15 @@
 /// \date Oct 20, 2017
 //
 
-#ifndef HANOI_H
-#define HANOI_H
+#pragma once
+
 #include "Puzzle.h"
 #include "../Menu/HanoiMenu.h"
 #include "../Screen/Screen.h"
 #include "../Image/DefaultImg.h"
 #include <stack>
 #include <iostream>
-using namespace std;
+
 
 ///brief This class contains the mini-game/Puzzle Towers of Hanoi, to be called from the main dugeonDweller program using RunGame();
 class Hanoi: public virtual Puzzle
@@ -49,7 +49,7 @@ class Hanoi: public virtual Puzzle
    /// \param[in] userSelection, the option of moves the player chose
    void LogicSwitch(const char userSelection);
 
-   ///Moves the piece in the vector.stack and calls the helper function to move the
+   ///Moves the piece in the std::vector.stack and calls the helper function to move the
    ///images on the screen.
    ///\param[in]sourceTower, the stack from which we move the disc image.
    ///\param[in]targetTower, the stack to which we move the disc image.
@@ -75,7 +75,7 @@ class Hanoi: public virtual Puzzle
    ///Helper function for discSetup, pushes a disc on the left stack at the
    ///height specified by bottom.
    ///\param[in] bottom, the height to place the disc at.
-   ///\param[in] disc, the disc you wish to push into the vector.
+   ///\param[in] disc, the disc you wish to push into the std::vector.
    void PushDiscOnLeftStack(int bottom, DefaultImg disc);
    
    ///Sets up the screen with the appropriate game board.
@@ -86,17 +86,17 @@ class Hanoi: public virtual Puzzle
    ///\param[in] targetStack, the tower to copy the disc to
    void DrawDiscOnTargetStack(int sourceStack, int targetStack);
    
-   /// The vector which holds each towers' defaultImg
-   std::vector<stack<DefaultImg>>tower;
+   /// The std::vector which holds each towers' defaultImg
+   std::vector<std::stack<DefaultImg>>tower;
    
    /// Number of stacks in the game
-   ///X-coordinate size in the tower vector
+   ///X-coordinate size in the tower std::vector
    int numberOfStacks;
    
    /// Maintains the height of the stacks in the game
    int maxStackHeight;
 
-   string endGamePrompt;
+   std::string endGamePrompt;
    
    ///HanoiScreen stores and outputs the contents of the game to the terminal
    Screen HanoiScreen;
@@ -104,4 +104,3 @@ class Hanoi: public virtual Puzzle
    /// GameMenu is used for handling input
    HanoiMenu HanoiGameMenu;
 };
-#endif

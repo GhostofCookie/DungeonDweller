@@ -14,10 +14,9 @@
 #include "../Puzzles/ConnectFour.h"
 #include <vector>
 #include <algorithm>
-using namespace std;
 
-#ifndef PUZZLESTATE_H
-#define PUZZLESTATE_H
+
+#pragma once
 
 class PuzzleState : public GameState
 {
@@ -34,7 +33,6 @@ class PuzzleState : public GameState
    /// Outputs the set layout.
    void Get();
   private:
-   vector<Puzzle*> puzzles;
+   std::vector<Puzzle*> puzzles;
 };
 
-#endif

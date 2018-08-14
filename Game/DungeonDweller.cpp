@@ -59,7 +59,7 @@
 #include <ctime> //srand()
 #include <cctype>
 #include <stdexcept>
-using namespace std;
+
 
 
 int main()

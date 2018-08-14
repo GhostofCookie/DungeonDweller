@@ -8,7 +8,6 @@
 #ifndef MYCONSUMABLES_H
 #define MYCONSUMABLES_H
 #include "Consumable.h"
-using namespace std;
 
 /// Subclass of Consumable to represent an in game health potion
 class HealthPotion: public Consumable
@@ -34,7 +33,7 @@ class Food: public Consumable
    /// Defines what happens when the food is used
    /// \param[in] target The Character that the food is used on
    /// \return true if use was successfull
-   /// \exeption invalid_argument Thrown if target is not a player
+   /// \exeption std::invalid_argument Thrown if target is not a player
    bool Use(Character *target);
    
 };

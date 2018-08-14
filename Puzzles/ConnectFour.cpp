@@ -10,7 +10,7 @@
 ConnectFour::ConnectFour()
 {
    PuzzleEnd = false;
-   ///Setting up the game vector 
+   ///Setting up the game std::vector 
    xSize = 7;
    ySize = 6;
    grid.resize(xSize);
@@ -33,7 +33,7 @@ ConnectFour::~ConnectFour()
 void ConnectFour::RunGame(Character *player)
 {
    if(player==NULL)
-      throw invalid_argument("Player pointer passed to minigame is invalid");
+      throw std::invalid_argument("Player pointer passed to minigame is invalid");
    
    ///currentPlayer keeps track of whos turn it is, if it's odd, it is the user,
    ///if it is even, it is the AI's turn.
@@ -44,7 +44,7 @@ void ConnectFour::RunGame(Character *player)
    while(PuzzleEnd == false)
    {
       system("clear");
-      cout << ConnectFourScreen << endl;
+      std::cout << ConnectFourScreen << std::endl;
       SetCurrentPlayerChar(currentPlayer);
       ///If it is the AI's turn.
       if(currentPlayer % 2 == 0)
@@ -59,7 +59,7 @@ void ConnectFour::RunGame(Character *player)
       {
 	 ///Prompt the user for input and then check if it is valid
 	 connectFourGameMenu.OutputMenu();
-	 connectFourGameMenu.HandleInput(cin);
+	 connectFourGameMenu.HandleInput(std::cin);
 	 userInput = connectFourGameMenu.GetColumn();
 	 if(ValidMove(userInput))
 	 {
@@ -107,7 +107,7 @@ void ConnectFour::MovePiece(char userPiece, int column)
 	 grid.at(column - 1).at(ySize - 1) = userPiece;
 
          ///Set the char in the screen
-	 ///Height and column are multiplied by 2 since the actual vector has
+	 ///Height and column are multiplied by 2 since the actual std::vector has
 	 /// 1/2 as many spots as the grid displayed on the screen does.
 	 ///Add 11 to the topBound to place it in the bottom slot in the grid.
 	 ConnectFourScreen.Set((bottomSlotHeight +(height * 2)),
@@ -218,7 +218,7 @@ void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
 				, Character *player)
 {
    system("clear");
-   cout << ConnectFourScreen;
+   std::cout << ConnectFourScreen;
    if(currentPlayer %2 == 0)
    {
       menu.SetQuery("The connect four champion has defeated you! -5 HP");
@@ -228,7 +228,7 @@ void ConnectFour::EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
       SecondDelay(4);
 
       system("clear");
-      cout << ConnectFourScreen;
+      std::cout << ConnectFourScreen;
       menu.SetQuery("Get ready to duel her again!");
       menu.OutputMenu();
       SecondDelay(4);

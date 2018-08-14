@@ -44,14 +44,14 @@ void RoomTreeTest::testMove()
    CPPUNIT_ASSERT(Tree1->Move('r'));
    CPPUNIT_ASSERT(!Tree1->Move('r'));
    CPPUNIT_ASSERT(Tree1->Move('l'));
-   CPPUNIT_ASSERT_THROW(Tree1->Move('x'),invalid_argument);
+   CPPUNIT_ASSERT_THROW(Tree1->Move('x'),std::invalid_argument);
 }
 
 void RoomTreeTest::testNewRoom()
 {
    Tree2->NewRoom('r',nullptr);
-   CPPUNIT_ASSERT_THROW(Tree2->NewRoom('r',nullptr),invalid_argument);
-   CPPUNIT_ASSERT_THROW(Tree2->NewRoom('x',nullptr),invalid_argument);
+   CPPUNIT_ASSERT_THROW(Tree2->NewRoom('r',nullptr),std::invalid_argument);
+   CPPUNIT_ASSERT_THROW(Tree2->NewRoom('x',nullptr),std::invalid_argument);
 }
 
 void RoomTreeTest::testAt()

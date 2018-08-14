@@ -8,29 +8,15 @@ Image::Image(int h, int w, char c)
    : height{h}, width{w}, ch{c}
 { Create(); }
 
-
-
 /// Copy Constructor for the image
 /// \param[in] image the image to be copied from
 Image::Image(const Image &image)
    : height{image.GetRows()}, width{image.GetCols()}, screenX{image.screenX}, screenY{image.screenY}
 {}
 
-
-
-/// Copy Constructor for the image
-/// \param[in] image the image to be copied from
-Image::Image(Image &image)
-   : height{image.GetRows()}, width{image.GetCols()}, screenX{image.screenX}, screenY{image.screenY}
-{}
-
-
-
 /// Destructor
 Image::~Image()
 {}
-
-
 
 /// Overloaded assignment operator
 /// \param[in] img the image to copy
@@ -46,26 +32,18 @@ Image& Image::operator=(const Image& img)
    return *this;
 }
 
-
-
 /// Function that returns the width of the image
 int Image::GetRows() const { return height; }
 /// Function that returns the height of the image
 int Image::GetCols() const { return width; }
 
-
-
 /// Function returns true if a number is even
 /// \param[in] num the number to be checked
 bool Image::IsEven(const int& num) const { return(num % 2 == 0); }
 
-
-
 /// Function to draw the image to the screen
 /// \param[in] screen the screen drawn on
 void Image::Draw(Screen &screen) { Draw(screen, screenY, screenX); }
-
-
 
 /// Function to draw the image to the screen
 /// \param[in] screen the screen drawn on
@@ -91,8 +69,6 @@ void Image::Draw(Screen &screen, int y, int x)
    }
    screen.DrawBorder();
 }
-
-
 
 /// Function to draw the image to the screen
 /// \param[in] image the image drawn on
@@ -124,20 +100,16 @@ void Image::Draw(Image &img, int y, int x)
    }
 }
 
-
-
-/// Function that fills in the vector that makes up the image
+/// Function that fills in the std::vector that makes up the image
 void Image::Create()
 {
    for(int i = 0; i < height; i++)
    {
-      Img.push_back(vector<char>());
+      Img.push_back(std::vector<char>());
       for(int j = 0; j < width; j++)
 	 Img[i].push_back(ch);
    }
 }
-
-
 
 /// Function that draws and border around the image
 /// \param[in] ch the character used to draw the border
@@ -151,7 +123,7 @@ void Image::DrawBorder(char ch)
 
 
 
-/// Erase the image contents be replacing with spaces
+/// Erase the image contents be replastd::cing with spaces
 void Image::Erase()
 {
    for(int i = 0; i < height; i++)
@@ -159,28 +131,22 @@ void Image::Erase()
 	 Set(i, j, ' ');
 }
 
-
-
 /// Sets the characters at the given location to the given character
-// (rows are numbered from 0 from the top, and columns are numbered 0 from the left)
-// If the location is invalid, simply ignore the request
+/// (rows are numbered from 0 from the top, and columns are numbered 0 from the left)
+/// If the location is invalid, simply ignore the request
 void Image::Set(int y, int x, char ch)
 {
    if((y >= 0 || x >= 0) && (y < GetRows() && x < GetCols()))
       Img[y][x] = ch;
 }
 
-
-
-// Function that fills the image with its given character
+/// Function that fills the image with its given character
 void Image::Fill(char ch)
 {
    for(int i = 0; i < height; i++)
       for(int j = 0; j < width; j++)
 	 Set(i, j, ch);
 }
-
-
 
 // ALIGN MEMBER FUNCTIONS
 /// Sets the print origin of the image relative to the screen
@@ -194,8 +160,6 @@ void Image::SetOrigin(Screen &screen, int y, int x)
    screenY = y;
 }
 
-
-
 /// Sets the print origin of the image relative to the screen
 /// \param[in] y the y coordinate to begin from
 /// \param[in] the x coordinate to begin from
@@ -207,17 +171,15 @@ void Image::SetOrigin(Image &img, int y, int x)
    screenY = y;
 }
 
-
-
 /// Function to flip the image horizontally
 void Image::FlipHoriz()
 {
-   vector<vector<char>> temp;
+   std::vector<std::vector<char>> temp;
    int imgSize = static_cast<int>(Img.size());
 	
    for(unsigned int i = 0; i < Img.size(); ++i)
    {
-      vector<char> _temp;
+      std::vector<char> _temp;
       for(unsigned int j = imgSize - 1; j != 1; --j)
 	 _temp.push_back(Img[i][j]);
 
@@ -228,17 +190,15 @@ void Image::FlipHoriz()
    FixSlants();// by-product of having console characters
 }
 
-
-
 /// Function to flip the image vertically 
 void Image::FlipVert()
 {
-   vector<vector<char>> temp;
+   std::vector<std::vector<char>> temp;
    int imgSize = static_cast<int>(Img.size());
 	
    for(int i = imgSize - 1; i != -1; --i)
    {
-      vector<char> _temp;
+      std::vector<char> _temp;
       for(unsigned int j = 0; j < Img[i].size(); ++j)
 	 _temp.push_back(Img[i][j]);
       
@@ -248,8 +208,6 @@ void Image::FlipVert()
    Img = temp;
    FixSlants();// by-product of having console characters
 }
-
-
 
 /// Align the image to the center of the screen
 /// \param[in] screen checks to ensure the bounds aren't exceeded
@@ -264,8 +222,6 @@ void Image::AlignCenter(Screen &screen)
    SetOrigin(screen, scrY - imgY, scrX - imgX);
 }
 
-
-
 /// Align the image to the center of the given image
 /// \param[in] image checks to ensure the bounds aren't exceeded
 void Image::AlignCenter(Image &img)
@@ -279,8 +235,6 @@ void Image::AlignCenter(Image &img)
    // Relys on it being odd for centering perfection
    SetOrigin(img, scrY - imgY, scrX - imgX);
 }
-
-
 
 /// Align the image to the center of the given image
 /// \param[in] image checks to ensure the bounds aren't exceeded
@@ -298,14 +252,10 @@ void Image::AlignCenter(Image &img, int x, int y)
    SetOrigin(img, scrY - imgY, scrX - imgX);
 }
 
-
-
 /// Align the image to the left of the given image
 /// \param[in] image checks to ensure the bounds aren't exceeded
 // Ensures it draws one character from the border
 void Image::AlignLeft(Image &img) { screenX = 1; }
-
-
 
 /// Align the image to the right of the given image
 /// \param[in] image checks to ensure the bounds aren't exceeded
@@ -315,14 +265,10 @@ void Image::AlignRight(Image &img)
    screenX = static_cast<int>(img.GetCols() - Img[0].size() - 1);
 }
 
-
-
 /// Align the image to the left of the screen
 /// \param[in] screen used to align with
 // Ensures it draws one character from the border
 void Image::AlignLeft(Screen &screen) { screenX = 1; };
-
-
 
 /// Align the image to the right of the screen
 /// \param[in] screen used to align with
@@ -332,35 +278,25 @@ void Image::AlignRight(Screen &screen)
    screenX = static_cast<int>(screen.GetCols() - Img[0].size() - 1);
 }
 
-
-
 /// Align the image to the top of the screen
 /// \param[in] screen used to align with
 // Ensures it draws one character from the border
 void Image::AlignTop(Screen &screen) { screenY = 1; };
-
-
 
 /// Align the image to the top of the image
 /// \param[in] img used to align with
 // Ensures it draws one character from the border
 void Image::AlignTop(Image &img) { screenY = img.screenY-1; };
 
-
-
 /// Align the image to the bottom of the screen
 /// \param[in] screen used to align with
 // Ensures it draws one character from the border
 void Image::AlignBottom(Screen &screen) { screenY = static_cast<int>(screen.GetRows() - Img.size() - 1); };
 
-
-
 /// Align the image to the bottom of the image
 /// \param[in] img used to align with
 // Ensures it draws one character from the border
 void Image::AlignBottom(Image &img) { screenY = static_cast<int>(img.GetRows() - Img.size() - 1); };
-
-
 
 /// Function to shift the image up
 /// \param[in] num the amount to shift by
@@ -373,8 +309,6 @@ void Image::ShiftUp(int num)
       i++;
    }
 }
-
-
 
 /// Function to shift the image down
 ///\param[in] screen checks the bounds of the screen
@@ -389,8 +323,6 @@ void Image::ShiftDown(Screen &screen, int num)
    }
 }
 
-
-
 /// Function to shift the image down
 /// \param[in] img checks the bounds of the image
 /// \param[in] num the amount to shift by
@@ -404,8 +336,6 @@ void Image::ShiftDown(Image &img, int num)
    }
 }
 
-
-
 /// Function to shift the image left
 /// \param[in] num the amount to shift by
 void Image::ShiftLeft(int num)
@@ -417,8 +347,6 @@ void Image::ShiftLeft(int num)
       i++;
    }
 }
-
-
 
 /// Function to shift the image right
 /// \param[in] screne checks the bounds of the screen 
@@ -433,8 +361,6 @@ void Image::ShiftRight(Screen &screen, int num)
    }
 }
 
-
-
 /// Function to shift the image right
 /// \param[in] img checks the bounds of the image
 /// \param[in] num the amount to shift by
@@ -447,8 +373,6 @@ void Image::ShiftRight(Image &img, int num)
       i++;
    }
 }
-
-
 
 /// Function that switches the slant characters
 /// Used for images that looks wierd after being flipped

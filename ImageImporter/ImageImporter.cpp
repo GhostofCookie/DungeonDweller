@@ -2,7 +2,7 @@
 
 /// Default Constructor
 /// \param[in] file the masterfile containing all other files
-ImageImporter::ImageImporter(string file)
+ImageImporter::ImageImporter(std::string file)
    : masterFile(file)
 { GetAllFilePaths(masterFile); }
 
@@ -18,12 +18,12 @@ ImageImporter::~ImageImporter()
 
 /// Function that reads in each file
 /// and creates an image using the .txt file, then inserts the
-/// image and the ID into a map
+/// image and the ID into a std::map
 /// \param[in] file the master file being opened
-void ImageImporter::GetAllFilePaths(const string &file)
+void ImageImporter::GetAllFilePaths(const std::string &file)
 {
-   ifstream in;
-   string curFile;
+   std::ifstream in;
+   std::string curFile;
    char curKey;
 	
 	
@@ -33,18 +33,18 @@ void ImageImporter::GetAllFilePaths(const string &file)
    {
       while (!in.eof())
       {
-	 string line; // reads in the file
+	 std::string line; // reads in the file
 			
 	 getline(in, line, '\n');
 	 if(line != "")
 	 {
 	    // get both the file and the ID
-	    istringstream iss(line);
+	    std::istringstream iss(line);
 	    iss >> curFile >> curKey;
 
 	    // if the key doesn't exist then create a key
 	    if(collection.find(curKey) == collection.end())
-	       collection.insert(pair<char, vector<ImportImg>>(curKey, {}));
+	       collection.insert(std::pair<char, std::vector<ImportImg>>(curKey, {}));
 	    // push the current image into that key
 	    collection[curKey].push_back(ImportImg(curFile));
 	 }
@@ -52,5 +52,5 @@ void ImageImporter::GetAllFilePaths(const string &file)
       in.close();
 		
    } else
-      cout << "Empty or lost file? Couldn't locate: " << file << endl;
+      std::cout << "Empty or lost file? Couldn't locate: " << file << std::endl;
 }

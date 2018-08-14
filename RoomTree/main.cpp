@@ -1,6 +1,6 @@
 #include "RoomTree.h"
 #include <iostream>
-using namespace std;
+
 
 int main() {
    RoomTree *Tree1;

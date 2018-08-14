@@ -92,11 +92,11 @@ void ScreenTest::testResize()
 }
 
 //************************************************************************
-/// Tests if the ostream outputs correctly
+/// Tests if the std::ostream outputs correctly
 //************************************************************************
 void ScreenTest::testOstream()
 {
-   cout << screen;
+   std::cout << screen;
 }
 
 

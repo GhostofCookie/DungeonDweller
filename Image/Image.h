@@ -5,17 +5,16 @@
 /// \date Oct 20, 2017
 //
 
-#ifndef Image_h
-#define Image_h
+#pragma once
 
 #include <iostream>
 #include <cassert>
 #include <vector>
 #include "../Screen/Screen.h"
-using namespace std;
 
 
-/// \brief The Image class represents a 2D vector that displays an image on screen
+
+/// \brief The Image class represents a 2D std::vector that displays an image on screen
 class Image
 {
   protected:
@@ -34,7 +33,7 @@ class Image
    
   public:
    /// The image - publically availiable to allow access to locations
-   vector<vector<char>> Img;
+   std::vector<std::vector<char>> Img;
    /// The screen x coordinate to draw on
    int screenX = 0;
    /// The screen y coordinate to draw on
@@ -44,12 +43,11 @@ class Image
    /// \param[in] h the height of the image, default to 3
    /// \param[in] w the width of the image, default to 6
    Image(int h = 3, int w = 6, char c = '*');
-   /// Copy constructor duplicates a given picture
-   /// \param[in] img the image to copy from
-   Image(Image &img);
+
    /// Copy constructor duplicates a given picture
    /// \param[in] img the image to copy from
    Image(const Image &img);
+
    /// Virtual Destructor
    virtual ~Image();
 	
@@ -202,4 +200,3 @@ class Image
    void FixSlants();
 };
 
-#endif /* Image_h */

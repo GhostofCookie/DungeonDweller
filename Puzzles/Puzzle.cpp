@@ -9,6 +9,8 @@ int Puzzle::RandomNumber(int n) const
    
 void Puzzle::SecondDelay(const int seconds) const
 {
-   usleep(1000000*seconds);
+	#ifdef linux
+	usleep(1000000*seconds);
+	#endif
 }
 

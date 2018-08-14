@@ -5,7 +5,7 @@
 
 #include "GameMenu.h"
 #include <map>
-using namespace std;
+
 
 #ifndef FIGHTMENU_H
 #define FIGHTMENU_H
@@ -26,7 +26,7 @@ class FightMenu : public GameMenu
   virtual void SetOptions(int row=1, int col=1, int space=2);
   /// This function handles the input for the menu options.
   /// \param[in,out] is The in-stream operator to read the input.
-  virtual void HandleInput(istream &is);
+  virtual void HandleInput( std::istream &is);
 };
 
 #endif

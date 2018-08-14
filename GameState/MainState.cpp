@@ -26,11 +26,11 @@ void MainState::Get()
 {
    Cutscene anim;
    anim.Intro();
-   menu->HandleInput(cin);
+   menu->HandleInput(std::cin);
    if(tolower(menu->GetOption()) == 'q')
    {
-      cout<<"Are you sure you want to quit (y/n)? ";
-      menu->HandleInput(cin);
+      std::cout<<"Are you sure you want to quit (y/n)? ";
+      menu->HandleInput(std::cin);
       anim.Outro();
       exit(0);
    }

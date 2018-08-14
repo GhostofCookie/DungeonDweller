@@ -1,8 +1,9 @@
 #include "ImportImg.h"
+#include <string>
 
 /// Default Constructor
 /// \param[in] file the masterfile used
-ImportImg::ImportImg(string file)
+ImportImg::ImportImg(std::string file)
    : fileName{file}
 {
    screenX = screenY = 0;
@@ -11,7 +12,6 @@ ImportImg::ImportImg(string file)
    height = GetRows();
    width = GetCols();
 }
-
 
 /// Copy constructor
 /// \param[in] image the image being copied from
@@ -27,31 +27,11 @@ ImportImg::ImportImg(const ImportImg &image)
    screenY = image.screenY;
 }
 
-
-
-/// Copy constructor
-/// \param[in] image the image being copied from
-ImportImg::ImportImg(ImportImg &image)
-{
-   Img = image.Img;
-   imgStr = image.imgStr;
-
-   height = image.GetRows();
-   width = image.GetCols();
-
-   screenX = image.screenX;
-   screenY = image.screenY;
-}
-
-
-
 /// Destructor
 ImportImg::~ImportImg()
 {
 	
 }
-
-
 
 /// Overloaded assignment operator
 /// \param[in] img the image to be copied from
@@ -71,21 +51,18 @@ ImportImg& ImportImg::operator=(const ImportImg& img)
    return *this;
 }
 
-
 /// Function that creates an image based on the file name
 void ImportImg::Create() { Import(fileName, imgStr); }
 
-
-
 /// Function that imports from a file
 /// \param[in] file the file to be opened
-/// \param[in] the image in string form (can be used for later)
-void ImportImg::Import(string file, string &img)
+/// \param[in] the image in std::string form (can be used for later)
+void ImportImg::Import(std::string file, std::string &img)
 {
-   ifstream in;
-   string curLine;
+   std::ifstream in;
+   std::string curLine;
 	
-   int index = 0;// index of the vector (height)
+   int index = 0;// index of the std::vector (height)
    img = "";// resets the room
 	
    Img.clear();//ensures image is empty before beginning
@@ -96,28 +73,26 @@ void ImportImg::Import(string file, string &img)
    in.open(file);
    if(in)
    {
-      // push back lines and insert them into the 2D vector
+      // push back lines and insert them into the 2D std::vector
       while (getline(in, curLine, '\n'))
       {
-	 Img.push_back(vector<char>());
+	 Img.push_back(std::vector<char>());
 	 for(unsigned int i = 0; i < curLine.length(); i++)
 	    Img[index].push_back(curLine[i]);
 			
 	 index++;
       }
       //Sets the new height and width of the image dimensions
-      //assumes that the vector must have been filled to have even gotten here
+      //assumes that the std::vector must have been filled to have even gotten here
       width = static_cast<int>(Img[0].size());
       height = static_cast<int>(Img.size());
 		
       in.close();
 		
    } else
-      cout << "Empty or lost file? Couldn't locate: " << file << endl;
+      std::cout << "Empty or lost file? Couldn't locate: " << file << std::endl;
    }
 }
 
-
-
 /// Function that returns the file path
-string ImportImg::GetImageFile() { return imgStr; }
+std::string ImportImg::GetImageFile() { return imgStr; }

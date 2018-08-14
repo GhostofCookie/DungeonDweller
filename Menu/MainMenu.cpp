@@ -8,9 +8,9 @@ MainMenu::MainMenu(int height)
 
 void MainMenu::SetOptions(int row, int col,int space)
 {
-   map < int,string > optionsList = indexMap;
+   std::map < int,std::string > optionsList = indexMap;
    auto it = optionsList.begin();
-   string temp;
+   std::string temp;
    while(it != optionsList.end())
    {
       temp = '['; temp += it->first; temp += ']'; temp += it->second;
@@ -23,7 +23,7 @@ void MainMenu::SetOptions(int row, int col,int space)
    }
 }
 
-void MainMenu::HandleInput(istream &is)
+void MainMenu::HandleInput( std::istream &is)
 {
   Menu::HandleInput(is);
 }

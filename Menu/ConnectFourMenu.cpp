@@ -35,10 +35,10 @@ void ConnectFourMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void ConnectFourMenu::HandleInput(istream & is)
+void ConnectFourMenu::HandleInput( std::istream & is)
 {
    int x;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> x;
    is.clear();
    is.ignore(255,'\n');
@@ -56,7 +56,7 @@ void ConnectFourMenu::HandleInput(istream & is)
    }
    if(is.fail())
    {
-      throw invalid_argument("Invalid input. please enter a signle number from 1-7.");
+      throw std::invalid_argument("Invalid input. please enter a signle number from 1-7.");
       is.clear();
       is.ignore(255, '\n');
    }

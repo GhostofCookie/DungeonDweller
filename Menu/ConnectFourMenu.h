@@ -7,7 +7,7 @@
 
 #include "MinigameMenu.h"
 #include <map>
-using namespace std;
+
 
 #ifndef CONNECTFOURMENU_H
 #define CONNECTFOURMENU_H
@@ -28,7 +28,7 @@ class ConnectFourMenu : public virtual MinigameMenu
    virtual void SetOptions(int row, int col, int space);
    /// This function handles the input for the menu options.
    /// \param[in,out] is The in-stream operator to read the input.
-   virtual void HandleInput(istream &is);
+   virtual void HandleInput( std::istream &is);
    /// Returns the chosen column.
    int GetColumn() const {return column;}
  private:

@@ -10,7 +10,7 @@
 #include <iostream>
 #include "../Character/Character.h"
 #include "../Room/Room.h"
-using namespace std;
+
 
 /// Class to represent the layout of rooms in a doubly linked tree-like format
 class RoomTree
@@ -54,13 +54,13 @@ class RoomTree
 
    /// Inserts a new room at child (throws exeption if already occupied)
    /// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
-   /// \exception invalid_argument Thrown if the direction is invalid or space is occupied
+   /// \exception std::invalid_argument Thrown if the direction is invalid or space is occupied
    void NewRoom(char dir,Room* roomptr);
 
    /// Moves through the tree
    /// \param[in] dir Direction to move(left(l) right(r) up(u) or down(d))
    /// \return True if move was successfull, false otherwise
-   /// \exception invalid_argument Thrown if the direction is invalid
+   /// \exception std::invalid_argument Thrown if the direction is invalid
    bool Move(char dir);
 
    /// Gives a const pointer to the room currently at for accessing only
@@ -82,7 +82,7 @@ class RoomTree
    /// \param[in] tempRoot The root of the tree to be deleted
    void DeleteTree(Node *tempRoot);
    
-   /// Helper function to cout nodes in the tree
+   /// Helper function to std::cout nodes in the tree
    /// \param[in] tempRoot The root of the tree to be counted
    unsigned int NodesInBranch(Node *tempRoot) const;
 

@@ -1,11 +1,9 @@
 #include "Room.h"
 #define ROOMTYPES 4
 
-
-
 /// Default Constructor
 /// \param[in] collection the images used to generate a room
-Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
+Room::Room(std::map<char, std::vector<ImportImg>> &collection, int t, bool c)
    : type{t}, complete{c}
 {
    // What type of room is generated e.g. treasure, puzzle, etc
@@ -17,7 +15,7 @@ Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
    
 	
    // Find out how many rooms there are to pick from
-   // All rooms are located at '0' in the map
+   // All rooms are located at '0' in the std::map
    int roomCount = 0;
    for(unsigned int i = 0; i < collection['0'].size(); ++i)
       roomCount++;
@@ -31,31 +29,15 @@ Room::Room(map<char, vector<ImportImg>> &collection, int t, bool c)
    GetEventImages(collection);
 }
 
-
-
-/// Copy Constructor
-Room::Room(Room &r)
-{
-   string s = r.GetImageFile();
-   delete room;
-   room = new ImportImg(s);
-
-   type = r.GetType();
-}
-
-
-
 /// Copy Constructor
 Room::Room(const Room &r)
 {
-   string s = r.GetImageFile();
+   std::string s = r.GetImageFile();
    delete room;
    room = new ImportImg(s);
 
    type = r.GetType();
 }
-
-
 
 /// Destructor
 Room::~Room()
@@ -64,33 +46,23 @@ Room::~Room()
    room = nullptr;
 }
 
-
-
 /// Function to return the image
 ImportImg Room::GetImage() const { return *room; }
 
-
-
 /// Function to return the image file path
-string Room::GetImageFile() const { return room->GetImageFile(); }
-
-
+std::string Room::GetImageFile() const { return room->GetImageFile(); }
 
 /// Function to return the type
 int Room::GetType() const { return type; }
 
-
-
 /// Function to return whether or not the room has an event to do
 bool Room::IsComplete() const { return complete; }
 
-
-
 /// Function decides which images need to be assigned to the room
 /// \param[in] collection, the set of images passed
-void Room::GetRoom(map<char, vector<ImportImg>> &collection)
+void Room::GetRoom(std::map<char, std::vector<ImportImg>> &collection)
 {
-   map<char, int> setType;
+   std::map<char, int> setType;
 	
    GetPoints();
 	
@@ -99,7 +71,7 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
    {
       // Decides on a varient if there are more than 1 type of object
       if(collection[point[i].ch].size() > 1)
-	 setType.insert(pair<char, int>(point[i].ch, Rand(collection[point[i].ch].size())));
+	 setType.insert(std::pair<char, int>(point[i].ch, Rand(collection[point[i].ch].size())));
       else
 	 setType[point[i].ch] = 0;
 
@@ -111,8 +83,6 @@ void Room::GetRoom(map<char, vector<ImportImg>> &collection)
       img.Image::Draw(*room);
    }
 }
-
-
 
 /// Function that identifies key characters and sets their location
 void Room::GetPoints()
@@ -140,11 +110,9 @@ void Room::GetPoints()
    }
 }
 
-
-
 /// Helper function to determine what to draw in the room based on type
 /// \param[in] collection the images being passed
-void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
+void Room::GetEventImages(std::map<char, std::vector<ImportImg>> &collection)
 {
    
    switch(type)
@@ -175,43 +143,29 @@ void Room::GetEventImages(map<char, vector<ImportImg>> &collection)
    }
 }
 
-
-
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignCenter(Screen &screen) { room->Image::AlignCenter(screen); }
-
-
 
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignLeft(Screen &screen) { room->Image::AlignLeft(screen); }
 
-
-
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignRight(Screen &screen) { room->Image::AlignRight(screen); }
-
-
 
 /// Function aligns the room to the top to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignTop(Screen &screen) { room->Image::AlignTop(screen); }
 
-
-
 /// Function aligns the room to the bottom to the screen
 /// \param[in] screen The screen that is passed
 void Room::AlignBottom(Screen &screen) { room->Image::AlignBottom(screen); }
 
-
-
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
 void Room::Draw(Screen &screen) { room->Image::Draw(screen); }
-
-
 
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The screen that is passed
@@ -219,21 +173,15 @@ void Room::Draw(Screen &screen) { room->Image::Draw(screen); }
 /// \param[in] x The x coordinate
 void Room::Draw(Screen &screen, int y, int x) { room->Image::Draw(screen, y, x); }
 
-
-
 /// Function aligns the room to the center to the screen
 /// \param[in] screen The img that is passed
 void Room::Draw(ImportImg &img) { room->Image::Draw(img); }
-
-
 
 /// Function aligns the room to the center to the screen
 /// \param[in] img The img that is passed
 /// \param[in] y the y coordinate
 /// \param[in] x The x coordinate
 void Room::Draw(ImportImg &img, int y, int x) { room->Image::Draw(img, y, x); }
-
-
 
 /// Randomly selects a number from 0 to n-1
 /// \param[in] n the range 0-n
@@ -243,13 +191,11 @@ int Room::Rand(int n)
    return n;
 }
 
-
-
 /// Function generate a roomType using a basic random # with weighting %
 int Room::RoomChance()
 {  
    bool selected = false;
-   vector<int> chance = {80, 5, 10, 5}; // weight
+   std::vector<int> chance = {80, 5, 10, 5}; // weight
    int roomType = 0;
 
    int outOf = 0; // total of the weights
@@ -260,7 +206,7 @@ int Room::RoomChance()
    // Function runs while a room has not been chosen
    do
    {
-      // allows the index to start at a random location in the vector
+      // allows the index to start at a random location in the std::vector
       for(int r = Rand(ROOMTYPES); r < ROOMTYPES; r++)
       {
 	 int n = Rand(outOf);

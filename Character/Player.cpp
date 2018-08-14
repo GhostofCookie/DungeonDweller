@@ -1,9 +1,9 @@
 #include "Player.h"
 #include "Npc.h"
 
-using namespace std;
 
-Player:: Player(int s, int k, string n, string r, int g, int h, ImportImg i)
+
+Player:: Player(int s, int k, std::string n, std::string r, int g, int h, ImportImg i)
    : name{n}, race{r}, keys{k}
 {
    img = ImportImg(i);
@@ -21,16 +21,6 @@ void Player:: EmptyInventory()
 {
    for(auto it = inventory.begin(); it != inventory.end(); ++it)
       delete *it;
-}
-
-Player:: Player(Player &p)
-{
-   name = p.name;
-   race = p.race;
-   keys = p.keys;
-   gold = p.gold;
-   health = p.health;
-   stamina = p.stamina;
 }
 
 Player:: Player(const Player &p)
@@ -74,20 +64,20 @@ bool Player:: UseKey(int& keys)
 
 void Player:: Print()
 {
-   cout << endl;
-   cout << "Name: " << name << endl;
-   cout << "Race: " << race << endl;
-   cout << "Stamina: " << stamina << endl;
-   cout << "Health: " << health << endl;
-   cout << "Gold: " << gold << endl << endl << "Items: " << endl;
+   std::cout << std::endl;
+   std::cout << "Name: " << name << std::endl;
+   std::cout << "Race: " << race << std::endl;
+   std::cout << "Stamina: " << stamina << std::endl;
+   std::cout << "Health: " << health << std::endl;
+   std::cout << "Gold: " << gold << std::endl << std::endl << "Items: " << std::endl;
 
    if(inventory.size() == 0)
    {
-      cout << "N/A";
+      std::cout << "N/A";
    } else
    {
       for(unsigned int i = 0; i < inventory.size(); i++)
-	 cout << inventory[i]->Name() << endl;
+	 std::cout << inventory[i]->Name() << std::endl;
    }
-   cout << endl;
+   std::cout << std::endl;
 }

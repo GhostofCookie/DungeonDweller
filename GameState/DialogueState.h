@@ -7,8 +7,7 @@
 
 #include "GameState.h"
 
-#ifndef DIALOGUESTATE_H
-#define DIALOGUESTATE_H
+#pragma once
 
 /// \class DialogueState DialogueState.h
 /// \brief This is the state of the game when the player character is engaged in
@@ -23,5 +22,3 @@ class DialogueState : public GameState
    /// Gets the payout of the game.
    void Get();
 };
-
-#endif

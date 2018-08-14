@@ -3,8 +3,6 @@
 #include <iomanip>
 #include <stdexcept>
 
-
-
 /// This is the the default constructor.
 ExploreState::ExploreState()
 {
@@ -46,16 +44,6 @@ ExploreState::ExploreState(GameState &obj)
    import = new ImageImporter("../DD_Art/DD_MasterFileLinux.txt");
    roomPtr = new Room(import->collection,0);
    currState = obj.GetState();
-}
-
-ExploreState::ExploreState(ExploreState &obj)
-{
-   import = obj.import;
-   roomPtr = obj.roomPtr;
-   roomTree = obj.roomTree;
-   menu = obj.menu;
-   screen = obj.screen;
-   player = obj.player;
 }
 
 ExploreState::ExploreState(const ExploreState &obj)
@@ -120,13 +108,13 @@ void ExploreState::Get()
       }
 
       // print the player's informaton and the screen
-      cout << setfill(' ') << "[N]Name: " << player->GetName();
-      cout << setw(24) << "[R]Race: " << player->GetRace() << endl;
-      cout << "[^]Depth: " << roomTree->CurrentHeight();
-      cout << setw(28) << "[$]Gold: " << player->GetGold();
-      cout << setw(27) << "[S]Stamina: " << player->GetStamina();
-      cout << setw(27) << right << "[+]Health: " << player->GetHealth() << right << endl;
-      cout << screen;
+      std::cout << std::setfill(' ') << "[N]Name: " << player->GetName();
+      std::cout << std::setw(24) << "[R]Race: " << player->GetRace() << std::endl;
+      std::cout << "[^]Depth: " << roomTree->CurrentHeight();
+      std::cout << std::setw(28) << "[$]Gold: " << player->GetGold();
+      std::cout << std::setw(27) << "[S]Stamina: " << player->GetStamina();
+      std::cout << std::setw(27) << std::right << "[+]Health: " << player->GetHealth() << std::right << std::endl;
+      std::cout << screen;
 
 
       SetState((roomTree->At())->GetType());
@@ -134,7 +122,7 @@ void ExploreState::Get()
       {
 	 // Print the menu and handle user input
 	 menu->OutputMenu();
-	 menu->HandleInput(cin);
+	 menu->HandleInput(std::cin);
 	 // Handle input from player
 	 RunInput(menu->GetOption());
       }
@@ -165,10 +153,10 @@ void ExploreState::RunInput(char n)
 		  roomTree->Move('U');
 	       }
 	    }
-	    catch(invalid_argument &ia) {
-	       string temp=ia.what();
-	       throw runtime_error("Room error:"+temp);
-	       //throw runtime_error("Room Error: " + ia.what());
+	    catch(std::invalid_argument &ia) {
+	       std::string temp=ia.what();
+	       throw std::runtime_error("Room error:"+temp);
+	       //throw std::runtime_error("Room Error: " + ia.what());
 	    }
 
 	    delete anim;
@@ -194,10 +182,10 @@ void ExploreState::RunInput(char n)
 		  roomTree->Move('L');
 	       }
 	    }
-	    catch(invalid_argument &ia) {
-	       //throw runtime_error("Room Error: " + ia.what);
-	       string temp=ia.what();
-	       throw runtime_error("Room error:"+temp);
+	    catch(std::invalid_argument &ia) {
+	       //throw std::runtime_error("Room Error: " + ia.what);
+	       std::string temp=ia.what();
+	       throw std::runtime_error("Room error:"+temp);
 	    }
 
 	    delete anim;
@@ -223,10 +211,10 @@ void ExploreState::RunInput(char n)
 		  roomTree->Move('D');
 	       }
 	    }
-	    catch(invalid_argument &ia) {
-	       string temp=ia.what();
-	       throw runtime_error("Room error:"+temp);
-	       //throw runtime_error("Room Error: " + ia.what);
+	    catch(std::invalid_argument &ia) {
+	       std::string temp=ia.what();
+	       throw std::runtime_error("Room error:"+temp);
+	       //throw std::runtime_error("Room Error: " + ia.what);
 	    }
 
 	    delete anim;
@@ -252,10 +240,10 @@ void ExploreState::RunInput(char n)
 		  roomTree->Move('R');
 	       }
 	    }
-	    catch(invalid_argument &ia) {
-	       string temp=ia.what();
-	       throw runtime_error("Room error:"+temp);
-	       //throw runtime_error("Room Error: " + ia.what);
+	    catch(std::invalid_argument &ia) {
+	       std::string temp=ia.what();
+	       throw std::runtime_error("Room error:"+temp);
+	       //throw std::runtime_error("Room Error: " + ia.what);
 	    }
 
 	    delete anim;
@@ -288,8 +276,8 @@ void ExploreState::RunInput(char n)
 	    // Quit the game
 	 case 'q':
 	    char ch;
-	    cout << "Are you sure you want to quit to main menu (y/n)? ";
-	    cin >> ch;
+	    std::cout << "Are you sure you want to quit to main menu (y/n)? ";
+	    std::cin >> ch;
 	    if(tolower(ch) == 'y')
 	    {
 	       currState = 'M';
@@ -328,10 +316,12 @@ void ExploreState::SetState(int n)
    if(n == 113 || player->GetHealth() <= 0 || player->GetStamina() <= 0)
    {
       //  Insert defeat anim here
-      cout << "*** You are unable to continue. Game Over ***" << endl;
-      cout << "Your score: " << roomTree->TotalNodes() << endl;
+      std::cout << "*** You are unable to continue. Game Over ***" << std::endl;
+      std::cout << "Your score: " << roomTree->TotalNodes() << std::endl;
       
-      usleep(3000000);
+	  #ifdef linux
+	  usleep(3000000);
+	  #endif
       currState = 'M';
       return;
 

@@ -6,7 +6,7 @@
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
-using namespace std;
+
 
 
 int main()
@@ -16,10 +16,10 @@ int main()
    Room room = Room(import.collection);
 
 
-   cout << room.GetType() << endl;
+   std::cout << room.GetType() << std::endl;
    room.AlignCenter(screen);
    room.Draw(screen);
-   cout << screen << endl;
+   std::cout << screen << std::endl;
 
 
    

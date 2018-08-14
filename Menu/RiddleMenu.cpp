@@ -23,7 +23,7 @@ RiddleMenu::~RiddleMenu()
 void RiddleMenu::SetOptions(int row, int col, int space)
 {
    int mark = 0;
-   string query_P1, query_P2;
+   std::string query_P1, query_P2;
    if(query.length() > 98)
    {
       for(int i = 0 ; i < 99; i++)
@@ -50,10 +50,10 @@ void RiddleMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void RiddleMenu::HandleInput(istream & is)
+void RiddleMenu::HandleInput( std::istream & is)
 {
    int y;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> y;
    is.clear();
    is.ignore(255, '\n');
@@ -64,7 +64,7 @@ void RiddleMenu::HandleInput(istream & is)
       return;
       is.clear();
       is.ignore(255, '\n');
-      throw invalid_argument("Invalid input. please enter coordinates in format A1.");
+      throw std::invalid_argument("Invalid input. please enter coordinates in format A1.");
    }
    else
       input = y;

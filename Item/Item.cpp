@@ -9,18 +9,17 @@
 #include "MyWeapons.h"
 #include "MyConsumables.h"
 #include <algorithm>
-#include <string>
 #include <cctype>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-using namespace std;
+#include <vector>
 
 /// Uses factory design pattern to create items
 /// \param[in] itemType The type of item to be created
 /// \return Pointer to created item
-/// \exception invalid_argument Thrown if type does not exist or is not allowed
-Item *Item::GetItem(string itemType)
+/// \exception std::invalid_argument Thrown if type does not exist or is not allowed
+Item *Item::GetItem(std::string itemType)
 {
    transform(itemType.begin(),itemType.end(),itemType.begin(),::toupper);
 
@@ -37,20 +36,20 @@ Item *Item::GetItem(string itemType)
    else if(itemType == "FOOD")
       newItem = new Food;
    else
-      throw invalid_argument("invalid type");
+      throw std::invalid_argument("invalid type");
    return newItem;
 }
 
 /// Allows access to the items name
 /// \return Reference to the name of the item
-string &Item::Name()
+std::string &Item::Name()
 {
    return itemName;
 }
 
 /// Gives the name of the item without allowing chages
 /// \return Name of the item
-string Item::Name() const
+std::string Item::Name() const
 {
    return itemName;
 }
@@ -58,16 +57,16 @@ string Item::Name() const
 /// Generates adjectives to add to Item names
 /// \param[in] fileName the file that the names comme from
 /// \returns Adjective generated and to be used
-/// \exception runtime_error Thrown if source file has no names
-string Item::NameGenerator(string fileName)
+/// \exception std::runtime_error Thrown if source file has no names
+std::string Item::NameGenerator(std::string fileName)
 {
-   vector<string> adjectives;
+   std::vector<std::string> adjectives;
 
-   ifstream fin;
+   std::ifstream fin;
    fin.open(fileName);
    if(fin.fail())
-      throw runtime_error("Could not open " + fileName);
-   string tempName;
+      throw std::runtime_error("Could not open " + fileName);
+   std::string tempName;
    while(!fin.eof())
    {
       getline(fin,tempName);
@@ -79,9 +78,9 @@ string Item::NameGenerator(string fileName)
    }
    fin.close();
    if(adjectives.size() < 1)
-      throw runtime_error(fileName + " is empty");
+      throw std::runtime_error(fileName + " is empty");
 	
-   // Returns a random element of the vector
+   // Returns a random element of the std::vector
    return adjectives[Random(0,adjectives.size()-1)];
 }
 
@@ -97,7 +96,7 @@ int Item::Random(unsigned int start,unsigned int end)
    }
    // Makes sure end is not less than start
    if(start > end)
-      swap(start,end);
+      std::swap(start,end);
 
    return rand()%(end-start+1)+start;
 }

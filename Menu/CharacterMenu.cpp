@@ -5,6 +5,7 @@
 /// character.
 
 #include "CharacterMenu.h"
+#include <string>
 
 /// This is the default constructor.
 CharacterMenu::CharacterMenu()
@@ -23,14 +24,14 @@ CharacterMenu::~CharacterMenu()
 void CharacterMenu::SetOptions(int row, int col, int space)
 {
    auto it = indexMap.begin();
-   string tempName;
+   std::string tempName;
    int origRow = row;
-   string ch;
+   std::string ch;
 
    while (it != indexMap.end())
    {
    if(tolower(it->first) != 'q')
-     ch = to_string(it->first);
+     ch = std::to_string(it->first);
    else ch = tolower(it->first);
      tempName += '['; tempName += ch;
       tempName += ']';tempName += it->second;
@@ -54,7 +55,7 @@ void CharacterMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void CharacterMenu::HandleInput(istream &is)
+void CharacterMenu::HandleInput( std::istream &is)
 {
    Menu::HandleInput(is);
 }

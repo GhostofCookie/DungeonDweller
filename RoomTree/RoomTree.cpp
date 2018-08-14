@@ -8,7 +8,7 @@
 #include "RoomTree.h"
 #include <stdexcept>
 #include <cctype>
-using namespace std;
+
 
 /// Node constructor
 RoomTree::Node::Node()
@@ -63,7 +63,7 @@ void RoomTree::DeleteTree(Node *tempRoot)
 
 /// Inserts a new room at child (throws exeption if already occupied)
 /// \param[in] dir Direction of the new child (left(l) right(r) up(u) or down(d)
-/// \exception invalid_argument Thrown if the direction is invalid or space is occupied
+/// \exception std::invalid_argument Thrown if the direction is invalid or space is occupied
 void RoomTree::NewRoom(char dir,Room* roomptr)
 {
    dir = toupper(dir);
@@ -72,7 +72,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
    {
       case 'U':
 	 if(currNode->up)
-	    throw invalid_argument("room occupied");
+	    throw std::invalid_argument("room occupied");
 	 currNode->up = new Node;
 	 currNode->up->down = currNode;
 	 currNode->up->room = roomptr;
@@ -81,7 +81,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 	 
       case 'L':
 	 if(currNode->left)
-	    throw invalid_argument("room occupied");
+	    throw std::invalid_argument("room occupied");
 	 currNode->left = new Node;
 	 currNode->left->right = currNode;
 	 currNode->left->room = roomptr;
@@ -90,7 +90,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 
       case 'R':
 	 if(currNode->right)
-	    throw invalid_argument("room occupied");
+	    throw std::invalid_argument("room occupied");
 	 currNode->right = new Node;
 	 currNode->right->left = currNode;
 	 currNode->right->room = roomptr;
@@ -99,7 +99,7 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 
       case 'D':
 	 if(currNode->down)
-	    throw invalid_argument("room occupied");
+	    throw std::invalid_argument("room occupied");
 	 currNode->down = new Node;
 	 currNode->down->up = currNode;
 	 currNode->down->room = roomptr;
@@ -107,14 +107,14 @@ void RoomTree::NewRoom(char dir,Room* roomptr)
 	 break;
 	 
       default:
-	 throw invalid_argument("invalid direction");
+	 throw std::invalid_argument("invalid direction");
    }
 }
 
 /// Moves through the tree
 /// \param[in] dir Direction to move(left(l) right(r) up(u) or down(d))
 /// \return True if move was successfull, false otherwise
-/// \exception invalid_argument Thrown if the direction is invalid
+/// \exception std::invalid_argument Thrown if the direction is invalid
 bool RoomTree::Move(char dir)
 {
    dir = toupper(dir);
@@ -142,7 +142,7 @@ bool RoomTree::Move(char dir)
 	 currNode = currNode->up;
 	 break;
       default:
-	 throw invalid_argument("invalid direction");
+	 throw std::invalid_argument("invalid direction");
    }
    return true;
 }
@@ -198,7 +198,7 @@ unsigned int RoomTree::TotalNodes() const
    return NodesInBranch(root);
 }
 
-/// Helper function to cout nodes in the tree
+/// Helper function to std::cout nodes in the tree
 /// \param[in] tempRoot The root of the tree to be counted
 unsigned int RoomTree::NodesInBranch(Node *tempRoot) const
 {

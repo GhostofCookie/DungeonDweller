@@ -10,7 +10,7 @@
 #include "../Character/Player.h"
 #include <stdexcept>
 #include <typeinfo>
-using namespace std;
+
 
 /// HealthPotion Constructor
 HealthPotion::HealthPotion()
@@ -20,7 +20,7 @@ HealthPotion::HealthPotion()
    {
       itemName = NameGenerator("../Item/ConsumableNames.txt") + " Health Potion";
    }
-   catch(runtime_error &re)
+   catch(std::runtime_error &re)
    {
       itemName = "Health Potion";
    }
@@ -50,7 +50,7 @@ Food::Food()
    {
       itemName = NameGenerator("../Item/ConsumableNames.txt") + " Food";
    }
-   catch(runtime_error &re)
+   catch(std::runtime_error &re)
    {
       itemName = "Food";
    }
@@ -61,7 +61,7 @@ Food::Food()
 /// Defines what happens when the food is used
 /// \param[in] target The Character that the food is used on
 /// \return true if use was successfull
-/// \exeption invalid_argument Thrown if target is not a player
+/// \exeption std::invalid_argument Thrown if target is not a player
 bool Food::Use(Character *target)
 {
    if(!used)

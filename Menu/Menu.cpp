@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include "Menu.h"
-using namespace std;
+
 
 /// This is the constructor. It initializes a multi-dimensional array
 /// to dimensions height*width.
@@ -34,10 +34,10 @@ Menu::~Menu()
 
 /// Handles the user input, and runs an option from the menu.
 /// \param[in,out] is The in-stream operator to read the input.
-void Menu::HandleInput(istream& is)
+void Menu::HandleInput( std::istream& is)
 {
    char option;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> option;
    is.clear();
    is.ignore(255, '\n');
@@ -52,7 +52,7 @@ void Menu::HandleInput(istream& is)
    }
    if(is.fail())
    {
-      throw invalid_argument("Invalid input. Please enter something more sensible.");
+      throw std::invalid_argument("Invalid input. Please enter something more sensible.");
       is.clear();
       is.ignore(255, '\n');
    }
@@ -62,7 +62,7 @@ void Menu::HandleInput(istream& is)
 /// display, and function to run.
 /// \param[in] command The character for the user to input.
 /// \param[in] optionName The name to display for the user.
-void Menu::AddOption(char command, string optionName)
+void Menu::AddOption(char command, std::string optionName)
 {
    auto it = indexMap.find(command);
    if(it->first != command)
@@ -81,7 +81,7 @@ char Menu::GetOption() const
 void Menu::SetOptions(int row, int col, int space)
 {
    auto it = indexMap.begin();
-   string tempName;
+   std::string tempName;
    int origRow = row;
   
    while (it != indexMap.end())
@@ -114,8 +114,8 @@ void Menu::OutputMenu()
    for (int i = 0; i < menuHeight; i++)
    {
       for (int j = 0; j < menuWidth; j++)
-	 cout << menu_Array[i][j];
-      cout << '\n';
+	 std::cout << menu_Array[i][j];
+      std::cout << '\n';
    }
 }
 

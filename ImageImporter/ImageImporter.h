@@ -16,7 +16,7 @@
 //Image Headers
 #include "../Image/Image.h"
 #include "../Image/ImportImg.h"
-using namespace std;
+
 
 
 /// \brief The ImageImporter class can import multiple files and convert them into
@@ -25,21 +25,21 @@ class ImageImporter
 {
   private:
    /// The main file used to open all files
-   string masterFile;
+   std::string masterFile;
 	
    /// Open and collect each image from each file path
    /// \param[in] file the masterfile being used
-   void GetAllFilePaths(const string &file);
+   void GetAllFilePaths(const std::string &file);
 	
   public:
    /// Object that opens a main file containing other file paths
    /// \param[in] file the master file used
-   ImageImporter(string file = "../DD_Art/DD_MasterFileLinux.txt");
+   ImageImporter(std::string file = "../DD_Art/DD_MasterFileLinux.txt");
    /// Deconstuctor
    ~ImageImporter();
 		
    /// Each additional image is given an ID based on the type
-   map<char, vector<ImportImg>> collection;
+   std::map<char, std::vector<ImportImg>> collection;
 };
 
 #endif /* ImageImporter_h */

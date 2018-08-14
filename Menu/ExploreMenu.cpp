@@ -22,11 +22,11 @@ ExploreMenu::~ExploreMenu()
 /// \param[in] How mush space inbetween rows.
 void ExploreMenu::SetOptions(int row, int col, int space)
 {
-   map < int, string > optionList = indexMap;
+   std::map < int, std::string > optionList = indexMap;
    int width = menuWidth;
    auto it = optionList.begin();
    int value = 1, count = 0, divider = 4;
-   string temp;
+   std::string temp;
    while(it != optionList.end())
    {
       temp += '['; temp += it->first; temp += ']'; temp += it->second;
@@ -57,10 +57,10 @@ void ExploreMenu::SetOptions(int row, int col, int space)
 
 /// This function handles the input for the menu options.
 /// \param[in,out] is The in-stream operator to read the input.
-void ExploreMenu::HandleInput(istream &is)
+void ExploreMenu::HandleInput( std::istream &is)
 {
    char option;
-   cout << "-> ";
+   std::cout << "-> ";
    is >> option;
    is.clear();
    is.ignore(255,'\n');
@@ -75,7 +75,7 @@ void ExploreMenu::HandleInput(istream &is)
    }
    if(is.fail())
    {
-      throw invalid_argument("Invalid input. Please enter something more sensible.");
+      throw std::invalid_argument("Invalid input. Please enter something more sensible.");
       is.clear();
       is.ignore(255, '\n');
    }

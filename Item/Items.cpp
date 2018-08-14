@@ -1,7 +1,8 @@
 #include "MyConsumables.h"
 #include "MyWeapons.h"
 #include <vector>
-using namespace std;
+#include <iostream>
+
 
 int main() {
   Sword testSword;
@@ -9,13 +10,13 @@ int main() {
   Spell testSpell;
   Food testFood;
   HealthPotion testPotion;
-  vector<Item*> inventory;
+  std::vector<Item*> inventory;
   inventory.push_back(new Sword());
   inventory.push_back(new Bow());
-   cout<<testSword.Name()<<endl <<testBow.Name()<<endl<<testSpell.Name()<<endl<<testFood.Name()<<endl<<testPotion.Name()<<endl;
+   std::cout<<testSword.Name()<<std::endl <<testBow.Name()<<std::endl<<testSpell.Name()<<std::endl<<testFood.Name()<<std::endl<<testPotion.Name()<<std::endl;
 
-   cout<<"Inventory contains: "<<endl;
+   std::cout<<"Inventory contains: "<<std::endl;
    for(auto it = inventory.begin(); it != inventory.end(); ++it)
-     cout<<(*it)->Name()<<endl;
+     std::cout<<(*it)->Name()<<std::endl;
    return 0;
 }

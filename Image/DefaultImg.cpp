@@ -14,8 +14,6 @@ DefaultImg::DefaultImg(int h, int w, char c)
    Create();
 }
 
-
-
 /// Copy constructor
 /// \param[in] image the image copied from
 DefaultImg::DefaultImg(const DefaultImg &image)
@@ -26,25 +24,11 @@ DefaultImg::DefaultImg(const DefaultImg &image)
    
 }
 
-
-
-/// Copy constructor
-/// \param[in] image the image copied from
-DefaultImg::DefaultImg(DefaultImg &image)
-{
-   Img = image.Img;
-   _height = height = image.GetRows();
-   _width = height = image.GetCols();
-}
-
-
-
 /// Destructor
 DefaultImg::~DefaultImg()
 {
 	
 }
-
 
 DefaultImg& DefaultImg::operator=(const DefaultImg &img)
 {
@@ -52,16 +36,14 @@ DefaultImg& DefaultImg::operator=(const DefaultImg &img)
    return *this;
 }
 
-
-
-/// Function that creates the image by pushing back the vector
+/// Function that creates the image by pushing back the std::vector
 void DefaultImg::Create()
 {
    Img.clear();
    
    for(int i = 0; i < height; i++)
    {
-      Img.push_back(vector<char>());
+      Img.push_back(std::vector<char>());
       for(int j = 0; j < width; j++)
 	 Img[i].push_back(ch);
    }

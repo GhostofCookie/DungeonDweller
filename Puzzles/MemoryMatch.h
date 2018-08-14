@@ -5,10 +5,17 @@
 /// \date Oct 20, 2017
 //  
 
-#ifndef MEMORY_MATCH_H
-#define MEMORY_MATCH_H
-#include "Puzzle.h"
+#pragma once
+
+#ifdef linux
 #include <unistd.h>
+#endif
+
+#ifdef _WIN32
+// Place windows unistd.h equivalent.
+#endif
+
+#include "Puzzle.h"
 #include "../Menu/MemoryMenu.h"
 
 ///This class contains the mini-game/puzzle Memory Match
@@ -27,7 +34,7 @@ class MemoryMatch: virtual public Puzzle
    virtual void RunGame(Character *player);
 
   private:
-   ///Sets the board up for the beginning of the game, placing them in screen
+   ///Sets the board up for the beginning of the game, plastd::cing them in screen
    void BoardSetup();
 
    ///Setinputs assigns user input to the appropriate variables.
@@ -52,7 +59,7 @@ class MemoryMatch: virtual public Puzzle
    bool IsInputValid(int input);
 
    ///Checks if the coordinates have been matched already using the membership
-   ///table stored in the match vector, returns true if they are unmatched,
+   ///table stored in the match std::vector, returns true if they are unmatched,
    ///false if they have previously been matched
    ///\param[in] inputX1, The X-Coordinate of the first card to check
    ///\param[in] inputY1, The Y-Coordinate of the first card to check
@@ -90,7 +97,7 @@ class MemoryMatch: virtual public Puzzle
    void FlipTwoChars(int inputX, int inputY);
 
    ///Takes the char input given by the user and returns the associated index
-   ///for its location within the vector as an int.
+   ///for its location within the std::vector as an int.
    ///\param[in]input, the character to convert to an integer index.
    int ConvertCharToIndex(char input);
    
@@ -122,7 +129,7 @@ class MemoryMatch: virtual public Puzzle
    ///\param[in]n, an integer n, checks if it is odd.
    bool IsOdd(int n);
    
-   ///Checks if a char is in the used pairs vector and returns true if its found
+   ///Checks if a char is in the used std::pairs std::vector and returns true if its found
    ///\param[in]symbol, the symbol to be checked.
    bool IsInUsedPairs(char symbol);
 
@@ -134,20 +141,19 @@ class MemoryMatch: virtual public Puzzle
    ///The screen for the game to be outputted with
    Screen MemoryMatchScreen;
 
-///The vector which holds the char values of the table to be matched
-   std :: vector < vector < char > > charTable;
+///The std::vector which holds the char values of the table to be matched
+   std::vector < std::vector < char > > charTable;
 
-   ///The vector which holds the integer value for the table, 1 being
+   ///The std::vector which holds the integer value for the table, 1 being
    ///matched, 0 being unmatched.
-   std :: vector < vector < int > > matchVector;
+   std::vector < std::vector < int > > matchVector;
 
    ///Vector containing symbols to be randomly inserted on the screen at start
-   std :: vector < char > pairsOfCharsVector;
+   std::vector < char > pairsOfCharsVector;
 
-   ///Vector containing all pairs that have already been matched up
-   std :: vector < char > usedPairs;
+   ///Vector containing all std::pairs that have already been matched up
+   std::vector < char > usedPairs;
 
    ///dimensions for the gameboard
    int boardSize;
 };
-#endif

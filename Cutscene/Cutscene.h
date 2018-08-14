@@ -1,5 +1,12 @@
-#ifndef Cutscene_h
-#define Cutscene_h
+#pragma once
+
+#ifdef linux
+#include <unistd.h>
+#endif
+
+#ifdef _WIN32
+// Place windows unistd.h equivalent.
+#endif
 
 // Screen Header
 #include "../Screen/Screen.h"
@@ -12,9 +19,8 @@
 // Misc Headers
 #include <iostream>
 #include <ctime>
-#include <unistd.h>
 #include <vector>
-using namespace std;
+
 
 
 
@@ -52,7 +58,7 @@ class Cutscene
    int foundY = 0;
 
    /// container to store the 4 directions of the given room
-   vector<Point> point;
+   std::vector<Point> point;
 
    /// the animated image
    ImportImg img;
@@ -64,7 +70,7 @@ class Cutscene
    int type = 0;
 
    /// Helper function that returns many spaces
-   void ClearScreen() { for(int i = 0; i < 50; i++) cout << endl; };
+   void ClearScreen() { for(int i = 0; i < 50; i++) std::cout << std::endl; };
    
    /// Helper function that returns the location of a character
    /// Helper function to shift an image up and handle output
@@ -173,4 +179,3 @@ class Cutscene
 			      
 };
 
-#endif
