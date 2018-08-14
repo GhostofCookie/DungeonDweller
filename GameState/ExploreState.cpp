@@ -319,7 +319,7 @@ void ExploreState::SetState(int n)
       std::cout << "*** You are unable to continue. Game Over ***" << std::endl;
       std::cout << "Your score: " << roomTree->TotalNodes() << std::endl;
       
-	  #ifdef linux
+	  #ifdef __linux__
 	  usleep(3000000);
 	  #endif
       currState = 'M';

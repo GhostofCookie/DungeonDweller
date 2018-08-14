@@ -14,7 +14,13 @@
 //Room Header
 #include "../Room/Room.h"
 //Time Headers
-#include <unistd.h>//for slowing down time
+#ifdef ____linux____
+#include <unistd.h>
+#endif
+
+#ifdef _WIN32
+// Place windows unistd.h equivalent.
+#endif
 #include <ctime>
 
 

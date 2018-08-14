@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef linux
+#ifdef ____linux____
 #include <unistd.h>
 #endif
 

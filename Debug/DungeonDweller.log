@@ -1,26 +1,49 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are character\main.cpp, cutscene\main.cpp, imageimporter\main.cpp, image\main.cpp, roomtree\main.cpp, room\main.cpp, screen\main.cpp.
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of mainTest.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are character\mainTest.cpp, screen\mainTest.cpp.
-  mainTest.cpp
-screen\mainTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
-  ScreenTest.cpp
-screen\ScreenTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
-  RoomTreeTester.cpp
-roomtree\RoomTreeTester.cpp(8): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
-  RoomTreeTest.cpp
-roomtree\RoomTreeTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
-  RunTest.cpp
-menu\RunTest.cpp(7): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
-  MenuTest.cpp
-c:\users\tomas\documents\coding projects\kodika\menu\MenuTest.h(10): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
-  ExploreState.cpp
-  mainTest.cpp
-character\mainTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
-  PlayerTest.cpp
-character\PlayerTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(944,5): warning MSB8027: Two or more files with the name of main.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are character\main.cpp, cutscene\main.cpp, imageimporter\main.cpp, image\main.cpp, roomtree\main.cpp, room\main.cpp, screen\main.cpp.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(944,5): warning MSB8027: Two or more files with the name of mainTest.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are character\mainTest.cpp, screen\mainTest.cpp.
+  Character.cpp
   CharacterTest.cpp
-character\CharacterTest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  testExplore.cpp
+c:\users\tomas\documents\coding projects\kodika\character\charactertest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+  main.cpp
+c1xx : fatal error C1083: Cannot open source file: 'character\main.cpp': No such file or directory
+  mainTest.cpp
+c:\users\tomas\documents\coding projects\kodika\character\maintest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
+  Npc.cpp
+  PlayerTest.cpp
+c:\users\tomas\documents\coding projects\kodika\character\playertest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+  Cutscene.cpp
+  main.cpp
+  ExploreState.cpp
   InventoryState.cpp
+  MainState.cpp
+  PuzzleState.cpp
+  testExplore.cpp
   DungeonDweller.cpp
+  Image.cpp
+  MenuTest.cpp
+c:\users\tomas\documents\coding projects\kodika\menu\menutest.h(10): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+  RiddleMenu.cpp
+  RunTest.cpp
+c:\users\tomas\documents\coding projects\kodika\menu\runtest.cpp(7): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
+  testMenu.cpp
+  CodeCracker.cpp
+  Generating Code...
+  Compiling...
+  ConnectFour.cpp
+  Hanoi.cpp
+  MemoryMatch.cpp
+  Puzzle.cpp
+  PuzzleMain.cpp
+c:\users\tomas\documents\coding projects\kodika\puzzles\puzzlemain.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  TicTacToe.cpp
+  RoomTreeTest.cpp
+c:\users\tomas\documents\coding projects\kodika\roomtree\roomtreetest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+  RoomTreeTester.cpp
+c:\users\tomas\documents\coding projects\kodika\roomtree\roomtreetester.cpp(8): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
+  main.cpp
+  main.cpp
+  mainTest.cpp
+c:\users\tomas\documents\coding projects\kodika\screen\maintest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TextTestRunner.h': No such file or directory
+  Screen.cpp
+  ScreenTest.cpp
+c:\users\tomas\documents\coding projects\kodika\screen\screentest.cpp(1): fatal error C1083: Cannot open include file: 'cppunit/TestFixture.h': No such file or directory
+  Generating Code...

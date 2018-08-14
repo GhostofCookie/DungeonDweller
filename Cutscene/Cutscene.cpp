@@ -77,7 +77,7 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
-	  #ifdef linux
+	  #ifdef __linux__
       usleep(VERTSPEED);
 	  #endif
    }
@@ -107,7 +107,7 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
-	  #ifdef linux
+	  #ifdef __linux__
       usleep(VERTSPEED);
 	  #endif
    }
@@ -137,7 +137,7 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
-	  #ifdef linux
+	  #ifdef __linux__
       usleep(HORIZSPEED);
 	  #endif
    }
@@ -167,7 +167,7 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       img.Draw(screen);
             
       screen.MultiPrint(scr);
-	  #ifdef linux
+	  #ifdef __linux__
       usleep(HORIZSPEED);
 	  #endif
     }
@@ -500,7 +500,7 @@ void Cutscene::Intro()
       scr.Erase();
       title.ShiftUp(1);
 
-	#ifdef linux
+	#ifdef __linux__
       usleep(200000);
 	#endif
    }
@@ -519,7 +519,7 @@ void Cutscene::Intro()
 
       std::cout << scr;
       
-	#ifdef linux
+	#ifdef __linux__
       usleep(100000);
 	#endif
    }
@@ -534,7 +534,7 @@ void Cutscene::Intro()
 
       std::cout << scr;
       
-	#ifdef linux
+	#ifdef __linux__
       usleep(100000);
 	#endif
    }
@@ -561,12 +561,12 @@ void Cutscene::Outro()
       scr.Erase();
       credits.ShiftUp(1);
 
-	#ifdef linux
+	#ifdef __linux__
       usleep(VERTSPEED * 2);
 	#endif
    }
 
-	#ifdef linux
+	#ifdef __linux__
    usleep(3000000);
 	#endif
 }
@@ -593,7 +593,7 @@ void Cutscene::MonsterEncounter()
       }
       system("clear");
       std::cout << scr;
-	#ifdef linux
+	#ifdef __linux__
       usleep(20000);
 	#endif
 
@@ -616,7 +616,7 @@ void Cutscene::MonsterEncounter()
       }
       system("clear");
       std::cout << scr;
-	#ifdef linux
+	#ifdef __linux__
       usleep(20000);
 	#endif  
       left -= am;
