@@ -5,12 +5,10 @@
 /// MinigameMenu.
 ///
 
+#pragma once
+
 #include "MinigameMenu.h"
 #include <map>
-
-
-#ifndef HANOIMENU_H
-#define HANOIMENU_H
 
 /// \class HanoiMenu HanoiMenu.h
 /// \brief This is the menu class for the Hanoi minigame.
@@ -31,5 +29,3 @@ class HanoiMenu : public virtual MinigameMenu
    virtual void HandleInput( std::istream &is);
 
 };
-
-#endif

@@ -1,6 +1,6 @@
-//
-// Room.h
-//
+///
+/// Room.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
 ///
@@ -13,23 +13,16 @@
 #include <cctype>
 #include <cstdlib>
 #include <algorithm>
-//Screen Header
 #include "../Screen/Screen.h"
-//Image Headers
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
-//Character Headers
 #include "../Character/Character.h"
 #include "../Character/Player.h"
 #include "../Character/Npc.h"
-//Item Header
 #include "../Item/Item.h"
 #include "../Item/MyConsumables.h"
 #include "../Item/MyWeapons.h"
-
-
-
 
 /// /brief The Room class defines random values that characterize a room's event.
 /// It also applies appropriate images onto a given room image
@@ -47,8 +40,7 @@ class Room
    };
    
   private:
-   /// A finalized version of the room with data values included
-   // Public to allow user to use all the image functions from the room object
+   /// A finalized version of the room with data values included.
    ImportImg *room = nullptr;
    /// The type of room that will be generated
    int type;
@@ -72,8 +64,6 @@ class Room
    /// Print event images to the room based on type
    /// \param[in] imgFiles the collection of images to use
    void GetEventImages(std::map<char, std::vector<ImportImg>> &imgFiles);
-	
-
    
   public:
    /// Constructs a Room object using the given image

@@ -1,16 +1,16 @@
-//
-// MemoryMatch.h
-//
+///
+/// MemoryMatch.h
+///
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
-//  
+///  
 
 #pragma once
 
 #ifdef __linux__
 #include <unistd.h>
 #elif _WIN32
-// Place windows unistd.h equivalent.
+#include <Windows.h>
 #else
 #endif
 

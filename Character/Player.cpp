@@ -1,8 +1,6 @@
 #include "Player.h"
 #include "Npc.h"
 
-
-
 Player:: Player(int s, int k, std::string n, std::string r, int g, int h, const ImportImg& i)
    : name{n}, race{r}, keys{k}
 {

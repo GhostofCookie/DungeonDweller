@@ -1,13 +1,12 @@
-//
-// \author Reid Paulhus
-// \date 2/11/2017
-//
-// This is a test class for the Screen class
-//
-//
+///
+/// \author Reid Paulhus
+/// \date 2/11/2017
+///
+/// This is a test class for the Screen class
+///
+///
 
-#ifndef SCREENTEST_H
-#define SCREENTEST_H
+#pragma once
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -76,5 +75,3 @@ class ScreenTest: public CppUnit::TestFixture
    /// a negative width bound
    int widthNegative;
 };
-
-#endif

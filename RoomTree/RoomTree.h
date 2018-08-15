@@ -1,21 +1,19 @@
-//
-// RoomTree Header
-//
+///
+/// RoomTree Header
+///
 /// \author Rylan Bueckert
 /// \date Oct 25, 2017
 ///
 
-#ifndef ROOMTREE_H
-#define ROOMTREE_H
+#pragma once
+
 #include <iostream>
 #include "../Character/Character.h"
 #include "../Room/Room.h"
 
-
 /// Class to represent the layout of rooms in a doubly linked tree-like format
 class RoomTree
 {
-   //Nested Class**************************************************************
    /// Class to represent nodes on the tree
    class Node {
      public:
@@ -41,10 +39,8 @@ class RoomTree
       /// Pointer to the room
       Room* room;
    };
-   //**************************************************************************
 
   public:
-
    /// RoomTree Constructor
    /// \param[in] rootRoom Pointer to the room that will be at the root of the tree
    RoomTree(Room* rootRoom);
@@ -92,4 +88,3 @@ class RoomTree
    /// Node of the current room
    Node* currNode;
 };
-#endif

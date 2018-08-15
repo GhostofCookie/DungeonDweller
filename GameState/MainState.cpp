@@ -1,4 +1,6 @@
 #include "MainState.h"
+#include "../Cutscene/Cutscene.h"
+#include "../Menu/MainMenu.h"
 #include <vector>
 #include <stdlib.h>
 

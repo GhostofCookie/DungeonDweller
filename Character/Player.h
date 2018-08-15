@@ -1,10 +1,9 @@
-//
-// Player.h
-//
+///
+/// Player.h
+///
 /// \author Gates Kempenaar
 /// \date Oct 25, 2017
-//
-
+///
 
 #pragma once
 
@@ -16,6 +15,7 @@
 #include <vector>
 #include <string>
 
+// Forward declarations.
 class Item;
 class MyConsumable;
 class Npc;

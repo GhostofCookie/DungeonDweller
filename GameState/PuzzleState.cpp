@@ -1,4 +1,9 @@
- #include "PuzzleState.h"
+#include "PuzzleState.h"
+#include "../Puzzles/Hanoi.h"
+#include "../Puzzles/CodeCracker.h"
+#include "../Puzzles/TicTacToe.h"
+#include "../Puzzles/MemoryMatch.h"
+#include "../Puzzles/ConnectFour.h"
 
 PuzzleState::PuzzleState(Player *p)
 {

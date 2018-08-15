@@ -1,5 +1,11 @@
-#ifndef CHARACTERTEST_h
-#define CHARACTERTEST_h
+/// CharacterTest.h
+///
+/// \author Gates Kempenaar
+/// \date 8/11/2017
+///
+
+#pragma once
+
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -56,5 +62,3 @@ class CharacterTest : public CppUnit::TestFixture
    std::vector<Item*> inv;
    Character C;
 };
-
-#endif

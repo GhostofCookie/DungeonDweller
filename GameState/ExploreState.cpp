@@ -1,4 +1,11 @@
 #include "ExploreState.h"
+#include "../Menu/ExploreMenu.h"
+#include "../Cutscene/Cutscene.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
+#include <ctime>
+#include <iostream>
 #include <stdlib.h>
 #include <iomanip>
 #include <stdexcept>

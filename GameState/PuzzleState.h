@@ -5,18 +5,12 @@
 /// / minigame.
 ///
 
+#pragma once
+
 #include "GameState.h"
 #include "../Puzzles/Puzzle.h"
-#include "../Puzzles/Hanoi.h"
-#include "../Puzzles/CodeCracker.h"
-#include "../Puzzles/TicTacToe.h"
-#include "../Puzzles/MemoryMatch.h"
-#include "../Puzzles/ConnectFour.h"
 #include <vector>
 #include <algorithm>
-
-
-#pragma once
 
 class PuzzleState : public GameState
 {

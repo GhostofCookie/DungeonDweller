@@ -1,12 +1,12 @@
-//
-// MyConsumables Header File
-//
+///
+/// MyConsumables Header File
+///
 /// \author Rylan Bueckert
 /// \date Oct 25, 2017
 ///
 
-#ifndef MYCONSUMABLES_H
-#define MYCONSUMABLES_H
+#pragma once
+
 #include "Consumable.h"
 
 /// Subclass of Consumable to represent an in game health potion
@@ -37,4 +37,3 @@ class Food: public Consumable
    bool Use(Character *target);
    
 };
-#endif

@@ -5,6 +5,8 @@
 /// location and actions of the player character.
 ///
 
+#pragma once
+
 #include "../Menu/Menu.h"
 #include "../Screen/Screen.h"
 #include "../Menu/MainMenu.h"
@@ -19,8 +21,6 @@
 #include "../Item/Item.h"
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
-
-#pragma once
 
 class GameState
 {

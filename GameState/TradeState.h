@@ -5,9 +5,9 @@
 /// character.
 ///
 
-#include "GameState.h"
-
 #pragma once
+
+#include "GameState.h"
 
 class TradeState : public GameState
 {

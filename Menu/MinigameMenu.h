@@ -3,12 +3,10 @@
 ///
 /// This is an abstract class. It is a subclass of GameMenu.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef MINIGAMEMENU_H
-#define MINIGAMEMENU_H
 
 /// \class MinigameMenu MinigameMenu.h
 /// \brief An abstract class, this is the base class for the all the in-game
@@ -35,5 +33,3 @@ class MinigameMenu : public GameMenu
   std::string query;
   
 };
-
-#endif

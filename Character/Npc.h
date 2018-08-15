@@ -5,9 +5,7 @@
 /// \date Oct 25, 2017
 //
 
-
-#ifndef Npc_h
-#define Npc_h
+#pragma once
 
 #include <stdio.h>
 #include "Character.h"
@@ -35,4 +33,3 @@ public:
 
 };
 
-#endif /* Npc_hpp */

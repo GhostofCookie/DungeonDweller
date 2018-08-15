@@ -4,20 +4,10 @@
 /// This is the state of the game when a player is checking inventory
 ///
 
+#pragma once
+
 #include "GameState.h"
 #include "ExploreState.h"
-#include "../Menu/ExploreMenu.h"
-#include "../Cutscene/Cutscene.h"
-#include "../Room/Room.h"
-#include "../ImageImporter/ImageImporter.h"
-#include "../Image/Image.h"
-#include "../Image/DefaultImg.h"
-#include "../Image/ImportImg.h"
-#include <ctime>
-#include <iostream>
-
-
-#pragma once
 
 /// \class ExploreState ExploreState.h
 /// \brief This is defines the state of the game when the player character is

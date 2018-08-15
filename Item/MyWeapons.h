@@ -1,14 +1,13 @@
-//
-// MyWeapons Header File
-//
+///
+/// MyWeapons Header File
+///
 /// \author Rylan Bueckert
 /// \date Oct 25, 2017
 ///
 
-#ifndef MYWEAPONS_H
-#define MYWEAPONS_H
-#include "Weapon.h"
+#pragma once
 
+#include "Weapon.h"
 
 /// Subclass of Weapon to represent a sword in game
 class Sword: public Weapon
@@ -64,4 +63,3 @@ class Spell: public Weapon
    bool Use(Character *target);
 
 };
-#endif

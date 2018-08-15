@@ -5,11 +5,9 @@
 /// of the game.
 ///
 
-#include "GameState.h"
-#include "../Cutscene/Cutscene.h"
-#include "../Menu/MainMenu.h"
-
 #pragma once
+
+#include "GameState.h"
 
 /// \class MainState MainState.h
 /// \brief This is the state of the game when the game is either not yet started or the game has ended.

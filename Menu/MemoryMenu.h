@@ -5,12 +5,10 @@
 /// MinigameMenu.
 ///
 
+#pragma once
+
 #include "MinigameMenu.h"
 #include <map>
-
-
-#ifndef MEMORYMENU_H
-#define MEMORYMENU_H
 
 /// \class MemoryMenu MemoryMenu.h
 /// \brief This is the menu class for the Memory match minigame.
@@ -43,5 +41,3 @@ class MemoryMenu : public virtual MinigameMenu
    Coord GetCoordinates() const;
 
 };
-
-#endif

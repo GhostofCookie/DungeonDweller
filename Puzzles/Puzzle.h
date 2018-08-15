@@ -1,6 +1,6 @@
-//
-// puzzle.h
-//
+///
+/// Puzzle.h
+///
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
 ///
@@ -10,7 +10,7 @@
 #ifdef __linux__
 #include <unistd.h>
 #elif _WIN32
-// Place windows unistd.h equivalent.
+#include <Windows.h>
 #else
 #endif
 
@@ -25,13 +25,21 @@
 class Puzzle
 {
   public:
+   /// Generates a random number.
+   /// \param[in] n The seed to generate random numeric values.
    int RandomNumber(int n) const;
+
+   /// Create a delay in seconds.
+   /// \param[in] seconds The number of seconds to delay by.
    void SecondDelay(int seconds) const;
+
    ///Virtual Destructor
    virtual ~Puzzle(){}
+
    ///Method to run the game, serves as a 'main' for the mini-game, calling
    ///functions from private until the player has won.                          
    virtual void RunGame(Character *player) = 0;
+
   protected:
    ///Remains false until the mini-game/puzzle is ready to be terminated.
    bool PuzzleEnd;

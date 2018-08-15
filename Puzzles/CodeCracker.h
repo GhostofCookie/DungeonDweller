@@ -1,18 +1,17 @@
-//
-// CodeCracker.h
-//
+///
+/// CodeCracker.h
+///
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
-//
+///
 
-#ifndef  CODE_CRACKER_H
-#define CODE_CRACKER_H
+#pragma once
+
 #include "Puzzle.h"
 #include "../Menu/RiddleMenu.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
 
 ///This class contains the mini-game/puzzle Code Cracker
 class CodeCracker: public virtual Puzzle
@@ -97,8 +96,3 @@ class CodeCracker: public virtual Puzzle
    ///question correct.
    std::string incorrectPrompt, correctPrompt;
 };
-#endif
-
-
-
-

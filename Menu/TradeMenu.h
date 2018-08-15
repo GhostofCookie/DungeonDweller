@@ -4,12 +4,10 @@
 /// Derived from GameMenu. This is the menu for the player character to use when
 /// they are trading with NPCs in the game.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef TRADEMENU_H
-#define TRADEMENU_H
 
 /// \class TradeMenu TradeMenu.h
 /// \brief This is the menu displayed when the player character is trading.
@@ -30,4 +28,3 @@ class TradeMenu : public GameMenu
    virtual void HandleInput( std::istream &is);
 };
 
-#endif

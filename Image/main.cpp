@@ -4,9 +4,6 @@
 #include "ImportImg.h"
 #include "../Screen/Screen.h"
 
-
-
-
 int main()
 {
    Screen *screen = new Screen();

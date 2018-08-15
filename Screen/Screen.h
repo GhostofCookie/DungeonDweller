@@ -1,6 +1,6 @@
-//
-// Screen.h
-//
+///
+/// Screen.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
 ///
@@ -22,14 +22,13 @@ class Screen
    /// 2D std::vector representing the screen object
    std::vector<std::vector<char>> Window;
 	
-	
-	
   public:
    /// Constructs an Image object from the given dimensions
    /// \param[in] h the height of the image, default to 33
    /// \param[in] w the width of the image, default to 101
    /// \param[in] ch the default character to draw the border with
    Screen(int h = 33, int w = 101, char ch = '-');
+
    /// Virtual Destructor
    virtual ~Screen();
 	
@@ -55,7 +54,6 @@ class Screen
    /// Returns the width of the screen
    int GetCols() const;
    
-      
    /// Returns true if the number is even
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
@@ -78,8 +76,8 @@ class Screen
    void Fill(char ch);
 	
    /// Sets the characters at the given location to the given character
-   // (rows are numbered from 0 from the top, and columns are numbered 0 from the left)
-   // If the location is invalid, simply ignore the request
+   /// (rows are numbered from 0 from the top, and columns are numbered 0 from the left)
+   /// If the location is invalid, simply ignore the request
    /// \param[in] y the y coordinate
    /// \param[in] x the x coordinate
    /// \param[in] ch the character used to draw on that location

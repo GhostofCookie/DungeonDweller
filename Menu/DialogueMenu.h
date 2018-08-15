@@ -4,12 +4,10 @@
 /// Derived from GameMenu. This is the menu for the player character to use when
 /// they are interacting in dialogue with NPCs in the game.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef DIALOGUEMENU_H
-#define DIALOGUEMENU_H
 
 /// \class DialogueMenu DialogueMenu.h
 /// \brief This is the menu displayed when the player character is engaging in
@@ -31,4 +29,3 @@ class DialogueMenu : public GameMenu
    virtual void HandleInput( std::istream &is);
 };
 
-#endif

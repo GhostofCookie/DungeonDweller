@@ -5,9 +5,9 @@
 /// interacting with an NPC in dialogue.
 ///
 
-#include "GameState.h"
-
 #pragma once
+
+#include "GameState.h"
 
 /// \class DialogueState DialogueState.h
 /// \brief This is the state of the game when the player character is engaged in

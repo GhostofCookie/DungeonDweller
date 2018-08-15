@@ -4,9 +4,9 @@
 /// This is the state of the game when a player character is engaged in combat.
 ///
 
-#include "GameState.h"
-
 #pragma once
+
+#include "GameState.h"
 
 class FightState : public GameState
 {

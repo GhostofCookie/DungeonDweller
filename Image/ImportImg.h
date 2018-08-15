@@ -1,6 +1,6 @@
-//
-// ImportImg.h
-//
+///
+/// ImportImg.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
 ///
@@ -9,7 +9,6 @@
 
 #include <fstream>
 #include "Image.h"
-
 
 /// The DefaultImg class represents a basic square image made of characters
 class ImportImg : public Image

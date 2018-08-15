@@ -4,12 +4,10 @@
 /// This is an abstract class. It is a subclass of Menu, and it will define the
 /// minimal functions that are required by the subclasses of GameMenu.
 
+#pragma once
+
 #include "Menu.h"
 #include <map>
-
-
-#ifndef GAMEMENU_H
-#define GAMEMENU_H
 
 /// \class GameMenu GameMenu.h
 /// \brief An abstract class, this is the base class for the all the in-game
@@ -29,5 +27,3 @@ public:
   /// \param[in,out] is The in-stream operator to read the input.
   virtual void HandleInput( std::istream &is) = 0;
 };
-
-#endif

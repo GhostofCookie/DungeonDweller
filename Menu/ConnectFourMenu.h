@@ -5,12 +5,10 @@
 /// MinigameMenu.
 ///
 
+#pragma once
+
 #include "MinigameMenu.h"
 #include <map>
-
-
-#ifndef CONNECTFOURMENU_H
-#define CONNECTFOURMENU_H
 
 /// \class ConnectFourMenu ConnectFourMenu.h
 /// \brief This is the menu class for the Connect Four minigame.
@@ -35,5 +33,3 @@ class ConnectFourMenu : public virtual MinigameMenu
    int column;
 
 };
-
-#endif

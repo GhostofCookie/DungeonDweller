@@ -3,12 +3,10 @@
 ///
 /// This is the fight class. This is the menu for the player to use when they are engaged in combat.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef FIGHTMENU_H
-#define FIGHTMENU_H
 
 /// \class FightMenu FightMenu.h
 /// \brief This is the menu for the player to use when they are engaged in combat.
@@ -29,4 +27,3 @@ class FightMenu : public GameMenu
   virtual void HandleInput( std::istream &is);
 };
 
-#endif

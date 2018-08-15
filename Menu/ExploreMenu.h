@@ -4,12 +4,10 @@
 /// Derived from GameMenu. This is the menu for the player character to use when
 /// they are exploring rooms in the game.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef EXPLOREMENU_H
-#define EXPLOREMENU_H
 
 /// \class ExploreMenu ExploreMenu.h
 /// \brief This is the menu displayed when the player character is exploring
@@ -31,4 +29,3 @@ class ExploreMenu : public GameMenu
    virtual void HandleInput( std::istream &is);
 };
 
-#endif

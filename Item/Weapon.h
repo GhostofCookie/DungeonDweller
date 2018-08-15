@@ -1,14 +1,13 @@
-//
-// Weapon Class Header File
-//
+///
+/// Weapon Class Header File
+///
 /// \author Rylan Bueckert
 /// \date Oct 25, 2017
 ///
 
-#ifndef WEAPON_H
-#define WEAPON_H
-#include "Item.h"
+#pragma once
 
+#include "Item.h"
 
 /// This class is a abstract base class derived from Item to represent weapons in game
 class Weapon: public Item
@@ -39,4 +38,3 @@ protected:
 	int remainingUses;
 
 };
-#endif

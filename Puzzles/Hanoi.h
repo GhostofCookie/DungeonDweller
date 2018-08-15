@@ -1,9 +1,9 @@
-//
-// hanoi.h
-//
+///
+/// Hanoi.h
+///
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
-//
+///
 
 #pragma once
 
@@ -13,7 +13,6 @@
 #include "../Image/DefaultImg.h"
 #include <stack>
 #include <iostream>
-
 
 ///brief This class contains the mini-game/Puzzle Towers of Hanoi, to be called from the main dugeonDweller program using RunGame();
 class Hanoi: public virtual Puzzle

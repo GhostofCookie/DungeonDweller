@@ -1,11 +1,12 @@
+/// MenuTest.h
+///
 /// \author Tomas Rigaux
 /// \date 8/11/2017
 ///
 /// This is the testing class for Menu.
 ///
 
-#ifndef MENUTEST_H
-#define MENUTEST_H
+#pragma once
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -57,5 +58,3 @@ class MenuTest : public CppUnit::TestFixture
    Menu *menu9 = nullptr;
    std::map < int,std::string > options;
 };
-
-#endif

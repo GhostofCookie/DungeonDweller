@@ -7,7 +7,6 @@
 
 #include "Consumable.h"
 
-
 /// Returns the the actuall value of the consumable (for reading only)
 /// \returns value of the consumable
 int Consumable::Power() const

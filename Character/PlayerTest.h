@@ -1,5 +1,10 @@
-#ifndef PLAYERTEST_h
-#define PLAYERTEST_h
+/// PlayerTest.h
+///
+/// \author Gates Kempenaar
+/// \date 8/11/2017
+///
+
+#pragma once
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -33,5 +38,3 @@ class PlayerTest : public CppUnit::TestFixture
    int keyMod;
    Player T;
 };
-
-#endif

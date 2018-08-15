@@ -1,5 +1,10 @@
-#ifndef ROOMTREE_TEST_H
-#define ROOMTREE_TEST_H
+/// RoomTreeTest.h
+///
+/// \author Rylan Bueckart
+/// \date 8/11/2017
+///
+
+#pragma once
 
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
@@ -47,4 +52,3 @@ class RoomTreeTest : public CppUnit::TestFixture
 	  RoomTree *Tree4;
 
 };
-#endif

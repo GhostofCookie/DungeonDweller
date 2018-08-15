@@ -1,9 +1,9 @@
-//
-// Character.h
-//
+///
+/// Character.h
+///
 /// \author Gates Kempenaar
 /// \date Oct 25, 2017
-//
+///
 
 #pragma once
 
@@ -15,8 +15,6 @@
 #include "../Item/Item.h"
 #include "../Image/ImportImg.h"
 #include <vector>
-
-
 
 class Item;
 class MyConsumable;

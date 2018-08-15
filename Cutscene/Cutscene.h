@@ -3,24 +3,17 @@
 #ifdef	__linux__
 #include <unistd.h>
 #elif _WIN32
-// Place windows unistd.h equivalent.
+#include <Windows.h>
 #endif
 
-// Screen Header
 #include "../Screen/Screen.h"
-// Image Headers
 #include "../Image/Image.h"
 #include "../Image/DefaultImg.h"
 #include "../Image/ImportImg.h"
-// Room Header
 #include "../Room/Room.h"
-// Misc Headers
 #include <iostream>
 #include <ctime>
 #include <vector>
-
-
-
 
 /// \brief This class runs cutscenes that improve the quality of room transitions
 class Cutscene
@@ -32,8 +25,6 @@ class Cutscene
       int x = 0;
    };
 
-
-   
   private:
    /// screen to draw the cutscene on
    Screen screen;
@@ -104,9 +95,7 @@ class Cutscene
    /// \param[in] originX the x coordinate to begin from
    /// \param[in] count the amount to move by
    void MoveRight(const int originY, const int originX, const int count);
-   
-   
-   
+
   public:
    /// Constructor
    Cutscene(ImportImg image = ImportImg("../DD_Art/Player/DD_Player.txt"),

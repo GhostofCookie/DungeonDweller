@@ -5,8 +5,8 @@
 /// \date Oct 25, 2017
 ///
 
-#ifndef ITEM_H
-#define ITEM_H
+#pragma once
+
 #include <string>
 
 class Character;
@@ -52,4 +52,3 @@ class Item
    ///Name of the item
    std::string itemName;
 };
-#endif

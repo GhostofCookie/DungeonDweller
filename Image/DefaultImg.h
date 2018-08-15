@@ -1,6 +1,6 @@
-//
-// DefaultImg.h
-//
+///
+/// DefaultImg.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
 ///
@@ -8,7 +8,6 @@
 #pragma once
 
 #include "Image.h"
-
 
 /// The DefaultImg class represents a basic square image made of characters
 class DefaultImg : public Image

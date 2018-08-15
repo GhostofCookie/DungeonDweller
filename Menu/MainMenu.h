@@ -3,12 +3,10 @@
 ///
 /// This is the menu for the player to use when they are either not in the game or have died and need to restart or quit.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef MAINMENU_H
-#define MAINMENU_H
 
 /// \class MainMenu MainMenu.h
 /// \brief This is the menu for the player to use when they are either not in the game or have died and need to restart or quit.
@@ -30,5 +28,3 @@ public:
   private:
   Menu *menu;
 };
-
-#endif

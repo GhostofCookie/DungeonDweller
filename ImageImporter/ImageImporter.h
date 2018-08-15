@@ -1,23 +1,19 @@
-//
-// ImageImporter.h
-//
+///
+/// ImageImporter.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
 ///
 
-#ifndef ImageImporter_h
-#define ImageImporter_h
+#pragma once
 
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <map>
 #include <vector>
-//Image Headers
 #include "../Image/Image.h"
 #include "../Image/ImportImg.h"
-
-
 
 /// \brief The ImageImporter class can import multiple files and convert them into
 /// Images to use at a later time
@@ -42,4 +38,3 @@ class ImageImporter
    std::map<char, std::vector<ImportImg>> collection;
 };
 
-#endif /* ImageImporter_h */

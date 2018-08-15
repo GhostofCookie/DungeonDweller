@@ -6,7 +6,15 @@
 
 #include "InventoryState.h"
 #include "../Menu/CharacterMenu.h"
-
+//#include "../Menu/ExploreMenu.h"
+#include "../Cutscene/Cutscene.h"
+#include "../Room/Room.h"
+#include "../ImageImporter/ImageImporter.h"
+#include "../Image/Image.h"
+#include "../Image/DefaultImg.h"
+#include "../Image/ImportImg.h"
+#include <ctime>
+#include <iostream>
 
 /// This is the the default constructor.
 InventoryState::InventoryState(Player *p)

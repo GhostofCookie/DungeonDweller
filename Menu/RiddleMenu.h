@@ -5,12 +5,10 @@
 /// MinigameMenu.
 ///
 
+#pragma once
+
 #include "MinigameMenu.h"
 #include <map>
-
-
-#ifndef RIDDLEMENU_H
-#define RIDDLEMENU_H
 
 /// \class RiddleMenu RiddleMenu.h
 /// \brief This is the menu class for the Riddle minigame.
@@ -35,5 +33,3 @@ class RiddleMenu : public virtual MinigameMenu
    int input;
 
 };
-
-#endif

@@ -4,12 +4,10 @@
 /// Derived from GameMenu. This is the menu for the player to choose their
 /// character.
 
+#pragma once
+
 #include "GameMenu.h"
 #include <map>
-
-
-#ifndef CHARACTERMENU_H
-#define CHARACTERMENU_H
 
 /// \class ExploreMenu ExploreMenu.h
 /// \brief This is the menu displayed when the player character is being chosen
@@ -31,4 +29,3 @@ class CharacterMenu : public GameMenu
    virtual void HandleInput( std::istream &is);
 };
 
-#endif

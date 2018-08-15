@@ -1,12 +1,12 @@
-//
-// tic_tac_toe.h
-//
+///
+/// TicTacToe.h
+///
 /// \author Tyler Siwy
 /// \date Oct 20, 2017
-//
+///
 
-#ifndef TIC_TAC_TOE_H
-#define TIC_TAC_TOE_H
+#pragma once
+
 #include "Puzzle.h"
 #include "../Menu/TicTacToeMenu.h"
 #include "../Screen/Screen.h"
@@ -120,4 +120,3 @@ class TicTacToe: public virtual Puzzle
 
    ///TicTacToeMenu tttMenu;
 };
-#endif

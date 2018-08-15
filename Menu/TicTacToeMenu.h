@@ -5,11 +5,9 @@
 /// MinigameMenu.
 ///
 
+#pragma once
+
 #include "MinigameMenu.h"
-
-
-#ifndef TICTACTOEMENU_H
-#define TICTACTOEMENU_H
 
 /// \class TicTacToeMenu TicTacToeMenu.h
 /// \brief This is the menu class for the Tic Tac Toe minigame.
@@ -45,4 +43,3 @@ class TicTacToeMenu : public virtual MinigameMenu
 
 };
 
-#endif

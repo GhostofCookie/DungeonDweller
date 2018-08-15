@@ -1,9 +1,9 @@
-//
-// Image.h
-//
+///
+/// Image.h
+///
 /// \author Reid Paulhus
 /// \date Oct 20, 2017
-//
+///
 
 #pragma once
 
@@ -11,8 +11,6 @@
 #include <cassert>
 #include <vector>
 #include "../Screen/Screen.h"
-
-
 
 /// \brief The Image class represents a 2D std::vector that displays an image on screen
 class Image
@@ -29,8 +27,6 @@ class Image
    /// \param[in] num the number to check
    bool IsEven(const int &num) const;
 
-
-   
   public:
    /// The image - publically availiable to allow access to locations
    std::vector<std::vector<char>> Img;
