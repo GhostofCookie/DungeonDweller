@@ -6,7 +6,6 @@
 
 #include "InventoryState.h"
 #include "../Menu/CharacterMenu.h"
-//#include "../Menu/ExploreMenu.h"
 #include "../Cutscene/Cutscene.h"
 #include "../Room/Room.h"
 #include "../ImageImporter/ImageImporter.h"
@@ -61,11 +60,11 @@ void InventoryState::Get()
    switch(menu->GetOption())
    {
       case 'q':
-	 currState = 'E';
+	 currState = EXPLORE;
 	 return;
 	 break;
       default:
-	 currState = 'I';
+	 currState = INVENTORY;
 	 return;
 	 break;
    }

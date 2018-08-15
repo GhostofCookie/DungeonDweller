@@ -10,7 +10,7 @@
 #ifdef __linux__
 #include <unistd.h>
 #elif _WIN32
-#include <Windows.h>
+#include <stdlib.h>
 #else
 #endif
 

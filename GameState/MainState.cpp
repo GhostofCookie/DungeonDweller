@@ -20,7 +20,7 @@ void MainState::Set()
 {
    menu->AddOption('p',"Play Game");
    if(tolower(menu->GetOption()) == 'p')
-     currState = 'E';
+     currState = MAIN;
    menu->AddOption('q', "Quit Game");
 }
 

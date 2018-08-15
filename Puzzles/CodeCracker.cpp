@@ -28,7 +28,11 @@ void CodeCracker:: RunGame(Character *player)
    int userInput, currentRiddle;
    RiddleMenu GameMenu;
    
+#ifdef __linux__
    system("clear");
+#elif _WIN32
+   system("CLS");
+#endif
    ImportRiddles();
 
    InitialPrompt(GameMenu);
@@ -36,7 +40,11 @@ void CodeCracker:: RunGame(Character *player)
    PuzzleEnd = false;
    while(PuzzleEnd == false)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       currentRiddle = UnusedRandomRiddle();
       //SetRiddleInMenu(currentRiddle, GameMenu);
       std::cout << question.at(currentRiddle);

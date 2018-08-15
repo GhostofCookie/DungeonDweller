@@ -39,7 +39,11 @@ void TicTacToe::RunGame(Character *player)
    TicTacToeMenu ticTacToeGameMenu;
    while(PuzzleEnd == false)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       std::cout << TicTacToeScreen << std::endl;
       SetCurrentPlayersChar(currentPlayer);
       if(currentPlayer % 2 == 0)
@@ -324,7 +328,11 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
    ///the game for another round until the player has won.
    if(currentPlayer == -1)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       std::cout << TicTacToeScreen << std::endl;
       menu.SetQuery("There has been a tie, so get ready to play again!");
       menu.OutputMenu();
@@ -333,7 +341,11 @@ void TicTacToe::EndGamePrompt(int &currentPlayer, TicTacToeMenu menu, Character 
    }     
    if(currentPlayer % 2 == 0)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       std::cout << TicTacToeScreen;
       menu.SetQuery("The Tic Tac Toe champion has defeated you! -5 HP.");
       menu.OutputMenu();

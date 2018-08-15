@@ -71,7 +71,11 @@ void Cutscene::MoveUp(const int originY, const int originX, const int d)
       img.ShiftUp(1);
       n++;
 
+	#ifdef __linux__
       system("clear");
+	#elif _WIN32
+	  system("CLS");
+	#endif
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -101,7 +105,11 @@ void Cutscene::MoveDown(const int originY, const int originX, const int d)
       img.ShiftDown(screen, 1);
       n++;
 
-      system("clear");
+		#ifdef __linux__
+			  system("clear");
+		#elif _WIN32
+			  system("CLS");
+		#endif
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -131,7 +139,11 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
       img.ShiftLeft(1);
       n++;
 
-      system("clear");
+		#ifdef __linux__
+			  system("clear");
+		#elif _WIN32
+			  system("CLS");
+		#endif
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -161,7 +173,11 @@ void Cutscene::MoveRight(const int originY, const int originX, const int d)
       img.ShiftRight(screen, 1);
       n++;
 
-      system("clear");
+		#ifdef __linux__
+			  system("clear");
+		#elif _WIN32
+			  system("CLS");
+		#endif
       screen.Erase();
       room.Draw(screen);
       img.Draw(screen);
@@ -492,7 +508,11 @@ void Cutscene::Intro()
    int i = 0;
    while(i++ < scr.GetRows() / 2 + title.GetRows())
    {
-      system("clear");
+	#ifdef __linux__
+			system("clear");
+	#elif _WIN32
+			system("CLS");
+	#endif
       
       title.Draw(scr);
       std::cout << scr;
@@ -512,7 +532,11 @@ void Cutscene::Intro()
    // iterate through the char array printing each character one at a time
    for(unsigned int i = 0; i < play.length(); i++)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
 
       title.Draw(scr);
       scr.Set(scr.GetRows() - play.length() / 2, playX++, play[i]);
@@ -527,7 +551,11 @@ void Cutscene::Intro()
    // iterate through the char array printing each character one at a time
    for(unsigned int i = 0; i < quit.length(); i++)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
 
       title.Draw(scr);
       scr.Set(scr.GetRows() - quit.length() / 2, quitX++, quit[i]);
@@ -553,7 +581,11 @@ void Cutscene::Outro()
    int i = 0;
    while(i++ < scr.GetRows() / 2 + credits.GetRows())
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       
       credits.Draw(scr);
       std::cout << scr;
@@ -591,7 +623,11 @@ void Cutscene::MonsterEncounter()
 	    scr.Set(j, right - k, '*');
 	 }
       }
-      system("clear");
+#ifdef __linux__
+	  system("clear");
+#elif _WIN32
+	  system("CLS");
+#endif
       std::cout << scr;
 	#ifdef __linux__
       usleep(20000);
@@ -614,7 +650,11 @@ void Cutscene::MonsterEncounter()
 	    scr.Set(j, right - k, ' ');
 	 }
       }
-      system("clear");
+#ifdef __linux__
+	  system("clear");
+#elif _WIN32
+	  system("CLS");
+#endif
       std::cout << scr;
 	#ifdef __linux__
       usleep(20000);

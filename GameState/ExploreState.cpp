@@ -22,7 +22,7 @@ ExploreState::ExploreState()
    roomPtr = new Room(import->collection,0);
    roomTree = new RoomTree(roomPtr);
    player = new Player(20,0,"Howard","Computer Scientist",100,10);
-   currState = 'E';
+   currState = EXPLORE;
 }
 
 /// Deconstructor
@@ -125,7 +125,7 @@ void ExploreState::Get()
 
 
       SetState((roomTree->At())->GetType());
-      if(currState != 'M')
+      if(currState != MAIN)
       {
 	 // Print the menu and handle user input
 	 menu->OutputMenu();
@@ -264,7 +264,7 @@ void ExploreState::RunInput(char n)
 
 	    // Trade Option
 	 case 't':
-	    currState = 'S';
+	    currState = TRADE;
 	    return;
 	    break;
 
@@ -273,10 +273,10 @@ void ExploreState::RunInput(char n)
 	    // check to ensure room does not exist before creating new one
 	    if(!roomTree->At()->IsComplete())
 	    {
-	       currState = 'P';
+	       currState = PUZZLE;
 	       roomTree->At()->complete = true;
 	    }
-	    else currState = 'E';
+	    else currState = EXPLORE;
 	    return;
 	    break;
 
@@ -287,22 +287,22 @@ void ExploreState::RunInput(char n)
 	    std::cin >> ch;
 	    if(tolower(ch) == 'y')
 	    {
-	       currState = 'M';
+	       currState = MAIN;
 	       return;
 	    }
 	    else
-	       currState = 'E';
+	       currState = EXPLORE;
 	    return;
 	    break;
 
 	    // Inventory Option
 	 case 'i':
-	    currState = 'I';
+	    currState = INVENTORY;
 	    return;
 	    break;
 
 	 default:
-	    currState = 'E';
+	    currState = EXPLORE;
 	    return;
 	    break;
       };
@@ -329,7 +329,7 @@ void ExploreState::SetState(int n)
 	  #ifdef __linux__
 	  usleep(3000000);
 	  #endif
-      currState = 'M';
+      currState = MAIN;
       return;
 
    }
@@ -339,7 +339,7 @@ void ExploreState::SetState(int n)
 	 case 0:
 	 case 1:
 	 case 3:
-	    currState = 'E';
+	    currState = EXPLORE;
 	    break;
 
 	    // fight state
@@ -353,14 +353,14 @@ void ExploreState::SetState(int n)
 	       (roomTree->At())->GetNpc().Img().AlignCenter(*screen);
 	       (roomTree->At())->GetNpc().Img().ShiftRight(*screen,10);
 	       (roomTree->At())->GetNpc().Img().Draw(*screen);
-	       //currState = 'F';
+	       //currState = COMBAT;
 	    }
-	    else currState = 'E';
+	    else currState = EXPLORE;
 	    return;
 	    break;
 
 	 default:
-	    currState = 'E';
+	    currState = EXPLORE;
 	    return;
       }
    }

@@ -50,11 +50,19 @@ void MemoryMatch::RunGame(Character *player)
    int inputX1, inputY1, inputX2, inputY2;
    BoardSetup();
    SaveBoardToScreen();
+#ifdef __linux__
    system("clear");
+#elif _WIN32
+   system("CLS");
+#endif
    PeekAtBoard(6);
    while(PuzzleEnd ==false)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       std::cout << MemoryMatchScreen;
       MemoryMatchMenu.OutputMenu();
       MemoryMatchMenu.HandleInput(std::cin);
@@ -324,7 +332,11 @@ void MemoryMatch::PeekAtBoard(int lengthInSeconds)
    ///Output the game for three seconds
    std::cout << MemoryMatchScreen << std::endl; 
    Puzzle::SecondDelay(lengthInSeconds);
+#ifdef __linux__
    system("clear");
+#elif _WIN32
+   system("CLS");
+#endif
    
    for(int i = 0; i < boardSize; i++)
    {

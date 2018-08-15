@@ -17,21 +17,27 @@ using namespace std;
 int main()
 {
    GameState *state = new MainState();
-   //define character selection here
-   GameState *baseState = new ExploreState();//ExploreState(player);
+
+   // TODO: define character selection here.
+
+   GameState *baseState = new ExploreState();
    Player *player = (*baseState).GetPlayer();
    while(true) 
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       state->Set();
       
       switch(state->GetState())
       {	
-	 case 'E':
+	 case EXPLORE:
 	    if(player->GetStamina() <= 0 || player->GetHealth() <= 0 )
 	    {
 	       delete player;
-	       //   CreatePlayer(player);
+	       // CreatePlayer(player);
 	       baseState = nullptr;
 	       delete baseState;
 	       state = nullptr;
@@ -42,49 +48,42 @@ int main()
 	    }
 	    else
 	       state = new ExploreState(*baseState);
- 
 	    break;
-	 case 'P':
+
+	 case PUZZLE:
 	    state = nullptr;
 	    delete state;
 	    state = new PuzzleState(player);
 	    break;
 	    
-	 case 'F':
+	 case COMBAT:
 	    state = nullptr;
 	    delete state;
 	    state = new FightState(player);
 	    break;
 	    
-	 case 'S':
+	 case TRADE:
 	    state = nullptr;
 	    delete state;
 	    state = new TradeState(player);
 	    break;
 	    
-/*	 case 'M':
-	    state = nullptr;
-	    delete state;
-	    state = new MainState();
-	    break;*/
-	    
-	 case 'I':
+	 case INVENTORY:
 	    state = nullptr;
 	    delete state;
 	    state = new InventoryState(player);
 	    break;
-	    
+	 
+	 case MAIN:
 	 default:
 	    state = nullptr;
 	    delete state;
 	    state = new MainState();
 
       }
-
       state->Set();
       state->Get();
    }
-   
    delete player;
    delete state;
    delete baseState;

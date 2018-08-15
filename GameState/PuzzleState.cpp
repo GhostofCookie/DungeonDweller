@@ -30,6 +30,6 @@ void PuzzleState::Get()
   auto it = puzzles.begin();
   
   (*it)->RunGame(player);
-  currState = 'E';
+  currState = EXPLORE;
   
 }

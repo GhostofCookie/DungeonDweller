@@ -21,6 +21,9 @@
 #include "../Item/Item.h"
 #include "../Item/Weapon.h"
 #include "../Item/MyWeapons.h"
+#include <iomanip>
+
+enum States { MAIN, PUZZLE, INVENTORY, COMBAT, TRADE, DIALOGUE, EXPLORE};
 
 class GameState
 {
@@ -30,7 +33,7 @@ class GameState
   public:
    /// Default constructor.
    GameState(Player *p=nullptr):menu{nullptr},screen{nullptr}
-   ,currState{'M'},roomTree{nullptr}
+   ,currState{MAIN},roomTree{nullptr}
    ,player{p}{}
    /// Default destructor.
    virtual ~GameState(){}
@@ -40,7 +43,7 @@ class GameState
    virtual void Get() = 0;
 
    /// Returns the current state.
-   char GetState() const { return currState; }
+   States GetState() const { return currState; }
    /// Returns the current player.
    Player *GetPlayer() const { return player; }
    /// Returns the room tree.
@@ -56,10 +59,21 @@ class GameState
    ///< Pointer to the screen.
    Screen *screen;
    ///< Defines which gamestate will be used.
-   char currState;
+   States currState;
    ///< Allows access from different states to check whether room is complete.
    RoomTree *roomTree;
    ///< Pointer to the player character.
    Player *player;
+
+   /// Print stats.
+   void GetStatistics()
+   {
+	   // print the player's informaton and the screen
+	   std::cout << std::setfill(' ') << "[N]Name: " << player->GetName();
+	   std::cout << std::setw(20) << "[R]Race: " << player->GetRace() << std::endl;
+	   std::cout << "[$]Gold: " << player->GetGold();
+	   std::cout << std::setw(27) << "[S]Stamina: " << player->GetStamina();
+	   std::cout << std::setw(27) << std::right << "[+]Health: " << player->GetHealth() << std::right << std::endl;
+   }
    
 };

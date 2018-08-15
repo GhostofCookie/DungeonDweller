@@ -46,7 +46,11 @@ void Hanoi:: RunGame(Character *player)
 
    while(PuzzleEnd == false)
    {
-      system("clear");
+#ifdef __linux__
+	   system("clear");
+#elif _WIN32
+	   system("CLS");
+#endif
       std::cout << HanoiScreen;
       HanoiGameMenu.OutputMenu();
       HanoiGameMenu.HandleInput(std::cin);

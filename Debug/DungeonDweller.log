@@ -1,1 +1,14 @@
-﻿  DungeonDweller.vcxproj -> C:\Users\tomas\Documents\Coding Projects\Kodika\Debug\DungeonDweller.exe
+﻿  Cutscene.cpp
+  DungeonDweller.cpp
+  ExploreState.cpp
+  InventoryState.cpp
+  MainState.cpp
+  PuzzleState.cpp
+  CodeCracker.cpp
+  ConnectFour.cpp
+  Hanoi.cpp
+  MemoryMatch.cpp
+  Puzzle.cpp
+  TicTacToe.cpp
+  Generating Code...
+  DungeonDweller.vcxproj -> C:\Users\tomas\Documents\Coding Projects\Kodika\Debug\DungeonDweller.exe

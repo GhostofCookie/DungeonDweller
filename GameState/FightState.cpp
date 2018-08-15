@@ -20,5 +20,5 @@ void FightState::Set()
 /// Outpouts the layout of the game.
 void FightState::Get()
 {
-
+	currState = EXPLORE;
 }
