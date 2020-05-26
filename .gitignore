@@ -10,6 +10,9 @@
 *.user
 *.vcxproj
 *.vcxproj.filters
-feedback/
-logs/
+*.gc*
+
 Debug/
+x64/
+DungeonDweller/Debug/
+DungeonDweller/x64/

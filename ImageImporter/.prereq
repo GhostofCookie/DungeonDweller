@@ -1,8 +1,0 @@
-main.o: main.cpp ImageImporter.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/ImportImg.h
-ImageImporter.o: ImageImporter.cpp ImageImporter.h ../Image/Image.h \
- ../Image/../Screen/Screen.h ../Image/ImportImg.h
-Image.o: ../Image/Image.cpp ../Image/Image.h ../Image/../Screen/Screen.h
-ImportImg.o: ../Image/ImportImg.cpp ../Image/ImportImg.h ../Image/Image.h \
- ../Image/../Screen/Screen.h
-Screen.o: ../Screen/Screen.cpp ../Screen/Screen.h
