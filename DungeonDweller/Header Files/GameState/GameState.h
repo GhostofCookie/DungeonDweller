@@ -8,7 +8,7 @@
 #pragma once
 
 #include "Menu.h"
-#include "Screen.h"
+#include "Viewport.h"
 #include "MainMenu.h"
 #include "FightMenu.h"
 #include "ExploreMenu.h"
@@ -56,8 +56,8 @@ public:
 	/** Returns menu. */
 	Menu* GetMenu() const { return menu; }
 
-	/** Returns the screen. */
-	std::shared_ptr<Screen> GetScreen() const { return screen; }
+	/** Returns the viewport. */
+	std::shared_ptr<Viewport> GetScreen() const { return viewport; }
 
 protected:
 	/** Pointer to the menu. */
@@ -72,6 +72,6 @@ protected:
 	/** Pointer to the player character. */
 	std::shared_ptr<Player> player;
 
-	/** Pointer to the screen. */
-	std::shared_ptr<Screen> screen;
+	/** Pointer to the viewport. */
+	std::shared_ptr<Viewport> viewport;
 };

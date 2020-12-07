@@ -83,9 +83,9 @@ class Character
    virtual ImportImg& Img() { return img; };
 
    /** Draw the player
-    * @param[in] screen, a reference to the screen
+    * @param[in] viewport, a reference to the viewport
     */
-   virtual void Draw(Screen &screen);
+   virtual void Draw(Viewport &viewport);
 
    /** Helper function for the destructor to delete inventory items */
    void EmptyInventory();

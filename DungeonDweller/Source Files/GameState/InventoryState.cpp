@@ -14,11 +14,11 @@
 #include <ctime>
 #include <iostream>
 
-InventoryState::InventoryState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr)
+InventoryState::InventoryState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view)
 {
 	menu = new CharacterMenu();
 	player = p;
-	screen = scr;
+	viewport = view;
 }
 
 InventoryState::~InventoryState()

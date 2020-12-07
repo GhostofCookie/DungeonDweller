@@ -9,7 +9,7 @@
 
 #include "Puzzle.h"
 #include "TicTacToeMenu.h"
-#include "Screen.h"
+#include "Viewport.h"
 #include "DefaultImg.h"
 #include <iostream>
 
@@ -37,7 +37,7 @@ private:
 	/** Sets the board up for the beginning of the game, plastd::cing the grid */
 	void BoardSetup();
 
-	/** Displays the screen containing the gameboard
+	/** Displays the viewport containing the gameboard
 	 * @param[in] inputX, the X-coordinate of the selection.
 	 * @param[in] inputY, the Y-coordinate of the selection.
 	 */
@@ -129,6 +129,6 @@ private:
 	/** TicTacToeScreen stores and outputs the contents of the game to the
 	 * terminal.
 	 */
-	Screen TicTacToeScreen;
+	Viewport TicTacToeScreen;
 
 };

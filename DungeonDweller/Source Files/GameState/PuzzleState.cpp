@@ -5,10 +5,10 @@
 #include "MemoryMatch.h"
 #include "ConnectFour.h"
 
-PuzzleState::PuzzleState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr)
+PuzzleState::PuzzleState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view)
 {
 	player = p;
-	screen = scr;
+	viewport = view;
 }
 
 void PuzzleState::Set()

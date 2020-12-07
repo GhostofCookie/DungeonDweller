@@ -195,7 +195,7 @@ void MemoryMatch::RandomlyInsertIntoTable(char symbol)
 void MemoryMatch::SaveBoardToScreen()
 {
 	// topBoundand leftBound should set the board centered inside
-	// the screen object.
+	// the viewport object.
 	int screenBoardSize = 9, topBound = 11, leftBound = 45;
 	for (int i = 0; i < screenBoardSize; i++)
 	{
@@ -260,7 +260,7 @@ void MemoryMatch::FlipTwoChars(int inputX, int inputY)
 
 void MemoryMatch::PeekAtBoard(int lengthInSeconds)
 {
-	// top left coordinate of the game board on the screen
+	// top left coordinate of the game board on the viewport
 	int topBound = 11, leftBound = 45;
 	for (int i = 0; i < boardSize; i++)
 	{
@@ -291,7 +291,7 @@ void MemoryMatch::PeekAtBoard(int lengthInSeconds)
 
 void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 {
-	// top left coordinate of the game board on the screen
+	// top left coordinate of the game board on the viewport
 	int topBound = 11, leftBound = 45;
 
 	// Flip the two selected chars, first check if they have been previously
@@ -305,7 +305,7 @@ void MemoryMatch::Peek(int inputX1, int inputY1, int inputX2, int inputY2)
 	std::cout << MemoryMatchScreen << std::endl;
 	Puzzle::SecondDelay(3);
 
-	// clear the firstand second symbol off of the screen after 3 seconds, only
+	// clear the firstand second symbol off of the viewport after 3 seconds, only
 	// if they have not previously been matched
 	if (!(IsCharAlreadyMatched(inputX1, inputY1)))
 		MemoryMatchScreen.Set(((inputY1 * 2) + 1 + topBound)

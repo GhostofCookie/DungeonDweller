@@ -6,10 +6,10 @@
 
 #include "FightState.h"
 
-FightState::FightState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr)
+FightState::FightState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view)
 {
 	player = p;
-	screen = scr;
+	viewport = view;
 }
 
 void FightState::Set()

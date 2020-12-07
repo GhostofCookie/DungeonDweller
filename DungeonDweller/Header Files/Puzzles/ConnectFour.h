@@ -9,15 +9,12 @@
 
 #ifdef __linux__
 #include <unistd.h>
-#elif _WIN32
-#include<Windows.h>
-#else
 #endif
 
 #include <ctime>
 #include "Puzzle.h"
 #include "ConnectFourMenu.h"
-#include "Screen.h"
+#include "Viewport.h"
 #include "DefaultImg.h"
 
 /** This class contains the mini-game/puzzle Connect Four */
@@ -91,7 +88,7 @@ class ConnectFour: virtual public Puzzle
     */
    bool TieGameCheck(int &currentPlayer);
 
-   /** Sets the board up for the beginning of the game, plastd::cing them in screen */
+   /** Sets the board up for the beginning of the game, plastd::cing them in viewport */
    void BoardSetup();
    
    /** Prompts the player and handles the end of the game appropriately.
@@ -99,8 +96,7 @@ class ConnectFour: virtual public Puzzle
     * @param[in] menu, the menu used to output stuffs
     * @param[in] player, a pointer to the player usd to modify stats
     */
-   void EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu
-		      , Character *player);
+   void EndGamePrompt(int &currentPlayer, ConnectFourMenu &menu, Character *player);
    
    /** Resets the game for another round in the event that the AI wins. */
    void ResetGame(int &currentPlayer);
@@ -111,10 +107,10 @@ class ConnectFour: virtual public Puzzle
    void SetCurrentPlayerChar(int currentPlayer);
 
    /** ConnectFourScreen stores and outputs the contents of the game to the terminal */
-   Screen ConnectFourScreen;
+   Viewport ConnectFourScreen;
    
    /** The std::vector which stores the gameboards chars. */
-   std::vector < std::vector <char> > grid;
+   std::vector<std::vector<char>> grid;
 
    /** currentPlayerChar keeps track of which character to insert depending on
     * whos turn it is.

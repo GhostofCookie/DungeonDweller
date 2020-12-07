@@ -6,7 +6,7 @@
  */
 
 #include "Menu.h"
-#include "Screen.h"
+#include "Viewport.h"
 #include <iostream>
 #include <conio.h>
 

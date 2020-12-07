@@ -5,7 +5,7 @@
  *     =======     (7)
  *   ===========   (11)
  * =============== (15)
- * screen is 101x33
+ * viewport is 101x33
  */
 
 #include "Hanoi.h"
@@ -61,7 +61,7 @@ void Hanoi::DiscSetup()
 	DefaultImg disc3(1, 11, '=');
 	DefaultImg disc4(1, 15, '=');
 
-	// Draw to the game screen and then put the discs into the first stack to
+	// Draw to the game viewport and then put the discs into the first stack to
 	// start the game.
 	int bottom = 15, leftPeg = 34;
 	disc4.AlignCenter(HanoiScreen);

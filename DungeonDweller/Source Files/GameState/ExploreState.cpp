@@ -13,11 +13,11 @@
 #include <stdexcept>
 #include <conio.h>
 
-ExploreState::ExploreState(std::shared_ptr<Player> player, std::shared_ptr<Screen> scr)
+ExploreState::ExploreState(std::shared_ptr<Player> player, std::shared_ptr<Viewport> view)
 {
 	srand((unsigned int)time(NULL));
 
-	this->screen = scr;
+	this->viewport = view;
 	this->player = player;
 	this->currState = States::EXPLORE;
 
@@ -40,7 +40,7 @@ ExploreState::ExploreState(const ExploreState& obj)
 	roomPtr = obj.roomPtr;
 	roomTree = obj.roomTree;
 	menu = obj.menu;
-	screen = obj.screen;
+	viewport = obj.viewport;
 	player = obj.player;
 }
 
@@ -50,7 +50,7 @@ ExploreState& ExploreState::operator=(const ExploreState& obj)
 	roomPtr = obj.roomPtr;
 	roomTree = obj.roomTree;
 	menu = obj.menu;
-	screen = obj.screen;
+	viewport = obj.viewport;
 	player = obj.player;
 
 	return *this;
@@ -73,24 +73,24 @@ void ExploreState::Set()
 
 void ExploreState::Get()
 {
-	screen->Erase();
+	viewport->Erase();
 
-	// Align the current room to the screen and print
-	(roomTree->At())->AlignCenter(*screen);
-	(roomTree->At())->Draw(*screen);
+	// Align the current room to the viewport and print
+	(roomTree->At())->AlignCenter(*viewport);
+	(roomTree->At())->Draw(*viewport);
 
-	player->Img().AlignCenter(*screen);
-	player->Img().Draw(*screen);
+	player->Img().AlignCenter(*viewport);
+	player->Img().Draw(*viewport);
 
-	// Draw the npc to the screen if there is one
+	// Draw the npc to the viewport if there is one
 	if ((roomTree->At())->GetType() > 0)
 	{
-		(roomTree->At())->GetNpc().Img().AlignCenter(*screen);
-		(roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
-		(roomTree->At())->GetNpc().Img().Draw(*screen);
+		(roomTree->At())->GetNpc().Img().AlignCenter(*viewport);
+		(roomTree->At())->GetNpc().Img().ShiftRight(*viewport, 10);
+		(roomTree->At())->GetNpc().Img().Draw(*viewport);
 	}
 
-	std::cout << screen;
+	std::cout << viewport;
 
 	SetState((roomTree->At())->GetType());
 	if (currState != States::MAIN)
@@ -104,14 +104,14 @@ void ExploreState::Get()
 
 void ExploreState::RunInput(char n)
 {
-	Cutscene anim = Cutscene(screen);
+	Cutscene anim = Cutscene(viewport);
 
 	if (n != '\0')
 	{
 		switch (n)
 		{
 		case 'w':
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.ExitUp();
 
 			// check to ensure room does not exist before creating new one
@@ -127,7 +127,7 @@ void ExploreState::RunInput(char n)
 				throw std::runtime_error("Room error:" + temp);
 			}
 
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.EnterDown();
 
 			// lower the stamina for moving
@@ -136,7 +136,7 @@ void ExploreState::RunInput(char n)
 
 			// Move Left
 		case 'a':
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.ExitLeft();
 
 			// check to ensure room does not exist before creating new one
@@ -152,7 +152,7 @@ void ExploreState::RunInput(char n)
 				throw std::runtime_error("Room error:" + temp);
 			}
 
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.EnterRight();
 
 			// lower the stamina for moving
@@ -161,7 +161,7 @@ void ExploreState::RunInput(char n)
 
 			// Move Down
 		case 's':
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.ExitDown();
 
 			// check to ensure room does not exist before creating new one
@@ -178,7 +178,7 @@ void ExploreState::RunInput(char n)
 				//throw std::runtime_error("Room Error: " + ia.what);
 			}
 
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.EnterUp();
 
 			// lower the stamina for moving
@@ -187,7 +187,7 @@ void ExploreState::RunInput(char n)
 
 			// Move Right
 		case 'd':
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.ExitRight();
 
 			// check to ensure room does not exist before creating new one
@@ -204,7 +204,7 @@ void ExploreState::RunInput(char n)
 				//throw std::runtime_error("Room Error: " + ia.what);
 			}
 
-			anim = Cutscene(screen, player->Img(), roomTree->At()->GetImage(), roomTree->At());
+			anim = Cutscene(viewport, player->Img(), roomTree->At()->GetImage(), roomTree->At());
 			anim.EnterLeft();
 
 			// lower the stamina for moving
@@ -238,7 +238,7 @@ void ExploreState::RunInput(char n)
 			if (tolower(ch) == 'y')
 			{
 				currState = States::MAIN;
-				std::cout << screen;
+				std::cout << viewport;
 				return;
 			}
 			else
@@ -260,7 +260,7 @@ void ExploreState::RunInput(char n)
 
 void ExploreState::SetState(int n)
 {
-	Cutscene c = Cutscene(screen, player->Img(), (roomTree->At()->GetImage()), roomTree->At());
+	Cutscene c = Cutscene(viewport, player->Img(), (roomTree->At()->GetImage()), roomTree->At());
 
 	// Quit the game
 	if (n == 'q' || player->GetHealth() <= 0 || player->GetStamina() <= 0)
@@ -288,10 +288,10 @@ void ExploreState::SetState(int n)
 				roomTree->At()->complete = true;
 				// sets the monster to dead and sets him to a location
 				(roomTree->At())->GetNpc().Img() = ImportImg(import->collection['m'][1]);
-				(roomTree->At())->GetNpc().Img().AlignCenter(*screen);
-				(roomTree->At())->GetNpc().Img().ShiftRight(*screen, 10);
-				(roomTree->At())->GetNpc().Img().Draw(*screen);
-				//std::cout << screen;
+				(roomTree->At())->GetNpc().Img().AlignCenter(*viewport);
+				(roomTree->At())->GetNpc().Img().ShiftRight(*viewport, 10);
+				(roomTree->At())->GetNpc().Img().Draw(*viewport);
+				//std::cout << viewport;
 				//currState = States::COMBAT;
 			}
 			else currState = States::EXPLORE;

@@ -82,7 +82,7 @@ void TicTacToe::BoardSetup()
 			if (i % 2 == 0)
 			{
 				// topBoundand leftBound should set the board centered inside
-				// the screen object.
+				// the viewport object.
 				TicTacToeScreen.Set(topBound + i, leftBound + j, '-');
 			}
 			else
@@ -90,13 +90,13 @@ void TicTacToe::BoardSetup()
 				if (j % 2 != 0)
 				{
 					// topBoundand leftBound should set the board centered inside
-					// the screen object.
+					// the viewport object.
 					TicTacToeScreen.Set(topBound + i, leftBound + j, ' ');
 				}
 				else
 				{
 					// topBoundand leftBound should set the board centered inside
-					// the screen object.
+					// the viewport object.
 					TicTacToeScreen.Set(topBound + i, leftBound + j, '|');
 				}
 			}

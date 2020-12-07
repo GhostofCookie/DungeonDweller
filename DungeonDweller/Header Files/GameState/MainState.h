@@ -17,7 +17,7 @@ class MainState : public GameState
 {
   public:
    /** Default constructor */
-   MainState(std::shared_ptr<Screen> scr);
+   MainState(std::shared_ptr<Viewport> view);
    
    /** Sets the layout of the game. */
    void Set();

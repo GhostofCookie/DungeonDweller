@@ -17,7 +17,7 @@ class TradeState : public GameState
 {
   public:
    /** Default constructor */
-   TradeState(std::shared_ptr<Player> player, std::shared_ptr<Screen> scr);
+   TradeState(std::shared_ptr<Player> player, std::shared_ptr<Viewport> view);
    
    /** Default destructor. */
    virtual ~TradeState();

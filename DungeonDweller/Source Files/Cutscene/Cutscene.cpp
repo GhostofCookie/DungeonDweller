@@ -20,17 +20,17 @@ void Wait(size_t time)
 }
 
 
-Cutscene::Cutscene(std::shared_ptr<Screen> scr, ImportImg characterImg, ImportImg roomImg, Room* tempRoom)
+Cutscene::Cutscene(std::shared_ptr<Viewport> view, ImportImg characterImg, ImportImg roomImg, Room* tempRoom)
 {
 	// initialize the animated img and the background
 	img = ImportImg(characterImg);
 	room = ImportImg(roomImg);
 	npc = ImportImg(characterImg);
 
-	screen = scr;
+	viewport = view;
 
 	// set the center point to gain access later on
-	room.AlignCenter(*screen);
+	room.AlignCenter(*viewport);
 	room.ShiftUp(1);
 
 	// preset the room to be in the center for all animations
@@ -50,60 +50,60 @@ Cutscene::Cutscene(std::shared_ptr<Screen> scr, ImportImg characterImg, ImportIm
 	}
 }
 
-void Cutscene::SetScreen(std::shared_ptr<Screen> screen)
+void Cutscene::SetScreen(std::shared_ptr<Viewport> viewport)
 {
-	this->screen = screen;
+	this->viewport = viewport;
 }
 
 void Cutscene::MoveUp(const int originY, const int originX, const int d)
 {
-	// This loop will animate the image and print to the screen
+	// This loop will animate the image and print to the viewport
 	int n = 0;
 	while (n < d)
 	{
 		img.ShiftUp(1);
 		n++;
 
-		screen->Erase();
-		room.Draw(*screen);
-		img.Draw(*screen);
-		std::cout << screen;
+		viewport->Erase();
+		room.Draw(*viewport);
+		img.Draw(*viewport);
+		std::cout << viewport;
 		Wait(VERTSPEED);
 	}
 }
 
 void Cutscene::MoveDown(const int originY, const int originX, const int d)
 {
-	// This loop will animate the image and print to the screen
+	// This loop will animate the image and print to the viewport
 	int n = 0;
 	while (n < d)
 	{
-		img.ShiftDown(*screen, 1);
+		img.ShiftDown(*viewport, 1);
 		n++;
 
-		screen->Erase();
-		room.Draw(*screen);
-		img.Draw(*screen);
-		std::cout << screen;
+		viewport->Erase();
+		room.Draw(*viewport);
+		img.Draw(*viewport);
+		std::cout << viewport;
 		Wait(VERTSPEED);
 	}
 }
 
 void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 {
-	img.SetOrigin(*screen, originY, originX);
-	// This loop will animate the image and print to the screen
+	img.SetOrigin(*viewport, originY, originX);
+	// This loop will animate the image and print to the viewport
 	int n = 0;
 	while (n < d)
 	{
 		img.ShiftLeft(1);
 		n++;
 
-		screen->Erase();
-		room.Draw(*screen);
-		img.Draw(*screen);
+		viewport->Erase();
+		room.Draw(*viewport);
+		img.Draw(*viewport);
 
-		std::cout << screen;
+		std::cout << viewport;
 #ifdef __linux__
 		usleep(HORIZSPEED);
 #else
@@ -114,55 +114,55 @@ void Cutscene::MoveLeft(const int originY, const int originX, const int d)
 
 void Cutscene::MoveRight(const int originY, const int originX, const int d)
 {
-	img.SetOrigin(*screen, originY, originX);
-	// This loop will animate the image and print to the screen
+	img.SetOrigin(*viewport, originY, originX);
+	// This loop will animate the image and print to the viewport
 	int n = 0;
 	while (n < d)
 	{
-		img.ShiftRight(*screen, 1);
+		img.ShiftRight(*viewport, 1);
 		n++;
 
-		screen->Erase();
-		room.Draw(*screen);
-		img.Draw(*screen);
+		viewport->Erase();
+		room.Draw(*viewport);
+		img.Draw(*viewport);
 
-		std::cout << screen;
+		std::cout << viewport;
 		Wait(HORIZSPEED);
 	}
 }
 
 void Cutscene::EnterTopToCenter()
 {
-	img.AlignTop(*screen);
+	img.AlignTop(*viewport);
 	MoveDown(img.screenY, img.screenX, savedY - img.screenY);
 }
 
 void Cutscene::EnterBottomToCenter()
 {
-	img.AlignBottom(*screen);
+	img.AlignBottom(*viewport);
 	MoveUp(img.screenY, img.screenX, img.screenY - savedY);
 }
 
 void Cutscene::EnterLeftToCenter()
 {
-	img.AlignLeft(*screen);
+	img.AlignLeft(*viewport);
 	MoveRight(img.screenY, img.screenX, savedX - img.screenX);
 }
 
 void Cutscene::EnterRightToCenter()
 {
-	img.AlignRight(*screen);
+	img.AlignRight(*viewport);
 	MoveLeft(img.screenY, img.screenX, img.screenX - savedX);
 }
 
 void Cutscene::ExitCenterToTop()
 {
-	MoveUp(img.screenY, img.screenX, screen->GetRows() - img.screenY);
+	MoveUp(img.screenY, img.screenX, viewport->GetRows() - img.screenY);
 }
 
 void Cutscene::ExitCenterToBottom()
 {
-	MoveDown(img.screenY, img.screenX, screen->GetRows() - img.screenY);
+	MoveDown(img.screenY, img.screenX, viewport->GetRows() - img.screenY);
 }
 
 void Cutscene::ExitCenterToLeft()
@@ -435,18 +435,18 @@ void Cutscene::Intro()
 	std::string play = "[P] Play Game";
 	std::string quit = "[Q] Quit Game";
 
-	title.AlignCenter(*screen);
-	title.ShiftDown(*screen, screen->GetRows() / 2 + title.GetRows());
+	title.AlignCenter(*viewport);
+	title.ShiftDown(*viewport, viewport->GetRows() / 2 + title.GetRows());
 
-	// This loop draws the title up the screen
+	// This loop draws the title up the viewport
 	int i = 0;
-	while (i++ < screen->GetRows() / 2 + title.GetRows())
+	while (i++ < viewport->GetRows() / 2 + title.GetRows())
 	{
 
-		title.Draw(*screen);
-		std::cout << screen;
+		title.Draw(*viewport);
+		std::cout << viewport;
 
-		screen->Erase();
+		viewport->Erase();
 		title.ShiftUp(1);
 
 #ifdef __linux__
@@ -457,16 +457,16 @@ void Cutscene::Intro()
 	}
 
 	// initialize where the menu options begin to print
-	int playX = screen->GetCols() / 2 - static_cast<int>(play.length() * 2);
-	int quitX = screen->GetCols() / 2 + static_cast<int>(quit.length());
+	int playX = viewport->GetCols() / 2 - static_cast<int>(play.length() * 2);
+	int quitX = viewport->GetCols() / 2 + static_cast<int>(quit.length());
 
 	// iterate through the char array printing each character one at a time
 	for (unsigned int i = 0; i < play.length(); i++)
 	{
-		title.Draw(*screen);
-		screen->Set(screen->GetRows() - static_cast<int>(play.length()) / 2, playX++, play[i]);
+		title.Draw(*viewport);
+		viewport->Set(viewport->GetRows() - static_cast<int>(play.length()) / 2, playX++, play[i]);
 
-		std::cout << screen;
+		std::cout << viewport;
 
 #ifdef __linux__
 		usleep(100000);
@@ -478,10 +478,10 @@ void Cutscene::Intro()
 	// iterate through the char array printing each character one at a time
 	for (unsigned int i = 0; i < quit.length(); i++)
 	{
-		title.Draw(*screen);
-		screen->Set(screen->GetRows() - static_cast<int>(quit.length()) / 2, quitX++, quit[i]);
+		title.Draw(*viewport);
+		viewport->Set(viewport->GetRows() - static_cast<int>(quit.length()) / 2, quitX++, quit[i]);
 
-		std::cout << screen;
+		std::cout << viewport;
 
 #ifdef __linux__
 		usleep(100000);
@@ -495,19 +495,19 @@ void Cutscene::Outro()
 {
 	ImportImg credits = ImportImg("../ResourceFiles/Art/Credits/credits.txt");
 
-	credits.AlignCenter(*screen);
-	credits.ShiftDown(*screen, screen->GetRows() / 2 + credits.GetRows());
+	credits.AlignCenter(*viewport);
+	credits.ShiftDown(*viewport, viewport->GetRows() / 2 + credits.GetRows());
 
-	// This loop draws the title up the screen
+	// This loop draws the title up the viewport
 	int i = 0;
-	while (i++ < screen->GetRows() / 2 + credits.GetRows())
+	while (i++ < viewport->GetRows() / 2 + credits.GetRows())
 	{
 
 
-		credits.Draw(*screen);
-		std::cout << screen;
+		credits.Draw(*viewport);
+		std::cout << viewport;
 
-		screen->Erase();
+		viewport->Erase();
 		credits.ShiftUp(1);
 #ifdef __linux__
 		usleep(VERTSPEED * 2);
@@ -522,38 +522,38 @@ void Cutscene::Outro()
 void Cutscene::MonsterEncounter()
 {
 	const int am = 1;
-	Screen scr;
+	Viewport view;
 	// Fill from the ends into the center
-	int left = 1, right = scr.GetCols() - 2;
+	int left = 1, right = view.GetCols() - 2;
 	while (left <= right)
 	{
-		int j = scr.GetRows() - 2;
-		for (int i = 1; i < scr.GetRows()-1; i++, j--)
+		int j = view.GetRows() - 2;
+		for (int i = 1; i < view.GetRows()-1; i++, j--)
 			for (int k = 0; k < am; k++)
 			{
-				scr.Set(i, left + k, '*');
-				scr.Set(j, right - k, '*');
+				view.Set(i, left + k, '*');
+				view.Set(j, right - k, '*');
 			}
 
-		std::cout << scr;
+		std::cout << view;
 
 		left += am;
 		right -= am;
 	}
 
 	// Erase from the middle out
-	left = scr.GetCols() / 2, right = scr.GetCols() / 2;
+	left = view.GetCols() / 2, right = view.GetCols() / 2;
 	while (left > 0)
 	{
-		int j = scr.GetRows() - 2;
-		for (int i = 1; i < scr.GetRows()-1; i++, j--)
+		int j = view.GetRows() - 2;
+		for (int i = 1; i < view.GetRows()-1; i++, j--)
 			for (int k = 0; k < am; k++)
 			{
-				scr.Set(i, left + k, screen->Get(i, left+k));
-				scr.Set(j, right - k, screen->Get(j, right - k));
+				view.Set(i, left + k, viewport->Get(i, left+k));
+				view.Set(j, right - k, viewport->Get(j, right - k));
 			}
 
-		std::cout << scr;
+		std::cout << view;
 
 		left -= am;
 		right += am;

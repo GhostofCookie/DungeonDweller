@@ -1,5 +1,4 @@
-.vs/
-*.sln
+.vs
 *.o
 *.obj
 *.exe

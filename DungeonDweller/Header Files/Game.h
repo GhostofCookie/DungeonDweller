@@ -9,13 +9,14 @@
 
 #pragma once
 
-#include <memory>
-#include <vector>
 #include "GameState.h"
+#include <memory>
+#include <unordered_map>
 
 class Menu;
 class Player;
-class Screen;
+class GameState;
+class Viewport;
 
 class Game
 {
@@ -24,7 +25,7 @@ public:
 	Game();
 
 	/** Initialises the game and state. */
-	void Initialise();
+	void Initialize();
 	
 	/** Runs the game in a loop until the user quits. */
 	void Run();
@@ -33,7 +34,7 @@ public:
 	void Cleanup();
 
 private:
-	void GetPlayerStats(std::shared_ptr<Screen> screen);
+	void GetPlayerStats(std::shared_ptr<Viewport> viewport);
 
 	/** The state of the game. */
 	std::unique_ptr<GameState> state;
@@ -45,7 +46,7 @@ private:
 	std::shared_ptr<Player> player;
 
 	/** All of the screens to show the aspects of the game. */
-	std::vector<std::shared_ptr<Screen>> screens;
+	std::unordered_map<std::string, std::shared_ptr<Viewport>> views;
 
 	/** Stores the current state of the game to check if for state changes. */
 	int currState;

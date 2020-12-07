@@ -18,7 +18,7 @@ class ExploreState : public GameState
 {
   public:
    /** This is the the default constructor. */
-   ExploreState(std::shared_ptr<Player> player, std::shared_ptr<Screen> scr);
+   ExploreState(std::shared_ptr<Player> player, std::shared_ptr<Viewport> view);
 
    /** This is the default destructor. */
    ~ExploreState();
@@ -35,10 +35,10 @@ class ExploreState : public GameState
     */
    ExploreState& operator=(const ExploreState &obj);
 
-   /** Sets the layout for the game menu and screen. */
+   /** Sets the layout for the game menu and viewport. */
    void Set();
 
-   /** Gets the layout for the game menu and screen. */
+   /** Gets the layout for the game menu and viewport. */
    void Get();
    
   private:

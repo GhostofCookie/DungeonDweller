@@ -98,9 +98,9 @@ void ConnectFour::MovePiece(char userPiece, int column)
 		{
 			grid.at(column - 1).at(ySize - 1) = userPiece;
 
-			/* Set the char in the screen
+			/* Set the char in the viewport
 			 Heightand column are multiplied by 2 since the actual std::vector has
-			 1 / 2 as many spots as the grid displayed on the screen does.
+			 1 / 2 as many spots as the grid displayed on the viewport does.
 			 Add 11 to the topBound to place it in the bottom slot in the grid. */
 			ConnectFourScreen.Set((bottomSlotHeight + (height * 2)),
 				(column * 2 + leftBound), (userPiece));
@@ -163,7 +163,7 @@ void ConnectFour::BoardSetup()
 			if (i % 2 == 0)
 			{
 				// topBoundand leftBound should set the board centered inside
-				//  the screen object.
+				//  the viewport object.
 				ConnectFourScreen.Set((topBound + i), (leftBound + j), '-');
 			}
 			// If i is even, fill the row with squares to place tokens in later
@@ -172,13 +172,13 @@ void ConnectFour::BoardSetup()
 				if (j % 2 != 0)
 				{
 					// topBoundand leftBound should set the board centered inside
-					// the screen object.
+					// the viewport object.
 					ConnectFourScreen.Set((topBound + i), (leftBound + j), ' ');
 				}
 				else
 				{
 					// topBoundand leftBound should set the board centered inside
-					// the screen object.
+					// the viewport object.
 					ConnectFourScreen.Set((topBound + i), (leftBound + j), '|');
 				}
 			}

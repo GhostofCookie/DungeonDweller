@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #endif
 
-#include "Screen.h"
+#include "Viewport.h"
 #include "Image.h"
 #include "DefaultImg.h"
 #include "ImportImg.h"
@@ -30,13 +30,13 @@ class Cutscene
 
 public:
 	/** Constructor */
-	Cutscene(std::shared_ptr<Screen> scr,
+	Cutscene(std::shared_ptr<Viewport> view,
 		ImportImg characterImg = ImportImg(RESOURCE_DIR("/Player/DD_Player.txt")),
 		ImportImg roomImg = ImportImg(RESOURCE_DIR("/Rooms/DD_Room_Square.txt")),
 		Room* roomTemplate = nullptr);
 
-	/** Sets the screen object for this object. */
-	void SetScreen(std::shared_ptr<Screen> screen);
+	/** Sets the viewport object for this object. */
+	void SetScreen(std::shared_ptr<Viewport> viewport);
 
 	/** Function to animate an image this direction */
 	void EnterTopToCenter();
@@ -157,8 +157,8 @@ private:
 	/** temporary variable to keep track of character found */
 	int foundY = 0;
 
-	/** screen to draw the cutscene on */
-	std::shared_ptr<Screen> screen;
+	/** viewport to draw the cutscene on */
+	std::shared_ptr<Viewport> viewport;
 
 	/** container to store the 4 directions of the given room */
 	std::vector<Point> point;

@@ -9,7 +9,7 @@
 
 #include "Puzzle.h"
 #include "HanoiMenu.h"
-#include "Screen.h"
+#include "Viewport.h"
 #include "DefaultImg.h"
 #include <stack>
 #include <iostream>
@@ -50,14 +50,14 @@ class Hanoi: public virtual Puzzle
    void LogicSwitch(const char userSelection);
 
    /** Moves the piece in the std::vector.stack and calls the helper function to move the
-    * images on the screen.
+    * images on the viewport.
     * @param[in]sourceTower, the stack from which we move the disc image.
     * @param[in]targetTower, the stack to which we move the disc image.
     */
    void MovePiece(int sourceTower, int targetTower);
    
-   /** Function which clears the discs previous location from the screen object
-    * You cannot use the erase function in the screen class because you would
+   /** Function which clears the discs previous location from the viewport object
+    * You cannot use the erase function in the viewport class because you would
     * have to re-draw everything afterwards and the nature of a stack does not
     * give you access to elements not on top.
     * @param[in] targetTower, the tower which you wish to have cleared on top.
@@ -82,10 +82,10 @@ class Hanoi: public virtual Puzzle
     */
    void PushDiscOnLeftStack(int bottom, DefaultImg disc);
    
-   /** Sets up the screen with the appropriate game board. */
+   /** Sets up the viewport with the appropriate game board. */
    void BoardSetup();
 
-   /** Moves the disc on the screen from the sourcestack to the targetstack
+   /** Moves the disc on the viewport from the sourcestack to the targetstack
     * @param[in] sourceStack, the tower to copy the disc from
     * @param[in] targetStack, the tower to copy the disc to
     */
@@ -103,7 +103,7 @@ class Hanoi: public virtual Puzzle
    std::string endGamePrompt;
    
    /** HanoiScreen stores and outputs the contents of the game to the terminal */
-   Screen HanoiScreen;
+   Viewport HanoiScreen;
    
    /** GameMenu is used for handling input */
    HanoiMenu HanoiGameMenu;

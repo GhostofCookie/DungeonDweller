@@ -16,7 +16,7 @@ class FightState : public GameState
 {
   public:
    /** This is the default constructor. */
-   FightState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr);
+   FightState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view);
    
    /** Sets the layout of the game. */
    void Set();

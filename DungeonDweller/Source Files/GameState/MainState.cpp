@@ -4,10 +4,10 @@
 #include <vector>
 #include <stdlib.h>
 
-MainState::MainState(std::shared_ptr<Screen> scr)
+MainState::MainState(std::shared_ptr<Viewport> view)
 {
 	menu = new MainMenu();
-	screen = scr;
+	viewport = view;
 }
 
 void MainState::Set()
@@ -18,7 +18,7 @@ void MainState::Set()
 
 void MainState::Get()
 {
-	Cutscene anim(screen);
+	Cutscene anim(viewport);
 	anim.Intro();
 	menu->HandleInput(std::cin);
 

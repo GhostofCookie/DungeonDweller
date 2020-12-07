@@ -17,15 +17,15 @@ class InventoryState : public GameState
 {
   public:
    /** This is the the default constructor. */
-   InventoryState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr);
+   InventoryState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view);
 
    /** This is the default destructor. */
    ~InventoryState();
 
-   /** Sets the layout for the game menu and screen. */
+   /** Sets the layout for the game menu and viewport. */
    void Set();
 
-   /** Gets the layout for the game menu and screen. */
+   /** Gets the layout for the game menu and viewport. */
    void Get();
 };
 

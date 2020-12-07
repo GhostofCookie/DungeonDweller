@@ -32,27 +32,27 @@ int Image::GetCols() const { return width; }
 
 bool Image::IsEven(const int& num) const { return(num % 2 == 0); }
 
-void Image::Draw(Screen& screen) { Draw(screen, screenY, screenX); }
+void Image::Draw(Viewport& viewport) { Draw(viewport, screenY, screenX); }
 
-void Image::Draw(Screen& screen, int y, int x)
+void Image::Draw(Viewport& viewport, int y, int x)
 {
 	int imgY = y;
 	int imgX = x;
 
 	// An algorithm that moves through each element in the Img
-	// and attempts to place on the screen with the given start location
+	// and attempts to place on the viewport with the given start location
 	for (unsigned int i = 0; i < Img.size(); ++i)
 	{
 		for (auto p = Img[i].begin(); p != Img[i].end(); ++p)
 		{
-			if ((imgX > 0 && imgX < screen.GetCols()-1) && (imgY > 0 && imgY < screen.GetRows()-1))
-				screen.Set(imgY, imgX, *p);
+			if ((imgX > 0 && imgX < viewport.GetCols()-1) && (imgY > 0 && imgY < viewport.GetRows()-1))
+				viewport.Set(imgY, imgX, *p);
 			imgX++;
 		}
 		imgY++;
 		imgX = x;
 	}
-	screen.DrawBorder();
+	viewport.DrawBorder();
 }
 
 void Image::Draw(Image& img) { Draw(img, screenY, screenX); }
@@ -63,7 +63,7 @@ void Image::Draw(Image& img, int y, int x)
 	int imgX = x;
 
 	// An algorithm that moves through each element in the Img
-	// and attempts to place on the screen with the given start location
+	// and attempts to place on the viewport with the given start location
 	for (unsigned int i = 0; i < Img.size(); ++i)
 	{
 		for (auto p = Img[i].begin(); p != Img[i].end(); ++p)
@@ -118,10 +118,10 @@ void Image::Fill(char ch)
 /******************************************************************************
  * ALIGN MEMBER FUNCTIONS
  *****************************************************************************/
-void Image::SetOrigin(Screen& screen, int y, int x)
+void Image::SetOrigin(Viewport& viewport, int y, int x)
 {
-	assert(y >= 0 || y < screen.GetRows());
-	assert(x >= 0 || x < screen.GetCols());
+	assert(y >= 0 || y < viewport.GetRows());
+	assert(x >= 0 || x < viewport.GetCols());
 	screenX = x;
 	screenY = y;
 }
@@ -170,20 +170,20 @@ void Image::FlipVert()
 	FixSlants();// by-product of having console characters
 }
 
-void Image::AlignCenter(Screen& screen)
+void Image::AlignCenter(Viewport& viewport)
 {
-	int scrX = screen.GetCols() / 2;
-	int scrY = screen.GetRows() / 2;
+	int scrX = viewport.GetCols() / 2;
+	int scrY = viewport.GetRows() / 2;
 	int imgX = width / 2;
 	int imgY = height / 2;
 
 	// Relys on it being odd for centering perfection
-	SetOrigin(screen, scrY - imgY, scrX - imgX);
+	SetOrigin(viewport, scrY - imgY, scrX - imgX);
 }
 
 void Image::AlignCenter(Image& img)
 {
-	// in this situation the screen is represented by the image
+	// in this situation the viewport is represented by the image
 	int scrX = img.GetCols() / 2;
 	int scrY = img.GetRows() / 2;
 	int imgX = width / 2;
@@ -195,7 +195,7 @@ void Image::AlignCenter(Image& img)
 
 void Image::AlignCenter(Image& img, int x, int y)
 {
-	// in this situation the screen is represented by the image
+	// in this situation the viewport is represented by the image
 	int scrX = x;
 	int scrY = y;
 	int imgX = width / 2;
@@ -210,27 +210,27 @@ void Image::AlignLeft(Image& img) { screenX = 1; }
 
 void Image::AlignRight(Image& img)
 {
-	//uses the image's width and screen's width to find the right side
+	//uses the image's width and viewport's width to find the right side
 	screenX = static_cast<int>(img.GetCols() - Img[0].size() - 1);
 }
 
 // Ensures it draws one character from the border
-void Image::AlignLeft(Screen& screen) { screenX = 1; };
+void Image::AlignLeft(Viewport& viewport) { screenX = 1; };
 
-void Image::AlignRight(Screen& screen)
+void Image::AlignRight(Viewport& viewport)
 {
-	// uses the image's width and screen's width to find the right side
-	screenX = static_cast<int>(screen.GetCols() - Img[0].size() - 1);
+	// uses the image's width and viewport's width to find the right side
+	screenX = static_cast<int>(viewport.GetCols() - Img[0].size() - 1);
 }
 
 // Ensures it draws one character from the border
-void Image::AlignTop(Screen& screen) { screenY = 1; };
+void Image::AlignTop(Viewport& viewport) { screenY = 1; };
 
 // Ensures it draws one character from the border
 void Image::AlignTop(Image& img) { screenY = img.screenY - 1; };
 
 // Ensures it draws one character from the border
-void Image::AlignBottom(Screen& screen) { screenY = static_cast<int>(screen.GetRows() - Img.size() - 1); };
+void Image::AlignBottom(Viewport& viewport) { screenY = static_cast<int>(viewport.GetRows() - Img.size() - 1); };
 
 // Ensures it draws one character from the border
 void Image::AlignBottom(Image& img) { screenY = static_cast<int>(img.GetRows() - Img.size() - 1); };
@@ -245,7 +245,7 @@ void Image::ShiftUp(int num)
 	}
 }
 
-void Image::ShiftDown(Screen& screen, int num)
+void Image::ShiftDown(Viewport& viewport, int num)
 {
 	int i = 0;
 	while (i < num)
@@ -276,7 +276,7 @@ void Image::ShiftLeft(int num)
 	}
 }
 
-void Image::ShiftRight(Screen& screen, int num)
+void Image::ShiftRight(Viewport& viewport, int num)
 {
 	int i = 0;
 	while (i < num)

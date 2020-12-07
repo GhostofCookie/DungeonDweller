@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
 	auto game = std::make_unique<Game>();
-	game->Initialise();
+	game->Initialize();
 	game->Run();
 	game->Cleanup();
 

@@ -19,7 +19,7 @@ class PuzzleState : public GameState
 {
   public:
    /** Default constructor */
-   PuzzleState(std::shared_ptr<Player> p, std::shared_ptr<Screen> scr);
+   PuzzleState(std::shared_ptr<Player> p, std::shared_ptr<Viewport> view);
    
    /** Sets the layout of the game. */
    void Set();

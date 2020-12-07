@@ -31,7 +31,7 @@ class MemoryMatch: virtual public Puzzle
    virtual void RunGame(Character *player);
 
   private:
-   /** Sets the board up for the beginning of the game, plastd::cing them in screen */
+   /** Sets the board up for the beginning of the game, plastd::cing them in viewport */
    void BoardSetup();
 
    /** Setinputs assigns user input to the appropriate variables.
@@ -91,12 +91,12 @@ class MemoryMatch: virtual public Puzzle
    void WinCheck();
 
    /** Randomly puts char into the table twice.
-    * @param[in]symbol, the symbol to be inserted into the screen
+    * @param[in]symbol, the symbol to be inserted into the viewport
     */
    void RandomlyInsertIntoTable(char symbol);
 
    /** Flips the char stored at the inputted coordinates on chartable and sets
-    * them on the screen.
+    * them on the viewport.
     * @param[in]inputX, the x-coordinate to flip.
     * @param[in]inputY, the y-cordinate to flip.
     */
@@ -113,7 +113,7 @@ class MemoryMatch: virtual public Puzzle
     */
    int RandomNumber(int n);
 
-   /** Puts the values in the charTable into the screen in appropriate places among
+   /** Puts the values in the charTable into the viewport in appropriate places among
     * the game board
     */
    void SaveBoardToScreen();
@@ -153,8 +153,8 @@ class MemoryMatch: virtual public Puzzle
     */
    bool IsCharAlreadyMatched(int inputX, int inputY);
 
-   /** The screen for the game to be outputted with */
-   Screen MemoryMatchScreen;
+   /** The viewport for the game to be outputted with */
+   Viewport MemoryMatchScreen;
 
    /** The std::vector which holds the char values of the table to be matched */
    std::vector < std::vector < char > > charTable;
@@ -164,7 +164,7 @@ class MemoryMatch: virtual public Puzzle
     */
    std::vector < std::vector < int > > matchVector;
 
-   /** Vector containing symbols to be randomly inserted on the screen at start */
+   /** Vector containing symbols to be randomly inserted on the viewport at start */
    std::vector < char > pairsOfCharsVector;
 
    /** Vector containing all std::pairs that have already been matched up */

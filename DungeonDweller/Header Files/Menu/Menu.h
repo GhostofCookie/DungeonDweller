@@ -78,7 +78,7 @@ protected:
 	/** currOption This is the current option chosen. */
 	char currOption;
 
-	/** indexMap This is the std::map used to display the options on the screen */
+	/** indexMap This is the std::map used to display the options on the viewport */
 	std::map < int, std::string > indexMap;
 
 	/** menuHeight This is the height of the menu. */

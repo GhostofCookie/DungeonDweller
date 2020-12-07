@@ -92,7 +92,7 @@ void Character::ChangeStamina(int sMod)
 		stamina += sMod;
 }
 
-void Character::Draw(Screen& screen)
+void Character::Draw(Viewport& viewport)
 {
-	img.Draw(screen);
+	img.Draw(viewport);
 }

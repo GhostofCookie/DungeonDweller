@@ -10,17 +10,17 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
-#include "Screen.h"
+#include "Viewport.h"
 
- /** @brief The Image class represents a 2D std::vector that displays an image on screen */
+ /** @brief The Image class represents a 2D std::vector that displays an image on viewport */
 class Image
 {
 public:
 	/** The image - publically availiable to allow access to locations */
 	std::vector<std::vector<char>> Img;
-	/** The screen x coordinate to draw on */
+	/** The viewport x coordinate to draw on */
 	int screenX = 0;
-	/** The screen y coordinate to draw on */
+	/** The viewport y coordinate to draw on */
 	int screenY = 0;
 
 	/** Constructs an Image object from the given dimensions
@@ -43,24 +43,24 @@ public:
 	virtual Image& operator=(const Image& img);
 
 	/** Helper function to draw onto the Screen object
-	 * @param[in] scr the screen to draw on
+	 * @param[in] view the viewport to draw on
 	 */
-	virtual void Draw(Screen& scr);
+	virtual void Draw(Viewport& view);
 
 	/** Helper function to draw onto the Screen object
-	 * @param[in] scr the screen to draw on
+	 * @param[in] view the viewport to draw on
 	 * @param[in] x the x coordinate
 	 * @param[in] y the y coordinate
 	 */
-	virtual void Draw(Screen& scr, int y, int x);
+	virtual void Draw(Viewport& view, int y, int x);
 
 	/** Helper function to draw onto the Screen object
-	 * @param[in] img the screen to draw on
+	 * @param[in] img the viewport to draw on
 	 */
 	virtual void Draw(Image& img);
 
 	/** Helper function to draw onto the Screen object
-	 * @param[in] img the screen to draw on
+	 * @param[in] img the viewport to draw on
 	 * @param[in] x the x coordinate
 	 * @param[in] y the y coordinate
 	 */
@@ -93,14 +93,14 @@ public:
 	 * ALIGN VIRTUAL MEMBER FUNCTIONS
 	 *****************************************************************************/
 	 /** Function that sets a permanent location to draw from
-	  * @param[in] scr the screen to access
+	  * @param[in] view the viewport to access
 	  * @param[in] y the y coordinate
 	  * @param[in] x the x coordinate
 	  */
-	void SetOrigin(Screen& scr, int y, int x);
+	void SetOrigin(Viewport& view, int y, int x);
 
 	/** Function that sets a permanent location to draw from
-	 * @param[in] img the screen to access
+	 * @param[in] img the viewport to access
 	 * @param[in] y the y coordinate
 	 * @param[in] x the x coordinate
 	 */
@@ -113,32 +113,32 @@ public:
 	void FlipVert();
 
 	/** Helper function to align the image left
-	 * @param[in] scr the screen to align to
+	 * @param[in] view the viewport to align to
 	 */
-	void AlignLeft(Screen& scr);
+	void AlignLeft(Viewport& view);
 
 	/** Helper function to align the image right
-	 * @param[in] scr the screen to align to
+	 * @param[in] view the viewport to align to
 	 */
-	void AlignRight(Screen& scr);
+	void AlignRight(Viewport& view);
 
 	/** Helper function to align the image center
-	 * @param[in] scr the screen to align to
+	 * @param[in] view the viewport to align to
 	 */
-	void AlignCenter(Screen& scr);
+	void AlignCenter(Viewport& view);
 
 	/** Helper function to align the image to the top
-	 * @param[in] scr the screen to draw to
+	 * @param[in] view the viewport to draw to
 	 */
-	void AlignTop(Screen& scr);
+	void AlignTop(Viewport& view);
 
 	/** Helper function to align the image to the bottom
-	 * @param[in] scr the screen to draw to
+	 * @param[in] view the viewport to draw to
 	 */
-	void AlignBottom(Screen& scr);
+	void AlignBottom(Viewport& view);
 
 	/** Helper function to align the image left
-	 * @param[in] img the screen to align to
+	 * @param[in] img the viewport to align to
 	 */
 	void AlignLeft(Image& img);
 
@@ -168,37 +168,37 @@ public:
 	void AlignBottom(Image& img);
 
 	/** Helper function to shift the image down
-	 * @param[in] scr the screen the image will shift on
+	 * @param[in] view the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
-	void ShiftDown(Screen& scr, int num);
+	void ShiftDown(Viewport& view, int num);
 
 	/** Helper function to shift the image right
-	 * @param[in] scr the screen the image will shift on
+	 * @param[in] view the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
-	void ShiftRight(Screen& scr, int num);
+	void ShiftRight(Viewport& view, int num);
 
 	/** Helper function to shift the image down
-	 * @param[in] scr the screen the image will shift on
+	 * @param[in] view the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
 	void ShiftDown(Image& img, int num);
 
 	/** Helper function to shift the image right
-	 * @param[in] img the screen the image will shift on
+	 * @param[in] img the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
 	void ShiftRight(Image& img, int num);
 
 	/** Helper function to shift the image up
-	 * @param[in] scr the screen the image will shift on
+	 * @param[in] view the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
 	void ShiftUp(int num);
 
 	/** Helper function to shift the image left
-	 * @param[in] img the screen the image will shift on
+	 * @param[in] img the viewport the image will shift on
 	 * @param[in] num the amount of shifting
 	 */
 	void ShiftLeft(int num);

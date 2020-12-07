@@ -13,7 +13,7 @@
 #include <cctype>
 #include <cstdlib>
 #include <algorithm>
-#include "Screen.h"
+#include "Viewport.h"
 #include "Image.h"
 #include "DefaultImg.h"
 #include "ImportImg.h"
@@ -105,47 +105,47 @@ class Room
    /** Function that returns the room's type */
    bool IsComplete() const;
    
-   /** Function to align to the center of the screen
-    * @param[in] screen the screen drawn on
+   /** Function to align to the center of the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void AlignCenter(Screen &screen);
+   void AlignCenter(Viewport &viewport);
    
-   /** Function to align to the left of the screen
-    * @param[in] screen the screen drawn on
+   /** Function to align to the left of the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void AlignLeft(Screen &screen);
+   void AlignLeft(Viewport &viewport);
    
-   /** Function to align to the right of the screen
-    * @param[in] screen the screen drawn on
+   /** Function to align to the right of the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void AlignRight(Screen &screen);
+   void AlignRight(Viewport &viewport);
    
-   /** Function to align to the top of the screen
-    * @param[in] screen the screen drawn on
+   /** Function to align to the top of the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void AlignTop(Screen &screen);
+   void AlignTop(Viewport &viewport);
     
-   /** Function to align the room to the bottom of the screen
-    * @param[in] screen the screen drawn on
+   /** Function to align the room to the bottom of the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void AlignBottom(Screen &screen);
+   void AlignBottom(Viewport &viewport);
 	
-   /** Function to draw to the screen
-    * @param[in] screen the screen drawn on
+   /** Function to draw to the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void Draw(Screen &screen);
+   void Draw(Viewport &viewport);
    
-   /** Function to draw to the screen
-    * @param[in] screen the screen drawn on
+   /** Function to draw to the viewport
+    * @param[in] viewport the viewport drawn on
     */
-   void Draw(Screen &screen, int y, int x);
+   void Draw(Viewport &viewport, int y, int x);
 
-   /** Function to draw to the screen
+   /** Function to draw to the viewport
     * @param[in] img the img drawn on
     */
    void Draw(ImportImg &img);
 
-   /** Function to draw to the screen
+   /** Function to draw to the viewport
     * @param[in] img the img drawn on
     */
    void Draw(ImportImg &img, int y, int x);

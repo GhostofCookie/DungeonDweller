@@ -21,20 +21,24 @@
 #include <iomanip>
 #include <sstream>
 
+#define GAMESTART_HEIGHT 33
+#define GAMESTART_WIDTH 127
+#define INGAME_HEIGHT 33
+#define INGAME_WIDTH 101
+#define STATS_WIDTH GAMESTART_WIDTH - INGAME_WIDTH
+
 Game::Game()
 {
-	auto viewport = std::make_shared<Screen>(33, 101);
-	auto stats = std::make_shared<Screen>(33, 26, 101, 0);
+	auto viewport = std::make_shared<Viewport>(GAMESTART_HEIGHT, GAMESTART_WIDTH);
 
 	state = std::make_unique<MainState>(viewport);
 	//menu = std::make_unique<MainMenu>();
 	player = std::make_shared<Player>("Player 1", "Human", 10, 10, 0);
 
-	screens.push_back(viewport);
-	screens.push_back(stats);
+	views["viewport"] = viewport;
 }
 
-void Game::Initialise()
+void Game::Initialize()
 {
 	state->Set();
 	currState = static_cast<int>(state->GetState());
@@ -44,6 +48,7 @@ void Game::Run()
 {
 	while (true)
 	{
+		Viewport::DisplayAll(views);
 		state->Get();
 		if (static_cast<int>(state->GetState()) != currState)
 		{
@@ -51,31 +56,40 @@ void Game::Run()
 			switch (state->GetState())
 			{
 			case States::EXPLORE:
-				state = std::make_unique<ExploreState>(player, screens[0]);
+				state = std::make_unique<ExploreState>(player, views["viewport"]);
+
+				views["viewport"]->Resize(33, 101);
+				views["stats"] = std::make_shared<Viewport>(INGAME_HEIGHT, STATS_WIDTH, INGAME_WIDTH, 0);
+				GetPlayerStats(views["stats"]);
 				break;
 			case States::PUZZLE:
-				state = std::make_unique<PuzzleState>(player, screens[0]);
+				state = std::make_unique<PuzzleState>(player, views["viewport"]);
 				break;
 			case States::COMBAT:
-				state = std::make_unique<FightState>(player, screens[0]);
+				state = std::make_unique<FightState>(player, views["viewport"]);
 				break;
 			case States::TRADE:
-				state = std::make_unique<TradeState>(player, screens[0]);
+				state = std::make_unique<TradeState>(player, views["viewport"]);
 				break;
 			case States::INVENTORY:
-				state = std::make_unique<InventoryState>(player, screens[0]);
+				state = std::make_unique<InventoryState>(player, views["viewport"]);
 				break;
 			case States::MAIN:
 			default:
-				screens[1]->Wipe();
-				state = std::make_unique<MainState>(screens[0]);
+				state = std::make_unique<MainState>(views["viewport"]);
+
+				for (auto it = views.begin(); it != views.end();)
+					if (it != views.find("viewport"))
+					{
+						it->second->Wipe();
+						it = views.erase(it);
+					}
+					else ++it;
+
+				views["viewport"]->Resize(GAMESTART_HEIGHT, GAMESTART_WIDTH);
 			}
 			state->Set();
 		}
-
-		// Display stats screen.
-		if (currState != 0)
-			GetPlayerStats(screens[1]);
 
 		// Lose condition
 		if (player->GetHealth() <= 0 || player->GetStamina() <= 0)
@@ -83,8 +97,6 @@ void Game::Run()
 			//  Insert defeat anim here
 			std::cout << "*** You are unable to continue. Game Over ***" << std::endl;
 			currState = 0;
-			screens[1]->Wipe();
-			state = std::make_unique<MainState>(screens[0]);
 		}
 	}
 }
@@ -93,9 +105,9 @@ void Game::Cleanup()
 {
 }
 
-void Game::GetPlayerStats(std::shared_ptr<Screen> screen)
+void Game::GetPlayerStats(std::shared_ptr<Viewport> viewport)
 {
-	screen->Erase();
+	viewport->Erase();
 	std::stringstream ss;
 	ss << "Name: " << player->GetName() << '\n';
 	ss << "Race: " << player->GetRace() << '\n';
@@ -112,8 +124,7 @@ void Game::GetPlayerStats(std::shared_ptr<Screen> screen)
 			k = 1;
 			++j;
 		}
-		screen->Set(j, k++, ss.str()[i]);
+		viewport->Set(j, k++, ss.str()[i]);
 	}
-	std::cout << screen.get();
 }
 

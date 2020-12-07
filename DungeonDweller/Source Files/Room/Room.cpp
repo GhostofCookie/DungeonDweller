@@ -131,19 +131,19 @@ void Room::GetEventImages(std::map<char, std::vector<ImportImg>>& collection)
 	}
 }
 
-void Room::AlignCenter(Screen& screen) { room->Image::AlignCenter(screen); }
+void Room::AlignCenter(Viewport& viewport) { room->Image::AlignCenter(viewport); }
 
-void Room::AlignLeft(Screen& screen) { room->Image::AlignLeft(screen); }
+void Room::AlignLeft(Viewport& viewport) { room->Image::AlignLeft(viewport); }
 
-void Room::AlignRight(Screen& screen) { room->Image::AlignRight(screen); }
+void Room::AlignRight(Viewport& viewport) { room->Image::AlignRight(viewport); }
 
-void Room::AlignTop(Screen& screen) { room->Image::AlignTop(screen); }
+void Room::AlignTop(Viewport& viewport) { room->Image::AlignTop(viewport); }
 
-void Room::AlignBottom(Screen& screen) { room->Image::AlignBottom(screen); }
+void Room::AlignBottom(Viewport& viewport) { room->Image::AlignBottom(viewport); }
 
-void Room::Draw(Screen& screen) { room->Image::Draw(screen); }
+void Room::Draw(Viewport& viewport) { room->Image::Draw(viewport); }
 
-void Room::Draw(Screen& screen, int y, int x) { room->Image::Draw(screen, y, x); }
+void Room::Draw(Viewport& viewport, int y, int x) { room->Image::Draw(viewport, y, x); }
 
 void Room::Draw(ImportImg& img) { room->Image::Draw(img); }
 
