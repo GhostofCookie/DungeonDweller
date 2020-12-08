@@ -7,8 +7,6 @@
 *.pdb
 *.ilk
 *.user
-*.vcxproj
-*.vcxproj.filters
 *.gc*
 
 Debug/

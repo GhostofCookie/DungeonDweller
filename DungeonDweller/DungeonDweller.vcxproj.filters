@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Character">
+      <UniqueIdentifier>{6c379693-874d-4660-8336-2ed751af5254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Cutscene">
+      <UniqueIdentifier>{a295a048-0d30-4b28-b71d-08bf2f3dbf58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameState">
+      <UniqueIdentifier>{8103036c-64a2-4383-b3b6-6eb644b65d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Image">
+      <UniqueIdentifier>{f9d4d385-7008-4fbb-8765-408096730382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ImageImporter">
+      <UniqueIdentifier>{bb356b6d-d8c4-4035-bad3-d97990d33ceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Item">
+      <UniqueIdentifier>{d1fe7a9b-cff5-4523-90a7-bee0eb1b8535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{845bf832-a72f-4419-8d30-5e4745e4ca4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Puzzles">
+      <UniqueIdentifier>{a7049a8c-575f-4df1-bd4c-bd7d95686c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Room">
+      <UniqueIdentifier>{7f5862e0-1a2b-4552-9d09-7158d8fc9d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RoomTree">
+      <UniqueIdentifier>{98178fb5-eddd-4e0e-a3d6-f8cb4d7fdfc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character">
+      <UniqueIdentifier>{b9f6b164-03d3-49da-9a3e-5680b7beb92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cutscene">
+      <UniqueIdentifier>{64103fd4-6a22-4583-abd6-4990f75fd05c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameState">
+      <UniqueIdentifier>{7782f121-9161-42b9-b3a4-89081b86f9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Image">
+      <UniqueIdentifier>{f5196aa5-f65b-480f-a217-869edb4741ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImageImporter">
+      <UniqueIdentifier>{ba704ebc-442b-4154-8c33-acf5da1eda88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Item">
+      <UniqueIdentifier>{0c805a92-7477-42a0-babc-d57b8261eb55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu">
+      <UniqueIdentifier>{75597870-bb4e-4306-99ef-9853b73ddb1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Puzzles">
+      <UniqueIdentifier>{dccf7ac0-9dc9-4be2-ae1d-e67d0b7a4222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Room">
+      <UniqueIdentifier>{d7bd723e-30d4-47d3-a571-d05d252b98ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RoomTree">
+      <UniqueIdentifier>{c17a1ee0-8135-4968-8491-b5e0f6cb267e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Art">
+      <UniqueIdentifier>{e8639b7b-85ad-43d5-b5b5-4cfb9cf9e3d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Art\Credits">
+      <UniqueIdentifier>{2cece4e7-44d7-42d5-9bd4-e31b62eb93f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Art\Decor">
+      <UniqueIdentifier>{ba9f06cb-449c-4f99-9f97-f2d843249ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Art\Player">
+      <UniqueIdentifier>{d83e79ce-8093-4563-ab86-80f19a0f48af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Art\Rooms">
+      <UniqueIdentifier>{7c7fcaa1-62d1-4548-bde9-b8aceaaa55e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Viewport">
+      <UniqueIdentifier>{4325d385-254b-479b-a021-a036f5d60119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Viewport">
+      <UniqueIdentifier>{77698072-50df-4625-9d87-6d5f17c03f94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Character.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Npc.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Player.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Cutscene\Cutscene.cpp">
+      <Filter>Source Files\Cutscene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\ExploreState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\FightState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\InventoryState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\MainState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\PuzzleState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\TradeState.cpp">
+      <Filter>Source Files\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\DefaultImg.cpp">
+      <Filter>Source Files\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\Image.cpp">
+      <Filter>Source Files\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\ImageImporter\ImageImporter.cpp">
+      <Filter>Source Files\ImageImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Consumable.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Item.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\MyConsumables.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\MyWeapons.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Weapon.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\CharacterMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\ConnectFourMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\DialogueMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\ExploreMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\FightMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\HanoiMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\MainMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\MemoryMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\Menu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\RiddleMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\TicTacToeMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\TradeMenu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\CodeCracker.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\ConnectFour.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\Hanoi.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\MemoryMatch.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\Puzzle.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\TicTacToe.cpp">
+      <Filter>Source Files\Puzzles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Room\Room.cpp">
+      <Filter>Source Files\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\RoomTree\RoomTree.cpp">
+      <Filter>Source Files\RoomTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\DungeonDweller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\ImportImg.cpp">
+      <Filter>Source Files\ImageImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Viewport\Viewport.cpp">
+      <Filter>Source Files\Viewport</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Character.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Npc.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Player.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Cutscene\Cutscene.h">
+      <Filter>Header Files\Cutscene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\DialogueState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\ExploreState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\FightState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\GameState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\InventoryState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\MainState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\PuzzleState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\TradeState.h">
+      <Filter>Header Files\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\DefaultImg.h">
+      <Filter>Header Files\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\Image.h">
+      <Filter>Header Files\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\ImageImporter\ImageImporter.h">
+      <Filter>Header Files\ImageImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\ImportImg.h">
+      <Filter>Header Files\ImageImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Consumable.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Item.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\MyConsumables.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\MyWeapons.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Weapon.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\CharacterMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\ConnectFourMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\DialogueMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\ExploreMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\FightMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\GameMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\HanoiMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MainMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MemoryMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\Menu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MinigameMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\RiddleMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\TicTacToeMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\TradeMenu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\CodeCracker.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\ConnectFour.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\Hanoi.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\MemoryMatch.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\Puzzle.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\TicTacToe.h">
+      <Filter>Header Files\Puzzles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\Room\Room.h">
+      <Filter>Header Files\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DungeonDweller\Header Files\RoomTree\RoomTree.h">
+      <Filter>Header Files\RoomTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Viewport\Viewport.h">
+      <Filter>Header Files\Viewport</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ResourceFiles\MasterArtFile.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Riddles.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Credits\credits.txt">
+      <Filter>Resource Files\Art\Credits</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Credits\title.txt">
+      <Filter>Resource Files\Art\Credits</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz3.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Chest.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitDown.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitLeft.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitRight.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitUp.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_FourWayCarpet.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightLeft.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightLeftDown.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightRight.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightRightDown.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Pillar.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Pillar2.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet2.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet3.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz2.txt">
+      <Filter>Resource Files\Art\Decor</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCPuzzle.txt">
+      <Filter>Resource Files\Art\Player</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCShop.txt">
+      <Filter>Resource Files\Art\Player</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Player\DD_Player.txt">
+      <Filter>Resource Files\Art\Player</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCEnemy.txt">
+      <Filter>Resource Files\Art\Player</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCEnemyDead.txt">
+      <Filter>Resource Files\Art\Player</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnHorizFlipVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Octagon.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_OctagonVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Square.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlant.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantHorizFlip.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantVar3.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar3.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar4.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin3.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_HPattrn.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_HPattrnVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Indent.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_IndentVar2.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_IndentVertFlip.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurn.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnHorizFlip.txt">
+      <Filter>Resource Files\Art\Rooms</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

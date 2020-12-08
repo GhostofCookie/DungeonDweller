@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1c4440c0-bf53-4c4f-9e9f-207e476b3e7e}</ProjectGuid>
+    <RootNamespace>DungeonDweller</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/DungeonDweller/Header Files/;$(SolutionDir)/DungeonDweller/Header Files/GameState/;$(SolutionDir)/DungeonDweller/Header Files/Character/;$(SolutionDir)/DungeonDweller/Header Files/Image;$(SolutionDir)/DungeonDweller/Header Files/Puzzles;$(SolutionDir)/DungeonDweller/Header Files/RoomTree;$(SolutionDir)/DungeonDweller/Header Files/Room;$(SolutionDir)/DungeonDweller/Header Files/Viewport;$(SolutionDir)/DungeonDweller/Header Files/Menu;$(SolutionDir)/DungeonDweller/Header Files/Item;$(SolutionDir)/DungeonDweller/Header Files/ImageImporter;$(SolutionDir)/DungeonDweller/Header Files/Cutscene;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/DungeonDweller/Header Files/;$(SolutionDir)/DungeonDweller/Header Files/GameState/;$(SolutionDir)/DungeonDweller/Header Files/Character/;$(SolutionDir)/DungeonDweller/Header Files/Image;$(SolutionDir)/DungeonDweller/Header Files/Puzzles;$(SolutionDir)/DungeonDweller/Header Files/RoomTree;$(SolutionDir)/DungeonDweller/Header Files/Room;$(SolutionDir)/DungeonDweller/Header Files/Viewport;$(SolutionDir)/DungeonDweller/Header Files/Menu;$(SolutionDir)/DungeonDweller/Header Files/Item;$(SolutionDir)/DungeonDweller/Header Files/ImageImporter;$(SolutionDir)/DungeonDweller/Header Files/Cutscene;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/DungeonDweller/Header Files/;$(SolutionDir)/DungeonDweller/Header Files/GameState/;$(SolutionDir)/DungeonDweller/Header Files/Character/;$(SolutionDir)/DungeonDweller/Header Files/Image;$(SolutionDir)/DungeonDweller/Header Files/Puzzles;$(SolutionDir)/DungeonDweller/Header Files/RoomTree;$(SolutionDir)/DungeonDweller/Header Files/Room;$(SolutionDir)/DungeonDweller/Header Files/Viewport;$(SolutionDir)/DungeonDweller/Header Files/Menu;$(SolutionDir)/DungeonDweller/Header Files/Item;$(SolutionDir)/DungeonDweller/Header Files/ImageImporter;$(SolutionDir)/DungeonDweller/Header Files/Cutscene;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/DungeonDweller/Header Files/;$(SolutionDir)/DungeonDweller/Header Files/GameState/;$(SolutionDir)/DungeonDweller/Header Files/Character/;$(SolutionDir)/DungeonDweller/Header Files/Image;$(SolutionDir)/DungeonDweller/Header Files/Puzzles;$(SolutionDir)/DungeonDweller/Header Files/RoomTree;$(SolutionDir)/DungeonDweller/Header Files/Room;$(SolutionDir)/DungeonDweller/Header Files/Viewport;$(SolutionDir)/DungeonDweller/Header Files/Menu;$(SolutionDir)/DungeonDweller/Header Files/Item;$(SolutionDir)/DungeonDweller/Header Files/ImageImporter;$(SolutionDir)/DungeonDweller/Header Files/Cutscene;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Character.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Npc.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Character\Player.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Cutscene\Cutscene.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\DungeonDweller.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\ExploreState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\FightState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\InventoryState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\MainState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\PuzzleState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\GameState\TradeState.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\ImageImporter\ImageImporter.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\DefaultImg.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\Image.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Image\ImportImg.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Consumable.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Item.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\MyConsumables.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\MyWeapons.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Item\Weapon.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\CharacterMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\ConnectFourMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\DialogueMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\ExploreMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\FightMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\HanoiMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\MainMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\MemoryMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\Menu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\RiddleMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\TicTacToeMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Menu\TradeMenu.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\CodeCracker.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\ConnectFour.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\Hanoi.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\MemoryMatch.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\Puzzle.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Puzzles\TicTacToe.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\RoomTree\RoomTree.cpp" />
+    <ClCompile Include="..\DungeonDweller\Source Files\Room\Room.cpp" />
+    <ClCompile Include="Source Files\Viewport\Viewport.cpp" />
+    <ClCompile Include="Source Files\Game.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Character.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Npc.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Character\Player.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Cutscene\Cutscene.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\DialogueState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\ExploreState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\FightState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\GameState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\InventoryState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\MainState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\PuzzleState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\GameState\TradeState.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\ImageImporter\ImageImporter.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\DefaultImg.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\Image.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Image\ImportImg.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Consumable.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Item.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\MyConsumables.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\MyWeapons.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Item\Weapon.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\CharacterMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\ConnectFourMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\DialogueMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\ExploreMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\FightMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\GameMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\HanoiMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MainMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MemoryMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\Menu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\MinigameMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\RiddleMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\TicTacToeMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Menu\TradeMenu.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\CodeCracker.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\ConnectFour.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\Hanoi.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\MemoryMatch.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\Puzzle.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Puzzles\TicTacToe.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\RoomTree\RoomTree.h" />
+    <ClInclude Include="..\DungeonDweller\Header Files\Room\Room.h" />
+    <ClInclude Include="Header Files\Viewport\Viewport.h" />
+    <ClInclude Include="Header Files\Game.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ResourceFiles\Art\Credits\credits.txt" />
+    <Text Include="..\ResourceFiles\Art\Credits\title.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet2.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Carpet3.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz2.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_CarpetHoriz3.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Chest.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitDown.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitLeft.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitRight.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_ExitUp.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_FourWayCarpet.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightLeft.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightLeftDown.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightRight.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_LightRightDown.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Pillar.txt" />
+    <Text Include="..\ResourceFiles\Art\Decor\DD_Pillar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCEnemy.txt" />
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCEnemyDead.txt" />
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCPuzzle.txt" />
+    <Text Include="..\ResourceFiles\Art\Player\DD_NPCShop.txt" />
+    <Text Include="..\ResourceFiles\Art\Player\DD_Player.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_HPattrn.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_HPattrnVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Indent.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_IndentVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_IndentVertFlip.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurn.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnHorizFlip.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnHorizFlipVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_LTurnVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Octagon.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_OctagonVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Square.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlant.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantHorizFlip.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareSlantVar3.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar3.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_SquareVar4.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin2.txt" />
+    <Text Include="..\ResourceFiles\Art\Rooms\DD_Room_Thin3.txt" />
+    <Text Include="..\ResourceFiles\MasterArtFile.txt" />
+    <Text Include="..\ResourceFiles\Riddles.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
